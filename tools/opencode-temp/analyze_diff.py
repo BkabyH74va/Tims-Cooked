@@ -1,5 +1,5 @@
 import json
-d = json.load(open("G:/REPO/tools/opencode-temp/kc_diff_all.json"))
+d = json.load(open("this repository/tools/opencode-temp/kc_diff_all.json"))
 print("kexts with changes:", len(d))
 print("\n=== top 20 by changed count ===")
 for r in sorted(d, key=lambda r: -len(r["changed"]))[:20]:

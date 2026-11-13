@@ -242,7 +242,7 @@ go-apfs-v2 B-tree/object-map issue).
 
 ## 8. Standing safety rules (unchanged)
 
-* Target device is the secondary iPhone, UDID `REDACTED_DEVICE_ID`;
+* Target device is the secondary iPhone, UDID `<device-udid>`;
   never a daily driver.
 * No firmware writes, restores, updates, boot-chain changes or downgrades.
 * Device interaction stays read-only/benign until a signed controlled harness

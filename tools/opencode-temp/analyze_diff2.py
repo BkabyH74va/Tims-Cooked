@@ -1,5 +1,5 @@
 import json
-d = json.load(open("G:/REPO/tools/opencode-temp/kc_diff_all.json"))
+d = json.load(open("this repository/tools/opencode-temp/kc_diff_all.json"))
 
 def show(name, limit=40):
     for r in d:

@@ -1,7 +1,7 @@
 # Debugger attach to iPhone 17 Pro (iOS 27.0.1, 24A446) — status
 
 Date: 2026-11-07
-Device: iPhone18,1 / iOS 27.0.1 (24A446) / UDID `REDACTED_DEVICE_ID`
+Device: iPhone18,1 / iOS 27.0.1 (24A446) / UDID `<device-udid>`
 Host: Windows PC (no macOS/Xcode)
 
 > **Superseded in part.** The section "Why the attach still fails" below was

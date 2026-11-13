@@ -36,8 +36,8 @@ This matches the upstream README claim (iOS 26.0-26.7.2 / 27.2).
 - Useful as a *chain prerequisite* / recon primitive, not a jailbreak.
 
 ## Build notes
-- Patched project to team `4L9HF29JJU`, bundle `com.USER_.worsequery`, group `group.USER_.worsequery`.
+- Patched project to team `<your-team-id>`, bundle `com.<user>.worsequery`, group `group.<user>.worsequery`.
 - Added `AutoProof.m` (constructor -> main queue) that runs the escape against the 3 paths and
   writes `Documents/wq_proof.log`.
-- Build: xcodebuild Debug, destination id=REDACTED_DEVICE_ID / REDACTED_DEVICE_ID.
-- Pull: `devicectl device copy from --domain-type appDataContainer --domain-identifier com.USER_.worsequery --source Documents/wq_proof.log`.
+- Build: xcodebuild Debug, destination id=<device-udid> / <device-udid>.
+- Pull: `devicectl device copy from --domain-type appDataContainer --domain-identifier com.<user>.worsequery --source Documents/wq_proof.log`.

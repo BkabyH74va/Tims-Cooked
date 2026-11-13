@@ -1,7 +1,7 @@
 # iOS 27.0.1 debugserver — gdb-remote protocol findings
 
 Date: 2026-11-07
-Device: iPhone18,1 / iOS 27.0.1 (24A446) / UDID `REDACTED_DEVICE_ID`
+Device: iPhone18,1 / iOS 27.0.1 (24A446) / UDID `<device-udid>`
 Host: Windows PC, no macOS/Xcode
 Driver: `tools/opencode-temp/agx_debug_win.py`
 Probes: `tools/opencode-temp/probe_*.py`

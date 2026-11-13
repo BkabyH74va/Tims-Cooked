@@ -143,9 +143,9 @@ dispatch table), which is not in the extracted kext.
 
 Sources used for the follow-up:
 
-- Kernelcache: `/Users/USER/Desktop/JAILBREAK 27.0.1/private/firmware/24A446__iPhone18,1/kernelcache.release.iPhone18,1`
-- Full kernel disassembly: `/Users/USER/Desktop/tools/agx-reach/kernel_analysis/full_disasm.txt`
-- `AGXDeviceUserClient` vtab metadata: `/Users/USER/agx-probe-project/analysis/agx_uc_methods.txt`, `analysis/agx_uc.json`
+- Kernelcache: `$HOME/Desktop/JAILBREAK 27.0.1/private/firmware/24A446__iPhone18,1/kernelcache.release.iPhone18,1`
+- Full kernel disassembly: `$HOME/Desktop/tools/agx-reach/kernel_analysis/full_disasm.txt`
+- `AGXDeviceUserClient` vtab metadata: `$HOME/agx-probe-project/analysis/agx_uc_methods.txt`, `analysis/agx_uc.json`
 
 Findings:
 

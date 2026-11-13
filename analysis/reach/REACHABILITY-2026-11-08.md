@@ -1,8 +1,8 @@
 # User-client reachability from a plain sandboxed app — 2026-11-08
 
 **Device:** iPhone18,1 / iPhone 17 Pro / t8150 — iOS 27.0.1 (24A446), UDID
-`REDACTED_DEVICE_ID`
-**Harness:** signed debug app `com.nianticlabs.pokemongo.4L9HF29JJU`
+`<device-udid>`
+**Harness:** signed debug app `com.<your-bundle-id>`
 **Raw log:** `analysis/evidence/mac/reach.log`
 
 ## Why this measurement exists
