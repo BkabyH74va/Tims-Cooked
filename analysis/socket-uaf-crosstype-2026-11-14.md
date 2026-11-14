@@ -1,8 +1,8 @@
 # Cross-type socket collision — `--sockmix` reproduces TCP→UDP type confusion on both devices
 
 Date: 2026-11-14
-Target: iPhone18,1 / t8150 / iOS 27.0.1 (build 24A446) — **17 Pro `REDACTED_DEVICE_ID`**
-Secondary: iPhone14,2 / A16 / iOS 27.0 (build 24A5390f) — **13 Pro `REDACTED_DEVICE_ID`**
+Target: iPhone18,1 / t8150 / iOS 27.0.1 (build 24A446) — **17 Pro `<primary-device-udid>`**
+Secondary: iPhone14,2 / A16 / iOS 27.0 (build 24A5390f) — **13 Pro `<secondary-device-udid>`**
 Bug: CVE-2026-112514, socket-buffer use-after-free (`uipc_socket2.c`), live on 27.0/27.0.1, fixed in 27.2
 Evidence: `analysis/evidence/crosstype-2026-11-14/sockmix_13pro.log`, `…/sockmix_17pro.log`
 

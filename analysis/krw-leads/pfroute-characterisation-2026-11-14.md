@@ -130,9 +130,9 @@ is outstanding.
 
 ```
 bash ~/build_race.sh                                   # BUILD_EXIT=0
-xcrun devicectl device install app --device REDACTED_DEVICE_ID \
+xcrun devicectl device install app --device <secondary-device-udid> \
     ~/agx-probe-project/.build13/Build/Products/Debug-iphoneos/AGXProbe.app
-xcrun devicectl device process launch --device REDACTED_DEVICE_ID \
+xcrun devicectl device process launch --device <secondary-device-udid> \
     --console --terminate-existing com.bench27.agxprobe --routesock
 ```
 
