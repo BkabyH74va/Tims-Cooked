@@ -147,7 +147,8 @@ final class ReachViewModel: ObservableObject {
             || args.contains("--cowfile")
             || args.contains("--apfsrace")
             || args.contains("--socklowbuf") || args.contains("--rawsock")
-            || args.contains("--routesock") { Task.detached { await self.runSocketUafMode() }; return }
+            || args.contains("--routesock") || args.contains("--reclaim")
+            { Task.detached { await self.runSocketUafMode() }; return }
         if args.contains("--autorun") { emit("AGXProbe v123 ready (use --webscan)") }
     }
 
@@ -732,6 +733,14 @@ func runFuzzMode() async {
         let err = route_socket_probe(&st)
         emitBg("[*] routesock stages(failures)=\(st[0]) \(st[1]) \(st[2]) \(st[3]) \(st[4]) \(st[5]) \(st[6]) \(st[7]) \(st[8]) firstErr=\(err)")
         emitBg("=== routesock done ===")
+    }
+
+    nonisolated func vmReclaimProbe() {
+        emitBg("[*] reclaim start (VM deferred-reclamation MIG surface)")
+        var st = [Int32](repeating: 0, count: 12)
+        let rc = vm_reclaim_probe(&st)
+        emitBg("[*] reclaim rc=\(rc) dlsym=\(st[0]) qpre_ok=\(st[1]) qpre_fail=\(st[2]) alloc=\(st[3]) qpost=\(st[4]) flush0=\(st[5]) resize=\(st[6]) flushMAX=\(st[7])")
+        emitBg("=== reclaim done ===")
     }
 
     nonisolated func sockUafPeerBytes(_ precPort: Int, _ peers: inout [Int32],
@@ -1331,6 +1340,7 @@ func runFuzzMode() async {
         if ProcessInfo.processInfo.arguments.contains("--apfsrace") { apfsRaceProbe(); return }
         if ProcessInfo.processInfo.arguments.contains("--rawsock") { networkSurfaceProbe(); return }
         if ProcessInfo.processInfo.arguments.contains("--routesock") { routeSocketProbe(); return }
+        if ProcessInfo.processInfo.arguments.contains("--reclaim") { vmReclaimProbe(); return }
         let solo = oolOnly || xzOnly || gcOnly || udpOnly || precOnly || mixOnly || lowBufOnly
         var hits = 0
         var xtypeHits = 0

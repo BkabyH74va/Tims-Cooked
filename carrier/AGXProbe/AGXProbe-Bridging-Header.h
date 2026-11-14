@@ -34,3 +34,6 @@ int network_surface_probe(void);
 
 // Route-socket (PF_ROUTE) characterisation probe (SockUafSpray.c).
 int route_socket_probe(int *stages);
+
+// VM deferred-reclamation MIG surface probe (SockUafSpray.c).
+int vm_reclaim_probe(int *stages);

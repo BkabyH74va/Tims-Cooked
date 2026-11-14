@@ -878,3 +878,301 @@ int cow_probe_run(int rounds, int size_kb, int *stages)
                         stages[6], stages[7], stages[8], first_err);
                 return first_err;
             }
+
+    // ---- VM deferred-reclamation MIG surface probe (2026-11-14) -----------------
+    // iOS 27.0.1 exposes a Mach-VM "deferred reclamation" subsystem: a task-owned
+    // userspace buffer of {address,size,deadline} entries that the vm_reclaim
+    // kernel thread turns into vm_map_remove_guard() calls on the owning task.
+    // The kernel copies head/tail/busy and the entry array straight out of our
+    // address space (copyin_atomic64), so the buffer is a directly
+    // app-controlled kernel input path above the kalloc_type wall.
+    //
+    // Routines and signatures are taken verbatim from the mach_vm.defs shipped in
+    // the macOS 27 SDK (same XNU generation):
+    //   mach_vm_deferred_reclamation_buffer_allocate(task_t, out mach_vm_address_t,
+    //                                                out uint64_t, uint32_t len,
+    //                                                uint32_t max_len)
+    //   mach_vm_deferred_reclamation_buffer_flush(task_t, uint32_t n,
+    //                                             out uint64_t, out uint64_t)
+    //   mach_vm_deferred_reclamation_buffer_resize(task_t, uint32_t new_len,
+    //                                              out uint64_t, out uint64_t)
+    //   mach_vm_deferred_reclamation_buffer_query(task_read_t, out mach_vm_address_t,
+    //                                             out mach_vm_size_t)
+    // They are looked up with dlsym rather than linked, so a device whose libSystem
+    // dropped them (27.2 renamed this family to mach_vm_reclaim_ring_*) is reported
+    // instead of failing to launch.
+    #include <dlfcn.h>
+    #include <mach/mach.h>
+
+    typedef kern_return_t (*agx_vrp_alloc_t)(task_t, mach_vm_address_t *,
+                                             uint64_t *, uint32_t, uint32_t);
+    typedef kern_return_t (*agx_vrp_flush_t)(task_t, uint32_t, uint64_t *, uint64_t *);
+    typedef kern_return_t (*agx_vrp_resize_t)(task_t, uint32_t, uint64_t *, uint64_t *);
+    typedef kern_return_t (*agx_vrp_query_t)(task_read_t, mach_vm_address_t *,
+                                             mach_vm_size_t *);
+    /* mach_vm_allocate's prototype lives in <mach/mach_vm.h>, which the iOS SDK
+       deliberately #errors out, so declare it here rather than hand-rolling
+       prototypes for the vm_* equivalents (this is a client-side MIG call, not
+       the kernel entry point). */
+    extern kern_return_t mach_vm_allocate(vm_map_t, mach_vm_address_t *,
+                                          mach_vm_size_t, int);
+
+    static void vrp_log(const char *fmt, ...)
+    {
+        char buf[384];
+        va_list ap;
+        va_start(ap, fmt);
+        vsnprintf(buf, sizeof(buf), fmt, ap);
+        va_end(ap);
+        log_from_c(buf);
+        fputs(buf, stdout);
+        fputc('\n', stdout);
+        fflush(stdout);
+    }
+
+    static const char *vrp_kr(kern_return_t kr)
+    {
+        switch (kr) {
+            case KERN_SUCCESS:              return "OK";
+            case KERN_INVALID_ARGUMENT:     return "InvalidArgument";
+            case KERN_FAILURE:              return "Failure";
+            case KERN_NOT_SUPPORTED:        return "NotSupported";
+            case KERN_NO_SPACE:             return "NoSpace";
+            default:                        return NULL;
+        }
+    }
+
+    static void vrp_krlog(const char *what, kern_return_t kr)
+    {
+        const char *n = vrp_kr(kr);
+        if (n) vrp_log("[*] reclaim %s -> %s (%d)", what, n, (int)kr);
+        else   vrp_log("[*] reclaim %s -> kr=%d (0x%x)", what, (int)kr, (unsigned)kr);
+    }
+
+    /* Non-faulting way to ask whether a range is still mapped in our own task. */
+    static int vrp_mapped(const void *p, size_t len)
+    {
+        vm_address_t a = (vm_address_t)p;
+        vm_size_t sz = 0;
+        vm_region_basic_info_data_64_t info;
+        mach_msg_type_number_t cnt = VM_REGION_BASIC_INFO_COUNT_64;
+        mach_port_t obj = 0;
+        kern_return_t kr = vm_region_64(mach_task_self(), &a, &sz,
+                                        VM_REGION_BASIC_INFO_64,
+                                        (vm_region_info_t)&info, &cnt, &obj);
+        if (kr != KERN_SUCCESS) return -1;            /* not mapped */
+        return (a <= (vm_address_t)p && (vm_address_t)p < a + sz) ? 1 : 0;
+    }
+
+    int vm_reclaim_probe(int *stages)
+    {
+        for (int i = 0; i < 12; i++) stages[i] = 0;
+
+        const char *names[4] = {
+            "_mach_vm_deferred_reclamation_buffer_allocate",
+            "_mach_vm_deferred_reclamation_buffer_flush",
+            "_mach_vm_deferred_reclamation_buffer_resize",
+            "_mach_vm_deferred_reclamation_buffer_query",
+        };
+        void *syms[4] = { 0, 0, 0, 0 };
+        int found = 0;
+        for (int i = 0; i < 4; i++) {
+            syms[i] = dlsym(RTLD_DEFAULT, names[i]);
+            vrp_log("[*] reclaim dlsym %s -> %p", names[i], syms[i]);
+            if (syms[i]) found++;
+        }
+        stages[0] = found;
+
+        /* --- C1: dlsym controls -------------------------------------------
+           Proves the dlsym mechanism sees real mach_vm symbols, so the NULL
+           above for the deferred-reclamation family is a genuine absence and
+           not a lookup artifact. Also tests whether the mach_vm extension
+           routines (reallocate, range_create, reclaim_ring_*) are exported. */
+        {
+            const char *ctl[] = {
+                "_mach_vm_allocate", "_mach_vm_deallocate",
+                "_mach_vm_purgable_control", "_mach_vm_range_create",
+                "_mach_vm_reallocate", "_mach_vm_reclaim_ring_allocate",
+            };
+            int ctl_found = 0;
+            for (int i = 0; i < 6; i++) {
+                void *s = dlsym(RTLD_DEFAULT, ctl[i]);
+                vrp_log("[*] reclaim ctl dlsym %s -> %p", ctl[i], s);
+                if (s) ctl_found++;
+            }
+            stages[8] = ctl_found;
+
+            void *ra = dlsym(RTLD_DEFAULT, "_mach_vm_reallocate");
+            if (ra) {
+                typedef kern_return_t (*agx_realloc_t)(vm_map_t, mach_vm_address_t,
+                                                       mach_vm_size_t,
+                                                       mach_vm_address_t *,
+                                                       mach_vm_size_t,
+                                                       mach_vm_offset_t, int, int);
+                mach_vm_address_t addr = 0;
+                mach_vm_size_t sz = 0x10000;
+                kern_return_t ka = mach_vm_allocate(mach_task_self(), &addr, sz,
+                                                    VM_FLAGS_ANYWHERE);
+                vrp_krlog("reallocate:pre-alloc", ka);
+                if (ka == KERN_SUCCESS && addr != 0) {
+                    memset((void *)(uintptr_t)addr, 0x5a, sz);
+                    mach_vm_address_t dst = addr;
+                    kern_return_t kr = ((agx_realloc_t)ra)(mach_task_self(), addr, sz, &dst,
+                                                           sz, 0, 0, 0);
+                    vrp_krlog("reallocate(in-place,same-size)", kr);
+                    vrp_log("[*] reclaim reallocate dst=0x%llx (src=0x%llx) "
+                            "still_mapped=%d",
+                            (unsigned long long)dst, (unsigned long long)addr,
+                            vrp_mapped((void *)(uintptr_t)addr, sz));
+                    stages[9]++;
+                    vm_deallocate(mach_task_self(), addr, sz);
+                    if (dst != addr && dst != 0) vm_deallocate(mach_task_self(), dst, sz);
+                }
+            } else {
+                vrp_log("[*] reclaim: _mach_vm_reallocate not exported either; "
+                        "the whole mach_vm extension family is absent from iOS "
+                        "libSystem");
+            }
+        }
+        if (!found) {
+            vrp_log("[*] reclaim: no deferred-reclamation symbols in libSystem "
+                    "(family may have been renamed to mach_vm_reclaim_ring_*)");
+            return -1;
+        }
+
+        task_t self = mach_task_self();
+
+        /* --- Q0: query before any buffer exists --------------------------- */
+        if (syms[3]) {
+            mach_vm_address_t qa = 0;
+            mach_vm_size_t qs = 0;
+            kern_return_t kr = ((agx_vrp_query_t)syms[3])(self, &qa, &qs);
+            vrp_krlog("query(pre)", kr);
+            if (kr == KERN_SUCCESS) {
+                vrp_log("[*] reclaim query(pre) addr=0x%llx size=0x%llx",
+                        (unsigned long long)qa, (unsigned long long)qs);
+                stages[1]++;
+            } else {
+                stages[2]++;
+            }
+        }
+
+        /* --- A1..A4: argument-shape sweep (no state change expected) ------ */
+        static const struct { uint32_t len; uint32_t max_len; const char *tag; } atab[] = {
+            { 0x1000,      0x100000,    "len=0x1000 max=0x100000" },
+            { 0x10000,     0x100000,    "len=0x10000 max=0x100000" },
+            { 0,           0,           "len=0 max=0" },
+            { 0x1000,      0,           "len=0x1000 max=0" },
+            { 0xffffffffu, 0xffffffffu, "len=UINT32_MAX max=UINT32_MAX" },
+        };
+        mach_vm_address_t alloc_addr = 0;
+        uint64_t alloc_deadline = 0;
+        int alloc_ok = -1;
+        for (int i = 0; i < 5; i++) {
+            mach_vm_address_t a = 0;
+            uint64_t dl = 0;
+            kern_return_t kr = KERN_FAILURE;
+            if (syms[0]) kr = ((agx_vrp_alloc_t)syms[0])(self, &a, &dl,
+                                                          atab[i].len, atab[i].max_len);
+            vrp_log("[*] reclaim allocate(%s) -> kr=%d addr=0x%llx deadline=0x%llx",
+                    atab[i].tag, (int)kr, (unsigned long long)a,
+                    (unsigned long long)dl);
+            if (kr == KERN_SUCCESS) {
+                alloc_ok = i;
+                alloc_addr = a;
+                alloc_deadline = dl;
+                break;
+            }
+        }
+        stages[3] = (alloc_ok >= 0) ? 1 : 0;
+        if (alloc_ok < 0) {
+            vrp_log("[*] reclaim: no allocate variant succeeded; stopping "
+                    "(reclaim is disabled on this build if kr=NotSupported)");
+            return -2;
+        }
+
+        /* --- Q1: query must now report the buffer we were given ----------- */
+        if (syms[3]) {
+            mach_vm_address_t qa = 0;
+            mach_vm_size_t qs = 0;
+            kern_return_t kr = ((agx_vrp_query_t)syms[3])(self, &qa, &qs);
+            vrp_krlog("query(post)", kr);
+            if (kr == KERN_SUCCESS) {
+                vrp_log("[*] reclaim query(post) addr=0x%llx size=0x%llx "
+                        "(allocated addr was 0x%llx)",
+                        (unsigned long long)qa, (unsigned long long)qs,
+                        (unsigned long long)alloc_addr);
+                stages[4]++;
+                /* The header of the buffer carries the head/tail/busy indices
+                   the kernel copyin_atomic64s. Report them. */
+                if (qs >= 40) {
+                    uint64_t h = *(volatile uint64_t *)(uintptr_t)qa;
+                    uint64_t t = *(volatile uint64_t *)(uintptr_t)(qa + 8);
+                    uint64_t b = *(volatile uint64_t *)(uintptr_t)(qa + 16);
+                    vrp_log("[*] reclaim buffer indices @0x%llx: head=%llu tail=%llu busy=%llu",
+                            (unsigned long long)qa,
+                            (unsigned long long)h, (unsigned long long)t,
+                            (unsigned long long)b);
+                }
+            }
+        }
+
+        /* --- O1: touch the buffer header; it is ours ---------------------- */
+        vrp_log("[*] reclaim buffer region mapped=%d (expect 1)",
+                vrp_mapped((void *)(uintptr_t)alloc_addr, 0x1000));
+
+        /* --- F1: flush with zero entries (idempotent?) ------------------- */
+        if (syms[1]) {
+            uint64_t bytes = 0, dl = 0;
+            kern_return_t kr = ((agx_vrp_flush_t)syms[1])(self, 0, &bytes, &dl);
+            vrp_krlog("flush(0)", kr);
+            vrp_log("[*] reclaim flush(0) bytes_reclaimed=%llu next_deadline=0x%llx",
+                    (unsigned long long)bytes, (unsigned long long)dl);
+            stages[5]++;
+        }
+
+        /* --- R1: shrink/flush variants ----------------------------------- */
+        if (syms[2]) {
+            uint64_t bytes = 0, dl = 0;
+            kern_return_t kr = ((agx_vrp_resize_t)syms[2])(self, 0x1000, &bytes, &dl);
+            vrp_krlog("resize(0x1000)", kr);
+            vrp_log("[*] reclaim resize(0x1000) bytes_reclaimed=%llu next_deadline=0x%llx",
+                    (unsigned long long)bytes, (unsigned long long)dl);
+            stages[6]++;
+        }
+
+        /* --- D1: does a flush actually reclaim anything we can observe?
+           Map a scratch region, dirty it, then ask for a large flush. We never
+           dereference it afterwards: vm_region_64 reports its fate. */
+        {
+            size_t sz = 4 * 1024 * 1024;
+            void *p = mmap(NULL, sz, PROT_READ | PROT_WRITE,
+                           MAP_PRIVATE | MAP_ANON, -1, 0);
+            if (p != MAP_FAILED) {
+                memset(p, 0x41, sz);
+                vrp_log("[*] reclaim scratch map @%p mapped=%d", p,
+                        vrp_mapped(p, sz));
+                if (syms[1]) {
+                    uint64_t bytes = 0, dl = 0;
+                    kern_return_t kr = ((agx_vrp_flush_t)syms[1])(self, 0xffffffffu,
+                                                                  &bytes, &dl);
+                    vrp_krlog("flush(UINT32_MAX)", kr);
+                    vrp_log("[*] reclaim flush(MAX) bytes_reclaimed=%llu "
+                            "next_deadline=0x%llx", (unsigned long long)bytes,
+                            (unsigned long long)dl);
+                    stages[7]++;
+                }
+                vrp_log("[*] reclaim scratch map @%p still_mapped=%d (post-flush)",
+                        p, vrp_mapped(p, sz));
+                munmap(p, sz);
+            } else {
+                vrp_log("[*] reclaim scratch mmap failed errno=%d", errno);
+            }
+        }
+
+        vrp_log("[*] reclaim done: dlsym=%d query_pre_ok=%d query_pre_fail=%d "
+                "alloc_ok=%d query_post_ok=%d flush0=%d resize=%d flushMAX=%d",
+                stages[0], stages[1], stages[2], stages[3], stages[4],
+                stages[5], stages[6], stages[7]);
+        return 0;
+    }

@@ -18,6 +18,7 @@ not "probability it will work". 100 % means done and verified on hardware.
 | 4d | Kernel r/w primitive | Other diff-derived kernel UAF candidates | Triage list produced; unconfirmed | **15%** |
 | 4e | Kernel r/w primitive | `uipc_mbuf2.c` mbuf-chain length arithmetic (`m_sum16` / `m_adj_sum16`, four 32→64-bit sites confirmed changed in 27.2) | Functions identified and fully caller-mapped; several callers pass underflow-capable header-field differences. Raw sockets are denied to apps on both devices, so the path is **remote-only (`AV:N`), not app-reachable**. Keep as a bounty candidate | **30%** |
 | 4f | Kernel r/w primitive | `PF_ROUTE` raw route socket from the app sandbox | **Characterised (2026-11-14): reads work, writes are `EPERM`.** `RTM_GET` returns real `rt_msghdr` records with sockaddr arrays; `RTM_ADD`/`RTM_DELETE` both fail with `EPERM`; malformed `sa_len` is rejected with `EINVAL`. iOS 27's `struct rt_msghdr` is **0x5c**, not the published 0x54. The changed `bsd/net/route.c` helper is encode-side only (called from two notification encoders fed by ifnet/ifa state), so its 27.0.1 `VERIFY` cannot be driven by message contents. Information channel, **not** a kR/W path | **35%** |
+| 4g | Kernel r/w primitive | VM deferred-reclamation MIG surface (`mach_vm_deferred_reclamation_buffer_{allocate,flush,resize,query}`) | **Measured (2026-11-14): kernel implements it, app cannot call it.** `osfmk/vm/vm_reclaim.c` is compiled in (five functions at `0xfffffe000acd9aa8`-`0x...cebc`, 43 log-string refs) and the MIG routine names/order match `mach_vm.defs`. But `dlsym` on the device resolves **none** of the four routines (nor `mach_vm_reallocate`); `_mach_vm_deallocate` resolves as a control, so the negative is real. No vm_reclaim function changed between 24A446 and 24B119. Gate tunable `vm_reclaim_max_threshold` defaults to 0 and its name string is absent from the image. **Closed for app-carried work** unless a future SDK exports a stub | **15%** |
 | 5 | Build / deploy pipeline | macOS + Xcode → signed `.app` → `devicectl` install → launch on device | Working end-to-end | **100%** |
 | 6 | EL1 code exec past PAC/CTRR/SPTM (TXM trustcache) | Required after kernel r/w before any persistent code runs | Not started | **5%** |
 | 7 | Credential patch + rootless bootstrap (package manager) | Final stage | Not started | **5%** |
@@ -65,8 +66,12 @@ information channel, not a primitive. Priorities:
    `[obj+0x75]` bit 1 before any further CoW device work.
 2. **Use `tools/opencode-temp/kc_fstarts.py` + `kc_norm_diff.py` + `kc_align_region.py for
    all future 27.0.1↔27.2 comparisons**; the method is exact and removes relocation noise.
-3. **Re-examine leads above the type-isolation wall** (VM/VFS page-replacement,
-   IOSurface-backed external objects) rather than grooming the socket slot further.
+3. **The VM deferred-reclamation surface (4g) is closed for app-carried work** — iOS
+   exposes no client stub for `mach_vm_deferred_reclamation_buffer_*`, measured on the
+   13 Pro. Re-open only if a future SDK `.tbd` exports one of them.
+4. **Re-examine leads above the type-isolation wall** rather than grooming the socket slot
+   further: APFS error-propagation panics need non-ordinary failure conditions, and
+   IOSurface external-object routes remain PAC-constrained.
 
 Evidence: `analysis/kernelcache-funcstarts-exact-diff-2026-11-14.md`,
 `analysis/socket-uaf-crosstype-2026-11-14.md`, `analysis/socket-uaf-stale-write-2026-11-13.md`,
