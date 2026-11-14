@@ -34,6 +34,11 @@ final class SearchResultsController: UITableViewController {
         var paths: [String]
     }
 
+    private struct GroupKey: Hashable {
+        let name: String
+        let isDir: Bool
+    }
+
     private let roots = [
         "/private/var/containers/Shared/SystemGroup",
         "/private/var/mobile/Containers/Data/Application",
@@ -86,23 +91,28 @@ final class SearchResultsController: UITableViewController {
 
     private func run(query: String, generation: Int, token: SearchCancellationToken) {
         visited = 0
-        var buckets: [String: Group] = [:]
-        var order: [String] = []
+        var buckets: [GroupKey: Group] = [:]
+        var order: [GroupKey] = []
 
         for root in roots where !token.isCancelled && visited < visitCap && order.count < hitCap {
             walk(root, depth: 0, query: query, token: token) { name, full, isDir in
-                if var group = buckets[name] {
+                let key = GroupKey(name: name, isDir: isDir)
+                if var group = buckets[key] {
                     group.paths.append(full)
-                    buckets[name] = group
+                    buckets[key] = group
                 } else {
-                    buckets[name] = Group(name: name, isDir: isDir, paths: [full])
-                    order.append(name)
+                    buckets[key] = Group(name: name, isDir: isDir, paths: [full])
+                    order.append(key)
                 }
             }
         }
 
         let result = order.compactMap { buckets[$0] }
-            .sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+            .sorted {
+                let comparison = $0.name.localizedCaseInsensitiveCompare($1.name)
+                if comparison != .orderedSame { return comparison == .orderedAscending }
+                return !$0.isDir && $1.isDir
+            }
         let visitCount = visited
         guard !token.isCancelled else { return }
 

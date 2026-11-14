@@ -23,6 +23,7 @@ final class FilesViewController: UITableViewController {
 
     private let path: String
     private var entries: [Entry] = []
+    private let emptyState = UILabel()
 
     init(path: String = "/private/var/containers/Shared/SystemGroup") {
         self.path = path
@@ -40,6 +41,12 @@ final class FilesViewController: UITableViewController {
         tableView.separatorColor = Theme.greenDim.withAlphaComponent(0.25)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.tableFooterView = UIView()
+        emptyState.textColor = Theme.textFaint
+        emptyState.font = Theme.sans(13)
+        emptyState.textAlignment = .center
+        emptyState.numberOfLines = 0
+        emptyState.text = "No items found"
+        tableView.backgroundView = emptyState
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add, target: self, action: #selector(onAdd))
@@ -53,6 +60,7 @@ final class FilesViewController: UITableViewController {
 
     @objc private func load() {
         entries = []
+        var listingSucceeded = false
 
         // Inside a granted container the extension applies and opendir works.
         if Escape.group != nil {
@@ -61,6 +69,7 @@ final class FilesViewController: UITableViewController {
                 let dirWritable = access(path, W_OK) == 0
                 var raw: [String] = []
                 if let d = opendir(path) {
+                    listingSucceeded = true
                     while let e = readdir(d) {
                         let name = withUnsafeBytes(of: e.pointee.d_name) { raw -> String in
                             String(decoding: raw.prefix { $0 != 0 }, as: UTF8.self)
@@ -93,7 +102,8 @@ final class FilesViewController: UITableViewController {
 
         // The parent of the shared groups cannot be granted; fsgetpath still
         // resolves the names of its children by inode.
-        if entries.isEmpty {
+        if !listingSucceeded {
+            entries = []
             for name in inodeChildren(path) {
                 let full = (path as NSString).appendingPathComponent(name)
                 let label = humanName(full)
@@ -104,6 +114,10 @@ final class FilesViewController: UITableViewController {
             }
             Logger.shared.note("files: \(path) ??? \(entries.count) entries (fsgetpath)")
         }
+
+        emptyState.text = entries.isEmpty
+            ? (listingSucceeded ? "This directory is empty" : "Could not read this directory")
+            : nil
 
         tableView.reloadData()
     }
@@ -545,10 +559,12 @@ final class FilePreviewController: UIViewController {
             return
         }
 
-        // Hex: eight bytes per line so nothing wraps on an iPhone.
+        // Hex output is capped to keep rendering responsive; say when bytes are omitted.
         let bytes = [UInt8](data)
         let limit = min(bytes.count, 8192)
-        var out = ""
+        var out = limit < bytes.count
+            ? "Showing first \(limit) of \(bytes.count) bytes.\n\n"
+            : ""
         var offset = 0
         while offset < limit {
             let end = min(offset + 8, limit)
@@ -570,6 +586,7 @@ final class FilePreviewController: UIViewController {
             .foregroundColor: Theme.greenSoft,
             .paragraphStyle: style,
         ])
+        navigationItem.rightBarButtonItems?.first(where: { $0.title == "Edit" })?.isEnabled = false
     }
 
     // MARK: edit
