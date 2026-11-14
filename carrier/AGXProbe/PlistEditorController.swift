@@ -165,7 +165,7 @@ final class PlistEditorController: UITableViewController {
             return number.boolValue ? "true" : "false"
         }
         switch value {
-        case let s as String: return s.isEmpty ? "???" : s
+        case let s as String: return s
         case let n as NSNumber: return n.stringValue
         case let d as Data: return "\(d.count) bytes of data"
         case let a as [Any]: return "array ?? \(a.count) items"
@@ -222,9 +222,10 @@ final class PlistEditorController: UITableViewController {
 
     private func apply(step: Any, text: String, old: Any) {
         var converted: Any = text
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
         if let number = old as? NSNumber,
            CFGetTypeID(number) == CFBooleanGetTypeID() {
-            switch text.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() {
+            switch trimmed.lowercased() {
             case "true", "1": converted = true
             case "false", "0": converted = false
             default:
@@ -232,8 +233,8 @@ final class PlistEditorController: UITableViewController {
                 return
             }
         } else if old is NSNumber {
-            if let n = Int(text) { converted = n }
-            else if let d = Double(text) { converted = d }
+            if let n = Int(trimmed) { converted = n }
+            else if let d = Double(trimmed), d.isFinite { converted = d }
             else {
                 report("Invalid number", detail: "enter a valid integer or decimal number")
                 return

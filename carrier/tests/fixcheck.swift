@@ -52,7 +52,7 @@ func describe(_ value: Any) -> String {
         return number.boolValue ? "true" : "false"
     }
     switch value {
-    case let s as String: return s.isEmpty ? "???" : s
+    case let s as String: return s
     case let n as NSNumber: return n.stringValue
     case let d as Data: return "\(d.count) bytes of data"
     case let a as [Any]: return "array ?? \(a.count) items"
@@ -75,17 +75,18 @@ func typeName(_ value: Any) -> String {
 /// Returns (converted, errorMessage). Conversion logic verbatim from apply().
 func convert(text: String, old: Any) -> (Any?, String?) {
     var converted: Any = text
+    let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
     if let number = old as? NSNumber,
        CFGetTypeID(number) == CFBooleanGetTypeID() {
-        switch text.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() {
+        switch trimmed.lowercased() {
         case "true", "1": converted = true
         case "false", "0": converted = false
         default:
             return (nil, "Invalid Boolean")
         }
     } else if old is NSNumber {
-        if let n = Int(text) { converted = n }
-        else if let d = Double(text) { converted = d }
+        if let n = Int(trimmed) { converted = n }
+        else if let d = Double(trimmed), d.isFinite { converted = d }
         else {
             return (nil, "Invalid number")
         }
@@ -103,6 +104,9 @@ check("false is detected as boolean", CFGetTypeID(bFalse) == CFBooleanGetTypeID(
 check("plain integer is NOT detected as boolean", CFGetTypeID(iFive) != CFBooleanGetTypeID())
 check("describe(true) == \"true\"", describe(bTrue) == "true")
 check("describe(false) == \"false\"", describe(bFalse) == "false")
+check("empty string remains visibly empty", describe("") == "")
+let emptyString = convert(text: describe(""), old: "")
+check("leaving an empty string unchanged preserves it", emptyString.0 as? String == "" && emptyString.1 == nil)
 check("typeName(true) == \"boolean\"", typeName(bTrue) == "boolean")
 check("typeName(5) == \"number\"", typeName(iFive) == "number")
 
@@ -131,6 +135,8 @@ check("uppercase TRUE accepted", (r5.0 as? Bool) == true)
 print("\n== 4. numeric values keep parsing as numbers ==")
 let n1 = convert(text: "7", old: iFive)
 check("'7' -> Int", n1.0 is Int && (n1.0 as! Int) == 7, "got \(String(describing: n1.0))")
+let nSpace = convert(text: " 7 ", old: iFive)
+check("surrounding whitespace is accepted", nSpace.0 is Int && (nSpace.0 as! Int) == 7)
 let n2 = convert(text: "7.5", old: iFive)
 check("'7.5' -> Double", n2.0 is Double && (n2.0 as! Double) == 7.5, "got \(String(describing: n2.0))")
 let n3 = convert(text: "abc", old: iFive)

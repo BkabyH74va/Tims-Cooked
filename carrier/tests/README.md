@@ -34,9 +34,10 @@ from several threads at once:
 - `beginTest` takes the lock and then calls `append`, which locks again — this requires a
   *recursive* lock. The harness shows a plain `NSLock` version deadlocking, confirming the
   choice of `NSRecursiveLock` is load-bearing rather than stylistic.
-- Serial runs attribute results (`ok` / `fail`) correctly.
-- Six concurrent runs × 40 notes produce exactly 252 lines, with no lost, duplicated or
-  interleaved entries, and the on-disk file matches the in-memory record.
+- Empty probes report `skipped`; serial runs attribute `ok` and `fail` correctly.
+- Six concurrent log producers × 40 notes during one active test produce exactly 242
+  lines, with no lost, duplicated or interleaved entries, and the on-disk file matches
+  the in-memory record.
 
 This matters because overlapping probe runs used to mix log entries and report wrong
 summaries, which makes exploit results untrustworthy.
