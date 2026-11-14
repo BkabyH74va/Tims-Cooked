@@ -53,3 +53,6 @@ file.txt
 
 # Vendored toolchains (huge)
 tools/go-toolchain/
+
+# Local-only operational handoff notes; never publish.
+HANDOFF*.md
