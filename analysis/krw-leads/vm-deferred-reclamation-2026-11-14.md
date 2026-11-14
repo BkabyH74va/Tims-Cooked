@@ -1,7 +1,9 @@
 # Lead: VM deferred-reclamation MIG surface (`mach_vm_deferred_reclamation_buffer_*`) — app reachability
 
 Date: 2026-11-14
-Device measurement: iPhone 13 Pro, iOS 27.0 / build 24A5390f (secondary unit)
+Device measurement: iPhone 13 Pro, iOS 27.0 / build 24A5390f (secondary unit), and
+iPhone 17 Pro, iOS 27.0.1 / build 24A446 (the target build). Both produced identical
+results.
 Static source: `firmware/24A446/kernelcache.release.macho` (27.0.1) and `firmware/24B119`
 (27.2), plus `mach/mach_vm.defs` from the macOS 27 SDK (same XNU generation).
 
@@ -96,11 +98,12 @@ So Apple did not patch this subsystem in 27.2. There is no CVE fix-site signal h
 which lowers its value as an exploit path but also means whatever behaviour it has is
 still present on 27.2.
 
-## 3. Device measurement (proven, 13 Pro / 24A5390f)
+## 3. Device measurement (proven, both devices)
 
 Added `--reclaim` to the carrier (`SockUafSpray.c` `vm_reclaim_probe()`, declaration in
 `AGXProbe-Bridging-Header.h`, dispatch + `vmReclaimProbe()` in `ContentView.swift`).
-Build `BUILD_EXIT=0`; installed and launched on the 13 Pro.
+Build `BUILD_EXIT=0`; installed and launched on the 13 Pro and then on the 17 Pro.
+The two runs are byte-identical apart from the resolved control address:
 
 ```
 [*] reclaim dlsym _mach_vm_deferred_reclamation_buffer_allocate -> 0x0
