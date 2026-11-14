@@ -1,5 +1,12 @@
 # UPL / `iopl_valid_data` cluster, re-attributed and instruction-diffed (2026-11-14)
 
+> **Correction (same day):** §3's claim that 27.2 *adds* a DART/APF/SID
+> validation call inside `vm_object_iopl_request` is **wrong**. The 27.0.1
+> image already contains it (`bl 0xacd3ca8 -> 0xad3ff9c`, sz `0x1a88`), with
+> the identical `[obj+0xa6]` tag gate and `[obj+0xa8] |= 0x80`. Both builds
+> touch exactly the same 18 `vm_object` field offsets. See
+> `analysis/krw-leads/upl-dart-not-a-272-addition-2026-11-14.md`.
+
 Status: **static analysis only — no device run, no vulnerability claim.**
 Scope: supersedes the function attributions in
 `analysis/krw-leads/upl-page-validation-changes-2026-11-14.md`. That document called

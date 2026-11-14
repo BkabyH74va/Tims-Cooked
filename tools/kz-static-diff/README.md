@@ -6,14 +6,18 @@ Small, self-contained arm64 (kernelcache) analysis scripts used to produce
 They derive the repository root from `__file__`, so they run from anywhere:
 
 ```sh
-python kz_funcinfo.py 24A446:0xfffffe000acd4d34
+python kz_funcinfo.py 24A446:0xfffffe000acd4d34   # needs numpy
 python annot.py 24A446 0xfffffe000acd4d34 0x4f0 out.s
 python kz_side.py a.s b.s          # semantic side-by-side diff
 python kz_blocks.py a.s b.s        # change blocks sorted by size
 python kz_sum.py a.s b.s           # change blocks with sample text
 python kz_adrp_ref.py 24A446 0xfffffe000705dfcd   # code sites referencing a VA
-python kz_ptrrefs.py 24A446 0xfffffe000b347a08    # data slots holding a pointer
+python kz_ptrrefs.py 24A446 0xfffffe000b347a08    # data slots holding a pointer (numpy)
+python kz_calls.py out.s 0xfffffe000acd1e18 0x20f0 24A446 --offsets   # numpy-free call fingerprint
 ```
+
+`kz_funcinfo.py` and `kz_ptrrefs.py` import `numpy`, which is **not** installed in
+the PC Python; use `kz_calls.py` / `kz_chainfind.py` / `annot.py` instead.
 
 Builds are `24A446` (iOS 27.0.1, target) and `24B119` (iOS 27.2). Requires
 `tools/pylibs/capstone` and `tools/opencode-temp/kc_fstarts.py` (both already in-repo).
