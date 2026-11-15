@@ -4,9 +4,9 @@ Date: 2026-11-15. Raw logs and hashes are in `evidence/`; do not publish raw log
 
 ## Method
 
-Ran the Mac build-host `IOSurfaceNotifyProbe.c` v14 logic on the two connected iPhones. To invoke the existing UI-only probe without tapping, built an isolated copy of the project with a temporary `--notifyrace` launch-argument dispatch. The C probe source was unchanged (SHA-256 `52a31e10a6880f57d04fb8ca0ac8947e2a5890c67995cd004a2ad235c3ea02e0`). The temporary Swift dispatch only called `run_iosurface_notify_probe()` and logged start/completion. App data containers were backed up before reinstalling the instrumented build.
+Ran the Mac build-host `IOSurfaceNotifyProbe.c` v14 logic on the two connected iPhones. To invoke the existing UI-only probe without tapping, built an isolated copy of the project with a temporary `--notifyrace` launch-argument dispatch. At build/run time, the C source was unchanged (SHA-256 `52a31e10a6880f57d04fb8ca0ac8947e2a5890c67995cd004a2ad235c3ea02e0`). After the run, only C comments/log wording were corrected to distinguish surface release from closing the bound user-client; executable probe logic was not changed. The temporary Swift dispatch only called `run_iosurface_notify_probe()` and logged start/completion. App data containers were backed up before reinstalling the instrumented build.
 
-The C harness ran its full fixed sequence: stable set/remove controls; 400 release/recreate iterations with concurrent set/remove threads; then phase A registration and surface release, 48-surface spray, and phase B stale-ID set/remove/set. This was the named v14 `IOSurfaceNotifyProbe.c` run, but it did not actually close the notifier's `IOSurfaceRootUserClient` connection.
+The C harness ran its full fixed sequence: stable set/remove controls; 400 release/recreate iterations with concurrent set/remove threads; then phase A registration and surface release, 48-surface spray, and phase B reused-ID set/remove/set. This was the named v14 `IOSurfaceNotifyProbe.c` run, but it did not actually close the notifier's `IOSurfaceRootUserClient` connection.
 
 ## Results
 
