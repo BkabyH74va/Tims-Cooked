@@ -1,7 +1,8 @@
 #!/bin/bash
 # Build the AGXProbe carrier.
 # Usage: DEV=<device-udid> ./build_race.sh
-cd ~/agx-probe-project || exit 1
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR" || exit 1
 if [ -z "$DEV" ]; then
   echo "set DEV=<device-udid> before running (see README.md)" >&2
   exit 1

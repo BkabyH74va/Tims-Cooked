@@ -1,12 +1,12 @@
 # Tims Cooked — carrier
 
-A SwiftUI app used as the on-device harness. It has **no entitlements** and runs in an
-ordinary app sandbox, which is what makes its findings meaningful — anything it can reach,
-any app can reach.
+A SwiftUI app used as an on-device research harness. It runs without entitlements in an
+ordinary app sandbox. Reachability is only one part of a security result; it does not establish
+memory corruption or exploitability.
 
-`AGXProbe/ContentView.swift` is the main entry point and contains every socket-UAF race
-variant. The file that actually builds is the one on the machine doing the building; keep the
-repository copy and the local copy identical, and sync both ways after edits.
+`AGXProbe/ContentView.swift` is the main entry point and contains the experimental socket-race
+variants. Keep local changes in sync with the reviewed repository copy, and do not commit
+signing credentials or device-specific configuration.
 
 ## Modes
 
@@ -23,7 +23,7 @@ repository copy and the local copy identical, and sync both ways after edits.
 
 ## Build and install
 
-From the repository root, on macOS with Xcode:
+From this directory, on macOS with Xcode:
 
 ```sh
 DEV=<device-udid> ./build_race.sh
@@ -33,7 +33,8 @@ xcrun devicectl device process launch --device $DEV --console --terminate-existi
     <your-bundle-id> --sockprec
 ```
 
-`build_race.sh` defaults the destination to a specific device; override it with `DEV=`.
+`build_race.sh` requires `DEV` to name the connected device. It resolves the project directory
+relative to the script, so it works from a checkout without a machine-specific path.
 
 The app writes its log into its own container (`Documents/`), and also echoes it to the
 console when launched with `--console`. `devicectl device copy from --domain-type
@@ -59,6 +60,5 @@ See `carrier/tests/README.md` for coverage.
   the main actor, or SpringBoard kills the app with a scene-creation watchdog at ~20 seconds.
 - The bridging header exposes IOKit C APIs, since iOS ships no Swift module for
   `IOKit.framework`.
-- Long-running loops are CPU-intensive by design. iOS's CPU watchdog terminates the app at
-  roughly 90 seconds of CPU time per 180-second window, so idle waits in the harness need to
-  block rather than spin — see `HANDOFF.md` for the current status of that trade-off.
+- Long-running probes are CPU-intensive. Respect iOS watchdog limits, stop after a crash or
+  unexpected reboot, and preserve logs before attempting another run.
