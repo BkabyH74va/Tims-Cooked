@@ -187,3 +187,19 @@ PurpleGfxMem surface's pages are unowned, no allocator reachable from this app â
 including the GPU allocator at matching size classes â€” takes them except the
 IOSurface region allocator itself. The external-object primitive's ceiling stays
 the IOSurface/GPU shared backing object; it does not reach kernel CPU memory.
+
+## Static close-out: the carveout path is unchanged in 27.2
+
+`tools/opencode-temp/kc_fnfp_find.py` fingerprints a function with
+relocation-normalised instructions and searches the other build for an exact
+counterpart, so address drift does not matter:
+
+| 24A446 function | role | 24B119 counterpart | verdict |
+|---|---|---|---|
+| `AppleMobileDispH18P-DCP` `0xfffffe000920e818` (sz `0x88`) | carveout name/index lookup (falls back to literal `PurpleGfxMem`) | `0xfffffe00092560ec` | **identical** |
+| `IOMobileGraphicsFamily-DCP` `0xfffffe000a15496c` (sz `0x2c0`) | DCP-side memory-region consumer (`CarveoutRegion`, `getMemoryRegion` failure log) | `0xfffffe000a1a3c50` | **identical** |
+
+No fix-site signal exists on the carveout allocation path in 27.2. Together with
+the device measurements above, there is no evidence that the IOSurface/GPU
+carveout aliasing is or was a fixed vulnerability, and no kernel client outside
+that allocator could be shown to reach those pages.
