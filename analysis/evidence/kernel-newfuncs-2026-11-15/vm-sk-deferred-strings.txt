@@ -1,0 +1,23 @@
+== vm_sk_deferred string neighbourhood
+  0x5c600 'n_lastid wrapped @%s:%d'
+  0x5c618 'site.struct vm_sk_deferred_entry'
+  0x5c639 '1122122'
+  0x5c641 'vm_sk_deferred.c'
+  0x5c652 '!os_add_overflow(*__counter, 1, __counter)'
+  0x5c67d '!os_add_overflow(*__counter, page_count, __counter)'
+  0x5c6b1 '!os_sub_overflow(*__counter, 1, __counter)'
+  0x5c6dc '!os_sub_overflow(*__counter, e->vmsk_page_count, __counter)'
+  0x5c718 'vm_sk_deferred: failed to start drain thread (%d) @%s:%d'
+  0x5c751 'vm_sk_deferred_drain'
+  0x5c766 'kr == KERN_SUCCESS'
+  0x5c779 'Page modified after framebank withdraw %p'
+  0x5c7a3 ' @%s:%d'
+  0x5c7ab 'shared_region'
+  0x5c7b9 'shared_region_find_key('
+== framebank/xnuteller metadata (present in both builds)
+  0x44e40 's=Q})}8'
+  0x44e48 'v24@?0{exsurfacedarwinservice_exsurfacedarwinservice_decrementdarwinusecount__result_s=C(?={exsurfacedarwinservice_exsurfacedarwinerror_s=Q})}8'
+  0x44ed8 'v24@?0{exsurfacedarwinservice_exsurfacedarwinservice_connectionremove__r'
+== framebank TB_FATAL messages
+  0x4e880 'elegate_statvalue__opt_decode(msg, &item) == TB_ERROR_SUCCESS) && "attempting to decode type: StatsDelegate.StatValue?", '
+  0x4e8fb ' (%s:'
