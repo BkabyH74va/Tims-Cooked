@@ -1,0 +1,8 @@
+﻿
+########## text needle 'mapping=%p, address=0x%llx, size=0x%llx' (39 bytes)
+  kc_off=0x00993dd8 owner=com.apple.iokit.IOGPUFamily __TEXT.__cstring va=0xfffffe0007997dd8
+  -> 1 hit(s)
+
+########## text needle 'IOSurface Backing Store' (23 bytes)
+  kc_off=0x0099508d owner=com.apple.iokit.IOGPUFamily __TEXT.__cstring va=0xfffffe000799908d
+  -> 1 hit(s)

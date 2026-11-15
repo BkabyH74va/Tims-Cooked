@@ -1,0 +1,58 @@
+  00fffffe000a3307f0: bti      c
+  00fffffe000a3307f4: pacibsp  
+  00fffffe000a3307f8: sub      sp, sp, #0x40
+  00fffffe000a3307fc: stp      x20, x19, [sp, #0x20]
+  00fffffe000a330800: stp      x29, x30, [sp, #0x30]
+  00fffffe000a330804: add      x29, sp, #0x30
+  00fffffe000a330808: mov      x19, x2
+  00fffffe000a33080c: mov      x20, x1
+  00fffffe000a330810: adrp     x8, #0xfffffe0008383000
+  00fffffe000a330814: ldr      x8, [x8, #0x8c0]
+  00fffffe000a330818: ldr      x8, [x8]
+  00fffffe000a33081c: str      x8, [sp, #0x18]
+  00fffffe000a330820: mov      x8, #-0x5555555555555556
+  00fffffe000a330824: str      x8, [sp, #0x10]
+  00fffffe000a330828: add      x2, sp, #0x10
+  00fffffe000a33082c: bl       #0xfffffe000a3308d8
+  00fffffe000a330830: cbz      w0, #0xfffffe000a330844
+  00fffffe000a330834: ldr      x8, [sp, #0x10]
+  00fffffe000a330838: lsr      x9, x8, #0x20
+  00fffffe000a33083c: cbnz     x9, #0xfffffe000a33084c
+  00fffffe000a330840: str      w8, [x19]
+  00fffffe000a330844: mov      w0, #1
+  00fffffe000a330848: b        #0xfffffe000a330874
+  00fffffe000a33084c: str      x20, [sp]
+  00fffffe000a330850: adrp     x0, #0xfffffe0007a18000
+  00fffffe000a330854: add      x0, x0, #0x790
+  00fffffe000a330858: adrp     x1, #0xfffffe0008383000
+  00fffffe000a33085c: ldr      x1, [x1, #0x8c8]
+  00fffffe000a330860: adrp     x3, #0xfffffe0007a1e000
+  00fffffe000a330864: add      x3, x3, #0xa81
+  00fffffe000a330868: mov      w2, #0x10
+  00fffffe000a33086c: bl       #0xfffffe000a35a3fc
+  00fffffe000a330870: mov      w0, #0
+  00fffffe000a330874: ldr      x8, [sp, #0x18]
+  00fffffe000a330878: adrp     x9, #0xfffffe0008383000
+  00fffffe000a33087c: ldr      x9, [x9, #0x8c0]
+  00fffffe000a330880: ldr      x9, [x9]
+  00fffffe000a330884: cmp      x9, x8
+  00fffffe000a330888: b.ne     #0xfffffe000a33089c
+  00fffffe000a33088c: ldp      x29, x30, [sp, #0x30]
+  00fffffe000a330890: ldp      x20, x19, [sp, #0x20]
+  00fffffe000a330894: add      sp, sp, #0x40
+  00fffffe000a330898: retab    
+  00fffffe000a33089c: bl       #0xfffffe000a35a3ec
+  00fffffe000a3308a0: bti      c
+  00fffffe000a3308a4: pacibsp  
+  00fffffe000a3308a8: stp      x29, x30, [sp, #-0x10]!
+  00fffffe000a3308ac: mov      x29, sp
+  00fffffe000a3308b0: bl       #0xfffffe000a33b9d0
+  00fffffe000a3308b4: adrp     x8, #0xfffffe0008383000
+  00fffffe000a3308b8: ldr      x8, [x8, #0x870]
+  00fffffe000a3308bc: ldr      x1, [x8]
+  00fffffe000a3308c0: ldp      x29, x30, [sp], #0x10
+  00fffffe000a3308c4: autibsp  
+  00fffffe000a3308c8: eor      x16, x30, x30, lsl #1
+  00fffffe000a3308cc: tbz      x16, #0x3e, #0xfffffe000a3308d4
+  00fffffe000a3308d0: brk      #0xc471
+  00fffffe000a3308d4: b        #0xfffffe000a35a15c

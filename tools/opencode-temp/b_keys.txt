@@ -1,0 +1,363 @@
+"%s: failed to get IOSurface root" @%s:%d
+"Bad IOSurfaceClient" @%s:%d
+"IOSurface does not support release with when != 1" @%s:%d
+"IOSurface does not support taggedRelease with when != 1" @%s:%d
+"IOSurface in slot %08x has a mismatched surface ID of %08x\n" @%s:%d
+"IOSurface released with non-zero client retain count: %p" @%s:%d
+"IOSurface::prune_transaction_list unexpeted transaction list length" @%s:%d
+"IOSurfaceMemoryPool does not support taggedRelease with when != 1" @%s:%d
+"IOSurfaceRoot::removeEventNotifierClient() invoked with bad client notifier %p" @%s:%d
+"IOSurfaceRoot::terminateDeviceCachesWithAccelerator() timeout." @%s:%d
+"IOSurfaceRootUserClient: asked to allocate client shared id %08x not known by IOSurfaceRoot" @%s:%d
+"IOSurfaceRootUserClient::set_surface_handle asked to set handle %08x that was not free: %p" @%s:%d
+"IOSurfaceSharedEvent does not support release with when != 1" @%s:%d
+"IOSurfaceSharedEvent does not support taggedRelease with when != 1" @%s:%d
+"IOSurfaceSharedEvent::free() called with non-empty notification list" @%s:%d
+"IOSurfaceSharedEventListener::free(): notification list is not empty" @%s:%d
+"IOSurfaceTransaction::serialize panic because of attempting to write to nullptr." @%s:%d
+====> %s:%d IOSurfaceMemoryPool: %s (%d) can't access pool id %llu (wrong entitlements)
+====> %s:%d IOSurfaceMemoryPool: %s (%d) invalid task (%p) can't access pool id %llu (wrong entitlements)
+====> %s:%d Unable to pre-allocate IOSurfaceMemoryPool memory for pool id %llu
+Attempt to %s IOSurface useCount while kIOSurfaceProhibitUseCount is set, ignored (creatorPID=%u currentPID=%u category=%u).
+Cannot allocate IOSurfaceShared
+IONewZero failed to alloc IOSurfaceClientSharedListEntry
+IONewZero failed to alloc IOSurfaceSharedListEntry
+IOSurface
+IOSurface %08x: Current device cache changed while purgeability status was changing.
+IOSurface Debug Configuration
+IOSurface Parameters
+IOSurface allowing global lookups (with warnings)
+IOSurface count of %d approaching limit of %d
+IOSurface disallowing global lookups
+IOSurface disallowing pixel size casting by default
+IOSurface fence debug: surface: %p id: %d
+IOSurface using pageable shmems
+IOSurface warning: buffer allocation failed.  %llu x %llu fmt: %08x size: %llu bytes
+IOSurface.cpp
+IOSurface: %s component count is too large.
+IOSurface: %s component count is too small.
+IOSurface: %s component count mismatch.
+IOSurface: %s exceeds maximum value
+IOSurface: /vram declares %u carveout(s) but %u resolved; positions are ambiguous, installing none
+IOSurface: /vram declares %u carveout(s) but none resolved
+IOSurface: AGX BytesPerCompressedTileHeader of plane[%d] must be 2 or 8 or 32
+IOSurface: Cannot set both global and private properties
+IOSurface: Cannot use kIOSurfaceClientAddress with compressed iosurfaces.
+IOSurface: HTPC compressed plane[%d] Header region overlaps data region
+IOSurface: HTPC compressed plane[%d] Tile header must be 32-bit or 64-bit
+IOSurface: Planar surfaces must specify a valid buffer width and height.
+IOSurface: Required property %s missing
+IOSurface: address ranges size not multiple of IOAddressRange
+IOSurface: aligned allocation size overflow
+IOSurface: aligned height calculation overflow
+IOSurface: allocation size of %llu exceeds limit of %llu bytes
+IOSurface: allocation size overflow
+IOSurface: buffer allocation size is too small to cover valid image area of plane %d: fAllocSize=%llu, planeLimit=%llu
+IOSurface: buffer allocation size is too small to cover valid image area: fAllocSize=%llu, requiredSizeInBytes=%llu
+IOSurface: buffer bytes per element is zero.
+IOSurface: buffer bytes per row value is too small
+IOSurface: buffer element height is zero.
+IOSurface: buffer element width is zero.
+IOSurface: buffer required width in bytes overflow
+IOSurface: buffer width overflow
+IOSurface: bytesPerRow calculation overflow
+IOSurface: child surface plane[%d] Image data doesn't fit within allocated parent plane size
+IOSurface: child surfaces must specify an allocation size less than or equal to the parent surface size
+IOSurface: client direction not InOut or Out
+IOSurface: compressed plane[%d] BytesPerRowOfCompressedTileHeaderGroups needs to be enough for a row of groups of tiles at this width
+IOSurface: compressed plane[%d] CompressedTileHeaderRegionHeight must exactly cover the height in tiles
+IOSurface: compressed plane[%d] CompressedTileHeaderRegionWidth must exactly cover the width in tiles
+IOSurface: compressed plane[%d] CompressedTileHeight must be at least 1
+IOSurface: compressed plane[%d] CompressedTileHeight must be less than 1024
+IOSurface: compressed plane[%d] CompressedTileHeight must be power of 2
+IOSurface: compressed plane[%d] CompressedTileWidth must be at least 1
+IOSurface: compressed plane[%d] CompressedTileWidth must be less than 1024
+IOSurface: compressed plane[%d] CompressedTileWidth must be power of 2
+IOSurface: compressed plane[%d] Data region doesn't fit into plane size
+IOSurface: compressed plane[%d] Data region overlaps header region
+IOSurface: compressed plane[%d] HTPCPredictionSelector must be in range
+IOSurface: compressed plane[%d] HTPCVerticalHeaderGroupingMode must be in range
+IOSurface: compressed plane[%d] Header region doesn't fit into plane size
+IOSurface: compressed plane[%d] Header region height must fit header group
+IOSurface: compressed plane[%d] Height + CompressedTileHeight doesn't fit in 32 bits
+IOSurface: compressed plane[%d] Plane height must fit into tiles
+IOSurface: compressed plane[%d] Plane width must fit into tiles
+IOSurface: compressed plane[%d] Width + CompressedTileWidth doesn't fit in 32 bits
+IOSurface: compressed plane[%d] bytesPerCompressedTileHeaderGroup * planeWidthInCompressedTiles doesn't fit in 32 bits
+IOSurface: compressed plane[%d] dataRegionTotalSize doesn't fit in 32 bits
+IOSurface: compressed plane[%d] extended left is not supported for compressed iosurfaces
+IOSurface: compressed plane[%d] extended top is not supported for compressed iosurfaces
+IOSurface: compressed plane[%d] extended width calculation overflow
+IOSurface: compressed plane[%d] extendedHeight overflow
+IOSurface: compressed plane[%d] extra width calculation overflow
+IOSurface: compressed plane[%d] full width calculation overflow
+IOSurface: compressed plane[%d] kIOSurfacePlaneBytesPerRowOfTileData is %d less than WidthInCompressedTiles %d x BytesPerTileData %d Bytes.
+IOSurface: compressed plane[%d] kIOSurfacePlaneHorizontalPixelOffsetWithinCompressedTileArray is more than a kIOSurfacePlaneCompressedTileWidth.
+IOSurface: compressed plane[%d] kIOSurfacePlaneVerticalPixelOffsetWithinCompressedTileArray is more than a kIOSurfacePlaneCompressedTileHeight.
+IOSurface: compressed plane[%d] planeHorizontalPixelOffsetWithinCompressedTile exceeds compressedPlaneBytesPerTileRow
+IOSurface: compressed plane[%d] roundedExtendedHeight overflow
+IOSurface: compressed plane[%d] rowOfUncompressedTiles doesn't fit in 32 bits
+IOSurface: compressed plane[%d] tilesToCoverHeight + headersInGroup doesn't fit in 32 bits
+IOSurface: compressed plane[%d] uncompressedTileSize doesn't fit in 32 bits
+IOSurface: couldn't count /vram's reg tuples; assuming a single carveout
+IOSurface: discovered %u display carveout(s) in /vram
+IOSurface: fClientAlignedOffset >= page_size
+IOSurface: kIOSurfacePlaneBitsPerBlock out of range
+IOSurface: kIOSurfacePlaneBitsPerElement out of range
+IOSurface: kIOSurfacePlaneBytesPerElement out of range
+IOSurface: kIOSurfacePlaneDataRegionBytesPerSlice %d exceeds maximum value.
+IOSurface: kIOSurfacePlaneDataRegionBytesPerSlice %d is smaller than expected value %d .
+IOSurface: kIOSurfacePlaneDataRegionBytesPerSlice must be present for multi-slice plane %d with sliceCount %d .
+IOSurface: kIOSurfacePlaneHeaderRegionBytesPerSlice %d exeeds maximum value.
+IOSurface: kIOSurfacePlaneHeaderRegionBytesPerSlice %d is smaller than expected value %d .
+IOSurface: kIOSurfacePlaneHeaderRegionBytesPerSlice must be present for multi-slice plane %d with sliceCount %d .
+IOSurface: maximum plane count of %d exceeded.
+IOSurface: multi-slice interchange compressed plane[%d] (DataRegionBytesPerSlice %d + HeaderRegionBytesPerSlice %d) * sliceCount %d size is greater than total planeSize %lld
+IOSurface: plane limit calculation overflow
+IOSurface: plane[%d] Image data doesn't fit within allocated plane size
+IOSurface: plane[%d] base %016llx overlaps with previous plane %d
+IOSurface: plane[%d] base %016llx plus plane size %016llx exceeds 64bit limit
+IOSurface: plane[%d] bytes per element is zero.
+IOSurface: plane[%d] bytes per row value of %llu is too small
+IOSurface: plane[%d] bytesPerRow exceeds 64bit limit
+IOSurface: plane[%d] calculated bytesPerRow exceeds 64bit limit
+IOSurface: plane[%d] calculated offset value exceeds 64bit limit
+IOSurface: plane[%d] calculated size value exceeds 64bit limit
+IOSurface: plane[%d] calculated width in pixels exceeds 64bit limit
+IOSurface: plane[%d] element height is zero.
+IOSurface: plane[%d] element width is zero.
+IOSurface: plane[%d] extended height exceeds 64bit limit
+IOSurface: plane[%d] extended left exceeds 64bit limit
+IOSurface: plane[%d] extended width exceeds 64bit limit
+IOSurface: plane[%d] illegal compression footprint for type kIOSurfaceCompressionTypeInterchangeLossy %lld 
+IOSurface: plane[%d] illegal compression type: %lld
+IOSurface: plane[%d] minimum bytes per row value exceeds 64bit limit
+IOSurface: plane[%d] minimum extended left bytes per row value exceeds 64bit limit
+IOSurface: plane[%d] offset %016llx is less than plane[%d] base %016llx
+IOSurface: plane[%d] parseAdditionalPlaneInfo failed.
+IOSurface: plane[%d] plane width in bytes exceeds 64bit limit
+IOSurface: plane[%d] required size exceeds 64bit limit
+IOSurface: plane[%d] required size for one line exceeds 64bit limit
+IOSurface: plane[%d] size is zero
+IOSurface: plane[%d] total required size exceeds 64bit limit
+IOSurface: plane[%d] total width in elements exceeds 64bit limit
+IOSurface: required allocation size overflow
+IOSurface: required bytes per line overflow
+IOSurface: required image bytes overflow
+IOSurface: required planar allocation size overflow
+IOSurface: sliceCount provided %d is out of bound for maximum / minimum number of required slices.
+IOSurface::::parse_properties() kIOSurfacePlaneInfo array must not be empty.
+IOSurface::allocate() - requested cache mode %08x incompatible with memory region cache mode %08x
+IOSurface::cleanProcessorCaches memory prepare failed
+IOSurface::copyTimingInfo() - dictionary copy failed
+IOSurface::createWriteFence: WARNING: IOFence new failure!
+IOSurface::flushProcessorCaches memory prepare failed
+IOSurface::parse_properties() parseAdditionalPlaneInfo failed.
+IOSurface::parse_properties() problem with kIOSurfaceSubsampling
+IOSurface::setTimestamp() - dictionary create failure
+IOSurface::setTimestamp() - setValue for timing dictionary failed
+IOSurface::setTimestamp() - setValue for timing info failed
+IOSurface::setTimestamp() - timestamp create failed
+IOSurface::setTimestamp() - timing dictionary create failed
+IOSurfaceAddress
+IOSurfaceAddressFormat
+IOSurfaceAddressOffset
+IOSurfaceAddressRanges
+IOSurfaceAgentMask alloc failed
+IOSurfaceAllocSize
+IOSurfaceAllocateFromSuperbuffer
+IOSurfaceBitsPerBlock
+IOSurfaceBufferTileFormat
+IOSurfaceBufferTileMode
+IOSurfaceBytesPerElement
+IOSurfaceBytesPerRow
+IOSurfaceCacheMode
+IOSurfaceClass
+IOSurfaceClient
+IOSurfaceDecoderTimes
+IOSurfaceDefaultAttachments
+IOSurfaceDefaultBulkAttachments
+IOSurfaceDescriptor
+IOSurfaceDescriptorComponent
+IOSurfaceDescriptorContext
+IOSurfaceDeviceCache
+IOSurfaceDeviceMemoryRegion
+IOSurfaceDeviceMemoryRegion: Couldn't get device memory with index %u for service %s
+IOSurfaceDeviceMemoryRegion: Couldn't map device memory
+IOSurfaceDeviceMemoryRegion: zero-length device memory with index %u for service %s
+IOSurfaceDirection
+IOSurfaceDisableMapperFlush
+IOSurfaceDisplayDitherCbThresholds
+IOSurfaceDisplayDitherCrThresholds
+IOSurfaceDisplayDitherThresholds
+IOSurfaceDisplayDitherYThresholds
+IOSurfaceDisplayTimes
+IOSurfaceEDRFactor
+IOSurfaceElementHeight
+IOSurfaceElementWidth
+IOSurfaceEnableStatistics
+IOSurfaceEncoderTimes
+IOSurfaceEvent.cpp
+IOSurfaceFence.cpp
+IOSurfaceFenceTransaction.cpp
+IOSurfaceGPUGlobalRO
+IOSurfaceGPUTimes
+IOSurfaceHeight
+IOSurfaceHostOnly
+IOSurfaceIsGlobal
+IOSurfaceIsPrivate
+IOSurfaceMapCacheAttribute
+IOSurfaceMemoryCallback
+IOSurfaceMemoryPool
+IOSurfaceMemoryPool.cpp
+IOSurfaceMemoryPool: %s (%d) can't access pool id %llu (wrong entitlements)
+IOSurfaceMemoryPool: %s (%d) invalid task (%p) can't access pool id %llu (wrong entitlements)
+IOSurfaceMemoryPoolBunch
+IOSurfaceMemoryPoolCacheModeSwitchEnabled
+IOSurfaceMemoryPoolEntitlement
+IOSurfaceMemoryPoolInfo
+IOSurfaceMemoryPoolSize
+IOSurfaceMemoryPoolZerofillEnabled
+IOSurfaceMemoryRegion
+IOSurfaceMemoryTag
+IOSurfaceName
+IOSurfaceNonPurgeable
+IOSurfaceOffset
+IOSurfacePixelFormat
+IOSurfacePixelSizeCastingAllowed
+IOSurfacePlaneBase
+IOSurfacePlaneBitsPerBlock
+IOSurfacePlaneBitsPerElement
+IOSurfacePlaneBytesPerCompressedTileHeader
+IOSurfacePlaneBytesPerElement
+IOSurfacePlaneBytesPerRow
+IOSurfacePlaneBytesPerRowOfCompressedTileHeaderGroups
+IOSurfacePlaneBytesPerRowOfTileData
+IOSurfacePlaneBytesPerTileData
+IOSurfacePlaneComponentBitDepths
+IOSurfacePlaneComponentBitOffsets
+IOSurfacePlaneComponentNames
+IOSurfacePlaneComponentRanges
+IOSurfacePlaneComponentTypes
+IOSurfacePlaneCompressedTileDataRegionOffset
+IOSurfacePlaneCompressedTileHeaderRegionOffset
+IOSurfacePlaneCompressedTileHeight
+IOSurfacePlaneCompressedTileWidth
+IOSurfacePlaneCompressionFootprint
+IOSurfacePlaneCompressionType
+IOSurfacePlaneDataRegionBytesPerSlice
+IOSurfacePlaneElementHeight
+IOSurfacePlaneElementWidth
+IOSurfacePlaneExtendedPixelsOnBottom
+IOSurfacePlaneExtendedPixelsOnLeft
+IOSurfacePlaneExtendedPixelsOnRight
+IOSurfacePlaneExtendedPixelsOnTop
+IOSurfacePlaneHTPCPredictionSelector
+IOSurfacePlaneHTPCVerticalHeaderGroupingMode
+IOSurfacePlaneHeaderRegionBytesPerSlice
+IOSurfacePlaneHeight
+IOSurfacePlaneHeightInCompressedTiles
+IOSurfacePlaneHorizontalPixelOffsetWithinCompressedTileArray
+IOSurfacePlaneInfo
+IOSurfacePlaneOffset
+IOSurfacePlaneSize
+IOSurfacePlaneVerticalPixelOffsetWithinCompressedTileArray
+IOSurfacePlaneWidth
+IOSurfacePlaneWidthInCompressedTiles
+IOSurfacePreallocPages
+IOSurfacePrefetchPages
+IOSurfaceProhibitUseCount
+IOSurfaceProtectionOptions
+IOSurfacePurgeWhenNotInUse
+IOSurfaceResetDefaultAttachmentsWhenNotInUse
+IOSurfaceRoot
+IOSurfaceRoot using IOSurfaceRootParavirtMapperInterface
+IOSurfaceRoot using IOSurfaceRootParavirtMapperInterface %p
+IOSurfaceRoot.cpp
+IOSurfaceRoot: Initial shared event memory alloc failed
+IOSurfaceRoot: deadlock detection depth limit %d reached
+IOSurfaceRoot::alloc_surface_id: Map said entry free but something was there
+IOSurfaceRootParavirtMapperInterface
+IOSurfaceRootUserClient
+IOSurfaceRootUserClient.cpp
+IOSurfaceRootUserClient: couldn't map shared memory region into client
+IOSurfaceRootUserClient: duplicate listener refcon %08llx
+IOSurfaceScalerTimes
+IOSurfaceSendRight
+IOSurfaceShared
+IOSurfaceShared.cpp
+IOSurfaceSharedEvent
+IOSurfaceSharedEventListener
+IOSurfaceSharedEventNotification
+IOSurfaceSharedEventNotificationPort
+IOSurfaceSharedEventReference
+IOSurfaceSharedRO alloc failed
+IOSurfaceSharedRW alloc failed
+IOSurfaceSliceCount
+IOSurfaceSmaMemoryRegion
+IOSurfaceSubsampling
+IOSurfaceSuperbuffer
+IOSurfaceSysMemOnly
+IOSurfaceTimingInfo
+IOSurfaceTransaction
+IOSurfaceTransaction.cpp
+IOSurfaceType
+IOSurfaceUseReserve
+IOSurfaceWidth
+IOSurfaceWiredSendRight
+IOSurfaceYCbCrMatrix
+Perf: Process %s (%d) IOSurface creation count: %d total count: %d
+Perf: Process %s (%d) has created %d IOSurfaces out of a limit of %d
+Perf: Process %s (%d) has created %d IOSurfaces out of a limit of %d, possible leak?
+Security: Process %s (%d) creating global IOSurfaces accessible to any other process
+Security: Process %s (%d) failed global (insecure) IOSurface lookup for surface id %08x
+Security: Process %s (%d) relying on global (insecure) IOSurface lookups
+bool IOSurfaceSharedEventListener::init(thread_call_priority_t, IOWorkLoop *, bool, eIOSurfaceSharedEventAgentMask)
+com.apple.iokit.IOSurface
+com.apple.private.IOSurface.protected-access
+iokit.IOSurface
+kIOSurfaceTouchEventTimes
+provider not IOSurfaceRoot
+site.IOSurface *
+site.IOSurfaceAgentMaskInfo
+site.IOSurfaceClient
+site.IOSurfaceClient *
+site.IOSurfaceClientPlaneInfo
+site.IOSurfaceClientSharedListEntry
+site.IOSurfaceColorAndSpatialKeysStruct
+site.IOSurfaceDescriptor
+site.IOSurfaceDescriptorComponent
+site.IOSurfaceDescriptorContext
+site.IOSurfaceDescriptorPrivate
+site.IOSurfaceDeviceCache
+site.IOSurfaceDeviceMemoryRegion
+site.IOSurfaceEventNotifierClient
+site.IOSurfaceFenceTraceData
+site.IOSurfaceMemoryCallback
+site.IOSurfaceMemoryPool
+site.IOSurfaceMemoryPoolBunch
+site.IOSurfaceMemoryRegion
+site.IOSurfaceMemoryRegionNode
+site.IOSurfaceMemoryTag
+site.IOSurfaceNotifyRequest
+site.IOSurfacePlaneInfo
+site.IOSurfaceRoot
+site.IOSurfaceRootParavirtMapperInterface
+site.IOSurfaceRootUserClient
+site.IOSurfaceSendRight
+site.IOSurfaceShared
+site.IOSurfaceSharedEvent
+site.IOSurfaceSharedEvent *
+site.IOSurfaceSharedEventListener
+site.IOSurfaceSharedEventNotification
+site.IOSurfaceSharedEventNotificationPort
+site.IOSurfaceSharedEventReference
+site.IOSurfaceSharedListEntry
+site.IOSurfaceSmaMemoryRegion
+site.IOSurfaceTaskToClientMap
+site.IOSurfaceTransaction
+site.IOSurfaceTransactionSerialized
+site.IOSurfaceWiredSendRight
+site.OSSharedPtr<IOSurfaceDeviceCache>
+uint64_t IOSurface::getIndexedTimestamp(uint64_t) const
+virtual bool IOSurfaceDeviceMemoryRegion::init(IOSurfaceRoot *, OSDictionary *, const char *, uint32_t, uint32_t)

@@ -1,0 +1,7 @@
+﻿fileset entries 301
+members with __TEXT_EXEC: 301
+
+owner of 0xfffffe000a325000: (18446741874857352864, 14616, 'com.apple.iokit.IOStreamFamily', 10567712)
+  0xfffffe000a305610 - 0xfffffe000a321e94  com.apple.iokit.IOStorageFamily
+  0xfffffe000a321ea0 - 0xfffffe000a3257b8  com.apple.iokit.IOStreamFamily
+  0xfffffe000a3257c0 - 0xfffffe000a35a71c  com.apple.iokit.IOSurface

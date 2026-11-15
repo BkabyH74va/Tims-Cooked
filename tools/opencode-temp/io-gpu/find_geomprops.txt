@@ -1,0 +1,31 @@
+﻿
+########## text needle 'IOSurfacePlaneBytesPerRowOfTileData' (35 bytes)
+  kc_off=0x00a15fd5 owner=com.apple.iokit.IOSurface __TEXT.__cstring va=0xfffffe0007a19fd5
+  kc_off=0x00a1951d owner=com.apple.iokit.IOSurface __TEXT.__os_log va=0xfffffe0007a1d51d
+  -> 2 hit(s)
+
+########## text needle 'IOSurfacePlaneBytesPerTileData' (30 bytes)
+  kc_off=0x00a15fb6 owner=com.apple.iokit.IOSurface __TEXT.__cstring va=0xfffffe0007a19fb6
+  -> 1 hit(s)
+
+########## text needle 'IOSurfacePlaneDataRegionBytesPerSlice' (37 bytes)
+  kc_off=0x00a1600d owner=com.apple.iokit.IOSurface __TEXT.__cstring va=0xfffffe0007a1a00d
+  kc_off=0x00a199dc owner=com.apple.iokit.IOSurface __TEXT.__os_log va=0xfffffe0007a1d9dc
+  kc_off=0x00a19a29 owner=com.apple.iokit.IOSurface __TEXT.__os_log va=0xfffffe0007a1da29
+  kc_off=0x00a19a83 owner=com.apple.iokit.IOSurface __TEXT.__os_log va=0xfffffe0007a1da83
+  -> 4 hit(s)
+
+########## text needle 'IOSurfacePlaneHeaderRegionBytesPerSlice' (39 bytes)
+  kc_off=0x00a16033 owner=com.apple.iokit.IOSurface __TEXT.__cstring va=0xfffffe0007a1a033
+  kc_off=0x00a19b81 owner=com.apple.iokit.IOSurface __TEXT.__os_log va=0xfffffe0007a1db81
+  kc_off=0x00a19bcf owner=com.apple.iokit.IOSurface __TEXT.__os_log va=0xfffffe0007a1dbcf
+  kc_off=0x00a19c2b owner=com.apple.iokit.IOSurface __TEXT.__os_log va=0xfffffe0007a1dc2b
+  -> 4 hit(s)
+
+########## text needle 'IOSurfaceSliceCount' (19 bytes)
+  kc_off=0x00a15ff9 owner=com.apple.iokit.IOSurface __TEXT.__cstring va=0xfffffe0007a19ff9
+  -> 1 hit(s)
+
+########## text needle 'IOSurfacePlaneBytesPerRowOfCompressedTileHeaderGroups' (53 bytes)
+  kc_off=0x00a15e9f owner=com.apple.iokit.IOSurface __TEXT.__cstring va=0xfffffe0007a19e9f
+  -> 1 hit(s)

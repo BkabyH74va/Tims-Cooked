@@ -1,0 +1,68 @@
+size 13061288
+magic 0xfeedfacf
+ncmds 27
+__TEXT           vmaddr=fffffe000700c000 vmsize=108000 fileoff=0 filesize=108000
+__DATA_CONST     vmaddr=fffffe0007dd4000 vmsize=144000 fileoff=108000 filesize=144000
+__DATA_SPTM      vmaddr=fffffe000b6bc000 vmsize=4c000 fileoff=24c000 filesize=4c000
+__TEXT_EXEC      vmaddr=fffffe000ab44000 vmsize=8fc000 fileoff=298000 filesize=8fc000
+__TEXT_BOOT_EXEC vmaddr=fffffe000b448000 vmsize=8000 fileoff=b94000 filesize=8000
+__KLD            vmaddr=fffffe000b440000 vmsize=4000 fileoff=b9c000 filesize=4000
+__LASTDATA_CONST vmaddr=fffffe0007f18000 vmsize=4000 fileoff=ba0000 filesize=4000
+__LAST           vmaddr=fffffe000b444000 vmsize=4000 fileoff=ba4000 filesize=4000
+__KLDDATA        vmaddr=fffffe000b708000 vmsize=8000 fileoff=ba8000 filesize=8000
+__DATA           vmaddr=fffffe000b710000 vmsize=14c000 fileoff=bb0000 filesize=28000
+__BOOTDATA       vmaddr=fffffe000b85c000 vmsize=48000 fileoff=bd8000 filesize=48000
+__PRELINK_TEXT   vmaddr=fffffe000b448000 vmsize=0 fileoff=c20000 filesize=0
+__PRELINK_INFO   vmaddr=fffffe000b8a4000 vmsize=0 fileoff=c20000 filesize=0
+__PLK_TEXT_EXEC  vmaddr=fffffe000b8a4000 vmsize=0 fileoff=c20000 filesize=0
+__PRELINK_DATA   vmaddr=fffffe000b8a4000 vmsize=0 fileoff=c20000 filesize=0
+__PLK_DATA_CONST vmaddr=fffffe000b8a4000 vmsize=0 fileoff=c20000 filesize=0
+__PLK_LLVM_COV   vmaddr=fffffe000b8a4000 vmsize=0 fileoff=c20000 filesize=0
+__PLK_LINKEDIT   vmaddr=fffffe000b8a4000 vmsize=0 fileoff=c20000 filesize=0
+__LINKINFO       vmaddr=fffffe000b9c4000 vmsize=4c000 fileoff=c20000 filesize=4c000
+__LINKEDIT       vmaddr=fffffe000ba10000 vmsize=c000 fileoff=c6c000 filesize=8ca8
+
+==================== 0xfffffe000b2aa9f8 fileoff 0x9fe9f8 ====================
+  00fffffe000b2aa9f8: pacibsp  
+  00fffffe000b2aa9fc: sub      sp, sp, #0x110
+  00fffffe000b2aaa00: stp      x28, x27, [sp, #0xb0]
+  00fffffe000b2aaa04: stp      x26, x25, [sp, #0xc0]
+  00fffffe000b2aaa08: stp      x24, x23, [sp, #0xd0]
+  00fffffe000b2aaa0c: stp      x22, x21, [sp, #0xe0]
+  00fffffe000b2aaa10: stp      x20, x19, [sp, #0xf0]
+  00fffffe000b2aaa14: stp      x29, x30, [sp, #0x100]
+  00fffffe000b2aaa18: add      x29, sp, #0x100
+  00fffffe000b2aaa1c: mov      x22, x0
+  00fffffe000b2aaa20: cbz      x5, #0xfffffe000b2aaa28
+  00fffffe000b2aaa24: str      xzr, [x5]
+  00fffffe000b2aaa28: cmp      x1, #4
+  00fffffe000b2aaa2c: b.lo     #0xfffffe000b2aaa7c
+  00fffffe000b2aaa30: ldrb     w8, [x22]
+  00fffffe000b2aaa34: cmp      w8, #0xd4
+  00fffffe000b2aaa38: cset     w24, eq
+  00fffffe000b2aaa3c: b.eq     #0xfffffe000b2aaa74
+  00fffffe000b2aaa40: adrp     x0, #0xfffffe0007044000
+  00fffffe000b2aaa44: add      x0, x0, #0x828
+  00fffffe000b2aaa48: mov      x23, x1
+  00fffffe000b2aaa4c: mov      x1, x22
+  00fffffe000b2aaa50: mov      x19, x4
+  00fffffe000b2aaa54: mov      x20, x3
+  00fffffe000b2aaa58: mov      x21, x2
+  00fffffe000b2aaa5c: bl       #0xfffffe000b44c51c
+  00fffffe000b2aaa60: mov      x1, x23
+  00fffffe000b2aaa64: mov      x2, x21
+  00fffffe000b2aaa68: mov      x3, x20
+  00fffffe000b2aaa6c: mov      x4, x19
+  00fffffe000b2aaa70: cbnz     w0, #0xfffffe000b2aaa7c
+  00fffffe000b2aaa74: tst      x22, #3
+  00fffffe000b2aaa78: b.eq     #0xfffffe000b2aaaa4
+  00fffffe000b2aaa7c: mov      x19, #0
+  00fffffe000b2aaa80: mov      x0, x19
+  00fffffe000b2aaa84: ldp      x29, x30, [sp, #0x100]
+  00fffffe000b2aaa88: ldp      x20, x19, [sp, #0xf0]
+  00fffffe000b2aaa8c: ldp      x22, x21, [sp, #0xe0]
+  00fffffe000b2aaa90: ldp      x24, x23, [sp, #0xd0]
+  00fffffe000b2aaa94: ldp      x26, x25, [sp, #0xc0]
+  00fffffe000b2aaa98: ldp      x28, x27, [sp, #0xb0]
+  00fffffe000b2aaa9c: add      sp, sp, #0x110
+  00fffffe000b2aaaa0: retab    

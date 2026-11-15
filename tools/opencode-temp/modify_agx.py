@@ -1,0 +1,8 @@
+f = open('/Users/USER/agx-probe-project/AGXProbe/ContentView.swift', 'r')
+content = f.read()
+f.close()
+content = content.replace('for targetCls in ["AppleDiskImages2", "AppleSmartIO2", "AppleDiskImagesController", "AppleSmartIO"]', 'for targetCls in ["AppleDiskImages2", "AppleSmartIO2", "AppleDiskImagesController", "AppleSmartIO", "AppleAVE2", "AppleAVD", "IOThunderboltFamily", "AppleSEPManager", "AppleProcessorTrace"]')
+f = open('/Users/USER/agx-probe-project/AGXProbe/ContentView.swift', 'w')
+f.write(content)
+f.close()
+print('done')

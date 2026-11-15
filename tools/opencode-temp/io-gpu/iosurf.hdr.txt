@@ -1,0 +1,22 @@
+﻿file 314376 ncmds 10 filetype 11
+SEG __TEXT                   vmaddr=0xfffffe0007a18790 vmsize=0x8000 fileoff=0x0 filesize=0x8000 nsects=3
+SEG __TEXT_EXEC              vmaddr=0xfffffe000a3257c0 vmsize=0x38000 fileoff=0x8000 filesize=0x38000 nsects=2
+SEG __DATA                   vmaddr=0xfffffe000b99d378 vmsize=0x4000 fileoff=0x40000 filesize=0x4000 nsects=3
+SEG __DATA_CONST             vmaddr=0xfffffe000837d3d8 vmsize=0x8000 fileoff=0x44000 filesize=0x8000 nsects=7
+SEG __LINKEDIT               vmaddr=0xfffffe000ba10000 vmsize=0x4000 fileoff=0x4c000 filesize=0xc08 nsects=0
+   SECT __cstring            __TEXT             addr=0xfffffe0007a18ea8 size=0x33b7 off=0x718
+   SECT __os_log             __TEXT             addr=0xfffffe0007a1c25f size=0x3779 off=0x3acf
+   SECT __const              __TEXT             addr=0xfffffe0007a1f9e0 size=0x60 off=0x7250
+   SECT __text               __TEXT_EXEC        addr=0xfffffe000a3257c0 size=0x3461c off=0x8000
+   SECT __auth_stubs         __TEXT_EXEC        addr=0xfffffe000a359ddc size=0x940 off=0x3c61c
+   SECT __data               __DATA             addr=0xfffffe000b99d378 size=0x178 off=0x40000
+   SECT __common             __DATA             addr=0xfffffe000b99d4f0 size=0x460 off=0x0
+   SECT __bss                __DATA             addr=0xfffffe000b99d950 size=0x38 off=0x0
+   SECT __mod_init_func      __DATA_CONST       addr=0xfffffe000837d3d8 size=0x90 off=0x44000
+   SECT __mod_term_func      __DATA_CONST       addr=0xfffffe000837d468 size=0x90 off=0x44090
+   SECT __const              __DATA_CONST       addr=0xfffffe000837d4f8 size=0x46f8 off=0x44120
+   SECT __kalloc_type        __DATA_CONST       addr=0xfffffe0008381bf0 size=0xd00 off=0x48818
+   SECT __kalloc_var         __DATA_CONST       addr=0xfffffe00083828f0 size=0xaa0 off=0x49518
+   SECT __auth_got           __DATA_CONST       addr=0xfffffe0008383390 size=0x4a0 off=0x49fb8
+   SECT __got                __DATA_CONST       addr=0xfffffe0008383830 size=0xd0 off=0x4a458
+fixups off None

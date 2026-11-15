@@ -1,0 +1,70 @@
+  00fffffe000a3493b4: bti      c
+  00fffffe000a3493b8: pacibsp  
+  00fffffe000a3493bc: stp      x24, x23, [sp, #-0x40]!
+  00fffffe000a3493c0: stp      x22, x21, [sp, #0x10]
+  00fffffe000a3493c4: stp      x20, x19, [sp, #0x20]
+  00fffffe000a3493c8: stp      x29, x30, [sp, #0x30]
+  00fffffe000a3493cc: add      x29, sp, #0x30
+  00fffffe000a3493d0: mov      x24, x2
+  00fffffe000a3493d4: mov      x22, x0
+  00fffffe000a3493d8: mov      w19, #0x2c2
+  00fffffe000a3493dc: movk     w19, #0xe000, lsl #16
+  00fffffe000a3493e0: ldr      x20, [x2, #0x58]
+  00fffffe000a3493e4: ldr      x0, [x2, #0x40]
+  00fffffe000a3493e8: cbz      x0, #0xfffffe000a34945c
+  00fffffe000a3493ec: ldr      x16, [x0]
+  00fffffe000a3493f0: mov      x17, x0
+  00fffffe000a3493f4: movk     x17, #0xcda1, lsl #48
+  00fffffe000a3493f8: autda    x16, x17
+  00fffffe000a3493fc: ldr      x8, [x16, #0xe8]!
+  00fffffe000a349400: mov      w1, #0x1000
+  00fffffe000a349404: movk     x16, #0x3ed6, lsl #48
+  00fffffe000a349408: blraa    x8, x16
+  00fffffe000a34940c: cbz      x0, #0xfffffe000a3494b0
+  00fffffe000a349410: mov      x21, x0
+  00fffffe000a349414: ldr      x16, [x0]
+  00fffffe000a349418: mov      x17, x0
+  00fffffe000a34941c: movk     x17, #0xcda1, lsl #48
+  00fffffe000a349420: autda    x16, x17
+  00fffffe000a349424: ldr      x8, [x16, #0x78]!
+  00fffffe000a349428: movk     x16, #0x34f6, lsl #48
+  00fffffe000a34942c: blraa    x8, x16
+  00fffffe000a349430: mov      x23, x0
+  00fffffe000a349434: ldr      x0, [x24, #0x40]
+  00fffffe000a349438: ldr      x16, [x0]
+  00fffffe000a34943c: mov      x17, x0
+  00fffffe000a349440: movk     x17, #0xcda1, lsl #48
+  00fffffe000a349444: autda    x16, x17
+  00fffffe000a349448: ldr      x8, [x16, #0xb0]!
+  00fffffe000a34944c: movk     x16, #0xb392, lsl #48
+  00fffffe000a349450: blraa    x8, x16
+  00fffffe000a349454: mov      x2, x0
+  00fffffe000a349458: b        #0xfffffe000a349468
+  00fffffe000a34945c: mov      x21, #0
+  00fffffe000a349460: ldr      x23, [x24, #0x30]
+  00fffffe000a349464: ldr      w2, [x24, #0x38]
+  00fffffe000a349468: cmp      x23, #0
+  00fffffe000a34946c: ccmp     w2, #0xd, #0, ne
+  00fffffe000a349470: b.lo     #0xfffffe000a349488
+  00fffffe000a349474: mov      x0, x22
+  00fffffe000a349478: mov      x1, x23
+  00fffffe000a34947c: mov      x3, x20
+  00fffffe000a349480: bl       #0xfffffe000a34cc40
+  00fffffe000a349484: mov      x19, x0
+  00fffffe000a349488: cbz      x21, #0xfffffe000a3494b4
+  00fffffe000a34948c: ldr      x16, [x21]
+  00fffffe000a349490: mov      x17, x21
+  00fffffe000a349494: movk     x17, #0xcda1, lsl #48
+  00fffffe000a349498: autda    x16, x17
+  00fffffe000a34949c: ldr      x8, [x16, #0x28]!
+  00fffffe000a3494a0: mov      x0, x21
+  00fffffe000a3494a4: movk     x16, #0x3a87, lsl #48
+  00fffffe000a3494a8: blraa    x8, x16
+  00fffffe000a3494ac: b        #0xfffffe000a3494b4
+  00fffffe000a3494b0: add      w19, w19, #6
+  00fffffe000a3494b4: mov      x0, x19
+  00fffffe000a3494b8: ldp      x29, x30, [sp, #0x30]
+  00fffffe000a3494bc: ldp      x20, x19, [sp, #0x20]
+  00fffffe000a3494c0: ldp      x22, x21, [sp, #0x10]
+  00fffffe000a3494c4: ldp      x24, x23, [sp], #0x40
+  00fffffe000a3494c8: retab    

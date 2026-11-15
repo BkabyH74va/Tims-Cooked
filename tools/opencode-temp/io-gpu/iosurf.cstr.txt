@@ -1,0 +1,965 @@
+﻿0xfffffe0007a18ea8	IOSurfaceSharedEventListener
+0xfffffe0007a18ec5	site.IOSurfaceSharedEventListener
+0xfffffe0007a18ee7	1211121122
+0xfffffe0007a18ef2	IOCoreSurfaceRoot
+0xfffffe0007a18f04	"%s: failed to get IOSurface root" @%s:%d
+0xfffffe0007a18f2e	bool IOSurfaceSharedEventListener::init(thread_call_priority_t, IOWorkLoop *, bool, eIOSurfaceSharedEventAgentMask)
+0xfffffe0007a18fa2	IOSurfaceEvent.cpp
+0xfffffe0007a18fb5	"IOSurfaceSharedEventListener::free(): notification list is not empty" @%s:%d
+0xfffffe0007a19003	IOSurfaceSharedEventNotificationPort
+0xfffffe0007a19028	site.IOSurfaceSharedEventNotificationPort
+0xfffffe0007a19052	121112112211111111
+0xfffffe0007a19065	IOSurfaceSharedEventReference
+0xfffffe0007a19083	site.IOSurfaceSharedEventReference
+0xfffffe0007a190a6	121
+0xfffffe0007a190aa	IOSurfaceSharedEvent
+0xfffffe0007a190bf	site.IOSurfaceSharedEvent
+0xfffffe0007a190d9	1212821211211
+0xfffffe0007a190e7	"IOSurfaceSharedEvent::free() called with non-empty notification list" @%s:%d
+0xfffffe0007a19135	site.IOSurfaceAgentMaskInfo
+0xfffffe0007a19151	12222222222221
+0xfffffe0007a19160	handleAgentMaskRegistration
+0xfffffe0007a1917c	"IOSurfaceSharedEvent does not support release with when != 1" @%s:%d
+0xfffffe0007a191c2	"IOSurfaceSharedEvent does not support taggedRelease with when != 1" @%s:%d
+0xfffffe0007a1920e	assignAgentMaskSlot
+0xfffffe0007a19222	"%s: Agent mask slot exhaustion detected (event ID %08x, signal value 0x%016llx)" @%s:%d
+0xfffffe0007a1927b	addAgentMaskForSignalValue
+0xfffffe0007a19296	true
+0xfffffe0007a1929b	false
+0xfffffe0007a192a1	IOSurfaceSharedEventNotification
+0xfffffe0007a192c2	site.IOSurfaceSharedEventNotification
+0xfffffe0007a192e8	12222111111112
+0xfffffe0007a192f7	IOFenceTransaction
+0xfffffe0007a1930a	site.IOFenceTransaction
+0xfffffe0007a19322	12111211111
+0xfffffe0007a1932e	"IOFenceTransaction %p freed with non-zero fence count!\n" @%s:%d
+0xfffffe0007a19370	IOSurfaceFenceTransaction.cpp
+0xfffffe0007a1938e	site.IOFence *
+0xfffffe0007a1939d	1
+0xfffffe0007a1939f		fence: %p
+
+0xfffffe0007a193ab	"failed to allocate memory" @%s:%d
+0xfffffe0007a193ce	B16@?0^{OSObject=^^?i}8
+0xfffffe0007a193e6	process %s (%d) caught causing IOFence deadlock!
+
+0xfffffe0007a19418	Process caught creating IOFence deadlock
+0xfffffe0007a19441	Killed process %s (%d) for causing IOFence deadlock!
+
+0xfffffe0007a19477	bounded_array_ref: Can't construct from a size greater than UINT32_MAX
+0xfffffe0007a194be	"%s" @%s:%d
+0xfffffe0007a194ca	OSBoundedPtr.h
+0xfffffe0007a194d9	The range of valid memory is too large to be represented by this type, or [begin, end) is not a well-formed range
+0xfffffe0007a1954b	bounded_ptr<T>::operator+=(n): Adding the specified number of bytes to the offset representing the current position would overflow.
+0xfffffe0007a195cf	bounded_ptr<T>::operator*: Dereferencing this pointer would access memory outside of the bounds set originally
+0xfffffe0007a1963e	This bounded_ptr is pointing to memory outside of what can be represented by a native pointer.
+0xfffffe0007a1969d	IOSurfaceClass
+0xfffffe0007a196ac	IOSurfaceIsGlobal
+0xfffffe0007a196be	IOSurfaceBytesPerRow
+0xfffffe0007a196d3	IOSurfaceBitsPerBlock
+0xfffffe0007a196e9	IOSurfaceBytesPerElement
+0xfffffe0007a19702	IOSurfaceWidth
+0xfffffe0007a19711	IOSurfaceHeight
+0xfffffe0007a19721	IOSurfaceElementWidth
+0xfffffe0007a19737	IOSurfaceElementHeight
+0xfffffe0007a1974e	IOSurfaceOffset
+0xfffffe0007a1975e	IOSurfacePixelFormat
+0xfffffe0007a19773	IOSurfaceAllocSize
+0xfffffe0007a19786	IOSurfaceMemoryRegion
+0xfffffe0007a1979c	IOSurfacePlaneInfo
+0xfffffe0007a197af	IOSurfacePlaneOffset
+0xfffffe0007a197c4	IOSurfacePlaneWidth
+0xfffffe0007a197d8	IOSurfacePlaneHeight
+0xfffffe0007a197ed	IOSurfacePlaneBitsPerBlock
+0xfffffe0007a19808	IOSurfacePlaneBitsPerElement
+0xfffffe0007a19825	IOSurfacePlaneBytesPerElement
+0xfffffe0007a19843	IOSurfacePlaneElementWidth
+0xfffffe0007a1985e	IOSurfacePlaneElementHeight
+0xfffffe0007a1987a	IOSurfacePlaneBytesPerRow
+0xfffffe0007a19894	IOSurfaceAddress
+0xfffffe0007a198a5	IOSurfaceAddressRanges
+0xfffffe0007a198bc	IOSurfaceAddressOffset
+0xfffffe0007a198d3	IOSurfaceDirection
+0xfffffe0007a198e6	IOSurfaceType
+0xfffffe0007a198f4	IOSurfaceYCbCrMatrix
+0xfffffe0007a19909	IOSurfaceCacheMode
+0xfffffe0007a1991c	IOSurfaceBufferTileMode
+0xfffffe0007a19934	IOSurfaceDisplayDitherThresholds
+0xfffffe0007a19955	IOSurfaceDisplayDitherYThresholds
+0xfffffe0007a19977	IOSurfaceDisplayDitherCbThresholds
+0xfffffe0007a1999a	IOSurfaceDisplayDitherCrThresholds
+0xfffffe0007a199bd	IOSurfaceTimingInfo
+0xfffffe0007a199d1	IOSurfaceGPUTimes
+0xfffffe0007a199e3	IOSurfaceDisplayTimes
+0xfffffe0007a199f9	IOSurfaceScalerTimes
+0xfffffe0007a19a0e	IOSurfaceEncoderTimes
+0xfffffe0007a19a24	IOSurfaceDecoderTimes
+0xfffffe0007a19a3a	kIOSurfaceTouchEventTimes
+0xfffffe0007a19a54	IOSurfaceMapCacheAttribute
+0xfffffe0007a19a6f	IOSurfaceBufferTileFormat
+0xfffffe0007a19a89	IOFenceAllowTearing
+0xfffffe0007a19a9d	IOSurfacePurgeWhenNotInUse
+0xfffffe0007a19ab8	IOSurfaceResetDefaultAttachmentsWhenNotInUse
+0xfffffe0007a19ae5	IOSurfaceDefaultAttachments
+0xfffffe0007a19b01	IOSurfaceDefaultBulkAttachments
+0xfffffe0007a19b21	CreationProperties
+0xfffffe0007a19b34	IsDisplayable
+0xfffffe0007a19b42	IOSurfaceName
+0xfffffe0007a19b50	IOSurfaceNonPurgeable
+0xfffffe0007a19b66	IOSurfaceEDRFactor
+0xfffffe0007a19b79	IOSurfacePixelSizeCastingAllowed
+0xfffffe0007a19b9a	IOSurfaceUseReserve
+0xfffffe0007a19bae	IOSurfaceAllocateFromSuperbuffer
+0xfffffe0007a19bcf	IOSurfaceSuperbuffer
+0xfffffe0007a19be4	IOSurfaceMemoryPoolSize
+0xfffffe0007a19bfc	IOSurfaceMemoryPoolZerofillEnabled
+0xfffffe0007a19c1f	IOSurfaceMemoryPoolCacheModeSwitchEnabled
+0xfffffe0007a19c49	IOSurfaceMemoryPoolEntitlement
+0xfffffe0007a19c68	IOSurfaceSysMemOnly
+0xfffffe0007a19c7c	IOSurfaceProtectionOptions
+0xfffffe0007a19c97	IOSurfacePlaneComponentBitDepths
+0xfffffe0007a19cb8	IOSurfacePlaneComponentBitOffsets
+0xfffffe0007a19cda	IOSurfacePlaneComponentNames
+0xfffffe0007a19cf7	IOSurfacePlaneComponentTypes
+0xfffffe0007a19d14	IOSurfacePlaneComponentRanges
+0xfffffe0007a19d32	IOSurfaceSubsampling
+0xfffffe0007a19d47	IOSurfacePlaneCompressedTileWidth
+0xfffffe0007a19d69	IOSurfacePlaneCompressedTileHeight
+0xfffffe0007a19d8c	IOSurfacePlaneCompressedTileHeaderRegionOffset
+0xfffffe0007a19dbb	IOSurfacePlaneCompressedTileDataRegionOffset
+0xfffffe0007a19de8	IOSurfacePlaneCompressionType
+0xfffffe0007a19e06	IOSurfacePlaneCompressionFootprint
+0xfffffe0007a19e29	IOSurfacePlaneBytesPerCompressedTileHeader
+0xfffffe0007a19e54	IOSurfacePlaneWidthInCompressedTiles
+0xfffffe0007a19e79	IOSurfacePlaneHeightInCompressedTiles
+0xfffffe0007a19e9f	IOSurfacePlaneBytesPerRowOfCompressedTileHeaderGroups
+0xfffffe0007a19ed5	IOSurfacePlaneHTPCPredictionSelector
+0xfffffe0007a19efa	IOSurfacePlaneHTPCVerticalHeaderGroupingMode
+0xfffffe0007a19f27	IOSurfacePlaneHorizontalPixelOffsetWithinCompressedTileArray
+0xfffffe0007a19f64	IOSurfacePlaneVerticalPixelOffsetWithinCompressedTileArray
+0xfffffe0007a19f9f	IOSurfaceAddressFormat
+0xfffffe0007a19fb6	IOSurfacePlaneBytesPerTileData
+0xfffffe0007a19fd5	IOSurfacePlaneBytesPerRowOfTileData
+0xfffffe0007a19ff9	IOSurfaceSliceCount
+0xfffffe0007a1a00d	IOSurfacePlaneDataRegionBytesPerSlice
+0xfffffe0007a1a033	IOSurfacePlaneHeaderRegionBytesPerSlice
+0xfffffe0007a1a05b	IOSurfacePlaneExtendedPixelsOnLeft
+0xfffffe0007a1a07e	IOSurfacePlaneExtendedPixelsOnRight
+0xfffffe0007a1a0a2	IOSurfacePlaneExtendedPixelsOnTop
+0xfffffe0007a1a0c4	IOSurfacePlaneExtendedPixelsOnBottom
+0xfffffe0007a1a0e9	IOSurfaceProhibitUseCount
+0xfffffe0007a1a103	IOSurfaceMemoryPoolInfo
+0xfffffe0007a1a11b	DolbyVisionRPUData
+0xfffffe0007a1a12e	SidebandVideoPropertiesLookupID
+0xfffffe0007a1a14e	AGXUseNearestChromaFiltering
+0xfffffe0007a1a16b	IOSurface
+0xfffffe0007a1a175	iokit.IOSurface
+0xfffffe0007a1a185	init
+0xfffffe0007a1a18a	site.IOSurfaceColorAndSpatialKeysStruct
+0xfffffe0007a1a1b3	"IOSurface does not support release with when != 1" @%s:%d
+0xfffffe0007a1a1ee	IOSurface.cpp
+0xfffffe0007a1a1fc	"IOSurface does not support taggedRelease with when != 1" @%s:%d
+0xfffffe0007a1a23d	"IOSurface released with non-zero client retain count: %p" @%s:%d
+0xfffffe0007a1a27f	"IOFence current queue is not empty for surface: %p" @%s:%d
+0xfffffe0007a1a2bb	"IOFence wait queue is not empty for surface: %p" @%s:%d
+0xfffffe0007a1a2f4	"fDeviceCacheList is not empty for surface: %p" @%s:%d
+0xfffffe0007a1a32b	site.IOSurfaceFenceTraceData
+0xfffffe0007a1a348	2212211111111112212211111111112212211111111112212211111111112212211111111112212211111111112212211111111112212211111111112
+0xfffffe0007a1a3c2	site.IOSurfacePlaneInfo
+0xfffffe0007a1a3da	IOSurfaceDisableMapperFlush
+0xfffffe0007a1a3f6	IOSurfacePreallocPages
+0xfffffe0007a1a40d	IOSurfacePrefetchPages
+0xfffffe0007a1a424	IOSurfaceHostOnly
+0xfffffe0007a1a436	MetalSharedTexture
+0xfffffe0007a1a449	IOSurfaceGPUGlobalRO
+0xfffffe0007a1a45e	IOSurfacePlaneSize
+0xfffffe0007a1a471	IOSurfacePlaneBase
+0xfffffe0007a1a484	IOSurfaceEnableStatistics
+0xfffffe0007a1a49e	IOSurfaceIsPrivate
+0xfffffe0007a1a4b1	QuartzCore
+0xfffffe0007a1a4bc	CA Framebuffer
+0xfffffe0007a1a4cb	site.OSSharedPtr<IOSurfaceDeviceCache>
+0xfffffe0007a1a4f2	allocate
+0xfffffe0007a1a4fb	IOSurface warning: buffer allocation failed.  %llu x %llu fmt: %08x size: %llu bytes
+
+0xfffffe0007a1a551	increment
+0xfffffe0007a1a55b	decrement
+0xfffffe0007a1a565	wired
+0xfffffe0007a1a56b	rewired
+0xfffffe0007a1a573	BasicInfo
+0xfffffe0007a1a57d	Layout
+0xfffffe0007a1a584	UseCount
+0xfffffe0007a1a58d	UseCount1
+0xfffffe0007a1a597	ColorAndSpatialKeys
+0xfffffe0007a1a5ab	B24@?0r^{OSSymbol=^^?ib14b18*{smrq_slink={?=^{smrq_slink}}}}8^{OSObject=^^?i}16
+0xfffffe0007a1a5fb	CEA-861:Type1
+0xfffffe0007a1a609	Type
+0xfffffe0007a1a60e	Data
+0xfffffe0007a1a613	Breaking IOFence deadlock
+
+0xfffffe0007a1a62e		current: %p t: %p
+
+0xfffffe0007a1a642		waitQ:   %p t: %p
+
+0xfffffe0007a1a656	read
+0xfffffe0007a1a65b	write
+0xfffffe0007a1a661	iosurface_id
+0xfffffe0007a1a66e	iofence_acceleratorid
+0xfffffe0007a1a684	iofence_direction
+0xfffffe0007a1a696	iofence_backtrace
+0xfffffe0007a1a6a8	iofence_current_queue
+0xfffffe0007a1a6be	iofence_waiting_queue
+0xfffffe0007a1a6d4	"%s called with invalid index: %lld" @%s:%d
+0xfffffe0007a1a700	uint64_t IOSurface::getIndexedTimestamp(uint64_t) const
+0xfffffe0007a1a738	site.IOSurfaceTransactionSerialized
+0xfffffe0007a1a75c	"IOSurface::prune_transaction_list unexpeted transaction list length" @%s:%d
+0xfffffe0007a1a7a9	IOSurfaceClient
+0xfffffe0007a1a7b9	site.IOSurfaceClient
+0xfffffe0007a1a7ce	1211111281111121112
+0xfffffe0007a1a7e2	site.IOSurfaceClientPlaneInfo
+0xfffffe0007a1a800	mapInTask
+0xfffffe0007a1a80a	IOSurfaceMemoryTag
+0xfffffe0007a1a81d	site.IOSurfaceMemoryTag
+0xfffffe0007a1a835	1211112
+0xfffffe0007a1a83d	IOSurfaceDeviceCache
+0xfffffe0007a1a852	site.IOSurfaceDeviceCache
+0xfffffe0007a1a86c	1211111112222
+0xfffffe0007a1a87a	IOSurfaceDescriptor
+0xfffffe0007a1a88e	site.IOSurfaceDescriptor
+0xfffffe0007a1a8a7	site.IOSurfaceDescriptorPrivate
+0xfffffe0007a1a8c7	IOSurfaceMemoryCallback
+0xfffffe0007a1a8df	site.IOSurfaceMemoryCallback
+0xfffffe0007a1a8fc	122111
+0xfffffe0007a1a903	IOSurfaceDeviceMemoryRegion
+0xfffffe0007a1a91f	site.IOSurfaceDeviceMemoryRegion
+0xfffffe0007a1a940	121111111212
+0xfffffe0007a1a94d	virtual bool IOSurfaceDeviceMemoryRegion::init(IOSurfaceRoot *, OSDictionary *, const char *, uint32_t, uint32_t)
+0xfffffe0007a1a9bf	Size
+0xfffffe0007a1a9c4	Allocated
+0xfffffe0007a1a9ce	Free
+0xfffffe0007a1a9d3	LargestFree
+0xfffffe0007a1a9df	site.IOSurfaceMemoryRegion
+0xfffffe0007a1a9fa	12111
+0xfffffe0007a1aa00	Name
+0xfffffe0007a1aa05	iosurface
+0xfffffe0007a1aa0f	N
+0xfffffe0007a1aa11	IOSurface Parameters
+0xfffffe0007a1aa26	iofence_ddd
+0xfffffe0007a1aa32	IU
+0xfffffe0007a1aa35	IOFence Deadlock Detection Depth
+0xfffffe0007a1aa56	IOSurfaceRootParavirtMapperInterface
+0xfffffe0007a1aa7b	site.IOSurfaceRootParavirtMapperInterface
+0xfffffe0007a1aaa5	12
+0xfffffe0007a1aaa8	IOSurfaceRoot
+0xfffffe0007a1aab6	site.IOSurfaceRoot
+0xfffffe0007a1aac9	1211111212221212121122222212212111212211111112211112221111112111122111121222212222122221222212222122221222212222112111112221112211112112222222222112
+0xfffffe0007a1ab5e	site.IOSurfaceTaskToClientMap
+0xfffffe0007a1ab7c	11
+0xfffffe0007a1ab7f	site.IOSurfaceMemoryRegionNode
+0xfffffe0007a1ab9e	112
+0xfffffe0007a1aba2	hw.cachelinesize
+0xfffffe0007a1abb3	hw.memsize
+0xfffffe0007a1abbe	/
+0xfffffe0007a1abc0	non-coherent
+0xfffffe0007a1abcd	iosurface-non-coherent
+0xfffffe0007a1abe4	display-carveout-inhibitcache
+0xfffffe0007a1ac02	display-carveout-restricted
+0xfffffe0007a1ac1e	/vram
+0xfffffe0007a1ac24	vram
+0xfffffe0007a1ac29	/sma
+0xfffffe0007a1ac2e	sma
+0xfffffe0007a1ac32	iosurface_timestamp_enable
+0xfffffe0007a1ac4d	iosurface_debug
+0xfffffe0007a1ac5d	IOSurface disallowing pixel size casting by default
+
+0xfffffe0007a1ac92	IOSurface allowing global lookups (with warnings)
+
+0xfffffe0007a1acc5	IOSurface disallowing global lookups
+
+0xfffffe0007a1aceb	IOSurface using pageable shmems
+
+0xfffffe0007a1ad0c	IOSurface count of %d approaching limit of %d
+
+0xfffffe0007a1ad3b	"IOSurface in slot %08x has a mismatched surface ID of %08x\n" @%s:%d
+0xfffffe0007a1ad81	IOSurfaceRoot.cpp
+0xfffffe0007a1ad93	create_surface_internal
+0xfffffe0007a1adab	"IOSurfaceRoot::terminateDeviceCachesWithAccelerator() timeout." @%s:%d
+0xfffffe0007a1adf3	Debug Bits Value
+0xfffffe0007a1ae04	Active Debug Flags
+0xfffffe0007a1ae17	IOSurface Debug Configuration
+0xfffffe0007a1ae35	Kernel Surfaces
+0xfffffe0007a1ae45	Memory Regions
+0xfffffe0007a1ae54	Memory Pools
+0xfffffe0007a1ae61	User Clients
+0xfffffe0007a1ae6e	site.IOSurfaceNotifyRequest
+0xfffffe0007a1ae8a	111111111121
+0xfffffe0007a1ae97	site.IOSurface *
+0xfffffe0007a1aea8	IOMalloc failed to alloc handles
+0xfffffe0007a1aec9	IOSurfaceRoot::alloc_surface_id: Map said entry free but something was there
+
+0xfffffe0007a1af17	trying to use apparently bogus surface handle %d
+0xfffffe0007a1af48	Entry for handle %d is not NULL (%p)
+0xfffffe0007a1af6d	trying to free apparently bogus surface handle %d
+0xfffffe0007a1af9f	Entry for surface handle %d %p is not equal to %p
+0xfffffe0007a1afd1	site.IOSurfaceSharedEvent *
+0xfffffe0007a1afed	trying to use apparently bogus event handle %d
+0xfffffe0007a1b01c	Entry for shared event handle %d is not NULL (%p)
+0xfffffe0007a1b04e	trying to free apparently bogus event handle %d
+0xfffffe0007a1b07e	Entry for shared event handle %d %p is not equal to %p
+0xfffffe0007a1b0b5	IOSurfaceSharedRO alloc failed
+0xfffffe0007a1b0d4	IOSurfaceSharedRW alloc failed
+0xfffffe0007a1b0f3	IOSurfaceAgentMask alloc failed
+0xfffffe0007a1b113	copyAgentMaskMemory
+0xfffffe0007a1b127	assignSlotAndCopyAgentMaskMemoryForSignalValue
+0xfffffe0007a1b156	site.IOSurfaceSharedListEntry
+0xfffffe0007a1b174	11112
+0xfffffe0007a1b17a	IOFence: blocking wait timed out for surface: %d
+
+0xfffffe0007a1b1ac	setIomdCacheAttribute
+0xfffffe0007a1b1c2	iomdEarlyPurge
+0xfffffe0007a1b1d1	site.IOSurfaceEventNotifierClient
+0xfffffe0007a1b1f3	1111
+0xfffffe0007a1b1f8	"IOSurfaceRoot::removeEventNotifierClient() invoked with bad client notifier %p" @%s:%d
+0xfffffe0007a1b250	"user client not found in map" @%s:%d
+0xfffffe0007a1b276	"unexpected client map mismatch" @%s:%d
+0xfffffe0007a1b29e	IOSurfaceRoot using IOSurfaceRootParavirtMapperInterface %p
+0xfffffe0007a1b2da	reg
+0xfffffe0007a1b2de	%s
+0xfffffe0007a1b2e1	%s%u
+0xfffffe0007a1b2e6	AllGlobal
+0xfffffe0007a1b2f0	DefaultNoSizeCasting
+0xfffffe0007a1b305	AllowGlobal
+0xfffffe0007a1b311	PageableShmems
+0xfffffe0007a1b320	DisablePrepareWiring
+0xfffffe0007a1b335	LogPrepareWiring
+0xfffffe0007a1b346	LogCompleteNoAssertion
+0xfffffe0007a1b35d	EnablePrepareWiring
+0xfffffe0007a1b371	KillDeadlockProcesses
+0xfffffe0007a1b387	BreakIOFenceDeadlocks
+0xfffffe0007a1b39d	DeadlockLog
+0xfffffe0007a1b3a9	AllowProtectedChildren
+0xfffffe0007a1b3c0	EnableStatisticsProtection
+0xfffffe0007a1b3db	DisableStatisticsProtection
+0xfffffe0007a1b3f7	DisableSupportLowLatencySignal
+0xfffffe0007a1b416	PanicOnAgentMaskSlotExhaustion
+0xfffffe0007a1b435	IONewZero failed to alloc IOSurfaceSharedListEntry
+0xfffffe0007a1b468	IOBufferMemoryDescriptor::inTaskWithOptions failed to allocate a surface shared block.
+0xfffffe0007a1b4bf	Unable to set shared memory region ownership to kernel: %08x
+
+0xfffffe0007a1b4fd	Unable to prepare shared entry: %08x
+0xfffffe0007a1b522	CSBufferPitch
+0xfffffe0007a1b530	CSBufferHeight
+0xfffffe0007a1b53f	IOSurfaceRootUserClient
+0xfffffe0007a1b557	site.IOSurfaceRootUserClient
+0xfffffe0007a1b574	12111112122212121111111111111128112122111
+0xfffffe0007a1b59e	com.apple.private.iosurfaceinfo
+0xfffffe0007a1b5be	com.apple.private.gpu-restricted
+0xfffffe0007a1b5df	com.apple.developer.gpu-restricted
+0xfffffe0007a1b602	com.apple.private.IOSurface.protected-access
+0xfffffe0007a1b62f	IOUserClientEntitlements
+0xfffffe0007a1b648	IOUserClientDefaultLocking
+0xfffffe0007a1b663	IOUserClientDefaultLockingSetProperties
+0xfffffe0007a1b68b	IOUserClientDefaultLockingSingleThreadExternalMethod
+0xfffffe0007a1b6c0	s_create_surface
+0xfffffe0007a1b6d1	Security: Process %s (%d) creating global IOSurfaces accessible to any other process
+
+0xfffffe0007a1b727	Security: Process %s (%d) relying on global (insecure) IOSurface lookups
+
+0xfffffe0007a1b771	"Bad IOSurfaceClient" @%s:%d
+0xfffffe0007a1b78e	IOSurfaceRootUserClient.cpp
+0xfffffe0007a1b7aa	create_surface
+0xfffffe0007a1b7b9	create_surface_fast_path
+0xfffffe0007a1b7d2	Perf: Process %s (%d) has created %d IOSurfaces out of a limit of %d
+
+0xfffffe0007a1b818	Perf: Process %s (%d) has created %d IOSurfaces out of a limit of %d, possible leak?
+
+0xfffffe0007a1b86e	create_surface_client_mem
+0xfffffe0007a1b888	Perf: Process %s (%d) IOSurface creation count: %d total count: %d
+
+0xfffffe0007a1b8cc	name
+0xfffffe0007a1b8d1	pid
+0xfffffe0007a1b8d5	Client Surfaces
+0xfffffe0007a1b8e5	site.IOSurfaceClient *
+0xfffffe0007a1b8fc	set_surface_handle
+0xfffffe0007a1b90f	"IOSurfaceRootUserClient::set_surface_handle asked to set handle %08x that was not free: %p" @%s:%d
+0xfffffe0007a1b973	%.512s
+0xfffffe0007a1b97a	ensure_memory_pool_memory
+0xfffffe0007a1b994	flush_memory_pool
+0xfffffe0007a1b9a6	gather_memory_pool_data
+0xfffffe0007a1b9be	append_transaction
+0xfffffe0007a1b9d1	IOFence
+0xfffffe0007a1b9d9	site.IOFence
+0xfffffe0007a1b9e6	121121111221111111211111111
+0xfffffe0007a1ba02	"fence freed before completion: %p" @%s:%d
+0xfffffe0007a1ba2d	IOSurfaceFence.cpp
+0xfffffe0007a1ba40	"IOFence does not support release with when != 1" @%s:%d
+0xfffffe0007a1ba79	"IOFence does not support taggedRelease with when != 1" @%s:%d
+0xfffffe0007a1bab8	IOSurfaceShared
+0xfffffe0007a1bac8	site.IOSurfaceShared
+0xfffffe0007a1badd	128111112
+0xfffffe0007a1bae7	site.IOSurfaceClientSharedListEntry
+0xfffffe0007a1bb0b	111
+0xfffffe0007a1bb0f	map_client_shared failed for client_shared_ro
+0xfffffe0007a1bb3d	map_client_shared failed for client_shared_rw
+0xfffffe0007a1bb6b	map_client_shared failed for event_shared_ro
+0xfffffe0007a1bb98	"IOSurfaceRootUserClient: asked to allocate client shared id %08x not known by IOSurfaceRoot" @%s:%d
+0xfffffe0007a1bbfd	IOSurfaceShared.cpp
+0xfffffe0007a1bc11	IONewZero failed to alloc IOSurfaceClientSharedListEntry
+0xfffffe0007a1bc4a	IOSurfaceRootUserClient: couldn't map shared memory region into client
+0xfffffe0007a1bc91	IOSurfaceDescriptorContext
+0xfffffe0007a1bcac	site.IOSurfaceDescriptorContext
+0xfffffe0007a1bccc	12211111
+0xfffffe0007a1bcd5	Descriptor address
+0xfffffe0007a1bce8	Pool Id
+0xfffffe0007a1bcf0	Components
+0xfffffe0007a1bcfb	IOSurfaceDescriptorComponent
+0xfffffe0007a1bd18	site.IOSurfaceDescriptorComponent
+0xfffffe0007a1bd3a	1221
+0xfffffe0007a1bd3f	Length
+0xfffffe0007a1bd46	Options
+0xfffffe0007a1bd4e	IOSurfaceMemoryPoolBunch
+0xfffffe0007a1bd67	site.IOSurfaceMemoryPoolBunch
+0xfffffe0007a1bd85	121111112
+0xfffffe0007a1bd8f	====> %s:%d Memory pool ids exhausted
+
+0xfffffe0007a1bdb6	newMemoryPool
+0xfffffe0007a1bdc4	newWiredMemoryDescriptorWithLength
+0xfffffe0007a1bde7	Contexts
+0xfffffe0007a1bdf0	InUse
+0xfffffe0007a1bdf6	OutOfUse
+0xfffffe0007a1bdff	IOSurfaceMemoryPool
+0xfffffe0007a1be13	site.IOSurfaceMemoryPool
+0xfffffe0007a1be2c	1211228111111111111121
+0xfffffe0007a1be43	====> %s:%d Unable to pre-allocate IOSurfaceMemoryPool memory for pool id %llu
+
+0xfffffe0007a1be93	"IOSurfaceMemoryPool does not support taggedRelease with when != 1" @%s:%d
+0xfffffe0007a1bede	IOSurfaceMemoryPool.cpp
+0xfffffe0007a1bef6	====> %s:%d Unable to assemble descriptor of the correct length
+
+0xfffffe0007a1bf37	====> %s:%d Descriptor length isn't rounded to bucket size
+
+0xfffffe0007a1bf73	site.IOMemoryDescriptor *
+0xfffffe0007a1bf8d	Bucket buffer size
+0xfffffe0007a1bfa0	Descriptors
+0xfffffe0007a1bfac	Buckets
+0xfffffe0007a1bfb4	====> %s:%d IOSurfaceMemoryPool: %s (%d) can't access pool id %llu (wrong entitlements)
+
+0xfffffe0007a1c00d	taskCanUsePool
+0xfffffe0007a1c01c	====> %s:%d IOSurfaceMemoryPool: %s (%d) invalid task (%p) can't access pool id %llu (wrong entitlements)
+
+0xfffffe0007a1c087	"os_refcnt: underflow (rc=%p)\n" @%s:%d
+0xfffffe0007a1c0af	iosfcrefcnt.c
+0xfffffe0007a1c0bd	"os_refcnt: attempted resurrection (rc=%p)\n" @%s:%d
+0xfffffe0007a1c0f2	"os_refcnt: overflow (rc=%p)\n" @%s:%d
+0xfffffe0007a1c119	IOSurfaceSendRight
+0xfffffe0007a1c12c	site.IOSurfaceSendRight
+0xfffffe0007a1c144	12112
+0xfffffe0007a1c14a	IOSurfaceWiredSendRight
+0xfffffe0007a1c162	site.IOSurfaceWiredSendRight
+0xfffffe0007a1c17f	IOSurfaceSmaMemoryRegion
+0xfffffe0007a1c198	site.IOSurfaceSmaMemoryRegion
+0xfffffe0007a1c1b6	IOSurfaceTransaction
+0xfffffe0007a1c1cb	site.IOSurfaceTransaction
+0xfffffe0007a1c1e5	121122
+0xfffffe0007a1c1ec	"IOSurfaceTransaction::serialize panic because of attempting to write to nullptr." @%s:%d
+0xfffffe0007a1c246	IOSurfaceTransaction.cpp
+0xfffffe0007a1c25f	%s: failed to assign agent mask slot for value %llu: 0x%x
+
+0xfffffe0007a1c29a	%s: failed to add agent mask for value %llu: 0x%x
+
+0xfffffe0007a1c2cd	%s: No free agent mask slots available for event ID %08x (signal value 0x%016llx)
+
+0xfffffe0007a1c320	  Currently allocated slots:
+
+0xfffffe0007a1c33e	    Slot[%u]: SignalValue=0x%016llx Timestamp=%llu
+
+0xfffffe0007a1c372	%s: slot index %u out of range or no agent mask info for event %08x (signal value 0x%016llx)
+
+0xfffffe0007a1c3d0	%s: slot index %u validation failed: allocated=%s, signal value 0x%016llx (expected 0x%016llx) for event %08x
+
+0xfffffe0007a1c43f	process %s (%d) caught causing IOFence deadlock!
+
+0xfffffe0007a1c471	Killed process %s (%d) for causing IOFence deadlock!
+
+0xfffffe0007a1c4a7	IOSurfaceRoot: deadlock detection depth limit %d reached
+
+0xfffffe0007a1c4e1	%s error - invalid parent (can't be child)
+
+0xfffffe0007a1c50d	%s error - failed to alloc surface id
+
+0xfffffe0007a1c534	%s error - failed to alloc shmem
+
+0xfffffe0007a1c556	%s error - failed to parse properties
+
+0xfffffe0007a1c57d	IOSurface::parse_properties() problem with kIOSurfaceSubsampling
+
+0xfffffe0007a1c5bf	IOSurface::::parse_properties() kIOSurfacePlaneInfo array must not be empty.
+
+0xfffffe0007a1c60d	IOSurface: maximum plane count of %d exceeded.
+
+0xfffffe0007a1c63d	IOSurface: kIOSurfacePlaneBytesPerElement out of range
+
+0xfffffe0007a1c675	IOSurface: kIOSurfacePlaneBitsPerElement out of range
+
+0xfffffe0007a1c6ac	IOSurface: kIOSurfacePlaneBitsPerBlock out of range
+
+0xfffffe0007a1c6e1	IOSurface: plane[%d] bytes per element is zero.
+
+0xfffffe0007a1c712	IOSurface: plane[%d] element width is zero.
+
+0xfffffe0007a1c73f	IOSurface: plane[%d] element height is zero.
+
+0xfffffe0007a1c76d	IOSurface: plane[%d] extended width exceeds 64bit limit
+
+0xfffffe0007a1c7a6	IOSurface: plane[%d] extended left exceeds 64bit limit
+
+0xfffffe0007a1c7de	IOSurface: plane[%d] calculated width in pixels exceeds 64bit limit
+
+0xfffffe0007a1c823	IOSurface: plane[%d] total width in elements exceeds 64bit limit
+
+0xfffffe0007a1c865	IOSurface: plane[%d] bytesPerRow exceeds 64bit limit
+
+0xfffffe0007a1c89b	IOSurface: plane[%d] calculated bytesPerRow exceeds 64bit limit
+
+0xfffffe0007a1c8dc	IOSurface: plane[%d] plane width in bytes exceeds 64bit limit
+
+0xfffffe0007a1c91b	IOSurface: plane[%d] minimum extended left bytes per row value exceeds 64bit limit
+
+0xfffffe0007a1c96f	IOSurface: plane[%d] minimum bytes per row value exceeds 64bit limit
+
+0xfffffe0007a1c9b5	IOSurface: plane[%d] bytes per row value of %llu is too small
+
+0xfffffe0007a1c9f4	IOSurface: plane[%d] extended height exceeds 64bit limit
+
+0xfffffe0007a1ca2e	IOSurface: plane[%d] calculated size value exceeds 64bit limit
+
+0xfffffe0007a1ca6e	IOSurface: plane[%d] size is zero
+
+0xfffffe0007a1ca91	IOSurface: plane[%d] calculated offset value exceeds 64bit limit
+
+0xfffffe0007a1cad3	IOSurface: plane[%d] base %016llx overlaps with previous plane %d
+
+0xfffffe0007a1cb16	IOSurface: plane[%d] offset %016llx is less than plane[%d] base %016llx
+
+0xfffffe0007a1cb5f	IOSurface: plane[%d] base %016llx plus plane size %016llx exceeds 64bit limit
+
+0xfffffe0007a1cbae	IOSurface: plane[%d] required size exceeds 64bit limit
+
+0xfffffe0007a1cbe6	IOSurface: plane[%d] required size for one line exceeds 64bit limit
+
+0xfffffe0007a1cc2b	IOSurface: plane[%d] total required size exceeds 64bit limit
+
+0xfffffe0007a1cc69	IOSurface: plane[%d] parseAdditionalPlaneInfo failed.
+
+0xfffffe0007a1cca0	IOSurface: plane[%d] illegal compression type: %lld
+
+0xfffffe0007a1ccd5	IOSurface: sliceCount provided %d is out of bound for maximum / minimum number of required slices.
+
+0xfffffe0007a1cd39	IOSurface: compressed plane[%d] HTPCPredictionSelector must be in range
+
+0xfffffe0007a1cd82	IOSurface: HTPC compressed plane[%d] Tile header must be 32-bit or 64-bit
+
+0xfffffe0007a1cdcd	IOSurface: AGX BytesPerCompressedTileHeader of plane[%d] must be 2 or 8 or 32
+
+0xfffffe0007a1ce1c	IOSurface: plane[%d] illegal compression footprint for type kIOSurfaceCompressionTypeInterchangeLossy %lld 
+
+0xfffffe0007a1ce89	IOSurface: compressed plane[%d] CompressedTileWidth must be at least 1
+
+0xfffffe0007a1ced1	IOSurface: compressed plane[%d] CompressedTileWidth must be power of 2
+
+0xfffffe0007a1cf19	IOSurface: compressed plane[%d] CompressedTileWidth must be less than 1024
+
+0xfffffe0007a1cf65	IOSurface: compressed plane[%d] Width + CompressedTileWidth doesn't fit in 32 bits
+
+0xfffffe0007a1cfb9	IOSurface: compressed plane[%d] CompressedTileHeight must be at least 1
+
+0xfffffe0007a1d002	IOSurface: compressed plane[%d] CompressedTileHeight must be less than 1024
+
+0xfffffe0007a1d04f	IOSurface: compressed plane[%d] CompressedTileHeight must be power of 2
+
+0xfffffe0007a1d098	IOSurface: compressed plane[%d] Height + CompressedTileHeight doesn't fit in 32 bits
+
+0xfffffe0007a1d0ee	IOSurface: compressed plane[%d] kIOSurfacePlaneHorizontalPixelOffsetWithinCompressedTileArray is more than a kIOSurfacePlaneCompressedTileWidth.
+
+0xfffffe0007a1d180	IOSurface: compressed plane[%d] kIOSurfacePlaneVerticalPixelOffsetWithinCompressedTileArray is more than a kIOSurfacePlaneCompressedTileHeight.
+
+0xfffffe0007a1d211	IOSurface: compressed plane[%d] HTPCVerticalHeaderGroupingMode must be in range
+
+0xfffffe0007a1d262	IOSurface: compressed plane[%d] extended left is not supported for compressed iosurfaces
+
+0xfffffe0007a1d2bc	IOSurface: compressed plane[%d] extended top is not supported for compressed iosurfaces
+
+0xfffffe0007a1d315	IOSurface: compressed plane[%d] extra width calculation overflow
+
+0xfffffe0007a1d357	IOSurface: compressed plane[%d] full width calculation overflow
+
+0xfffffe0007a1d398	IOSurface: compressed plane[%d] CompressedTileHeaderRegionWidth must exactly cover the width in tiles
+
+0xfffffe0007a1d3ff	IOSurface: compressed plane[%d] extended width calculation overflow
+
+0xfffffe0007a1d444	IOSurface: compressed plane[%d] planeHorizontalPixelOffsetWithinCompressedTile exceeds compressedPlaneBytesPerTileRow
+
+0xfffffe0007a1d4bb	IOSurface: compressed plane[%d] Plane width must fit into tiles
+
+0xfffffe0007a1d4fc	IOSurface: compressed plane[%d] kIOSurfacePlaneBytesPerRowOfTileData is %d less than WidthInCompressedTiles %d x BytesPerTileData %d Bytes.
+
+0xfffffe0007a1d589	IOSurface: compressed plane[%d] extendedHeight overflow
+
+0xfffffe0007a1d5c2	IOSurface: compressed plane[%d] roundedExtendedHeight overflow
+
+0xfffffe0007a1d602	IOSurface: compressed plane[%d] tilesToCoverHeight + headersInGroup doesn't fit in 32 bits
+
+0xfffffe0007a1d65e	IOSurface: compressed plane[%d] CompressedTileHeaderRegionHeight must exactly cover the height in tiles
+
+0xfffffe0007a1d6c7	IOSurface: compressed plane[%d] Header region height must fit header group
+
+0xfffffe0007a1d713	IOSurface: compressed plane[%d] Plane height must fit into tiles
+
+0xfffffe0007a1d755	IOSurface: compressed plane[%d] bytesPerCompressedTileHeaderGroup * planeWidthInCompressedTiles doesn't fit in 32 bits
+
+0xfffffe0007a1d7cd	IOSurface: compressed plane[%d] BytesPerRowOfCompressedTileHeaderGroups needs to be enough for a row of groups of tiles at this width
+
+0xfffffe0007a1d854	IOSurface: compressed plane[%d] Header region doesn't fit into plane size
+
+0xfffffe0007a1d89f	IOSurface: compressed plane[%d] uncompressedTileSize doesn't fit in 32 bits
+
+0xfffffe0007a1d8ec	IOSurface: compressed plane[%d] rowOfUncompressedTiles doesn't fit in 32 bits
+
+0xfffffe0007a1d93b	IOSurface: compressed plane[%d] dataRegionTotalSize doesn't fit in 32 bits
+
+0xfffffe0007a1d987	IOSurface: compressed plane[%d] Data region doesn't fit into plane size
+
+0xfffffe0007a1d9d0	IOSurface: kIOSurfacePlaneDataRegionBytesPerSlice %d exceeds maximum value.
+
+0xfffffe0007a1da1d	IOSurface: kIOSurfacePlaneDataRegionBytesPerSlice %d is smaller than expected value %d .
+
+0xfffffe0007a1da77	IOSurface: kIOSurfacePlaneDataRegionBytesPerSlice must be present for multi-slice plane %d with sliceCount %d .
+
+0xfffffe0007a1dae8	IOSurface: HTPC compressed plane[%d] Header region overlaps data region
+
+0xfffffe0007a1db31	IOSurface: compressed plane[%d] Data region overlaps header region
+
+0xfffffe0007a1db75	IOSurface: kIOSurfacePlaneHeaderRegionBytesPerSlice %d exeeds maximum value.
+
+0xfffffe0007a1dbc3	IOSurface: kIOSurfacePlaneHeaderRegionBytesPerSlice %d is smaller than expected value %d .
+
+0xfffffe0007a1dc1f	IOSurface: kIOSurfacePlaneHeaderRegionBytesPerSlice must be present for multi-slice plane %d with sliceCount %d .
+
+0xfffffe0007a1dc92	IOSurface: multi-slice interchange compressed plane[%d] (DataRegionBytesPerSlice %d + HeaderRegionBytesPerSlice %d) * sliceCount %d size is greater than total planeSize %lld
+
+0xfffffe0007a1dd41	IOSurface: child surface plane[%d] Image data doesn't fit within allocated parent plane size
+
+0xfffffe0007a1dd9f	IOSurface: plane[%d] Image data doesn't fit within allocated plane size
+
+0xfffffe0007a1dde8	IOSurface::parse_properties() parseAdditionalPlaneInfo failed.
+
+0xfffffe0007a1de28	Cannot create children of protected surfaces
+
+0xfffffe0007a1de56	Unsupported protection bits set: %016llx
+
+0xfffffe0007a1de80	IOSurface: Planar surfaces must specify a valid buffer width and height.
+
+0xfffffe0007a1deca	IOSurface: Planar surfaces must specify a valid buffer width and height.
+
+0xfffffe0007a1df14	IOSurface: buffer bytes per element is zero.
+
+0xfffffe0007a1df42	IOSurface: buffer element width is zero.
+
+0xfffffe0007a1df6c	IOSurface: buffer element height is zero.
+
+0xfffffe0007a1df97	IOSurface: buffer width overflow
+
+0xfffffe0007a1dfb9	IOSurface: bytesPerRow calculation overflow
+
+0xfffffe0007a1dfe6	IOSurface: buffer required width in bytes overflow
+
+0xfffffe0007a1e01a	IOSurface: buffer bytes per row value is too small
+
+0xfffffe0007a1e04e	IOSurface: required planar allocation size overflow
+
+0xfffffe0007a1e083	IOSurface: required allocation size overflow
+
+0xfffffe0007a1e0b1	IOSurface: aligned allocation size overflow
+
+0xfffffe0007a1e0de	IOSurface: allocation size overflow
+
+0xfffffe0007a1e103	IOSurface: child surfaces must specify an allocation size less than or equal to the parent surface size
+
+0xfffffe0007a1e16c	IOSurface: allocation size of %llu exceeds limit of %llu bytes
+
+0xfffffe0007a1e1ac	IOSurface: plane limit calculation overflow
+
+0xfffffe0007a1e1d9	IOSurface: buffer allocation size is too small to cover valid image area of plane %d: fAllocSize=%llu, planeLimit=%llu
+
+0xfffffe0007a1e251	IOSurface: aligned height calculation overflow
+
+0xfffffe0007a1e281	IOSurface: required bytes per line overflow
+
+0xfffffe0007a1e2ae	IOSurface: required image bytes overflow
+
+0xfffffe0007a1e2d8	IOSurface: required allocation size overflow
+
+
+0xfffffe0007a1e307	IOSurface: buffer allocation size is too small to cover valid image area: fAllocSize=%llu, requiredSizeInBytes=%llu
+
+0xfffffe0007a1e37c	IOSurface: client direction not InOut or Out
+
+0xfffffe0007a1e3aa	IOSurface: fClientAlignedOffset >= page_size
+
+0xfffffe0007a1e3d8	IOSurface: address ranges size not multiple of IOAddressRange
+
+0xfffffe0007a1e417	IOSurface: Cannot use kIOSurfaceClientAddress with compressed iosurfaces.
+
+0xfffffe0007a1e462	Unknown cache mode: %08x
+
+0xfffffe0007a1e47c	IOSurface: Cannot set both global and private properties
+
+0xfffffe0007a1e4b6	IOSurface::flushProcessorCaches memory prepare failed
+
+0xfffffe0007a1e4ed	IOSurface::cleanProcessorCaches memory prepare failed
+
+0xfffffe0007a1e524	IOSurface %08x: Current device cache changed while purgeability status was changing.
+
+0xfffffe0007a1e57a	%s error - can't prepare mapping
+
+0xfffffe0007a1e59c	%s error - invalid address range (0x%llx - 0x%llx) : (0x%llx - 0x%llx)
+
+0xfffffe0007a1e5e4	%s error - unaligned addr (0x%llx)
+
+0xfffffe0007a1e608	%s error - unaligned length (0x%llx)
+
+0xfffffe0007a1e62e	%s error - invalid range (0x%llx - 0x%llx)
+
+0xfffffe0007a1e65a	%s error - invalid direction (0x%x vs 0x%x)
+
+0xfffffe0007a1e687	%s error - Address ranges do not cover requested allocation size
+
+0xfffffe0007a1e6c9	IOSurface::allocate() - requested cache mode %08x incompatible with memory region cache mode %08x
+
+0xfffffe0007a1e72c	%s error - incompatible cache mode (0x%x in 0x%x)
+
+0xfffffe0007a1e75f	%s error - buffer allocation failed (%llu x %llu fmt: %08x size: %llu bytes)
+
+0xfffffe0007a1e7ad	sid %08x prepare(): %s. format: %s
+
+0xfffffe0007a1e7d1	sid %08x complete() without assertion. dims: %llux%llu, fmt: %s, name: %s
+
+0xfffffe0007a1e81c	IOSurface::copyTimingInfo() - dictionary copy failed
+
+0xfffffe0007a1e852	IOSurface::setTimestamp() - timestamp create failed
+
+0xfffffe0007a1e887	IOSurface::setTimestamp() - dictionary create failure
+
+0xfffffe0007a1e8be	IOSurface::setTimestamp() - setValue for timing info failed
+
+0xfffffe0007a1e8fb	IOSurface::setTimestamp() - timing dictionary create failed
+
+0xfffffe0007a1e938	IOSurface::setTimestamp() - setValue for timing dictionary failed
+
+0xfffffe0007a1e97b	IOSurface::createWriteFence: WARNING: IOFence new failure!
+
+0xfffffe0007a1e9b7	Breaking IOFence deadlock
+
+0xfffffe0007a1e9d2		%p: surf: %p dir: %s accelerator: %d callback: %p target: %p ref: %p notified: %d completed: %d
+
+0xfffffe0007a1ea34	IOSurface fence debug: surface: %p id: %d
+
+0xfffffe0007a1ea5f	Current Fences:
+
+0xfffffe0007a1ea70	Waiting Fences:
+
+0xfffffe0007a1ea81	IOSurface: %s exceeds maximum value
+
+0xfffffe0007a1eaa6	IOSurface: %s exceeds maximum value
+
+0xfffffe0007a1eacb	IOSurface: %s component count is too large.
+
+0xfffffe0007a1eaf8	IOSurface: %s component count is too small.
+
+0xfffffe0007a1eb25	IOSurface: %s component count mismatch.
+
+0xfffffe0007a1eb4e	IOSurface: %s exceeds maximum value
+
+0xfffffe0007a1eb73	IOSurface: Required property %s missing
+
+0xfffffe0007a1eb9c	Attempt to %s IOSurface useCount while kIOSurfaceProhibitUseCount is set, ignored (creatorPID=%u currentPID=%u category=%u).
+
+0xfffffe0007a1ec1a	%s: map_surface_client_shared() failed
+
+0xfffffe0007a1ec42	%s: mapInTask() failed
+
+0xfffffe0007a1ec5a	%s: createMappingInTask() failed
+
+0xfffffe0007a1ec7c	IOSurfaceDeviceMemoryRegion: Couldn't get device memory with index %u for service %s
+
+0xfffffe0007a1ecd2	IOSurfaceDeviceMemoryRegion: zero-length device memory with index %u for service %s
+
+0xfffffe0007a1ed27	IOSurfaceDeviceMemoryRegion: Couldn't map device memory
+
+0xfffffe0007a1ed60	%s: Couldn't allocate range allocator for graphics memory
+
+0xfffffe0007a1ed9b	IOSurfaceRoot: Initial shared event memory alloc failed
+
+0xfffffe0007a1edd4	IOSurface: couldn't count /vram's reg tuples; assuming a single carveout
+
+0xfffffe0007a1ee1e	IOSurface: discovered %u display carveout(s) in /vram
+
+0xfffffe0007a1ee55	IOSurface count of %d approaching limit of %d
+
+0xfffffe0007a1ee84	_   /|
+
+0xfffffe0007a1ee8c	'o.O'
+
+0xfffffe0007a1ee93	=(___)=
+
+0xfffffe0007a1ee9c	   U     ack!
+
+0xfffffe0007a1eeab	Security: Process %s (%d) relying on global (insecure) IOSurface lookups
+
+0xfffffe0007a1eef5	Security: Process %s (%d) failed global (insecure) IOSurface lookup for surface id %08x
+
+0xfffffe0007a1ef4e	SID: 0x%X task: %p buffer: %p  buffer->fClientTask = %p not found
+
+0xfffffe0007a1ef91	%s error - no properties
+
+0xfffffe0007a1efab	%s error - failed to alloc surface buffer
+
+0xfffffe0007a1efd6	Failed to install %s memory region; checking in anyway
+
+0xfffffe0007a1f00e	IOSurface: /vram declares %u carveout(s) but %u resolved; positions are ambiguous, installing none
+
+0xfffffe0007a1f072	IOSurface: /vram declares %u carveout(s) but none resolved
+
+0xfffffe0007a1f0ae	%s: slot index %u is out of range for event %08x
+
+0xfffffe0007a1f0e0	%s: slot index %u is not allocated for signal value 0x%016llx on event %08x
+
+0xfffffe0007a1f12d	%s: failed to assign slot for event %08x, signal value 0x%016llx: ret 0x%x
+
+0xfffffe0007a1f179	Unable to grow task client map
+
+0xfffffe0007a1f199	IOSurfaceRoot using IOSurfaceRootParavirtMapperInterface
+
+0xfffffe0007a1f1d3	provider not IOSurfaceRoot
+
+0xfffffe0007a1f1ef	Cannot allocate IOSurfaceShared
+
+0xfffffe0007a1f210	Cannot map graphics comm page
+
+0xfffffe0007a1f22f	Cannot allocate notification array
+
+0xfffffe0007a1f253	Cannot allocate invalidated surface array
+
+0xfffffe0007a1f27e	Cannot allocate IOLock
+
+0xfffffe0007a1f296	Cannot allocate IORWLock
+
+0xfffffe0007a1f2b0	%s error - invalid parentID (0x%llx)
+
+0xfffffe0007a1f2d6	%s error - failed to map shmem
+
+0xfffffe0007a1f2f6	%s error - no args
+
+0xfffffe0007a1f30a	%s error - exceeded client limit (0x%x)
+
+0xfffffe0007a1f333	%s error - invalid parent id (0x%x)
+
+0xfffffe0007a1f358	%s error - pool off limits (%llu)
+
+0xfffffe0007a1f37b	%s error - set surface handle
+
+0xfffffe0007a1f39a	%s error - set surface id
+
+0xfffffe0007a1f3b5	%s error - failed to alloc client buffer
+
+0xfffffe0007a1f3df	%s error - failed to alloc surface buffer
+
+0xfffffe0007a1f40a	%s error - exceeded client limit (%d)
+
+0xfffffe0007a1f431	%s error - set surface handle
+
+0xfffffe0007a1f450	%s error - set surface id
+
+0xfffffe0007a1f46b	%s error - failed to alloc client buffer
+
+0xfffffe0007a1f495	%s error - failed to alloc surface buffer
+
+0xfffffe0007a1f4c0	Perf: Process %s (%d) has created %d IOSurfaces out of a limit of %d
+
+0xfffffe0007a1f506	Perf: Process %s (%d) has created %d IOSurfaces out of a limit of %d, possible leak?
+
+0xfffffe0007a1f55c	%s error - invalid memory range (addr=0x%llx size=0x%llx)
+
+0xfffffe0007a1f597	%s error - exceeded client limit (%d)
+
+0xfffffe0007a1f5be	%s error - no properties
+
+0xfffffe0007a1f5d8	%s error - set surface handle
+
+0xfffffe0007a1f5f7	%s error - set surface id
+
+0xfffffe0007a1f612	%s error - failed to alloc client buffer
+
+0xfffffe0007a1f63c	%s error - failed to alloc surface buffer
+
+0xfffffe0007a1f667	Perf: Process %s (%d) IOSurface creation count: %d total count: %d
+
+0xfffffe0007a1f6ab	IONewZero failed to alloc handles
+
+0xfffffe0007a1f6ce	%s: alloc_handles() failed
+
+0xfffffe0007a1f6ea	IOSurfaceRootUserClient: duplicate listener refcon %08llx
+
+0xfffffe0007a1f725	%s error - invalid args
+
+0xfffffe0007a1f73e	%s error - copyObjectForPortNameInTask failed
+
+0xfffffe0007a1f76d	%s error - invalid memory pool port
+
+0xfffffe0007a1f792	%s error - task does not own memory pool
+
+0xfffffe0007a1f7bc	%s error - ensureMemory failed
+
+0xfffffe0007a1f7dc	%s error - invalid args
+
+0xfffffe0007a1f7f5	%s error - copyObjectForPortNameInTask failed
+
+0xfffffe0007a1f824	%s error - invalid memory pool port
+
+0xfffffe0007a1f849	%s error - task does not own memory pool
+
+0xfffffe0007a1f873	%s error - flush failed
+
+0xfffffe0007a1f88c	%s error - copyObjectForPortNameInTask failed
+
+0xfffffe0007a1f8bb	%s error - invalid memory pool port
+
+0xfffffe0007a1f8e0	%s error - invalid shared event port
+
+0xfffffe0007a1f906	%s pool off limits for poolId 0x%llX
+
+0xfffffe0007a1f92c	IOSurfaceMemoryPool: %s (%d) can't access pool id %llu (wrong entitlements)
+
+0xfffffe0007a1f979	IOSurfaceMemoryPool: %s (%d) invalid task (%p) can't access pool id %llu (wrong entitlements)
+
+0xfffffe0007a1f9e3	@
+0xfffffe0007a1f9ec	 
+0xfffffe0007a1f9f3	B
+0xfffffe0007a1f9fb	0
+0xfffffe0007a1fa03	F
+0xfffffe0007a1fa08	ScalableMemory
+0xfffffe0007a1fa17	PurpleGfxMem
+0xfffffe0007a1fa30	(unknown)
+python : Traceback (most recent call last):
+At line:1 char:1
++ python "G:/REPO\tools\opencode-temp\io-gpu\f1iogpu_cstrings ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "G:/REPO\tools\opencode-temp\io-gpu\f1iogpu_cstrings.py", line 36, in <module>
+    print('0x%x\t%s' % (a, s))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:/Users/USER\AppData\Local\Programs\Python\Python314\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 19-20: character maps to <undefined>

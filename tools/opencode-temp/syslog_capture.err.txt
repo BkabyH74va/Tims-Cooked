@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "G:/REPO\tools\opencode-temp\syslog_capture.py", line 22, in <module>
+    asyncio.run(main())
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:/Users/USER\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 205, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:/Users/USER\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 128, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:/Users/USER\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 720, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "G:/REPO\tools\opencode-temp\syslog_capture.py", line 15, in main
+    async with SyslogService(lockdown=rsd) as svc:
+               ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: SyslogService.__init__() got an unexpected keyword argument 'lockdown'

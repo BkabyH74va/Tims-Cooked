@@ -1,0 +1,42 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>brscan</title>
+<script>
+const P = (s) => { try { window.webkit.messageHandlers.scan.postMessage(String(s)); } catch (e) {} };
+(async () => {
+  P('START ' + location.href + ' ua=' + navigator.userAgent);
+  let n = 0, chunks = 0, peaks = 0, hi = 0, fnv = 2166136261 >>> 0;
+  const t0 = performance.now();
+  let first = new Uint8Array(0); let tail = new Uint8Array(0);
+  try {
+    const r = await fetch('/brtest', { cache: 'no-store' });
+    P('STATUS ' + r.status + ' enc=' + (r.headers.get('content-encoding') || '-') +
+      ' clen=' + (r.headers.get('content-length') || '-'));
+    const rd = r.body.getReader();
+    for (;;) {
+      const { done, value } = await rd.read();
+      if (done) { P('EOF'); break; }
+      chunks++; n += value.length;
+      for (let i = 0; i < value.length; i++) { const b = value[i]; if (b >= 0x80) hi++; fnv ^= b; fnv = Math.imul(fnv, 16777619) >>> 0; }
+      if (value.length > 65536) peaks++;
+      if (value.length) { const t2 = value.subarray(Math.max(0, value.length - 256)); tail = t2.slice(); }
+      if (first.length < 64) {
+        const t = value.subarray(0, Math.min(64 - first.length, value.length));
+        const f = new Uint8Array(first.length + t.length);
+        f.set(first); f.set(t, first.length); first = f;
+      }
+      if (Math.floor((n - value.length) / 1048576) !== Math.floor(n / 1048576)) {
+        P('LEN ' + n + ' chunks=' + chunks + ' ms=' + Math.round(performance.now() - t0));
+      }
+    }
+  } catch (e) { P('ERR ' + e); }
+  P('LEN ' + n + ' chunks=' + chunks + ' bigchunks=' + peaks + ' ms=' + Math.round(performance.now() - t0));
+  let hex = ''; for (const b of first) hex += b.toString(16).padStart(2, '0');
+  P('FIRST64 ' + hex);
+  P('HI ' + hi + ' FNV ' + fnv.toString(16));
+  let th = ''; for (const b of tail) th += b.toString(16).padStart(2, '0');
+  P('TAIL ' + th);
+  P('DONE');
+})();
+</script>

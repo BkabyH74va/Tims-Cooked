@@ -1,0 +1,446 @@
+==================== 0xfffffe000a359fec ====================
+  00fffffe000a359fec: adrp     x17, #0xfffffe0008383000
+  00fffffe000a359ff0: add      x17, x17, #0x498
+  00fffffe000a359ff4: ldr      x16, [x17]
+  00fffffe000a359ff8: braa     x16, x17
+  00fffffe000a359ffc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a000: add      x17, x17, #0x4a0
+  00fffffe000a35a004: ldr      x16, [x17]
+  00fffffe000a35a008: braa     x16, x17
+  00fffffe000a35a00c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a010: add      x17, x17, #0x4a8
+  00fffffe000a35a014: ldr      x16, [x17]
+  00fffffe000a35a018: braa     x16, x17
+  00fffffe000a35a01c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a020: add      x17, x17, #0x4b0
+  00fffffe000a35a024: ldr      x16, [x17]
+  00fffffe000a35a028: braa     x16, x17
+  00fffffe000a35a02c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a030: add      x17, x17, #0x4b8
+  00fffffe000a35a034: ldr      x16, [x17]
+  00fffffe000a35a038: braa     x16, x17
+  00fffffe000a35a03c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a040: add      x17, x17, #0x4c0
+  00fffffe000a35a044: ldr      x16, [x17]
+  00fffffe000a35a048: braa     x16, x17
+  00fffffe000a35a04c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a050: add      x17, x17, #0x4c8
+  00fffffe000a35a054: ldr      x16, [x17]
+  00fffffe000a35a058: braa     x16, x17
+  00fffffe000a35a05c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a060: add      x17, x17, #0x4d0
+  00fffffe000a35a064: ldr      x16, [x17]
+  00fffffe000a35a068: braa     x16, x17
+  00fffffe000a35a06c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a070: add      x17, x17, #0x4d8
+  00fffffe000a35a074: ldr      x16, [x17]
+  00fffffe000a35a078: braa     x16, x17
+  00fffffe000a35a07c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a080: add      x17, x17, #0x4e0
+  00fffffe000a35a084: ldr      x16, [x17]
+  00fffffe000a35a088: braa     x16, x17
+  00fffffe000a35a08c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a090: add      x17, x17, #0x4e8
+  00fffffe000a35a094: ldr      x16, [x17]
+  00fffffe000a35a098: braa     x16, x17
+  00fffffe000a35a09c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a0a0: add      x17, x17, #0x4f0
+  00fffffe000a35a0a4: ldr      x16, [x17]
+  00fffffe000a35a0a8: braa     x16, x17
+  00fffffe000a35a0ac: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a0b0: add      x17, x17, #0x4f8
+  00fffffe000a35a0b4: ldr      x16, [x17]
+  00fffffe000a35a0b8: braa     x16, x17
+  00fffffe000a35a0bc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a0c0: add      x17, x17, #0x500
+  00fffffe000a35a0c4: ldr      x16, [x17]
+  00fffffe000a35a0c8: braa     x16, x17
+  00fffffe000a35a0cc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a0d0: add      x17, x17, #0x508
+  00fffffe000a35a0d4: ldr      x16, [x17]
+  00fffffe000a35a0d8: braa     x16, x17
+  00fffffe000a35a0dc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a0e0: add      x17, x17, #0x510
+  00fffffe000a35a0e4: ldr      x16, [x17]
+  00fffffe000a35a0e8: braa     x16, x17
+  00fffffe000a35a0ec: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a0f0: add      x17, x17, #0x518
+  00fffffe000a35a0f4: ldr      x16, [x17]
+  00fffffe000a35a0f8: braa     x16, x17
+  00fffffe000a35a0fc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a100: add      x17, x17, #0x520
+  00fffffe000a35a104: ldr      x16, [x17]
+  00fffffe000a35a108: braa     x16, x17
+  00fffffe000a35a10c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a110: add      x17, x17, #0x528
+  00fffffe000a35a114: ldr      x16, [x17]
+  00fffffe000a35a118: braa     x16, x17
+  00fffffe000a35a11c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a120: add      x17, x17, #0x530
+  00fffffe000a35a124: ldr      x16, [x17]
+  00fffffe000a35a128: braa     x16, x17
+  00fffffe000a35a12c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a130: add      x17, x17, #0x538
+  00fffffe000a35a134: ldr      x16, [x17]
+  00fffffe000a35a138: braa     x16, x17
+  00fffffe000a35a13c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a140: add      x17, x17, #0x540
+  00fffffe000a35a144: ldr      x16, [x17]
+  00fffffe000a35a148: braa     x16, x17
+  00fffffe000a35a14c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a150: add      x17, x17, #0x548
+  00fffffe000a35a154: ldr      x16, [x17]
+  00fffffe000a35a158: braa     x16, x17
+  00fffffe000a35a15c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a160: add      x17, x17, #0x550
+  00fffffe000a35a164: ldr      x16, [x17]
+  00fffffe000a35a168: braa     x16, x17
+  00fffffe000a35a16c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a170: add      x17, x17, #0x558
+  00fffffe000a35a174: ldr      x16, [x17]
+  00fffffe000a35a178: braa     x16, x17
+  00fffffe000a35a17c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a180: add      x17, x17, #0x560
+  00fffffe000a35a184: ldr      x16, [x17]
+  00fffffe000a35a188: braa     x16, x17
+  00fffffe000a35a18c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a190: add      x17, x17, #0x568
+  00fffffe000a35a194: ldr      x16, [x17]
+  00fffffe000a35a198: braa     x16, x17
+  00fffffe000a35a19c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a1a0: add      x17, x17, #0x570
+  00fffffe000a35a1a4: ldr      x16, [x17]
+  00fffffe000a35a1a8: braa     x16, x17
+  00fffffe000a35a1ac: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a1b0: add      x17, x17, #0x578
+  00fffffe000a35a1b4: ldr      x16, [x17]
+  00fffffe000a35a1b8: braa     x16, x17
+  00fffffe000a35a1bc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a1c0: add      x17, x17, #0x580
+  00fffffe000a35a1c4: ldr      x16, [x17]
+  00fffffe000a35a1c8: braa     x16, x17
+  00fffffe000a35a1cc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a1d0: add      x17, x17, #0x588
+  00fffffe000a35a1d4: ldr      x16, [x17]
+  00fffffe000a35a1d8: braa     x16, x17
+  00fffffe000a35a1dc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a1e0: add      x17, x17, #0x590
+  00fffffe000a35a1e4: ldr      x16, [x17]
+  00fffffe000a35a1e8: braa     x16, x17
+  00fffffe000a35a1ec: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a1f0: add      x17, x17, #0x598
+  00fffffe000a35a1f4: ldr      x16, [x17]
+  00fffffe000a35a1f8: braa     x16, x17
+  00fffffe000a35a1fc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a200: add      x17, x17, #0x5a0
+  00fffffe000a35a204: ldr      x16, [x17]
+  00fffffe000a35a208: braa     x16, x17
+  00fffffe000a35a20c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a210: add      x17, x17, #0x5a8
+  00fffffe000a35a214: ldr      x16, [x17]
+  00fffffe000a35a218: braa     x16, x17
+  00fffffe000a35a21c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a220: add      x17, x17, #0x5b0
+  00fffffe000a35a224: ldr      x16, [x17]
+  00fffffe000a35a228: braa     x16, x17
+  00fffffe000a35a22c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a230: add      x17, x17, #0x5b8
+  00fffffe000a35a234: ldr      x16, [x17]
+  00fffffe000a35a238: braa     x16, x17
+  00fffffe000a35a23c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a240: add      x17, x17, #0x5c0
+  00fffffe000a35a244: ldr      x16, [x17]
+  00fffffe000a35a248: braa     x16, x17
+  00fffffe000a35a24c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a250: add      x17, x17, #0x5c8
+  00fffffe000a35a254: ldr      x16, [x17]
+  00fffffe000a35a258: braa     x16, x17
+  00fffffe000a35a25c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a260: add      x17, x17, #0x5d0
+  00fffffe000a35a264: ldr      x16, [x17]
+  00fffffe000a35a268: braa     x16, x17
+  00fffffe000a35a26c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a270: add      x17, x17, #0x5d8
+  00fffffe000a35a274: ldr      x16, [x17]
+  00fffffe000a35a278: braa     x16, x17
+  00fffffe000a35a27c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a280: add      x17, x17, #0x5e0
+  00fffffe000a35a284: ldr      x16, [x17]
+  00fffffe000a35a288: braa     x16, x17
+  00fffffe000a35a28c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a290: add      x17, x17, #0x5e8
+  00fffffe000a35a294: ldr      x16, [x17]
+  00fffffe000a35a298: braa     x16, x17
+  00fffffe000a35a29c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a2a0: add      x17, x17, #0x5f0
+  00fffffe000a35a2a4: ldr      x16, [x17]
+  00fffffe000a35a2a8: braa     x16, x17
+  00fffffe000a35a2ac: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a2b0: add      x17, x17, #0x5f8
+  00fffffe000a35a2b4: ldr      x16, [x17]
+  00fffffe000a35a2b8: braa     x16, x17
+  00fffffe000a35a2bc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a2c0: add      x17, x17, #0x600
+  00fffffe000a35a2c4: ldr      x16, [x17]
+  00fffffe000a35a2c8: braa     x16, x17
+  00fffffe000a35a2cc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a2d0: add      x17, x17, #0x608
+  00fffffe000a35a2d4: ldr      x16, [x17]
+  00fffffe000a35a2d8: braa     x16, x17
+  00fffffe000a35a2dc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a2e0: add      x17, x17, #0x610
+  00fffffe000a35a2e4: ldr      x16, [x17]
+  00fffffe000a35a2e8: braa     x16, x17
+  00fffffe000a35a2ec: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a2f0: add      x17, x17, #0x618
+  00fffffe000a35a2f4: ldr      x16, [x17]
+  00fffffe000a35a2f8: braa     x16, x17
+  00fffffe000a35a2fc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a300: add      x17, x17, #0x620
+  00fffffe000a35a304: ldr      x16, [x17]
+  00fffffe000a35a308: braa     x16, x17
+  00fffffe000a35a30c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a310: add      x17, x17, #0x628
+  00fffffe000a35a314: ldr      x16, [x17]
+  00fffffe000a35a318: braa     x16, x17
+  00fffffe000a35a31c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a320: add      x17, x17, #0x630
+  00fffffe000a35a324: ldr      x16, [x17]
+  00fffffe000a35a328: braa     x16, x17
+  00fffffe000a35a32c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a330: add      x17, x17, #0x638
+  00fffffe000a35a334: ldr      x16, [x17]
+  00fffffe000a35a338: braa     x16, x17
+  00fffffe000a35a33c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a340: add      x17, x17, #0x640
+  00fffffe000a35a344: ldr      x16, [x17]
+  00fffffe000a35a348: braa     x16, x17
+  00fffffe000a35a34c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a350: add      x17, x17, #0x648
+  00fffffe000a35a354: ldr      x16, [x17]
+  00fffffe000a35a358: braa     x16, x17
+  00fffffe000a35a35c: adrp     x17, #0xfffffe0008383000
+
+==================== 0xfffffe000a35a15c ====================
+  00fffffe000a35a15c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a160: add      x17, x17, #0x550
+  00fffffe000a35a164: ldr      x16, [x17]
+  00fffffe000a35a168: braa     x16, x17
+  00fffffe000a35a16c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a170: add      x17, x17, #0x558
+  00fffffe000a35a174: ldr      x16, [x17]
+  00fffffe000a35a178: braa     x16, x17
+  00fffffe000a35a17c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a180: add      x17, x17, #0x560
+  00fffffe000a35a184: ldr      x16, [x17]
+  00fffffe000a35a188: braa     x16, x17
+  00fffffe000a35a18c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a190: add      x17, x17, #0x568
+  00fffffe000a35a194: ldr      x16, [x17]
+  00fffffe000a35a198: braa     x16, x17
+  00fffffe000a35a19c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a1a0: add      x17, x17, #0x570
+  00fffffe000a35a1a4: ldr      x16, [x17]
+  00fffffe000a35a1a8: braa     x16, x17
+  00fffffe000a35a1ac: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a1b0: add      x17, x17, #0x578
+  00fffffe000a35a1b4: ldr      x16, [x17]
+  00fffffe000a35a1b8: braa     x16, x17
+  00fffffe000a35a1bc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a1c0: add      x17, x17, #0x580
+  00fffffe000a35a1c4: ldr      x16, [x17]
+  00fffffe000a35a1c8: braa     x16, x17
+  00fffffe000a35a1cc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a1d0: add      x17, x17, #0x588
+  00fffffe000a35a1d4: ldr      x16, [x17]
+  00fffffe000a35a1d8: braa     x16, x17
+  00fffffe000a35a1dc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a1e0: add      x17, x17, #0x590
+  00fffffe000a35a1e4: ldr      x16, [x17]
+  00fffffe000a35a1e8: braa     x16, x17
+  00fffffe000a35a1ec: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a1f0: add      x17, x17, #0x598
+  00fffffe000a35a1f4: ldr      x16, [x17]
+  00fffffe000a35a1f8: braa     x16, x17
+  00fffffe000a35a1fc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a200: add      x17, x17, #0x5a0
+  00fffffe000a35a204: ldr      x16, [x17]
+  00fffffe000a35a208: braa     x16, x17
+  00fffffe000a35a20c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a210: add      x17, x17, #0x5a8
+  00fffffe000a35a214: ldr      x16, [x17]
+  00fffffe000a35a218: braa     x16, x17
+  00fffffe000a35a21c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a220: add      x17, x17, #0x5b0
+  00fffffe000a35a224: ldr      x16, [x17]
+  00fffffe000a35a228: braa     x16, x17
+  00fffffe000a35a22c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a230: add      x17, x17, #0x5b8
+  00fffffe000a35a234: ldr      x16, [x17]
+  00fffffe000a35a238: braa     x16, x17
+  00fffffe000a35a23c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a240: add      x17, x17, #0x5c0
+  00fffffe000a35a244: ldr      x16, [x17]
+  00fffffe000a35a248: braa     x16, x17
+  00fffffe000a35a24c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a250: add      x17, x17, #0x5c8
+  00fffffe000a35a254: ldr      x16, [x17]
+  00fffffe000a35a258: braa     x16, x17
+  00fffffe000a35a25c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a260: add      x17, x17, #0x5d0
+  00fffffe000a35a264: ldr      x16, [x17]
+  00fffffe000a35a268: braa     x16, x17
+  00fffffe000a35a26c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a270: add      x17, x17, #0x5d8
+  00fffffe000a35a274: ldr      x16, [x17]
+  00fffffe000a35a278: braa     x16, x17
+  00fffffe000a35a27c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a280: add      x17, x17, #0x5e0
+  00fffffe000a35a284: ldr      x16, [x17]
+  00fffffe000a35a288: braa     x16, x17
+  00fffffe000a35a28c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a290: add      x17, x17, #0x5e8
+  00fffffe000a35a294: ldr      x16, [x17]
+  00fffffe000a35a298: braa     x16, x17
+  00fffffe000a35a29c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a2a0: add      x17, x17, #0x5f0
+  00fffffe000a35a2a4: ldr      x16, [x17]
+  00fffffe000a35a2a8: braa     x16, x17
+  00fffffe000a35a2ac: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a2b0: add      x17, x17, #0x5f8
+  00fffffe000a35a2b4: ldr      x16, [x17]
+  00fffffe000a35a2b8: braa     x16, x17
+  00fffffe000a35a2bc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a2c0: add      x17, x17, #0x600
+  00fffffe000a35a2c4: ldr      x16, [x17]
+  00fffffe000a35a2c8: braa     x16, x17
+  00fffffe000a35a2cc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a2d0: add      x17, x17, #0x608
+  00fffffe000a35a2d4: ldr      x16, [x17]
+  00fffffe000a35a2d8: braa     x16, x17
+  00fffffe000a35a2dc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a2e0: add      x17, x17, #0x610
+  00fffffe000a35a2e4: ldr      x16, [x17]
+  00fffffe000a35a2e8: braa     x16, x17
+  00fffffe000a35a2ec: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a2f0: add      x17, x17, #0x618
+  00fffffe000a35a2f4: ldr      x16, [x17]
+  00fffffe000a35a2f8: braa     x16, x17
+  00fffffe000a35a2fc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a300: add      x17, x17, #0x620
+  00fffffe000a35a304: ldr      x16, [x17]
+  00fffffe000a35a308: braa     x16, x17
+  00fffffe000a35a30c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a310: add      x17, x17, #0x628
+  00fffffe000a35a314: ldr      x16, [x17]
+  00fffffe000a35a318: braa     x16, x17
+  00fffffe000a35a31c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a320: add      x17, x17, #0x630
+  00fffffe000a35a324: ldr      x16, [x17]
+  00fffffe000a35a328: braa     x16, x17
+  00fffffe000a35a32c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a330: add      x17, x17, #0x638
+  00fffffe000a35a334: ldr      x16, [x17]
+  00fffffe000a35a338: braa     x16, x17
+  00fffffe000a35a33c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a340: add      x17, x17, #0x640
+  00fffffe000a35a344: ldr      x16, [x17]
+  00fffffe000a35a348: braa     x16, x17
+  00fffffe000a35a34c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a350: add      x17, x17, #0x648
+  00fffffe000a35a354: ldr      x16, [x17]
+  00fffffe000a35a358: braa     x16, x17
+  00fffffe000a35a35c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a360: add      x17, x17, #0x650
+  00fffffe000a35a364: ldr      x16, [x17]
+  00fffffe000a35a368: braa     x16, x17
+  00fffffe000a35a36c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a370: add      x17, x17, #0x658
+  00fffffe000a35a374: ldr      x16, [x17]
+  00fffffe000a35a378: braa     x16, x17
+  00fffffe000a35a37c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a380: add      x17, x17, #0x660
+  00fffffe000a35a384: ldr      x16, [x17]
+  00fffffe000a35a388: braa     x16, x17
+  00fffffe000a35a38c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a390: add      x17, x17, #0x668
+  00fffffe000a35a394: ldr      x16, [x17]
+  00fffffe000a35a398: braa     x16, x17
+  00fffffe000a35a39c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a3a0: add      x17, x17, #0x670
+  00fffffe000a35a3a4: ldr      x16, [x17]
+  00fffffe000a35a3a8: braa     x16, x17
+  00fffffe000a35a3ac: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a3b0: add      x17, x17, #0x678
+  00fffffe000a35a3b4: ldr      x16, [x17]
+  00fffffe000a35a3b8: braa     x16, x17
+  00fffffe000a35a3bc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a3c0: add      x17, x17, #0x680
+  00fffffe000a35a3c4: ldr      x16, [x17]
+  00fffffe000a35a3c8: braa     x16, x17
+  00fffffe000a35a3cc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a3d0: add      x17, x17, #0x688
+  00fffffe000a35a3d4: ldr      x16, [x17]
+  00fffffe000a35a3d8: braa     x16, x17
+  00fffffe000a35a3dc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a3e0: add      x17, x17, #0x690
+  00fffffe000a35a3e4: ldr      x16, [x17]
+  00fffffe000a35a3e8: braa     x16, x17
+  00fffffe000a35a3ec: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a3f0: add      x17, x17, #0x698
+  00fffffe000a35a3f4: ldr      x16, [x17]
+  00fffffe000a35a3f8: braa     x16, x17
+  00fffffe000a35a3fc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a400: add      x17, x17, #0x6a0
+  00fffffe000a35a404: ldr      x16, [x17]
+  00fffffe000a35a408: braa     x16, x17
+  00fffffe000a35a40c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a410: add      x17, x17, #0x6a8
+  00fffffe000a35a414: ldr      x16, [x17]
+  00fffffe000a35a418: braa     x16, x17
+  00fffffe000a35a41c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a420: add      x17, x17, #0x6b0
+  00fffffe000a35a424: ldr      x16, [x17]
+  00fffffe000a35a428: braa     x16, x17
+  00fffffe000a35a42c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a430: add      x17, x17, #0x6b8
+  00fffffe000a35a434: ldr      x16, [x17]
+  00fffffe000a35a438: braa     x16, x17
+  00fffffe000a35a43c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a440: add      x17, x17, #0x6c0
+  00fffffe000a35a444: ldr      x16, [x17]
+  00fffffe000a35a448: braa     x16, x17
+  00fffffe000a35a44c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a450: add      x17, x17, #0x6c8
+  00fffffe000a35a454: ldr      x16, [x17]
+  00fffffe000a35a458: braa     x16, x17
+  00fffffe000a35a45c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a460: add      x17, x17, #0x6d0
+  00fffffe000a35a464: ldr      x16, [x17]
+  00fffffe000a35a468: braa     x16, x17
+  00fffffe000a35a46c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a470: add      x17, x17, #0x6d8
+  00fffffe000a35a474: ldr      x16, [x17]
+  00fffffe000a35a478: braa     x16, x17
+  00fffffe000a35a47c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a480: add      x17, x17, #0x6e0
+  00fffffe000a35a484: ldr      x16, [x17]
+  00fffffe000a35a488: braa     x16, x17
+  00fffffe000a35a48c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a490: add      x17, x17, #0x6e8
+  00fffffe000a35a494: ldr      x16, [x17]
+  00fffffe000a35a498: braa     x16, x17
+  00fffffe000a35a49c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a4a0: add      x17, x17, #0x6f0
+  00fffffe000a35a4a4: ldr      x16, [x17]
+  00fffffe000a35a4a8: braa     x16, x17
+  00fffffe000a35a4ac: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a4b0: add      x17, x17, #0x6f8
+  00fffffe000a35a4b4: ldr      x16, [x17]
+  00fffffe000a35a4b8: braa     x16, x17
+  00fffffe000a35a4bc: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a4c0: add      x17, x17, #0x700
+  00fffffe000a35a4c4: ldr      x16, [x17]
+  00fffffe000a35a4c8: braa     x16, x17
+  00fffffe000a35a4cc: adrp     x17, #0xfffffe0008383000
+

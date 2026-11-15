@@ -1,0 +1,270 @@
+﻿0xfffffe000752db38 AppleJPEGWrapperControlV14
+0xfffffe000752db53 site.AppleJPEGWrapperControlV14
+0xfffffe000752db73 121121
+0xfffffe000752db7a ajpeg_drv_set_image_boundary
+0xfffffe000752db97 virtual void AppleJPEGWrapperControl::set_idle2bcg_en(uint32_t)
+0xfffffe000752dbd7 virtual uint32_t AppleJPEGWrapperControl::read_idle2bcg_en()
+0xfffffe000752dc14 virtual void AppleJPEGWrapperControl::set_idle2bcg_trigger(uint32_t)
+0xfffffe000752dc59 virtual uint32_t AppleJPEGWrapperControl::read_idle2bcg_trigger()
+0xfffffe000752dc9b QueueManager
+0xfffffe000752dca8 deQueue
+0xfffffe000752dcb0 AppleJPEGDriver
+0xfffffe000752dcc0 site.AppleJPEGDriver
+0xfffffe000752dcd5 1211111212221212121111111222112222122222211111
+0xfffffe000752dd04 virtual bool AppleJPEGDriver::init(OSDictionary *)
+0xfffffe000752dd37 virtual IOService *AppleJPEGDriver::probe(IOService *, SInt32 *)
+0xfffffe000752dd78 static IOReturn AppleJPEGDriver::IODARTErrorHandler(void *, const IODARTErrorInfo *)
+0xfffffe000752ddcd start
+0xfffffe000752ddd3 IOCoreSurfaceRoot
+0xfffffe000752dde5 site.AppleJPEGDart
+0xfffffe000752ddf8 11112111121
+0xfffffe000752de04 site.AppleJPEGPM
+0xfffffe000752de15 112
+0xfffffe000752de19 site.RequestHandling
+0xfffffe000752de2f site.AppleJPEGCoreAnalyzer
+0xfffffe000752de4a 222222222222222222222222222222222222222222222222222222222222222222222222222222222222222111
+0xfffffe000752dea5 virtual bool AppleJPEGDriver::start(IOService *)
+0xfffffe000752ded6 jpeg-log
+0xfffffe000752dedf parseBootArgs
+0xfffffe000752deed jpeg-disableWorkaround
+0xfffffe000752df04 jpeg-fsim
+0xfffffe000752df0e axi2af_parity_enable
+0xfffffe000752df23 IOReturn AppleJPEGDriver::attachCoreAnalyticsService(void *, IOService *, IONotifier *)
+0xfffffe000752df7b AppleJPEGRequiresMCUAlignment
+0xfffffe000752df99 AppleJPEGNumCores
+0xfffffe000752dfab AppleJPEGSupportsDCTScaling
+0xfffffe000752dfc7 AppleJPEGSupportsRSTLogging
+0xfffffe000752dfe3 AppleJPEGSupportsMissingEOI
+0xfffffe000752dfff AppleJPEGIsLegacyDevice
+0xfffffe000752e017 AppleJPEGSupportsAppleInterchangeFormats
+0xfffffe000752e040 AppleJPEGSupports12BitsFormat
+0xfffffe000752e05e AppleJPEGSupportsCompressedInterchangeFormats
+0xfffffe000752e08c IOReturn AppleJPEGDriver::setPowerState_gated(unsigned long, IOService *)
+0xfffffe000752e0d6 virtual IOReturn AppleJPEGDriver::newUserClient(task_t, void *, UInt32, OSDictionary *, IOUserClient **)
+0xfffffe000752e13f virtual void AppleJPEGDriver::clientClosedGated(AppleJPEGDriverUserClient *)
+0xfffffe000752e18c turnOnJPEGHW_gated
+0xfffffe000752e19f void AppleJPEGDriver::interruptOccurred_gated(JpegRequest *, uint32_t)
+0xfffffe000752e1e6 bool AppleJPEGDriver::isSurfaceMultiPlane(IOSurface *)
+0xfffffe000752e21d IOReturn AppleJPEGDriver::doRestOfBufferSetupForDecode_gated(JpegRequest *)
+0xfffffe000752e269 IOReturn AppleJPEGDriver::doRestOfBufferSetupForEncode_gated(JpegRequest *)
+0xfffffe000752e2b5 IOReturn AppleJPEGDriver::setupBuffersForCoding_gated(JpegRequest *)
+0xfffffe000752e2fa site.JpegRequest
+0xfffffe000752e30b 112221111111112212112222222221222222222222222222222222222222222222222222222222222222222111122222112222222222222222222222222222222222222222222222212222222121112222222222222
+0xfffffe000752e3b7 IOReturn AppleJPEGDriver::startDecoder(AppleJPEGDriverIOStruct *, AppleJPEGDriverIOStruct *, mach_port_t, IOUserClient *, task_t)
+0xfffffe000752e439 IOReturn AppleJPEGDriver::startDecoderExt(AppleJPEGDriverIOStructExt *, AppleJPEGDriverIOStructExt *, mach_port_t, IOUserClient *, task_t)
+0xfffffe000752e4c4 IOReturn AppleJPEGDriver::startEncoder(AppleJPEGDriverIOStruct *, AppleJPEGDriverIOStruct *, mach_port_t, IOUserClient *, task_t)
+0xfffffe000752e546 IOReturn AppleJPEGDriver::startEncoderExt(AppleJPEGDriverIOStructExt *, AppleJPEGDriverIOStructExt *, mach_port_t, IOUserClient *, task_t)
+0xfffffe000752e5d1 IOReturn AppleJPEGDriver::startDecoder2024(AppleJPEGDriverIOStruct2024 *, AppleJPEGDriverIOStruct2024 *, mach_port_t, IOUserClient *, task_t)
+0xfffffe000752e65f IOReturn AppleJPEGDriver::startEncoder2024(AppleJPEGDriverIOStruct2024 *, AppleJPEGDriverIOStruct2024 *, mach_port_t, IOUserClient *, task_t)
+0xfffffe000752e6ed void AppleJPEGDriver::begin_io_gated(bool)
+0xfffffe000752e718 IOReturn AppleJPEGDriver::finish_io_gated(JpegRequest *, IOReturn, uint32_t, bool)
+0xfffffe000752e76b sleepCommandGate
+0xfffffe000752e77c IOReturn AppleJPEGDriver::queue_io_gated(JpegRequest *)
+0xfffffe000752e7b4 hw-type
+0xfffffe000752e7bc getCPUType
+0xfffffe000752e7c7 Norm Clock frames_%d
+0xfffffe000752e7dc Fast Clock frames_%d
+0xfffffe000752e7f1 void AppleJPEGDriver::showRequestInfo(JpegRequest *)
+0xfffffe000752e826 %s_%d_%d*%d_%x
+0xfffffe000752e835 /tmp/jpegtest_
+0xfffffe000752e844 %s_%d_%d*%d_[%u]_%x
+0xfffffe000752e858 %s_%d_%d*%d_[%u_%u]_%x
+0xfffffe000752e86f IOReturn AppleJPEGDriver::dumpBitstream(JpegRequest *)
+0xfffffe000752e8a6 site.QueueManager
+0xfffffe000752e8b8 1111111
+0xfffffe000752e8c0 void AppleJPEGDriver::getMCUSize(AppleJPEGSubsampling, unsigned int &, unsigned int &, unsigned int &)
+0xfffffe000752e927 void AppleJPEGDriver::convertToRequestSubSampleMode(AppleJPEGSubsampling, JpegRequest *)
+0xfffffe000752e980 void AppleJPEGDriver::release_codec_gated(uint32_t)
+0xfffffe000752e9b4 void AppleJPEGDriver::checkDARTException()
+0xfffffe000752e9df uint32_t AppleJPEGDriver::assign_codec_gated(JpegRequest *)
+0xfffffe000752ea1b The range of valid memory is too large to be represented by this type, or [begin, end) is not a well-formed range
+0xfffffe000752ea8d "%s" @%s:%d
+0xfffffe000752ea99 OSBoundedPtr.h
+0xfffffe000752eaa8 bounded_ptr<T>::operator+=(n): Adding the specified number of bytes to the offset representing the current position would overflow.
+0xfffffe000752eb2c bounded_ptr<T>::operator*: Dereferencing this pointer would access memory outside of the bounds set originally
+0xfffffe000752eb9b This bounded_ptr is pointing to memory outside of what can be represented by a native pointer.
+0xfffffe000752ebfa IOReturn AppleJPEGCoreAnalyzer::checkFrameBufferFormat(uint32_t, uint32_t)
+0xfffffe000752ec45 IOReturn AppleJPEGCoreAnalyzer::start(IOService *, IOServiceMatchingNotificationHandler)
+0xfffffe000752ec9e void AppleJPEGCoreAnalyzer::collectCoreDataFromRequest(JpegRequest *)
+0xfffffe000752ece4 void AppleJPEGCoreAnalyzer::submitAnalyticData()
+0xfffffe000752ed15 com.apple.jpegdriverevents.picSize
+0xfffffe000752ed38 size_encode_256k_count
+0xfffffe000752ed4f size_encode_1m_count
+0xfffffe000752ed64 size_encode_4m_count
+0xfffffe000752ed79 size_encode_12m_count
+0xfffffe000752ed8f size_encode_exlarge_count
+0xfffffe000752eda9 size_decode_256k_count
+0xfffffe000752edc0 size_decode_1m_count
+0xfffffe000752edd5 size_decode_4m_count
+0xfffffe000752edea size_decode_12m_count
+0xfffffe000752ee00 size_decode_exlarge_count
+0xfffffe000752ee1a com.apple.jpegdriverevents.jpegFormat
+0xfffffe000752ee40 format_400_encode_count
+0xfffffe000752ee58 format_420_encode_count
+0xfffffe000752ee70 format_422_encode_count
+0xfffffe000752ee88 format_444_encode_count
+0xfffffe000752eea0 format_411_encode_count
+0xfffffe000752eeb8 format_400_decode_count
+0xfffffe000752eed0 format_420_decode_count
+0xfffffe000752eee8 format_422_decode_count
+0xfffffe000752ef00 format_444_decode_count
+0xfffffe000752ef18 format_411_decode_count
+0xfffffe000752ef30 com.apple.jpegdriverevents.frameBufferFormat
+0xfffffe000752ef5d format_argb_linear_count
+0xfffffe000752ef76 format_argb_tiled_count
+0xfffffe000752ef8e format_argb_10bit_linear_count
+0xfffffe000752efad format_argb_10bit_tiled_count
+0xfffffe000752efcb format_argb_12bit_linear_count
+0xfffffe000752efea format_argb_12bit_tiled_count
+0xfffffe000752f008 format_400_8bit_linear_count
+0xfffffe000752f025 format_420_8bit_linear_count
+0xfffffe000752f042 format_422_8bit_linear_count
+0xfffffe000752f05f format_444_8bit_linear_count
+0xfffffe000752f07c format_400_8bit_tiled_count
+0xfffffe000752f098 format_420_8bit_tiled_count
+0xfffffe000752f0b4 format_422_8bit_tiled_count
+0xfffffe000752f0d0 format_444_8bit_tiled_count
+0xfffffe000752f0ec format_400_10bit_linear_count
+0xfffffe000752f10a format_420_10bit_linear_count
+0xfffffe000752f128 format_422_10bit_linear_count
+0xfffffe000752f146 format_444_10bit_linear_count
+0xfffffe000752f164 format_400_10bit_tiled_count
+0xfffffe000752f181 format_420_10bit_tiled_count
+0xfffffe000752f19e format_422_10bit_tiled_count
+0xfffffe000752f1bb format_444_10bit_tiled_count
+0xfffffe000752f1d8 format_400_10bit_packed_count
+0xfffffe000752f1f6 format_420_10bit_packed_count
+0xfffffe000752f214 format_422_10bit_packed_count
+0xfffffe000752f232 format_444_10bit_packed_count
+0xfffffe000752f250 format_400_12bit_linear_count
+0xfffffe000752f26e format_420_12bit_linear_count
+0xfffffe000752f28c format_422_12bit_linear_count
+0xfffffe000752f2aa format_444_12bit_linear_count
+0xfffffe000752f2c8 format_undefined_count
+0xfffffe000752f2df com.apple.jpegdriverevents.frameBufferFormatEncode
+0xfffffe000752f312 com.apple.jpegdriverevents.coreRequests
+0xfffffe000752f33a core_0_requests_count
+0xfffffe000752f350 core_1_requests_count
+0xfffffe000752f366 com.apple.jpegdriverevents.codecRequests
+0xfffffe000752f38f encode_requests_count
+0xfffffe000752f3a5 decode_requests_count
+0xfffffe000752f3bb CoreAnalyticsHub
+0xfffffe000752f3cc TulipaFunctions
+0xfffffe000752f3dc site.TulipaFunctions
+0xfffffe000752f3f1 121111111
+0xfffffe000752f3fb virtual bool TulipaFunctions::setupAXIRegisterOffset(uint32_t, uint64_t)
+0xfffffe000752f444 DaisyFunctions
+0xfffffe000752f453 site.DaisyFunctions
+0xfffffe000752f467 virtual bool DaisyFunctions::setupAXIRegisterOffset(uint32_t, uint64_t)
+0xfffffe000752f4af ClaryFunctions
+0xfffffe000752f4be site.ClaryFunctions
+0xfffffe000752f4d2 virtual bool ClaryFunctions::setupAXIRegisterOffset(uint32_t, uint64_t)
+0xfffffe000752f51a ThymeFunctions
+0xfffffe000752f529 site.ThymeFunctions
+0xfffffe000752f53d virtual bool ThymeFunctions::setupAXIRegisterOffset(uint32_t, uint64_t)
+0xfffffe000752f585 IxoraFunctions
+0xfffffe000752f594 site.IxoraFunctions
+0xfffffe000752f5a8 virtual bool IxoraFunctions::setupAXIRegisterOffset(uint32_t, uint64_t)
+0xfffffe000752f5f0 BorageFunctions
+0xfffffe000752f600 site.BorageFunctions
+0xfffffe000752f615 virtual bool BorageFunctions::setupAXIRegisterOffset(uint32_t, uint64_t)
+0xfffffe000752f65e DandelionFunctions
+0xfffffe000752f671 site.DandelionFunctions
+0xfffffe000752f689 virtual bool DandelionFunctions::setupAXIRegisterOffset(uint32_t, uint64_t)
+0xfffffe000752f6d5 NerineFunctions
+0xfffffe000752f6e5 site.NerineFunctions
+0xfffffe000752f6fa virtual bool NerineFunctions::setupAXIRegisterOffset(uint32_t, uint64_t)
+0xfffffe000752f743 virtual bool NerineFunctions::detectFastsim()
+0xfffffe000752f771 AppleJPEGDriverUserClient
+0xfffffe000752f78b site.AppleJPEGDriverUserClient
+0xfffffe000752f7aa 1211111212221212111111111111111212
+0xfffffe000752f7cd IOUserClientDefaultLocking
+0xfffffe000752f7e8 IOUserClientDefaultLockingSetProperties
+0xfffffe000752f810 IOUserClientDefaultLockingSingleThreadExternalMethod
+0xfffffe000752f845 IOUserClientEntitlements
+0xfffffe000752f85e com.apple.applejpegdriver.poweron
+0xfffffe000752f880 com.apple.applejpegdriver.ajpegtestapp
+0xfffffe000752f8a7 virtual IOReturn AppleJPEGDriverUserClient::registerNotificationPort(mach_port_t, UInt32, UInt32)
+0xfffffe000752f909 CatnipFunctions
+0xfffffe000752f919 site.CatnipFunctions
+0xfffffe000752f92e virtual bool CatnipFunctions::setupAXIRegisterOffset(uint32_t, uint64_t)
+0xfffffe000752f977 DahliaFunctions
+0xfffffe000752f987 site.DahliaFunctions
+0xfffffe000752f99c virtual bool DahliaFunctions::setupAXIRegisterOffset(uint32_t, uint64_t)
+0xfffffe000752f9e5 AppleJPEGHal
+0xfffffe000752f9f2 site.AppleJPEGHal
+0xfffffe000752fa04 12211111111111112221122222222122222
+0xfffffe000752fa28 init
+0xfffffe000752fa2d bool AppleJPEGHal::init(uint32_t, AppleJPEGDriver *, IOService *, IOWorkLoop *, uint32_t, bool, bool, uint32_t)
+0xfffffe000752fa9d die-id
+0xfffffe000752faa4 function-set_perf_state_floor
+0xfffffe000752fac2 void AppleJPEGHal::pollingForAXI()
+0xfffffe000752fae5 void AppleJPEGHal::interruptOccurred_gated(IOInterruptEventSource *, int)
+0xfffffe000752fb2f bool AppleJPEGHal::checkForInterrupt(IOFilterInterruptEventSource *)
+0xfffffe000752fb74 IOReturn AppleJPEGHal::createInterruptEventSource(IOWorkLoop *)
+0xfffffe000752fbb4 void AppleJPEGHal::showErrorRequestInfo(ajpeg_setup_t *)
+0xfffffe000752fbed IOReturn AppleJPEGHal::finishCoding_gated(ajpeg_setup_t *)
+0xfffffe000752fc28 IOReturn AppleJPEGHal::executeOperation_gated(ajpeg_setup_t *)
+0xfffffe000752fc67 enableDeviceClockWrapper
+0xfffffe000752fc80 enableDeviceClockLowLevel
+0xfffffe000752fc9a uint32_t AppleJPEGHal::checkHardwareVersion()
+0xfffffe000752fcc8 IOReturn AppleJPEGHal::startDecoderGated(ajpeg_setup_t *)
+0xfffffe000752fd02 IOReturn AppleJPEGHal::startEncoderGated(ajpeg_setup_t *)
+0xfffffe000752fd3c singleClockIndexDevice
+0xfffffe000752fd53 AppleJPEGWrapperControlV9
+0xfffffe000752fd6d site.AppleJPEGWrapperControlV9
+0xfffffe000752fd8c virtual void AppleJPEGWrapperControl::set_jw_axi_tcount(uint32_t)
+0xfffffe000752fdce virtual uint32_t AppleJPEGWrapperControl::read_jw_axi_tcount()
+0xfffffe000752fe0d virtual void AppleJPEGWrapperControl::set_jw_axi_tlimit(uint32_t)
+0xfffffe000752fe4f virtual uint32_t AppleJPEGWrapperControl::read_jw_axi_tlimit()
+0xfffffe000752fe8e IOReturn AppleJPEGDart::registerMapper(uint32_t, uint32_t, IOService *)
+0xfffffe000752fed6 setParameter
+0xfffffe000752fee3 iomd-cache-size
+0xfffffe000752fef3 iomd-cache-ttl
+0xfffffe000752ff02 registerErrorHandler
+0xfffffe000752ff17 setActive
+0xfffffe000752ff21 cacheFlushInactive
+0xfffffe000752ff34 IOReturn AppleJPEGDart::mapMemoryDescriptor(IOMemoryDescriptor *, uint32_t, IODMACommand **, IOPhysicalAddress *, s_debug_info *)
+0xfffffe000752ffb6 IOReturn AppleJPEGDart::unmapMemoryDescriptor(IOMemoryDescriptor *, uint32_t, IODMACommand *, uint32_t)
+0xfffffe000753001e setIomdCacheAttribute
+0xfffffe0007530034 iomdEarlyReclaim
+0xfffffe0007530045 iomdEarlyPurge
+0xfffffe0007530054 KopsiaFunctions
+0xfffffe0007530064 site.KopsiaFunctions
+0xfffffe0007530079 virtual bool KopsiaFunctions::setupAXIRegisterOffset(uint32_t, uint64_t)
+0xfffffe00075300c2 site.AppleJPEGPU
+0xfffffe00075300d3 void AppleJPEGPM::setPUPowerState(uint32_t, bool, bool)
+0xfffffe000753010b bool AppleJPEGPU::_getPUPower()
+0xfffffe000753012b LotusFunctions
+0xfffffe000753013a site.LotusFunctions
+0xfffffe000753014e virtual bool LotusFunctions::setupAXIRegisterOffset(uint32_t, uint64_t)
+0xfffffe0007530196 AppleJPEGWrapperControlV11
+0xfffffe00075301b1 site.AppleJPEGWrapperControlV11
+0xfffffe00075301d1 AppleJPEGWrapperControlV8
+0xfffffe00075301eb site.AppleJPEGWrapperControlV8
+0xfffffe000753020a CloverFunctions
+0xfffffe000753021a site.CloverFunctions
+0xfffffe000753022f virtual bool CloverFunctions::setupAXIRegisterOffset(uint32_t, uint64_t)
+0xfffffe0007530278 StockFunctions
+0xfffffe0007530287 site.StockFunctions
+0xfffffe000753029b virtual bool StockFunctions::setupAXIRegisterOffset(uint32_t, uint64_t)
+0xfffffe00075302e3 HibiscusFunctions
+0xfffffe00075302f5 site.HibiscusFunctions
+0xfffffe000753030c virtual bool HibiscusFunctions::setupAXIRegisterOffset(uint32_t, uint64_t)
+0xfffffe0007530357 AppleJPEGWrapperControlLegacy
+0xfffffe0007530375 site.AppleJPEGWrapperControlLegacy
+0xfffffe0007530398 virtual void AppleJPEGWrapperControlLegacy::ajpeg_drv_set_decode_submode(ajpeg_setup_t *)
+0xfffffe00075303f2 LegacyFunctions
+0xfffffe0007530402 site.LegacyFunctions
+0xfffffe0007530417 121
+0xfffffe000753041b IOReturn AppleJPEGWrapperControl::reset_jpeg_block()
+0xfffffe0007530450 IOReturn AppleJPEGWrapperControl::encoderHWSetup(ajpeg_setup_t *)
+0xfffffe0007530492 bool AppleJPEGWrapperControl::getIsFsim() const
+0xfffffe00075304c2 TansyFunctions
+0xfffffe00075304d1 site.TansyFunctions
+0xfffffe00075304e5 virtual bool TansyFunctions::setupAXIRegisterOffset(uint32_t, uint64_t)
+0xfffffe000753052d void RequestHandling::matrixConvYUVtoRGBA(ajpeg_setup_t *)
+0xfffffe0007530568 IOReturn RequestHandling::encodeRequestValidation(JpegRequest *)
+0xfffffe00075305a9 IOReturn RequestHandling::decodeRequestValidation(JpegRequest *)
+0xfffffe00075305ea IOReturn RequestHandling::decodeHWRequestSetup(JpegRequest *)
+0xfffffe0007530628 IOReturn RequestHandling::encodeHWRequestSetup(JpegRequest *)

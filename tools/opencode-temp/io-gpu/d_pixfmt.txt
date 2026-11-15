@@ -1,0 +1,41 @@
+﻿======= TARGET =======
+0xfffffe000a32d020:  f1 47 c1 da   xpacd	x17
+0xfffffe000a32d024:  1f 02 11 eb   cmp	x16, x17
+0xfffffe000a32d028:  40 00 00 54   b.eq	0xfffffe000a32d030
+0xfffffe000a32d02c:  40 8e 38 d4   brk	#0xc472
+0xfffffe000a32d030:  08 b2 00 39   strb	w8, [x16, #0x2c]
+0xfffffe000a32d034:  bf 83 18 f8   stur	xzr, [fp, #-0x78]
+0xfffffe000a32d038:  61 b7 fe 90   adrp	x1, 0xfffffe0007a19000
+0xfffffe000a32d03c:  21 78 1d 91   add	x1, x1, #0x75e
+0xfffffe000a32d040:  a2 e3 01 d1   sub	x2, fp, #0x78
+0xfffffe000a32d044:  e0 03 14 aa   mov	x0, x20
+0xfffffe000a32d048:  24 0e 00 94   bl	0xfffffe000a3308d8
+0xfffffe000a32d04c:  60 00 00 34   cbz	w0, 0xfffffe000a32d058
+0xfffffe000a32d050:  a8 83 58 f8   ldur	x8, [fp, #-0x78]
+0xfffffe000a32d054:  68 82 00 b9   str	w8, [x19, #0x80]
+0xfffffe000a32d058:  61 b7 fe 90   adrp	x1, 0xfffffe0007a19000
+0xfffffe000a32d05c:  21 4c 1b 91   add	x1, x1, #0x6d3
+0xfffffe000a32d060:  a2 a3 01 d1   sub	x2, fp, #0x68
+0xfffffe000a32d064:  e0 03 14 aa   mov	x0, x20
+0xfffffe000a32d068:  1c 0e 00 94   bl	0xfffffe000a3308d8
+0xfffffe000a32d06c:  c0 00 00 34   cbz	w0, 0xfffffe000a32d084
+0xfffffe000a32d070:  a8 83 59 f8   ldur	x8, [fp, #-0x68]
+0xfffffe000a32d074:  09 fd 50 d3   lsr	x9, x8, #0x10
+0xfffffe000a32d078:  29 73 00 b5   cbnz	x9, 0xfffffe000a32dedc
+0xfffffe000a32d07c:  08 3d 03 53   ubfx	w8, w8, #0x3, #0xd
+0xfffffe000a32d080:  68 e2 00 79   strh	w8, [x19, #0x70]
+0xfffffe000a32d084:  61 b7 fe 90   adrp	x1, 0xfffffe0007a19000
+0xfffffe000a32d088:  21 a4 1b 91   add	x1, x1, #0x6e9
+0xfffffe000a32d08c:  a2 a3 01 d1   sub	x2, fp, #0x68
+0xfffffe000a32d090:  e0 03 14 aa   mov	x0, x20
+0xfffffe000a32d094:  11 0e 00 94   bl	0xfffffe000a3308d8
+0xfffffe000a32d098:  a0 00 00 34   cbz	w0, 0xfffffe000a32d0ac
+0xfffffe000a32d09c:  a8 83 59 f8   ldur	x8, [fp, #-0x68]
+0xfffffe000a32d0a0:  09 fd 50 d3   lsr	x9, x8, #0x10
+0xfffffe000a32d0a4:  c9 71 00 b5   cbnz	x9, 0xfffffe000a32dedc
+0xfffffe000a32d0a8:  68 e2 00 79   strh	w8, [x19, #0x70]
+0xfffffe000a32d0ac:  61 b7 fe 90   adrp	x1, 0xfffffe0007a19000
+0xfffffe000a32d0b0:  21 08 1c 91   add	x1, x1, #0x702
+0xfffffe000a32d0b4:  a2 a3 01 d1   sub	x2, fp, #0x68
+0xfffffe000a32d0b8:  e0 03 14 aa   mov	x0, x20
+0xfffffe000a32d0bc:  07 0e 00 94   bl	0xfffffe000a3308d8

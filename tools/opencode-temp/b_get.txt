@@ -1,0 +1,90 @@
+  00fffffe000a3308d8: bti      c
+  00fffffe000a3308dc: pacibsp  
+  00fffffe000a3308e0: stp      x22, x21, [sp, #-0x30]!
+  00fffffe000a3308e4: stp      x20, x19, [sp, #0x10]
+  00fffffe000a3308e8: stp      x29, x30, [sp, #0x20]
+  00fffffe000a3308ec: add      x29, sp, #0x20
+  00fffffe000a3308f0: mov      x19, x2
+  00fffffe000a3308f4: ldr      x16, [x0]
+  00fffffe000a3308f8: mov      x17, x0
+  00fffffe000a3308fc: movk     x17, #0xcda1, lsl #48
+  00fffffe000a330900: autda    x16, x17
+  00fffffe000a330904: mov      x17, #0x138
+  00fffffe000a330908: add      x16, x16, x17
+  00fffffe000a33090c: ldr      x8, [x16]
+  00fffffe000a330910: movk     x16, #0x2e3b, lsl #48
+  00fffffe000a330914: blraa    x8, x16
+  00fffffe000a330918: adrp     x8, #0xfffffe0008383000
+  00fffffe000a33091c: ldr      x8, [x8, #0x878]
+  00fffffe000a330920: ldr      x1, [x8]
+  00fffffe000a330924: bl       #0xfffffe000a35a15c
+  00fffffe000a330928: mov      x20, x0
+  00fffffe000a33092c: cbz      x0, #0xfffffe000a33099c
+  00fffffe000a330930: ldr      x16, [x20]
+  00fffffe000a330934: mov      x17, x20
+  00fffffe000a330938: movk     x17, #0xcda1, lsl #48
+  00fffffe000a33093c: autda    x16, x17
+  00fffffe000a330940: ldr      x8, [x16, #0x88]!
+  00fffffe000a330944: mov      x0, x20
+  00fffffe000a330948: movk     x16, #0x2bd8, lsl #48
+  00fffffe000a33094c: blraa    x8, x16
+  00fffffe000a330950: mov      x21, x0
+  00fffffe000a330954: ldr      x16, [x20]
+  00fffffe000a330958: mov      x17, x20
+  00fffffe000a33095c: movk     x17, #0xcda1, lsl #48
+  00fffffe000a330960: autda    x16, x17
+  00fffffe000a330964: ldr      x8, [x16, #0xb0]!
+  00fffffe000a330968: mov      x0, x20
+  00fffffe000a33096c: movk     x16, #0xbffa, lsl #48
+  00fffffe000a330970: blraa    x8, x16
+  00fffffe000a330974: str      x0, [x19]
+  00fffffe000a330978: cmp      w21, #0x3f
+  00fffffe000a33097c: b.hi     #0xfffffe000a33099c
+  00fffffe000a330980: sub      w8, w21, #1
+  00fffffe000a330984: lsr      x8, x0, x8
+  00fffffe000a330988: tbz      w8, #0, #0xfffffe000a33099c
+  00fffffe000a33098c: mov      x8, #-1
+  00fffffe000a330990: lsl      x8, x8, x21
+  00fffffe000a330994: orr      x8, x0, x8
+  00fffffe000a330998: str      x8, [x19]
+  00fffffe000a33099c: cmp      x20, #0
+  00fffffe000a3309a0: cset     w0, ne
+  00fffffe000a3309a4: ldp      x29, x30, [sp, #0x20]
+  00fffffe000a3309a8: ldp      x20, x19, [sp, #0x10]
+  00fffffe000a3309ac: ldp      x22, x21, [sp], #0x30
+  00fffffe000a3309b0: retab    
+  00fffffe000a3309b4: bti      c
+  00fffffe000a3309b8: pacibsp  
+  00fffffe000a3309bc: sub      sp, sp, #0x40
+  00fffffe000a3309c0: stp      x20, x19, [sp, #0x20]
+  00fffffe000a3309c4: stp      x29, x30, [sp, #0x30]
+  00fffffe000a3309c8: add      x29, sp, #0x30
+  00fffffe000a3309cc: mov      x19, x2
+  00fffffe000a3309d0: mov      x20, x1
+  00fffffe000a3309d4: adrp     x8, #0xfffffe0008383000
+  00fffffe000a3309d8: ldr      x8, [x8, #0x8c0]
+  00fffffe000a3309dc: ldr      x8, [x8]
+  00fffffe000a3309e0: str      x8, [sp, #0x18]
+  00fffffe000a3309e4: mov      x8, #-0x5555555555555556
+  00fffffe000a3309e8: str      x8, [sp, #0x10]
+  00fffffe000a3309ec: add      x2, sp, #0x10
+  00fffffe000a3309f0: bl       #0xfffffe000a3308d8
+  00fffffe000a3309f4: cbz      w0, #0xfffffe000a330a08
+  00fffffe000a3309f8: ldr      x8, [sp, #0x10]
+  00fffffe000a3309fc: cmp      x8, #0xff
+  00fffffe000a330a00: b.hi     #0xfffffe000a330a10
+  00fffffe000a330a04: strb     w8, [x19]
+  00fffffe000a330a08: mov      w0, #1
+  00fffffe000a330a0c: b        #0xfffffe000a330a38
+  00fffffe000a330a10: str      x20, [sp]
+  00fffffe000a330a14: adrp     x0, #0xfffffe0007a18000
+  00fffffe000a330a18: add      x0, x0, #0x790
+  00fffffe000a330a1c: adrp     x1, #0xfffffe0008383000
+  00fffffe000a330a20: ldr      x1, [x1, #0x8c8]
+  00fffffe000a330a24: adrp     x3, #0xfffffe0007a1e000
+  00fffffe000a330a28: add      x3, x3, #0xaa6
+  00fffffe000a330a2c: mov      w2, #0x10
+  00fffffe000a330a30: bl       #0xfffffe000a35a3fc
+  00fffffe000a330a34: mov      w0, #0
+  00fffffe000a330a38: ldr      x8, [sp, #0x18]
+  00fffffe000a330a3c: adrp     x9, #0xfffffe0008383000

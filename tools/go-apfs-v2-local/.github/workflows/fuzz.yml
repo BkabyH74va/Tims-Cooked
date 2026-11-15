@@ -1,0 +1,103 @@
+name: Fuzz
+
+# Each target runs briefly on every change and for longer once a week. A
+# failure uploads the crashing input; commit it under the package's
+# testdata/fuzz/<Target>/ so `go test` replays it as a regression test.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+concurrency:
+  group: fuzz-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  fuzz:
+    name: ${{ matrix.target }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { pkg: ./pkg/appledouble, target: FuzzStreamDecode }
+          - { pkg: ./pkg/appledouble, target: FuzzDecode }
+          - { pkg: ./pkg/appledouble, target: FuzzACLText }
+          - { pkg: ./pkg/appledouble, target: FuzzACLBinary }
+          - { pkg: ./pkg/appledouble, target: FuzzACLInheritance }
+          - { pkg: ./pkg/appledouble, target: FuzzCopyACL }
+          - { pkg: ./pkg/appledouble, target: FuzzACLIdentitySnapshot }
+          - { pkg: ./pkg/appledouble, target: FuzzFileSecurity }
+          - { pkg: ./pkg/hostdata, target: FuzzXattrListNames }
+          - { pkg: ./pkg/hostdata, target: FuzzXattrEARecord }
+          - { pkg: ./pkg/hostdata/acl, target: FuzzRestoreACL }
+          - { pkg: ./internal/imageacl, target: FuzzImageACLRestore }
+          - { pkg: ./internal/imageacl, target: FuzzImageSecurityCopy }
+          - { pkg: ./pkg/hostdata/acl, target: FuzzACLAttributes }
+          - { pkg: ./pkg/hostdata/acl, target: FuzzDarwinChmodRequest }
+          - { pkg: ./pkg/hostdata/acl, target: FuzzDarwinChmodProperties }
+          - { pkg: ./pkg/hostdata, target: FuzzSecurityCopy }
+          - { pkg: ./pkg/hostdata, target: FuzzPathLifecycle }
+          - { pkg: ./pkg/metatransport, target: FuzzCarrierManifest }
+          - { pkg: ./pkg/osversion, target: FuzzVersion }
+          - { pkg: ./pkg/apfsversion, target: FuzzParseStamp }
+          - { pkg: ./pkg/hostdata, target: FuzzImageSecurity }
+          - { pkg: ./pkg/appledouble, target: FuzzQuarantine }
+          - { pkg: ./pkg/appledouble, target: FuzzQuarantineXattr }
+          - { pkg: ./pkg/appledouble, target: FuzzQuarantineApplication }
+          - { pkg: ./pkg/appledouble, target: FuzzQuarantineExistingApplication }
+          - { pkg: ./pkg/apfs, target: FuzzOpenImage }
+          - { pkg: ./pkg/apfs, target: FuzzBTreeNode }
+          - { pkg: ./pkg/apfs, target: FuzzContainerSuperblock }
+          - { pkg: ./pkg/apfs, target: FuzzVolumeSuperblock }
+          - { pkg: ./pkg/hfsplus, target: FuzzVolume }
+          - { pkg: ./pkg/disk, target: FuzzOpenDMG }
+          - { pkg: ./pkg/disk, target: FuzzFindAPFSPartitionInGPT }
+          - { pkg: ./pkg/disk, target: FuzzFindAPFSPartitionInAPM }
+          - { pkg: ./pkg/disk, target: FuzzDecompressADC }
+          - { pkg: ./pkg/compression/lzfse, target: FuzzDecompress }
+          - { pkg: ./pkg/compression/lzbitmap, target: FuzzLZBitmapDecompress }
+          - { pkg: ./pkg/compression/lzfse, target: FuzzDecompressLZVN }
+          - { pkg: ./pkg/compression/lzfse, target: FuzzRoundTrip }
+          - { pkg: ./internal/decmpfs, target: FuzzEncodeFork }
+          - { pkg: ./internal/decmpfs, target: FuzzEncodePolicy }
+          - { pkg: ./pkg/compression/lz4, target: FuzzDecompress }
+          - { pkg: ./pkg/compression/decmpfs, target: FuzzQueryMetadata }
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+      # The fuzzer minimizes every new interesting input, for up to 60s by
+      # default, without counting executions; on these multi-KiB inputs that
+      # stalls it, so minimization is capped at a second.
+      - name: Set up shared CI reporting
+        uses: ./.github/actions/setup-ci-runner
+      - name: Fuzz
+        env:
+          FUZZTIME: ${{ github.event_name == 'schedule' && '10m' || '30s' }}
+        run: |
+          apfs-ci-runner --suite fuzz/fuzz/step3 --timeout 60m -- go test -json ${{ matrix.pkg }} -run '^$' -fuzz '^${{ matrix.target }}$' -fuzztime "$FUZZTIME" -fuzzminimizetime 1s
+      - name: Upload crashing input
+        if: failure()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          include-hidden-files: true
+          name: crasher-${{ matrix.target }}
+          path: ${{ matrix.pkg }}/testdata/fuzz/${{ matrix.target }}/
+
+      - name: Retain complete CI command diagnostics
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          include-hidden-files: true
+          name: ci-observability-fuzz-fuzz-${{ strategy.job-index || 0 }}-${{ github.run_attempt }}
+          path: artifacts/ci-observability/
+          compression-level: 9
+          if-no-files-found: error

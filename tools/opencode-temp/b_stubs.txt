@@ -1,0 +1,24 @@
+  00fffffe000a35a340: add      x17, x17, #0x640
+  00fffffe000a35a344: ldr      x16, [x17]
+  00fffffe000a35a348: braa     x16, x17
+  00fffffe000a35a34c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a350: add      x17, x17, #0x648
+  00fffffe000a35a354: ldr      x16, [x17]
+  00fffffe000a35a358: braa     x16, x17
+  00fffffe000a35a35c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a360: add      x17, x17, #0x650
+  00fffffe000a35a364: ldr      x16, [x17]
+  00fffffe000a35a368: braa     x16, x17
+  00fffffe000a35a36c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a370: add      x17, x17, #0x658
+  00fffffe000a35a374: ldr      x16, [x17]
+  00fffffe000a35a378: braa     x16, x17
+  00fffffe000a35a37c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a380: add      x17, x17, #0x660
+  00fffffe000a35a384: ldr      x16, [x17]
+  00fffffe000a35a388: braa     x16, x17
+  00fffffe000a35a38c: adrp     x17, #0xfffffe0008383000
+  00fffffe000a35a390: add      x17, x17, #0x668
+  00fffffe000a35a394: ldr      x16, [x17]
+  00fffffe000a35a398: braa     x16, x17
+  00fffffe000a35a39c: adrp     x17, #0xfffffe0008383000

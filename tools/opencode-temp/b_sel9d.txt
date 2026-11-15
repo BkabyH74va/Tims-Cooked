@@ -1,0 +1,96 @@
+  00fffffe000a338ac0: bti      c
+  00fffffe000a338ac4: pacibsp  
+  00fffffe000a338ac8: stp      x22, x21, [sp, #-0x30]!
+  00fffffe000a338acc: stp      x20, x19, [sp, #0x10]
+  00fffffe000a338ad0: stp      x29, x30, [sp, #0x20]
+  00fffffe000a338ad4: add      x29, sp, #0x20
+  00fffffe000a338ad8: mov      x19, x3
+  00fffffe000a338adc: mov      x21, x2
+  00fffffe000a338ae0: mov      x22, x0
+  00fffffe000a338ae4: cbz      x1, #0xfffffe000a338b44
+  00fffffe000a338ae8: mov      x0, x1
+  00fffffe000a338aec: bl       #0xfffffe000a35a36c
+  00fffffe000a338af0: mov      x20, x0
+  00fffffe000a338af4: mov      x0, x22
+  00fffffe000a338af8: mov      x1, x20
+  00fffffe000a338afc: mov      x2, x21
+  00fffffe000a338b00: mov      x3, x19
+  00fffffe000a338b04: bl       #0xfffffe000a335e68
+  00fffffe000a338b08: mov      x19, x0
+  00fffffe000a338b0c: cbz      x20, #0xfffffe000a338b30
+  00fffffe000a338b10: ldr      x16, [x20]
+  00fffffe000a338b14: mov      x17, x20
+  00fffffe000a338b18: movk     x17, #0xcda1, lsl #48
+  00fffffe000a338b1c: autda    x16, x17
+  00fffffe000a338b20: ldr      x8, [x16, #0x28]!
+  00fffffe000a338b24: mov      x0, x20
+  00fffffe000a338b28: movk     x16, #0x3a87, lsl #48
+  00fffffe000a338b2c: blraa    x8, x16
+  00fffffe000a338b30: mov      x0, x19
+  00fffffe000a338b34: ldp      x29, x30, [sp, #0x20]
+  00fffffe000a338b38: ldp      x20, x19, [sp, #0x10]
+  00fffffe000a338b3c: ldp      x22, x21, [sp], #0x30
+  00fffffe000a338b40: retab    
+  00fffffe000a338b44: mov      x0, x22
+  00fffffe000a338b48: mov      x2, x21
+  00fffffe000a338b4c: mov      x3, x19
+  00fffffe000a338b50: ldp      x29, x30, [sp, #0x20]
+  00fffffe000a338b54: ldp      x20, x19, [sp, #0x10]
+  00fffffe000a338b58: ldp      x22, x21, [sp], #0x30
+  00fffffe000a338b5c: autibsp  
+  00fffffe000a338b60: eor      x16, x30, x30, lsl #1
+  00fffffe000a338b64: tbz      x16, #0x3e, #0xfffffe000a338b6c
+  00fffffe000a338b68: brk      #0xc471
+  00fffffe000a338b6c: b        #0xfffffe000a335e68
+  00fffffe000a338b70: bti      c
+  00fffffe000a338b74: pacibsp  
+  00fffffe000a338b78: stp      x22, x21, [sp, #-0x30]!
+  00fffffe000a338b7c: stp      x20, x19, [sp, #0x10]
+  00fffffe000a338b80: stp      x29, x30, [sp, #0x20]
+  00fffffe000a338b84: add      x29, sp, #0x20
+  00fffffe000a338b88: mov      x19, x3
+  00fffffe000a338b8c: mov      x21, x2
+  00fffffe000a338b90: mov      x22, x0
+  00fffffe000a338b94: cbz      x1, #0xfffffe000a338bf4
+  00fffffe000a338b98: mov      x0, x1
+  00fffffe000a338b9c: bl       #0xfffffe000a35a37c
+  00fffffe000a338ba0: mov      x20, x0
+  00fffffe000a338ba4: mov      x0, x22
+  00fffffe000a338ba8: mov      x1, x20
+  00fffffe000a338bac: mov      x2, x21
+  00fffffe000a338bb0: mov      x3, x19
+  00fffffe000a338bb4: bl       #0xfffffe000a335e68
+  00fffffe000a338bb8: mov      x19, x0
+  00fffffe000a338bbc: cbz      x20, #0xfffffe000a338be0
+  00fffffe000a338bc0: ldr      x16, [x20]
+  00fffffe000a338bc4: mov      x17, x20
+  00fffffe000a338bc8: movk     x17, #0xcda1, lsl #48
+  00fffffe000a338bcc: autda    x16, x17
+  00fffffe000a338bd0: ldr      x8, [x16, #0x28]!
+  00fffffe000a338bd4: mov      x0, x20
+  00fffffe000a338bd8: movk     x16, #0x3a87, lsl #48
+  00fffffe000a338bdc: blraa    x8, x16
+  00fffffe000a338be0: mov      x0, x19
+  00fffffe000a338be4: ldp      x29, x30, [sp, #0x20]
+  00fffffe000a338be8: ldp      x20, x19, [sp, #0x10]
+  00fffffe000a338bec: ldp      x22, x21, [sp], #0x30
+  00fffffe000a338bf0: retab    
+  00fffffe000a338bf4: mov      x0, x22
+  00fffffe000a338bf8: mov      x2, x21
+  00fffffe000a338bfc: mov      x3, x19
+  00fffffe000a338c00: ldp      x29, x30, [sp, #0x20]
+  00fffffe000a338c04: ldp      x20, x19, [sp, #0x10]
+  00fffffe000a338c08: ldp      x22, x21, [sp], #0x30
+  00fffffe000a338c0c: autibsp  
+  00fffffe000a338c10: eor      x16, x30, x30, lsl #1
+  00fffffe000a338c14: tbz      x16, #0x3e, #0xfffffe000a338c1c
+  00fffffe000a338c18: brk      #0xc471
+  00fffffe000a338c1c: b        #0xfffffe000a335e68
+  00fffffe000a338c20: bti      c
+  00fffffe000a338c24: pacibsp  
+  00fffffe000a338c28: stp      x22, x21, [sp, #-0x30]!
+  00fffffe000a338c2c: stp      x20, x19, [sp, #0x10]
+  00fffffe000a338c30: stp      x29, x30, [sp, #0x20]
+  00fffffe000a338c34: add      x29, sp, #0x20
+  00fffffe000a338c38: mov      x20, x2
+  00fffffe000a338c3c: mov      x21, x0

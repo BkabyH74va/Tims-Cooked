@@ -1,0 +1,55 @@
+  00fffffe000a3492e4: bti      c
+  00fffffe000a3492e8: ldr      x8, [x2, #0x20]
+  00fffffe000a3492ec: ldr      w1, [x8]
+  00fffffe000a3492f0: b        #0xfffffe000a34b944
+  00fffffe000a3492f4: bti      c
+  00fffffe000a3492f8: ldr      x1, [x2, #0x30]
+  00fffffe000a3492fc: ldr      x8, [x2, #0x58]
+  00fffffe000a349300: ldr      w3, [x2, #0x38]
+  00fffffe000a349304: add      x4, x2, #0x60
+  00fffffe000a349308: mov      x2, x8
+  00fffffe000a34930c: b        #0xfffffe000a34bc34
+  00fffffe000a349310: bti      c
+  00fffffe000a349314: ldr      x1, [x2, #0x30]
+  00fffffe000a349318: ldr      x8, [x2, #0x58]
+  00fffffe000a34931c: ldr      w3, [x2, #0x38]
+  00fffffe000a349320: add      x4, x2, #0x60
+  00fffffe000a349324: mov      x2, x8
+  00fffffe000a349328: b        #0xfffffe000a34be14
+  00fffffe000a34932c: bti      c
+  00fffffe000a349330: ldr      x8, [x2, #0x20]
+  00fffffe000a349334: ldr      w1, [x8]
+  00fffffe000a349338: ldr      x2, [x2, #0x58]
+  00fffffe000a34933c: b        #0xfffffe000a34beb0
+  00fffffe000a349340: bti      c
+  00fffffe000a349344: ldr      x8, [x2, #0x20]
+  00fffffe000a349348: ldr      w1, [x8]
+  00fffffe000a34934c: ldr      w2, [x8, #8]
+  00fffffe000a349350: b        #0xfffffe000a34c33c
+  00fffffe000a349354: bti      c
+  00fffffe000a349358: ldr      x1, [x2, #0x30]
+  00fffffe000a34935c: ldr      x2, [x2, #0x58]
+  00fffffe000a349360: b        #0xfffffe000a34c3a8
+  00fffffe000a349364: bti      c
+  00fffffe000a349368: ldr      x8, [x2, #0x20]
+  00fffffe000a34936c: ldp      x1, x8, [x8]
+  00fffffe000a349370: ldr      x3, [x2, #0x58]
+  00fffffe000a349374: mov      x2, x8
+  00fffffe000a349378: b        #0xfffffe000a34c7cc
+  00fffffe000a34937c: bti      c
+  00fffffe000a349380: pacibsp  
+  00fffffe000a349384: stp      x20, x19, [sp, #-0x20]!
+  00fffffe000a349388: stp      x29, x30, [sp, #0x10]
+  00fffffe000a34938c: add      x29, sp, #0x10
+  00fffffe000a349390: mov      x19, x2
+  00fffffe000a349394: ldr      x8, [x2, #0x20]
+  00fffffe000a349398: ldr      w1, [x8]
+  00fffffe000a34939c: bl       #0xfffffe000a34cbdc
+  00fffffe000a3493a0: ldr      x8, [x19, #0x48]
+  00fffffe000a3493a4: str      xzr, [x8]
+  00fffffe000a3493a8: ldp      x29, x30, [sp, #0x10]
+  00fffffe000a3493ac: ldp      x20, x19, [sp], #0x20
+  00fffffe000a3493b0: retab    
+  00fffffe000a3493b4: bti      c
+  00fffffe000a3493b8: pacibsp  
+  00fffffe000a3493bc: stp      x24, x23, [sp, #-0x40]!

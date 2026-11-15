@@ -1,0 +1,75 @@
+﻿0xfffffe000a349104:  e0 03 13 aa   mov	x0, x19
+0xfffffe000a349108:  fd 7b 41 a9   ldp	fp, lr, [sp, #0x10]
+0xfffffe000a34910c:  f4 4f c2 a8   ldp	x20, x19, [sp], #0x20
+0xfffffe000a349110:  ff 0f 5f d6   retab
+======= TARGET =======
+0xfffffe000a349114:  5f 24 03 d5   bti	c
+0xfffffe000a349118:  7f 23 03 d5   pacibsp
+0xfffffe000a34911c:  ff 43 01 d1   sub	sp, sp, #0x50
+0xfffffe000a349120:  f8 5f 01 a9   stp	x24, x23, [sp, #0x10]
+0xfffffe000a349124:  f6 57 02 a9   stp	x22, x21, [sp, #0x20]
+0xfffffe000a349128:  f4 4f 03 a9   stp	x20, x19, [sp, #0x30]
+0xfffffe000a34912c:  fd 7b 04 a9   stp	fp, lr, [sp, #0x40]
+0xfffffe000a349130:  fd 03 01 91   add	fp, sp, #0x40
+0xfffffe000a349134:  48 10 40 f9   ldr	x8, [x2, #0x20]
+0xfffffe000a349138:  14 01 40 f9   ldr	x20, [x8]
+0xfffffe000a34913c:  88 fe 60 d3   lsr	x8, x20, #0x20
+0xfffffe000a349140:  e8 01 00 b4   cbz	x8, 0xfffffe000a34917c
+0xfffffe000a349144:  55 58 80 52   mov	w21, #0x2c2
+0xfffffe000a349148:  15 00 bc 72   movk	w21, #0xe000, lsl #0x10
+0xfffffe000a34914c:  88 b6 fe d0   adrp	x8, 0xfffffe0007a1b000
+0xfffffe000a349150:  08 01 1b 91   add	x8, x8, #0x6c0
+0xfffffe000a349154:  e8 53 00 a9   stp	x8, x20, [sp]
+0xfffffe000a349158:  60 b6 fe f0   adrp	x0, 0xfffffe0007a18000
+0xfffffe000a34915c:  00 40 1e 91   add	x0, x0, #0x790
+0xfffffe000a349160:  c1 01 ff d0   adrp	x1, 0xfffffe0008383000
+0xfffffe000a349164:  21 64 44 f9   ldr	x1, [x1, #0x8c8]
+0xfffffe000a349168:  a3 b6 fe d0   adrp	x3, 0xfffffe0007a1f000
+0xfffffe000a34916c:  63 c0 0a 91   add	x3, x3, #0x2b0
+0xfffffe000a349170:  02 02 80 52   mov	w2, #0x10
+0xfffffe000a349174:  a2 44 00 94   bl	0xfffffe000a35a3fc
+0xfffffe000a349178:  54 00 00 14   b	0xfffffe000a3492c8
+0xfffffe000a34917c:  f6 03 02 aa   mov	x22, x2
+0xfffffe000a349180:  f5 03 00 aa   mov	x21, x0
+0xfffffe000a349184:  40 20 40 f9   ldr	x0, [x2, #0x40]
+0xfffffe000a349188:  a0 03 00 b4   cbz	x0, 0xfffffe000a3491fc
+0xfffffe000a34918c:  10 00 40 f9   ldr	x16, [x0]
+0xfffffe000a349190:  f1 03 00 aa   mov	x17, x0
+0xfffffe000a349194:  31 b4 f9 f2   movk	x17, #0xcda1, lsl #0x30
+0xfffffe000a349198:  30 1a c1 da   autda	x16, x17
+0xfffffe000a34919c:  08 8e 4e f8   ldr	x8, [x16, #0xe8]!
+0xfffffe000a3491a0:  01 00 82 52   mov	w1, #0x1000
+0xfffffe000a3491a4:  d0 da e7 f2   movk	x16, #0x3ed6, lsl #0x30
+0xfffffe000a3491a8:  10 09 3f d7   blraa	x8, x16
+0xfffffe000a3491ac:  20 07 00 b4   cbz	x0, 0xfffffe000a349290
+0xfffffe000a3491b0:  f3 03 00 aa   mov	x19, x0
+0xfffffe000a3491b4:  10 00 40 f9   ldr	x16, [x0]
+0xfffffe000a3491b8:  f1 03 00 aa   mov	x17, x0
+0xfffffe000a3491bc:  31 b4 f9 f2   movk	x17, #0xcda1, lsl #0x30
+0xfffffe000a3491c0:  30 1a c1 da   autda	x16, x17
+0xfffffe000a3491c4:  08 8e 47 f8   ldr	x8, [x16, #0x78]!
+0xfffffe000a3491c8:  d0 9e e6 f2   movk	x16, #0x34f6, lsl #0x30
+0xfffffe000a3491cc:  10 09 3f d7   blraa	x8, x16
+0xfffffe000a3491d0:  f7 03 00 aa   mov	x23, x0
+0xfffffe000a3491d4:  c0 22 40 f9   ldr	x0, [x22, #0x40]
+0xfffffe000a3491d8:  10 00 40 f9   ldr	x16, [x0]
+0xfffffe000a3491dc:  f1 03 00 aa   mov	x17, x0
+0xfffffe000a3491e0:  31 b4 f9 f2   movk	x17, #0xcda1, lsl #0x30
+0xfffffe000a3491e4:  30 1a c1 da   autda	x16, x17
+0xfffffe000a3491e8:  08 0e 4b f8   ldr	x8, [x16, #0xb0]!
+0xfffffe000a3491ec:  50 72 f6 f2   movk	x16, #0xb392, lsl #0x30
+0xfffffe000a3491f0:  10 09 3f d7   blraa	x8, x16
+0xfffffe000a3491f4:  e4 03 00 aa   mov	x4, x0
+0xfffffe000a3491f8:  04 00 00 14   b	0xfffffe000a349208
+0xfffffe000a3491fc:  13 00 80 d2   mov	x19, #0
+0xfffffe000a349200:  c4 3a 40 b9   ldr	w4, [x22, #0x38]
+0xfffffe000a349204:  d7 1a 40 f9   ldr	x23, [x22, #0x30]
+0xfffffe000a349208:  ff 02 00 f1   cmp	x23, #0
+0xfffffe000a34920c:  84 18 40 7a   ccmp	w4, #0, #0x4, ne
+0xfffffe000a349210:  01 02 00 54   b.ne	0xfffffe000a349250
+0xfffffe000a349214:  55 58 80 52   mov	w21, #0x2c2
+0xfffffe000a349218:  15 00 bc 72   movk	w21, #0xe000, lsl #0x10
+0xfffffe000a34921c:  88 b6 fe d0   adrp	x8, 0xfffffe0007a1b000
+0xfffffe000a349220:  08 01 1b 91   add	x8, x8, #0x6c0
+0xfffffe000a349224:  e8 03 00 f9   str	x8, [sp]
+0xfffffe000a349228:  60 b6 fe f0   adrp	x0, 0xfffffe0007a18000

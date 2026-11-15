@@ -1,0 +1,52 @@
+  00fffffe000a3344d0: bti      c
+  00fffffe000a3344d4: adrp     x8, #0xfffffe000b99d000
+  00fffffe000a3344d8: ldrb     w8, [x8, #0x958]
+  00fffffe000a3344dc: tbz      w8, #0, #0xfffffe000a334520
+  00fffffe000a3344e0: adrp     x8, #0xfffffe0008383000
+  00fffffe000a3344e4: ldr      x8, [x8, #0x8e8]
+  00fffffe000a3344e8: ldr      w8, [x8]
+  00fffffe000a3344ec: cbz      w8, #0xfffffe000a334520
+  00fffffe000a3344f0: pacibsp  
+  00fffffe000a3344f4: stp      x20, x19, [sp, #-0x20]!
+  00fffffe000a3344f8: stp      x29, x30, [sp, #0x10]
+  00fffffe000a3344fc: add      x29, sp, #0x10
+  00fffffe000a334500: mov      x19, x1
+  00fffffe000a334504: mov      x20, x0
+  00fffffe000a334508: mov      w0, #0x5400000
+  00fffffe000a33450c: bl       #0xfffffe000a35a47c
+  00fffffe000a334510: cbnz     w0, #0xfffffe000a334524
+  00fffffe000a334514: ldp      x29, x30, [sp, #0x10]
+  00fffffe000a334518: ldp      x20, x19, [sp], #0x20
+  00fffffe000a33451c: autibsp  
+  00fffffe000a334520: ret      
+  00fffffe000a334524: mov      x0, x20
+  00fffffe000a334528: mov      x1, x19
+  00fffffe000a33452c: bl       #0xfffffe000a3598ac
+  00fffffe000a334530: b        #0xfffffe000a334514
+  00fffffe000a334534: bti      c
+  00fffffe000a334538: pacibsp  
+  00fffffe000a33453c: sub      sp, sp, #0x30
+  00fffffe000a334540: stp      x20, x19, [sp, #0x10]
+  00fffffe000a334544: stp      x29, x30, [sp, #0x20]
+  00fffffe000a334548: add      x29, sp, #0x20
+  00fffffe000a33454c: mov      x19, x0
+  00fffffe000a334550: adrp     x8, #0xfffffe0008383000
+  00fffffe000a334554: ldr      x8, [x8, #0x8c0]
+  00fffffe000a334558: ldr      x8, [x8]
+  00fffffe000a33455c: str      x8, [sp, #8]
+  00fffffe000a334560: ldr      x0, [x0, #0x1a8]
+  00fffffe000a334564: cbz      x0, #0xfffffe000a3345f8
+  00fffffe000a334568: ldr      x16, [x0]
+  00fffffe000a33456c: mov      x17, x0
+  00fffffe000a334570: movk     x17, #0xcda1, lsl #48
+  00fffffe000a334574: autda    x16, x17
+  00fffffe000a334578: mov      x17, #0x138
+  00fffffe000a33457c: add      x16, x16, x17
+  00fffffe000a334580: ldr      x8, [x16]
+  00fffffe000a334584: adrp     x1, #0xfffffe0007a19000
+  00fffffe000a334588: add      x1, x1, #0xb42
+  00fffffe000a33458c: movk     x16, #0x2e3b, lsl #48
+  00fffffe000a334590: blraa    x8, x16
+  00fffffe000a334594: adrp     x8, #0xfffffe0008383000
+  00fffffe000a334598: ldr      x8, [x8, #0x890]
+  00fffffe000a33459c: ldr      x1, [x8]

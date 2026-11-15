@@ -1,0 +1,24 @@
+﻿file 414016 ncmds 10 filetype 11
+SEG __TEXT                   vmaddr=0xfffffe0007993150 vmsize=0xc000 fileoff=0x0 filesize=0xc000 nsects=3
+SEG __TEXT_EXEC              vmaddr=0xfffffe000a01b390 vmsize=0x48000 fileoff=0xc000 filesize=0x48000 nsects=2
+SEG __DATA                   vmaddr=0xfffffe000b976178 vmsize=0x4000 fileoff=0x54000 filesize=0x4000 nsects=3
+SEG __DATA_CONST             vmaddr=0xfffffe00082f4ec0 vmsize=0xc000 fileoff=0x58000 filesize=0xc000 nsects=9
+SEG __LINKEDIT               vmaddr=0xfffffe000ba10000 vmsize=0x4000 fileoff=0x64000 filesize=0x1140 nsects=0
+   SECT __cstring            __TEXT             addr=0xfffffe0007993908 size=0x61b3 off=0x7b8
+   SECT __os_log             __TEXT             addr=0xfffffe0007999abb size=0x52f6 off=0x696b
+   SECT __const              __TEXT             addr=0xfffffe000799edc0 size=0x8c off=0xbc70
+   SECT __text               __TEXT_EXEC        addr=0xfffffe000a01b390 size=0x437c0 off=0xc000
+   SECT __auth_stubs         __TEXT_EXEC        addr=0xfffffe000a05eb50 size=0xdc0 off=0x4f7c0
+   SECT __data               __DATA             addr=0xfffffe000b976178 size=0x460 off=0x54000
+   SECT __common             __DATA             addr=0xfffffe000b9765d8 size=0x898 off=0x0
+   SECT __bss                __DATA             addr=0xfffffe000b976e70 size=0x9 off=0x0
+   SECT __mod_init_func      __DATA_CONST       addr=0xfffffe00082f4ec0 size=0x100 off=0x58000
+   SECT __mod_term_func      __DATA_CONST       addr=0xfffffe00082f4fc0 size=0x100 off=0x58100
+   SECT __const              __DATA_CONST       addr=0xfffffe00082f50c0 size=0x6fd0 off=0x58200
+   SECT __kalloc_type        __DATA_CONST       addr=0xfffffe00082fc090 size=0x11c0 off=0x5f1d0
+   SECT __kalloc_var         __DATA_CONST       addr=0xfffffe00082fd250 size=0x1090 off=0x60390
+   SECT __assert             __DATA_CONST       addr=0xfffffe00082fe2e0 size=0x28 off=0x61420
+   SECT __auth_got           __DATA_CONST       addr=0xfffffe00082fe308 size=0x6e0 off=0x61448
+   SECT __got                __DATA_CONST       addr=0xfffffe00082fe9e8 size=0x100 off=0x61b28
+   SECT __auth_ptr           __DATA_CONST       addr=0xfffffe00082feae8 size=0x8 off=0x61c28
+fixups off None

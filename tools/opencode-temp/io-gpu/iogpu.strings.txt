@@ -1,0 +1,1319 @@
+0xfffffe0007993908 __TEXT.__cstring        IOGPUVirtualMemory
+0xfffffe000799391b __TEXT.__cstring        site.IOGPUVirtualMemory
+0xfffffe0007993933 __TEXT.__cstring        121222222121112222212111112
+0xfffffe000799394f __TEXT.__cstring        virtual bool IOGPUVirtualMemory::init(IOGPU *, uint64_t, uint32_t, bool, uint64_t, uint64_t, task_t)
+0xfffffe00079939b4 __TEXT.__cstring        site.IOMemoryDescriptor *
+0xfffffe00079939d0 __TEXT.__cstring        Size
+0xfffffe00079939d5 __TEXT.__cstring        Descriptions
+0xfffffe00079939e2 __TEXT.__cstring        Aliased Virtual Resource (Virtual Size = %llu bytes)
+0xfffffe0007993a17 __TEXT.__cstring        virtual void IOGPUVirtualMemory::describeAllocation(OSDictionary *)
+0xfffffe0007993a5b __TEXT.__cstring        ResidentSize
+0xfffffe0007993a68 __TEXT.__cstring        DirtySize
+0xfffffe0007993a72 __TEXT.__cstring        Wired
+0xfffffe0007993a78 __TEXT.__cstring        virtual IOReturn IOGPUVirtualMemory::updateMemoryAtIndexLocked(uint32_t, IOMemoryDescriptor *)
+0xfffffe0007993ad7 __TEXT.__cstring        IOReturn IOGPUVirtualMemory::copyMemoryAtIndexAndLength(IOGPUVirtualMemory *, uint32_t, uint32_t, uint32_t)
+0xfffffe0007993b43 __TEXT.__cstring        virtual IOReturn IOGPUVirtualMemory::wire()
+0xfffffe0007993b6f __TEXT.__cstring        "%s: Failed to complete memory descriptor(%p) at index %u" @%s:%d
+0xfffffe0007993bb1 __TEXT.__cstring        virtual void IOGPUVirtualMemory::unwire()
+0xfffffe0007993bdb __TEXT.__cstring        IOGPUVirtualMemory.cpp
+0xfffffe0007993bf2 __TEXT.__cstring        virtual void IOGPUVirtualMemory::updateResidencyData(uint32_t, uint8_t)
+0xfffffe0007993c3a __TEXT.__cstring        bits.h
+0xfffffe0007993c41 __TEXT.__cstring        nbits > 0
+0xfffffe0007993c4b __TEXT.__cstring        IOGPUMemory
+0xfffffe0007993c57 __TEXT.__cstring        site.IOGPUMemory
+0xfffffe0007993c68 __TEXT.__cstring        1212222221211122
+0xfffffe0007993c79 __TEXT.__cstring        "IOGPUMemory::dealloc() memory still prepared\n" @%s:%d
+0xfffffe0007993cb1 __TEXT.__cstring        IOGPUMemory.cpp
+0xfffffe0007993cc1 __TEXT.__cstring        "IOGPUMemory::dealloc() eviction failed\n" @%s:%d
+0xfffffe0007993cf3 __TEXT.__cstring        site.IOGPUMemoryMap *
+0xfffffe0007993d09 __TEXT.__cstring        "failed to allocate memory" @%s:%d
+0xfffffe0007993d2c __TEXT.__cstring        virtual OSPtr<IOGPUMemoryMap> IOGPUMemory::createGPUMappingInTaskAtAddressLengthAlignment(IOGPUTask *, uint64_t, uint64_t, uint64_t, uint32_t)
+0xfffffe0007993dbb __TEXT.__cstring        IOReturn IOGPUMemory::prepare_memory_slow(uint32_t, bool, uint64_t)
+0xfffffe0007993dff __TEXT.__cstring        "completeMemory() prepare count underflow" @%s:%d
+0xfffffe0007993e31 __TEXT.__cstring        IOReturn IOGPUMemory::detach()
+0xfffffe0007993e50 __TEXT.__cstring        "IOGPUMemory::detach() memory still prepared\n" @%s:%d
+0xfffffe0007993e87 __TEXT.__cstring        SysMem
+0xfffffe0007993e8e __TEXT.__cstring        MemoryPool
+0xfffffe0007993e99 __TEXT.__cstring        Internal
+0xfffffe0007993ea2 __TEXT.__cstring        AlwaysResident
+0xfffffe0007993eb1 __TEXT.__cstring        Virtual
+0xfffffe0007993eb9 __TEXT.__cstring        Purgeable
+0xfffffe0007993ec3 __TEXT.__cstring        AllocationIdentifiers
+0xfffffe0007993ed9 __TEXT.__cstring        IOGPUWeakNamespace
+0xfffffe0007993eec __TEXT.__cstring        site.IOGPUWeakNamespace
+0xfffffe0007993f04 __TEXT.__cstring        1211122
+0xfffffe0007993f0c __TEXT.__cstring        site.IOGPUObject *
+0xfffffe0007993f1f __TEXT.__cstring        "trying to get apparently bogus resource handle %d" @%s:%d
+0xfffffe0007993f5a __TEXT.__cstring        IOGPUNamespace.cpp
+0xfffffe0007993f6d __TEXT.__cstring        IOGPUNamespace
+0xfffffe0007993f7c __TEXT.__cstring        site.IOGPUNamespace
+0xfffffe0007993f90 __TEXT.__cstring        IOGPUChannel
+0xfffffe0007993f9d __TEXT.__cstring        site.IOGPUChannel
+0xfffffe0007993faf __TEXT.__cstring        1212122
+0xfffffe0007993fb7 __TEXT.__cstring        %s idx%d
+0xfffffe0007993fc0 __TEXT.__cstring        Undefined
+0xfffffe0007993fca __TEXT.__cstring        IOGPUBufferMemoryDescriptor
+0xfffffe0007993fe6 __TEXT.__cstring        site.IOGPUBufferMemoryDescriptor
+0xfffffe0007994007 __TEXT.__cstring        12112121212212132213211121212
+0xfffffe0007994025 __TEXT.__cstring        "gpu_refcnt: overflow (rc=%p)\n" @%s:%d
+0xfffffe000799404d __TEXT.__cstring        IOGPUMemoryDecriptor.cpp
+0xfffffe0007994066 __TEXT.__cstring        "IOGPUBufferMemoryDescriptor does not support release with when != 1" @%s:%d
+0xfffffe00079940b3 __TEXT.__cstring        "IOGPUBufferMemoryDescriptor does not support taggedRelease with when != 1" @%s:%d
+0xfffffe0007994106 __TEXT.__cstring        IOGPUMultiMemoryDescriptor
+0xfffffe0007994121 __TEXT.__cstring        site.IOGPUMultiMemoryDescriptor
+0xfffffe0007994141 __TEXT.__cstring        121121212122122
+0xfffffe0007994151 __TEXT.__cstring        "IOGPUMultiMemoryDescriptor does not support release with when != 1" @%s:%d
+0xfffffe000799419d __TEXT.__cstring        "IOGPUMultiMemoryDescriptor does not support taggedRelease with when != 1" @%s:%d
+0xfffffe00079941ef __TEXT.__cstring        IOGPUSubMemoryDescriptor
+0xfffffe0007994208 __TEXT.__cstring        site.IOGPUSubMemoryDescriptor
+0xfffffe0007994226 __TEXT.__cstring        "IOGPUSubMemoryDescriptor does not support release with when != 1" @%s:%d
+0xfffffe0007994270 __TEXT.__cstring        "IOGPUSubMemoryDescriptor does not support taggedRelease with when != 1" @%s:%d
+0xfffffe00079942c0 __TEXT.__cstring        IOGPUDeviceUserClient
+0xfffffe00079942d6 __TEXT.__cstring        site.IOGPUDeviceUserClient
+0xfffffe00079942f1 __TEXT.__cstring        12111112122212121111111111112211211212
+0xfffffe0007994318 __TEXT.__cstring        site.struct IOGPUDeviceUserClientPrivate
+0xfffffe0007994345 __TEXT.__cstring        CommandQueueCountMax
+0xfffffe000799435a __TEXT.__cstring        CommandQueueCount
+0xfffffe000799436c __TEXT.__cstring        virtual bool IOGPUDeviceUserClient::deviceUserClientStart()
+0xfffffe00079943a8 __TEXT.__cstring        AppUsage
+0xfffffe00079943b1 __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_new_command_queue(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe000799442a __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_delete_command_queue(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe00079944a6 __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_new_resource(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe000799451a __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_async_signal_mtlLateEvalevent(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe000799459f __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_query_mtlLateEvalevent(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe000799461d __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_submit_command_buffers(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe000799469b __TEXT.__cstring        IOReturn IOGPUDeviceUserClient::t_signal_shared_event(uintptr_t, uintptr_t, uintptr_t, uintptr_t)
+0xfffffe00079946fd __TEXT.__cstring        IOReturn IOGPUDeviceUserClient::t_wait_shared_event(uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t)
+0xfffffe0007994768 __TEXT.__cstring        IOReturn IOGPUDeviceUserClient::t_signal_mtl_event(uintptr_t, uintptr_t, uintptr_t, uintptr_t)
+0xfffffe00079947c7 __TEXT.__cstring        IOReturn IOGPUDeviceUserClient::t_wait_mtl_event(uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t)
+0xfffffe000799482f __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_create_vniodesc(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe00079948a6 __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_create_io_command_queue(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe0007994925 __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_destroy_io_command_queue(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe00079949a5 __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_set_io_notification_queue(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe0007994a26 __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_submit_io_commands(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe0007994aa0 __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_create_io_command_buffer(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe0007994b20 __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_destroy_io_command_buffer(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe0007994ba1 __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_try_cancel_io_command_buffer(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe0007994c25 __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_perform_io(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe0007994c97 __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_io_command_buffer_complete(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe0007994d19 __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_io_command_buffer_barrier_complete(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe0007994da3 __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_group_add_resources(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe0007994e1e __TEXT.__cstring        static IOReturn IOGPUDeviceUserClient::s_group_remove_resources(IOGPUDeviceUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe0007994e9c __TEXT.__cstring        IOGPUMTLLateEvalEvent
+0xfffffe0007994eb2 __TEXT.__cstring        site.IOGPUMTLLateEvalEvent
+0xfffffe0007994ecd __TEXT.__cstring        12112
+0xfffffe0007994ed3 __TEXT.__cstring        IOGPUEventMachine
+0xfffffe0007994ee5 __TEXT.__cstring        site.IOGPUEventMachine
+0xfffffe0007994efc __TEXT.__cstring        12111212222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222211121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121121122
+0xfffffe0007995187 __TEXT.__cstring        site.stamp_t *
+0xfffffe0007995196 __TEXT.__cstring        "IOGPUEventMachine::waitForStamp: Stamp test failed, but all submitted stamps are finished.  stamp[%08x]: %08x gpu_stamp: %08x" @%s:%d
+0xfffffe000799521d __TEXT.__cstring        IOGPUEventMachine.cpp
+0xfffffe0007995233 __TEXT.__cstring        "Merge from non-scrubbed src event %p\n" @%s:%d
+0xfffffe0007995263 __TEXT.__cstring        virtual int32_t IOGPUEventMachine::requestStampIndexForChannel(IOGPUChannel *, IOGPUDevice *)
+0xfffffe00079952c2 __TEXT.__cstring        failed to
+0xfffffe00079952cc __TEXT.__cstring        IOGPUObject
+0xfffffe00079952d8 __TEXT.__cstring        site.IOGPUObject
+0xfffffe00079952ec __TEXT.__cstring        IOGPUObject.cpp
+0xfffffe00079952fc __TEXT.__cstring        "IOGPUObject does not support release with when != 1" @%s:%d
+0xfffffe0007995339 __TEXT.__cstring        "IOGPUObject does not support taggedRelease with when != 1" @%s:%d
+0xfffffe000799537c __TEXT.__cstring        IOGPUMTLFence
+0xfffffe000799538a __TEXT.__cstring        site.IOGPUMTLFence
+0xfffffe000799539d __TEXT.__cstring        121222222222222222222222222222222222
+0xfffffe00079953c2 __TEXT.__cstring        IOAccelGPURestartReport
+0xfffffe00079953da __TEXT.__cstring        site.IOAccelGPURestartReport
+0xfffffe00079953f7 __TEXT.__cstring        12111112122212121
+0xfffffe0007995409 __TEXT.__cstring        IOGPUBlockFencePort
+0xfffffe000799541d __TEXT.__cstring        site.IOGPUBlockFencePort
+0xfffffe0007995436 __TEXT.__cstring        12111111111
+0xfffffe0007995442 __TEXT.__cstring        IOGPUEventFence
+0xfffffe0007995452 __TEXT.__cstring        site.IOGPUEventFence
+0xfffffe0007995467 __TEXT.__cstring        12122222222222222222221112
+0xfffffe0007995482 __TEXT.__cstring        IOGPUBlockFence
+0xfffffe0007995492 __TEXT.__cstring        site.IOGPUBlockFence
+0xfffffe00079954a7 __TEXT.__cstring        12122222222222222222221112222121222222
+0xfffffe00079954ce __TEXT.__cstring        bool IOGPUBlockFence::IOPerfControlAddResponsibleTaskID(uint32_t)
+0xfffffe0007995510 __TEXT.__cstring        IOGPUSharedEventFence
+0xfffffe0007995526 __TEXT.__cstring        site.IOGPUSharedEventFence
+0xfffffe0007995541 __TEXT.__cstring        1212222222222222222222111212
+0xfffffe000799555e __TEXT.__cstring        IOGPUMappingFence
+0xfffffe0007995570 __TEXT.__cstring        site.IOGPUMappingFence
+0xfffffe0007995587 __TEXT.__cstring        121222222222222222222211121
+0xfffffe00079955a3 __TEXT.__cstring        IOGPUFenceMachine
+0xfffffe00079955b5 __TEXT.__cstring        site.IOGPUFenceMachine
+0xfffffe00079955cc __TEXT.__cstring        121111121111112
+0xfffffe00079955dc __TEXT.__cstring        bool IOGPUFenceMachine::init(IOGPU *)
+0xfffffe0007995602 __TEXT.__cstring        "IOGPUFenceMachine: block fence %p appears stuck after starting" @%s:%d
+0xfffffe000799564a __TEXT.__cstring        IOGPUBlockFence.cpp
+0xfffffe000799565e __TEXT.__cstring        "IOGPUFenceMachine: block fence %p appears stuck after creation" @%s:%d
+0xfffffe00079956a6 __TEXT.__cstring        site.T
+0xfffffe00079956ad __TEXT.__cstring        2222222211112
+0xfffffe00079956bb __TEXT.__cstring        IOGPUKernelMappedMemory
+0xfffffe00079956d3 __TEXT.__cstring        site.IOGPUKernelMappedMemory
+0xfffffe00079956f0 __TEXT.__cstring        12111112
+0xfffffe00079956f9 __TEXT.__cstring        virtual void *IOGPUKernelMappedMemory::getKernelData()
+0xfffffe0007995730 __TEXT.__cstring        IOGPUDeviceShmem
+0xfffffe0007995741 __TEXT.__cstring        site.IOGPUDeviceShmem
+0xfffffe0007995757 __TEXT.__cstring        1211111211221
+0xfffffe0007995765 __TEXT.__cstring        "os_refcnt: underflow (rc=%p)\n" @%s:%d
+0xfffffe000799578d __TEXT.__cstring        gpurefcnt.c
+0xfffffe0007995799 __TEXT.__cstring        "os_refcnt: attempted resurrection (rc=%p)\n" @%s:%d
+0xfffffe00079957ce __TEXT.__cstring        "os_refcnt: overflow (rc=%p)\n" @%s:%d
+0xfffffe00079957f5 __TEXT.__cstring        IOGPUResource
+0xfffffe0007995803 __TEXT.__cstring        site.IOGPUResource
+0xfffffe0007995816 __TEXT.__cstring        12211111121111222211
+0xfffffe000799582b __TEXT.__cstring        virtual bool IOGPUResource::init(IOGPU *, IOGPUDevice *, uint32_t)
+0xfffffe000799586e __TEXT.__cstring        "IOGPUResource::free called for resource still owned by an IOGPUDevice" @%s:%d
+0xfffffe00079958bd __TEXT.__cstring        IOGPUResource.cpp
+0xfffffe00079958cf __TEXT.__cstring        "Unexpected memory type" @%s:%d
+0xfffffe00079958ef __TEXT.__cstring        site.sIOGPUUserEvents
+0xfffffe0007995905 __TEXT.__cstring        static OSPtr<IOGPUResource> IOGPUResource::newResourceWithClientBuffer(IOGPU *, IOGPUDevice *, enum eIOGPUResType, IOByteCount, mach_vm_address_t, mach_vm_address_t, mach_vm_address_t *)
+0xfffffe00079959c0 __TEXT.__cstring        static OSPtr<IOGPUResource> IOGPUResource::newResourceWithOptions(IOGPU *, IOGPUDevice *, enum eIOGPUResType, uint64_t, IOByteCount, IOOptionBits, mach_vm_address_t *, IOGPUNewResourceArgs *, uint64_t &, uint64_t &)
+0xfffffe0007995a98 __TEXT.__cstring        static OSPtr<IOGPUResource> IOGPUResource::newResourceWithParentResourceID(IOGPU *, IOGPUDevice *, enum eIOGPUResType, uint64_t, IOByteCount, mach_vm_address_t, mach_vm_address_t, mach_vm_address_t *, uint32_t)
+0xfffffe0007995b6b __TEXT.__cstring        static OSPtr<IOGPUResource> IOGPUResource::newResourceWithIOSurfaceDeviceCache(IOGPU *, IOSurfaceDeviceCache *)
+0xfffffe0007995bdb __TEXT.__cstring        static OSPtr<IOGPUResource> IOGPUResource::newResourceWithIOSurface(IOGPU *, IOGPUDevice *, IOSurface *, uint32_t, uint32_t)
+0xfffffe0007995c58 __TEXT.__cstring        static OSPtr<IOGPUResource> IOGPUResource::newResourceWithClientAddressRanges(IOGPU *, IOGPUDevice *, mach_vm_address_t *, IOGPUNewResourceArgs *)
+0xfffffe0007995ceb __TEXT.__cstring        static OSPtr<IOGPUResource> IOGPUResource::newResourceGroup(IOGPU *, IOGPUDevice *, uint32_t)
+0xfffffe0007995d49 __TEXT.__cstring        static OSPtr<IOGPUResource> IOGPUResource::newVirtualResource(IOGPU *, IOGPUDevice *, IOGPUNewResourceArgs *)
+0xfffffe0007995db7 __TEXT.__cstring        const sIOGPUEvent *IOGPUResource::gartEvent() const
+0xfffffe0007995deb __TEXT.__cstring        const sIOGPUEvent *IOGPUResource::gartWriteEvent() const
+0xfffffe0007995e24 __TEXT.__cstring        SysMemPrivate
+0xfffffe0007995e32 __TEXT.__cstring        SysMemShared(IOSurface)
+0xfffffe0007995e4a __TEXT.__cstring        SysMemShared
+0xfffffe0007995e57 __TEXT.__cstring        IOSurface
+0xfffffe0007995e61 __TEXT.__cstring        Group
+0xfffffe0007995e67 __TEXT.__cstring        Unknown
+0xfffffe0007995e6f __TEXT.__cstring        void IOGPUResource::setPurgeable(IOOptionBits, IOOptionBits)
+0xfffffe0007995eac __TEXT.__cstring        virtual bool IOGPUResource::mapAtAddressLength(uint64_t, uint64_t, uint64_t)
+0xfffffe0007995ef9 __TEXT.__cstring        virtual bool IOGPUResource::map(uint64_t, uint32_t)
+0xfffffe0007995f2d __TEXT.__cstring        void *IOGPUResource::getKernelData()
+0xfffffe0007995f52 __TEXT.__cstring        site.IOGPUResource *
+0xfffffe0007995f67 __TEXT.__cstring        "Illegal resource type" @%s:%d
+0xfffffe0007995f86 __TEXT.__cstring        "Unable to remove just added resource" @%s:%d
+0xfffffe0007995fb4 __TEXT.__cstring        "Unable to remove just added resource after addMemoryFromResources failure" @%s:%d
+0xfffffe0007996007 __TEXT.__cstring        "add_group_resources_fast() count overflow" @%s:%d
+0xfffffe000799603a __TEXT.__cstring        IOGPUSysMemory *IOGPUResource::owns_replaceable_backing() const
+0xfffffe0007996081 __TEXT.__cstring        IOReturn IOGPUResource::detach_backing()
+0xfffffe00079960aa __TEXT.__cstring        IOReturn IOGPUResource::replace_backing_bytes(task_t, mach_vm_address_t, uint64_t)
+0xfffffe00079960fd __TEXT.__cstring        IOReturn IOGPUResource::replace_backing_ranges(task_t, mach_vm_address_t, uint64_t, bool, bool, uint64_t *)
+0xfffffe0007996169 __TEXT.__cstring        IOReturn IOGPUResource::updateMappings(OSSharedPtr<IOGPUResource>, sIOGPUMappingOp *, uint32_t, IOOptionBits)
+0xfffffe00079961d7 __TEXT.__cstring        IOReturn IOGPUResource::copyMappings(OSSharedPtr<IOGPUResource>, sIOGPUMappingOp *, uint32_t, IOOptionBits)
+0xfffffe0007996243 __TEXT.__cstring        "m_count not zero after releaseValue()" @%s:%d
+0xfffffe0007996272 __TEXT.__cstring        IOGPUCountedMap.h
+0xfffffe0007996284 __TEXT.__cstring        site.IOGPUCountedMap
+0xfffffe0007996299 __TEXT.__cstring        111122222
+0xfffffe00079962a3 __TEXT.__cstring        IOGPUIOCommandDescriptor
+0xfffffe00079962bc __TEXT.__cstring        site.IOGPUIOCommandDescriptor
+0xfffffe00079962da __TEXT.__cstring        12111233212
+0xfffffe00079962e6 __TEXT.__cstring        IOGPUIOCommandBuffer
+0xfffffe00079962fb __TEXT.__cstring        site.IOGPUIOCommandBuffer
+0xfffffe0007996315 __TEXT.__cstring        12212222111211
+0xfffffe0007996324 __TEXT.__cstring        virtual bool IOGPUIOCommandBuffer::init(IOGPUIOCommandQueue *)
+0xfffffe0007996363 __TEXT.__cstring        "Command Buffer Command List Not Empty on IOGPUIOCommandBuffer free" @%s:%d
+0xfffffe00079963af __TEXT.__cstring        IOGPUIOCommandQueue.cpp
+0xfffffe00079963c7 __TEXT.__cstring        bool IOGPUIOCommandBuffer::processCommands(uint32_t, uint64_t, bool)
+0xfffffe000799640c __TEXT.__cstring        void IOGPUIOCommandBuffer::processKernelCommands(uint32_t)
+0xfffffe0007996447 __TEXT.__cstring        virtual void IOGPUIOCommandBuffer::processKernelCommand(const sIOGPUIOKernelCommand *, const sIOGPUIOKernelCommand *)
+0xfffffe00079964bd __TEXT.__cstring        bool IOGPUIOCommandBuffer::getIOCommands(sIOGPUIOCommandListHead *)
+0xfffffe0007996501 __TEXT.__cstring        IOGPUIOCommandQueue
+0xfffffe0007996515 __TEXT.__cstring        site.IOGPUIOCommandQueue
+0xfffffe000799652e __TEXT.__cstring        1222112122211121111112
+0xfffffe0007996545 __TEXT.__cstring        virtual bool IOGPUIOCommandQueue::init(IOGPUDevice *, uint32_t, uint32_t)
+0xfffffe000799658f __TEXT.__cstring        "Active Command Buffer Not Empty on IOGPUIOCommandQueue free" @%s:%d
+0xfffffe00079965d4 __TEXT.__cstring        "IO Procssing Queue IO list Not Empty on IOGPUIOCommandQueue free" @%s:%d
+0xfffffe000799661e __TEXT.__cstring        IOReturn IOGPUIOCommandQueue::performIO()
+0xfffffe0007996648 __TEXT.__cstring        IOReturn IOGPUIOCommandQueue::createIOCommandBuffer(uint64_t *, uint64_t *)
+0xfffffe0007996694 __TEXT.__cstring        IOReturn IOGPUIOCommandQueue::destroyIOCommandBuffer(uint32_t)
+0xfffffe00079966d3 __TEXT.__cstring        IOGPUDeviceAssertion
+0xfffffe00079966e8 __TEXT.__cstring        site.IOGPUDeviceAssertion
+0xfffffe0007996702 __TEXT.__cstring        12122
+0xfffffe0007996708 __TEXT.__cstring        "IOGPUDeviceAssertion::initWithAccelerator Unsupported assertionType %lld" @%s:%d
+0xfffffe000799675a __TEXT.__cstring        IOGPUDeviceAssertion.cpp
+0xfffffe0007996773 __TEXT.__cstring        IOGPUWorkQueue
+0xfffffe0007996782 __TEXT.__cstring        site.IOGPUWorkQueue
+0xfffffe0007996796 __TEXT.__cstring        12111111222122222222222212200000
+0xfffffe00079967b7 __TEXT.__cstring        site.IOGPUCommandDescriptor *
+0xfffffe00079967d5 __TEXT.__cstring        4@>]2AA=6]AC:G2E6]x~$FC7246]AC@E64E65\2446DD
+0xfffffe0007996802 __TEXT.__cstring        com.apple.private.ggdsw.GPUProcessProtectedContent
+0xfffffe0007996835 __TEXT.__cstring        %s enter: fRingBuffer=%p, fNumRingEntries=%u, fRingGPUFinishedCount=%u, fRingGPUSubmittedCount=%u.
+0xfffffe0007996899 __TEXT.__cstring        virtual void IOGPUWorkQueue::logRingBuffer()
+0xfffffe00079968c7 __TEXT.__cstring        fRingBuffer[%d]=[ctx:%p, gputask:%p, stamp[idx:%d, stamp:%d]
+0xfffffe0007996904 __TEXT.__cstring        [idx:%d, stamp:%d]
+0xfffffe0007996919 __TEXT.__cstring        %s exit
+0xfffffe0007996922 __TEXT.__cstring        "Excessive time stalled (>%ds) in IOGPUWorkQueue::waitForAllSubmitted()" @%s:%d
+0xfffffe0007996972 __TEXT.__cstring        IOGPUWorkQueue.cpp
+0xfffffe0007996985 __TEXT.__cstring        "Excessive time stalled (>%ds) in IOGPUWorkQueue::addCommandToTail_slow()" @%s:%d
+0xfffffe00079969d7 __TEXT.__cstring        virtual void IOGPUWorkQueue::restart()
+0xfffffe00079969fe __TEXT.__cstring        Trying to restart GPU (%s)...
+0xfffffe0007996a1d __TEXT.__cstring        "GPU hang (boot-args contains \"panic_on_gpu_hang=1\")" @%s:%d
+0xfffffe0007996a5c __TEXT.__cstring        IOGPUWorkQueueState
+0xfffffe0007996a70 __TEXT.__cstring        site.IOGPUWorkQueueState
+0xfffffe0007996a89 __TEXT.__cstring        12122222222222222222222
+0xfffffe0007996aa1 __TEXT.__cstring        finished
+0xfffffe0007996aaa __TEXT.__cstring        submitted
+0xfffffe0007996ab4 __TEXT.__cstring        added
+0xfffffe0007996abd __TEXT.__cstring        Idle
+0xfffffe0007996ac2 __TEXT.__cstring        Ready
+0xfffffe0007996ac8 __TEXT.__cstring        Blocked
+0xfffffe0007996ad0 __TEXT.__cstring        Preempted
+0xfffffe0007996ada __TEXT.__cstring        state
+0xfffffe0007996ae0 __TEXT.__cstring        aborted
+0xfffffe0007996ae8 __TEXT.__cstring        barrier
+0xfffffe0007996af0 __TEXT.__cstring        submit
+0xfffffe0007996af7 __TEXT.__cstring        IOGPUScheduler
+0xfffffe0007996b06 __TEXT.__cstring        site.IOGPUScheduler
+0xfffffe0007996b1a __TEXT.__cstring        12111111212112222222222111122211122222111112111222222111122212222122222221
+0xfffffe0007996b65 __TEXT.__cstring        bool IOGPUScheduler::init(IOGPU *)
+0xfffffe0007996b88 __TEXT.__cstring        IOGPU Submission
+0xfffffe0007996b99 __TEXT.__cstring        v16@?0^{IOTimerEventSource=^^?i^{IOEventSource}^{OSObject}^?B^{IOWorkLoop}^v^{ExpansionData}^vQ^{ExpansionData}}8
+0xfffffe0007996c0b __TEXT.__cstring        IOGPU Completion
+0xfffffe0007996c1c __TEXT.__cstring        site.struct sGPURestartRegisteredCommandQueue
+0xfffffe0007996c4e __TEXT.__cstring        SchedulerState
+0xfffffe0007996c5d __TEXT.__cstring        i8@?0
+0xfffffe0007996c63 __TEXT.__cstring        "Unbalanced call to enableWorkQueues() %d\n" @%s:%d
+0xfffffe0007996c97 __TEXT.__cstring        IOGPUScheduler.cpp
+0xfffffe0007996caa __TEXT.__cstring        IOReturn IOGPUScheduler::freeToWireMemory(IOGPUMemory *)
+0xfffffe0007996ce3 __TEXT.__cstring        "increment_gart_collector_disable_count() fGARTCollectorDisableCount overflow" @%s:%d
+0xfffffe0007996d39 __TEXT.__cstring        "decrement_gart_collector_disable_count() fGARTCollectorDisableCount underflow" @%s:%d
+0xfffffe0007996d90 __TEXT.__cstring        B16@?0^{OSObject=^^?i}8
+0xfffffe0007996da8 __TEXT.__cstring        BusyWorkQueues
+0xfffffe0007996dc3 __TEXT.__cstring        Stamps
+0xfffffe0007996dca __TEXT.__cstring        void IOGPUScheduler::signalHardwareError(eRestartRequest, int32_t)
+0xfffffe0007996e0d __TEXT.__cstring        void IOGPUScheduler::hardware_error_interrupt(IOInterruptEventSource *, int)
+0xfffffe0007996e5a __TEXT.__cstring        int32_t IOGPUScheduler::registerCommandQueue(const IOGPUCommandQueue *)
+0xfffffe0007996ea2 __TEXT.__cstring        stamp[idx:%d, %d]
+0xfffffe0007996eb4 __TEXT.__cstring        [idx:%d, %d]
+0xfffffe0007996ec1 __TEXT.__cstring        virtual void IOGPUScheduler::progressTimerCheckInterrupt()
+0xfffffe0007996efc __TEXT.__cstring        IOGPUClientSharedMachine
+0xfffffe0007996f15 __TEXT.__cstring        site.IOGPUClientSharedMachine
+0xfffffe0007996f33 __TEXT.__cstring        121112211122
+0xfffffe0007996f40 __TEXT.__cstring        site.IOClientSharedListEntry
+0xfffffe0007996f5d __TEXT.__cstring        1111112
+0xfffffe0007996f65 __TEXT.__cstring        "IOGPUClientSharedMachine::getClientSharedAddressForId unable to find client map for id %08x\n" @%s:%d
+0xfffffe0007996fcc __TEXT.__cstring        IOGPUDevice.cpp
+0xfffffe0007996fdc __TEXT.__cstring        IOGPUVnioDesc
+0xfffffe0007996fea __TEXT.__cstring        site.IOGPUVnioDesc
+0xfffffe0007996ffd __TEXT.__cstring        12212
+0xfffffe0007997003 __TEXT.__cstring        IOGPUDevice
+0xfffffe000799700f __TEXT.__cstring        site.IOGPUDevice
+0xfffffe0007997020 __TEXT.__cstring        121111122111212111111112221211121112
+0xfffffe0007997045 __TEXT.__cstring        com.apple.private.agx.rt-priority-spi
+0xfffffe000799706b __TEXT.__cstring        AppleMobileFileIntegrity
+0xfffffe0007997084 __TEXT.__cstring        com.apple.private.graphics-restart-no-kill
+0xfffffe00079970af __TEXT.__cstring        com.apple.private.gpu-restricted
+0xfffffe00079970d0 __TEXT.__cstring        com.apple.developer.gpu-restricted
+0xfffffe00079970f3 __TEXT.__cstring        IOReturn IOGPUDevice::create_notificationqueue(uint32_t, uint32_t, sIOGPUDeviceNotificationQueueData *)
+0xfffffe000799715b __TEXT.__cstring        IOReturn IOGPUDevice::set_resource_purgeable(const uint32_t, eIOGPUResourcePurgeable, eIOGPUResourcePurgeable *)
+0xfffffe00079971cc __TEXT.__cstring        IOReturn IOGPUDevice::new_resource(IOGPUNewResourceArgs *, struct IOGPUNewResourceReturnData *, IOByteCount, uint32_t *)
+0xfffffe0007997245 __TEXT.__cstring        ANE Buffer id 0x%x
+0xfffffe0007997258 __TEXT.__cstring        "group_add_resources_trap() count overflow" @%s:%d
+0xfffffe000799728b __TEXT.__cstring        IOReturn IOGPUDevice::resource_detach_backing(uint32_t)
+0xfffffe00079972c3 __TEXT.__cstring        IOReturn IOGPUDevice::resource_replace_backing_bytes(sIOGPUReplaceBackingBytesData *)
+0xfffffe0007997319 __TEXT.__cstring        IOReturn IOGPUDevice::resource_replace_backing_ranges(sIOGPUReplaceBackingRangesData *, uint64_t *)
+0xfffffe000799737d __TEXT.__cstring        com.apple.private.iogpu.disable_wired_collector
+0xfffffe00079973ad __TEXT.__cstring        foreground
+0xfffffe00079973b8 __TEXT.__cstring        IOGPUGroupMemory
+0xfffffe00079973c9 __TEXT.__cstring        site.IOGPUGroupMemory
+0xfffffe00079973df __TEXT.__cstring        12122222212111221111122222211111222222
+0xfffffe0007997406 __TEXT.__cstring        IOReturn IOGPUGroupMemory::addMemoryFromResources(IOGPUResource **const, const unsigned int)
+0xfffffe0007997463 __TEXT.__cstring        "Trying to add NULL memory" @%s:%d
+0xfffffe0007997486 __TEXT.__cstring        IOGPUGroupMemory.cpp
+0xfffffe000799749b __TEXT.__cstring        "Unable to remove just added key" @%s:%d
+0xfffffe00079974c4 __TEXT.__cstring        "Memory object not found in fMemoryCountedSet or fPendingMemorySet" @%s:%d
+0xfffffe000799750f __TEXT.__cstring        "IOGPUGroupMemory::remove_memory_object() memory object not found" @%s:%d
+0xfffffe0007997559 __TEXT.__cstring        "Non-resident group memory has %u pending memory objects" @%s:%d
+0xfffffe000799759a __TEXT.__cstring        "Didn't complete expected number of memory objects" @%s:%d
+0xfffffe00079975d5 __TEXT.__cstring        "Unexpected number of pending objects prepared: %d != %d" @%s:%d
+0xfffffe0007997616 __TEXT.__cstring        "Didn't move expected number of pending objects." @%s:%d
+0xfffffe000799764f __TEXT.__cstring        "Didn't remove expected number of objects from the main hash." @%s:%d
+0xfffffe0007997695 __TEXT.__cstring        "Didn't complete expected number of objects from the pending array." @%s:%d
+0xfffffe00079976e1 __TEXT.__cstring        "Unexpected number of memory objects completed" @%s:%d
+0xfffffe0007997718 __TEXT.__cstring        "Unable to move pending memory object to main hash" @%s:%d
+0xfffffe0007997753 __TEXT.__cstring        "Unexpected number of objects moved from pending to main hash" @%s:%d
+0xfffffe0007997799 __TEXT.__cstring        "Unexpected pending memory objects" @%s:%d
+0xfffffe00079977c4 __TEXT.__cstring        IOGPUCountedSet.h
+0xfffffe00079977d6 __TEXT.__cstring        site.IOGPUCountedSet
+0xfffffe00079977eb __TEXT.__cstring        11111222222
+0xfffffe00079977f7 __TEXT.__cstring        "Mem object in pending hash found in main memory hash" @%s:%d
+0xfffffe0007997835 __TEXT.__cstring        "Pending object not found in main hash" @%s:%d
+0xfffffe0007997864 __TEXT.__cstring        "pending memory object unexpectedly found in non pending hash" @%s:%d
+0xfffffe00079978aa __TEXT.__cstring        "Memory object must be Resident" @%s:%d
+0xfffffe00079978d2 __TEXT.__cstring        IOGPUStatistics
+0xfffffe00079978e2 __TEXT.__cstring        site.IOGPUStatistics
+0xfffffe00079978f7 __TEXT.__cstring        121111
+0xfffffe00079978fe __TEXT.__cstring        PerformanceStatistics
+0xfffffe0007997914 __TEXT.__cstring        Internal Statistics
+0xfffffe0007997928 __TEXT.__cstring        Alloc system memory
+0xfffffe000799793c __TEXT.__cstring        In use system memory
+0xfffffe0007997951 __TEXT.__cstring        In use system memory (driver)
+0xfffffe000799796f __TEXT.__cstring        recoveryCount
+0xfffffe000799797d __TEXT.__cstring        lastRecoveryTime
+0xfffffe000799798e __TEXT.__cstring        GPU Restart Count
+0xfffffe00079979a0 __TEXT.__cstring        Last GPU Restart
+0xfffffe00079979b1 __TEXT.__cstring        IOGPUCommandDescriptor
+0xfffffe00079979c8 __TEXT.__cstring        site.IOGPUCommandDescriptor
+0xfffffe00079979e4 __TEXT.__cstring        1211212112111122222222222222222222122222
+0xfffffe0007997a0d __TEXT.__cstring        site.OSObject *
+0xfffffe0007997a1d __TEXT.__cstring        site.IOGPUMemory *
+0xfffffe0007997a30 __TEXT.__cstring        bool IOGPUCommandDescriptor::retainObject(const OSObject *)
+0xfffffe0007997a6c __TEXT.__cstring        bool IOGPUCommandDescriptor::addMemory(IOGPUMemory *)
+0xfffffe0007997aa2 __TEXT.__cstring        virtual IOReturn IOGPUCommandDescriptor::prepare(uint32_t)
+0xfffffe0007997add __TEXT.__cstring        IOGPUMappingCommand
+0xfffffe0007997af1 __TEXT.__cstring        site.IOGPUMappingCommand
+0xfffffe0007997b0a __TEXT.__cstring        void IOGPUMappingCommand::execute()
+0xfffffe0007997b2e __TEXT.__cstring        "Invalid Mapping Command" @%s:%d
+0xfffffe0007997b4f __TEXT.__cstring        IOGPUCommandDescriptor.cpp
+0xfffffe0007997b6a __TEXT.__cstring        IOGPUMappingCommandDescriptor
+0xfffffe0007997b88 __TEXT.__cstring        site.IOGPUMappingCommandDescriptor
+0xfffffe0007997bab __TEXT.__cstring        121121211211112222222222222222222212222211121120
+0xfffffe0007997bdc __TEXT.__cstring        void IOGPUMappingCommandDescriptor::performMappings()
+0xfffffe0007997c12 __TEXT.__cstring        IOGPUResourceSet
+0xfffffe0007997c23 __TEXT.__cstring        site.IOGPUResourceSet
+0xfffffe0007997c39 __TEXT.__cstring        121122
+0xfffffe0007997c40 __TEXT.__cstring        bool IOGPUResourceSet::add_resource_slow(IOGPUResource *)
+0xfffffe0007997c7a __TEXT.__cstring        IOGPUWeakResourceSet
+0xfffffe0007997c8f __TEXT.__cstring        site.IOGPUWeakResourceSet
+0xfffffe0007997ca9 __TEXT.__cstring        IOGPUSegmentResourceList
+0xfffffe0007997cc2 __TEXT.__cstring        site.IOGPUSegmentResourceList
+0xfffffe0007997ce0 __TEXT.__cstring        IOGPUTask
+0xfffffe0007997cea __TEXT.__cstring        site.IOGPUTask
+0xfffffe0007997cf9 __TEXT.__cstring        1211211222222222222222222222222222222221111111111111111112
+0xfffffe0007997d34 __TEXT.__cstring        "%s: IOGPUTask unexpectedly freed\n" @%s:%d
+0xfffffe0007997d60 __TEXT.__cstring        virtual void IOGPUTask::free()
+0xfffffe0007997d7f __TEXT.__cstring        IOGPUTask.cpp
+0xfffffe0007997d8d __TEXT.__cstring        "%s: active mapping list not empty\n" @%s:%d
+0xfffffe0007997dba __TEXT.__cstring        Listing all allocated maps:
+0xfffffe0007997dd8 __TEXT.__cstring        mapping=%p, address=0x%llx, size=0x%llx
+0xfffffe0007997e01 __TEXT.__cstring        kernel_task
+0xfffffe0007997e0d __TEXT.__cstring        IOAcceleratorES
+0xfffffe0007997e1d __TEXT.__cstring        site.IOAcceleratorES
+0xfffffe0007997e32 __TEXT.__cstring        IOGPU
+0xfffffe0007997e38 __TEXT.__cstring        site.IOGPU
+0xfffffe0007997e43 __TEXT.__cstring        121111121222121212111111121211121222221111112112211122111112122222222222222222222222222122212
+0xfffffe0007997ea1 __TEXT.__cstring        iogpu
+0xfffffe0007997ea9 __TEXT.__cstring        IOGPUFamily Parameters
+0xfffffe0007997ec0 __TEXT.__cstring        wired_lwm_mb
+0xfffffe0007997ed0 __TEXT.__cstring        Wired Low Water Mark Megabytes
+0xfffffe0007997eef __TEXT.__cstring        dynamic_lwm
+0xfffffe0007997efb __TEXT.__cstring        Dynamic Wired Low Water Mark Enable
+0xfffffe0007997f1f __TEXT.__cstring        wired_limit
+0xfffffe0007997f2b __TEXT.__cstring        Wired Limit Megabytes
+0xfffffe0007997f41 __TEXT.__cstring        metal4_disable_async_mapping
+0xfffffe0007997f5e __TEXT.__cstring        Metal 4 Disable Async Mapping
+0xfffffe0007997f7c __TEXT.__cstring        wired_limit_mb
+0xfffffe0007997f8b __TEXT.__cstring        debug_flags
+0xfffffe0007997f97 __TEXT.__cstring        Debug Flags
+0xfffffe0007997fa3 __TEXT.__cstring        disable_wired_collector
+0xfffffe0007997fbb __TEXT.__cstring        Disable wired memory collector
+0xfffffe0007997fda __TEXT.__cstring        bool IOGPU::validateConfigStructure()
+0xfffffe0007998000 __TEXT.__cstring        site.struct sIOGPUStartTimes
+0xfffffe000799801d __TEXT.__cstring        KDebugVersion
+0xfffffe000799802b __TEXT.__cstring        virtual bool IOGPU::start(IOService *)
+0xfffffe0007998052 __TEXT.__cstring        iogpu_debug
+0xfffffe000799805e __TEXT.__cstring        wq_stall_panic_seconds
+0xfffffe0007998075 __TEXT.__cstring        wq_timeout_sec
+0xfffffe0007998084 __TEXT.__cstring        panic_on_gpu_hang
+0xfffffe0007998096 __TEXT.__cstring        spin_wait_for_gpu
+0xfffffe00079980a8 __TEXT.__cstring        gpu_no_zero_fill
+0xfffffe00079980b9 __TEXT.__cstring        iogpu_pagingoff_timeout
+0xfffffe00079980d1 __TEXT.__cstring        iogpu_panic_on_event_timeout
+0xfffffe00079980ee __TEXT.__cstring        iogpu_no_prepare_avoid_throttling
+0xfffffe0007998110 __TEXT.__cstring        iogpu_no_check_descriptor_size
+0xfffffe000799812f __TEXT.__cstring        iogpu_no_throttled_multi_kick
+0xfffffe000799814d __TEXT.__cstring        iogpu_no_abort
+0xfffffe000799815c __TEXT.__cstring        iogpu_force_mapped_memory
+0xfffffe0007998176 __TEXT.__cstring        iogpu_disable_restart_limit
+0xfffffe0007998192 __TEXT.__cstring        iogpu_event_timeout_secs
+0xfffffe00079981ab __TEXT.__cstring        IOCoreSurfaceRoot
+0xfffffe00079981bd __TEXT.__cstring        IOGPU Default WorkLoop
+0xfffffe00079981d4 __TEXT.__cstring        hw.memsize_physical
+0xfffffe00079981e8 __TEXT.__cstring        hw.memsize
+0xfffffe00079981f3 __TEXT.__cstring        GARTCacheSize
+0xfffffe0007998201 __TEXT.__cstring        iogpu_wired_lwm_mb
+0xfffffe0007998214 __TEXT.__cstring        IOGPU: Wired low water mark overridden to %d MB
+0xfffffe0007998245 __TEXT.__cstring        iogpu_sysmem_mb
+0xfffffe0007998255 __TEXT.__cstring        iogpu_single_sysmem_pct
+0xfffffe000799826d __TEXT.__cstring        iogpu_gart_interval_ms
+0xfffffe0007998284 __TEXT.__cstring        GARTReclaimInterval
+0xfffffe0007998298 __TEXT.__cstring        iogpu_gart_timeout_ms
+0xfffffe00079982ae __TEXT.__cstring        GARTReclaimTimeout
+0xfffffe00079982c1 __TEXT.__cstring        com.apple.iokit.IOGPUFamily.API
+0xfffffe00079982e1 __TEXT.__cstring        Application
+0xfffffe00079982ed __TEXT.__cstring        AppPath
+0xfffffe00079982f5 __TEXT.__cstring        Graphics
+0xfffffe00079982fe __TEXT.__cstring        Report
+0xfffffe0007998305 __TEXT.__cstring        Signature
+0xfffffe000799830f __TEXT.__cstring        GPUSubmissionTraceID
+0xfffffe0007998324 __TEXT.__cstring        void IOGPU::reportGPURestart(const IOGPUCommandQueue *, const char *, uint32_t, uint64_t)
+0xfffffe000799837e __TEXT.__cstring        Failed to reallocate/truncate vendor's (too-long) GPURestartReport
+0xfffffe00079983c1 __TEXT.__cstring        Vendor failed to provide GPURestartReport
+0xfffffe00079983ee __TEXT.__cstring        %llx
+0xfffffe00079983f3 __TEXT.__cstring        GPURestartReport
+0xfffffe0007998404 __TEXT.__cstring        OSPtr<IOSurfaceDeviceCache> IOGPU::deviceCacheForIOSurface(IOSurface *, uint32_t)
+0xfffffe0007998456 __TEXT.__cstring        OSPtr<OSArray> IOGPU::createAllocationList()
+0xfffffe0007998483 __TEXT.__cstring        lastSubmittedTime
+0xfffffe0007998495 __TEXT.__cstring        accumulatedGPUTime
+0xfffffe00079984ac __TEXT.__cstring        GL/CL
+0xfffffe00079984b2 __TEXT.__cstring        Metal
+0xfffffe00079984b8 __TEXT.__cstring        IOGPUFamily
+0xfffffe00079984c4 __TEXT.__cstring        "IOGPU::systemPagingOff() timeout. %d threads still stuck.\n" @%s:%d
+0xfffffe0007998509 __TEXT.__cstring        IOGPU.cpp
+0xfffffe0007998513 __TEXT.__cstring        IOGPU::systemPagingOff() timeout. %d threads still stuck.
+0xfffffe000799854e __TEXT.__cstring        void IOGPU::terminateQueues()
+0xfffffe000799856c __TEXT.__cstring        model
+0xfffffe0007998572 __TEXT.__cstring        IOGPUCommandQueue
+0xfffffe0007998584 __TEXT.__cstring        site.IOGPUCommandQueue
+0xfffffe000799859b __TEXT.__cstring        122222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222211222211111112222222222222222212111222222211222222222
+0xfffffe0007998656 __TEXT.__cstring        site.IOGPUCommandQueuePrivate
+0xfffffe0007998674 __TEXT.__cstring        1111111111111111111111111111111111111111121111111111111111111111111111111111111111212
+0xfffffe00079986ca __TEXT.__cstring        IOReturn IOGPUCommandQueue::setNotificationQueue(IOGPUNotificationQueue *)
+0xfffffe0007998715 __TEXT.__cstring        virtual void IOGPUCommandQueue::processSegmentKernelCommand(IOGPUSegmentResourceList *, const sIOGPUKernelCommand *, const sIOGPUKernelCommand *, const uint8_t *, const uint8_t *, const sIOGPUCommandQueueCommandBufferArgs *)
+0xfffffe00079987f6 __TEXT.__cstring        kIOGPUKernelCommandDebugLog:%s
+0xfffffe0007998816 __TEXT.__cstring        virtual void IOGPUCommandQueue::processSegmentKernelCommands(IOGPUSegmentResourceList *, const sIOGPUKernelCommand *, const sIOGPUKernelCommand *, const uint8_t *, const uint8_t *, const sIOGPUCommandQueueCommandBufferArgs *)
+0xfffffe00079988f8 __TEXT.__cstring        virtual void IOGPUCommandQueue::processCommandBuffer(const sIOGPUCommandQueueCommandBufferArgs *)
+0xfffffe000799895a __TEXT.__cstring        virtual void IOGPUCommandQueue::processKernelCommand(const sIOGPUKernelCommand *, const sIOGPUKernelCommand *)
+0xfffffe00079989c9 __TEXT.__cstring        "Timeout SharedEvent: Cmd queue %p sleep port_name %d value: %08llx timed out waiting for prior signals!" @%s:%d
+0xfffffe0007998a3a __TEXT.__cstring        IOGPUCommandQueue.cpp
+0xfffffe0007998a50 __TEXT.__cstring        "Timeout SharedEvent: Cmd queue %p sleep port_name %d value: %08llx timed out!" @%s:%d
+0xfffffe0007998aa7 __TEXT.__cstring        "Timeout MTLEvent: waiting for signal (%llu) for event (%u) to be scheduled" @%s:%d
+0xfffffe0007998afb __TEXT.__cstring        virtual void IOGPUCommandQueue::processKernelCommands(const sIOGPUKernelCommand *, const sIOGPUKernelCommand *)
+0xfffffe0007998b6b __TEXT.__cstring        "shmemOffset value is corrupt" @%s:%d
+0xfffffe0007998b91 __TEXT.__cstring        "segment list shmem no longer mapped" @%s:%d
+0xfffffe0007998bbe __TEXT.__cstring        "kernel command shmem no longer mapped" @%s:%d
+0xfffffe0007998bed __TEXT.__cstring        "sideband buffer shmem no longer mapped" @%s:%d
+0xfffffe0007998c1d __TEXT.__cstring        virtual void IOGPUCommandQueue::submitCommandBuffer(const sIOGPUCommandQueueCommandBufferArgs *)
+0xfffffe0007998c7e __TEXT.__cstring        void IOGPUCommandQueue::retireCommandBuffer(IOGPUEventFence *)
+0xfffffe0007998cbd __TEXT.__cstring        Immunity for
+0xfffffe0007998cca __TEXT.__cstring        Deny submissions/ignore
+0xfffffe0007998ce2 __TEXT.__cstring        IOReturn IOGPUCommandQueue::schedule_shared_event(mach_port_name_t, uint64_t, bool, uint32_t)
+0xfffffe0007998d40 __TEXT.__cstring        virtual void IOGPUCommandQueue::signalSharedEvent(IOSurfaceSharedEvent *, uint64_t)
+0xfffffe0007998d94 __TEXT.__cstring        virtual void IOGPUCommandQueue::waitSharedEvent(IOSurfaceSharedEvent *, uint64_t, uint32_t)
+0xfffffe0007998df0 __TEXT.__cstring        "Timeout SharedEvent: %s: Shared event wait timed out for value : %llx" @%s:%d
+0xfffffe0007998e3f __TEXT.__cstring        virtual IOReturn IOGPUCommandQueue::schedulePostMappingWaitEvent(IOSurfaceSharedEvent *, uint64_t, uint32_t)
+0xfffffe0007998eac __TEXT.__cstring        IOGPUAllocationInfo
+0xfffffe0007998ec0 __TEXT.__cstring        site.IOGPUAllocationInfo
+0xfffffe0007998ed9 __TEXT.__cstring        12111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+0xfffffe0007998f60 __TEXT.__cstring        site.struct HashEntry
+0xfffffe0007998f7d __TEXT.__cstring        Devices
+0xfffffe0007998f85 __TEXT.__cstring        IOSurfaceID
+0xfffffe0007998f91 __TEXT.__cstring        Processes
+0xfffffe0007998f9f __TEXT.__cstring        Mappings
+0xfffffe0007998fa8 __TEXT.__cstring        IOAccelSurfaceID
+0xfffffe0007998fb9 __TEXT.__cstring        IOAccelSurfaceWidth
+0xfffffe0007998fcd __TEXT.__cstring        IOAccelSurfaceHeight
+0xfffffe0007998fe2 __TEXT.__cstring        IOAccelSurfacePixelFormat
+0xfffffe0007998ffc __TEXT.__cstring        IOAccelSurfaceBufferIndex
+0xfffffe0007999016 __TEXT.__cstring        void IOGPUAllocationInfo::declareIOSurfaceBackingStoreWithName(IOMemoryDescriptor *, OSString *, uint32_t, int *, int)
+0xfffffe000799908d __TEXT.__cstring        IOSurface Backing Store
+0xfffffe00079990a5 __TEXT.__cstring        CachedCopy
+0xfffffe00079990b0 __TEXT.__cstring        void IOGPUAllocationInfo::declareDeviceShmem(pid_t, IOMemoryDescriptor *, mach_vm_address_t)
+0xfffffe000799910d __TEXT.__cstring        Metal Device Shmem
+0xfffffe0007999120 __TEXT.__cstring        site.ResidentEntry
+0xfffffe0007999133 __TEXT.__cstring        "IOGPUResidentMemorySet unable to expand" @%s:%d
+0xfffffe0007999164 __TEXT.__cstring        IOGPUResidentSet.cpp
+0xfffffe0007999179 __TEXT.__cstring        "IOGPUResidentMemorySet::repack() out of bounds" @%s:%d
+0xfffffe00079991b1 __TEXT.__cstring        "IOGPUResidentMemorySet::repack() count mismatch" @%s:%d
+0xfffffe00079991ea __TEXT.__cstring        IOGPUMemoryInfoUserClient
+0xfffffe0007999204 __TEXT.__cstring        site.IOGPUMemoryInfoUserClient
+0xfffffe0007999223 __TEXT.__cstring        12111112122212121111111111121
+0xfffffe0007999241 __TEXT.__cstring        IOReturn IOGPUMemoryInfoUserClient::gather_memory_data(uint32_t, uint32_t *, uint32_t *, void *)
+0xfffffe00079992a2 __TEXT.__cstring        com.apple.private.ioaccelmemoryinfo
+0xfffffe00079992c6 __TEXT.__cstring        IOGPUMemoryMap
+0xfffffe00079992d5 __TEXT.__cstring        site.IOGPUMemoryMap
+0xfffffe00079992e9 __TEXT.__cstring        122112211
+0xfffffe00079992f3 __TEXT.__cstring        bool IOGPUMemoryMap::update_pte(uint32_t, IOMemoryDescriptor *, IOMemoryDescriptor *)
+0xfffffe0007999349 __TEXT.__cstring        IOGPUMTLEvent
+0xfffffe0007999357 __TEXT.__cstring        site.IOGPUMTLEvent
+0xfffffe000799936a __TEXT.__cstring        1211222222222222222222222222222222222222222222222222222222222222222222222222222222
+0xfffffe00079993bd __TEXT.__cstring        "IOGPUMTLEvent::clean_ring() read overflow" @%s:%d
+0xfffffe00079993f0 __TEXT.__cstring        IOGPUMetalEvent.cpp
+0xfffffe0007999404 __TEXT.__cstring        IOGPUSysMemory
+0xfffffe0007999413 __TEXT.__cstring        site.IOGPUSysMemory
+0xfffffe0007999427 __TEXT.__cstring        12122222212111222112121112221
+0xfffffe0007999445 __TEXT.__cstring        static OSSharedPtr<IOMemoryDescriptor> IOGPUSysMemory::memoryDescriptorWithClientBuffer(task_t, mach_vm_address_t, uint64_t)
+0xfffffe00079994c2 __TEXT.__cstring        static OSPtr<IOGPUSysMemory> IOGPUSysMemory::withClientBuffer(IOGPU *, task_t, IOGPUDevice *, mach_vm_address_t, uint64_t)
+0xfffffe000799953d __TEXT.__cstring        site.IOAddressRange
+0xfffffe0007999551 __TEXT.__cstring        static OSSharedPtr<IOMemoryDescriptor> IOGPUSysMemory::memoryDescriptorWithClientRanges(task_t, IOAddressRange *, uint32_t, bool)
+0xfffffe00079995d3 __TEXT.__cstring        static OSPtr<IOGPUSysMemory> IOGPUSysMemory::withClientRanges(IOGPU *, task_t, IOAddressRange *, uint32_t, bool)
+0xfffffe0007999644 __TEXT.__cstring        site.IOBufferMemoryDescriptor *
+0xfffffe0007999664 __TEXT.__cstring        static OSPtr<IOGPUSysMemory> IOGPUSysMemory::withOptions(IOGPU *, task_t, IOGPUDevice *, IOGPUResource *, IOOptionBits, uint64_t, uint64_t, task_t)
+0xfffffe00079996f8 __TEXT.__cstring        static OSPtr<IOGPUSysMemory> IOGPUSysMemory::withMemoryDescriptor(IOGPU *, IOGPUResource *, IOMemoryDescriptor *)
+0xfffffe000799976a __TEXT.__cstring        "IOGPUSysMemory::makeUntracked() called while resident\n" @%s:%d
+0xfffffe00079997ab __TEXT.__cstring        IOGPUSysMemory.cpp
+0xfffffe00079997be __TEXT.__cstring        virtual IOReturn IOGPUSysMemory::wire()
+0xfffffe00079997e6 __TEXT.__cstring        "%s: 0x%X mapping is not valid for wireRange, cannot wire PTEs" @%s:%d
+0xfffffe000799982d __TEXT.__cstring        "%s: 0x%X mapping is not valid for wireRange, cannot unwire PTEs" @%s:%d
+0xfffffe0007999876 __TEXT.__cstring        virtual void IOGPUSysMemory::unwire()
+0xfffffe000799989c __TEXT.__cstring        virtual void IOGPUSysMemory::describeAllocation(OSDictionary *)
+0xfffffe00079998dc __TEXT.__cstring        IOReturn IOGPUSysMemory::replace_backing_bytes_locked(task_t, mach_vm_address_t, uint64_t)
+0xfffffe0007999937 __TEXT.__cstring        IOReturn IOGPUSysMemory::replace_backing_ranges_locked(task_t, IOAddressRange *, uint32_t, bool)
+0xfffffe0007999998 __TEXT.__cstring        virtual IOMemoryDescriptor **IOGPUSysMemory::get_memory_descriptors(uint32_t, IOOptionBits, uint32_t *)
+0xfffffe0007999a00 __TEXT.__cstring        OSPtr<IOMemoryMap> IOGPUSysMemory::retainCPUWireMapping(IOOptionBits)
+0xfffffe0007999a46 __TEXT.__cstring        IOGPUNotificationQueue
+0xfffffe0007999a5d __TEXT.__cstring        site.IOGPUNotificationQueue
+0xfffffe0007999a79 __TEXT.__cstring        IOReturn IOGPUNotificationQueue::setNotificationPort(mach_port_t)
+0xfffffe0007999abb __TEXT.__os_log         %s: virtual_page_size(%u) is not a power of 2
+0xfffffe0007999aea __TEXT.__os_log         %s: virtual_page_size(%u) is not minimum VirtualPageSize(%u) aligned
+0xfffffe0007999b30 __TEXT.__os_log         %s: Invalid virtual_page_size(%u)
+0xfffffe0007999b53 __TEXT.__os_log         %s: Overflow aligning virtual length
+0xfffffe0007999b79 __TEXT.__os_log         %s: Failed to allocate array of descriptors
+0xfffffe0007999ba6 __TEXT.__os_log         %s: Failed to allocate descriptor bitmap
+0xfffffe0007999bd0 __TEXT.__os_log         %s: Overflow aligning metadata length
+0xfffffe0007999bf7 __TEXT.__os_log         %s: Failed to allocate metadata memory descriptor
+0xfffffe0007999c2a __TEXT.__os_log         %s: Overflow adding metadata length to byte count
+0xfffffe0007999c5d __TEXT.__os_log         %s: Overflow aligning residency data length
+0xfffffe0007999c8a __TEXT.__os_log         %s: Residency data length(%llu) less than required minimum size(%llu)
+0xfffffe0007999cd1 __TEXT.__os_log         %s: Failed to allocate residency data memory descriptor
+0xfffffe0007999d0a __TEXT.__os_log         %s: Failed to allocate residency data kernel map
+0xfffffe0007999d3c __TEXT.__os_log         %s: Overflow adding residency data length to byte count
+0xfffffe0007999d75 __TEXT.__os_log         %s: IOMemoryDescriptor::getPageCounts returned 0x%08x for meta data
+0xfffffe0007999dba __TEXT.__os_log         %s: IOMemoryDescriptor::getPageCounts returned 0x%08x for residency data
+0xfffffe0007999e04 __TEXT.__os_log         %s: Invalid Index (%u), Capacity (%u)
+0xfffffe0007999e2b __TEXT.__os_log         %s: Invalid arguments
+0xfffffe0007999e42 __TEXT.__os_log         %s: Failed to mark virtual memory non-volatile err 0x%x
+0xfffffe0007999e7b __TEXT.__os_log         %s: Failed to prepare memory descriptor(%p) at index %u
+0xfffffe0007999eb4 __TEXT.__os_log         %s: Failed to prepare metadata (%p)
+0xfffffe0007999ed9 __TEXT.__os_log         %s: Failed to prepare residency data (%p)
+0xfffffe0007999f04 __TEXT.__os_log         %s: Out of bounds access to residency data
+0xfffffe0007999f30 __TEXT.__os_log         %s: failed to reserve the GPUVM address 0x%llx length 0x%llx
+0xfffffe0007999f6e __TEXT.__os_log         %s: Attempting to prepare detached resource
+0xfffffe0007999f9b __TEXT.__os_log         %s: Resource still busy
+0xfffffe0007999fb4 __TEXT.__os_log         %s: Failed to evict for detach
+0xfffffe0007999fd4 __TEXT.__os_log         Can't upgrade IOGPUMemory.protectionOptions while still wired (0x%x->0x%x)
+0xfffffe000799a020 __TEXT.__os_log         IONewZero failed to alloc Handles
+0xfffffe000799a043 __TEXT.__os_log         IOMallocZeroData failed to alloc Handles Map
+0xfffffe000799a071 __TEXT.__os_log         trying to remove apparently bogus texture handle %d
+0xfffffe000799a0a6 __TEXT.__os_log         trying to remove apparently bogus texture handle %d
+0xfffffe000799a0db __TEXT.__os_log         %s has reached a high water mark of %d gpu command queues.
+0xfffffe000799a116 __TEXT.__os_log         %s: getStampMemory failed
+0xfffffe000799a131 __TEXT.__os_log         %s: fStampMemoryMap creation failed
+0xfffffe000799a156 __TEXT.__os_log         %s: createDevice failed
+0xfffffe000799a16f __TEXT.__os_log         %s: The number of queues (%d) exceeding limit (%d), failing IOGPUCommandQueue creation
+0xfffffe000799a1c7 __TEXT.__os_log         %s: Too many queues (%d) created, possibly leaking?
+0xfffffe000799a1fc __TEXT.__os_log         %s: Invalid newCommandQueueArgsSize (%u) expected (%u)
+0xfffffe000799a234 __TEXT.__os_log         %s: newCommandQueue failed
+0xfffffe000799a250 __TEXT.__os_log         %s: init failed
+0xfffffe000799a261 __TEXT.__os_log         %s: failed to add into name space
+0xfffffe000799a284 __TEXT.__os_log         %s: failed for id %d
+0xfffffe000799a29a __TEXT.__os_log         %s failed to map arguments
+0xfffffe000799a2b6 __TEXT.__os_log         %s failed to create resource
+0xfffffe000799a2d4 __TEXT.__os_log         %s: Could not find event_id %u (value %llu)
+0xfffffe000799a301 __TEXT.__os_log         %s: Could not find event_id %u
+0xfffffe000799a321 __TEXT.__os_log         %s: total size overflow (%llu * %llu)
+0xfffffe000799a348 __TEXT.__os_log         %s: bad structureInputSize (%lld != %llu)
+0xfffffe000799a373 __TEXT.__os_log         %s: cmdBufArgSize does not match config (%llu != %u)
+0xfffffe000799a3a9 __TEXT.__os_log         %s: Failed to find command queue
+0xfffffe000799a3cb __TEXT.__os_log         %s: Failed to find command queue
+0xfffffe000799a3ed __TEXT.__os_log         %s: Failed to find command queue
+0xfffffe000799a40f __TEXT.__os_log         %s: Failed to find command queue
+0xfffffe000799a431 __TEXT.__os_log         %s: Failed to create IOGPUVnioDesc
+0xfffffe000799a455 __TEXT.__os_log         %s: VnioDesc add namespace failed
+0xfffffe000799a478 __TEXT.__os_log         %s: IO Command Queue creation failed
+0xfffffe000799a49e __TEXT.__os_log         %s: IO Command Queue init failed
+0xfffffe000799a4c0 __TEXT.__os_log         %s: IO Command Queue add to namespace failed
+0xfffffe000799a4ee __TEXT.__os_log         %s: Invalid IO Queue ID (%u)
+0xfffffe000799a50c __TEXT.__os_log         %s: Invalid IO Queue ID (%u)
+0xfffffe000799a52a __TEXT.__os_log         %s: Invalid Notification Queue ID (%u)
+0xfffffe000799a552 __TEXT.__os_log         %s: input memory descriptor map failed
+0xfffffe000799a57a __TEXT.__os_log         %s: Insufficient input struct size (%llu)
+0xfffffe000799a5a5 __TEXT.__os_log         %s: Command buffer count mismatch (%lld - %u)
+0xfffffe000799a5d4 __TEXT.__os_log         %s: Invalid IO Queue ID (%u)
+0xfffffe000799a5f2 __TEXT.__os_log         %s: Invalid IO Queue ID (%u)
+0xfffffe000799a610 __TEXT.__os_log         %s: Invalid IO Queue ID (%u)
+0xfffffe000799a62e __TEXT.__os_log         %s: Invalid IO Queue ID (%u)
+0xfffffe000799a64c __TEXT.__os_log         %s: Invalid IO Queue ID (%u)
+0xfffffe000799a66a __TEXT.__os_log         %s: Invalid IO Queue ID (%u)
+0xfffffe000799a688 __TEXT.__os_log         %s: Invalid IO Queue ID (%u)
+0xfffffe000799a6a6 __TEXT.__os_log         %s failed to map arguments
+0xfffffe000799a6c2 __TEXT.__os_log         %s failed to add resources to group
+0xfffffe000799a6e7 __TEXT.__os_log         %s failed to map arguments
+0xfffffe000799a703 __TEXT.__os_log         %s failed to add resources to group
+0xfffffe000799a728 __TEXT.__os_log         %s: sleeping %llu miliseconds %s find stamp index %d.
+0xfffffe000799a75f __TEXT.__os_log         %s: pid count is greater than or equal to the max allowed (%u)
+0xfffffe000799a79f __TEXT.__os_log         %s: fFenceLock alloc fail
+0xfffffe000799a7ba __TEXT.__os_log         %s: fail. request=%llu, current=%d, max=%d
+0xfffffe000799a7e6 __TEXT.__os_log         %s: Couldn't allocate object_handle
+0xfffffe000799a80c __TEXT.__os_log         %s: invalid arguments
+0xfffffe000799a823 __TEXT.__os_log         %s: createResource failed
+0xfffffe000799a83e __TEXT.__os_log         %s: fMemory is NULL.
+0xfffffe000799a854 __TEXT.__os_log         %s: Unsupported protecton options (%016llx) bytes
+0xfffffe000799a887 __TEXT.__os_log         %s: invalid arguments
+0xfffffe000799a89e __TEXT.__os_log         %s: Cannot store 64-bit protection options
+0xfffffe000799a8ca __TEXT.__os_log         %s: createResource failed
+0xfffffe000799a8e5 __TEXT.__os_log         %s: IOGPUSysMemory::withOptions failed
+0xfffffe000799a90d __TEXT.__os_log         %s: failed to create client map
+0xfffffe000799a92e __TEXT.__os_log         %s: Unsupported protecton options (%016llx) bytes
+0xfffffe000799a961 __TEXT.__os_log         %s: parent_resource_id is 0
+0xfffffe000799a97e __TEXT.__os_log         %s: Cannot store 64-bit protection options
+0xfffffe000799a9aa __TEXT.__os_log         %s: invalid arguments
+0xfffffe000799a9c1 __TEXT.__os_log         %s: invalid arguments
+0xfffffe000799a9d8 __TEXT.__os_log         %s: failing. parent_resource_id only works with standard texture. resType=0x%x.
+0xfffffe000799aa29 __TEXT.__os_log         %s: createResource failed
+0xfffffe000799aa44 __TEXT.__os_log         %s: failed to lookup parent resource from shared.
+0xfffffe000799aa77 __TEXT.__os_log         %s: client_buffer (0x%llx) precedes client_base (0x%llx).
+0xfffffe000799aab2 __TEXT.__os_log         %s: child resource (offset=0x%llx, size=0x%llx) exceeds parent memory size 0x%llx.
+0xfffffe000799ab06 __TEXT.__os_log         %s: parent resource type mismatch.
+0xfffffe000799ab2a __TEXT.__os_log         %s: allocIOGPUResource failed to alloc texture object
+0xfffffe000799ab61 __TEXT.__os_log         %s: Cannot store 64-bit protection options
+0xfffffe000799ab8d __TEXT.__os_log         %s: failed to create a device cache
+0xfffffe000799abb2 __TEXT.__os_log         %s: allocIOGPUResource failed to alloc texture object
+0xfffffe000799abe9 __TEXT.__os_log         %s: device handle is null and failed to add texture buffer size to device allocation size
+0xfffffe000799ac44 __TEXT.__os_log         %s: disallowing protected resource
+0xfffffe000799ac68 __TEXT.__os_log         %s: invalid arguments
+0xfffffe000799ac7f __TEXT.__os_log         %s: createResource failed
+0xfffffe000799ac9a __TEXT.__os_log         %s: failed to create descriptor
+0xfffffe000799acbb __TEXT.__os_log         %s: failed to create mapping
+0xfffffe000799acd9 __TEXT.__os_log         %s: failed to make allocation
+0xfffffe000799acf8 __TEXT.__os_log         %s: Refusing to create mapping for readonly memory
+0xfffffe000799ad2c __TEXT.__os_log         %s: failed to create client map
+0xfffffe000799ad4d __TEXT.__os_log         %s: newResourceGroup failed - initial capacity (%u) less than minimum required (%u)
+0xfffffe000799ada2 __TEXT.__os_log         %s: newResourceGroup bad initial capacity: %d
+0xfffffe000799add1 __TEXT.__os_log         %s: newResourceGroup failed to alloc texture object
+0xfffffe000799ae06 __TEXT.__os_log         %s: newResourceGroup failed to initialize resource map
+0xfffffe000799ae3e __TEXT.__os_log         %s: Unsupported protecton options (%016llx) bytes
+0xfffffe000799ae71 __TEXT.__os_log         %s: Cannot store 64-bit protection options
+0xfffffe000799ae9d __TEXT.__os_log         %s: Invalid Arguments
+0xfffffe000799aeb4 __TEXT.__os_log         %s: virtual_page_size(%u) is not minimum VirtualPageSize(%u) aligned
+0xfffffe000799aefa __TEXT.__os_log         %s: Failed to allocate resource object
+0xfffffe000799af22 __TEXT.__os_log         %s: Failed to allocate IOGPUVirtualMemory object
+0xfffffe000799af54 __TEXT.__os_log         %s: failed to create client map for meta data
+0xfffffe000799af83 __TEXT.__os_log         %s: Bogus texture of type %s on GART list
+0xfffffe000799afaf __TEXT.__os_log         %s: Bogus texture of type %s on GART list
+0xfffffe000799afdb __TEXT.__os_log         %s: Failed to set purgeable state 0x%x
+0xfffffe000799b003 __TEXT.__os_log         %s: Can't pin global ro resources to fixed address
+0xfffffe000799b037 __TEXT.__os_log         %s: Unkown resource type. resType=0x%x
+0xfffffe000799b05f __TEXT.__os_log         %s: failed to create mapping. resType=0x%x
+0xfffffe000799b08b __TEXT.__os_log         %s: Unkown resource type. resType=0x%x
+0xfffffe000799b0b3 __TEXT.__os_log         %s: no memory. resType=0x%x
+0xfffffe000799b0d0 __TEXT.__os_log         %s: failed to create mapping. resType=0x%x
+0xfffffe000799b0fc __TEXT.__os_log         %s: resource already has a map
+0xfffffe000799b11c __TEXT.__os_log         %s: Failed to create fKernelMap for data buffer
+0xfffffe000799b14d __TEXT.__os_log         %s: memory is not a sysmemory
+0xfffffe000799b16c __TEXT.__os_log         %s: resource does not own its backing (resType=0x%x child=%u device_cache=%s)
+0xfffffe000799b1bb __TEXT.__os_log         %s: resource does not own its backing (resType=0x%x)
+0xfffffe000799b1f1 __TEXT.__os_log         %s: Failed to detach memory
+0xfffffe000799b20e __TEXT.__os_log         %s: Failed to replace memory
+0xfffffe000799b22c __TEXT.__os_log         %s: overflow
+0xfffffe000799b23a __TEXT.__os_log         %s: failed to create descriptor
+0xfffffe000799b25b __TEXT.__os_log         %s: failed to create mapping
+0xfffffe000799b279 __TEXT.__os_log         %s: Failed to replace memory
+0xfffffe000799b297 __TEXT.__os_log         %s: Failed to make client map
+0xfffffe000799b2b6 __TEXT.__os_log         %s: memory is not a virtual memory
+0xfffffe000799b2da __TEXT.__os_log         %s: source resource memory is not a sys memory
+0xfffffe000799b30a __TEXT.__os_log         %s: Failed to create memory descriptors
+0xfffffe000799b333 __TEXT.__os_log         %s: Protection violation
+0xfffffe000799b34d __TEXT.__os_log         %s: Invalid arguments
+0xfffffe000799b364 __TEXT.__os_log         %s: Failed to update memory at index %u
+0xfffffe000799b38d __TEXT.__os_log         %s: memory is not a virtual memory
+0xfffffe000799b3b1 __TEXT.__os_log         %s: destination resoource memory is not a virtual memory
+0xfffffe000799b3eb __TEXT.__os_log         %s: Incompatible virtual page sizes source(%u), destination(%u)
+0xfffffe000799b42c __TEXT.__os_log         %s: Protection violation
+0xfffffe000799b446 __TEXT.__os_log         %s: Failed to create Command Buffer Lock
+0xfffffe000799b470 __TEXT.__os_log         %s: IO Command Buffer already processed
+0xfffffe000799b499 __TEXT.__os_log         %s: Command Buffer Processing Error
+0xfffffe000799b4be __TEXT.__os_log         %s: command list length less than zero
+0xfffffe000799b4e6 __TEXT.__os_log         %s: command list length less insufficient (%zd)
+0xfffffe000799b517 __TEXT.__os_log         %s: Insufficient bytes (%lu) to hold sIOGPUIOKernelCommand (%lu)
+0xfffffe000799b559 __TEXT.__os_log         %s: Invalid command_size (%u) min=%lu currentCommand=%p kernelCommandEnd=%p
+0xfffffe000799b5a6 __TEXT.__os_log         %s: Invalid command list header, commands_start=%u commands_end=%u cmdListShmemLength=%ld
+0xfffffe000799b601 __TEXT.__os_log         %s: Invalid command list shmem ID
+0xfffffe000799b624 __TEXT.__os_log         %s: Insufficient bytes (%llu) for sIOGPUIOKernelArgs (%lu)
+0xfffffe000799b660 __TEXT.__os_log         %s: Failed to create IO Command Descriptor (kIOGPUIOCommandDescriptorTypeIO)
+0xfffffe000799b6ae __TEXT.__os_log         %s: Insufficient bytes (%llu) for sIOGPUIOKernelCommandBarrierArgs (%lu)
+0xfffffe000799b6f8 __TEXT.__os_log         %s: Failed to create IO Command Descriptor (kIOGPUIOCommandDescriptorTypeBarrier)
+0xfffffe000799b74b __TEXT.__os_log         %s: Insufficient bytes (%llu) for sIOGPUIOKernelCommandSignalOrWaitEventArgs (%lu)
+0xfffffe000799b79f __TEXT.__os_log         %s: Failed to create IO Command Descriptor (kIOGPUIOCommandDescriptorTypeSignalEvent)
+0xfffffe000799b7f6 __TEXT.__os_log         %s: kIOGPUIOKernelCommandSignalSharedEvent: Invalid event port name: %d obj: %p
+0xfffffe000799b847 __TEXT.__os_log         %s: Insufficient bytes (%llu) for sIOGPUIOKernelCommandSignalOrWaitEventArgs (%lu)
+0xfffffe000799b89b __TEXT.__os_log         %s: Failed to create IO Command Descriptor (kIOGPUIOKernelCommandWaitSharedEvent)
+0xfffffe000799b8ee __TEXT.__os_log         %s: kIOGPUIOKernelCommandWaitSharedEvent: Invalid event port name: %d obj: %p
+0xfffffe000799b93d __TEXT.__os_log         %s: Invalid Command (%u) of bytes (%llu)
+0xfffffe000799b967 __TEXT.__os_log         %s: Invalid Descriptor Type (%u)
+0xfffffe000799b989 __TEXT.__os_log         %s: Invalid IO Queue Type (%u)
+0xfffffe000799b9a9 __TEXT.__os_log         %s: Invalid IO Queue Priority (%u)
+0xfffffe000799b9cd __TEXT.__os_log         %s: Failed to create queue Lock
+0xfffffe000799b9ee __TEXT.__os_log         %s: Failed to create Command Buffer Namespace
+0xfffffe000799ba1d __TEXT.__os_log         %s: Failed to create Active Command Buffers Lock
+0xfffffe000799ba4f __TEXT.__os_log         %s: Failed to create Submit IO Thread
+0xfffffe000799ba76 __TEXT.__os_log         %s: Failed to create Submit IO Thread Lock
+0xfffffe000799baa2 __TEXT.__os_log         %s: Failed to IO processing queue Lock
+0xfffffe000799baca __TEXT.__os_log         %s: Failed to create uio
+0xfffffe000799bae4 __TEXT.__os_log         %s: IO Command Buffer creation failed
+0xfffffe000799bb0b __TEXT.__os_log         %s: IO Command Buffer init failed
+0xfffffe000799bb2e __TEXT.__os_log         %s: IO Command Buffer add to namespace failed
+0xfffffe000799bb5d __TEXT.__os_log         %s: Invalid IO Commmand Buffer ID (%u)
+0xfffffe000799bb85 __TEXT.__os_log         %s: ring is empty and all finished. Nothing to do.
+0xfffffe000799bbba __TEXT.__os_log         %s: GPURestartSkipped
+0xfffffe000799bbd1 __TEXT.__os_log         %s: work queue indicates empty/idle - Forcing restart
+0xfffffe000799bc08 __TEXT.__os_log         GPU hang: %s
+0xfffffe000799bc17 __TEXT.__os_log         %s: scheduler lock alloc failure
+0xfffffe000799bc39 __TEXT.__os_log         %s: busy lock alloc failure
+0xfffffe000799bc56 __TEXT.__os_log         %s: workloop alloc fail
+0xfffffe000799bc6f __TEXT.__os_log         %s: submission gate alloc failure
+0xfffffe000799bc92 __TEXT.__os_log         %s: fSubmissionTimer alloc fail
+0xfffffe000799bcb3 __TEXT.__os_log         %s: workloop alloc fail
+0xfffffe000799bccc __TEXT.__os_log         %s: completion gate alloc failure
+0xfffffe000799bcef __TEXT.__os_log         %s: fCompletionInterrupt alloc fail
+0xfffffe000799bd14 __TEXT.__os_log         %s: fGPURestartRegisteredCommandQueueLock alloc fail
+0xfffffe000799bd4a __TEXT.__os_log         %s: sGPURestartRegisteredCommandQueue alloc fail
+0xfffffe000799bd7c __TEXT.__os_log         %s: fGARTCollectorThread alloc fail
+0xfffffe000799bda1 __TEXT.__os_log         %s: fGARTCollectorLock alloc fail
+0xfffffe000799bdc4 __TEXT.__os_log         %s: failed to allocate fRestartTypeAsync
+0xfffffe000799bdee __TEXT.__os_log         %s: failed to allocate Hardware lock
+0xfffffe000799be14 __TEXT.__os_log         %s: failed to allocate HW error interrupt
+0xfffffe000799be3f __TEXT.__os_log         %s: failed to allocate HW progress timer
+0xfffffe000799be69 __TEXT.__os_log         %s: failed to allocate HW progress interrupt
+0xfffffe000799be97 __TEXT.__os_log         %s: failed to create rw Lock
+0xfffffe000799beb5 __TEXT.__os_log         %s: failed to create sleep lock
+0xfffffe000799bed6 __TEXT.__os_log         %s: failed to wire down memory %p. needed %lld, used %lld, size %lld bytes.
+0xfffffe000799bf23 __TEXT.__os_log         IOGPUScheduler: increment_gart_collector_disable_count -> %d
+0xfffffe000799bf60 __TEXT.__os_log         IOGPUScheduler: decrement_gart_collector_disable_count -> %d
+0xfffffe000799bf9d __TEXT.__os_log         %s: GPURestartSignaled stampIdx=%d type=%d prevType=%d numStamps=%d
+0xfffffe000799bfe2 __TEXT.__os_log         %s: GPURestartEnqueued stampIdx=%d type=%d
+0xfffffe000799c00e __TEXT.__os_log         %s: Redundant hardware error stampIdx=%d type=%d
+0xfffffe000799c040 __TEXT.__os_log         %s: setting global restart type to %d
+0xfffffe000799c067 __TEXT.__os_log         %s: setting channel %d restart type to %d
+0xfffffe000799c092 __TEXT.__os_log         %s: GPURestartDequeued stampIdx=%d type=%d
+0xfffffe000799c0be __TEXT.__os_log         %s: GPURestartBegin stampIdx=%d type=%d
+0xfffffe000799c0e7 __TEXT.__os_log         %s: global restart. type=%d
+0xfffffe000799c104 __TEXT.__os_log         %s: GPURestartEnd stampIdx=%d type=%d
+0xfffffe000799c12b __TEXT.__os_log         %s: sGPURestartRegisteredCommandQueue alloc fail
+0xfffffe000799c15d __TEXT.__os_log         %s: command timeout detected - GPU start time %lld ms, now %lld ms, priority=%d
+0xfffffe000799c1ae __TEXT.__os_log         %s: GPURestartBegin %s type=%d
+0xfffffe000799c1ce __TEXT.__os_log         %s: command already GPU finished, skipping restart call
+0xfffffe000799c207 __TEXT.__os_log         %s: GPURestartEnd %s type=%d
+0xfffffe000799c225 __TEXT.__os_log         IOMalloc failed to alloc handles
+0xfffffe000799c247 __TEXT.__os_log         trying to remove apparently bogus texture handle %d
+0xfffffe000799c27c __TEXT.__os_log         IOMallocType failed to alloc client_shared
+0xfffffe000799c2a8 __TEXT.__os_log         IOBufferMemoryDescriptor::inTaskWithOptions failed to allocate a client_shared block.
+0xfffffe000799c2ff __TEXT.__os_log         %s: Invalid arguments : numEntries = %u, entrySize = %u 
+0xfffffe000799c339 __TEXT.__os_log         %s: Failed to set purgeable state 0x%x
+0xfffffe000799c361 __TEXT.__os_log         %s: Unsupported purgeability option (%u)
+0xfffffe000799c38b __TEXT.__os_log         %s failed: try to wire down too much memory : %llu > %llu
+0xfffffe000799c3c6 __TEXT.__os_log         %s invalid cache_mode 0x%x
+0xfffffe000799c3e2 __TEXT.__os_log         %s invalid IOSurface ID 0x%x
+0xfffffe000799c400 __TEXT.__os_log         %s invalid plane %d in IOSurface with %d planes
+0xfffffe000799c431 __TEXT.__os_log         %s suballocation flag is set without parent resource id
+0xfffffe000799c46a __TEXT.__os_log         %s: PID %d may be leaking IOGPUResource (count=%d)
+0xfffffe000799c49e __TEXT.__os_log         %s: setOwnership with no footprint failed: %08x
+0xfffffe000799c4cf __TEXT.__os_log         %s: Bogus resType = %d
+0xfffffe000799c4e7 __TEXT.__os_log         %s: initialize failed
+0xfffffe000799c4fe __TEXT.__os_log         %s: failed to create mapping at address 0x%llx with length 0x%llx.
+0xfffffe000799c542 __TEXT.__os_log         %s: failed to create mapping.
+0xfffffe000799c561 __TEXT.__os_log         %s: Invalid resource ID
+0xfffffe000799c57a __TEXT.__os_log         %s: Invalid resource ID
+0xfffffe000799c593 __TEXT.__os_log         %s: Invalid resource ID
+0xfffffe000799c5ac __TEXT.__os_log         %s: Overflow
+0xfffffe000799c5ba __TEXT.__os_log         %s: Overflow when adding excess capacity
+0xfffffe000799c5e4 __TEXT.__os_log         %s: Failed to rehash
+0xfffffe000799c5fa __TEXT.__os_log         IOGPUStatistics couldn't allocate an IOLock.
+0xfffffe000799c628 __TEXT.__os_log         %s: failed to alloc array
+0xfffffe000799c643 __TEXT.__os_log         %s: failed to alloc array
+0xfffffe000799c65e __TEXT.__os_log         %s <%s> (%p) : required > max : requiredBytes = <%llu> preparedBytes : <%llu> maxWired = <%llu> maxWiredInternal = <%llu> currentWired = <%llu>
+0xfffffe000799c6ef __TEXT.__os_log         %s <%s> FAILED To Free, should return error: <0x%X> total accelerator = 0x%llX max = 0x%llX
+0xfffffe000799c74c __TEXT.__os_log         %s <%s>: requiredBytes = <%llu> maxWired = <%llu> preparedBytes : <%llu> remainingBytes : <%lld> remainingPages = <%lld>
+0xfffffe000799c7c7 __TEXT.__os_log         %s: failed to prepare memory status = 0x%X
+0xfffffe000799c7f3 __TEXT.__os_log         %s <%s>: preparedBytes != requiredBytes : preparedBytes = <%llu> requiredBytes = <%llu> maxWired = <%llu> preWiring = <%llu> currentWired = <%llu> wiring delta = <%llu>
+0xfffffe000799c89e __TEXT.__os_log         %s: Update Mappings Failed(0x%x)
+0xfffffe000799c8c0 __TEXT.__os_log         %s: Copy Mappings Failed(0x%x)
+0xfffffe000799c8e0 __TEXT.__os_log         %s mapping descriptor prepare failed (0x%X)
+0xfffffe000799c90e __TEXT.__os_log         %s: failed to alloc array
+0xfffffe000799c929 __TEXT.__os_log         %s: accelName must not NULL
+0xfffffe000799c946 __TEXT.__os_log         %s: numEventChannels must at least 1
+0xfffffe000799c96c __TEXT.__os_log         %s: waitForGPUTimeoutSeconds can not be zero.
+0xfffffe000799c99b __TEXT.__os_log         %s: maxSchedulerPriorityCount can not exceed %d
+0xfffffe000799c9cc __TEXT.__os_log         %s: minVirtualPageSize is not a power of 2
+0xfffffe000799c9f8 __TEXT.__os_log         %s: provider is not the right device
+0xfffffe000799ca1e __TEXT.__os_log         %s: configureDevice failed
+0xfffffe000799ca3a __TEXT.__os_log         %s waitForEventTimeoutSeconds = %u
+0xfffffe000799ca5e __TEXT.__os_log         IOGPU:start() [%s: fConfig.debugBits=0x%x]
+0xfffffe000799ca8a __TEXT.__os_log         %s: fail to get IOSurface root
+0xfffffe000799caaa __TEXT.__os_log         %s: failed to create event machine
+0xfffffe000799cace __TEXT.__os_log         %s: fGPUTaskList alloc fail
+0xfffffe000799caeb __TEXT.__os_log         %s: failed to create fDeviceNamespace
+0xfffffe000799cb12 __TEXT.__os_log         %s: failed to create fWorkQueueNamespace
+0xfffffe000799cb3c __TEXT.__os_log         %s: statistics object alloc fail
+0xfffffe000799cb5e __TEXT.__os_log         %s: workloop alloc fail
+0xfffffe000799cb77 __TEXT.__os_log         %s: IOGPUFenceMachine alloc or init failed
+0xfffffe000799cba3 __TEXT.__os_log         %s: IOGPU event scrubber thread setup failed
+0xfffffe000799cbd1 __TEXT.__os_log         %s: IOGPUScheduler alloc or init failed
+0xfffffe000799cbfa __TEXT.__os_log         IOGPU: Wired low water mark overridden to %d MB
+0xfffffe000799cc2a __TEXT.__os_log         %s maxSysMemoryWiredSizeAPI override = %llu
+0xfffffe000799cc57 __TEXT.__os_log         %s maxSingleSysMemoryPercent override = %u
+0xfffffe000799cc83 __TEXT.__os_log         %s fMaxSingleSysMemoryPercent = %u fMaxSysMemoryWiredSize[API] = %llu fMaxSingleSysMemory = %llu
+0xfffffe000799cce5 __TEXT.__os_log         %s: GARTReclaimInterval set to non default value (%u) milisec
+0xfffffe000799cd24 __TEXT.__os_log         %s: GARTReclaimInterval set to non default value (%d) milisec
+0xfffffe000799cd63 __TEXT.__os_log         %s: GARTReclaimTimeout set to non default value (%u) milisec
+0xfffffe000799cda1 __TEXT.__os_log         %s: GARTReclaimTimeout set to non default value (%d) milisec
+0xfffffe000799cddf __TEXT.__os_log         %s: createKernelGPUTask failed
+0xfffffe000799cdff __TEXT.__os_log         %s: IOPerfControlClient::copyClient failed
+0xfffffe000799ce2b __TEXT.__os_log         %s: IOPerfControlClient::registerDevice failed.
+0xfffffe000799ce5c __TEXT.__os_log         %s: registerPrioritySleepWakeIntererest failed
+0xfffffe000799ce8c __TEXT.__os_log         %s: API Allocation Name allocation failed
+0xfffffe000799ceb7 __TEXT.__os_log         IOGPU::start: Failure exit
+0xfffffe000799ced3 __TEXT.__os_log         %s: Truncated vendor's (too-long) GPURestartReport from %ld to %d
+0xfffffe000799cf16 __TEXT.__os_log         %s: Failed to realloc/truncate vendor's (too-long) GPURestartReport from %ld to %d
+0xfffffe000799cf6a __TEXT.__os_log         %s: Vendor failed to provide GPURestarrReport
+0xfffffe000799cf99 __TEXT.__os_log         %s: Can't allocate GPURestartReport nub.  Skipping...
+0xfffffe000799cfd0 __TEXT.__os_log         %s: Can't allocate GPURestartReport dictionary.  Skipping....
+0xfffffe000799d00f __TEXT.__os_log         %s: Can't allocate GPURestartReport keys/objects.  Skipping...
+0xfffffe000799d04f __TEXT.__os_log         %s: failed to allocate
+0xfffffe000799d067 __TEXT.__os_log         %s: failed to initialize
+0xfffffe000799d081 __TEXT.__os_log         %s: new IOGPUAllocationInfo failed
+0xfffffe000799d0a5 __TEXT.__os_log         %s: alloc_info->init failed
+0xfffffe000799d0c2 __TEXT.__os_log         %s: IOGPUAllocationInfo->copyToArray returned nil
+0xfffffe000799d0f5 __TEXT.__os_log         Failed to create the ktrace callback
+0xfffffe000799d11b __TEXT.__os_log         Trying to restart GPU (%s)...
+0xfffffe000799d13a __TEXT.__os_log         %s null queue
+0xfffffe000799d149 __TEXT.__os_log         %s null device
+0xfffffe000799d159 __TEXT.__os_log         %s: attempted to reset notification queue
+0xfffffe000799d184 __TEXT.__os_log         Process %s (%d) does not have the entitlement to use MTLGPUPriorityRealTime, using MTLGPUPriorityHigh instead
+0xfffffe000799d1f3 __TEXT.__os_log         %s:kIOGPUKernelCommandDebugLog: Insufficient bytes (%llu) for sIOGPUKernelCommandDebugLogArgs (%lu)
+0xfffffe000799d258 __TEXT.__os_log         %s:kIOGPUKernelCommandCollectTimeStamp: Insufficient bytes (%llu) for sIOGPUKernelCommandCollectTimeStampArgs (%lu)
+0xfffffe000799d2cd __TEXT.__os_log         %s: Invalid eIOGPUKernelCommands enum (command_id=%u command_size=%llubytes)
+0xfffffe000799d31b __TEXT.__os_log         %s: Insufficient space (%lu) to hold sIOGPUKernelCommand (%lu)
+0xfffffe000799d35b __TEXT.__os_log         %s: Invalid command_size (%u) min=%lu currentCommand=%p kernelCommandEnd=%p
+0xfffffe000799d3a8 __TEXT.__os_log         %s: kernelCommandBufferShmem (PID=%d) failed to map into kernel
+0xfffffe000799d3e9 __TEXT.__os_log         %s: segmentListShmem (PID=%d) failed to map into kernel
+0xfffffe000799d422 __TEXT.__os_log         %s: sidebandBufferShmem (PID=%d) failed to map into kernel
+0xfffffe000799d45e __TEXT.__os_log         %s: kernelCommandStart(%u) or kernelCommandEnd(%u) exceeds kernelCommandDataSize(%lu)
+0xfffffe000799d4b5 __TEXT.__os_log         %s: invalid segment shmem
+0xfffffe000799d4d0 __TEXT.__os_log         %s:kIOGPUKernelCommandDebugSleep: Insufficient bytes (%llu) for sIOGPUKernelCommandDebugSleepArgs (%lu)
+0xfffffe000799d539 __TEXT.__os_log         %s:kIOGPUKernelCommandSignalSharedEvent: Insufficient bytes (%llu) for sIOGPUKernelCommandSignalOrWaitEventArgs (%lu)
+0xfffffe000799d5b0 __TEXT.__os_log         %s:kIOGPUKernelCommandSignalSharedEvent: couldn't allocate signal object
+0xfffffe000799d5fa __TEXT.__os_log         %s:kIOGPUKernelCommandSignalSharedEvent: bad event port name: %d obj: %p
+0xfffffe000799d644 __TEXT.__os_log         %s:kIOGPUKernelCommandSignalSharedEvent: Insufficient bytes (%llu) for sIOGPUKernelCommandSignalOrWaitEventArgs (%lu)
+0xfffffe000799d6bb __TEXT.__os_log         Cmd queue %p sleep port_name %d value: %08llx timed out waiting for prior signals!
+0xfffffe000799d70f __TEXT.__os_log         Cmd queue %p sleep port_name %d value: %08llx timed out!
+0xfffffe000799d749 __TEXT.__os_log         %s:kIOGPUKernelCommandWaitSharedEvent: bad event port name: %d obj: %p
+0xfffffe000799d791 __TEXT.__os_log         %s:kIOGPUKernelCommandSignalSharedEvent: Insufficient bytes (%llu) for sIOGPUKernelCommandSignalOrWaitEventArgs (%lu)
+0xfffffe000799d808 __TEXT.__os_log         %s:kIOGPUKernelCommandSignalSharedEvent: Insufficient bytes (%llu) for sIOGPUKernelCommandSignalOrWaitEventArgs (%lu)
+0xfffffe000799d87f __TEXT.__os_log         Timeout MTLEvent: waiting for signal (%llu) for event (%u) to be scheduled
+0xfffffe000799d8cb __TEXT.__os_log         %s:kIOGPUKernelCommandPurgeResources: Insufficient bytes (%llu) for sIOGPUKernelCommandPurgeResourcesArgs (%lu)
+0xfffffe000799d93c __TEXT.__os_log         %s:kIOGPUKernelCommandPurgeResources: Insufficient bytes (%llu) or size overflow for sIOGPUKernelCommandPurgeResourcesArgs (%lu)
+0xfffffe000799d9be __TEXT.__os_log         %s:kIOGPUKernelCommandPurgeResources: Invalid resourceID %08x
+0xfffffe000799d9fd __TEXT.__os_log         %s:kIOGPUKernelCommandSetProtectionOptions: Insufficient bytes (%llu) for sIOGPUKernelCommandSetProtectionOptionsArgs (%lu)
+0xfffffe000799da7a __TEXT.__os_log         %s:kIOGPUKernelCommandSetProtectionOptions: Unsupported protecton options (%016llx) bytes
+0xfffffe000799dad5 __TEXT.__os_log         %s:kIOGPUKernelCommandResponsibleTaskIDs: Insufficient bytes (%llu) for sIOGPUKernelCommandResponsibleTaskIDArgs (%lu)
+0xfffffe000799db4d __TEXT.__os_log         %s:kIOGPUKernelCommandResponsibleTaskIDs: Insufficient bytes (%llu) or size overflow for sIOGPUKernelCommandResponsibleTaskIDArgs (%lu)
+0xfffffe000799dbd6 __TEXT.__os_log         %s:kIOGPUKernelCommandResponsibleTaskIDs: Submit Fence failed to add PID
+0xfffffe000799dc20 __TEXT.__os_log         %s:kIOGPUKernelCommandSetResourceGroups: Insufficient bytes (%llu) for sIOGPUKernelCommandSetResourceGroupsArgs (%lu)
+0xfffffe000799dc97 __TEXT.__os_log         %s:kIOGPUKernelCommandSetResourceGroups: group count (%u) invalid
+0xfffffe000799dcda __TEXT.__os_log         %s:kIOGPUKernelCommandUpdateMappings: Insufficient bytes (%llu) for sIOGPUUpdateMappings (%lu)
+0xfffffe000799dd3a __TEXT.__os_log         %s:kIOGPUKernelCommandUpdateMappings: Insufficient bytes (%llu) or size overflow for sIOGPUUpdateMappings (%lu)
+0xfffffe000799ddab __TEXT.__os_log         %s:kIOGPUKernelCommandUpdateMappings: Invalid destinationResourceID %08x
+0xfffffe000799ddf5 __TEXT.__os_log         %s:kIOGPUKernelCommandUpdateMappings: Update Mappings Failed
+0xfffffe000799de33 __TEXT.__os_log         %s:kIOGPUKernelCommandUpdateMappings: Failed to allocated Async Mapping Descriptor 
+0xfffffe000799de88 __TEXT.__os_log         %s:kIOGPUKernelCommandUpdateMappings: Failed to add mapping command to descriptor 
+0xfffffe000799dedc __TEXT.__os_log         %s:kIOGPUKernelCommandCopyMappings: Insufficient bytes (%llu) for sIOGPUCopyMappings (%lu)
+0xfffffe000799df38 __TEXT.__os_log         %s:kIOGPUKernelCommandCopyMappings: Insufficient bytes (%llu) or size overflow for sIOGPUUpdateMappings (%lu)
+0xfffffe000799dfa7 __TEXT.__os_log         %s:kIOGPUKernelCommandCopyMappings: Invalid source resourceID %08x
+0xfffffe000799dfeb __TEXT.__os_log         %s:kIOGPUKernelCommandCopyMappings: Invalid destination resourceID %08x
+0xfffffe000799e034 __TEXT.__os_log         %s:kIOGPUKernelCommandCopyMappings: Copy Mappings Failed
+0xfffffe000799e06e __TEXT.__os_log         %s:kIOGPUKernelCommandCopyMappings: Failed to allocated Async Mapping Descriptor 
+0xfffffe000799e0c1 __TEXT.__os_log         %s:kIOGPUKernelCommandCopyMappings: Failed to add mapping command to descriptor 
+0xfffffe000799e113 __TEXT.__os_log         %s:kIOGPUKernelCommandPostMappingWaitEvent: Async Mapping Disabled
+0xfffffe000799e157 __TEXT.__os_log         %s:kIOGPUKernelCommandPostMappingWaitEvent: Insufficient bytes (%llu) for sIOGPUKernelCommandSignalOrWaitEventArgs (%lu)
+0xfffffe000799e1d1 __TEXT.__os_log         %s:kIOGPUKernelCommandPostMappingWaitEvent: Async Mapping Descriptor not allocated
+0xfffffe000799e225 __TEXT.__os_log         %s:kIOGPUKernelCommandPostMappingWaitEvent: Failed to schedule post mapping event
+0xfffffe000799e278 __TEXT.__os_log         %s:kIOGPUKernelCommandPostMappingWaitEvent: Failed to allocated Mapping fence
+0xfffffe000799e2c7 __TEXT.__os_log         %s:kIOGPUKernelCommandPostMappingWaitEvent: Invalid signal event port name: %d obj: %p
+0xfffffe000799e31f __TEXT.__os_log         %s: Invalid eIOGPUKernelCommands enum (command_id=%u command_size=%llubytes)
+0xfffffe000799e36d __TEXT.__os_log         %s: Insufficient space (%lu) to hold sIOGPUKernelCommand (%lu)
+0xfffffe000799e3ad __TEXT.__os_log         %s: Invalid command_size (%u) min=%lu currentCommand=%p kernelCommandEnd=%p
+0xfffffe000799e3fa __TEXT.__os_log         %s: invalid segment shmem
+0xfffffe000799e415 __TEXT.__os_log         %s: Clean slate for app[%s] with %d GPURestarts in %d submissions.
+0xfffffe000799e459 __TEXT.__os_log         %s: %s app[%s] with %d GPURestarts in %d submissions.
+0xfffffe000799e490 __TEXT.__os_log         Duplicate command buffer resource group tokens
+0xfffffe000799e4c0 __TEXT.__os_log         Invalid resource group count
+0xfffffe000799e4de __TEXT.__os_log         Invalid resource group ID %08x
+0xfffffe000799e4fe __TEXT.__os_log         Invalid resource group count
+0xfffffe000799e51c __TEXT.__os_log         Invalid resource group ID %08x
+0xfffffe000799e53c __TEXT.__os_log         %s: Failed to find shared event reference
+0xfffffe000799e567 __TEXT.__os_log         %s: Failed to allocate shared event fence
+0xfffffe000799e592 __TEXT.__os_log         %s: Shared event wait timed out for value : %llx
+0xfffffe000799e5c4 __TEXT.__os_log         %s: Post Mapping wait failed
+0xfffffe000799e5e2 __TEXT.__os_log         Timeout MTLEvent: waiting for signal (%llu) for event (%u) to be scheduled
+0xfffffe000799e62e __TEXT.__os_log         MTLEvent: timed out while waiting, GPU is not up yet
+0xfffffe000799e664 __TEXT.__os_log         MTLEvent: while waiting, sleep occurred, but woken up from an unknown event <%d>
+0xfffffe000799e6b6 __TEXT.__os_log         MTLEvent: timed out while waiting, GPU is up now, extending deadline by <%llu>
+0xfffffe000799e706 __TEXT.__os_log         MTLEvent: timed out but sleep started after deadline <%llu>. This is a real timeout
+0xfffffe000799e75b __TEXT.__os_log         MTLEvent: timed out while waiting. Sleep/wake occurred while waiting. Extend deadline by <%llu>
+0xfffffe000799e7bc __TEXT.__os_log         %s: IOMemoryDescriptor::getPageCounts returned 0x%08x
+0xfffffe000799e7f3 __TEXT.__os_log         %s: IOMemoryDescriptor::getPageCounts returned 0x%08x
+0xfffffe000799e82a __TEXT.__os_log         %s: failed to serialize memory data
+0xfffffe000799e84f __TEXT.__os_log         %s: updateGPUPageTable failed
+0xfffffe000799e86e __TEXT.__os_log         %s: failed to get the memory descriptor
+0xfffffe000799e897 __TEXT.__os_log         %s: allocIOGPUResource failed to alloc texture object
+0xfffffe000799e8ce __TEXT.__os_log         %s: Failed to allocate temporary ranges
+0xfffffe000799e8f7 __TEXT.__os_log         %s: Overflow in range
+0xfffffe000799e90e __TEXT.__os_log         %s: Hole in address ranges
+0xfffffe000799e92a __TEXT.__os_log         %s: Hole in address ranges
+0xfffffe000799e946 __TEXT.__os_log         %s: Disallowing executable page
+0xfffffe000799e967 __TEXT.__os_log         %s: failed to get the memory descriptor
+0xfffffe000799e990 __TEXT.__os_log         %s: memory larger than maximum system memory size
+0xfffffe000799e9c3 __TEXT.__os_log         %s: allocIOGPUResource failed to alloc texture object
+0xfffffe000799e9fa __TEXT.__os_log         %s: Failed to create BufferMemoryDescriptor for partial backing
+0xfffffe000799ea3b __TEXT.__os_log         %s: failed to create memory descriptor from IOSurfaceMemoryPool
+0xfffffe000799ea7c __TEXT.__os_log         %s: fAccelerator->createBufferMemoryDescriptorInTaskWithOptions failed
+0xfffffe000799eac4 __TEXT.__os_log         %s: allocIOGPUResource failed to alloc texture object
+0xfffffe000799eafb __TEXT.__os_log         %s: allocIOGPUResource failed to alloc texture object
+0xfffffe000799eb32 __TEXT.__os_log         %s: failed to mark memory %p non-volatile Error 0x%x
+0xfffffe000799eb68 __TEXT.__os_log         %s: memory %p failed to prepare. Error 0x%x
+0xfffffe000799eb95 __TEXT.__os_log         %s: IOMemoryDescriptor::getPageCounts returned 0x%08x
+0xfffffe000799ebcc __TEXT.__os_log         %s: Not detached
+0xfffffe000799ebde __TEXT.__os_log         %s: Size mismatch
+0xfffffe000799ebf1 __TEXT.__os_log         %s: Failed to make new descriptor
+0xfffffe000799ec14 __TEXT.__os_log         %s: Not detached
+0xfffffe000799ec26 __TEXT.__os_log         %s: Failed to make new descriptor
+0xfffffe000799ec49 __TEXT.__os_log         %s: Size mismatch
+0xfffffe000799ec5c __TEXT.__os_log         %s: Invalid virtualPageSize(%u)
+0xfffffe000799ec7d __TEXT.__os_log         %s: ByteCount is not virtualPageSize(%u) aligned
+0xfffffe000799ecaf __TEXT.__os_log         %s: Unsupported for memory from IOSurfaceMemoryPool
+0xfffffe000799ece4 __TEXT.__os_log         %s: Failed to allocate array of sub memory descriptors
+0xfffffe000799ed1c __TEXT.__os_log         %s: Failed to allocate sub memory descriptors at index %u
+0xfffffe000799ed57 __TEXT.__os_log         %s: failed to map memory for CPU wire mapping
+0xfffffe000799ed86 __TEXT.__os_log         %s: attempted to reset notification port!
+0xfffffe000a01b88b __TEXT_EXEC.__text           T?C@q`
+0xfffffe000a01c533 __TEXT_EXEC.__text           *i~}
+0xfffffe000a01c55d __TEXT_EXEC.__text           BC9H
+0xfffffe000a01c75d __TEXT_EXEC.__text           BC9H
+0xfffffe000a01ca73 __TEXT_EXEC.__text           *hN@
+0xfffffe000a01cd5f __TEXT_EXEC.__text           5`Z@
+0xfffffe000a01cdd3 __TEXT_EXEC.__text           5`^@
+0xfffffe000a01d4b1 __TEXT_EXEC.__text           @C9h
+0xfffffe000a01d4b7 __TEXT_EXEC.__text           6uB@
+0xfffffe000a01d887 __TEXT_EXEC.__text           R`&@
+0xfffffe000a01d9ab __TEXT_EXEC.__text           4iR@
+0xfffffe000a01daaf __TEXT_EXEC.__text           R`&@
+0xfffffe000a01dba3 __TEXT_EXEC.__text           4`&@
+0xfffffe000a01dcc3 __TEXT_EXEC.__text           T`&@
+0xfffffe000a01dfce __TEXT_EXEC.__text            7x&@
+0xfffffe000a01e62f __TEXT_EXEC.__text           r`&@
+0xfffffe000a01f01f __TEXT_EXEC.__text           StVA
+0xfffffe000a01f237 __TEXT_EXEC.__text           Sh*@
+0xfffffe000a01f55f __TEXT_EXEC.__text           S+Yj
+0xfffffe000a01fca3 __TEXT_EXEC.__text           SLYk
+0xfffffe000a021c79 __TEXT_EXEC.__text           )B))
+0xfffffe000a02237d __TEXT_EXEC.__text           !Iz 
+0xfffffe000a02263b __TEXT_EXEC.__text           rW,@
+0xfffffe000a0229cf __TEXT_EXEC.__text           r@ @
+0xfffffe000a025abb __TEXT_EXEC.__text           R+y(
+0xfffffe000a025bef __TEXT_EXEC.__text           Rj~*
+0xfffffe000a025cc7 __TEXT_EXEC.__text           J+Yk
+0xfffffe000a025f6b __TEXT_EXEC.__text           Rh[y
+0xfffffe000a0260a7 __TEXT_EXEC.__text           RmYj
+0xfffffe000a026553 __TEXT_EXEC.__text           R+y(
+0xfffffe000a0265bb __TEXT_EXEC.__text           R+y(
+0xfffffe000a02680f __TEXT_EXEC.__text           RnYj
+0xfffffe000a027017 __TEXT_EXEC.__text           R+y(
+0xfffffe000a0270c7 __TEXT_EXEC.__text           RnYj
+0xfffffe000a027283 __TEXT_EXEC.__text           RPYi
+0xfffffe000a0275b7 __TEXT_EXEC.__text           J,[j
+0xfffffe000a0275db __TEXT_EXEC.__text           *([*
+0xfffffe000a0276e7 __TEXT_EXEC.__text           R+y(
+0xfffffe000a02777b __TEXT_EXEC.__text           RnYj
+0xfffffe000a0277ff __TEXT_EXEC.__text           J-Yl
+0xfffffe000a027887 __TEXT_EXEC.__text           T_i-
+0xfffffe000a027897 __TEXT_EXEC.__text           T`"D
+0xfffffe000a0278fb __TEXT_EXEC.__text           7h*@
+0xfffffe000a027907 __TEXT_EXEC.__text           Ti"!
+0xfffffe000a02793f __TEXT_EXEC.__text           Rx"!
+0xfffffe000a02794f __TEXT_EXEC.__text           Rh*@
+0xfffffe000a027a1b __TEXT_EXEC.__text           Rh*@
+0xfffffe000a027c0f __TEXT_EXEC.__text           Th"!
+0xfffffe000a027cbb __TEXT_EXEC.__text           Th"!
+0xfffffe000a027ce7 __TEXT_EXEC.__text           T`"D
+0xfffffe000a027f7b __TEXT_EXEC.__text           J-Yj
+0xfffffe000a027fdb __TEXT_EXEC.__text           JNYk
+0xfffffe000a02803f __TEXT_EXEC.__text           Ti"!
+0xfffffe000a02806f __TEXT_EXEC.__text           R`"D
+0xfffffe000a02811b __TEXT_EXEC.__text           Ti"!
+0xfffffe000a02814b __TEXT_EXEC.__text           R`"D
+0xfffffe000a02819b __TEXT_EXEC.__text           JMYm
+0xfffffe000a0293d1 __TEXT_EXEC.__text           0@9h
+0xfffffe000a029beb __TEXT_EXEC.__text           6az@
+0xfffffe000a02ad6b __TEXT_EXEC.__text           T(,@
+0xfffffe000a02b423 __TEXT_EXEC.__text           4x"@
+0xfffffe000a02b567 __TEXT_EXEC.__text           4t"@
+0xfffffe000a02b907 __TEXT_EXEC.__text           4h"@
+0xfffffe000a02ba0f __TEXT_EXEC.__text           4u"@
+0xfffffe000a02d08b __TEXT_EXEC.__text           9`6@
+0xfffffe000a02d09f __TEXT_EXEC.__text           6`6@
+0xfffffe000a02d234 __TEXT_EXEC.__text           hF@9h
+0xfffffe000a02d23b __TEXT_EXEC.__text           7`N@
+0xfffffe000a02d28c __TEXT_EXEC.__text           hB@9
+0xfffffe000a02d3c0 __TEXT_EXEC.__text           hB@9
+0xfffffe000a02d953 __TEXT_EXEC.__text           KJ}@
+0xfffffe000a02de25 __TEXT_EXEC.__text           Z@9h
+0xfffffe000a02dfd0 __TEXT_EXEC.__text           hB@9
+0xfffffe000a02dfe3 __TEXT_EXEC.__text           ThN@
+0xfffffe000a02e6e7 __TEXT_EXEC.__text           )b:@
+0xfffffe000a02e710 __TEXT_EXEC.__text           uB@9
+0xfffffe000a02eaec __TEXT_EXEC.__text           hB@9
+0xfffffe000a02eaf7 __TEXT_EXEC.__text           Th*@
+0xfffffe000a02ef68 __TEXT_EXEC.__text           hB@9
+0xfffffe000a02ef7b __TEXT_EXEC.__text           ThN@
+0xfffffe000a02f33b __TEXT_EXEC.__text           )h"@
+0xfffffe000a02f7b4 __TEXT_EXEC.__text           HL@9
+0xfffffe000a02f8b4 __TEXT_EXEC.__text           iB@9
+0xfffffe000a02f90c __TEXT_EXEC.__text           hB@9
+0xfffffe000a02fa17 __TEXT_EXEC.__text           3";@
+0xfffffe000a02fa3b __TEXT_EXEC.__text           38;@
+0xfffffe000a02ff35 __TEXT_EXEC.__text           D@9h
+0xfffffe000a03032a __TEXT_EXEC.__text            7`6@
+0xfffffe000a030c76 __TEXT_EXEC.__text           Ay)=
+0xfffffe000a030c7e __TEXT_EXEC.__text           Ay)}@
+0xfffffe000a030df4 __TEXT_EXEC.__text           HC@9
+0xfffffe000a0315bd __TEXT_EXEC.__text           @@9?
+0xfffffe000a031623 __TEXT_EXEC.__text           *I{y
+0xfffffe000a03282d __TEXT_EXEC.__text           iA)S
+0xfffffe000a03284f __TEXT_EXEC.__text           k"1Hz
+0xfffffe000a032ebf __TEXT_EXEC.__text           9b6@
+0xfffffe000a032f57 __TEXT_EXEC.__text           SpYb
+0xfffffe000a033287 __TEXT_EXEC.__text           =h"@
+0xfffffe000a033e0c __TEXT_EXEC.__text           h~A9
+0xfffffe000a033e13 __TEXT_EXEC.__text           7h*@
+0xfffffe000a033e3c __TEXT_EXEC.__text           trA9T
+0xfffffe000a033e9c __TEXT_EXEC.__text           hzA9
+0xfffffe000a033eb8 __TEXT_EXEC.__text           hzA9
+0xfffffe000a03409f __TEXT_EXEC.__text           rh*@
+0xfffffe000a03414c __TEXT_EXEC.__text           hrA9 
+0xfffffe000a0341a0 __TEXT_EXEC.__text           hrA9h
+0xfffffe000a0344cb __TEXT_EXEC.__text           Ti*@
+0xfffffe000a0349e8 __TEXT_EXEC.__text           hvA9v"@
+0xfffffe000a034ab3 __TEXT_EXEC.__text           Th*@
+0xfffffe000a034f83 __TEXT_EXEC.__text           TbZ@
+0xfffffe000a034fa0 __TEXT_EXEC.__text           hzA9
+0xfffffe000a034fcb __TEXT_EXEC.__text           4i6@
+0xfffffe000a035007 __TEXT_EXEC.__text           T`*@
+0xfffffe000a03509b __TEXT_EXEC.__text           9`N@
+0xfffffe000a0358b7 __TEXT_EXEC.__text           9`R@
+0xfffffe000a035a1b __TEXT_EXEC.__text           4`6@
+0xfffffe000a035e1b __TEXT_EXEC.__text           9`6@
+0xfffffe000a035f89 __TEXT_EXEC.__text           A@9`
+0xfffffe000a037130 __TEXT_EXEC.__text           Mi(8
+0xfffffe000a03756b __TEXT_EXEC.__text           4`b@
+0xfffffe000a0375fb __TEXT_EXEC.__text           4`b@
+0xfffffe000a037693 __TEXT_EXEC.__text           Rv>@
+0xfffffe000a03785c __TEXT_EXEC.__text           h2A9
+0xfffffe000a037863 __TEXT_EXEC.__text           6h6A9H
+0xfffffe000a037a20 __TEXT_EXEC.__text           (0A9(
+0xfffffe000a037a4b __TEXT_EXEC.__text           4h6@
+0xfffffe000a037b2d __TEXT_EXEC.__text           2A9(
+0xfffffe000a037b93 __TEXT_EXEC.__text           4`ZL
+0xfffffe000a037bc3 __TEXT_EXEC.__text           6hb@
+0xfffffe000a037bdf __TEXT_EXEC.__text           7hb@
+0xfffffe000a037c2f __TEXT_EXEC.__text           4`VL
+0xfffffe000a037d2b __TEXT_EXEC.__text           4hb@
+0xfffffe000a037ddb __TEXT_EXEC.__text           4`b@
+0xfffffe000a037ebb __TEXT_EXEC.__text           4`b@
+0xfffffe000a03819f __TEXT_EXEC.__text           Th.@
+0xfffffe000a0381c9 __TEXT_EXEC.__text           2A9(
+0xfffffe000a038493 __TEXT_EXEC.__text           Th.@
+0xfffffe000a03a30f __TEXT_EXEC.__text           Th&N)
+0xfffffe000a03a407 __TEXT_EXEC.__text           r`z@
+0xfffffe000a03a41d __TEXT_EXEC.__text           I|8I
+0xfffffe000a03af83 __TEXT_EXEC.__text           5`&A
+0xfffffe000a03b1b4 __TEXT_EXEC.__text           hRF9(
+0xfffffe000a03b433 __TEXT_EXEC.__text           5`b@
+0xfffffe000a03b4d5 __TEXT_EXEC.__text           TF90
+0xfffffe000a03c337 __TEXT_EXEC.__text           r60@
+0xfffffe000a03c840 __TEXT_EXEC.__text           k*N)in@
+0xfffffe000a03c87f __TEXT_EXEC.__text           Qmj@
+0xfffffe000a03c97b __TEXT_EXEC.__text           5`b@
+0xfffffe000a03ca2b __TEXT_EXEC.__text           4jr@
+0xfffffe000a03ca44 __TEXT_EXEC.__text           k*M)J
+0xfffffe000a03d4c5 __TEXT_EXEC.__text           i58`
+0xfffffe000a03d635 __TEXT_EXEC.__text           A@9M
+0xfffffe000a03d66b __TEXT_EXEC.__text           T`.@
+0xfffffe000a03e02f __TEXT_EXEC.__text           KA}@
+0xfffffe000a03e777 __TEXT_EXEC.__text           St"@
+0xfffffe000a03e82f __TEXT_EXEC.__text           ShR@
+0xfffffe000a03e83f __TEXT_EXEC.__text           Th"@
+0xfffffe000a03eb0b __TEXT_EXEC.__text           4hR@
+0xfffffe000a03eb17 __TEXT_EXEC.__text           ThV@
+0xfffffe000a03eb37 __TEXT_EXEC.__text           S+Yj
+0xfffffe000a03ec2e __TEXT_EXEC.__text           **()
+0xfffffe000a03eed3 __TEXT_EXEC.__text           R`&@
+0xfffffe000a03fdb3 __TEXT_EXEC.__text           R`F@
+0xfffffe000a03fdd3 __TEXT_EXEC.__text           T`F@
+0xfffffe000a03fe97 __TEXT_EXEC.__text           R`F@
+0xfffffe000a03fec3 __TEXT_EXEC.__text           T`F@
+0xfffffe000a03ff53 __TEXT_EXEC.__text           9`r@
+0xfffffe000a04018b __TEXT_EXEC.__text           R`>@
+0xfffffe000a0401b3 __TEXT_EXEC.__text           T`>@
+0xfffffe000a0401d7 __TEXT_EXEC.__text           R`F@
+0xfffffe000a040227 __TEXT_EXEC.__text           T`F@
+0xfffffe000a040ee7 __TEXT_EXEC.__text           R`>@
+0xfffffe000a040f2b __TEXT_EXEC.__text           T`>@
+0xfffffe000a041208 __TEXT_EXEC.__text           hB@9
+0xfffffe000a041589 __TEXT_EXEC.__text           V@9(
+0xfffffe000a04162f __TEXT_EXEC.__text           T)IB
+0xfffffe000a04187d __TEXT_EXEC.__text           R@9H
+0xfffffe000a041aa9 __TEXT_EXEC.__text           Z@9(
+0xfffffe000a041e38 __TEXT_EXEC.__text           hB@9
+0xfffffe000a041e4b __TEXT_EXEC.__text           ThN@
+0xfffffe000a04293f __TEXT_EXEC.__text           ThB@9
+0xfffffe000a042e17 __TEXT_EXEC.__text           4`r@
+0xfffffe000a043673 __TEXT_EXEC.__text           4h2@
+0xfffffe000a043793 __TEXT_EXEC.__text           )h*@
+0xfffffe000a043963 __TEXT_EXEC.__text           Th:@
+0xfffffe000a043ab7 __TEXT_EXEC.__text           6h&@
+0xfffffe000a043c63 __TEXT_EXEC.__text           TkF@
+0xfffffe000a043d0f __TEXT_EXEC.__text           Tor@
+0xfffffe000a043d93 __TEXT_EXEC.__text           ThF@
+0xfffffe000a043e07 __TEXT_EXEC.__text           Tir@
+0xfffffe000a043e47 __TEXT_EXEC.__text           TqJ@
+0xfffffe000a043fb3 __TEXT_EXEC.__text           Qh*V)
+0xfffffe000a043fc3 __TEXT_EXEC.__text           SkN@
+0xfffffe000a04406f __TEXT_EXEC.__text           Tqv@
+0xfffffe000a04442b __TEXT_EXEC.__text           ThF@
+0xfffffe000a04445c __TEXT_EXEC.__text           hFC9
+0xfffffe000a04471f __TEXT_EXEC.__text           Tqv@
+0xfffffe000a044ae3 __TEXT_EXEC.__text           TiF@
+0xfffffe000a044b0f __TEXT_EXEC.__text           ThFC9
+0xfffffe000a044c0b __TEXT_EXEC.__text           Thr@
+0xfffffe000a044e0f __TEXT_EXEC.__text           ThF@
+0xfffffe000a044f67 __TEXT_EXEC.__text           ybB@
+0xfffffe000a044f6c __TEXT_EXEC.__text           hFA9
+0xfffffe000a0453d8 __TEXT_EXEC.__text           hFA9
+0xfffffe000a0453e1 __TEXT_EXEC.__text           FA9)
+0xfffffe000a0455e3 __TEXT_EXEC.__text           ThF@
+0xfffffe000a045612 __TEXT_EXEC.__text           +*{FC9
+0xfffffe000a04572b __TEXT_EXEC.__text           Thr@
+0xfffffe000a0458b7 __TEXT_EXEC.__text           Qij(
+0xfffffe000a045a2f __TEXT_EXEC.__text           4vf@
+0xfffffe000a045a9f __TEXT_EXEC.__text           5hBC9
+0xfffffe000a045abb __TEXT_EXEC.__text           RiN@
+0xfffffe000a045b3e __TEXT_EXEC.__text           D9h1
+0xfffffe000a045b57 __TEXT_EXEC.__text           Riz@
+0xfffffe000a045c57 __TEXT_EXEC.__text           7hn@
+0xfffffe000a045d03 __TEXT_EXEC.__text           ThF@
+0xfffffe000a045d47 __TEXT_EXEC.__text           TqJ@
+0xfffffe000a045eb3 __TEXT_EXEC.__text           Qh&V)
+0xfffffe000a045ec3 __TEXT_EXEC.__text           SkN@
+0xfffffe000a0460e3 __TEXT_EXEC.__text           4hBC9
+0xfffffe000a0460fb __TEXT_EXEC.__text           RiN@
+0xfffffe000a046197 __TEXT_EXEC.__text           Riz@
+0xfffffe000a0462c3 __TEXT_EXEC.__text           Thn@
+0xfffffe000a04636f __TEXT_EXEC.__text           TiF@
+0xfffffe000a04639b __TEXT_EXEC.__text           TiFC9
+0xfffffe000a04643e __TEXT_EXEC.__text           :*i*I
+0xfffffe000a0464fb __TEXT_EXEC.__text           Riz@
+0xfffffe000a046593 __TEXT_EXEC.__text           4tf@
+0xfffffe000a04669b __TEXT_EXEC.__text           4uf@
+0xfffffe000a046700 __TEXT_EXEC.__text           hBC9(
+0xfffffe000a046717 __TEXT_EXEC.__text           RiN@
+0xfffffe000a0467bf __TEXT_EXEC.__text           Rhz@
+0xfffffe000a046827 __TEXT_EXEC.__text           7hn@
+0xfffffe000a0468cf __TEXT_EXEC.__text           ThF@
+0xfffffe000a046913 __TEXT_EXEC.__text           TqJ@
+0xfffffe000a046a7f __TEXT_EXEC.__text           Qh&V)
+0xfffffe000a046a8f __TEXT_EXEC.__text           SkN@
+0xfffffe000a046c6d __TEXT_EXEC.__text           'D)?
+0xfffffe000a046cab __TEXT_EXEC.__text           4tf@
+0xfffffe000a046e59 __TEXT_EXEC.__text           BC9h
+0xfffffe000a046f58 __TEXT_EXEC.__text           hBC9H
+0xfffffe000a046f67 __TEXT_EXEC.__text           RhN@
+0xfffffe000a04804c __TEXT_EXEC.__text           h2A9
+0xfffffe000a048a54 __TEXT_EXEC.__text           h2A9
+0xfffffe000a048a77 __TEXT_EXEC.__text           T`{w
+0xfffffe000a048a8f __TEXT_EXEC.__text           5`{w
+0xfffffe000a048cc1 __TEXT_EXEC.__text           4A9(
+0xfffffe000a048cc7 __TEXT_EXEC.__text           6t2@
+0xfffffe000a048eb7 __TEXT_EXEC.__text           4h2A9
+0xfffffe000a048eff __TEXT_EXEC.__text           4h2@
+0xfffffe000a049823 __TEXT_EXEC.__text           5uRB
+0xfffffe000a04b558 __TEXT_EXEC.__text           8$@y
+0xfffffe000a04b6c8 __TEXT_EXEC.__text           7$@y0
+0xfffffe000a04c3fc __TEXT_EXEC.__text           ?K78
+0xfffffe000a04c81c __TEXT_EXEC.__text           d"Dye&Dy
+0xfffffe000a04d4fb __TEXT_EXEC.__text           6`z@
+0xfffffe000a04d833 __TEXT_EXEC.__text           9`b@
+0xfffffe000a04fcfc __TEXT_EXEC.__text           Nhm8-
+0xfffffe000a04fd1d __TEXT_EXEC.__text           i,8)
+0xfffffe000a04fd94 __TEXT_EXEC.__text           lii8)
+0xfffffe000a04fe05 __TEXT_EXEC.__text           ij8J
+0xfffffe000a04feaa __TEXT_EXEC.__text           @9I?@9)
+0xfffffe000a050028 __TEXT_EXEC.__text           h"C9
+0xfffffe000a050037 __TEXT_EXEC.__text           9`^@
+0xfffffe000a050317 __TEXT_EXEC.__text           7`Z@
+0xfffffe000a050397 __TEXT_EXEC.__text           *I|~
+0xfffffe000a05069b __TEXT_EXEC.__text           ThbG9
+0xfffffe000a0506a2 __TEXT_EXEC.__text           86`^A
+0xfffffe000a050737 __TEXT_EXEC.__text           4`^A
+0xfffffe000a050753 __TEXT_EXEC.__text           ThjB
+0xfffffe000a051107 __TEXT_EXEC.__text           4hFB
+0xfffffe000a0511ca __TEXT_EXEC.__text           87h"
+0xfffffe000a0515ab __TEXT_EXEC.__text           R`.B
+0xfffffe000a05162b __TEXT_EXEC.__text           9`.B
+0xfffffe000a05177b __TEXT_EXEC.__text           4`FB
+0xfffffe000a051cbf __TEXT_EXEC.__text           ThFB
+0xfffffe000a051cc5 __TEXT_EXEC.__text           aD9h
+0xfffffe000a051d27 __TEXT_EXEC.__text           T`.B
+0xfffffe000a05327d __TEXT_EXEC.__text           bA)`FB
+0xfffffe000a054073 __TEXT_EXEC.__text           4`FB
+0xfffffe000a0540e7 __TEXT_EXEC.__text           T`FB
+0xfffffe000a054654 __TEXT_EXEC.__text           (%@)
+0xfffffe000a0549c7 __TEXT_EXEC.__text           ThBD
+0xfffffe000a054a1f __TEXT_EXEC.__text           5h>D
+0xfffffe000a054e53 __TEXT_EXEC.__text           4`FB
+0xfffffe000a054e6b __TEXT_EXEC.__text           4`FB
+0xfffffe000a054edf __TEXT_EXEC.__text           T`FB
+0xfffffe000a05823b __TEXT_EXEC.__text           K+}I
+0xfffffe000a05921f __TEXT_EXEC.__text           4`6@
+0xfffffe000a059914 __TEXT_EXEC.__text           h"@y
+0xfffffe000a05996c __TEXT_EXEC.__text           h"@y
+0xfffffe000a059a15 __TEXT_EXEC.__text            @y(
+0xfffffe000a059b20 __TEXT_EXEC.__text           h"@y
+0xfffffe000a059b6d __TEXT_EXEC.__text            @yH
+0xfffffe000a059bb4 __TEXT_EXEC.__text           h"@y
+0xfffffe000a059c58 __TEXT_EXEC.__text           h"@y
+0xfffffe000a059e0f __TEXT_EXEC.__text           4h"@y
+0xfffffe000a059f8c __TEXT_EXEC.__text           h"@y
+0xfffffe000a05a751 __TEXT_EXEC.__text           $H))
+0xfffffe000a05a77b __TEXT_EXEC.__text           4h&H)
+0xfffffe000a05a844 __TEXT_EXEC.__text           i"H)
+0xfffffe000a05a940 __TEXT_EXEC.__text           i"H))
+0xfffffe000a05a997 __TEXT_EXEC.__text           Th"@
+0xfffffe000a05ae5b __TEXT_EXEC.__text           T`J@
+0xfffffe000a05af89 __TEXT_EXEC.__text           +B))
+0xfffffe000a05b227 __TEXT_EXEC.__text           =h'@
+0xfffffe000a05c143 __TEXT_EXEC.__text           4hJ@
+0xfffffe000a05c17f __TEXT_EXEC.__text           rh2@
+0xfffffe000a05c257 __TEXT_EXEC.__text           R`J@
+0xfffffe000a05c2d3 __TEXT_EXEC.__text           4hJ@
+0xfffffe000a05cc76 __TEXT_EXEC.__text            7SX
+0xfffffe000a05ce52 __TEXT_EXEC.__text            7TX
+0xfffffe000a05d177 __TEXT_EXEC.__text           *`J@
+0xfffffe000b976188 __DATA.__data           com.apple.iokit.IOGPUFamily
+0xfffffe000b9761c8 __DATA.__data           1.0.0d1
+0xfffffe000b976760 __DATA.__common         __TEXT
+0xfffffe000b9767a8 __DATA.__common         __PRELINK_TEXT
+0xfffffe000b9767e8 __DATA.__common         __text
+0xfffffe000b9767f8 __DATA.__common         __PRELINK_TEXT
+0xfffffe000b976840 __DATA.__common         __DATA_CONST
+0xfffffe000b976888 __DATA.__common         __DATA_SPTM
+0xfffffe000b9768d0 __DATA.__common         __TEXT_EXEC
+0xfffffe000b976918 __DATA.__common         __TEXT_BOOT_EXEC
+0xfffffe000b976960 __DATA.__common         __PRELINK_INFO
+0xfffffe000b9769a0 __DATA.__common         __info
+0xfffffe000b9769b0 __DATA.__common         __PRELINK_INFO
+0xfffffe000b9769f8 __DATA.__common         __DATA
+0xfffffe000b976a40 __DATA.__common         __LINKEDIT
+0xfffffe000b976aa0 __DATA.__common         com.apple.kernel
+0xfffffe000b976ad8 __DATA.__common         com.apple.kec.Libm
+0xfffffe000b976b10 __DATA.__common         com.apple.kec.pthread
+0xfffffe000b976b48 __DATA.__common         com.apple.driver.AFKHIDTBDevice
+0xfffffe000b976b88 __DATA.__common         com.apple.AGXFirmwareKextG18PRTBuddy
+0xfffffe000b976bd0 __DATA.__common         com.apple.AGXFirmwareKextRTBuddy64
+0xfffffe000b976c18 __DATA.__common         com.apple.AGXG18P
+0xfffffe000b976c50 __DATA.__common         com.apple.security.AKSAnalytics
+0xfffffe000b976c90 __DATA.__common         com.apple.driver.AOPAudio2
+0xfffffe000b976cd0 __DATA.__common         com.apple.driver.AOPTouchKext
+0xfffffe000b976d10 __DATA.__common         com.apple.driver.ASIOKit
+0xfffffe000b976d50 __DATA.__common         com.apple.AUC
+0xfffffe000b976d80 __DATA.__common         com.apple.driver.AppleA7IOP-ASCWrap-v6
+0xfffffe000b976dc8 __DATA.__common         com.apple.driver.AppleA7IOP
+0xfffffe000b976e08 __DATA.__common         com.apple.driver.AppleALSColorSensor
+0xfffffe000b976e50 __DATA.__common         com.apple.driver.AppleAOP2

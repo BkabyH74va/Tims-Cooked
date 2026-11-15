@@ -1,0 +1,41 @@
+﻿======= TARGET =======
+0xfffffe000a34ba00:  44 6d ff 97   bl	0xfffffe000a326f10
+0xfffffe000a34ba04:  f4 03 40 f9   ldr	x20, [sp]
+0xfffffe000a34ba08:  14 04 00 b4   cbz	x20, 0xfffffe000a34ba88
+0xfffffe000a34ba0c:  60 a2 40 f9   ldr	x0, [x19, #0x140]
+0xfffffe000a34ba10:  10 00 40 f9   ldr	x16, [x0]
+0xfffffe000a34ba14:  f1 03 00 aa   mov	x17, x0
+0xfffffe000a34ba18:  31 b4 f9 f2   movk	x17, #0xcda1, lsl #0x30
+0xfffffe000a34ba1c:  30 1a c1 da   autda	x16, x17
+0xfffffe000a34ba20:  11 21 80 d2   mov	x17, #0x108
+0xfffffe000a34ba24:  10 02 11 8b   add	x16, x16, x17
+0xfffffe000a34ba28:  08 02 40 f9   ldr	x8, [x16]
+0xfffffe000a34ba2c:  e1 03 15 aa   mov	x1, x21
+0xfffffe000a34ba30:  70 09 e8 f2   movk	x16, #0x404b, lsl #0x30
+0xfffffe000a34ba34:  10 09 3f d7   blraa	x8, x16
+0xfffffe000a34ba38:  88 c2 41 39   ldrb	w8, [x20, #0x70]
+0xfffffe000a34ba3c:  88 00 00 36   tbz	w8, #0, 0xfffffe000a34ba4c
+0xfffffe000a34ba40:  68 2a 41 b9   ldr	w8, [x19, #0x128]
+0xfffffe000a34ba44:  08 05 00 51   sub	w8, w8, #0x1
+0xfffffe000a34ba48:  68 2a 01 b9   str	w8, [x19, #0x128]
+0xfffffe000a34ba4c:  68 2e 41 b9   ldr	w8, [x19, #0x12c]
+0xfffffe000a34ba50:  08 05 00 51   sub	w8, w8, #0x1
+0xfffffe000a34ba54:  68 2e 01 b9   str	w8, [x19, #0x12c]
+0xfffffe000a34ba58:  60 6e 40 f9   ldr	x0, [x19, #0xd8]
+0xfffffe000a34ba5c:  00 39 00 94   bl	0xfffffe000a359e5c
+0xfffffe000a34ba60:  90 02 40 f9   ldr	x16, [x20]
+0xfffffe000a34ba64:  f1 03 14 aa   mov	x17, x20
+0xfffffe000a34ba68:  31 b4 f9 f2   movk	x17, #0xcda1, lsl #0x30
+0xfffffe000a34ba6c:  30 1a c1 da   autda	x16, x17
+0xfffffe000a34ba70:  08 8e 42 f8   ldr	x8, [x16, #0x28]!
+0xfffffe000a34ba74:  e0 03 14 aa   mov	x0, x20
+0xfffffe000a34ba78:  f0 50 e7 f2   movk	x16, #0x3a87, lsl #0x30
+0xfffffe000a34ba7c:  10 09 3f d7   blraa	x8, x16
+0xfffffe000a34ba80:  00 00 80 52   mov	w0, #0
+0xfffffe000a34ba84:  05 00 00 14   b	0xfffffe000a34ba98
+0xfffffe000a34ba88:  60 6e 40 f9   ldr	x0, [x19, #0xd8]
+0xfffffe000a34ba8c:  f4 38 00 94   bl	0xfffffe000a359e5c
+0xfffffe000a34ba90:  40 58 80 52   mov	w0, #0x2c2
+0xfffffe000a34ba94:  00 00 bc 72   movk	w0, #0xe000, lsl #0x10
+0xfffffe000a34ba98:  e8 07 40 f9   ldr	x8, [sp, #0x8]
+0xfffffe000a34ba9c:  c9 01 ff 90   adrp	x9, 0xfffffe0008383000

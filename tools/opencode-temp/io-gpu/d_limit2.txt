@@ -1,0 +1,41 @@
+﻿======= TARGET =======
+0xfffffe000a34fd00:  5f 24 03 d5   bti	c
+0xfffffe000a34fd04:  7f 23 03 d5   pacibsp
+0xfffffe000a34fd08:  ff c3 05 d1   sub	sp, sp, #0x170
+0xfffffe000a34fd0c:  fc 6f 13 a9   stp	x28, x27, [sp, #0x130]
+0xfffffe000a34fd10:  f6 57 14 a9   stp	x22, x21, [sp, #0x140]
+0xfffffe000a34fd14:  f4 4f 15 a9   stp	x20, x19, [sp, #0x150]
+0xfffffe000a34fd18:  fd 7b 16 a9   stp	fp, lr, [sp, #0x160]
+0xfffffe000a34fd1c:  fd 83 05 91   add	fp, sp, #0x160
+0xfffffe000a34fd20:  f3 03 00 aa   mov	x19, x0
+0xfffffe000a34fd24:  a8 01 ff 90   adrp	x8, 0xfffffe0008383000
+0xfffffe000a34fd28:  08 61 44 f9   ldr	x8, [x8, #0x8c0]
+0xfffffe000a34fd2c:  08 01 40 f9   ldr	x8, [x8]
+0xfffffe000a34fd30:  a8 83 1c f8   stur	x8, [fp, #-0x38]
+0xfffffe000a34fd34:  08 28 41 b9   ldr	w8, [x0, #0x128]
+0xfffffe000a34fd38:  62 00 00 34   cbz	w2, 0xfffffe000a34fd44
+0xfffffe000a34fd3c:  08 05 00 11   add	w8, w8, #0x1
+0xfffffe000a34fd40:  68 2a 01 b9   str	w8, [x19, #0x128]
+0xfffffe000a34fd44:  69 2e 41 b9   ldr	w9, [x19, #0x12c]
+0xfffffe000a34fd48:  29 05 00 11   add	w9, w9, #0x1
+0xfffffe000a34fd4c:  69 2e 01 b9   str	w9, [x19, #0x12c]
+0xfffffe000a34fd50:  1f 09 40 71   cmp	w8, #0x2, lsl #0xc
+0xfffffe000a34fd54:  43 0b 00 54   b.lo	0xfffffe000a34febc
+0xfffffe000a34fd58:  69 92 44 39   ldrb	w9, [x19, #0x124]
+0xfffffe000a34fd5c:  69 05 00 37   tbnz	w9, #0, 0xfffffe000a34fe08
+0xfffffe000a34fd60:  bb 29 00 94   bl	0xfffffe000a35a44c
+0xfffffe000a34fd64:  be 29 00 94   bl	0xfffffe000a35a45c
+0xfffffe000a34fd68:  a0 04 00 b4   cbz	x0, 0xfffffe000a34fdfc
+0xfffffe000a34fd6c:  f4 03 00 aa   mov	x20, x0
+0xfffffe000a34fd70:  00 e4 00 6f   movi	v0.2d, #0
+0xfffffe000a34fd74:  e0 03 08 ad   stp	q0, q0, [sp, #0x100]
+0xfffffe000a34fd78:  e0 03 07 ad   stp	q0, q0, [sp, #0xe0]
+0xfffffe000a34fd7c:  e0 03 06 ad   stp	q0, q0, [sp, #0xc0]
+0xfffffe000a34fd80:  e0 03 05 ad   stp	q0, q0, [sp, #0xa0]
+0xfffffe000a34fd84:  e0 03 04 ad   stp	q0, q0, [sp, #0x80]
+0xfffffe000a34fd88:  e0 03 03 ad   stp	q0, q0, [sp, #0x60]
+0xfffffe000a34fd8c:  e0 03 02 ad   stp	q0, q0, [sp, #0x40]
+0xfffffe000a34fd90:  e0 03 01 ad   stp	q0, q0, [sp, #0x20]
+0xfffffe000a34fd94:  f5 83 00 91   add	x21, sp, #0x20
+0xfffffe000a34fd98:  e0 83 00 91   add	x0, sp, #0x20
+0xfffffe000a34fd9c:  01 20 80 52   mov	w1, #0x100

@@ -1,0 +1,2 @@
+2026-11-07 15:15:58 builduser __main__[31568] ERROR Connection was terminated abruptly.
+2026-11-07 15:15:58 builduser __main__[31568] INFO Run again with -v for the full traceback (include it when reporting an issue)

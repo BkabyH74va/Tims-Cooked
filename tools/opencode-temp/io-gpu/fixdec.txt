@@ -1,0 +1,56 @@
+﻿=== com.apple.iokit.IOGPUFamily (member fileoff 0x98f150) ===
+  __DATA_CONST.__mod_init_func va=0xfffffe00082f4ec0 size=0x100 soff=0x12f0ec0
+    [ 0] raw=0x0010000003019544 -> 0xfffffe000a019544
+    [ 1] raw=0x001000000301abd8 -> 0xfffffe000a01abd8
+    [ 2] raw=0x001000000301be94 -> 0xfffffe000a01be94
+    [ 3] raw=0x001000000301c3e8 -> 0xfffffe000a01c3e8
+    [ 4] raw=0x001000000301d5c4 -> 0xfffffe000a01d5c4
+    [ 5] raw=0x0010000003020fe4 -> 0xfffffe000a020fe4
+    [ 6] raw=0x00100000030213f8 -> 0xfffffe000a0213f8
+    [ 7] raw=0x0010000003024214 -> 0xfffffe000a024214
+    [ 8] raw=0x0010000003024614 -> 0xfffffe000a024614
+    [ 9] raw=0x0010000003024ae8 -> 0xfffffe000a024ae8
+    [10] raw=0x0010000003024e68 -> 0xfffffe000a024e68
+    [11] raw=0x0010000003027da8 -> 0xfffffe000a027da8
+    [12] raw=0x0010000003028ce4 -> 0xfffffe000a028ce4
+    [13] raw=0x001000000302f334 -> 0xfffffe000a02f334
+    [14] raw=0x00100000030328a8 -> 0xfffffe000a0328a8
+    [15] raw=0x0010000003032e58 -> 0xfffffe000a032e58
+    [16] raw=0x0010000003035370 -> 0xfffffe000a035370
+    [17] raw=0x001000000303a254 -> 0xfffffe000a03a254
+    [18] raw=0x001000000303f090 -> 0xfffffe000a03f090
+    [19] raw=0x001000000304301c -> 0xfffffe000a04301c
+    [20] raw=0x0010000003043afc -> 0xfffffe000a043afc
+    [21] raw=0x0010000003046218 -> 0xfffffe000a046218
+    [22] raw=0x0010000003046ea4 -> 0xfffffe000a046ea4
+    [23] raw=0x0010000003047b98 -> 0xfffffe000a047b98
+    [24] raw=0x001000000304ca28 -> 0xfffffe000a04ca28
+    [25] raw=0x00100000030519b4 -> 0xfffffe000a0519b4
+    [26] raw=0x00100000030540e4 -> 0xfffffe000a0540e4
+    [27] raw=0x00100000030556f8 -> 0xfffffe000a0556f8
+    [28] raw=0x001000000305625c -> 0xfffffe000a05625c
+    [29] raw=0x0010000003056a64 -> 0xfffffe000a056a64
+    [30] raw=0x0010000003059418 -> 0xfffffe000a059418
+    [31] raw=0x0010000003059aac -> 0xfffffe000a059aac
+  __TEXT_EXEC.__text va=0xfffffe000a01b390 size=0x437c0
+=== com.apple.iokit.IOSurface (member fileoff 0xa14790) ===
+  __DATA_CONST.__mod_init_func va=0xfffffe000837d3d8 size=0x90 soff=0x13793d8
+    [ 0] raw=0x00100000033253e4 -> 0xfffffe000a3253e4
+    [ 1] raw=0x0010000003326a08 -> 0xfffffe000a326a08
+    [ 2] raw=0x0010000003337bf8 -> 0xfffffe000a337bf8
+    [ 3] raw=0x00100000033393a0 -> 0xfffffe000a3393a0
+    [ 4] raw=0x0010000003339a4c -> 0xfffffe000a339a4c
+    [ 5] raw=0x001000000333a63c -> 0xfffffe000a33a63c
+    [ 6] raw=0x001000000333b8ec -> 0xfffffe000a33b8ec
+    [ 7] raw=0x001000000333bfe4 -> 0xfffffe000a33bfe4
+    [ 8] raw=0x001000000333ccec -> 0xfffffe000a33ccec
+    [ 9] raw=0x001000000333d3c4 -> 0xfffffe000a33d3c4
+    [10] raw=0x0010000003344b50 -> 0xfffffe000a344b50
+    [11] raw=0x001000000334d3d0 -> 0xfffffe000a34d3d0
+    [12] raw=0x001000000334dd2c -> 0xfffffe000a34dd2c
+    [13] raw=0x001000000334e830 -> 0xfffffe000a34e830
+    [14] raw=0x00100000033536c4 -> 0xfffffe000a3536c4
+    [15] raw=0x0010000003354534 -> 0xfffffe000a354534
+    [16] raw=0x0010000003354fc8 -> 0xfffffe000a354fc8
+    [17] raw=0x00100000033555c0 -> 0xfffffe000a3555c0
+  __TEXT_EXEC.__text va=0xfffffe000a3257c0 size=0x3461c

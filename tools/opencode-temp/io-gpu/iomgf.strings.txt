@@ -1,0 +1,2184 @@
+0xfffffe00079c5508 __TEXT.__cstring        "Missing 'delete' overload" @%s:%d
+0xfffffe00079c552b __TEXT.__cstring        RefCounted.h
+0xfffffe00079c5538 __TEXT.__cstring        site.RefCounted
+0xfffffe00079c554b __TEXT.__cstring        IOMFB %s: failed to allocate dictionary
+0xfffffe00079c5574 __TEXT.__cstring        set_bool_prop
+0xfffffe00079c5582 __TEXT.__cstring        IOMFB %s: setObject failed
+0xfffffe00079c559e __TEXT.__cstring        IOMFB %s: setProperties failed with 0x%x
+0xfffffe00079c55c8 __TEXT.__cstring        site.iOSSvcProx
+0xfffffe00079c55dc __TEXT.__cstring        site.aaf_async_args_t
+0xfffffe00079c55f2 __TEXT.__cstring        112222222212111
+0xfffffe00079c5602 __TEXT.__cstring        iomfb_aaf_async
+0xfffffe00079c5612 __TEXT.__cstring        "UPAAFProxy::withServiceAsync: function name too long" @%s:%d
+0xfffffe00079c5650 __TEXT.__cstring        UPAAFProxy.cpp
+0xfffffe00079c565f __TEXT.__cstring        site.iOSAAFProxy
+0xfffffe00079c5670 __TEXT.__cstring        1221
+0xfffffe00079c5675 __TEXT.__cstring        IOAVHandlerInternalDisplay
+0xfffffe00079c5690 __TEXT.__cstring        site.IOAVHandlerInternalDisplay
+0xfffffe00079c56b0 __TEXT.__cstring        1211111211
+0xfffffe00079c56bb __TEXT.__cstring        "init failed" @%s:%d
+0xfffffe00079c56d0 __TEXT.__cstring        IOAVHandlerInternalDisplay.cpp
+0xfffffe00079c56ef __TEXT.__cstring        %s: found no suitable color element in IOAVVideoInterface
+0xfffffe00079c572a __TEXT.__cstring        virtual void IOAVHandlerInternalDisplay::plugEvent_async_gated(IOAVVideoInterface *)
+0xfffffe00079c577f __TEXT.__cstring        %s: found no suitable timing element in IOAVVideoInterface
+0xfffffe00079c57bb __TEXT.__cstring        %s: IOAVVideoInterface open failed
+0xfffffe00079c57df __TEXT.__cstring        %s: warning: IOAVVideoInterface ID %llu stopping pre-configured video link, which does not match selected timing/color mode (tm=%llu cm=%llu)
+0xfffffe00079c586e __TEXT.__cstring        %s: IOAVVideoInterface willStopLink() failed with 0x%x
+0xfffffe00079c58a6 __TEXT.__cstring        %s: IOAVVideoInterface stopLink() failed with 0x%x
+0xfffffe00079c58da __TEXT.__cstring        %s: IOAVVideoInterface completeLink() failed with 0x%x
+0xfffffe00079c5912 __TEXT.__cstring        %s: IOAVVideoInterface prepareLink() failed with 0x%x
+0xfffffe00079c5949 __TEXT.__cstring        %s: IOAVVideoInterface startLink() failed with 0x%x
+0xfffffe00079c597e __TEXT.__cstring        %s: IOAVVideoInterface didStartLink() failed with 0x%x
+0xfffffe00079c59b6 __TEXT.__cstring        AppleARMParamFIFO
+0xfffffe00079c59c8 __TEXT.__cstring        site.AppleARMParamFIFO
+0xfffffe00079c59df __TEXT.__cstring        12111112122212121
+0xfffffe00079c59f1 __TEXT.__cstring        "%s called with %s" @%s:%d
+0xfffffe00079c5a0c __TEXT.__cstring        uint8_t IOMFB::getBitDepthValue(BitDepth)
+0xfffffe00079c5a36 __TEXT.__cstring        DriverCommonFunctions.cpp
+0xfffffe00079c5a50 __TEXT.__cstring        ../../../product
+0xfffffe00079c5a61 __TEXT.__cstring        artwork-display-gamut
+0xfffffe00079c5a7a __TEXT.__cstring        AdobeRGB
+0xfffffe00079c5a83 __TEXT.__cstring        BitDepth::FourteenBits
+0xfffffe00079c5a9a __TEXT.__cstring        BitDepth::TwelveBits
+0xfffffe00079c5aaf __TEXT.__cstring        BitDepth::TenBits
+0xfffffe00079c5ac1 __TEXT.__cstring        BitDepth::EightBits
+0xfffffe00079c5ad5 __TEXT.__cstring        BitDepth::SixBits
+0xfffffe00079c5ae7 __TEXT.__cstring        BitDepth::COUNT
+0xfffffe00079c5af7 __TEXT.__cstring        BitDepth::UNKNOWN
+0xfffffe00079c5b0d __TEXT.__cstring        site.iOSMemoryMap
+0xfffffe00079c5b1f __TEXT.__cstring        1211
+0xfffffe00079c5b24 __TEXT.__cstring        site.iOSMemoryDescriptor
+0xfffffe00079c5b3d __TEXT.__cstring        122122
+0xfffffe00079c5b44 __TEXT.__cstring        site.iOSBufferDescriptor
+0xfffffe00079c5b5d __TEXT.__cstring        121222
+0xfffffe00079c5b64 __TEXT.__cstring        IOMFBEvtMonTrampoline
+0xfffffe00079c5b7a __TEXT.__cstring        site.IOMFBEvtMonTrampoline
+0xfffffe00079c5b95 __TEXT.__cstring        site.UPEventMonitor
+0xfffffe00079c5ba9 __TEXT.__cstring        11111211122
+0xfffffe00079c5bb5 __TEXT.__cstring        UPEvtMgr::add - Event monitor index %d too large.
+0xfffffe00079c5be8 __TEXT.__cstring        UPEvtMgr::add - Event monitor registered with duplicate index(%d)
+0xfffffe00079c5c2b __TEXT.__cstring        site.Lock
+0xfffffe00079c5c37 __TEXT.__cstring        site.WorkLoop
+0xfffffe00079c5c45 __TEXT.__cstring        site.GateWrapper
+0xfffffe00079c5c56 __TEXT.__cstring        121111
+0xfffffe00079c5c5d __TEXT.__cstring        site.GateInstance
+0xfffffe00079c5c6f __TEXT.__cstring        null descs_ptr
+0xfffffe00079c5c7f __TEXT.__cstring        IOMFB: attempt to use invalid PBT type %d
+0xfffffe00079c5caa __TEXT.__cstring        IOMFB Block mgr %s: Redundant handler for block type %d (ignored)
+0xfffffe00079c5cf1 __TEXT.__cstring        i28@?0^{PBTBlockHandlerGeneric=^^?II^{DCPLink}Bi{?=^{PBTBlockHandlerGeneric}^^{PBTBlockHandlerGeneric}}III}8^v16I24
+0xfffffe00079c5d65 __TEXT.__cstring        IOMobileFramebufferUserClient
+0xfffffe00079c5d83 __TEXT.__cstring        site.IOMobileFramebufferUserClient
+0xfffffe00079c5da6 __TEXT.__cstring        12111112122212121111111111112122221111111111112212222112111111111111221222211211111111111122122221121111111111112212222112111111111111221222211211111111111122122221121111111111112212222112111111111111221222211211111111111122122221121111111111112212222112111111111111221222211211111111111122122221122
+0xfffffe00079c5ed2 __TEXT.__cstring        com.apple.private.iomfb.set-block-client-profile
+0xfffffe00079c5f03 __TEXT.__cstring        IOMFB ERROR: IOSharedDataQueue::withCapacity Failed
+0xfffffe00079c5f38 __TEXT.__cstring        IOMFB ERROR: ioDataQueue->getMemoryDescripto Failed
+0xfffffe00079c5f6d __TEXT.__cstring        IOMFB ERROR: ioDataQueueMemDesc->createMappingInTask Failed
+0xfffffe00079c5faa __TEXT.__cstring        iomfb_set_block_debug
+0xfffffe00079c5fc0 __TEXT.__cstring        iomfb_rack_debug
+0xfffffe00079c5fd1 __TEXT.__cstring        iomfb_finfo_enqueue_panic_enable
+0xfffffe00079c5ff2 __TEXT.__cstring        IOMFB: WARNING: FB User Client freed without a stop call! Force releasing memory 
+0xfffffe00079c6045 __TEXT.__cstring        IOUserClientDefaultLocking
+0xfffffe00079c6060 __TEXT.__cstring        IOUserClientDefaultLockingSetProperties
+0xfffffe00079c6088 __TEXT.__cstring        IOUserClientDefaultLockingSingleThreadExternalMethod
+0xfffffe00079c60bd __TEXT.__cstring        IOUserClientEntitlements
+0xfffffe00079c60d6 __TEXT.__cstring        %s: hdcp_client_will_stop failed with 0x%x
+0xfffffe00079c6102 __TEXT.__cstring        virtual void IOMobileFramebufferUserClient::stop(IOService *)
+0xfffffe00079c6140 __TEXT.__cstring        "%s: client cannot execute this enum %d client type: %d index: %d\n" @%s:%d
+0xfffffe00079c618c __TEXT.__cstring        isSetBlockEnumAllowed
+0xfffffe00079c61a2 __TEXT.__cstring        IOMobileFramebufferUserClient.cpp
+0xfffffe00079c61c4 __TEXT.__cstring        %s: client cannot execute this enum %d client type: %d index: %d
+0xfffffe00079c6206 __TEXT.__cstring        com.apple.private.iomfb.set-block
+0xfffffe00079c6228 __TEXT.__cstring        CLCDTransaction size mismatch.  Returning error 0x%X.
+0xfffffe00079c625f __TEXT.__cstring        IOMFB: %s: No Default FB Surface found. Return error
+0xfffffe00079c6295 __TEXT.__cstring        default_fb_surface
+0xfffffe00079c62a8 __TEXT.__cstring        %s fId %u second_external %d powerstate %d fdisplaytype %d
+0xfffffe00079c62e4 __TEXT.__cstring        request_power_change
+0xfffffe00079c62f9 __TEXT.__cstring        %s set power on pending 
+0xfffffe00079c6313 __TEXT.__cstring        %s  return success for ext disp on 
+0xfffffe00079c6338 __TEXT.__cstring        %s  allow ext disp off  
+0xfffffe00079c6352 __TEXT.__cstring        %s  dont allow ext disp off  
+0xfffffe00079c6371 __TEXT.__cstring        %s  dont allow disp off when clamshell is closed but the call is for internal display
+0xfffffe00079c63c8 __TEXT.__cstring        set_notify rejected 
+0xfffffe00079c63df __TEXT.__cstring         ilk %d >= ARRAY_SIZE %lu
+0xfffffe00079c63fa __TEXT.__cstring        %s: message size is zero
+0xfffffe00079c6414 __TEXT.__cstring        IOReturn IOMobileFramebufferUserClient::hdcp_get_reply(const uint8_t *, size_t *)
+0xfffffe00079c6466 __TEXT.__cstring        %s: hdcp_get_reply failed with 0x%x
+0xfffffe00079c648b __TEXT.__cstring        IOMFBKernelTestsArguments size mismatch
+0xfffffe00079c64b4 __TEXT.__cstring        com.apple.private.gain-map-access
+0xfffffe00079c64d6 __TEXT.__cstring        %s: bad argument(s): %p %lu
+0xfffffe00079c64f3 __TEXT.__cstring        static IOReturn IOMobileFramebufferUserClient::s_hdcp_send_request(IOMobileFramebufferUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe00079c657c __TEXT.__cstring        static IOReturn IOMobileFramebufferUserClient::s_hdcp_get_reply(IOMobileFramebufferUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe00079c6602 __TEXT.__cstring        %s UserClient display type is %d 
+0xfffffe00079c6625 __TEXT.__cstring        static IOReturn IOMobileFramebufferUserClient::s_map_display_type(IOMobileFramebufferUserClient *, void *, IOExternalMethodArguments *)
+0xfffffe00079c66ad __TEXT.__cstring        "IOMFB ERROR: IOSharedDataQueue Enqueue Failure\n" @%s:%d
+0xfffffe00079c66e7 __TEXT.__cstring        backboardd
+0xfffffe00079c66f2 __TEXT.__cstring        windowserver
+0xfffffe00079c66ff __TEXT.__cstring        iomfb_fdr_loader
+0xfffffe00079c6710 __TEXT.__cstring        iomfb_bics_daemon
+0xfffffe00079c6722 __TEXT.__cstring        thermal_monitor
+0xfffffe00079c6732 __TEXT.__cstring        iomfb_internal_tool
+0xfffffe00079c6746 __TEXT.__cstring        factory_toolbox
+0xfffffe00079c6756 __TEXT.__cstring        com.apple.private.allow-explicit-graphics-priority
+0xfffffe00079c6789 __TEXT.__cstring        IOMFB: WARNING: reserved user client function called
+0xfffffe00079c67bf __TEXT.__cstring        "RefCounted: reference count underflow" @%s:%d
+0xfffffe00079c67ee __TEXT.__cstring        RefCounted.cpp
+0xfffffe00079c67fd __TEXT.__cstring        IOMobileFramebuffer
+0xfffffe00079c6811 __TEXT.__cstring        site.IOMobileFramebuffer
+0xfffffe00079c682a __TEXT.__cstring        121111121222121212
+0xfffffe00079c683d __TEXT.__cstring        IOMobileFramebufferService
+0xfffffe00079c6858 __TEXT.__cstring        site.IOMobileFramebufferService
+0xfffffe00079c6878 __TEXT.__cstring        "%s: unknown property %s\n" @%s:%d
+0xfffffe00079c689b __TEXT.__cstring        RuntimePropertyType IOMFB::getRuntimePropertyType(RuntimeProperty)
+0xfffffe00079c68de __TEXT.__cstring        IOMobileFramebufferRuntimeProperties.cpp
+0xfffffe00079c6907 __TEXT.__cstring        SystemIdlenessEnabled
+0xfffffe00079c691d __TEXT.__cstring        SystemIdlenessThreshold
+0xfffffe00079c6935 __TEXT.__cstring        VRRIdleEnabled
+0xfffffe00079c6944 __TEXT.__cstring        VRRIdleThreshold
+0xfffffe00079c6955 __TEXT.__cstring        VRRBurnInEnabled
+0xfffffe00079c6966 __TEXT.__cstring        VRRBurnInThreshold
+0xfffffe00079c6979 __TEXT.__cstring        VRRBurnInCooldownEnabled
+0xfffffe00079c6992 __TEXT.__cstring        VRRBurnInCooldownThreshold
+0xfffffe00079c69ad __TEXT.__cstring        PowerGateADPIdleEnabled
+0xfffffe00079c69c5 __TEXT.__cstring        PowerGateADPIdleThreshold
+0xfffffe00079c69df __TEXT.__cstring        DisplayWallIdleEnabled
+0xfffffe00079c69f6 __TEXT.__cstring        DisplayWallIdleThreshold
+0xfffffe00079c6a0f __TEXT.__cstring        gamutConversionPipe0
+0xfffffe00079c6a24 __TEXT.__cstring        gamutConversionPipe1
+0xfffffe00079c6a39 __TEXT.__cstring        gamutConversionPostBlend
+0xfffffe00079c6a52 __TEXT.__cstring        "%s: property %s is not a gamut conversion location\n" @%s:%d
+0xfffffe00079c6a90 __TEXT.__cstring        GamutConversionLocation IOMFB::getGamutConversionLocationFromRTP(RuntimeProperty)
+0xfffffe00079c6ae2 __TEXT.__cstring        "%s: property %s is not an idle detector\n" @%s:%d
+0xfffffe00079c6b15 __TEXT.__cstring        IdleDetectorRTPType IOMFB::getIdleDetectorRTPTypeForIdleDetectorRTP(RuntimeProperty)
+0xfffffe00079c6b6a __TEXT.__cstring        IdleDetectorIndex IOMFB::getIdleDetectorFromRTP(RuntimeProperty)
+0xfffffe00079c6bab __TEXT.__cstring        iomfb_IdleDetectorIndex_System_enabled
+0xfffffe00079c6bd2 __TEXT.__cstring        iomfb_IdleDetectorIndex_System_threshold
+0xfffffe00079c6bfb __TEXT.__cstring        iomfb_IdleDetectorIndex_VRR_enabled
+0xfffffe00079c6c1f __TEXT.__cstring        iomfb_IdleDetectorIndex_VRR_threshold
+0xfffffe00079c6c45 __TEXT.__cstring        iomfb_IdleDetectorIndex_VRRBurnInPrevention_enabled
+0xfffffe00079c6c79 __TEXT.__cstring        iomfb_IdleDetectorIndex_VRRBurnInPrevention_threshold
+0xfffffe00079c6caf __TEXT.__cstring        iomfb_IdleDetectorIndex_VRRBurnInPreventionCooldown_enabled
+0xfffffe00079c6ceb __TEXT.__cstring        iomfb_IdleDetectorIndex_VRRBurnInPreventionCooldown_threshold
+0xfffffe00079c6d29 __TEXT.__cstring        iomfb_IdleDetectorIndex_PowerGateFrontEnd_enabled
+0xfffffe00079c6d5b __TEXT.__cstring        iomfb_IdleDetectorIndex_PowerGateFrontEnd_threshold
+0xfffffe00079c6d8f __TEXT.__cstring        iomfb_IdleDetectorIndex_DisplayWall_enabled
+0xfffffe00079c6dbb __TEXT.__cstring        iomfb_IdleDetectorIndex_DisplayWall_threshold
+0xfffffe00079c6de9 __TEXT.__cstring        iomfb_GamutConversionLocation_PostBlend
+0xfffffe00079c6e11 __TEXT.__cstring        iomfb_GamutConversionLocation_Pipe0
+0xfffffe00079c6e35 __TEXT.__cstring        iomfb_GamutConversionLocation_Pipe1
+0xfffffe00079c6e59 __TEXT.__cstring        iomfb_RuntimeProperty_blendOutCSCMethod
+0xfffffe00079c6e81 __TEXT.__cstring        iomfb_RuntimeProperty_CMDegammaMethod
+0xfffffe00079c6ea7 __TEXT.__cstring        iomfb_RuntimeProperty_DisplayWallFBs
+0xfffffe00079c6ecc __TEXT.__cstring        iomfb_RuntimeProperty_DisplayWallConfig
+0xfffffe00079c6ef4 __TEXT.__cstring        iomfb_RuntimeProperty_DisplayWallTiming
+0xfffffe00079c6f1c __TEXT.__cstring        iomfb_RuntimeProperty_SupportsHeadOfLineSwaps
+0xfffffe00079c6f4a __TEXT.__cstring        iomfb_RuntimeProperty_SupportsSecureIndicator
+0xfffffe00079c6f78 __TEXT.__cstring        iomfb_RuntimeProperty_requestPixelBacklightModulation
+0xfffffe00079c6fae __TEXT.__cstring        iomfb_RuntimeProperty_pixelBacklightModulationForceState
+0xfffffe00079c6fe7 __TEXT.__cstring        iomfb_RuntimeProperty_DPBDriverOverrideLPFControls
+0xfffffe00079c701a __TEXT.__cstring        iomfb_RuntimeProperty_DPBDriverLPFControlValue
+0xfffffe00079c7049 __TEXT.__cstring        iomfb_RuntimeProperty_DPBDriverLPFControl2Value
+0xfffffe00079c7079 __TEXT.__cstring        iomfb_RuntimeProperty_DPBDriverOverrideMaxSlopes
+0xfffffe00079c70aa __TEXT.__cstring        iomfb_RuntimeProperty_DPBDriverLPFMaxSlopeValue
+0xfffffe00079c70da __TEXT.__cstring        iomfb_RuntimeProperty_DPBDriverMaxSlopeValue
+0xfffffe00079c7107 __TEXT.__cstring        iomfb_RuntimeProperty_DPBDriverOverrideBacklight
+0xfffffe00079c7138 __TEXT.__cstring        iomfb_RuntimeProperty_DPBDriverBacklightValue
+0xfffffe00079c7166 __TEXT.__cstring        iomfb_RuntimeProperty_enableGammaCorrection
+0xfffffe00079c7192 __TEXT.__cstring        iomfb_RuntimeProperty_brightnessCorrection
+0xfffffe00079c71bd __TEXT.__cstring        iomfb_RuntimeProperty_brightnessCorrectionB
+0xfffffe00079c71e9 __TEXT.__cstring        iomfb_RuntimeProperty_brightnessLevel
+0xfffffe00079c720f __TEXT.__cstring        iomfb_RuntimeProperty_indicatorBrightnessNits
+0xfffffe00079c723d __TEXT.__cstring        iomfb_RuntimeProperty_secureContentFactor
+0xfffffe00079c7267 __TEXT.__cstring        iomfb_RuntimeProperty_secureIndicatorFactor
+0xfffffe00079c7293 __TEXT.__cstring        iomfb_RuntimeProperty_secureIndicatorSDRFactor
+0xfffffe00079c72c2 __TEXT.__cstring        iomfb_RuntimeProperty_indicatorNitsCap
+0xfffffe00079c72e9 __TEXT.__cstring        iomfb_RuntimeProperty_brightnessLevelMA
+0xfffffe00079c7311 __TEXT.__cstring        iomfb_RuntimeProperty_brightnessLevelIDAC
+0xfffffe00079c733b __TEXT.__cstring        iomfb_RuntimeProperty_contrastEnhancerStrength
+0xfffffe00079c736a __TEXT.__cstring        iomfb_RuntimeProperty_brightnessCompensationEnable
+0xfffffe00079c739d __TEXT.__cstring        iomfb_RuntimeProperty_temperatureCompensationEnable
+0xfffffe00079c73d1 __TEXT.__cstring        iomfb_RuntimeProperty_enableDither
+0xfffffe00079c73f4 __TEXT.__cstring        iomfb_RuntimeProperty_enableDarkEnhancer
+0xfffffe00079c741d __TEXT.__cstring        iomfb_RuntimeProperty_enableADBEColorManager
+0xfffffe00079c744a __TEXT.__cstring        iomfb_RuntimeProperty_enableWhitePointCorrection
+0xfffffe00079c747b __TEXT.__cstring        iomfb_RuntimeProperty_enable2DUniformityCorrection
+0xfffffe00079c74ae __TEXT.__cstring        iomfb_RuntimeProperty_enable2DTemperatureCorrection
+0xfffffe00079c74e2 __TEXT.__cstring        iomfb_RuntimeProperty_enableDefaultTemperatureCorrection
+0xfffffe00079c751b __TEXT.__cstring        iomfb_RuntimeProperty_defaultTemperatureCorrectionValue
+0xfffffe00079c7553 __TEXT.__cstring        iomfb_RuntimeProperty_use0DSensorFor2DTemp
+0xfffffe00079c757e __TEXT.__cstring        iomfb_RuntimeProperty_TemperatureStructVersion2D
+0xfffffe00079c75af __TEXT.__cstring        iomfb_RuntimeProperty_digitalDimmingLevel
+0xfffffe00079c75d9 __TEXT.__cstring        iomfb_RuntimeProperty_set0DTempSensorValue
+0xfffffe00079c7604 __TEXT.__cstring        iomfb_RuntimeProperty_uniformity2D
+0xfffffe00079c7627 __TEXT.__cstring        iomfb_RuntimeProperty_enableAmbientLightSensorStatistics
+0xfffffe00079c7660 __TEXT.__cstring        iomfb_RuntimeProperty_enableALSSFCAMStats
+0xfffffe00079c768a __TEXT.__cstring        iomfb_RuntimeProperty_enableSubPixelLayoutCompensation
+0xfffffe00079c76c1 __TEXT.__cstring        iomfb_RuntimeProperty_splxMapAwareMode
+0xfffffe00079c76e8 __TEXT.__cstring        iomfb_RuntimeProperty_enablePartialUpdate
+0xfffffe00079c7712 __TEXT.__cstring        iomfb_RuntimeProperty_enableLatLeakComp
+0xfffffe00079c773a __TEXT.__cstring        iomfb_RuntimeProperty_enableHighGrayOD
+0xfffffe00079c7761 __TEXT.__cstring        iomfb_RuntimeProperty_ambientBrightness
+0xfffffe00079c7789 __TEXT.__cstring        iomfb_RuntimeProperty_enableGamutMapper
+0xfffffe00079c77b1 __TEXT.__cstring        iomfb_RuntimeProperty_enableStats
+0xfffffe00079c77d3 __TEXT.__cstring        iomfb_RuntimeProperty_forceEnableLPRSwaps
+0xfffffe00079c77fd __TEXT.__cstring        iomfb_RuntimeProperty_maxAvgBpp
+0xfffffe00079c781d __TEXT.__cstring        iomfb_RuntimeProperty_maxPeakBpp
+0xfffffe00079c783e __TEXT.__cstring        iomfb_RuntimeProperty_clockRatio
+0xfffffe00079c785f __TEXT.__cstring        iomfb_RuntimeProperty_debugUInt32
+0xfffffe00079c7881 __TEXT.__cstring        iomfb_RuntimeProperty_DisplayWallAvailFBs
+0xfffffe00079c78ab __TEXT.__cstring        iomfb_RuntimeProperty_vrrDivisor
+0xfffffe00079c78cc __TEXT.__cstring        iomfb_RuntimeProperty_vrrVersion
+0xfffffe00079c78ed __TEXT.__cstring        iomfb_RuntimeProperty_darkBoot
+0xfffffe00079c790c __TEXT.__cstring        iomfb_RuntimeProperty_wideGamutPassthrough
+0xfffffe00079c7937 __TEXT.__cstring        iomfb_RuntimeProperty_enableFiltersNoRewriteMode
+0xfffffe00079c7968 __TEXT.__cstring        iomfb_RuntimeProperty_enablePLCMode
+0xfffffe00079c798c __TEXT.__cstring        iomfb_RuntimeProperty_enableABG
+0xfffffe00079c79ac __TEXT.__cstring        iomfb_RuntimeProperty_enableABGDynamicMap
+0xfffffe00079c79d6 __TEXT.__cstring        iomfb_RuntimeProperty_selectABGDynamicMap
+0xfffffe00079c7a00 __TEXT.__cstring        iomfb_RuntimeProperty_disableDBSR
+0xfffffe00079c7a22 __TEXT.__cstring        iomfb_RuntimeProperty_enableDBM
+0xfffffe00079c7a42 __TEXT.__cstring        iomfb_RuntimeProperty_enableBIC
+0xfffffe00079c7a62 __TEXT.__cstring        iomfb_RuntimeProperty_enableBICUpdates
+0xfffffe00079c7a89 __TEXT.__cstring        iomfb_RuntimeProperty_enableSBIM
+0xfffffe00079c7aaa __TEXT.__cstring        iomfb_RuntimeProperty_useBAEForSBIM
+0xfffffe00079c7ace __TEXT.__cstring        iomfb_RuntimeProperty_enableTBIC
+0xfffffe00079c7aef __TEXT.__cstring        iomfb_RuntimeProperty_enableTBICAlphaOverride
+0xfffffe00079c7b1d __TEXT.__cstring        iomfb_RuntimeProperty_valueTBICAlphaOverride
+0xfffffe00079c7b4a __TEXT.__cstring        iomfb_RuntimeProperty_enableGPDeringing
+0xfffffe00079c7b72 __TEXT.__cstring        iomfb_RuntimeProperty_enableGPAlphaDiv
+0xfffffe00079c7b99 __TEXT.__cstring        iomfb_RuntimeProperty_twilightStrength
+0xfffffe00079c7bc0 __TEXT.__cstring        iomfb_RuntimeProperty_ammoliteStrength
+0xfffffe00079c7be7 __TEXT.__cstring        iomfb_RuntimeProperty_ccParamsVersion
+0xfffffe00079c7c0d __TEXT.__cstring        iomfb_RuntimeProperty_ccMinNitsConfig
+0xfffffe00079c7c33 __TEXT.__cstring        iomfb_RuntimeProperty_apriTempOverride
+0xfffffe00079c7c5a __TEXT.__cstring        iomfb_RuntimeProperty_apriBrightOverride
+0xfffffe00079c7c83 __TEXT.__cstring        iomfb_RuntimeProperty_bthgOverride
+0xfffffe00079c7ca6 __TEXT.__cstring        iomfb_RuntimeProperty_bthrbOverride
+0xfffffe00079c7cca __TEXT.__cstring        iomfb_RuntimeProperty_enableAPri
+0xfffffe00079c7ceb __TEXT.__cstring        iomfb_RuntimeProperty_enableDBTH
+0xfffffe00079c7d0c __TEXT.__cstring        iomfb_RuntimeProperty_allocateDefaultFramebuffer
+0xfffffe00079c7d3d __TEXT.__cstring        iomfb_RuntimeProperty_HardPowerEvent
+0xfffffe00079c7d62 __TEXT.__cstring        iomfb_RuntimeProperty_ESDThresholdMS
+0xfffffe00079c7d87 __TEXT.__cstring        iomfb_RuntimeProperty_enableKernelTests
+0xfffffe00079c7daf __TEXT.__cstring        iomfb_RuntimeProperty_disableDisplayOptimize
+0xfffffe00079c7ddc __TEXT.__cstring        iomfb_RuntimeProperty_ConfigureQMSVRR
+0xfffffe00079c7e02 __TEXT.__cstring        iomfb_RuntimeProperty_enableEven60FPSFrames
+0xfffffe00079c7e2e __TEXT.__cstring        iomfb_RuntimeProperty_panicOnHungSwap
+0xfffffe00079c7e54 __TEXT.__cstring        iomfb_RuntimeProperty_fakeTconESDEvent
+0xfffffe00079c7e7b __TEXT.__cstring        iomfb_RuntimeProperty_registerTraceEnable
+0xfffffe00079c7ea5 __TEXT.__cstring        iomfb_RuntimeProperty_frameInfoTraceEnable
+0xfffffe00079c7ed0 __TEXT.__cstring        iomfb_RuntimeProperty_QoSDebug
+0xfffffe00079c7eef __TEXT.__cstring        iomfb_RuntimeProperty_enablePowerGateDCS
+0xfffffe00079c7f18 __TEXT.__cstring        iomfb_RuntimeProperty_enableVideoCaching
+0xfffffe00079c7f41 __TEXT.__cstring        iomfb_RuntimeProperty_dummySystemWantsCaching
+0xfffffe00079c7f6f __TEXT.__cstring        iomfb_RuntimeProperty_disableSystemCachingInput
+0xfffffe00079c7f9f __TEXT.__cstring        iomfb_RuntimeProperty_enableMockALSSCapture
+0xfffffe00079c7fcb __TEXT.__cstring        iomfb_RuntimeProperty_APTFixedRR
+0xfffffe00079c7fec __TEXT.__cstring        iomfb_RuntimeProperty_AODFixedRR
+0xfffffe00079c800d __TEXT.__cstring        iomfb_RuntimeProperty_AODWaitForWalkdown
+0xfffffe00079c8036 __TEXT.__cstring        iomfb_RuntimeProperty_DCPIndex
+0xfffffe00079c8055 __TEXT.__cstring        iomfb_RuntimeProperty_enablePCCLogs
+0xfffffe00079c8079 __TEXT.__cstring        iomfb_RuntimeProperty_enableAPTLogs
+0xfffffe00079c809d __TEXT.__cstring        iomfb_RuntimeProperty_enableAPT_CDFD
+0xfffffe00079c80c2 __TEXT.__cstring        iomfb_RuntimeProperty_enableAPT_PRC
+0xfffffe00079c80e6 __TEXT.__cstring        iomfb_RuntimeProperty_enableAPTConfigExpired
+0xfffffe00079c8113 __TEXT.__cstring        iomfb_RuntimeProperty_enableAPT_CA
+0xfffffe00079c8136 __TEXT.__cstring        iomfb_RuntimeProperty_BLNitsCap
+0xfffffe00079c8156 __TEXT.__cstring        iomfb_RuntimeProperty_RTPLCBLNitsCap
+0xfffffe00079c817b __TEXT.__cstring        iomfb_RuntimeProperty_RTPLCBLNitsScaler
+0xfffffe00079c81a3 __TEXT.__cstring        iomfb_RuntimeProperty_RTPLCNitsThresh
+0xfffffe00079c81c9 __TEXT.__cstring        iomfb_RuntimeProperty_enableAPTEvents
+0xfffffe00079c81ef __TEXT.__cstring        iomfb_RuntimeProperty_APTEventsMask
+0xfffffe00079c8213 __TEXT.__cstring        iomfb_RuntimeProperty_APTEventsMaskHi
+0xfffffe00079c8239 __TEXT.__cstring        iomfb_RuntimeProperty_enableNormalMode
+0xfffffe00079c8260 __TEXT.__cstring        iomfb_RuntimeProperty_enableAPTDefaultGray
+0xfffffe00079c828b __TEXT.__cstring        iomfb_RuntimeProperty_APTDefaultGrayValue
+0xfffffe00079c82b5 __TEXT.__cstring        iomfb_RuntimeProperty_StatsTapPoint
+0xfffffe00079c82d9 __TEXT.__cstring        iomfb_RuntimeProperty_enableFrameInfoForRepeats
+0xfffffe00079c8309 __TEXT.__cstring        iomfb_RuntimeProperty_resetAPT_CA
+0xfffffe00079c832b __TEXT.__cstring        iomfb_RuntimeProperty_publishChargeValues
+0xfffffe00079c8355 __TEXT.__cstring        iomfb_RuntimeProperty_resetChargeValues
+0xfffffe00079c837d __TEXT.__cstring        iomfb_RuntimeProperty_panicOnChargeOOB
+0xfffffe00079c83a4 __TEXT.__cstring        iomfb_RuntimeProperty_panicOnChargeParity
+0xfffffe00079c83ce __TEXT.__cstring        iomfb_RuntimeProperty_panicOnStuckPolarity
+0xfffffe00079c83f9 __TEXT.__cstring        iomfb_RuntimeProperty_limitRefreshRate
+0xfffffe00079c8420 __TEXT.__cstring        iomfb_RuntimeProperty_midporchRegion
+0xfffffe00079c8445 __TEXT.__cstring        iomfb_RuntimeProperty_exportCRCAtVBI
+0xfffffe00079c846a __TEXT.__cstring        iomfb_RuntimeProperty_IdleCachingMethod
+0xfffffe00079c8492 __TEXT.__cstring        iomfb_RuntimeProperty_enablePCCCabal
+0xfffffe00079c84b7 __TEXT.__cstring        iomfb_RuntimeProperty_pccStabilityThreshold
+0xfffffe00079c84e3 __TEXT.__cstring        iomfb_RuntimeProperty_pccStabilityThresholdAOT
+0xfffffe00079c8512 __TEXT.__cstring        iomfb_RuntimeProperty_supportICCProfile
+0xfffffe00079c853a __TEXT.__cstring        iomfb_RuntimeProperty_isRGBMultiPlaneSupportEnabled
+0xfffffe00079c856e __TEXT.__cstring        iomfb_RuntimeProperty_supportsCursorOnSCLregion
+0xfffffe00079c859e __TEXT.__cstring        iomfb_RuntimeProperty_isYUVSupportEnabled
+0xfffffe00079c85c8 __TEXT.__cstring        iomfb_RuntimeProperty_isYUVPackedUnSupported
+0xfffffe00079c85f5 __TEXT.__cstring        iomfb_RuntimeProperty_isYUV420UnSupported
+0xfffffe00079c861f __TEXT.__cstring        iomfb_RuntimeProperty_isBlendDisabled
+0xfffffe00079c8645 __TEXT.__cstring        iomfb_RuntimeProperty_maxCompressedSrcSurfaceWidth
+0xfffffe00079c8678 __TEXT.__cstring        iomfb_RuntimeProperty_asyncSwapDisabled
+0xfffffe00079c86a0 __TEXT.__cstring        iomfb_RuntimeProperty_isFlipDisabled
+0xfffffe00079c86c5 __TEXT.__cstring        iomfb_RuntimeProperty_sclCursorSwapFailed
+0xfffffe00079c86ef __TEXT.__cstring        iomfb_RuntimeProperty_support2DBL
+0xfffffe00079c8711 __TEXT.__cstring        iomfb_RuntimeProperty_supportGPLite
+0xfffffe00079c8735 __TEXT.__cstring        iomfb_RuntimeProperty_sharedDisplay
+0xfffffe00079c8759 __TEXT.__cstring        iomfb_RuntimeProperty_supportHDR
+0xfffffe00079c877a __TEXT.__cstring        iomfb_RuntimeProperty_enablePCCTrinity
+0xfffffe00079c87a1 __TEXT.__cstring        iomfb_RuntimeProperty_enable0DBLCTrinity
+0xfffffe00079c87ca __TEXT.__cstring        iomfb_RuntimeProperty_enablePCC
+0xfffffe00079c87ea __TEXT.__cstring        iomfb_RuntimeProperty_enablePCC0DBLC
+0xfffffe00079c880f __TEXT.__cstring        iomfb_RuntimeProperty_enablePCC2D
+0xfffffe00079c8831 __TEXT.__cstring        iomfb_RuntimeProperty_enableRCA
+0xfffffe00079c8851 __TEXT.__cstring        iomfb_RuntimeProperty_enableRR
+0xfffffe00079c8870 __TEXT.__cstring        iomfb_RuntimeProperty_enableRPM
+0xfffffe00079c8890 __TEXT.__cstring        iomfb_RuntimeProperty_enableRTR
+0xfffffe00079c88b0 __TEXT.__cstring        iomfb_RuntimeProperty_enableNESR
+0xfffffe00079c88d1 __TEXT.__cstring        iomfb_RuntimeProperty_enableRRBP
+0xfffffe00079c88f2 __TEXT.__cstring        iomfb_RuntimeProperty_enableRRBPGainOverride
+0xfffffe00079c891f __TEXT.__cstring        iomfb_RuntimeProperty_RDLCAngleOverride
+0xfffffe00079c8947 __TEXT.__cstring        iomfb_RuntimeProperty_enableRDLC
+0xfffffe00079c8968 __TEXT.__cstring        iomfb_RuntimeProperty_disableRCAWL
+0xfffffe00079c898b __TEXT.__cstring        iomfb_RuntimeProperty_bypassPCC2DLed
+0xfffffe00079c89b0 __TEXT.__cstring        iomfb_RuntimeProperty_PCC2DLedAccelOut
+0xfffffe00079c89d7 __TEXT.__cstring        iomfb_RuntimeProperty_PCC2DLedLog
+0xfffffe00079c89f9 __TEXT.__cstring        iomfb_RuntimeProperty_disablePCC2DBrc
+0xfffffe00079c8a1f __TEXT.__cstring        iomfb_RuntimeProperty_GCPEnabled
+0xfffffe00079c8a40 __TEXT.__cstring        iomfb_RuntimeProperty_GCPManuallyControlled
+0xfffffe00079c8a6c __TEXT.__cstring        iomfb_RuntimeProperty_GCPStrength
+0xfffffe00079c8a8e __TEXT.__cstring        iomfb_RuntimeProperty_ExternalAppleLook
+0xfffffe00079c8ab6 __TEXT.__cstring        iomfb_RuntimeProperty_GCPRangeMapGamma
+0xfffffe00079c8add __TEXT.__cstring        iomfb_RuntimeProperty_GCPDisablesTwilightLumaComp
+0xfffffe00079c8b0f __TEXT.__cstring        iomfb_RuntimeProperty_GCPBypassesEDRPixels
+0xfffffe00079c8b3a __TEXT.__cstring        iomfb_RuntimeProperty_DisableInternalAppleLook
+0xfffffe00079c8b69 __TEXT.__cstring        iomfb_RuntimeProperty_disableTempComp
+0xfffffe00079c8b8f __TEXT.__cstring        iomfb_RuntimeProperty_doPODBoost
+0xfffffe00079c8bb0 __TEXT.__cstring        iomfb_RuntimeProperty_enableProxSensing
+0xfffffe00079c8bd8 __TEXT.__cstring        iomfb_RuntimeProperty_proxOcclusionLevel
+0xfffffe00079c8c01 __TEXT.__cstring        iomfb_RuntimeProperty_PODBoost
+0xfffffe00079c8c20 __TEXT.__cstring        iomfb_RuntimeProperty_setDispIntGPIO
+0xfffffe00079c8c45 __TEXT.__cstring        iomfb_RuntimeProperty_aptQuanta
+0xfffffe00079c8c65 __TEXT.__cstring        iomfb_RuntimeProperty_aptQuantaTransitionTimeoutMs
+0xfffffe00079c8c98 __TEXT.__cstring        iomfb_RuntimeProperty_UIVibrancyBoost
+0xfffffe00079c8cbe __TEXT.__cstring        iomfb_RuntimeProperty_UIVibrancy
+0xfffffe00079c8cdf __TEXT.__cstring        iomfb_RuntimeProperty_edrScaleinGP
+0xfffffe00079c8d02 __TEXT.__cstring        iomfb_RuntimeProperty_modeBlm
+0xfffffe00079c8d20 __TEXT.__cstring        iomfb_RuntimeProperty_PCCNormBrightOut
+0xfffffe00079c8d47 __TEXT.__cstring        iomfb_RuntimeProperty_BLMVLEDManual
+0xfffffe00079c8d6b __TEXT.__cstring        iomfb_RuntimeProperty_BLMAHOutputFreq
+0xfffffe00079c8d91 __TEXT.__cstring        iomfb_RuntimeProperty_BLMAHMode
+0xfffffe00079c8db1 __TEXT.__cstring        iomfb_RuntimeProperty_BLMPLimitCfg
+0xfffffe00079c8dd4 __TEXT.__cstring        iomfb_RuntimeProperty_enableBLMSloper
+0xfffffe00079c8dfa __TEXT.__cstring        iomfb_RuntimeProperty_enableLAC
+0xfffffe00079c8e1a __TEXT.__cstring        iomfb_RuntimeProperty_BLMAHUPCount
+0xfffffe00079c8e3d __TEXT.__cstring        iomfb_RuntimeProperty_M3DiagsTimeout
+0xfffffe00079c8e62 __TEXT.__cstring        iomfb_RuntimeProperty_DisableBConBoot
+0xfffffe00079c8e88 __TEXT.__cstring        iomfb_RuntimeProperty_BLMPowergateEnable
+0xfffffe00079c8eb1 __TEXT.__cstring        iomfb_RuntimeProperty_allowAnnouncingPTS
+0xfffffe00079c8eda __TEXT.__cstring        iomfb_RuntimeProperty_enableLinearToPanel
+0xfffffe00079c8f04 __TEXT.__cstring        iomfb_RuntimeProperty_enableAPT_PDC
+0xfffffe00079c8f28 __TEXT.__cstring        iomfb_RuntimeProperty_enableAPT_PDC_PM
+0xfffffe00079c8f4f __TEXT.__cstring        iomfb_RuntimeProperty_enableAPT_PDC_Repeat
+0xfffffe00079c8f7a __TEXT.__cstring        iomfb_RuntimeProperty_PDCGlobalTemp
+0xfffffe00079c8f9e __TEXT.__cstring        iomfb_RuntimeProperty_PDCSettleCount
+0xfffffe00079c8fc3 __TEXT.__cstring        iomfb_RuntimeProperty_PDCSaveLongFrames
+0xfffffe00079c8feb __TEXT.__cstring        iomfb_RuntimeProperty_PDCSaveRepeatUnstablePCC
+0xfffffe00079c901a __TEXT.__cstring        iomfb_RuntimeProperty_PDCEntryTime
+0xfffffe00079c903d __TEXT.__cstring        iomfb_RuntimeProperty_PDCExitTime
+0xfffffe00079c905f __TEXT.__cstring        iomfb_RuntimeProperty_PDCAlwaysOnNits
+0xfffffe00079c9085 __TEXT.__cstring        iomfb_RuntimeProperty_PDCContentSwitchCount
+0xfffffe00079c90b1 __TEXT.__cstring        iomfb_RuntimeProperty_pccLumaGammaFactor
+0xfffffe00079c90da __TEXT.__cstring        iomfb_RuntimeProperty_MaxUABoost
+0xfffffe00079c90fb __TEXT.__cstring        iomfb_RuntimeProperty_PDCCutoffLux
+0xfffffe00079c911e __TEXT.__cstring        iomfb_RuntimeProperty_PDCExitCount
+0xfffffe00079c9141 __TEXT.__cstring        iomfb_RuntimeProperty_overdriveCompCutoff
+0xfffffe00079c916b __TEXT.__cstring        iomfb_RuntimeProperty_hgodCutoff
+0xfffffe00079c918c __TEXT.__cstring        iomfb_RuntimeProperty_enableAOT
+0xfffffe00079c91ac __TEXT.__cstring        iomfb_RuntimeProperty_vshHistVal
+0xfffffe00079c91cd __TEXT.__cstring        iomfb_RuntimeProperty_contrastEnhancerCorrectionFactor
+0xfffffe00079c9204 __TEXT.__cstring        iomfb_RuntimeProperty_proxScanPlan
+0xfffffe00079c9227 __TEXT.__cstring        iomfb_RuntimeProperty_proxScanPosition
+0xfffffe00079c924e __TEXT.__cstring        iomfb_RuntimeProperty_SWSTemp
+0xfffffe00079c926c __TEXT.__cstring        iomfb_RuntimeProperty_forceAOTARMode
+0xfffffe00079c9291 __TEXT.__cstring        iomfb_RuntimeProperty_emissionFrequency
+0xfffffe00079c92b9 __TEXT.__cstring        iomfb_RuntimeProperty_supportsAOTPowerSaving
+0xfffffe00079c92e6 __TEXT.__cstring        iomfb_RuntimeProperty_hingeAngleOverrideValue
+0xfffffe00079c9314 __TEXT.__cstring        iomfb_RuntimeProperty_enableHingeAngleOverride
+0xfffffe00079c9343 __TEXT.__cstring        iomfb_RuntimeProperty_supportsAOT1HzOptimizations
+0xfffffe00079c9375 __TEXT.__cstring        iomfb_RuntimeProperty_aotmultiRefresh
+0xfffffe00079c939b __TEXT.__cstring        iomfb_RuntimeProperty_enableSPUC
+0xfffffe00079c93bc __TEXT.__cstring        iomfb_RuntimeProperty_enableQETC
+0xfffffe00079c93dd __TEXT.__cstring        iomfb_RuntimeProperty_enableTLSC
+0xfffffe00079c93fe __TEXT.__cstring        iomfb_RuntimeProperty_clearUSPUCData
+0xfffffe00079c9423 __TEXT.__cstring        iomfb_RuntimeProperty_USPUCDefaultData
+0xfffffe00079c944a __TEXT.__cstring        iomfb_RuntimeProperty_enableBLMAHOutputLog
+0xfffffe00079c9475 __TEXT.__cstring        iomfb_RuntimeProperty_enableBLMAHStatsLog
+0xfffffe00079c949f __TEXT.__cstring        iomfb_RuntimeProperty_enableBLMStandby
+0xfffffe00079c94c6 __TEXT.__cstring        iomfb_RuntimeProperty_enableVUC
+0xfffffe00079c94e6 __TEXT.__cstring        iomfb_RuntimeProperty_enableHBLD
+0xfffffe00079c9507 __TEXT.__cstring        iomfb_RuntimeProperty_HBLDNitsRRMax
+0xfffffe00079c952b __TEXT.__cstring        iomfb_RuntimeProperty_HBLDDimmingFactorMin
+0xfffffe00079c9556 __TEXT.__cstring        iomfb_RuntimeProperty_enableIRDC
+0xfffffe00079c9577 __TEXT.__cstring        iomfb_RuntimeProperty_IRDCFrameReset
+0xfffffe00079c959c __TEXT.__cstring        iomfb_RuntimeProperty_IRDCFrameMaxResetCount
+0xfffffe00079c95c9 __TEXT.__cstring        iomfb_RuntimeProperty_IRDCFrameMinResetCount
+0xfffffe00079c95f6 __TEXT.__cstring        iomfb_RuntimeProperty_IRDCEMPEnable
+0xfffffe00079c961a __TEXT.__cstring        iomfb_RuntimeProperty_IRDCACCEnable
+0xfffffe00079c963e __TEXT.__cstring        iomfb_RuntimeProperty_IRDCTempOverride
+0xfffffe00079c9665 __TEXT.__cstring        iomfb_RuntimeProperty_DSCState
+0xfffffe00079c9684 __TEXT.__cstring        iomfb_RuntimeProperty_DSCBpp
+0xfffffe00079c96a1 __TEXT.__cstring        iomfb_RuntimeProperty_limit_max_physical_brightness
+0xfffffe00079c96d5 __TEXT.__cstring        iomfb_RuntimeProperty_enablePTUC
+0xfffffe00079c96f6 __TEXT.__cstring        iomfb_RuntimeProperty_PTUCTempOverride
+0xfffffe00079c971d __TEXT.__cstring        iomfb_RuntimeProperty_PTUCAvgTempOption
+0xfffffe00079c9745 __TEXT.__cstring        iomfb_RuntimeProperty_PTUCAvgTempGridPos
+0xfffffe00079c976e __TEXT.__cstring        iomfb_RuntimeProperty_enableRTPLC
+0xfffffe00079c9790 __TEXT.__cstring        iomfb_RuntimeProperty_enableRTPLCRT
+0xfffffe00079c97b4 __TEXT.__cstring        iomfb_RuntimeProperty_enableRTPLCFD
+0xfffffe00079c97d8 __TEXT.__cstring        iomfb_RuntimeProperty_enableRTPLCNitsCap
+0xfffffe00079c9801 __TEXT.__cstring        iomfb_RuntimeProperty_enableRTPLCPTC
+0xfffffe00079c9826 __TEXT.__cstring        iomfb_RuntimeProperty_enableRTPLCFixedKnee
+0xfffffe00079c9851 __TEXT.__cstring        iomfb_RuntimeProperty_enableRTPLCFDBicMult
+0xfffffe00079c987c __TEXT.__cstring        iomfb_RuntimeProperty_usePodBoostAtRTPLCFDLUT
+0xfffffe00079c98aa __TEXT.__cstring        iomfb_RuntimeProperty_RTPLCRecoveryCoeff
+0xfffffe00079c98d3 __TEXT.__cstring        iomfb_RuntimeProperty_enableSWS
+0xfffffe00079c98f3 __TEXT.__cstring        iomfb_RuntimeProperty_enableReplayInVMAOD
+0xfffffe00079c991d __TEXT.__cstring        iomfb_RuntimeProperty_enablePixelCapture
+0xfffffe00079c9946 __TEXT.__cstring        iomfb_RuntimeProperty_PixelCaptureConfig
+0xfffffe00079c996f __TEXT.__cstring        iomfb_RuntimeProperty_PixelCaptureBlockMask
+0xfffffe00079c999b __TEXT.__cstring        iomfb_RuntimeProperty_GP0PixelCaptureLocation
+0xfffffe00079c99c9 __TEXT.__cstring        iomfb_RuntimeProperty_GP1PixelCaptureLocation
+0xfffffe00079c99f7 __TEXT.__cstring        iomfb_RuntimeProperty_applyBrightnessProps
+0xfffffe00079c9a22 __TEXT.__cstring        iomfb_RuntimeProperty_BlendPixelCaptureLocation
+0xfffffe00079c9a52 __TEXT.__cstring        iomfb_RuntimeProperty_CMPixelCaptureLocation
+0xfffffe00079c9a7f __TEXT.__cstring        iomfb_RuntimeProperty_PCCBLCPixelCaptureLocation
+0xfffffe00079c9ab0 __TEXT.__cstring        iomfb_RuntimeProperty_WPCPixelCaptureLocation
+0xfffffe00079c9ade __TEXT.__cstring        iomfb_RuntimeProperty_BICSPixelCaptureLocation
+0xfffffe00079c9b0d __TEXT.__cstring        iomfb_RuntimeProperty_TBICSPixelCaptureLocation
+0xfffffe00079c9b3d __TEXT.__cstring        iomfb_RuntimeProperty_RTPLCPixelCaptureLocation
+0xfffffe00079c9b6d __TEXT.__cstring        iomfb_RuntimeProperty_CalCLutPixelCaptureLocation
+0xfffffe00079c9b9f __TEXT.__cstring        iomfb_RuntimeProperty_DisableCalClut
+0xfffffe00079c9bc4 __TEXT.__cstring        iomfb_RuntimeProperty_enableGenLock
+0xfffffe00079c9be8 __TEXT.__cstring        iomfb_RuntimeProperty_genLockFrequency
+0xfffffe00079c9c0f __TEXT.__cstring        iomfb_RuntimeProperty_CCPixelCaptureLocation
+0xfffffe00079c9c3c __TEXT.__cstring        iomfb_RuntimeProperty_GPLiteMaxSrcSz
+0xfffffe00079c9c61 __TEXT.__cstring        iomfb_RuntimeProperty_disableBLKSFComp
+0xfffffe00079c9c88 __TEXT.__cstring        iomfb_RuntimeProperty_enableDisplayTMDpc
+0xfffffe00079c9cb1 __TEXT.__cstring        iomfb_RuntimeProperty_LTHSaveDispPerfBoostEnable
+0xfffffe00079c9ce2 __TEXT.__cstring        iomfb_RuntimeProperty_enablePowerTrace
+0xfffffe00079c9d09 __TEXT.__cstring        iomfb_RuntimeProperty_AoD1HzPanicThreshold
+0xfffffe00079c9d34 __TEXT.__cstring        iomfb_RuntimeProperty_ADCLLoadAll
+0xfffffe00079c9d56 __TEXT.__cstring        iomfb_RuntimeProperty_forceEnableACSS
+0xfffffe00079c9d7c __TEXT.__cstring        iomfb_RuntimeProperty_supportHWSecureAnimation
+0xfffffe00079c9dab __TEXT.__cstring        iomfb_RuntimeProperty_forceSecureAnimationUpdate
+0xfffffe00079c9ddc __TEXT.__cstring        iomfb_RuntimeProperty_enableRegammaRRSupport
+0xfffffe00079c9e09 __TEXT.__cstring        iomfb_RuntimeProperty_forceEnableACSSGenXSensing
+0xfffffe00079c9e3a __TEXT.__cstring        iomfb_RuntimeProperty_DBVInterval
+0xfffffe00079c9e5c __TEXT.__cstring        iomfb_RuntimeProperty_DBVValue
+0xfffffe00079c9e7b __TEXT.__cstring        iomfb_RuntimeProperty_resTransitionType
+0xfffffe00079c9ea3 __TEXT.__cstring        iomfb_RuntimeProperty_resTransitionStrength
+0xfffffe00079c9ecf __TEXT.__cstring        iomfb_RuntimeProperty_TriggerDCPResetRequestFromM3
+0xfffffe00079c9f02 __TEXT.__cstring        iomfb_RuntimeProperty_DCPResetLoopMaxCount
+0xfffffe00079c9f2d __TEXT.__cstring        iomfb_RuntimeProperty_DCPResetLoopWindowSec
+0xfffffe00079c9f59 __TEXT.__cstring        iomfb_RuntimeProperty_calibrationType
+0xfffffe00079c9f7f __TEXT.__cstring        iomfb_RuntimeProperty_isHiloDevice
+0xfffffe00079c9fa2 __TEXT.__cstring        iomfb_RuntimeProperty_GenXHandlerTestCase
+0xfffffe00079c9fcc __TEXT.__cstring        iomfb_RuntimeProperty_enablePulseWidthMaximization
+0xfffffe00079c9fff __TEXT.__cstring        iomfb_RuntimeProperty_FIRST_GAMUT_CONVERSION_LOCATION
+0xfffffe00079ca035 __TEXT.__cstring        iomfb_RuntimeProperty_LAST_GAMUT_CONVERSION_LOCATION
+0xfffffe00079ca06a __TEXT.__cstring        iomfb_RuntimeProperty_dynamicSageLogging
+0xfffffe00079ca093 __TEXT.__cstring        iomfb_RuntimeProperty_supportLFC
+0xfffffe00079ca0b4 __TEXT.__cstring        "%s: can't get boot-arg for property %s\n" @%s:%d
+0xfffffe00079ca0e6 __TEXT.__cstring        const char *IOMFB::get_RTP_boot_arg_name(RuntimeProperty)
+0xfffffe00079ca120 __TEXT.__cstring        BlendOutputCSCMethod
+0xfffffe00079ca135 __TEXT.__cstring        CMDegammaMethod
+0xfffffe00079ca145 __TEXT.__cstring        DisplayWallFBs
+0xfffffe00079ca154 __TEXT.__cstring        DisplayWallConfig
+0xfffffe00079ca166 __TEXT.__cstring        DisplayWallTiming
+0xfffffe00079ca178 __TEXT.__cstring        IOMFBSupportsHeadOfLineSwaps
+0xfffffe00079ca195 __TEXT.__cstring        IOMFBSupportsSecureIndicator
+0xfffffe00079ca1b2 __TEXT.__cstring        requestPixelBacklightModulation
+0xfffffe00079ca1d2 __TEXT.__cstring        forcePixelBacklightModulation
+0xfffffe00079ca1f0 __TEXT.__cstring        overrideLPFControls
+0xfffffe00079ca204 __TEXT.__cstring        LPFControlValue
+0xfffffe00079ca214 __TEXT.__cstring        LPFControl2Value
+0xfffffe00079ca225 __TEXT.__cstring        overrideDPBMaxSlopes
+0xfffffe00079ca23a __TEXT.__cstring        DPBLPFMaxSlopeValue
+0xfffffe00079ca24e __TEXT.__cstring        DPBMaxSlopeValue
+0xfffffe00079ca25f __TEXT.__cstring        overrideBacklight
+0xfffffe00079ca271 __TEXT.__cstring        backlightValue
+0xfffffe00079ca280 __TEXT.__cstring        enableGammaCorrection
+0xfffffe00079ca296 __TEXT.__cstring        brightnessCorrection
+0xfffffe00079ca2ab __TEXT.__cstring        brightnessCorrectionB
+0xfffffe00079ca2c1 __TEXT.__cstring        IOMFBBrightnessLevel
+0xfffffe00079ca2d6 __TEXT.__cstring        IOMFBIndicatorBrightnessNits
+0xfffffe00079ca2f3 __TEXT.__cstring        IOMFBSecureContentFactor
+0xfffffe00079ca30c __TEXT.__cstring        IOMFBSecureIndicatorFactor
+0xfffffe00079ca327 __TEXT.__cstring        IOMFBSecureIndicatorSDRFactor
+0xfffffe00079ca345 __TEXT.__cstring        IOMFBIndicatorNitsCap
+0xfffffe00079ca35b __TEXT.__cstring        IOMFBBrightnessLevelMA
+0xfffffe00079ca372 __TEXT.__cstring        IOMFBBrightnessLevelIDAC
+0xfffffe00079ca38b __TEXT.__cstring        IOMFBContrastEnhancerStrength
+0xfffffe00079ca3a9 __TEXT.__cstring        IOMFBBrightnessCompensationEnable
+0xfffffe00079ca3cb __TEXT.__cstring        IOMFBTemperatureCompensationEnable
+0xfffffe00079ca3ee __TEXT.__cstring        enableDither
+0xfffffe00079ca3fb __TEXT.__cstring        enableDarkEnhancer
+0xfffffe00079ca40e __TEXT.__cstring        enableADBEColorManager
+0xfffffe00079ca425 __TEXT.__cstring        enableWhitePointCorrection
+0xfffffe00079ca440 __TEXT.__cstring        enable2DTemperatureCorrection
+0xfffffe00079ca45e __TEXT.__cstring        enableDefaultTemperatureCorrection
+0xfffffe00079ca481 __TEXT.__cstring        defaultTemperatureCorrectionValue
+0xfffffe00079ca4a3 __TEXT.__cstring        use0DSensorFor2DTemp
+0xfffffe00079ca4b8 __TEXT.__cstring        TemperatureStructVersion2D
+0xfffffe00079ca4d3 __TEXT.__cstring        IOMFBDigitalDimmingLevel
+0xfffffe00079ca4ec __TEXT.__cstring        set0DTempSensorValue
+0xfffffe00079ca501 __TEXT.__cstring        uniformity2D
+0xfffffe00079ca50e __TEXT.__cstring        enableAmbientLightSensorStatistics
+0xfffffe00079ca531 __TEXT.__cstring        enableALSSFCAMStats
+0xfffffe00079ca545 __TEXT.__cstring        enableSubPixelLayoutCompensation
+0xfffffe00079ca566 __TEXT.__cstring        splxMapAwareMode
+0xfffffe00079ca577 __TEXT.__cstring        enablePartialUpdate
+0xfffffe00079ca58b __TEXT.__cstring        enableLatLeakComp
+0xfffffe00079ca59d __TEXT.__cstring        enableHighGrayOD
+0xfffffe00079ca5ae __TEXT.__cstring        AmbientBrightness
+0xfffffe00079ca5c0 __TEXT.__cstring        enableGamutMapper
+0xfffffe00079ca5d2 __TEXT.__cstring        enableStats
+0xfffffe00079ca5de __TEXT.__cstring        forceEnableLPRSwaps
+0xfffffe00079ca5f2 __TEXT.__cstring        maxAverageBpp
+0xfffffe00079ca600 __TEXT.__cstring        maxPeakBpp
+0xfffffe00079ca60b __TEXT.__cstring        clockRatio
+0xfffffe00079ca616 __TEXT.__cstring        DebugUInt32
+0xfffffe00079ca622 __TEXT.__cstring        DisplayWallAvailFBs
+0xfffffe00079ca636 __TEXT.__cstring        VRRDivisor
+0xfffffe00079ca641 __TEXT.__cstring        VRRVersion
+0xfffffe00079ca64c __TEXT.__cstring        darkBoot
+0xfffffe00079ca655 __TEXT.__cstring        IOMFBWideGamutPassthrough
+0xfffffe00079ca66f __TEXT.__cstring        enableFiltersNoRewriteMode
+0xfffffe00079ca68a __TEXT.__cstring        enablePLCMode
+0xfffffe00079ca698 __TEXT.__cstring        enableABGMode
+0xfffffe00079ca6a6 __TEXT.__cstring        enableABGDynamicMap
+0xfffffe00079ca6ba __TEXT.__cstring        selectABGDynamicMap
+0xfffffe00079ca6ce __TEXT.__cstring        disableDBSR
+0xfffffe00079ca6da __TEXT.__cstring        enableDBMMode
+0xfffffe00079ca6e8 __TEXT.__cstring        enableBICMode
+0xfffffe00079ca6f6 __TEXT.__cstring        enableBICUpdates
+0xfffffe00079ca707 __TEXT.__cstring        enableSBIM
+0xfffffe00079ca712 __TEXT.__cstring        useBAEForSBIM
+0xfffffe00079ca720 __TEXT.__cstring        enableTBIC
+0xfffffe00079ca72b __TEXT.__cstring        enableTBICAlphaOverride
+0xfffffe00079ca743 __TEXT.__cstring        valueTBICAlphaOverride
+0xfffffe00079ca75a __TEXT.__cstring        enableGPDeringing
+0xfffffe00079ca76c __TEXT.__cstring        enableGPAlphaDiv
+0xfffffe00079ca77d __TEXT.__cstring        twilightStrength
+0xfffffe00079ca78e __TEXT.__cstring        ammoliteStrength
+0xfffffe00079ca79f __TEXT.__cstring        ccParamsVersion
+0xfffffe00079ca7af __TEXT.__cstring        ccMinNitsConfig
+0xfffffe00079ca7bf __TEXT.__cstring        ApriTempOverride
+0xfffffe00079ca7d0 __TEXT.__cstring        ApriBrightOverride
+0xfffffe00079ca7e3 __TEXT.__cstring        BthgOverride
+0xfffffe00079ca7f0 __TEXT.__cstring        BthrbOverride
+0xfffffe00079ca7fe __TEXT.__cstring        EnableApri
+0xfffffe00079ca809 __TEXT.__cstring        EnableDBTH
+0xfffffe00079ca814 __TEXT.__cstring        allocateDefaultFramebuffer
+0xfffffe00079ca82f __TEXT.__cstring        debugHardPowerEvent
+0xfffffe00079ca843 __TEXT.__cstring        ESDThresholdMS
+0xfffffe00079ca852 __TEXT.__cstring        EnableKernelTests
+0xfffffe00079ca864 __TEXT.__cstring        DisableDisplayOptimize
+0xfffffe00079ca87b __TEXT.__cstring        QMSVRREnableConfig
+0xfffffe00079ca88e __TEXT.__cstring        EnableEven60FPSFrames
+0xfffffe00079ca8a4 __TEXT.__cstring        PanicOnHungSwap
+0xfffffe00079ca8b4 __TEXT.__cstring        FakeTconESDEvent
+0xfffffe00079ca8c5 __TEXT.__cstring        RuntimeProperty::registerTraceEnable
+0xfffffe00079ca8ea __TEXT.__cstring        RuntimeProperty::frameInfoTraceEnable
+0xfffffe00079ca910 __TEXT.__cstring        QoSDebug
+0xfffffe00079ca919 __TEXT.__cstring        enablePowerGateDCS
+0xfffffe00079ca92c __TEXT.__cstring        enableVideoCaching
+0xfffffe00079ca93f __TEXT.__cstring        dummySystemWantsCaching
+0xfffffe00079ca957 __TEXT.__cstring        disableSystemCachingInput
+0xfffffe00079ca971 __TEXT.__cstring        enableMockALSSCapture
+0xfffffe00079ca987 __TEXT.__cstring        APTFixedRR
+0xfffffe00079ca992 __TEXT.__cstring        AODFixedRR
+0xfffffe00079ca99d __TEXT.__cstring        AODWaitForWalkdown
+0xfffffe00079ca9b0 __TEXT.__cstring        DCPIndex
+0xfffffe00079ca9b9 __TEXT.__cstring        PCCEnableLogs
+0xfffffe00079ca9c7 __TEXT.__cstring        APTEnableLogs
+0xfffffe00079ca9d5 __TEXT.__cstring        APTEnableCDFD
+0xfffffe00079ca9e3 __TEXT.__cstring        APTEnablePRC
+0xfffffe00079ca9f0 __TEXT.__cstring        APTEnableConfigExpired
+0xfffffe00079caa07 __TEXT.__cstring        APTEnableCA
+0xfffffe00079caa13 __TEXT.__cstring        BLNitsCap
+0xfffffe00079caa1d __TEXT.__cstring        RTPLCBLNitsCap
+0xfffffe00079caa2c __TEXT.__cstring        RTPLCBLNitsScaler
+0xfffffe00079caa3e __TEXT.__cstring        RTPLCNitsThresh
+0xfffffe00079caa4e __TEXT.__cstring        APTEnableEvents
+0xfffffe00079caa5e __TEXT.__cstring        APTEventsMask
+0xfffffe00079caa6c __TEXT.__cstring        APTEventsMaskHi
+0xfffffe00079caa7c __TEXT.__cstring        NormalModeEnable
+0xfffffe00079caa8d __TEXT.__cstring        APTEnableDefaultGray
+0xfffffe00079caaa2 __TEXT.__cstring        APTDefaultGrayValue
+0xfffffe00079caab6 __TEXT.__cstring        IOMFBStatsTapPoint
+0xfffffe00079caac9 __TEXT.__cstring        FrameInfoForRepeats
+0xfffffe00079caadd __TEXT.__cstring        APTResetCA
+0xfffffe00079caae8 __TEXT.__cstring        ChargeValuesPublish
+0xfffffe00079caafc __TEXT.__cstring        ChargeValuesReset
+0xfffffe00079cab0e __TEXT.__cstring        APTPanicOnChargeOOB
+0xfffffe00079cab22 __TEXT.__cstring        APTPanicOnChargeParity
+0xfffffe00079cab39 __TEXT.__cstring        APTPanicOnStuckPolarity
+0xfffffe00079cab51 __TEXT.__cstring        APTLimitRefreshRate
+0xfffffe00079cab65 __TEXT.__cstring        SkipRegion
+0xfffffe00079cab70 __TEXT.__cstring        ExportCRCAtVBI
+0xfffffe00079cab7f __TEXT.__cstring        IdleCachingMethod
+0xfffffe00079cab91 __TEXT.__cstring        PCCCabalEnable
+0xfffffe00079caba0 __TEXT.__cstring        PCCStabilityThreshold
+0xfffffe00079cabb6 __TEXT.__cstring        PCCStabilityThresholdAOT
+0xfffffe00079cabcf __TEXT.__cstring        IOMFBSupportsICC
+0xfffffe00079cabe0 __TEXT.__cstring        IOMFBRGBMultiPlaneSupportKey
+0xfffffe00079cabfd __TEXT.__cstring        IOMFBRGBSupportsCursorOnSCLregionKey
+0xfffffe00079cac22 __TEXT.__cstring        IOMFBYUVSupportKey
+0xfffffe00079cac35 __TEXT.__cstring        IOMFBYUVPackedUnSupported
+0xfffffe00079cac4f __TEXT.__cstring        IOMFBYUV420UnSupported
+0xfffffe00079cac66 __TEXT.__cstring        IOMFBBlendDisabledKey
+0xfffffe00079cac7c __TEXT.__cstring        IOMFBCompressedSourceSurfaceWidth
+0xfffffe00079cac9e __TEXT.__cstring        IOMFBAsyncSwapDisabledKey
+0xfffffe00079cacb8 __TEXT.__cstring        IOMFBDisableFlip
+0xfffffe00079cacc9 __TEXT.__cstring        IOMFBSCLCursorSwapFailedKey
+0xfffffe00079cace5 __TEXT.__cstring        IOMFBSupports2DBL
+0xfffffe00079cacf7 __TEXT.__cstring        IOMFBSupportsGPLite
+0xfffffe00079cad0b __TEXT.__cstring        IOMFBIntDcpUsedForExtWhenLidClose
+0xfffffe00079cad2d __TEXT.__cstring        IOMFBSupportsHDR10Plus
+0xfffffe00079cad44 __TEXT.__cstring        PCCTrinityEnable
+0xfffffe00079cad55 __TEXT.__cstring        PCC0DBLCTrinityEnable
+0xfffffe00079cad6b __TEXT.__cstring        PCCEnable
+0xfffffe00079cad75 __TEXT.__cstring        PCC0DBLCEnable
+0xfffffe00079cad84 __TEXT.__cstring        PCC2DEnable
+0xfffffe00079cad90 __TEXT.__cstring        RCAEnable
+0xfffffe00079cad9a __TEXT.__cstring        RREnable
+0xfffffe00079cada3 __TEXT.__cstring        RPMEnable
+0xfffffe00079cadad __TEXT.__cstring        RTREnable
+0xfffffe00079cadb7 __TEXT.__cstring        NESREnable
+0xfffffe00079cadc2 __TEXT.__cstring        RRBPEnable
+0xfffffe00079cadcd __TEXT.__cstring        RRBPGainOverride
+0xfffffe00079cadde __TEXT.__cstring        RDLCAngleOverride
+0xfffffe00079cadf0 __TEXT.__cstring        RDLCEnable
+0xfffffe00079cadfb __TEXT.__cstring        RCAWLDisable
+0xfffffe00079cae08 __TEXT.__cstring        BypassPCC2DLed
+0xfffffe00079cae17 __TEXT.__cstring        PCC2DLedAccelOut
+0xfffffe00079cae28 __TEXT.__cstring        PCC2DLedAccelLog
+0xfffffe00079cae39 __TEXT.__cstring        DisablePCC2DBrc
+0xfffffe00079cae49 __TEXT.__cstring        GCPEnabled
+0xfffffe00079cae54 __TEXT.__cstring        GCPManuallyControlled
+0xfffffe00079cae6a __TEXT.__cstring        GCPStrength
+0xfffffe00079cae76 __TEXT.__cstring        ExternalAppleLook
+0xfffffe00079cae88 __TEXT.__cstring        GCPRangeMapGamma
+0xfffffe00079cae99 __TEXT.__cstring        GCPDisablesTwilightLumaComp
+0xfffffe00079caeb5 __TEXT.__cstring        GCPBypassesEDRPixels
+0xfffffe00079caeca __TEXT.__cstring        DisableInternalAppleLook
+0xfffffe00079caee3 __TEXT.__cstring        DisableTempComp
+0xfffffe00079caef3 __TEXT.__cstring        IOMFBDoPODBoost
+0xfffffe00079caf03 __TEXT.__cstring        IOMFBEnableProxSensing
+0xfffffe00079caf1a __TEXT.__cstring        IOMFBProxOcclusionLevel
+0xfffffe00079caf32 __TEXT.__cstring        IOMFBPODBoost
+0xfffffe00079caf40 __TEXT.__cstring        IOMFBSetDispIntGPIO
+0xfffffe00079caf54 __TEXT.__cstring        IOMFBAPTQuanta
+0xfffffe00079caf63 __TEXT.__cstring        IOMFBAPTQuantaTransitionTimeoutMs
+0xfffffe00079caf85 __TEXT.__cstring        UIVibrancyBoost
+0xfffffe00079caf95 __TEXT.__cstring        UIVibrancyEnable
+0xfffffe00079cafa6 __TEXT.__cstring        edrScaleinGP
+0xfffffe00079cafb3 __TEXT.__cstring        ModeBlm
+0xfffffe00079cafbb __TEXT.__cstring        IOMFBTestBacklightDimValue
+0xfffffe00079cafd6 __TEXT.__cstring        BLMVLEDManual
+0xfffffe00079cafe4 __TEXT.__cstring        BLMAHOutputFreq
+0xfffffe00079caff4 __TEXT.__cstring        BLMAHMode
+0xfffffe00079caffe __TEXT.__cstring        BLMPLimitCfg
+0xfffffe00079cb00b __TEXT.__cstring        enableBLMSloper
+0xfffffe00079cb01b __TEXT.__cstring        enableLAC
+0xfffffe00079cb025 __TEXT.__cstring        BLMAHUPCount
+0xfffffe00079cb032 __TEXT.__cstring        M3DiagsTimeout
+0xfffffe00079cb041 __TEXT.__cstring        DisableBConBoot
+0xfffffe00079cb051 __TEXT.__cstring        BLMPowergateEnable
+0xfffffe00079cb064 __TEXT.__cstring        IOMFBAllowAnnouncingPTS
+0xfffffe00079cb07c __TEXT.__cstring        enableLinearToPanel
+0xfffffe00079cb090 __TEXT.__cstring        APTPDCEnable
+0xfffffe00079cb09d __TEXT.__cstring        APTPDCEnablePM
+0xfffffe00079cb0ac __TEXT.__cstring        APTPDCEnableRepeat
+0xfffffe00079cb0bf __TEXT.__cstring        PDCGlobalTemp
+0xfffffe00079cb0cd __TEXT.__cstring        PDCSettleCount
+0xfffffe00079cb0dc __TEXT.__cstring        PDCSaveLongFrames
+0xfffffe00079cb0ee __TEXT.__cstring        PDCSaveRepeatUnstablePCC
+0xfffffe00079cb107 __TEXT.__cstring        PDCEntryTime
+0xfffffe00079cb114 __TEXT.__cstring        PDCExitTime
+0xfffffe00079cb120 __TEXT.__cstring        PDCAlwaysOnNits
+0xfffffe00079cb130 __TEXT.__cstring        PDCContentSwitchCount
+0xfffffe00079cb146 __TEXT.__cstring        pccLumaGammaFactor
+0xfffffe00079cb159 __TEXT.__cstring        MaxUABoost
+0xfffffe00079cb164 __TEXT.__cstring        PDCCutoffLux
+0xfffffe00079cb171 __TEXT.__cstring        PDCExitCount
+0xfffffe00079cb17e __TEXT.__cstring        overdriveCompCutoff
+0xfffffe00079cb192 __TEXT.__cstring        hgodCutoff
+0xfffffe00079cb19d __TEXT.__cstring        AOTEnable
+0xfffffe00079cb1a7 __TEXT.__cstring        VSHHistVal
+0xfffffe00079cb1b2 __TEXT.__cstring        CECorrectionFactor
+0xfffffe00079cb1c5 __TEXT.__cstring        ProxScanPlan
+0xfffffe00079cb1d2 __TEXT.__cstring        ProxScanPosition
+0xfffffe00079cb1e3 __TEXT.__cstring        SWSTemp
+0xfffffe00079cb1eb __TEXT.__cstring        ForceAOTARMode
+0xfffffe00079cb1fa __TEXT.__cstring        EmissionFrequency
+0xfffffe00079cb20c __TEXT.__cstring        SupportsAOTPowerSaving
+0xfffffe00079cb223 __TEXT.__cstring        HingeAngleOverrideValue
+0xfffffe00079cb23b __TEXT.__cstring        EnableHingeAngleOverride
+0xfffffe00079cb254 __TEXT.__cstring        SupportsAOT1HzOptimizations
+0xfffffe00079cb270 __TEXT.__cstring        AOTMultiRefresh
+0xfffffe00079cb280 __TEXT.__cstring        SPUCEnable
+0xfffffe00079cb28b __TEXT.__cstring        QETCEnable
+0xfffffe00079cb296 __TEXT.__cstring        TLSCEnable
+0xfffffe00079cb2a1 __TEXT.__cstring        ClearUSPUCData
+0xfffffe00079cb2b0 __TEXT.__cstring        USPUCDefaultData
+0xfffffe00079cb2c1 __TEXT.__cstring        BLMAHOutputLogEnable
+0xfffffe00079cb2d6 __TEXT.__cstring        BLMAHStatsLogEnable
+0xfffffe00079cb2ea __TEXT.__cstring        BLMStandbyEnable
+0xfffffe00079cb2fb __TEXT.__cstring        VUCEnable
+0xfffffe00079cb305 __TEXT.__cstring        HBLDEnable
+0xfffffe00079cb310 __TEXT.__cstring        HBLDNitsRRMax
+0xfffffe00079cb31e __TEXT.__cstring        HBLDDimmingFactorMin
+0xfffffe00079cb333 __TEXT.__cstring        IRDCEnable
+0xfffffe00079cb33e __TEXT.__cstring        IRDCFrameReset
+0xfffffe00079cb34d __TEXT.__cstring        IRDCFrameMaxResetCount
+0xfffffe00079cb364 __TEXT.__cstring        IRDCFrameMinResetCount
+0xfffffe00079cb37b __TEXT.__cstring        IRDCEMPEnable
+0xfffffe00079cb389 __TEXT.__cstring        IRDCACCEnable
+0xfffffe00079cb397 __TEXT.__cstring        IRDCOverrideTemp
+0xfffffe00079cb3a8 __TEXT.__cstring        DSCState
+0xfffffe00079cb3b1 __TEXT.__cstring        DSCBpp
+0xfffffe00079cb3b8 __TEXT.__cstring        limit_max_physical_brightness
+0xfffffe00079cb3d6 __TEXT.__cstring        PTUCEnable
+0xfffffe00079cb3e1 __TEXT.__cstring        PTUCOverrideTemp
+0xfffffe00079cb3f2 __TEXT.__cstring        PTUCAvgTempOption
+0xfffffe00079cb404 __TEXT.__cstring        PTUCAvgTempGridPos
+0xfffffe00079cb417 __TEXT.__cstring        RTPLCEnable
+0xfffffe00079cb423 __TEXT.__cstring        RTPLCEnableRT
+0xfffffe00079cb431 __TEXT.__cstring        RTPLCEnableFD
+0xfffffe00079cb43f __TEXT.__cstring        RTPLCEnableNitsCap
+0xfffffe00079cb452 __TEXT.__cstring        RTPLCEnablePredThreshCross
+0xfffffe00079cb46d __TEXT.__cstring        RTPLCEnableFixedKnee
+0xfffffe00079cb482 __TEXT.__cstring        RTPLCEnableFDBicMult
+0xfffffe00079cb497 __TEXT.__cstring        usePodBoostAtRTPLCFDLUT
+0xfffffe00079cb4af __TEXT.__cstring        RTPLCRecoveryCoeff
+0xfffffe00079cb4c2 __TEXT.__cstring        enableSWS
+0xfffffe00079cb4cc __TEXT.__cstring        ReplayInVMAODEnable
+0xfffffe00079cb4e0 __TEXT.__cstring        enablePixelCapture
+0xfffffe00079cb4f3 __TEXT.__cstring        PixelCaptureConfig
+0xfffffe00079cb506 __TEXT.__cstring        PixelCaptureBlockMask
+0xfffffe00079cb51c __TEXT.__cstring        GP0PixelCaptureLocation
+0xfffffe00079cb534 __TEXT.__cstring        GP1PixelCaptureLocation
+0xfffffe00079cb54c __TEXT.__cstring        IOMFBApplyBrightnessProps
+0xfffffe00079cb566 __TEXT.__cstring        BlendPixelCaptureLocation
+0xfffffe00079cb580 __TEXT.__cstring        CMPixelCaptureLocation
+0xfffffe00079cb597 __TEXT.__cstring        PCCBLCPixelCaptureLocation
+0xfffffe00079cb5b2 __TEXT.__cstring        WPCPixelCaptureLocation
+0xfffffe00079cb5ca __TEXT.__cstring        BICSPixelCaptureLocation
+0xfffffe00079cb5e3 __TEXT.__cstring        TBICSPixelCaptureLocation
+0xfffffe00079cb5fd __TEXT.__cstring        RTPLCPixelCaptureLocation
+0xfffffe00079cb617 __TEXT.__cstring        CalCLutPixelCaptureLocation
+0xfffffe00079cb633 __TEXT.__cstring        DisableCalClut
+0xfffffe00079cb642 __TEXT.__cstring        enableGenLock
+0xfffffe00079cb650 __TEXT.__cstring        genLockFrequency
+0xfffffe00079cb661 __TEXT.__cstring        CCPixelCaptureLocation
+0xfffffe00079cb678 __TEXT.__cstring        GPLiteMaxSrcSz
+0xfffffe00079cb687 __TEXT.__cstring        disableBLKSFComp
+0xfffffe00079cb698 __TEXT.__cstring        enableDisplayTMDpc
+0xfffffe00079cb6ab __TEXT.__cstring        LTHSaveDispPerfBoostEnable
+0xfffffe00079cb6c6 __TEXT.__cstring        enablePowerTrace
+0xfffffe00079cb6d7 __TEXT.__cstring        AoD1HzPanicThreshold
+0xfffffe00079cb6ec __TEXT.__cstring        ADCLLoadAll
+0xfffffe00079cb6f8 __TEXT.__cstring        forceEnableACSS
+0xfffffe00079cb708 __TEXT.__cstring        IOMFBSupportHWSecureAnimation
+0xfffffe00079cb726 __TEXT.__cstring        ForceSecureAnimation
+0xfffffe00079cb73b __TEXT.__cstring        RegammaRREnable
+0xfffffe00079cb74b __TEXT.__cstring        ForceEnableACSSGenXSensing
+0xfffffe00079cb766 __TEXT.__cstring        DBVInterval
+0xfffffe00079cb772 __TEXT.__cstring        DBVValue
+0xfffffe00079cb77b __TEXT.__cstring        resTransitionType
+0xfffffe00079cb78d __TEXT.__cstring        resTransitionStrength
+0xfffffe00079cb7a3 __TEXT.__cstring        TriggerDCPResetRequestFromM3
+0xfffffe00079cb7c0 __TEXT.__cstring        DCPResetLoopMaxCount
+0xfffffe00079cb7d5 __TEXT.__cstring        DCPResetLoopWindowSec
+0xfffffe00079cb7eb __TEXT.__cstring        calibrationType
+0xfffffe00079cb7fb __TEXT.__cstring        IOMFBIsHiloDevice
+0xfffffe00079cb80d __TEXT.__cstring        GenXHandlerTestCase
+0xfffffe00079cb821 __TEXT.__cstring        enablePulseWidthMaximization
+0xfffffe00079cb83e __TEXT.__cstring        RuntimeProperty::FIRST_GAMUT_CONVERSION_LOCATION
+0xfffffe00079cb86f __TEXT.__cstring        RuntimeProperty::LAST_GAMUT_CONVERSION_LOCATION
+0xfffffe00079cb89f __TEXT.__cstring        DynamicSageLogging
+0xfffffe00079cb8b2 __TEXT.__cstring        IOMFBSupportsLFC
+0xfffffe00079cb8c3 __TEXT.__cstring        RuntimeProperty::FIRST_IDLE_DETECTOR
+0xfffffe00079cb8e8 __TEXT.__cstring        RuntimeProperty::LAST_IDLE_DETECTOR
+0xfffffe00079cb90c __TEXT.__cstring        RuntimeProperty::COUNT
+0xfffffe00079cb923 __TEXT.__cstring        RuntimeProperty::UNKNOWN
+0xfffffe00079cb93c __TEXT.__cstring        IOMFBSwapIORequest
+0xfffffe00079cb94f __TEXT.__cstring        site.IOMFBSwapIORequest
+0xfffffe00079cb967 __TEXT.__cstring        12222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222111111111111111111111111111111111111121111221221221221221221221221221221211
+0xfffffe00079cbb11 __TEXT.__cstring        "%s: IOMemoryDescriptor::prepare failed with 0x%x\n" @%s:%d
+0xfffffe00079cbb4d __TEXT.__cstring        IOReturn map_memory_dart(IOMapper *, IOMemoryDescriptor *, IODirection, IODMACommand **, dva_t *)
+0xfffffe00079cbbaf __TEXT.__cstring        DCPUtils.cpp
+0xfffffe00079cbbbc __TEXT.__cstring        "%s: IODMACommand::setMemoryDescriptor failed with 0x%x\n" @%s:%d
+0xfffffe00079cbbfe __TEXT.__cstring        "%s: IODMACommand::prepare failed with 0x%x\n" @%s:%d
+0xfffffe00079cbc34 __TEXT.__cstring        "%s: IODMACommand::genIOVMSegments failed with 0x%x\n" @%s:%d
+0xfffffe00079cbc72 __TEXT.__cstring        %s: clearMemoryDescriptor failed with 0x%x
+0xfffffe00079cbc9e __TEXT.__cstring        IOReturn unmap_memory_dart(IOMapper *, IOMemoryDescriptor *, IODMACommand *)
+0xfffffe00079cbceb __TEXT.__cstring        %s: complete failed with 0x%x
+0xfffffe00079cbd0a __TEXT.__cstring        IOAVHandler
+0xfffffe00079cbd16 __TEXT.__cstring        site.IOAVHandler
+0xfffffe00079cbd27 __TEXT.__cstring        12111112
+0xfffffe00079cbd30 __TEXT.__cstring        video-tx
+0xfffffe00079cbd39 __TEXT.__cstring        IOAVVideoInterface
+0xfffffe00079cbd4c __TEXT.__cstring        IOReturn IOAVHandler::linkShutdown_gated()
+0xfffffe00079cbd77 __TEXT.__cstring        "%s: could not cast IOService to IOAVVideoInterface" @%s:%d
+0xfffffe00079cbdb3 __TEXT.__cstring        bool IOAVHandler::IOAVEvent(IOAVEventType, IOService *)
+0xfffffe00079cbdeb __TEXT.__cstring        IOAVHandler.cpp
+0xfffffe00079cbdfb __TEXT.__cstring        "%s: could not cast pointer to IOAVHandler *" @%s:%d
+0xfffffe00079cbe30 __TEXT.__cstring        static IOReturn IOAVHandler::IOAVEvent_async(void *, void *, void *)
+0xfffffe00079cbe75 __TEXT.__cstring        "%s: could not cast pointer to IOAVVideoInterface *" @%s:%d
+0xfffffe00079cbeb1 __TEXT.__cstring        void IOAVHandler::IOAVEvent_async_gated(void *, void *)
+0xfffffe00079cbee9 __TEXT.__cstring        InterruptEventSourceBridge
+0xfffffe00079cbf04 __TEXT.__cstring        site.InterruptEventSourceBridge
+0xfffffe00079cbf24 __TEXT.__cstring        TimerEventSourceBridge
+0xfffffe00079cbf3b __TEXT.__cstring        site.TimerEventSourceBridge
+0xfffffe00079cbf57 __TEXT.__cstring        site.InterruptSource
+0xfffffe00079cbf6c __TEXT.__cstring        121111111112
+0xfffffe00079cbf79 __TEXT.__cstring        site.TimerEventSource
+0xfffffe00079cbf8f __TEXT.__cstring        1211111
+0xfffffe00079cbf97 __TEXT.__cstring        UPAsynchronousScheduler
+0xfffffe00079cbfaf __TEXT.__cstring        site.UPAsynchronousScheduler
+0xfffffe00079cbfcd __TEXT.__cstring        %s: ERROR: pool size exhausted
+0xfffffe00079cbfed __TEXT.__cstring        UPAsynchronousScheduler_::ArgumentEntry *UPAsynchronousScheduler_::createArgumentEntry()
+0xfffffe00079cc046 __TEXT.__cstring        %s: ERROR: entry is NULL
+0xfffffe00079cc060 __TEXT.__cstring        void UPAsynchronousScheduler_::releaseArgumentEntry(ArgumentEntry *, bool)
+0xfffffe00079cc0ab __TEXT.__cstring        "%s: ERROR: entry is not in the pool\n" @%s:%d
+0xfffffe00079cc0da __TEXT.__cstring        UPAsynchronousScheduler.cpp
+0xfffffe00079cc0f6 __TEXT.__cstring        %s: argument %u relies on a default action
+0xfffffe00079cc121 __TEXT.__cstring        IOMFBStatus UPAsynchronousScheduler_::setDefaultAction(Action)
+0xfffffe00079cc160 __TEXT.__cstring        %s: NULL pID passed
+0xfffffe00079cc175 __TEXT.__cstring        IOMFBStatus UPAsynchronousScheduler_::prepareThread(ArgumentID *, void *, void *, void *, void *)
+0xfffffe00079cc1d7 __TEXT.__cstring        IOMFBStatus UPAsynchronousScheduler_::prepareThreadWithAction(Action, ArgumentID *, void *, void *, void *, void *)
+0xfffffe00079cc24b __TEXT.__cstring        %s: NULL pAction passed
+0xfffffe00079cc264 __TEXT.__cstring        IOMFBStatus UPAsynchronousScheduler_::startThreadWithAction(Action, ArgumentID *, void *, void *, void *, void *)
+0xfffffe00079cc2d6 __TEXT.__cstring        IOMFB %s: startThreadWithAction failed with 0x%x
+0xfffffe00079cc308 __TEXT.__cstring        startThreadWithActionSync
+0xfffffe00079cc322 __TEXT.__cstring        IOMFB %s: Lock::sleep timed out, aborting
+0xfffffe00079cc34d __TEXT.__cstring        IOMFB %s: Lock::sleep was interrupted, aborting
+0xfffffe00079cc37e __TEXT.__cstring        %s: argument id %u already notified!
+0xfffffe00079cc3a4 __TEXT.__cstring        IOMFBStatus UPAsynchronousScheduler_::notifyThread(ArgumentID, void *, void *, void *, void *)
+0xfffffe00079cc403 __TEXT.__cstring        %s: can't find argument with id %u!
+0xfffffe00079cc428 __TEXT.__cstring        %s: argument id %u already notified, it's too late to abort!
+0xfffffe00079cc466 __TEXT.__cstring        IOMFBStatus UPAsynchronousScheduler::abortThread(ArgumentID)
+0xfffffe00079cc4a3 __TEXT.__cstring        %s: cannot create a lock
+0xfffffe00079cc4bd __TEXT.__cstring        virtual bool UPAsynchronousScheduler::init(const char *, uintptr_t, size_t, uint32_t)
+0xfffffe00079cc513 __TEXT.__cstring        %s: cannot create a workloop
+0xfffffe00079cc531 __TEXT.__cstring        %s: cannot create an interrupt source
+0xfffffe00079cc558 __TEXT.__cstring        "%s: argument queue not empty!" @%s:%d
+0xfffffe00079cc57f __TEXT.__cstring        virtual void UPAsynchronousScheduler::free()
+0xfffffe00079cc5ac __TEXT.__cstring        "%s: no default action for argument %u!" @%s:%d
+0xfffffe00079cc5dc __TEXT.__cstring        void UPAsynchronousScheduler::performActions_gated()
+0xfffffe00079cc611 __TEXT.__cstring        %s: no default action for argument relying on it
+0xfffffe00079cc643 __TEXT.__cstring        virtual IOMFBStatus UPAsynchronousScheduler::checkAndQueueArgument(ArgumentEntry *)
+0xfffffe00079cc697 __TEXT.__cstring        %s: max argument count (%d) reached. Notify a few first.
+0xfffffe00079cc6d1 __TEXT.__cstring        IOMobileFramebufferLegacy
+0xfffffe00079cc6eb __TEXT.__cstring        site.IOMobileFramebufferLegacy
+0xfffffe00079cc70a __TEXT.__cstring        1211111212221212121222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222221111111111111111111111111111111111111222222222222212212212212212212212212212222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222111111111111111111111111111111111111122222222222221221221221221221221221221222221111111111111111111111111111122111111111111111222222222222222222222222222222222222222222212111121111111111121122222
+0xfffffe00079ccac6 __TEXT.__cstring        "missed notification" @%s:%d
+0xfffffe00079ccae3 __TEXT.__cstring        IOMobileFramebufferLegacy.cpp
+0xfffffe00079ccb01 __TEXT.__cstring        iomfb_enable_edr_scaling
+0xfffffe00079ccb1a __TEXT.__cstring        %s: Couldn't create command gate
+0xfffffe00079ccb3c __TEXT.__cstring        virtual bool IOMobileFramebufferLegacy::init(OSDictionary *)
+0xfffffe00079ccb79 __TEXT.__cstring        %s: Couldn't create a work loop
+0xfffffe00079ccb9a __TEXT.__cstring        %s: Couldn't add command gate to work loop.
+0xfffffe00079ccbc7 __TEXT.__cstring        "DISPLAY DRIVER FAILED TO LOAD" @%s:%d
+0xfffffe00079ccbf2 __TEXT.__cstring        virtual bool IOMobileFramebufferLegacy::start(IOService *)
+0xfffffe00079ccc2d __TEXT.__cstring        IOMFB: driver commit: %s
+0xfffffe00079ccc47 __TEXT.__cstring        %s: more than %d current instances of IOMobileFramebuffer!
+0xfffffe00079ccc83 __TEXT.__cstring        iomfb_panic_on_boot_failure
+0xfffffe00079ccc9f __TEXT.__cstring        iomfb_disable_display
+0xfffffe00079cccb5 __TEXT.__cstring        Display disabled using boot-arg %s
+0xfffffe00079cccd9 __TEXT.__cstring        iomfb_drop_obsolete_swap
+0xfffffe00079cccf2 __TEXT.__cstring        iomfb_drop_noop_swap
+0xfffffe00079ccd07 __TEXT.__cstring        iomfb_swap_reject_panic
+0xfffffe00079ccd1f __TEXT.__cstring        iomfb_abort_swap_disable
+0xfffffe00079ccd38 __TEXT.__cstring        light-em-up
+0xfffffe00079ccd44 __TEXT.__cstring        %s: provider was not AppleARMIODevice.
+0xfffffe00079ccd6c __TEXT.__cstring        IOCoreSurfaceRoot
+0xfffffe00079ccd7e __TEXT.__cstring        %s: IOSurfaceRoot not available or of the wrong class
+0xfffffe00079ccdb5 __TEXT.__cstring        %s: Couldn't create power state change interrupt event source
+0xfffffe00079ccdf4 __TEXT.__cstring        %s: Couldn't add power state change interrupt event source to work loop.
+0xfffffe00079cce3e __TEXT.__cstring        %s: Couldn't create swap expiration timer event source
+0xfffffe00079cce76 __TEXT.__cstring        %s: Couldn't add swap expiration timer event source to work loop.
+0xfffffe00079cceb9 __TEXT.__cstring        use-legacy-DART
+0xfffffe00079ccec9 __TEXT.__cstring        iommu-parent
+0xfffffe00079cced6 __TEXT.__cstring        %s, no mapper on this platform
+0xfffffe00079ccef6 __TEXT.__cstring        setParameter
+0xfffffe00079ccf03 __TEXT.__cstring        iomd-early-reclaim
+0xfffffe00079ccf16 __TEXT.__cstring        iomd-cache-ttl
+0xfffffe00079ccf25 __TEXT.__cstring        IOMFB Debug Info
+0xfffffe00079ccf36 __TEXT.__cstring        start_hardware failed
+0xfffffe00079ccf4d __TEXT.__cstring        %s::start() Initialization of fClientUpdateLock failed.
+0xfffffe00079ccf86 __TEXT.__cstring        %s: failed to allocate fHDCPContext.lock
+0xfffffe00079ccfb0 __TEXT.__cstring        SCMBuildInfo_AppleDisplayPipe
+0xfffffe00079ccfd0 __TEXT.__cstring        IOMFB: resizing canvas: %d %d
+0xfffffe00079ccfef __TEXT.__cstring        %s: something really bad happened (%d)...bailing out
+0xfffffe00079cd025 __TEXT.__cstring        void IOMobileFramebufferLegacy::disp_has_no_clients_gated()
+0xfffffe00079cd061 __TEXT.__cstring        IOMFB: %s:  CommandWake didn't happen even after 5 seconds.                       Seems system in bad state, cancelling swaps
+0xfffffe00079cd0e0 __TEXT.__cstring        swap_wait_gated
+0xfffffe00079cd0f0 __TEXT.__cstring        IOMFB %s: swapId = %d, options = 0x%x, noBlock = 0x%x, HPD = %d, DPLink = %d,                    TimingEnable = %d, PowerStates-Cntr = %d, Display =%d
+0xfffffe00079cd188 __TEXT.__cstring        "IOMFB: swap_wait_gated blocked for more than 5 seconds. Should not happen. Panicking\n" @%s:%d
+0xfffffe00079cd1e8 __TEXT.__cstring        IOMFB: swap_wait_gated blocked so cleared up swaps
+0xfffffe00079cd21c __TEXT.__cstring        IOMFB: swap_wait_gated retried > 2 times, clearing swaps and return
+0xfffffe00079cd261 __TEXT.__cstring        ERROR: passthrough layer has to be the only layer enabled
+0xfffffe00079cd29c __TEXT.__cstring        ERROR: not more than one passthrough layer allowed, given %d
+0xfffffe00079cd2da __TEXT.__cstring        swap_submit
+0xfffffe00079cd2e6 __TEXT.__cstring        %s: IOMFB_SWAP_SUBMIT_LOST, transaction->swapID: %d, transaction->enabled: %d, transaction->completed: %d
+0xfffffe00079cd351 __TEXT.__cstring        %s System error: Mismatched data size
+0xfffffe00079cd378 __TEXT.__cstring        %s System error: Failure to prepare memory descriptor
+0xfffffe00079cd3af __TEXT.__cstring        %s System error: Failure to allocate memory descriptor
+0xfffffe00079cd3e7 __TEXT.__cstring        ERROR: timestamp create failed
+0xfffffe00079cd408 __TEXT.__cstring        IOSurfaceDisplayTimes
+0xfffffe00079cd41e __TEXT.__cstring        display-presentation
+0xfffffe00079cd433 __TEXT.__cstring        display-frame-generation
+0xfffffe00079cd44c __TEXT.__cstring        kIOSurfaceTouchEventTimes
+0xfffffe00079cd466 __TEXT.__cstring        hid-input
+0xfffffe00079cd470 __TEXT.__cstring        ERROR: passthrough layers must be fullscreen: (%d, %d) != (%d, %d)
+0xfffffe00079cd4b4 __TEXT.__cstring        ERROR: passthrough layers cannot have dest offsets: (%d, %d) != (0, 0)
+0xfffffe00079cd4fc __TEXT.__cstring        %s: trying to display default transaction when default framebuffer has not been allocated
+0xfffffe00079cd557 __TEXT.__cstring        virtual IOMFBStatus IOMobileFramebufferLegacy::swap_submit(IOMFBSwap *, IOUserClient *, uint32_t *)
+0xfffffe00079cd5bb __TEXT.__cstring        %s srcRect.x (%d) less than zero
+0xfffffe00079cd5dd __TEXT.__cstring        %s Buffer width (%d) doesn't cover read region (x = %d, w = %d)
+0xfffffe00079cd61e __TEXT.__cstring        %s srcRect.y (%d) less than zero
+0xfffffe00079cd640 __TEXT.__cstring        %s Buffer height (%d) doesn't cover read region(y = %d, h = %d)
+0xfffffe00079cd681 __TEXT.__cstring        %s: verify_swap failed for swap id: %d
+0xfffffe00079cd6a9 __TEXT.__cstring        "IOMFB: swap rejected" @%s:%d
+0xfffffe00079cd6c7 __TEXT.__cstring        swap_signal on a layer that is already marked as completed
+0xfffffe00079cd703 __TEXT.__cstring        "%s::Exceeded aborted swap limit" @%s:%d
+0xfffffe00079cd72c __TEXT.__cstring        totalSwaps
+0xfffffe00079cd737 __TEXT.__cstring        totalVBLs
+0xfffffe00079cd741 __TEXT.__cstring        CollectStatistics
+0xfffffe00079cd753 __TEXT.__cstring        IOMFBPreserveContents
+0xfffffe00079cd769 __TEXT.__cstring        IOMFBSetConsoleMode
+0xfffffe00079cd77d __TEXT.__cstring        IOMFBSkipSpinner
+0xfffffe00079cd78e __TEXT.__cstring        framebuffer-width
+0xfffffe00079cd7a0 __TEXT.__cstring        framebuffer-height
+0xfffffe00079cd7d5 __TEXT.__cstring        n104
+0xfffffe00079cd7f1 __TEXT.__cstring        j171
+0xfffffe00079cd7f6 __TEXT.__cstring        j172
+0xfffffe00079cd7ff __TEXT.__cstring        PurpleGfxMem
+0xfffffe00079cd80c __TEXT.__cstring        IOMFB: %s : getMemoryRegion Failed for Surface = 0x%p, sid = %d
+0xfffffe00079cd84d __TEXT.__cstring        create_default_fb_surface
+0xfffffe00079cd867 __TEXT.__cstring        IOMFB: %s : layout_buffers - failed for Surface = 0x%p, sid = %d
+0xfffffe00079cd8a9 __TEXT.__cstring         * IOMFB: Could not set the memory descriptor for theDMA command (error:%d)
+0xfffffe00079cd8f6 __TEXT.__cstring        segData[0].fLength (%d) < pBuffMD[i]->getLength() (%d)
+0xfffffe00079cd92e __TEXT.__cstring        %s: invalid layerID: %d
+0xfffffe00079cd947 __TEXT.__cstring        void IOMobileFramebufferLegacy::surface_complete(IOMFBDisplayedData *, uint32_t)
+0xfffffe00079cd998 __TEXT.__cstring        IOMFB: %s : Freeing up Default Temp surface - Surface = 0x%p
+0xfffffe00079cd9d6 __TEXT.__cstring        surface_complete
+0xfffffe00079cd9e7 __TEXT.__cstring        void IOMobileFramebufferLegacy::surface_complete(IOMFBSwapIORequest *, uint32_t, bool)
+0xfffffe00079cda3e __TEXT.__cstring        %s: buffer allocation failed
+0xfffffe00079cda5c __TEXT.__cstring        IOReturn IOMobileFramebufferLegacy::spinner_surface_alloc(IOSurface **)
+0xfffffe00079cdaa4 __TEXT.__cstring        %s:  failed to map surface %d
+0xfffffe00079cdac3 __TEXT.__cstring        void IOMobileFramebufferLegacy::setSystemConsoleMode_gated(bool)
+0xfffffe00079cdb04 __TEXT.__cstring        BBBBBBBBBBGGGGGGGGGGRRRRRRRRRR
+0xfffffe00079cdb23 __TEXT.__cstring        IOMFB: Unsupported format for spinner 
+0xfffffe00079cdb4b __TEXT.__cstring        SystemConsoleMode
+0xfffffe00079cdb5d __TEXT.__cstring        display-complete
+0xfffffe00079cdb6e __TEXT.__cstring        %s: ERROR: mode is NULL
+0xfffffe00079cdb87 __TEXT.__cstring        virtual IOMFBStatus IOMobileFramebufferLegacy::get_color_remap_mode(DisplayColorRemapMode *) const
+0xfffffe00079cdbea __TEXT.__cstring        IOMFB: dropped release buffer info message from DCP for swapID = 0x%x
+0xfffffe00079cdc31 __TEXT.__cstring        PerformanceStatistics
+0xfffffe00079cdc47 __TEXT.__cstring        %s: HDCP reply was never collected
+0xfffffe00079cdc6b __TEXT.__cstring        IOReturn IOMobileFramebufferLegacy::hdcp_send_request_gated(const uint8_t *, size_t, IOMFBNotifyRequestArgs *)
+0xfffffe00079cdcda __TEXT.__cstring        %s: createAUPPacketAsync failed with: 0x%x
+0xfffffe00079cdd06 __TEXT.__cstring        %s: no map or size passed
+0xfffffe00079cdd21 __TEXT.__cstring        virtual IOMFBStatus IOMobileFramebufferLegacy::hdcp_get_reply(IOMemoryMap *, size_t *)
+0xfffffe00079cdd78 __TEXT.__cstring        %s: hdcp reply is not ready
+0xfffffe00079cdd95 __TEXT.__cstring        %s: no hdcp reply available while not pending
+0xfffffe00079cddc4 __TEXT.__cstring        dot-pitch
+0xfffffe00079cddce __TEXT.__cstring        src_buffer_Id
+0xfffffe00079cdddc __TEXT.__cstring        src_stride
+0xfffffe00079cdde7 __TEXT.__cstring        src_x
+0xfffffe00079cdded __TEXT.__cstring        src_y
+0xfffffe00079cddf3 __TEXT.__cstring        src_width
+0xfffffe00079cddfd __TEXT.__cstring        src_height
+0xfffffe00079cde08 __TEXT.__cstring        dst_x
+0xfffffe00079cde0e __TEXT.__cstring        dst_y
+0xfffffe00079cde14 __TEXT.__cstring        dst_width
+0xfffffe00079cde1e __TEXT.__cstring        dst_height
+0xfffffe00079cde29 __TEXT.__cstring        format
+0xfffffe00079cde30 __TEXT.__cstring        rotation
+0xfffffe00079cde39 __TEXT.__cstring        enabled
+0xfffffe00079cde41 __TEXT.__cstring        completed
+0xfffffe00079cde4b __TEXT.__cstring        swapId
+0xfffffe00079cde52 __TEXT.__cstring        width
+0xfffffe00079cde58 __TEXT.__cstring        height
+0xfffffe00079cde5f __TEXT.__cstring        Global
+0xfffffe00079cde66 __TEXT.__cstring        Current Display
+0xfffffe00079cde76 __TEXT.__cstring        Pending Swap
+0xfffffe00079cde83 __TEXT.__cstring        Swap Queue
+0xfffffe00079cde8e __TEXT.__cstring        Temp Queue
+0xfffffe00079cde99 __TEXT.__cstring        %s: failed when gathering last completed swap transactions
+0xfffffe00079cded5 __TEXT.__cstring        virtual void IOMobileFramebufferLegacy::writeDebugInfo_gated(OSDictionary *)
+0xfffffe00079cdf22 __TEXT.__cstring        %s: failed when gathering power info
+0xfffffe00079cdf48 __TEXT.__cstring        %s: cannot use flag KeepOnScreen when blending
+0xfffffe00079cdf78 __TEXT.__cstring        bool IOMobileFramebufferLegacy::verifyKeepOnScreen_gated(IOMFBSwapIORequest *)
+0xfffffe00079cdfc7 __TEXT.__cstring        "%s, fDartActiveCount is zero when disable is specified" @%s:%d
+0xfffffe00079ce007 __TEXT.__cstring        IOReturn IOMobileFramebufferLegacy::updateBufferMappingCount_gated(bool)
+0xfffffe00079ce050 __TEXT.__cstring        setActive
+0xfffffe00079ce05a __TEXT.__cstring        "%s: implementation error for %s" @%s:%d
+0xfffffe00079ce083 __TEXT.__cstring        void IOMobileFramebufferLegacy::parse_RTP_boot_args()
+0xfffffe00079ce0b9 __TEXT.__cstring        %s: applying boot-arg RTP %s with value 0x%x returned 0x%x
+0xfffffe00079ce0f5 __TEXT.__cstring        site.IOMFBSwapInfo
+0xfffffe00079ce108 __TEXT.__cstring        2222222222222222222222211
+0xfffffe00079ce122 __TEXT.__cstring        %s: memory error
+0xfffffe00079ce134 __TEXT.__cstring        void IOMobileFramebufferLegacy::record_swap_info_gated(IOMFBSwapIORequest *, IOMFBSwapCompletionState)
+0xfffffe00079ce19b __TEXT.__cstring        Last Swap Written Registers
+0xfffffe00079ce1b7 __TEXT.__cstring        Last Swap Layer Surface ID
+0xfffffe00079ce1d2 __TEXT.__cstring        Last Swap Layer Format
+0xfffffe00079ce1e9 __TEXT.__cstring        Last Swap Layer Width
+0xfffffe00079ce1ff __TEXT.__cstring        Last Swap Layer Height
+0xfffffe00079ce216 __TEXT.__cstring        Last Swap Layer Allocation Size
+0xfffffe00079ce236 __TEXT.__cstring        Last Swap Intent
+0xfffffe00079ce247 __TEXT.__cstring        Last Swap Completion State
+0xfffffe00079ce262 __TEXT.__cstring        Last Swap Layers Array
+0xfffffe00079ce279 __TEXT.__cstring        Last Swaps Array
+0xfffffe00079ce28a __TEXT.__cstring        Average Written Registers
+0xfffffe00079ce2a4 __TEXT.__cstring        Last Swaps Dictionary
+0xfffffe00079ce2ba __TEXT.__cstring        IOMFB power info controller
+0xfffffe00079ce2d6 __TEXT.__cstring        IOMFB power info panel
+0xfffffe00079ce2ed __TEXT.__cstring        IOMFB power info
+0xfffffe00079ce303 __TEXT.__cstring        %03d: 0x%03x
+0xfffffe00079ce311 __TEXT.__cstring        compatible
+0xfffffe00079ce31c __TEXT.__cstring        "%s Failed to parse registry for device" @%s:%d
+0xfffffe00079ce34c __TEXT.__cstring        bool IOMobileFramebufferLegacy::isDevice(char *)
+0xfffffe00079ce37d __TEXT.__cstring        "%s: arguments may not be null" @%s:%d
+0xfffffe00079ce3a4 __TEXT.__cstring        void IOMobileFramebufferLegacy::getCurrentActiveRegions_gated(uint32_t, const IOMFBRect **, uint32_t *) const
+0xfffffe00079ce412 __TEXT.__cstring        "%s: layer too large" @%s:%d
+0xfffffe00079ce42f __TEXT.__cstring        %s: invalid layer: %d
+0xfffffe00079ce446 __TEXT.__cstring        bool IOMobileFramebufferLegacy::isLayerValidForSwap(uint32_t, IOMFBSwapIORequest *)
+0xfffffe00079ce49a __TEXT.__cstring        %s: get_timing_attributes_gated failed
+0xfffffe00079ce4c2 __TEXT.__cstring        bool IOMobileFramebufferLegacy::setDisplayRefreshProperties()
+0xfffffe00079ce500 __TEXT.__cstring        displayMinRefreshInterval
+0xfffffe00079ce51a __TEXT.__cstring        displayMinRefreshIntervalMachTime
+0xfffffe00079ce53c __TEXT.__cstring        displayMaxRefreshInterval
+0xfffffe00079ce556 __TEXT.__cstring        displayMaxRefreshIntervalMachTime
+0xfffffe00079ce578 __TEXT.__cstring        displayRefreshStep
+0xfffffe00079ce58b __TEXT.__cstring        displayRefreshStepMachTime
+0xfffffe00079ce5a6 __TEXT.__cstring        IOMFBDisplayRefresh
+0xfffffe00079ce5ba __TEXT.__cstring        %s: property %s not found in EDT, assumed false.
+0xfffffe00079ce5ec __TEXT.__cstring        static bool IOMobileFramebufferLegacy::readDataInEDT(IOService *, bool, const char *, const uint32_t, uint32_t *)
+0xfffffe00079ce65e __TEXT.__cstring        %s: invalid bytes received from property %s
+0xfffffe00079ce68b __TEXT.__cstring        function-clpc_enabled
+0xfffffe00079ce6a1 __TEXT.__cstring        function-frame_swap
+0xfffffe00079ce6b5 __TEXT.__cstring        "bad IOFence callback" @%s:%d
+0xfffffe00079ce6d3 __TEXT.__cstring        %s: dropping callback for non pending notification
+0xfffffe00079ce707 __TEXT.__cstring        IOReturn iomfb_CreateAUPPacketCallback(OSObject *, OSData *, void *)
+0xfffffe00079ce74c __TEXT.__cstring        %s: dropped HDCP packet notification
+0xfffffe00079ce772 __TEXT.__cstring        Data
+0xfffffe00079ce777 __TEXT.__cstring        Type
+0xfffffe00079ce77c __TEXT.__cstring        CEA-861:Type1
+0xfffffe00079ceb76 __TEXT.__const          Green
+0xfffffe00079ceb7c __TEXT.__const          Blue33
+0xfffffe000a177735 __TEXT_EXEC.__text           xax%$
+0xfffffe000a1779a7 __TEXT_EXEC.__text           4(D@
+0xfffffe000a177c37 __TEXT_EXEC.__text           4hJt8
+0xfffffe000a179173 __TEXT_EXEC.__text           T`6@
+0xfffffe000a17922b __TEXT_EXEC.__text           T`6@
+0xfffffe000a1792fb __TEXT_EXEC.__text           9)H@
+0xfffffe000a179533 __TEXT_EXEC.__text           R`zt
+0xfffffe000a17a36e __TEXT_EXEC.__text           @yK!
+0xfffffe000a17ba70 __TEXT_EXEC.__text           hB%9
+0xfffffe000a17cacf __TEXT_EXEC.__text           R`n@
+0xfffffe000a17e06f __TEXT_EXEC.__text           *i&@
+0xfffffe000a17e0d9 __TEXT_EXEC.__text           #A)i&@
+0xfffffe000a17e5ef __TEXT_EXEC.__text           rI(@
+0xfffffe000a17e9cf __TEXT_EXEC.__text           R`n@
+0xfffffe000a17ebcf __TEXT_EXEC.__text           *i&@
+0xfffffe000a17f3b3 __TEXT_EXEC.__text           TA,@
+0xfffffe000a17f820 __TEXT_EXEC.__text           hBe9
+0xfffffe000a184931 __TEXT_EXEC.__text           h)8)
+0xfffffe000a184a57 __TEXT_EXEC.__text           N (!
+0xfffffe000a184b67 __TEXT_EXEC.__text           N (!
+0xfffffe000a184f9b __TEXT_EXEC.__text           N (!
+0xfffffe000a1850c1 __TEXT_EXEC.__text           hj8k!
+0xfffffe000a185215 __TEXT_EXEC.__text           ji8J!
+0xfffffe000a185405 __TEXT_EXEC.__text           ji8J!
+0xfffffe000a185d54 __TEXT_EXEC.__text           lB@9
+0xfffffe000a18642d __TEXT_EXEC.__text           I@9i
+0xfffffe000a18647d __TEXT_EXEC.__text           E@9I
+0xfffffe000a1866db __TEXT_EXEC.__text           4x.@
+0xfffffe000a187675 __TEXT_EXEC.__text           :w9h
+0xfffffe000a187881 __TEXT_EXEC.__text           :79 
+0xfffffe000a187931 __TEXT_EXEC.__text           R49 
+0xfffffe000a187959 __TEXT_EXEC.__text           R495
+0xfffffe000a187991 __TEXT_EXEC.__text           "79 
+0xfffffe000a1879b9 __TEXT_EXEC.__text           "79(
+0xfffffe000a1879c1 __TEXT_EXEC.__text           &79 
+0xfffffe000a1879ed __TEXT_EXEC.__text           F79 
+0xfffffe000a187a19 __TEXT_EXEC.__text           >79 
+0xfffffe000a187a45 __TEXT_EXEC.__text           >39 
+0xfffffe000a187a6d __TEXT_EXEC.__text           >39h
+0xfffffe000a187f99 __TEXT_EXEC.__text           239p
+0xfffffe000a18802b __TEXT_EXEC.__text           R?y(
+0xfffffe000a188290 __TEXT_EXEC.__text           (?w9
+0xfffffe000a188297 __TEXT_EXEC.__text           7h&\
+0xfffffe000a1882ab __TEXT_EXEC.__text           T(;w9H
+0xfffffe000a189097 __TEXT_EXEC.__text           R {v
+0xfffffe000a1892e7 __TEXT_EXEC.__text           Ts^@
+0xfffffe000a1895db __TEXT_EXEC.__text           Ru&M
+0xfffffe000a189a6a __TEXT_EXEC.__text           @y"A
+0xfffffe000a189a8f __TEXT_EXEC.__text           Th"M
+0xfffffe000a189abb __TEXT_EXEC.__text           Th"M
+0xfffffe000a189aeb __TEXT_EXEC.__text           Th"M
+0xfffffe000a189b4b __TEXT_EXEC.__text           Ra"M
+0xfffffe000a189b7b __TEXT_EXEC.__text           Ta"M
+0xfffffe000a189c36 __TEXT_EXEC.__text           39I5s9
+0xfffffe000a189c4c __TEXT_EXEC.__text           A539
+0xfffffe000a18a1e9 __TEXT_EXEC.__text           6s9h
+0xfffffe000a18a231 __TEXT_EXEC.__text           6s9H
+0xfffffe000a18a2a1 __TEXT_EXEC.__text           *w9(
+0xfffffe000a18abfd __TEXT_EXEC.__text           5w9i
+0xfffffe000a18c2b7 __TEXT_EXEC.__text           *+||
+0xfffffe000a18c43b __TEXT_EXEC.__text           5`z6
+0xfffffe000a18c48b __TEXT_EXEC.__text           5`z6
+0xfffffe000a18c4db __TEXT_EXEC.__text           5`z5
+0xfffffe000a18c517 __TEXT_EXEC.__text           Rhzu
+0xfffffe000a18c547 __TEXT_EXEC.__text           Rhz5
+0xfffffe000a18c5af __TEXT_EXEC.__text           Rkzi
+0xfffffe000a18c839 __TEXT_EXEC.__text           2K9)
+0xfffffe000a18c96b __TEXT_EXEC.__text           RMyi
+0xfffffe000a18c981 __TEXT_EXEC.__text           6M9)
+0xfffffe000a18c98d __TEXT_EXEC.__text           >M9)
+0xfffffe000a18c999 __TEXT_EXEC.__text           FM9)
+0xfffffe000a18c9a5 __TEXT_EXEC.__text           :M9*
+0xfffffe000a18cc3d __TEXT_EXEC.__text           i{8*
+0xfffffe000a18cc48 __TEXT_EXEC.__text           Hi;8h
+0xfffffe000a18cc54 __TEXT_EXEC.__text           K!@9,
+0xfffffe000a18cc65 __TEXT_EXEC.__text           i-8@
+0xfffffe000a18ccd7 __TEXT_EXEC.__text           TJ{{
+0xfffffe000a18ce38 __TEXT_EXEC.__text           h)A)
+0xfffffe000a18ce4f __TEXT_EXEC.__text           Th)@)
+0xfffffe000a18d058 __TEXT_EXEC.__text           ()@)
+0xfffffe000a18d46d __TEXT_EXEC.__text           CWx$A
+0xfffffe000a18d51e __TEXT_EXEC.__text           @yBA
+0xfffffe000a18d53a __TEXT_EXEC.__text           @yDA
+0xfffffe000a18dd13 __TEXT_EXEC.__text           4@{u
+0xfffffe000a18e06d __TEXT_EXEC.__text           0B9I
+0xfffffe000a18e43d __TEXT_EXEC.__text           /799
+0xfffffe000a18e8cd __TEXT_EXEC.__text           "r9H
+0xfffffe000a18f64f __TEXT_EXEC.__text           *i~~
+0xfffffe000a1902cf __TEXT_EXEC.__text           Rh"M
+0xfffffe000a19034f __TEXT_EXEC.__text           <i"M
+0xfffffe000a1903a7 __TEXT_EXEC.__text           <i"M
+0xfffffe000a190420 __TEXT_EXEC.__text           Jiw8J
+0xfffffe000a19042c __TEXT_EXEC.__text           ji78*
+0xfffffe000a190468 __TEXT_EXEC.__text           Jiw8J
+0xfffffe000a190484 __TEXT_EXEC.__text           i!@9I!
+0xfffffe000a1904fb __TEXT_EXEC.__text           <?y7
+0xfffffe000a19052c __TEXT_EXEC.__text           _i78?y7
+0xfffffe000a1905b3 __TEXT_EXEC.__text           =l"M
+0xfffffe000a190ab3 __TEXT_EXEC.__text           R+||
+0xfffffe000a190c4b __TEXT_EXEC.__text           TJ}@
+0xfffffe000a1914a0 __TEXT_EXEC.__text           (@@9
+0xfffffe000a191c74 __TEXT_EXEC.__text           hBA9
+0xfffffe000a191c7b __TEXT_EXEC.__text           6hFA9
+0xfffffe000a191d47 __TEXT_EXEC.__text           9`.@
+0xfffffe000a191f79 __TEXT_EXEC.__text           av9i
+0xfffffe000a191f85 __TEXT_EXEC.__text           e69`
+0xfffffe000a192a33 __TEXT_EXEC.__text           R({w
+0xfffffe000a1935b7 __TEXT_EXEC.__text           6Qyh
+0xfffffe000a19368b __TEXT_EXEC.__text           R,yh
+0xfffffe000a193fbb __TEXT_EXEC.__text           6Pyi
+0xfffffe000a1941b9 __TEXT_EXEC.__text           %w9i
+0xfffffe000a1941c1 __TEXT_EXEC.__text           1s9h
+0xfffffe000a19434b __TEXT_EXEC.__text           =h&M
+0xfffffe000a1943e3 __TEXT_EXEC.__text           Tt&M
+0xfffffe000a19489b __TEXT_EXEC.__text           TwB 
+0xfffffe000a194907 __TEXT_EXEC.__text           Th&M
+0xfffffe000a194bc7 __TEXT_EXEC.__text           **|~
+0xfffffe000a1951db __TEXT_EXEC.__text           o L 
+0xfffffe000a1961e7 __TEXT_EXEC.__text           Rw&M
+0xfffffe000a196890 __TEXT_EXEC.__text           `j78
+0xfffffe000a1968bc __TEXT_EXEC.__text           @k(8
+0xfffffe000a1968db __TEXT_EXEC.__text           =_{5
+0xfffffe000b97c4c8 __DATA.__data           com.apple.iokit.IOMobileGraphicsFamily
+0xfffffe000b97c508 __DATA.__data           1.0.0d1
+0xfffffe000b97c590 __DATA.__data           layer0
+0xfffffe000b97c59a __DATA.__data           layer1
+0xfffffe000b97c5a4 __DATA.__data           layer2
+0xfffffe000b97c740 __DATA.__common         __TEXT
+0xfffffe000b97c788 __DATA.__common         __PRELINK_TEXT
+0xfffffe000b97c7c8 __DATA.__common         __text
+0xfffffe000b97c7d8 __DATA.__common         __PRELINK_TEXT
+0xfffffe000b97c820 __DATA.__common         __DATA_CONST
+0xfffffe000b97c868 __DATA.__common         __DATA_SPTM
+0xfffffe000b97c8b0 __DATA.__common         __TEXT_EXEC
+0xfffffe000b97c8f8 __DATA.__common         __TEXT_BOOT_EXEC
+0xfffffe000b97c940 __DATA.__common         __PRELINK_INFO
+0xfffffe000b97c980 __DATA.__common         __info
+0xfffffe000b97c990 __DATA.__common         __PRELINK_INFO
+0xfffffe000b97c9d8 __DATA.__common         __DATA
+0xfffffe000b97ca20 __DATA.__common         __LINKEDIT
+0xfffffe000b97ca80 __DATA.__common         com.apple.kernel
+0xfffffe000b97cab8 __DATA.__common         com.apple.kec.Libm
+0xfffffe000b97caf0 __DATA.__common         com.apple.kec.pthread
+0xfffffe000b97cb28 __DATA.__common         com.apple.driver.AFKHIDTBDevice
+0xfffffe000b97cb68 __DATA.__common         com.apple.AGXFirmwareKextG18PRTBuddy
+0xfffffe000b97cbb0 __DATA.__common         com.apple.AGXFirmwareKextRTBuddy64
+0xfffffe000b97cbf8 __DATA.__common         com.apple.AGXG18P
+0xfffffe000b97cc30 __DATA.__common         com.apple.security.AKSAnalytics
+0xfffffe000b97cc70 __DATA.__common         com.apple.driver.AOPAudio2
+0xfffffe000b97ccb0 __DATA.__common         com.apple.driver.AOPTouchKext
+0xfffffe000b97ccf0 __DATA.__common         com.apple.driver.ASIOKit
+0xfffffe000b97cd30 __DATA.__common         com.apple.AUC
+0xfffffe000b97cd60 __DATA.__common         com.apple.driver.AppleA7IOP-ASCWrap-v6
+0xfffffe000b97cda8 __DATA.__common         com.apple.driver.AppleA7IOP
+0xfffffe000b97cde8 __DATA.__common         com.apple.driver.AppleALSColorSensor
+0xfffffe000b97ce30 __DATA.__common         com.apple.driver.AppleAOP2
+0xfffffe000b97ce70 __DATA.__common         com.apple.driver.AppleAOPAudio
+0xfffffe000b97ceb0 __DATA.__common         com.apple.iokit.AppleARMIISAudio
+0xfffffe000b97cef8 __DATA.__common         com.apple.driver.AppleARMPMU
+0xfffffe000b97cf38 __DATA.__common         com.apple.driver.AppleARMPlatform
+0xfffffe000b97cf80 __DATA.__common         com.apple.driver.AppleARMWatchdogTimer
+0xfffffe000b97cfc8 __DATA.__common         com.apple.driver.AppleAVD
+0xfffffe000b97d008 __DATA.__common         com.apple.driver.AppleAVE2
+0xfffffe000b97d048 __DATA.__common         com.apple.driver.AppleActuatorDriver
+0xfffffe000b97d090 __DATA.__common         com.apple.driver.AppleAstrisGpioProbe
+0xfffffe000b97d0d8 __DATA.__common         com.apple.driver.AppleAudioClockLibs
+0xfffffe000b97d120 __DATA.__common         com.apple.driver.AppleAuthCP
+0xfffffe000b97d160 __DATA.__common         com.apple.driver.AppleBSDKextStarter
+0xfffffe000b97d1a8 __DATA.__common         com.apple.driver.AppleBasebandM20
+0xfffffe000b97d1f0 __DATA.__common         com.apple.driver.AppleBasebandPCI
+0xfffffe000b97d238 __DATA.__common         com.apple.driver.AppleBasebandPCIMAVControl
+0xfffffe000b97d288 __DATA.__common         com.apple.driver.AppleBasebandPCIMAVPDP
+0xfffffe000b97d2d0 __DATA.__common         com.apple.driver.AppleC26Charger
+0xfffffe000b97d318 __DATA.__common         com.apple.driver.AppleCSEmbeddedAudio
+0xfffffe000b97d360 __DATA.__common         com.apple.driver.AppleCallbackPowerSource
+0xfffffe000b97d3b0 __DATA.__common         com.apple.driver.AppleCentauriManager
+0xfffffe000b97d3f8 __DATA.__common         com.apple.driver.AppleDAPF
+0xfffffe000b97d438 __DATA.__common         com.apple.driver.AppleDCP
+0xfffffe000b97d478 __DATA.__common         com.apple.driver.AppleDCPDPTXProxy
+0xfffffe000b97d4c0 __DATA.__common         com.apple.driver.AppleDiagnosticDataAccessReadOnly
+0xfffffe000b97d518 __DATA.__common         com.apple.driver.AppleDialogPMU
+0xfffffe000b97d558 __DATA.__common         com.apple.driver.AppleDiskImages2
+0xfffffe000b97d5a0 __DATA.__common         com.apple.driver.AppleDisplayCrossbar
+0xfffffe000b97d5e8 __DATA.__common         com.apple.driver.AppleDockChannel
+0xfffffe000b97d630 __DATA.__common         com.apple.driver.AppleEffaceableBlockDevice
+0xfffffe000b97d680 __DATA.__common         com.apple.driver.AppleEffaceableStorage
+0xfffffe000b97d6c8 __DATA.__common         com.apple.driver.AppleEmbeddedAudio
+0xfffffe000b97d710 __DATA.__common         com.apple.driver.AppleAOPHaptics
+0xfffffe000b97d758 __DATA.__common         com.apple.driver.AppleCS42L79Audio
+0xfffffe000b97d7a0 __DATA.__common         com.apple.driver.IOPAudioSpeaker
+0xfffffe000b97d7e8 __DATA.__common         com.apple.driver.IOPEmbeddedAudio
+0xfffffe000b97d830 __DATA.__common         com.apple.driver.IOPHaptics
+0xfffffe000b97d870 __DATA.__common         com.apple.driver.AppleEmbeddedAudioLibs
+0xfffffe000b97d8b8 __DATA.__common         com.apple.driver.AppleEmbeddedAudioResourceManager
+0xfffffe000b97d910 __DATA.__common         com.apple.driver.AppleEmbeddedGPS
+0xfffffe000b97d958 __DATA.__common         com.apple.driver.AppleEmbeddedLightSensor
+0xfffffe000b97d9a8 __DATA.__common         com.apple.driver.AppleEmbeddedMikeyBus
+0xfffffe000b97d9f0 __DATA.__common         com.apple.driver.AppleEmbeddedPCIE
+0xfffffe000b97da38 __DATA.__common         com.apple.driver.AppleEmbeddedTempSensor
+0xfffffe000b97da88 __DATA.__common         com.apple.driver.AppleEmbeddedTouchEEPROM
+0xfffffe000b97dad8 __DATA.__common         com.apple.driver.AppleEmbeddedUSB
+0xfffffe000b97db20 __DATA.__common         com.apple.driver.AppleEmbeddedUSBHost
+0xfffffe000b97db68 __DATA.__common         com.apple.driver.AppleEpochManager
+0xfffffe000b97dbb0 __DATA.__common         com.apple.driver.AppleEventLogHandler
+0xfffffe000b97dbf8 __DATA.__common         com.apple.driver.AppleEverestErrorHandler
+0xfffffe000b97dc48 __DATA.__common         com.apple.driver.AppleFAN53740
+0xfffffe000b97dc88 __DATA.__common         com.apple.AppleFSCompression.AppleFSCompressionTypeZlib
+0xfffffe000b97dce0 __DATA.__common         com.apple.driver.AppleFirmwareKit
+0xfffffe000b97dd28 __DATA.__common         com.apple.driver.AppleFirmwareUpdateKext
+0xfffffe000b97dd78 __DATA.__common         com.apple.driver.AppleGPIOCanary
+0xfffffe000b97ddc0 __DATA.__common         com.apple.driver.AppleGPIOICController
+0xfffffe000b97de08 __DATA.__common         com.apple.driver.AppleGameControllerPersonality
+0xfffffe000b97de58 __DATA.__common         com.apple.driver.AppleGenericMultitouch
+0xfffffe000b97dea0 __DATA.__common         com.apple.driver.AppleH10PearlCameraInterface
+0xfffffe000b97def0 __DATA.__common         com.apple.driver.AppleH16ANEInterface
+0xfffffe000b97df38 __DATA.__common         com.apple.driver.AppleH16CameraInterface
+0xfffffe000b97df88 __DATA.__common         com.apple.driver.AppleH16PhotonDetector
+0xfffffe000b97dfd0 __DATA.__common         com.apple.driver.AppleHIDALSService
+0xfffffe000b97e018 __DATA.__common         com.apple.driver.AppleHIDKeyboard
+0xfffffe000b97e060 __DATA.__common         com.apple.driver.AppleHIDTransport
+0xfffffe000b97e0a8 __DATA.__common         com.apple.driver.AppleHIDTransportFIFO
+0xfffffe000b97e0f0 __DATA.__common         com.apple.driver.AppleHIDTransportMailbox
+0xfffffe000b97e140 __DATA.__common         com.apple.driver.AppleHIDTransportSCMCommon
+0xfffffe000b97e190 __DATA.__common         com.apple.driver.AppleHIDTransportSPI
+0xfffffe000b97e1d8 __DATA.__common         com.apple.driver.AppleHPM
+0xfffffe000b97e218 __DATA.__common         com.apple.driver.AppleHapticsSupportLEAP
+0xfffffe000b97e268 __DATA.__common         com.apple.driver.AppleHapticsSupportNVM
+0xfffffe000b97e2b0 __DATA.__common         com.apple.driver.AppleIDAMInterface
+0xfffffe000b97e2f8 __DATA.__common         com.apple.driver.AppleIDV
+0xfffffe000b97e338 __DATA.__common         com.apple.driver.AppleIISController
+0xfffffe000b97e380 __DATA.__common         com.apple.driver.AppleIOPADMAStream
+0xfffffe000b97e3c8 __DATA.__common         com.apple.driver.AppleIPAppender
+0xfffffe000b97e410 __DATA.__common         com.apple.security.AppleImage4
+0xfffffe000b97e450 __DATA.__common         com.apple.driver.AppleInputDeviceSupport
+0xfffffe000b97e4a0 __DATA.__common         com.apple.driver.AppleInterruptControllerV3
+0xfffffe000b97e4f0 __DATA.__common         com.apple.driver.AppleJPEGDriver
+0xfffffe000b97e538 __DATA.__common         com.apple.driver.AppleLockdownMode
+0xfffffe000b97e580 __DATA.__common         com.apple.driver.AppleM2ScalerCSCDriver
+0xfffffe000b97e5c8 __DATA.__common         com.apple.driver.AppleM68Buttons
+0xfffffe000b97e610 __DATA.__common         com.apple.driver.AppleMSG
+0xfffffe000b97e650 __DATA.__common         com.apple.kext.AppleMatch
+0xfffffe000b97e690 __DATA.__common         com.apple.driver.AppleMikeyBusAudio
+0xfffffe000b97e6d8 __DATA.__common         com.apple.driver.AppleMobileApNonce
+0xfffffe000b97e720 __DATA.__common         com.apple.driver.AppleMobileDispH18P-DCP
+0xfffffe000b97e770 __DATA.__common         com.apple.driver.AppleMobileFileIntegrity
+0xfffffe000b97e7c0 __DATA.__common         com.apple.driver.AppleMultitouchDriver
+0xfffffe000b97e808 __DATA.__common         com.apple.driver.AppleMultitouchSPI
+0xfffffe000b97e850 __DATA.__common         com.apple.driver.AppleNANDConfigAccess
+0xfffffe000b97e898 __DATA.__common         com.apple.driver.AppleOnboardSerial
+0xfffffe000b97e8e0 __DATA.__common         com.apple.driver.ApplePIODMA
+0xfffffe000b97e920 __DATA.__common         com.apple.driver.ApplePMGR
+0xfffffe000b97e960 __DATA.__common         com.apple.driver.ApplePMP
+0xfffffe000b97e9a0 __DATA.__common         com.apple.driver.ApplePMPFirmware
+0xfffffe000b97e9e8 __DATA.__common         com.apple.driver.ApplePMUFirmwareDriver
+0xfffffe000b97ea30 __DATA.__common         com.apple.driver.ApplePPMCPMS
+0xfffffe000b97ea70 __DATA.__common         com.apple.driver.ApplePTD
+0xfffffe000b97eab0 __DATA.__common         com.apple.driver.AppleParrot
+0xfffffe000b97eaf0 __DATA.__common         com.apple.driver.ApplePearlSEPDriver
+0xfffffe000b97eb38 __DATA.__common         com.apple.driver.ApplePhoneBTM
+0xfffffe000b97eb78 __DATA.__common         com.apple.driver.ApplePhotonDetector
+0xfffffe000b97ebc0 __DATA.__common         com.apple.driver.AppleProResHW
+0xfffffe000b97ec00 __DATA.__common         com.apple.driver.AppleProcessorTrace
+0xfffffe000b97ec48 __DATA.__common         com.apple.driver.AppleProxDriver
+0xfffffe000b97ec90 __DATA.__common         com.apple.driver.AppleS5L8920XPWM
+0xfffffe000b97ecd8 __DATA.__common         com.apple.driver.AppleS5L8940XI2C
+0xfffffe000b97ed20 __DATA.__common         com.apple.driver.AppleS5L8960XNCO
+0xfffffe000b97ed68 __DATA.__common         com.apple.driver.AppleS8000AES
+0xfffffe000b97eda8 __DATA.__common         com.apple.driver.AppleS8000DWI
+0xfffffe000b97ede8 __DATA.__common         com.apple.driver.AppleSARService
+0xfffffe000b97ee30 __DATA.__common         com.apple.driver.AppleSART
+0xfffffe000b97ee70 __DATA.__common         com.apple.driver.AppleSEPCredentialManager
+0xfffffe000b97eec0 __DATA.__common         com.apple.iokit.AppleSEPGenericTransfer
+0xfffffe000b97ef08 __DATA.__common         com.apple.driver.AppleSEPHDCPManager
+0xfffffe000b97ef50 __DATA.__common         com.apple.driver.AppleSEPKeyStore
+0xfffffe000b97ef98 __DATA.__common         com.apple.driver.AppleSEPManager
+0xfffffe000b97efe0 __DATA.__common         com.apple.driver.AppleSMC
+0xfffffe000b97f020 __DATA.__common         com.apple.driver.AppleSMCWirelessCharger
+0xfffffe000b97f070 __DATA.__common         com.apple.driver.AppleSPIMC
+0xfffffe000b97f0b0 __DATA.__common         com.apple.driver.AppleSPMI
+0xfffffe000b97f0f0 __DATA.__common         com.apple.driver.AppleSPMIPMU
+0xfffffe000b97f130 __DATA.__common         com.apple.driver.AppleSPU
+0xfffffe000b97f170 __DATA.__common         com.apple.driver.AppleSPURose
+0xfffffe000b97f1b0 __DATA.__common         com.apple.driver.AppleSPUSphere
+0xfffffe000b97f1f0 __DATA.__common         com.apple.driver.AppleSSE
+0xfffffe000b97f230 __DATA.__common         com.apple.driver.AppleSamsungSerial
+0xfffffe000b97f278 __DATA.__common         com.apple.driver.AppleSerialShim
+0xfffffe000b97f2c0 __DATA.__common         com.apple.driver.AppleSmartBatteryManagerEmbedded
+0xfffffe000b97f318 __DATA.__common         com.apple.driver.AppleSmartIO2
+0xfffffe000b97f358 __DATA.__common         com.apple.driver.AppleStockholmControl
+0xfffffe000b97f3a0 __DATA.__common         com.apple.driver.AppleUSBCardReader
+0xfffffe000b97f3e8 __DATA.__common         com.apple.driver.AppleUSBMassStorageInterfaceNub
+0xfffffe000b97f440 __DATA.__common         com.apple.driver.AppleSynopsysMIPIDSI
+0xfffffe000b97f488 __DATA.__common         com.apple.driver.AppleT6020PCIePIODMA
+0xfffffe000b97f4d0 __DATA.__common         com.apple.driver.AppleT8030SOCTuner
+0xfffffe000b97f518 __DATA.__common         com.apple.driver.AppleT8110DART
+0xfffffe000b97f558 __DATA.__common         com.apple.driver.AppleT8150
+0xfffffe000b97f598 __DATA.__common         com.apple.driver.AppleT8150ANEHAL
+0xfffffe000b97f5e0 __DATA.__common         com.apple.driver.AppleT8150CLPC
+0xfffffe000b97f620 __DATA.__common         com.apple.driver.AppleT8150MCC
+0xfffffe000b97f660 __DATA.__common         com.apple.driver.AppleT8150PCIe
+0xfffffe000b97f6a0 __DATA.__common         com.apple.driver.AppleT8150PMGR
+0xfffffe000b97f6e0 __DATA.__common         com.apple.driver.AppleTemperatureSensor
+0xfffffe000b97f728 __DATA.__common         com.apple.driver.AppleThunderboltDPAdapterFamily
+0xfffffe000b97f780 __DATA.__common         com.apple.driver.AppleThunderboltDPInAdapter
+0xfffffe000b97f7d0 __DATA.__common         com.apple.driver.AppleThunderboltDPOutAdapter
+0xfffffe000b97f820 __DATA.__common         com.apple.driver.AppleThunderboltEDMSource
+0xfffffe000b97f870 __DATA.__common         com.apple.driver.AppleThunderboltIP
+0xfffffe000b97f8b8 __DATA.__common         com.apple.driver.AppleThunderboltNHI
+0xfffffe000b97f900 __DATA.__common         com.apple.driver.AppleThunderboltPCIDownAdapter
+0xfffffe000b97f950 __DATA.__common         com.apple.driver.AppleThunderboltPCIUpAdapter
+0xfffffe000b97f9a0 __DATA.__common         com.apple.driver.AppleThunderboltUSBDownAdapter
+0xfffffe000b97f9f0 __DATA.__common         com.apple.driver.AppleThunderboltUSBType2DownAdapter
+0xfffffe000b97fa48 __DATA.__common         com.apple.driver.AppleThunderboltUSBType2UpAdapter
+0xfffffe000b97faa0 __DATA.__common         com.apple.driver.AppleThunderboltUSBUpAdapter
+0xfffffe000b97faf0 __DATA.__common         com.apple.driver.AppleTopCaseHIDEventDriver
+0xfffffe000b97fb40 __DATA.__common         com.apple.driver.AppleUSBTopCaseDriver
+0xfffffe000b97fb88 __DATA.__common         com.apple.driver.AppleTriStar
+0xfffffe000b97fbc8 __DATA.__common         com.apple.driver.AppleTypeCPhy
+0xfffffe000b97fc08 __DATA.__common         com.apple.driver.AppleT8103TypeCPhy
+0xfffffe000b97fc50 __DATA.__common         com.apple.driver.AppleT8130TypeCPhy
+0xfffffe000b97fc98 __DATA.__common         com.apple.driver.AppleTypeCPhyAUSBC
+0xfffffe000b97fce0 __DATA.__common         com.apple.driver.AppleUSBAudio
+0xfffffe000b97fd20 __DATA.__common         com.apple.driver.usb.cdc
+0xfffffe000b97fd60 __DATA.__common         com.apple.driver.usb.AppleUSBCommon
+0xfffffe000b97fda8 __DATA.__common         com.apple.driver.AppleUSBDeviceAudioController
+0xfffffe000b97fdf8 __DATA.__common         com.apple.driver.AppleUSBDeviceMux
+0xfffffe000b97fe40 __DATA.__common         com.apple.driver.AppleUSBDeviceNCM
+0xfffffe000b97fe88 __DATA.__common         com.apple.driver.usb.cdc.ecm
+0xfffffe000b97fec8 __DATA.__common         com.apple.driver.usb.ethernet.asix
+0xfffffe000b97ff10 __DATA.__common         com.apple.driver.AppleUSBEthernetDevice
+0xfffffe000b97ff58 __DATA.__common         com.apple.driver.AppleUSBEthernetHost
+0xfffffe000b97ffa0 __DATA.__common         com.apple.driver.AppleUSBLightningAdapter
+0xfffffe000b97fff0 __DATA.__common         com.apple.driver.AppleUSBMike
+0xfffffe000b980030 __DATA.__common         com.apple.driver.usb.cdc.ncm
+0xfffffe000b980070 __DATA.__common         com.apple.driver.usb.networking
+0xfffffe000b9800b0 __DATA.__common         com.apple.driver.AppleUVDM
+0xfffffe000b9800f0 __DATA.__common         com.apple.driver.AppleUVDMDriver
+0xfffffe000b980138 __DATA.__common         com.apple.driver.AudioDMACLLTEscalationDetector-T8150
+0xfffffe000b980190 __DATA.__common         com.apple.driver.AudioDMAController-T8150
+0xfffffe000b9801e0 __DATA.__common         com.apple.driver.AudioDMAFamily
+0xfffffe000b980220 __DATA.__common         com.apple.kec.Compression
+0xfffffe000b980260 __DATA.__common         com.apple.iokit.CoreAnalyticsFamily
+0xfffffe000b9802a8 __DATA.__common         com.apple.kext.CoreTrust
+0xfffffe000b9802e8 __DATA.__common         com.apple.driver.DCPAVFamilyProxy
+0xfffffe000b980330 __DATA.__common         com.apple.driver.DCPDPFamilyProxy
+0xfffffe000b980378 __DATA.__common         com.apple.iokit.IOMIPIFamily
+0xfffffe000b9803b8 __DATA.__common         com.apple.driver.DMAChannelProxy
+0xfffffe000b980400 __DATA.__common         com.apple.EXBrightCalibrationConsumer
+0xfffffe000b980448 __DATA.__common         com.apple.EXBrightKext
+0xfffffe000b980480 __DATA.__common         com.apple.driver.EXDisplayPipeH18P
+0xfffffe000b9804c8 __DATA.__common         com.apple.ExclaveKextClient
+0xfffffe000b980508 __DATA.__common         com.apple.driver.ExclaveSEPManagerProxy
+0xfffffe000b980550 __DATA.__common         com.apple.driver.ExclavesAudioKext
+0xfffffe000b980598 __DATA.__common         com.apple.driver.FairPlayIOKit
+0xfffffe000b9805d8 __DATA.__common         com.apple.driver.IISAudioIsolatedStreamECProxy
+0xfffffe000b980628 __DATA.__common         com.apple.iokit.IOAVFamily
+0xfffffe000b980668 __DATA.__common         com.apple.iokit.IOAccessoryManager
+0xfffffe000b9806b0 __DATA.__common         com.apple.iokit.IOAccessoryPortUSB
+0xfffffe000b9806f8 __DATA.__common         com.apple.iokit.IOAudio2Family
+0xfffffe000b980738 __DATA.__common         com.apple.driver.IOAudioCodecs
+0xfffffe000b980778 __DATA.__common         com.apple.iokit.IOBiometricFamily
+0xfffffe000b9807c0 __DATA.__common         com.apple.iokit.IOCECFamily
+0xfffffe000b980800 __DATA.__common         com.apple.iokit.IOCryptoAcceleratorFamily
+0xfffffe000b980850 __DATA.__common         com.apple.driver.IODARTFamily
+0xfffffe000b980890 __DATA.__common         com.apple.iokit.IODisplayPortFamily
+0xfffffe000b9808d8 __DATA.__common         com.apple.iokit.IOGPUFamily
+0xfffffe000b980918 __DATA.__common         com.apple.iokit.IOGameControllerFamily
+0xfffffe000b980960 __DATA.__common         com.apple.iokit.IOHDCPFamily
+0xfffffe000b9809a0 __DATA.__common         com.apple.driver.DiskImages
+0xfffffe000b9809e0 __DATA.__common         com.apple.driver.DiskImages.FileBackingStore
+0xfffffe000b980a30 __DATA.__common         com.apple.driver.DiskImages.KernelBacked
+0xfffffe000b980a80 __DATA.__common         com.apple.driver.DiskImages.RAMBackingStore
+0xfffffe000b980ad0 __DATA.__common         com.apple.driver.DiskImages.ReadWriteDiskImage
+0xfffffe000b980b20 __DATA.__common         com.apple.driver.DiskImages.UDIFDiskImage
+0xfffffe000b980b70 __DATA.__common         com.apple.iokit.IOHIDFamily
+0xfffffe000b980bb0 __DATA.__common         com.apple.driver.IOHIDPowerSource
+0xfffffe000b980bf8 __DATA.__common         com.apple.iokit.IOMikeyBusFamily
+0xfffffe000b980c40 __DATA.__common         com.apple.iokit.IOMobileGraphicsFamily-DCP
+0xfffffe000b980c90 __DATA.__common         com.apple.iokit.IOMobileGraphicsFamily
+0xfffffe000b980cd8 __DATA.__common         com.apple.iokit.IONVMeFamily
+0xfffffe000b980d18 __DATA.__common         com.apple.iokit.IONetworkFamily
+0xfffffe000b980d58 __DATA.__common         com.apple.iokit.IONetworkingFamily
+0xfffffe000b980da0 __DATA.__common         com.apple.driver.IOPAudioAssetManagerDevice
+0xfffffe000b980df0 __DATA.__common         com.apple.driver.IOPAudioClientManagerDevice
+0xfffffe000b980e40 __DATA.__common         com.apple.iokit.IOPAudioDriverFamily
+0xfffffe000b980e88 __DATA.__common         com.apple.driver.IOPAudioHapticsLEAPControlDevice
+0xfffffe000b980ee0 __DATA.__common         com.apple.driver.IOPAudioIOBufferDevice
+0xfffffe000b980f28 __DATA.__common         com.apple.driver.IOPAudioIsolatedIOBufferDevice
+0xfffffe000b980f78 __DATA.__common         com.apple.driver.IOPAudioLEAPControlDevice
+0xfffffe000b980fc8 __DATA.__common         com.apple.driver.IOPAudioLPMicDevice
+0xfffffe000b981010 __DATA.__common         com.apple.driver.IOPAudioPCMAssetManagerDevice
+0xfffffe000b981060 __DATA.__common         com.apple.driver.IOPAudioVoiceTriggerDevice
+0xfffffe000b9810b0 __DATA.__common         com.apple.iokit.IOPCIFamily
+0xfffffe000b9810f0 __DATA.__common         com.apple.iokit.IOPortFamily
+0xfffffe000b981130 __DATA.__common         com.apple.iokit.IOReportFamily
+0xfffffe000b981170 __DATA.__common         com.apple.iokit.IOSCSIArchitectureModelFamily
+0xfffffe000b9811c0 __DATA.__common         com.apple.iokit.IOSCSIBlockCommandsDevice
+0xfffffe000b981210 __DATA.__common         com.apple.iokit.IOSerialFamily
+0xfffffe000b981250 __DATA.__common         com.apple.iokit.IOSkywalkFamily
+0xfffffe000b981290 __DATA.__common         com.apple.driver.IOSlaveProcessor
+0xfffffe000b9812d8 __DATA.__common         com.apple.iokit.IOSlowAdaptiveClockingFamily
+0xfffffe000b981328 __DATA.__common         com.apple.iokit.IOStorageFamily
+0xfffffe000b981368 __DATA.__common         com.apple.iokit.IOStreamFamily
+0xfffffe000b9813a8 __DATA.__common         com.apple.iokit.IOSurface
+0xfffffe000b9813e8 __DATA.__common         com.apple.IOTextEncryptionFamily
+0xfffffe000b981430 __DATA.__common         com.apple.iokit.IOThunderboltFamily
+0xfffffe000b981478 __DATA.__common         com.apple.iokit.IOTimeSyncFamily
+0xfffffe000b9814c0 __DATA.__common         com.apple.iokit.IOUSBDeviceFamily
+0xfffffe000b981508 __DATA.__common         com.apple.driver.AppleUSBXDCI
+0xfffffe000b981548 __DATA.__common         com.apple.driver.AppleUSBXDCIARM
+0xfffffe000b981590 __DATA.__common         com.apple.iokit.IOUSBHostFamily
+0xfffffe000b9815d0 __DATA.__common         com.apple.driver.usb.AppleSynopsysUSB40XHCI
+0xfffffe000b981620 __DATA.__common         com.apple.driver.usb.AppleSynopsysUSBXHCI
+0xfffffe000b981670 __DATA.__common         com.apple.driver.usb.AppleUSBHostBillboardDevice
+0xfffffe000b9816c8 __DATA.__common         com.apple.driver.usb.AppleUSBHostCompositeDevice
+0xfffffe000b981720 __DATA.__common         com.apple.driver.usb.AppleUSBHostDeviceSupport
+0xfffffe000b981770 __DATA.__common         com.apple.driver.AppleUSBHostMergeProperties
+0xfffffe000b9817c0 __DATA.__common         com.apple.driver.usb.AppleUSBHostPacketFilter
+0xfffffe000b981810 __DATA.__common         com.apple.driver.usb.AppleUSBHostiOSDevice
+0xfffffe000b981860 __DATA.__common         com.apple.driver.usb.AppleUSBHub
+0xfffffe000b9818a8 __DATA.__common         com.apple.driver.usb.AppleUSBXHCI
+0xfffffe000b9818f0 __DATA.__common         com.apple.driver.usb.IOUSBHostHIDDevice
+0xfffffe000b981938 __DATA.__common         com.apple.iokit.IOUSBMassStorageDriver
+0xfffffe000b981980 __DATA.__common         com.apple.iokit.IOUserEthernet
+0xfffffe000b9819c0 __DATA.__common         com.apple.plugin.IOgPTPPlugin
+0xfffffe000b981a00 __DATA.__common         com.apple.security.Image4
+0xfffffe000b981a40 __DATA.__common         com.apple.nke.l2tp
+0xfffffe000b981a78 __DATA.__common         com.apple.nke.ppp
+0xfffffe000b981ab0 __DATA.__common         com.apple.driver.RTBuddy
+0xfffffe000b981af0 __DATA.__common         com.apple.security.sandbox
+0xfffffe000b981b30 __DATA.__common         com.apple.driver.SecureRTBuddyProxy
+0xfffffe000b981b78 __DATA.__common         com.apple.driver.AudioSharedDARTMapperProxy
+0xfffffe000b981bc8 __DATA.__common         com.apple.audio.TrustedClockingKEXT
+0xfffffe000b981c10 __DATA.__common         com.apple.driver.VideoProcessing
+0xfffffe000b981c58 __DATA.__common         com.apple.kec.XrtHostedXnu
+0xfffffe000b981c98 __DATA.__common         com.apple.filesystems.apfs
+0xfffffe000b981cd8 __DATA.__common         com.apple.driver.corecapture
+0xfffffe000b981d18 __DATA.__common         com.apple.kec.corecrypto
+0xfffffe000b981d58 __DATA.__common         com.apple.filesystems.lifs
+0xfffffe000b981d98 __DATA.__common         com.apple.driver.mDNSOffloadUserClient-Embedded
+0xfffffe000b981de8 __DATA.__common         com.apple.filesystems.tmpfs
+0xfffffe000b9845e0 __DATA.__common         __TEXT
+0xfffffe000b984620 __DATA.__common         __const
+0xfffffe000b984630 __DATA.__common         __TEXT
+0xfffffe000b984670 __DATA.__common         __copyio_vectors__TEXT
+0xfffffe000b9846c0 __DATA.__common         __cstring
+0xfffffe000b9846d0 __DATA.__common         __TEXT
+0xfffffe000b984710 __DATA.__common         __os_log
+0xfffffe000b984720 __DATA.__common         __TEXT
+0xfffffe000b984760 __DATA.__common         __eh_frame
+0xfffffe000b984770 __DATA.__common         __TEXT
+0xfffffe000b9847b8 __DATA.__common         __DATA_CONST
+0xfffffe000b9847f8 __DATA.__common         __hib_const
+0xfffffe000b984808 __DATA.__common         __DATA_CONST
+0xfffffe000b984848 __DATA.__common         __const
+0xfffffe000b984858 __DATA.__common         __DATA_CONST
+0xfffffe000b984898 __DATA.__common         __kalloc_type
+0xfffffe000b9848a8 __DATA.__common         __DATA_CONST
+0xfffffe000b9848e8 __DATA.__common         __assert
+0xfffffe000b9848f8 __DATA.__common         __DATA_CONST
+0xfffffe000b984938 __DATA.__common         __kalloc_var
+0xfffffe000b984948 __DATA.__common         __DATA_CONST
+0xfffffe000b984988 __DATA.__common         __exclaves_bt
+0xfffffe000b984998 __DATA.__common         __DATA_CONST
+0xfffffe000b9849d8 __DATA.__common         __kern_brk_desc
+0xfffffe000b9849e8 __DATA.__common         __DATA_CONST
+0xfffffe000b984a28 __DATA.__common         __mod_init_func
+0xfffffe000b984a38 __DATA.__common         __DATA_CONST
+0xfffffe000b984a78 __DATA.__common         __auth_ptr
+0xfffffe000b984a88 __DATA.__common         __DATA_CONST
+0xfffffe000b984ad0 __DATA.__common         __DATA_SPTM
+0xfffffe000b984b10 __DATA.__common         __const
+0xfffffe000b984b20 __DATA.__common         __DATA_SPTM
+0xfffffe000b984b68 __DATA.__common         __TEXT_EXEC
+0xfffffe000b984ba8 __DATA.__common         __exc
+0xfffffe000b984bb8 __DATA.__common         __TEXT_EXEC
+0xfffffe000b984bf8 __DATA.__common         __text
+0xfffffe000b984c08 __DATA.__common         __TEXT_EXEC
+0xfffffe000b984c48 __DATA.__common         __hib_text
+0xfffffe000b984c58 __DATA.__common         __TEXT_EXEC
+0xfffffe000b984ca0 __DATA.__common         __TEXT_BOOT_EXEC
+0xfffffe000b984ce0 __DATA.__common         __bootcode
+0xfffffe000b984cf0 __DATA.__common         __TEXT_BOOT_EXEC
+0xfffffe000b984d38 __DATA.__common         __KLD
+0xfffffe000b984d78 __DATA.__common         __text
+0xfffffe000b984d88 __DATA.__common         __KLD
+0xfffffe000b984dd0 __DATA.__common         __LASTDATA_CONST
+0xfffffe000b984e10 __DATA.__common         __mod_init_func
+0xfffffe000b984e20 __DATA.__common         __LASTDATA_CONST
+0xfffffe000b984e68 __DATA.__common         __LAST
+0xfffffe000b984ea8 __DATA.__common         __pinst
+0xfffffe000b984eb8 __DATA.__common         __LAST
+0xfffffe000b984ef8 __DATA.__common         __last
+0xfffffe000b984f08 __DATA.__common         __LAST
+0xfffffe000b984f50 __DATA.__common         __KLDDATA
+0xfffffe000b984f90 __DATA.__common         __cstring
+0xfffffe000b984fa0 __DATA.__common         __KLDDATA
+0xfffffe000b984fe0 __DATA.__common         __const
+0xfffffe000b984ff0 __DATA.__common         __KLDDATA
+0xfffffe000b985030 __DATA.__common         __mod_init_func
+0xfffffe000b985040 __DATA.__common         __KLDDATA
+0xfffffe000b985080 __DATA.__common         __mod_term_func
+0xfffffe000b985090 __DATA.__common         __KLDDATA
+0xfffffe000b9850d0 __DATA.__common         __bss
+0xfffffe000b9850e0 __DATA.__common         __KLDDATA
+0xfffffe000b985128 __DATA.__common         __DATA
+0xfffffe000b985168 __DATA.__common         __data
+0xfffffe000b985178 __DATA.__common         __DATA
+0xfffffe000b9851b8 __DATA.__common         __lock_grp
+0xfffffe000b9851c8 __DATA.__common         __DATA
+0xfffffe000b985208 __DATA.__common         __percpu
+0xfffffe000b985218 __DATA.__common         __DATA
+0xfffffe000b985258 __DATA.__common         __common
+0xfffffe000b985268 __DATA.__common         __DATA
+0xfffffe000b9852a8 __DATA.__common         __bss
+0xfffffe000b9852b8 __DATA.__common         __DATA
+0xfffffe000b985300 __DATA.__common         __BOOTDATA
+0xfffffe000b985340 __DATA.__common         __data
+0xfffffe000b985350 __DATA.__common         __BOOTDATA
+0xfffffe000b985390 __DATA.__common         __static_if
+0xfffffe000b9853a0 __DATA.__common         __BOOTDATA
+0xfffffe000b9853e0 __DATA.__common         __init_entry_set__BOOTDATA
+0xfffffe000b985430 __DATA.__common         __init
+0xfffffe000b985440 __DATA.__common         __BOOTDATA
+0xfffffe000b985480 __DATA.__common         __static_ifinit
+0xfffffe000b985490 __DATA.__common         __BOOTDATA
+0xfffffe000b9854d8 __DATA.__common         __PRELINK_TEXT
+0xfffffe000b985518 __DATA.__common         __text
+0xfffffe000b985528 __DATA.__common         __PRELINK_TEXT
+0xfffffe000b985570 __DATA.__common         __PRELINK_INFO
+0xfffffe000b9855b0 __DATA.__common         __info
+0xfffffe000b9855c0 __DATA.__common         __PRELINK_INFO
+0xfffffe000b985608 __DATA.__common         __PLK_TEXT_EXEC
+0xfffffe000b985648 __DATA.__common         __text
+0xfffffe000b985658 __DATA.__common         __PLK_TEXT_EXEC
+0xfffffe000b9856a0 __DATA.__common         __PRELINK_DATA
+0xfffffe000b9856e0 __DATA.__common         __data
+0xfffffe000b9856f0 __DATA.__common         __PRELINK_DATA
+0xfffffe000b985738 __DATA.__common         __PLK_DATA_CONST
+0xfffffe000b985778 __DATA.__common         __data
+0xfffffe000b985788 __DATA.__common         __PLK_DATA_CONST
+0xfffffe000b9857d0 __DATA.__common         __PLK_LLVM_COV
+0xfffffe000b985810 __DATA.__common         __llvm_covmap
+0xfffffe000b985820 __DATA.__common         __PLK_LLVM_COV
+0xfffffe000b985868 __DATA.__common         __PLK_LINKEDIT
+0xfffffe000b9858a8 __DATA.__common         __data
+0xfffffe000b9858b8 __DATA.__common         __PLK_LINKEDIT
+0xfffffe000b985900 __DATA.__common         __LINKINFO
+0xfffffe000b985940 __DATA.__common         __symbolsets
+0xfffffe000b985950 __DATA.__common         __LINKINFO
+0xfffffe000b985998 __DATA.__common         __LINKEDIT
+0xfffffe000b985a54 __DATA.__common         -B|c2
+0xfffffe000b985d64 __DATA.__common         ,( <
+0xfffffe000b985d71 __DATA.__common         0, 48(
+0xfffffe000b985da1 __DATA.__common         0<8(0
+0xfffffe000b985dbf __DATA.__common         8( $
+0xfffffe000b985dc5 __DATA.__common         <(,4
+0xfffffe000b985dd2 __DATA.__common          (4$
+0xfffffe000b985de7 __DATA.__common         8 (0
+0xfffffe000b985ded __DATA.__common         ,4,(
+0xfffffe000b985e05 __DATA.__common         80,(4 
+0xfffffe000b985e53 __DATA.__common         4(0,8
+0xfffffe000b986240 __DATA.__common         80( 
+0xfffffe000b986454 __DATA.__common         fpmc
+0xfffffe000b987c28 __DATA.__common         aicirtaP
+0xfffffe000b987ce8 __DATA.__common         uespemosmodnarodarenegylsetybdet
+0xfffffe000b9882ea __DATA.__common         aXh{
+0xfffffe000b98837a __DATA.__common         5gRFl
+0xfffffe000b9883db __DATA.__common         8/Ro
+0xfffffe000b98849b __DATA.__common         8/Ro
+0xfffffe000b98852a __DATA.__common         aXh{
+0xfffffe000b98857a __DATA.__common         *q71
+0xfffffe000b988588 __DATA.__common         ;ZA;
+0xfffffe000b9885b8 __DATA.__common         \~"J
+0xfffffe000b9888e8 __DATA.__common         ?&2"
+0xfffffe000b988bbc __DATA.__common         com.apple.xnu.ipc_sec_policy_violation
+0xfffffe000b988be3 __DATA.__common         ca_sstr[17]
+0xfffffe000b988bef __DATA.__common         proc_name
+0xfffffe000b988bf9 __DATA.__common         ca_sstr[86]
+0xfffffe000b988c05 __DATA.__common         service_name
+0xfffffe000b988c12 __DATA.__common         ca_sstr[32]
+0xfffffe000b988c1e __DATA.__common         team_id
+0xfffffe000b988c26 __DATA.__common         ca_sstr[128]
+0xfffffe000b988c33 __DATA.__common         signing_id
+0xfffffe000b988c3e __DATA.__common         1ULL
+0xfffffe000b988c43 __DATA.__common         ipc_sec_policy_violation_id
+0xfffffe000b988c5f __DATA.__common         1ULL
+0xfffffe000b988c64 __DATA.__common         aux_data
+0xfffffe000b988c6d __DATA.__common         ca_sstr[340]
+0xfffffe000b988c7a __DATA.__common         user_backtrace
+0xfffffe000b988c89 __DATA.__common         ca_sstr[19]
+0xfffffe000b988c95 __DATA.__common         shared_cache_base
+0xfffffe000b988ca7 __DATA.__common         ca_sstr[19]
+0xfffffe000b988cb3 __DATA.__common         shared_cache_slide
+0xfffffe000b988cc6 __DATA.__common         ca_sstr[37]
+0xfffffe000b988cd2 __DATA.__common         shared_cache_uuid
+0xfffffe000b988ce4 __DATA.__common         ca_sstr[19]
+0xfffffe000b988cf0 __DATA.__common         main_exec_load_addr
+0xfffffe000b988d04 __DATA.__common         ca_sstr[19]
+0xfffffe000b988d10 __DATA.__common         main_exec_slide
+0xfffffe000b988d20 __DATA.__common         ca_sstr[37]
+0xfffffe000b988d2c __DATA.__common         main_exec_uuid
+0xfffffe000b988e58 __DATA.__common         com.apple.xnu.ca_exclaves_allocation_statistics
+0xfffffe000b988e88 __DATA.__common         1ULL
+0xfffffe000b988e8d __DATA.__common         pages_alloced
+0xfffffe000b988e9b __DATA.__common         1ULL
+0xfffffe000b988ea0 __DATA.__common         pages_freed
+0xfffffe000b988eac __DATA.__common         1ULL
+0xfffffe000b988eb1 __DATA.__common         time_allocating
+0xfffffe000b988ec1 __DATA.__common         1ULL
+0xfffffe000b988ec6 __DATA.__common         max_alloc_latency
+0xfffffe000b988ed8 __DATA.__common         1ULL
+0xfffffe000b988edd __DATA.__common         alloc_latency_highbit0
+0xfffffe000b988ef4 __DATA.__common         1ULL
+0xfffffe000b988ef9 __DATA.__common         alloc_latency_highbit1
+0xfffffe000b988f10 __DATA.__common         1ULL
+0xfffffe000b988f15 __DATA.__common         alloc_latency_highbit2
+0xfffffe000b988f2c __DATA.__common         1ULL
+0xfffffe000b988f31 __DATA.__common         alloc_latency_highbit3
+0xfffffe000b988f48 __DATA.__common         1ULL
+0xfffffe000b988f4d __DATA.__common         alloc_latency_highbit4
+0xfffffe000b988f64 __DATA.__common         1ULL
+0xfffffe000b988f69 __DATA.__common         alloc_latency_highbit5
+0xfffffe000b988f80 __DATA.__common         1ULL
+0xfffffe000b988f85 __DATA.__common         alloc_latency_highbit6
+0xfffffe000b988f9c __DATA.__common         1ULL
+0xfffffe000b988fa1 __DATA.__common         alloc_latency_highbit7
+0xfffffe000b988fb8 __DATA.__common         1ULL
+0xfffffe000b988fbd __DATA.__common         alloc_latency_highbit8
+0xfffffe000b988fd4 __DATA.__common         1ULL
+0xfffffe000b988fd9 __DATA.__common         alloc_latency_highbit9
+0xfffffe000b988ff0 __DATA.__common         1ULL
+0xfffffe000b988ff5 __DATA.__common         alloc_latency_highbit10
+0xfffffe000b98900d __DATA.__common         1ULL
+0xfffffe000b989012 __DATA.__common         alloc_latency_highbit11
+0xfffffe000b98902a __DATA.__common         1ULL
+0xfffffe000b98902f __DATA.__common         alloc_latency_highbit12
+0xfffffe000b989047 __DATA.__common         1ULL
+0xfffffe000b98904c __DATA.__common         alloc_latency_highbit13
+0xfffffe000b989064 __DATA.__common         1ULL
+0xfffffe000b989069 __DATA.__common         alloc_latency_highbit14
+0xfffffe000b989081 __DATA.__common         1ULL
+0xfffffe000b989086 __DATA.__common         alloc_latency_highbit15
+0xfffffe000b9890c0 __DATA.__common         com.apple.xnu.exclave_indicator_controller_metrics_v1
+0xfffffe000b9890f6 __DATA.__common         1ULL
+0xfffffe000b9890fb __DATA.__common         metrics_duration_ms
+0xfffffe000b98910f __DATA.__common         1ULL
+0xfffffe000b989114 __DATA.__common         num_sessions_mic
+0xfffffe000b989125 __DATA.__common         1ULL
+0xfffffe000b98912a __DATA.__common         num_sessions_dropped_mic
+0xfffffe000b989143 __DATA.__common         1ULL
+0xfffffe000b989148 __DATA.__common         num_sessions_denied_healthcheck_mic
+0xfffffe000b98916c __DATA.__common         1ULL
+0xfffffe000b989171 __DATA.__common         num_sessions_denied_sensor_control_mic
+0xfffffe000b989198 __DATA.__common         1ULL
+0xfffffe000b98919d __DATA.__common         duration_allowed_ms_mic
+0xfffffe000b9891b5 __DATA.__common         1ULL
+0xfffffe000b9891ba __DATA.__common         duration_pending_ms_mic
+0xfffffe000b9891d2 __DATA.__common         1ULL
+0xfffffe000b9891d7 __DATA.__common         duration_control_ms_mic
+0xfffffe000b9891ef __DATA.__common         1ULL
+0xfffffe000b9891f4 __DATA.__common         duration_denied_ms_mic
+0xfffffe000b98920b __DATA.__common         1ULL
+0xfffffe000b989210 __DATA.__common         bips_allowed_mic
+0xfffffe000b989221 __DATA.__common         1ULL
+0xfffffe000b989226 __DATA.__common         bips_pending_mic
+0xfffffe000b989237 __DATA.__common         1ULL
+0xfffffe000b98923c __DATA.__common         bips_control_mic
+0xfffffe000b98924d __DATA.__common         1ULL
+0xfffffe000b989252 __DATA.__common         bips_denied_mic
+0xfffffe000b989262 __DATA.__common         1ULL
+0xfffffe000b989267 __DATA.__common         num_sessions_cam
+0xfffffe000b989278 __DATA.__common         1ULL
+0xfffffe000b98927d __DATA.__common         num_sessions_dropped_cam
+0xfffffe000b989296 __DATA.__common         1ULL
+0xfffffe000b98929b __DATA.__common         num_sessions_denied_healthcheck_cam
+0xfffffe000b9892bf __DATA.__common         1ULL
+0xfffffe000b9892c4 __DATA.__common         num_sessions_denied_sensor_control_cam
+0xfffffe000b9892eb __DATA.__common         1ULL
+0xfffffe000b9892f0 __DATA.__common         duration_allowed_ms_cam
+0xfffffe000b989308 __DATA.__common         1ULL
+0xfffffe000b98930d __DATA.__common         duration_pending_ms_cam
+0xfffffe000b989325 __DATA.__common         1ULL
+0xfffffe000b98932a __DATA.__common         duration_control_ms_cam
+0xfffffe000b989342 __DATA.__common         1ULL
+0xfffffe000b989347 __DATA.__common         duration_denied_ms_cam
+0xfffffe000b98935e __DATA.__common         1ULL
+0xfffffe000b989363 __DATA.__common         bips_allowed_cam
+0xfffffe000b989374 __DATA.__common         1ULL
+0xfffffe000b989379 __DATA.__common         bips_pending_cam
+0xfffffe000b98938a __DATA.__common         1ULL
+0xfffffe000b98938f __DATA.__common         bips_control_cam
+0xfffffe000b9893a0 __DATA.__common         1ULL
+0xfffffe000b9893a5 __DATA.__common         bips_denied_cam
+0xfffffe000b9893b6 __DATA.__common         com.apple.xnu.exclave_indicator_controller_chillpill_metrics_v1
+0xfffffe000b9893f6 __DATA.__common         1ULL
+0xfffffe000b9893fb __DATA.__common         chillpill_limit_ms
+0xfffffe000b98940e __DATA.__common         1ULL
+0xfffffe000b989413 __DATA.__common         max_chillpill_used_ms
+0xfffffe000b989429 __DATA.__common         1ULL
+0xfffffe000b98942e __DATA.__common         chillpill_bucket_0_100_ms
+0xfffffe000b989448 __DATA.__common         1ULL
+0xfffffe000b98944d __DATA.__common         chillpill_bucket_101_200_ms
+0xfffffe000b989469 __DATA.__common         1ULL
+0xfffffe000b98946e __DATA.__common         chillpill_bucket_201_300_ms
+0xfffffe000b98948a __DATA.__common         1ULL
+0xfffffe000b98948f __DATA.__common         chillpill_bucket_301_400_ms
+0xfffffe000b9894ab __DATA.__common         1ULL
+0xfffffe000b9894b0 __DATA.__common         chillpill_bucket_401_500_ms
+0xfffffe000b9894cc __DATA.__common         1ULL
+0xfffffe000b9894d1 __DATA.__common         chillpill_bucket_501_600_ms
+0xfffffe000b9894ed __DATA.__common         1ULL
+0xfffffe000b9894f2 __DATA.__common         chillpill_bucket_601_700_ms
+0xfffffe000b98950e __DATA.__common         1ULL
+0xfffffe000b989513 __DATA.__common         chillpill_bucket_701_800_ms
+0xfffffe000b98952f __DATA.__common         1ULL
+0xfffffe000b989534 __DATA.__common         chillpill_bucket_801_900_ms
+0xfffffe000b989550 __DATA.__common         1ULL
+0xfffffe000b989555 __DATA.__common         chillpill_bucket_901_1000_ms
+0xfffffe000b989572 __DATA.__common         1ULL
+0xfffffe000b989577 __DATA.__common         chillpill_bucket_1001_1500_ms
+0xfffffe000b989595 __DATA.__common         1ULL
+0xfffffe000b98959a __DATA.__common         chillpill_bucket_1501_2000_ms
+0xfffffe000b9895b8 __DATA.__common         1ULL
+0xfffffe000b9895bd __DATA.__common         chillpill_bucket_2001_2500_ms
+0xfffffe000b9895db __DATA.__common         1ULL
+0xfffffe000b9895e0 __DATA.__common         chillpill_bucket_2501_3000_ms
+0xfffffe000b9895fe __DATA.__common         1ULL
+0xfffffe000b989603 __DATA.__common         chillpill_bucket_3000_plus_ms
+0xfffffe000b989b90 __DATA.__common         <unknown>
+0xfffffe000b989e1c __DATA.__common         com.apple.xnu.vm_swapusage
+0xfffffe000b989e37 __DATA.__common         1ULL
+0xfffffe000b989e3c __DATA.__common         max_alloced
+0xfffffe000b989e48 __DATA.__common         1ULL
+0xfffffe000b989e4d __DATA.__common         max_used
+0xfffffe000b989e56 __DATA.__common         1ULL
+0xfffffe000b989e5b __DATA.__common         trial_deployment_id
+0xfffffe000b989e6f __DATA.__common         ca_sstr[37]
+0xfffffe000b989e7b __DATA.__common         trial_treatment_id
+0xfffffe000b989e8e __DATA.__common         ca_sstr[37]
+0xfffffe000b989e9a __DATA.__common         trial_experiment_id
+0xfffffe000b989eae __DATA.__common         ((_Bool) 1)
+0xfffffe000b989eba __DATA.__common         freezer_active
+0xfffffe000b989ec9 __DATA.__common         ((_Bool) 1)
+0xfffffe000b989ed5 __DATA.__common         swap_active
+0xfffffe000b989ee1 __DATA.__common         ((_Bool) 1)
+0xfffffe000b989eed __DATA.__common         app_swap_active
+0xfffffe000b989efd __DATA.__common         ((_Bool) 1)
+0xfffffe000b989f09 __DATA.__common         scavenger_active
+0xfffffe000b989f1a __DATA.__common         1ULL
+0xfffffe000b989f1f __DATA.__common         ripeness_threshold_s
+0xfffffe000b989f34 __DATA.__common         1ULL
+0xfffffe000b989f39 __DATA.__common         freezer_swapouts_b
+0xfffffe000b989f4c __DATA.__common         1ULL
+0xfffffe000b989f51 __DATA.__common         scavenger_swapouts_b
+0xfffffe000b989f66 __DATA.__common         1ULL
+0xfffffe000b989f6b __DATA.__common         regular_swapouts_b
+0xfffffe000b989f7e __DATA.__common         1ULL
+0xfffffe000b989f83 __DATA.__common         donated_swapouts_b
+0xfffffe000b989f96 __DATA.__common         1ULL
+0xfffffe000b989f9b __DATA.__common         darkwake_swapouts_b
+0xfffffe000b989faf __DATA.__common         1ULL
+0xfffffe000b989fb4 __DATA.__common         total_swapouts_b
+0xfffffe000b989fc5 __DATA.__common         1ULL
+0xfffffe000b989fca __DATA.__common         freezer_swapins_b
+0xfffffe000b989fdc __DATA.__common         1ULL
+0xfffffe000b989fe1 __DATA.__common         scavenger_swapins_b
+0xfffffe000b989ff5 __DATA.__common         1ULL
+0xfffffe000b989ffa __DATA.__common         regular_swapins_b
+0xfffffe000b98a00c __DATA.__common         1ULL
+0xfffffe000b98a011 __DATA.__common         donated_swapins_b
+0xfffffe000b98a023 __DATA.__common         1ULL
+0xfffffe000b98a028 __DATA.__common         darkwake_swapins_b
+0xfffffe000b98a03b __DATA.__common         1ULL
+0xfffffe000b98a040 __DATA.__common         total_swapins_b
+0xfffffe000b98a050 __DATA.__common         1ULL
+0xfffffe000b98a055 __DATA.__common         swapfile_limit
+0xfffffe000b98a065 __DATA.__common         com.apple.xnu.mlock_failures
+0xfffffe000b98a082 __DATA.__common         1ULL
+0xfffffe000b98a087 __DATA.__common         over_global_limit
+0xfffffe000b98a099 __DATA.__common         1ULL
+0xfffffe000b98a09e __DATA.__common         over_user_limit
+0xfffffe000b98a0ae __DATA.__common         1ULL
+0xfffffe000b98a0b3 __DATA.__common         trial_deployment_id
+0xfffffe000b98a0c7 __DATA.__common         ca_sstr[37]
+0xfffffe000b98a0d3 __DATA.__common         trial_treatment_id
+0xfffffe000b98a0e6 __DATA.__common         ca_sstr[37]
+0xfffffe000b98a0f2 __DATA.__common         trial_experiment_id
+0xfffffe000b98a107 __DATA.__common         com.apple.xnu.vm_meminfo
+0xfffffe000b98a120 __DATA.__common         1ULL
+0xfffffe000b98a125 __DATA.__common         anonymous_b
+0xfffffe000b98a131 __DATA.__common         1ULL
+0xfffffe000b98a136 __DATA.__common         free_b
+0xfffffe000b98a13d __DATA.__common         1ULL
+0xfffffe000b98a142 __DATA.__common         files_b
+0xfffffe000b98a14a __DATA.__common         1ULL
+0xfffffe000b98a14f __DATA.__common         wired_b
+0xfffffe000b98a157 __DATA.__common         1ULL
+0xfffffe000b98a15c __DATA.__common         carveouts_b
+0xfffffe000b98a168 __DATA.__common         1ULL
+0xfffffe000b98a16d __DATA.__common         compressor_b
+0xfffffe000b98a17a __DATA.__common         1ULL
+0xfffffe000b98a17f __DATA.__common         uncompressed_b
+0xfffffe000b98a18e __DATA.__common         1ULL
+0xfffffe000b98a193 __DATA.__common         unaccounted_b
+0xfffffe000b98a1a1 __DATA.__common         1ULL
+0xfffffe000b98a1a6 __DATA.__common         swapped_slots_total
+0xfffffe000b98a1ba __DATA.__common         1ULL
+0xfffffe000b98a1bf __DATA.__common         swapped_slots_freezer
+0xfffffe000b98a1d5 __DATA.__common         1ULL
+0xfffffe000b98a1da __DATA.__common         swapped_slots_donate
+0xfffffe000b98a1ef __DATA.__common         1ULL
+0xfffffe000b98a1f4 __DATA.__common         swapped_slots_scavenger
+0xfffffe000b98a20c __DATA.__common         1ULL
+0xfffffe000b98a211 __DATA.__common         swapped_slots_pressure
+0xfffffe000b98a228 __DATA.__common         1ULL
+0xfffffe000b98a22d __DATA.__common         swapped_slots_darkwake
+0xfffffe000b98a244 __DATA.__common         1ULL
+0xfffffe000b98a249 __DATA.__common         swap_total
+0xfffffe000b98a254 __DATA.__common         1ULL
+0xfffffe000b98a259 __DATA.__common         swap_freezer
+0xfffffe000b98a266 __DATA.__common         1ULL
+0xfffffe000b98a26b __DATA.__common         swap_donate
+0xfffffe000b98a277 __DATA.__common         1ULL
+0xfffffe000b98a27c __DATA.__common         swap_scavenger
+0xfffffe000b98a28b __DATA.__common         1ULL
+0xfffffe000b98a290 __DATA.__common         swap_pressure
+0xfffffe000b98a29e __DATA.__common         1ULL
+0xfffffe000b98a2a3 __DATA.__common         swap_darkwake
+0xfffffe000b98a2b1 __DATA.__common         1ULL
+0xfffffe000b98a2b6 __DATA.__common         tagged_total
+0xfffffe000b98a2c3 __DATA.__common         1ULL
+0xfffffe000b98a2c8 __DATA.__common         tagged_kernel
+0xfffffe000b98a2d6 __DATA.__common         1ULL
+0xfffffe000b98a2db __DATA.__common         tagged_user
+0xfffffe000b98a2e7 __DATA.__common         1ULL
+0xfffffe000b98a2ec __DATA.__common         tag_storage_total
+0xfffffe000b98a2fe __DATA.__common         1ULL
+0xfffffe000b98a303 __DATA.__common         tag_storage_tags_user
+0xfffffe000b98a319 __DATA.__common         1ULL
+0xfffffe000b98a31e __DATA.__common         tag_storage_tags_mixed
+0xfffffe000b98a335 __DATA.__common         1ULL
+0xfffffe000b98a33a __DATA.__common         tag_storage_tags_kernel
+0xfffffe000b98a352 __DATA.__common         1ULL
+0xfffffe000b98a357 __DATA.__common         tag_storage_empty
+0xfffffe000b98a369 __DATA.__common         1ULL
+0xfffffe000b98a36e __DATA.__common         tag_storage_nontag_pageable
+0xfffffe000b98a38a __DATA.__common         1ULL
+0xfffffe000b98a38f __DATA.__common         tag_storage_nontag_wired
+0xfffffe000b98a3a8 __DATA.__common         1ULL
+0xfffffe000b98a3ad __DATA.__common         tag_storage_free
+0xfffffe000b98a3be __DATA.__common         1ULL
+0xfffffe000b98a3c3 __DATA.__common         tag_storage_unmanaged
+0xfffffe000b98a3da __DATA.__common         com.apple.xnu.vm_swap_failures
+0xfffffe000b98a3f9 __DATA.__common         1ULL
+0xfffffe000b98a3fe __DATA.__common         swapout_failures
+0xfffffe000b98a40f __DATA.__common         1ULL
+0xfffffe000b98a414 __DATA.__common         swapout_failures_enospc
+0xfffffe000b98a42c __DATA.__common         1ULL
+0xfffffe000b98a431 __DATA.__common         swapout_failures_file_limit
+0xfffffe000b98a44d __DATA.__common         1ULL
+0xfffffe000b98a452 __DATA.__common         swapfile_create_failures
+0xfffffe000b98a46b __DATA.__common         1ULL
+0xfffffe000b98a470 __DATA.__common         swapfile_create_failures_enospc
+0xfffffe000b98a490 __DATA.__common         1ULL
+0xfffffe000b98a495 __DATA.__common         swapin_failures
+0xfffffe000b98a4a5 __DATA.__common         1ULL
+0xfffffe000b98a4aa __DATA.__common         decompress_failures
+0xfffffe000b98a4bf __DATA.__common         com.apple.xnu.compressor_age
+0xfffffe000b98a4dc __DATA.__common         1ULL
+0xfffffe000b98a4e1 __DATA.__common         hour1
+0xfffffe000b98a4e7 __DATA.__common         1ULL
+0xfffffe000b98a4ec __DATA.__common         hour6
+0xfffffe000b98a4f2 __DATA.__common         1ULL
+0xfffffe000b98a4f7 __DATA.__common         hour12
+0xfffffe000b98a4fe __DATA.__common         1ULL
+0xfffffe000b98a503 __DATA.__common         hour24
+0xfffffe000b98a50a __DATA.__common         1ULL
+0xfffffe000b98a50f __DATA.__common         hour36
+0xfffffe000b98a516 __DATA.__common         1ULL
+0xfffffe000b98a51b __DATA.__common         hour48
+0xfffffe000b98a522 __DATA.__common         1ULL
+0xfffffe000b98a527 __DATA.__common         hourMax
+0xfffffe000b98a52f __DATA.__common         1ULL
+0xfffffe000b98a534 __DATA.__common         trial_deployment_id
+0xfffffe000b98a548 __DATA.__common         ca_sstr[37]
+0xfffffe000b98a554 __DATA.__common         trial_treatment_id
+0xfffffe000b98a567 __DATA.__common         ca_sstr[37]
+0xfffffe000b98a573 __DATA.__common         trial_experiment_id
+0xfffffe000b98a588 __DATA.__common         com.apple.xnu.accounting_health
+0xfffffe000b98a5a8 __DATA.__common         1ULL
+0xfffffe000b98a5ad __DATA.__common         percentage
+0xfffffe000b98a5b9 __DATA.__common         com.apple.xnu.vm_object_paging_throttle_stats
+0xfffffe000b98a5e7 __DATA.__common         1ULL
+0xfffffe000b98a5ec __DATA.__common         shared_cache_io_prio_throttled
+0xfffffe000b98a60b __DATA.__common         1ULL
+0xfffffe000b98a610 __DATA.__common         shared_cache_io_prio_bypassed
+0xfffffe000b98a62e __DATA.__common         1ULL
+0xfffffe000b98a633 __DATA.__common         shared_cache_throttled_low_io_prio
+0xfffffe000b98a656 __DATA.__common         1ULL
+0xfffffe000b98a65b __DATA.__common         io_prio_throttled_non_shared_cache
+0xfffffe000b98a67e __DATA.__common         1ULL
+0xfffffe000b98a683 __DATA.__common         other_throttled
+0xfffffe000b98a693 __DATA.__common         1ULL
+0xfffffe000b98a698 __DATA.__common         throttle_wakeups
+0xfffffe000b98a6f0 __DATA.__common         com.apple.xnu.vmtc_telemetry
+0xfffffe000b98a70d __DATA.__common         1ULL
+0xfffffe000b98a712 __DATA.__common         vmtc_num_byte
+0xfffffe000b98a720 __DATA.__common         ((_Bool) 1)
+0xfffffe000b98a72c __DATA.__common         vmtc_undiagnosed
+0xfffffe000b98a73d __DATA.__common         ((_Bool) 1)
+0xfffffe000b98a749 __DATA.__common         vmtc_not_eligible
+0xfffffe000b98a75b __DATA.__common         ((_Bool) 1)
+0xfffffe000b98a767 __DATA.__common         vmtc_copyin_fail
+0xfffffe000b98a778 __DATA.__common         ((_Bool) 1)
+0xfffffe000b98a784 __DATA.__common         vmtc_not_found
+0xfffffe000b98a793 __DATA.__common         ((_Bool) 1)
+0xfffffe000b98a79f __DATA.__common         vmtc_one_bit_flip
+0xfffffe000b98a7b1 __DATA.__common         ((_Bool) 1)
+0xfffffe000b98a7bd __DATA.__common         vmtc_testing
+0xfffffe000b98a820 __DATA.__common         com.apple.xnu.guard_objects_deny_allocation
+0xfffffe000b98a84c __DATA.__common         ca_sstr[17]
+0xfffffe000b98a858 __DATA.__common         proc_name
+0xfffffe000b98a862 __DATA.__common         1ULL
+0xfffffe000b98a867 __DATA.__common         size
+0xfffffe000b98aa18 __DATA.__common         com.apple.xnu.vm_page_event
+0xfffffe000b98aa34 __DATA.__common         ca_sstr[388]
+0xfffffe000b98aa41 __DATA.__common         backtrace
+0xfffffe000b98aa4b __DATA.__common         ca_sstr[256]
+0xfffffe000b98aa58 __DATA.__common         kext_ids
+0xfffffe000b98aa61 __DATA.__common         1ULL
+0xfffffe000b98aa66 __DATA.__common         code
+0xfffffe000b98aa6b __DATA.__common         1ULL
+0xfffffe000b98aa70 __DATA.__common         subcode
+0xfffffe000b98aa79 __DATA.__common         com.apple.xnu.vm_zero_wired_pages
+0xfffffe000b98aa9b __DATA.__common         ca_sstr[17]
+0xfffffe000b98aaa7 __DATA.__common         process_name
+0xfffffe000b98aab4 __DATA.__common         ca_sstr[128]
+0xfffffe000b98aac1 __DATA.__common         process_signing_id
+0xfffffe000b98aad4 __DATA.__common         ca_sstr[37]
+0xfffffe000b98aae0 __DATA.__common         process_uuid
+0xfffffe000b98ab0c __DATA.__common         unknown
+0xfffffe000b98ab88 __DATA.__common         ####
+0xfffffe000b98ac20 __DATA.__common         egap
+0xfffffe000b98ac40 __DATA.__common         com.apple.xnu.os_fault_with_ustack
+0xfffffe000b98ac63 __DATA.__common         ca_sstr[17]
+0xfffffe000b98ac6f __DATA.__common         proc_name
+0xfffffe000b98ac79 __DATA.__common         ca_sstr[128]
+0xfffffe000b98ac86 __DATA.__common         signing_id
+0xfffffe000b98ac91 __DATA.__common         1ULL
+0xfffffe000b98ac96 __DATA.__common         namespace
+0xfffffe000b98aca0 __DATA.__common         1ULL
+0xfffffe000b98aca5 __DATA.__common         reason_code
+0xfffffe000b98acb1 __DATA.__common         ca_sstr[37]
+0xfffffe000b98acbd __DATA.__common         shared_cache_uuid
+0xfffffe000b98accf __DATA.__common         ca_sstr[37]
+0xfffffe000b98acdb __DATA.__common         main_exec_uuid
+0xfffffe000b98acea __DATA.__common         ca_sstr[37]
+0xfffffe000b98acf6 __DATA.__common         frame1UUID
+0xfffffe000b98ad01 __DATA.__common         1ULL
+0xfffffe000b98ad06 __DATA.__common         frame1offset
+0xfffffe000b98ad13 __DATA.__common         ca_sstr[37]
+0xfffffe000b98ad1f __DATA.__common         frame2UUID
+0xfffffe000b98ad2a __DATA.__common         1ULL
+0xfffffe000b98ad2f __DATA.__common         frame2offset
+0xfffffe000b98ad3c __DATA.__common         ca_sstr[37]
+0xfffffe000b98ad48 __DATA.__common         frame3UUID
+0xfffffe000b98ad53 __DATA.__common         1ULL
+0xfffffe000b98ad58 __DATA.__common         frame3offset
+0xfffffe000b98ad65 __DATA.__common         ca_sstr[37]
+0xfffffe000b98ad71 __DATA.__common         frame4UUID
+0xfffffe000b98ad7c __DATA.__common         1ULL
+0xfffffe000b98ad81 __DATA.__common         frame4offset
+0xfffffe000b98ad8f __DATA.__common         kernel_task
+0xfffffe000b98ada0 __DATA.__common         com.apple.xnu.kernel_breakpoint_event
+0xfffffe000b98adc6 __DATA.__common         1ULL
+0xfffffe000b98adcb __DATA.__common         brk_type
+0xfffffe000b98add4 __DATA.__common         1ULL
+0xfffffe000b98add9 __DATA.__common         brk_code
+0xfffffe000b98ade2 __DATA.__common         1ULL
+0xfffffe000b98ade7 __DATA.__common         faulting_address
+0xfffffe000b98adf8 __DATA.__common         ca_sstr[256]
+0xfffffe000b98ae05 __DATA.__common         backtrace
+0xfffffe000b98ae0f __DATA.__common         ca_sstr[37]
+0xfffffe000b98ae1b __DATA.__common         uuid
+0xfffffe000b98ae21 __DATA.__common         com.apple.xnu.trap_telemetry_internal
+0xfffffe000b98ae47 __DATA.__common         ca_sstr[256]
+0xfffffe000b98ae54 __DATA.__common         backtrace
+0xfffffe000b98ae5e __DATA.__common         ca_sstr[12]
+0xfffffe000b98ae6a __DATA.__common         kernel_platform
+0xfffffe000b98ae7a __DATA.__common         1ULL
+0xfffffe000b98ae7f __DATA.__common         trap_code
+0xfffffe000b98ae89 __DATA.__common         1ULL
+0xfffffe000b98ae8e __DATA.__common         trap_offset
+0xfffffe000b98ae9a __DATA.__common         1ULL
+0xfffffe000b98ae9f __DATA.__common         trap_type
+0xfffffe000b98aea9 __DATA.__common         ca_sstr[37]
+0xfffffe000b98aeb5 __DATA.__common         trap_uuid
+0xfffffe000b98aec0 __DATA.__common         com.apple.xnu.latency_violations
+0xfffffe000b98aee1 __DATA.__common         ca_sstr[256]
+0xfffffe000b98aeee __DATA.__common         backtrace
+0xfffffe000b98aef8 __DATA.__common         ca_sstr[12]
+0xfffffe000b98af04 __DATA.__common         kernel_platform
+0xfffffe000b98af14 __DATA.__common         ca_sstr[37]
+0xfffffe000b98af20 __DATA.__common         uuid
+0xfffffe000b98af25 __DATA.__common         1ULL
+0xfffffe000b98af2a __DATA.__common         violation_code
+0xfffffe000b98af39 __DATA.__common         1ULL
+0xfffffe000b98af3e __DATA.__common         violation_cpi
+0xfffffe000b98af4c __DATA.__common         ca_sstr[2]
+0xfffffe000b98af57 __DATA.__common         violation_cpu_type
+0xfffffe000b98af6a __DATA.__common         1ULL
+0xfffffe000b98af6f __DATA.__common         violation_duration
+0xfffffe000b98af82 __DATA.__common         1ULL
+0xfffffe000b98af87 __DATA.__common         violation_freq
+0xfffffe000b98af96 __DATA.__common         1ULL
+0xfffffe000b98af9b __DATA.__common         violation_payload
+0xfffffe000b98afad __DATA.__common         1ULL
+0xfffffe000b98afb2 __DATA.__common         violation_threshold
+0xfffffe000b98afd5 __DATA.__common         D7q/;M
+0xfffffe000b98b06a __DATA.__common         +Yo,
+0xfffffe000b98b0d2 __DATA.__common         &\8!
+0xfffffe000b98b138 __DATA.__common         * qW
+0xfffffe000b98b15c __DATA.__common         LwH'
+0xfffffe000b98b22f __DATA.__common         L*~e
+0xfffffe000b98b287 __DATA.__common         [xnu early random
+0xfffffe000b98b299 __DATA.__common         xnu entropy extract seed
+0xfffffe000b98b6d1 __DATA.__common         )Qo:
+0xfffffe000b98b9ec __DATA.__common         com.apple.xnu.pac_thread_state_exception_event
+0xfffffe000b98ba1b __DATA.__common         ca_sstr[17]
+0xfffffe000b98ba27 __DATA.__common         proc_name
+0xfffffe000b98ba32 __DATA.__common         com.apple.xnu.pac_thread_state_sigreturn_event
+0xfffffe000b98ba61 __DATA.__common         ca_sstr[17]
+0xfffffe000b98ba6d __DATA.__common         proc_name
+0xfffffe000b98ba88 __DATA.__common         NYJ,
+0xfffffe000b98ba8f __DATA.__common         gOTooncesK
+0xfffffe000b98bab1 __DATA.__common         YjEfF
+0xfffffe000b98bcfc __DATA.__common         pyh 
+0xfffffe000b98c0f5 __DATA.__common          n;^
+0xfffffe000b98c1b5 __DATA.__common         Qkkbal
+0xfffffe000b98c2c3 __DATA.__common         i]Wb
+0xfffffe000b98c403 __DATA.__common         9a&g
+0xfffffe000b98c40c __DATA.__common         MGiI
+0xfffffe000b98c411 __DATA.__common         wn>Jj
+0xfffffe000b98c453 __DATA.__common         #.zf
+0xfffffe000b98c461 __DATA.__common         +o*7
+0xfffffe000b98c4a6 __DATA.__common          !"#$%&'
+0xfffffe000b98c4b4 __DATA.__common         ()*+,-./01
+0xfffffe000b98c4c4 __DATA.__common         23456789:;
+0xfffffe000b98c4d4 __DATA.__common         <=>?@ABCDE
+0xfffffe000b98c4e4 __DATA.__common         FGHIJKLMNO
+0xfffffe000b98c4f4 __DATA.__common         PQRSTUVWXY
+0xfffffe000b98c504 __DATA.__common         Z[\]^_`abc
+0xfffffe000b98d020 __DATA.__common         (unknown vnode name)
+0xfffffe000b98d064 __DATA.__common         com.apple.xnu.freeable_vnodes
+0xfffffe000b98d082 __DATA.__common         1ULL
+0xfffffe000b98d087 __DATA.__common         numvnodes_min
+0xfffffe000b98d095 __DATA.__common         1ULL
+0xfffffe000b98d09a __DATA.__common         numvnodes_max
+0xfffffe000b98d0a8 __DATA.__common         1ULL
+0xfffffe000b98d0ad __DATA.__common         desiredvnodes
+0xfffffe000b98d0bb __DATA.__common         1ULL
+0xfffffe000b98d0c0 __DATA.__common         numvnodes
+0xfffffe000b98d0ca __DATA.__common         1ULL
+0xfffffe000b98d0cf __DATA.__common         freevnodes
+0xfffffe000b98d0da __DATA.__common         1ULL
+0xfffffe000b98d0df __DATA.__common         deadvnodes
+0xfffffe000b98d0ea __DATA.__common         1ULL
+0xfffffe000b98d0ef __DATA.__common         freeablevnodes
+0xfffffe000b98d0fe __DATA.__common         1ULL
+0xfffffe000b98d103 __DATA.__common         busyvnodes
+0xfffffe000b98d10e __DATA.__common         ((_Bool) 1)
+0xfffffe000b98d11a __DATA.__common         threshold_crossed
+0xfffffe000b98d4e0 __DATA.__common         0123456789ABCDEF
+0xfffffe000b9902b3 __DATA.__common         "#"$"%"&"<"A"C"D"E"G"H"I"M"m"a"b"d"p"e"q"r"t"s"u"v"x"w"y"z"
+0xfffffe000b99052f __DATA.__common         0K0L0M0N0O0P0Q0R0S0T0U0V0W0X0Y0Z0[0\0]0^0_0`0a0b0d0e0f0g0h0i0o0p0r0s0u0v0x0y0{0|0
+0xfffffe000b9905eb __DATA.__common         0o0q0r0t0u0w0x0z0{0}0
+0xfffffe000b99115c __DATA.__common         kkkk
+0xfffffe000b9911dc __DATA.__common         zzzz
+0xfffffe000b991b14 __DATA.__common          ! #$%&'()!+,-."0123456789";#=$%@ABCDEFGHIJKLMNOPQRSTUVWXYZ[&]^_`abcdefghijklmnopqrstuvwxyz{'}~
+0xfffffe000b991b94 __DATA.__common         "*:<>?\| .
+0xfffffe000b9987eb __DATA.__common         _`|~
+0xfffffe000b998801 __DATA.__common         o/}7~K
+0xfffffe000b998835 __DATA.__common         lxe"}
+0xfffffe000b998863 __DATA.__common         RBTsY
+0xfffffe000b99887b __DATA.__common         fwkb
+0xfffffe000b998887 __DATA.__common         d#oIq
+0xfffffe000b9988af __DATA.__common         k>|us
+0xfffffe000b9988fd __DATA.__common         tYukx
+0xfffffe000b998906 __DATA.__common         mQ.bx
+0xfffffe000b998993 __DATA.__common         v<y^yey
+0xfffffe000b9989d3 __DATA.__common         VhV@X
+0xfffffe000b9989d9 __DATA.__common         Xd\n\
+0xfffffe000b9989f1 __DATA.__common         n"onq+r"t
+0xfffffe000b9989fb __DATA.__common         x>yIyHyPyVy]y
+0xfffffe000b998a15 __DATA.__common         ~A~r
+0xfffffe000b998a5f __DATA.__common         XDYTYbZ([
+0xfffffe000b998a81 __DATA.__common         dRdVetf
+0xfffffe000b998a8b __DATA.__common         gVgyk
+0xfffffe000b998aa3 __DATA.__common         r*sqt
+0xfffffe000b998ab5 __DATA.__common         vJw@w
+0xfffffe000b998abf __DATA.__common         {{|[}

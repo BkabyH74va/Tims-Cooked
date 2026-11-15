@@ -138,6 +138,8 @@ final class ReachViewModel: ObservableObject {
         if args.contains("--probe") { await runProbeMode(); return }
         if args.contains("--web") { await runWebMode(); return }
         if args.contains("--webscan") { await runWebScanMode(); return }
+        if args.contains("--decmpfs") { Task.detached { await self.runDecmpfsMode() }; return }
+        if args.contains("--ane") { Task.detached { await self.runANEMode() }; return }
         if args.contains("--sockuaf") { Task.detached { await self.runSocketUafMode() }; return }
         if args.contains("--sockool") || args.contains("--sockxz") || args.contains("--sockgc")
             || args.contains("--sockudp") || args.contains("--sockprec")
@@ -719,6 +721,21 @@ func runFuzzMode() async {
         apfs_race_probe(96, 4096, dir, &st)
         emitBg("[*] apfsrace: open=\(st[0]) mmap=\(st[1]) thread=\(st[2])")
         emitBg("=== apfsrace done ===")
+    }
+
+    nonisolated func runDecmpfsMode() {
+        emitBg("[*] decmpfs start (AppleFSCompressionTypeZlib staged probe / CVE-2026-113910)")
+        let dir = NSTemporaryDirectory()
+        run_decmpfs_leak(dir)
+        emitBg("=== decmpfs done ===")
+    }
+
+    nonisolated func runANEMode() {
+        let args = ProcessInfo.processInfo.arguments
+        let trigger = args.contains("--anetrigger")
+        emitBg("[*] ane start (ANE user-client reachability; trigger=\(trigger))")
+        let opened = ane_probe(trigger ? 1 : 0)
+        emitBg("=== ane done: opened=\(opened) trigger=\(trigger) ===")
     }
 
     nonisolated func networkSurfaceProbe() {

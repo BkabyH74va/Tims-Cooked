@@ -1,0 +1,108 @@
+name: Metadata transport
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: metadata-transport-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  transport:
+    name: Metadata transport journeys (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-latest, goos: linux, artifact: linux }
+          - { os: macos-latest, goos: darwin, artifact: darwin }
+          - { os: xcode-27, goos: darwin, artifact: darwin-current }
+          - { os: windows-latest, goos: windows, artifact: windows }
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+      - name: Set up shared CI reporting
+        uses: ./.github/actions/setup-ci-runner
+      - name: Sixteen image extraction and repacking journeys
+        env:
+          CGO_ENABLED: "0"
+        run: |
+          apfs-ci-runner --suite metadata-transport/transport/step3 --timeout 60m -- go run scripts/verify-metadata-transport.go
+      - name: Upload complete images and qualification evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          include-hidden-files: true
+          name: metadata-transport-${{ matrix.artifact }}
+          path: artifacts/metadata-transport/
+          if-no-files-found: error
+
+      - name: Retain complete CI command diagnostics
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          include-hidden-files: true
+          name: ci-observability-metadata-transport-transport-${{ strategy.job-index || 0 }}-${{ github.run_attempt }}
+          path: artifacts/ci-observability/
+          compression-level: 9
+          if-no-files-found: error
+  native-foreign:
+    name: Native Mac verification of Linux and Windows images (${{ matrix.os }})
+    needs: transport
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: macos-latest, reference: darwin }
+          - { os: xcode-27, reference: darwin-current }
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+      - name: Set up shared CI reporting
+        uses: ./.github/actions/setup-ci-runner
+      - uses: actions/download-artifact@v8.0.1
+        with:
+          pattern: metadata-transport-*
+          path: artifacts/foreign
+      - name: Independently mount and read Linux output
+        env:
+          CGO_ENABLED: "0"
+        run: |
+          apfs-ci-runner --suite metadata-transport/native-foreign/step4 --timeout 60m -- go run scripts/verify-metadata-transport.go -foreign artifacts/foreign/metadata-transport-linux -foreign-goos linux -reference artifacts/foreign/metadata-transport-${{ matrix.reference }} -out artifacts/metadata-transport-linux-native
+      - name: Independently mount and read Windows output
+        env:
+          CGO_ENABLED: "0"
+        run: |
+          apfs-ci-runner --suite metadata-transport/native-foreign/step5 --timeout 60m -- go run scripts/verify-metadata-transport.go -foreign artifacts/foreign/metadata-transport-windows -foreign-goos windows -reference artifacts/foreign/metadata-transport-${{ matrix.reference }} -out artifacts/metadata-transport-windows-native
+      - name: Upload independent foreign-host readback evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          include-hidden-files: true
+          name: metadata-transport-foreign-native-${{ matrix.os }}
+          path: |
+            artifacts/metadata-transport-linux-native/
+            artifacts/metadata-transport-windows-native/
+          if-no-files-found: error
+
+      - name: Retain complete CI command diagnostics
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          include-hidden-files: true
+          name: ci-observability-metadata-transport-native-foreign-${{ strategy.job-index || 0 }}-${{ github.run_attempt }}
+          path: artifacts/ci-observability/
+          compression-level: 9
+          if-no-files-found: error

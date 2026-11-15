@@ -1,0 +1,869 @@
+0xfffffe0007a18ea8 __TEXT.__cstring        IOSurfaceSharedEventListener
+0xfffffe0007a18ec5 __TEXT.__cstring        site.IOSurfaceSharedEventListener
+0xfffffe0007a18ee7 __TEXT.__cstring        1211121122
+0xfffffe0007a18ef2 __TEXT.__cstring        IOCoreSurfaceRoot
+0xfffffe0007a18f04 __TEXT.__cstring        "%s: failed to get IOSurface root" @%s:%d
+0xfffffe0007a18f2e __TEXT.__cstring        bool IOSurfaceSharedEventListener::init(thread_call_priority_t, IOWorkLoop *, bool, eIOSurfaceSharedEventAgentMask)
+0xfffffe0007a18fa2 __TEXT.__cstring        IOSurfaceEvent.cpp
+0xfffffe0007a18fb5 __TEXT.__cstring        "IOSurfaceSharedEventListener::free(): notification list is not empty" @%s:%d
+0xfffffe0007a19003 __TEXT.__cstring        IOSurfaceSharedEventNotificationPort
+0xfffffe0007a19028 __TEXT.__cstring        site.IOSurfaceSharedEventNotificationPort
+0xfffffe0007a19052 __TEXT.__cstring        121112112211111111
+0xfffffe0007a19065 __TEXT.__cstring        IOSurfaceSharedEventReference
+0xfffffe0007a19083 __TEXT.__cstring        site.IOSurfaceSharedEventReference
+0xfffffe0007a190aa __TEXT.__cstring        IOSurfaceSharedEvent
+0xfffffe0007a190bf __TEXT.__cstring        site.IOSurfaceSharedEvent
+0xfffffe0007a190d9 __TEXT.__cstring        1212821211211
+0xfffffe0007a190e7 __TEXT.__cstring        "IOSurfaceSharedEvent::free() called with non-empty notification list" @%s:%d
+0xfffffe0007a19135 __TEXT.__cstring        site.IOSurfaceAgentMaskInfo
+0xfffffe0007a19151 __TEXT.__cstring        12222222222221
+0xfffffe0007a19160 __TEXT.__cstring        handleAgentMaskRegistration
+0xfffffe0007a1917c __TEXT.__cstring        "IOSurfaceSharedEvent does not support release with when != 1" @%s:%d
+0xfffffe0007a191c2 __TEXT.__cstring        "IOSurfaceSharedEvent does not support taggedRelease with when != 1" @%s:%d
+0xfffffe0007a1920e __TEXT.__cstring        assignAgentMaskSlot
+0xfffffe0007a19222 __TEXT.__cstring        "%s: Agent mask slot exhaustion detected (event ID %08x, signal value 0x%016llx)" @%s:%d
+0xfffffe0007a1927b __TEXT.__cstring        addAgentMaskForSignalValue
+0xfffffe0007a19296 __TEXT.__cstring        true
+0xfffffe0007a1929b __TEXT.__cstring        false
+0xfffffe0007a192a1 __TEXT.__cstring        IOSurfaceSharedEventNotification
+0xfffffe0007a192c2 __TEXT.__cstring        site.IOSurfaceSharedEventNotification
+0xfffffe0007a192e8 __TEXT.__cstring        12222111111112
+0xfffffe0007a192f7 __TEXT.__cstring        IOFenceTransaction
+0xfffffe0007a1930a __TEXT.__cstring        site.IOFenceTransaction
+0xfffffe0007a19322 __TEXT.__cstring        12111211111
+0xfffffe0007a1932e __TEXT.__cstring        "IOFenceTransaction %p freed with non-zero fence count!\n" @%s:%d
+0xfffffe0007a19370 __TEXT.__cstring        IOSurfaceFenceTransaction.cpp
+0xfffffe0007a1938e __TEXT.__cstring        site.IOFence *
+0xfffffe0007a193a0 __TEXT.__cstring        fence: %p
+0xfffffe0007a193ab __TEXT.__cstring        "failed to allocate memory" @%s:%d
+0xfffffe0007a193ce __TEXT.__cstring        B16@?0^{OSObject=^^?i}8
+0xfffffe0007a193e6 __TEXT.__cstring        process %s (%d) caught causing IOFence deadlock!
+0xfffffe0007a19418 __TEXT.__cstring        Process caught creating IOFence deadlock
+0xfffffe0007a19441 __TEXT.__cstring        Killed process %s (%d) for causing IOFence deadlock!
+0xfffffe0007a19477 __TEXT.__cstring        bounded_array_ref: Can't construct from a size greater than UINT32_MAX
+0xfffffe0007a194be __TEXT.__cstring        "%s" @%s:%d
+0xfffffe0007a194ca __TEXT.__cstring        OSBoundedPtr.h
+0xfffffe0007a194d9 __TEXT.__cstring        The range of valid memory is too large to be represented by this type, or [begin, end) is not a well-formed range
+0xfffffe0007a1954b __TEXT.__cstring        bounded_ptr<T>::operator+=(n): Adding the specified number of bytes to the offset representing the current position would overflow.
+0xfffffe0007a195cf __TEXT.__cstring        bounded_ptr<T>::operator*: Dereferencing this pointer would access memory outside of the bounds set originally
+0xfffffe0007a1963e __TEXT.__cstring        This bounded_ptr is pointing to memory outside of what can be represented by a native pointer.
+0xfffffe0007a1969d __TEXT.__cstring        IOSurfaceClass
+0xfffffe0007a196ac __TEXT.__cstring        IOSurfaceIsGlobal
+0xfffffe0007a196be __TEXT.__cstring        IOSurfaceBytesPerRow
+0xfffffe0007a196d3 __TEXT.__cstring        IOSurfaceBitsPerBlock
+0xfffffe0007a196e9 __TEXT.__cstring        IOSurfaceBytesPerElement
+0xfffffe0007a19702 __TEXT.__cstring        IOSurfaceWidth
+0xfffffe0007a19711 __TEXT.__cstring        IOSurfaceHeight
+0xfffffe0007a19721 __TEXT.__cstring        IOSurfaceElementWidth
+0xfffffe0007a19737 __TEXT.__cstring        IOSurfaceElementHeight
+0xfffffe0007a1974e __TEXT.__cstring        IOSurfaceOffset
+0xfffffe0007a1975e __TEXT.__cstring        IOSurfacePixelFormat
+0xfffffe0007a19773 __TEXT.__cstring        IOSurfaceAllocSize
+0xfffffe0007a19786 __TEXT.__cstring        IOSurfaceMemoryRegion
+0xfffffe0007a1979c __TEXT.__cstring        IOSurfacePlaneInfo
+0xfffffe0007a197af __TEXT.__cstring        IOSurfacePlaneOffset
+0xfffffe0007a197c4 __TEXT.__cstring        IOSurfacePlaneWidth
+0xfffffe0007a197d8 __TEXT.__cstring        IOSurfacePlaneHeight
+0xfffffe0007a197ed __TEXT.__cstring        IOSurfacePlaneBitsPerBlock
+0xfffffe0007a19808 __TEXT.__cstring        IOSurfacePlaneBitsPerElement
+0xfffffe0007a19825 __TEXT.__cstring        IOSurfacePlaneBytesPerElement
+0xfffffe0007a19843 __TEXT.__cstring        IOSurfacePlaneElementWidth
+0xfffffe0007a1985e __TEXT.__cstring        IOSurfacePlaneElementHeight
+0xfffffe0007a1987a __TEXT.__cstring        IOSurfacePlaneBytesPerRow
+0xfffffe0007a19894 __TEXT.__cstring        IOSurfaceAddress
+0xfffffe0007a198a5 __TEXT.__cstring        IOSurfaceAddressRanges
+0xfffffe0007a198bc __TEXT.__cstring        IOSurfaceAddressOffset
+0xfffffe0007a198d3 __TEXT.__cstring        IOSurfaceDirection
+0xfffffe0007a198e6 __TEXT.__cstring        IOSurfaceType
+0xfffffe0007a198f4 __TEXT.__cstring        IOSurfaceYCbCrMatrix
+0xfffffe0007a19909 __TEXT.__cstring        IOSurfaceCacheMode
+0xfffffe0007a1991c __TEXT.__cstring        IOSurfaceBufferTileMode
+0xfffffe0007a19934 __TEXT.__cstring        IOSurfaceDisplayDitherThresholds
+0xfffffe0007a19955 __TEXT.__cstring        IOSurfaceDisplayDitherYThresholds
+0xfffffe0007a19977 __TEXT.__cstring        IOSurfaceDisplayDitherCbThresholds
+0xfffffe0007a1999a __TEXT.__cstring        IOSurfaceDisplayDitherCrThresholds
+0xfffffe0007a199bd __TEXT.__cstring        IOSurfaceTimingInfo
+0xfffffe0007a199d1 __TEXT.__cstring        IOSurfaceGPUTimes
+0xfffffe0007a199e3 __TEXT.__cstring        IOSurfaceDisplayTimes
+0xfffffe0007a199f9 __TEXT.__cstring        IOSurfaceScalerTimes
+0xfffffe0007a19a0e __TEXT.__cstring        IOSurfaceEncoderTimes
+0xfffffe0007a19a24 __TEXT.__cstring        IOSurfaceDecoderTimes
+0xfffffe0007a19a3a __TEXT.__cstring        kIOSurfaceTouchEventTimes
+0xfffffe0007a19a54 __TEXT.__cstring        IOSurfaceMapCacheAttribute
+0xfffffe0007a19a6f __TEXT.__cstring        IOSurfaceBufferTileFormat
+0xfffffe0007a19a89 __TEXT.__cstring        IOFenceAllowTearing
+0xfffffe0007a19a9d __TEXT.__cstring        IOSurfacePurgeWhenNotInUse
+0xfffffe0007a19ab8 __TEXT.__cstring        IOSurfaceResetDefaultAttachmentsWhenNotInUse
+0xfffffe0007a19ae5 __TEXT.__cstring        IOSurfaceDefaultAttachments
+0xfffffe0007a19b01 __TEXT.__cstring        IOSurfaceDefaultBulkAttachments
+0xfffffe0007a19b21 __TEXT.__cstring        CreationProperties
+0xfffffe0007a19b34 __TEXT.__cstring        IsDisplayable
+0xfffffe0007a19b42 __TEXT.__cstring        IOSurfaceName
+0xfffffe0007a19b50 __TEXT.__cstring        IOSurfaceNonPurgeable
+0xfffffe0007a19b66 __TEXT.__cstring        IOSurfaceEDRFactor
+0xfffffe0007a19b79 __TEXT.__cstring        IOSurfacePixelSizeCastingAllowed
+0xfffffe0007a19b9a __TEXT.__cstring        IOSurfaceUseReserve
+0xfffffe0007a19bae __TEXT.__cstring        IOSurfaceAllocateFromSuperbuffer
+0xfffffe0007a19bcf __TEXT.__cstring        IOSurfaceSuperbuffer
+0xfffffe0007a19be4 __TEXT.__cstring        IOSurfaceMemoryPoolSize
+0xfffffe0007a19bfc __TEXT.__cstring        IOSurfaceMemoryPoolZerofillEnabled
+0xfffffe0007a19c1f __TEXT.__cstring        IOSurfaceMemoryPoolCacheModeSwitchEnabled
+0xfffffe0007a19c49 __TEXT.__cstring        IOSurfaceMemoryPoolEntitlement
+0xfffffe0007a19c68 __TEXT.__cstring        IOSurfaceSysMemOnly
+0xfffffe0007a19c7c __TEXT.__cstring        IOSurfaceProtectionOptions
+0xfffffe0007a19c97 __TEXT.__cstring        IOSurfacePlaneComponentBitDepths
+0xfffffe0007a19cb8 __TEXT.__cstring        IOSurfacePlaneComponentBitOffsets
+0xfffffe0007a19cda __TEXT.__cstring        IOSurfacePlaneComponentNames
+0xfffffe0007a19cf7 __TEXT.__cstring        IOSurfacePlaneComponentTypes
+0xfffffe0007a19d14 __TEXT.__cstring        IOSurfacePlaneComponentRanges
+0xfffffe0007a19d32 __TEXT.__cstring        IOSurfaceSubsampling
+0xfffffe0007a19d47 __TEXT.__cstring        IOSurfacePlaneCompressedTileWidth
+0xfffffe0007a19d69 __TEXT.__cstring        IOSurfacePlaneCompressedTileHeight
+0xfffffe0007a19d8c __TEXT.__cstring        IOSurfacePlaneCompressedTileHeaderRegionOffset
+0xfffffe0007a19dbb __TEXT.__cstring        IOSurfacePlaneCompressedTileDataRegionOffset
+0xfffffe0007a19de8 __TEXT.__cstring        IOSurfacePlaneCompressionType
+0xfffffe0007a19e06 __TEXT.__cstring        IOSurfacePlaneCompressionFootprint
+0xfffffe0007a19e29 __TEXT.__cstring        IOSurfacePlaneBytesPerCompressedTileHeader
+0xfffffe0007a19e54 __TEXT.__cstring        IOSurfacePlaneWidthInCompressedTiles
+0xfffffe0007a19e79 __TEXT.__cstring        IOSurfacePlaneHeightInCompressedTiles
+0xfffffe0007a19e9f __TEXT.__cstring        IOSurfacePlaneBytesPerRowOfCompressedTileHeaderGroups
+0xfffffe0007a19ed5 __TEXT.__cstring        IOSurfacePlaneHTPCPredictionSelector
+0xfffffe0007a19efa __TEXT.__cstring        IOSurfacePlaneHTPCVerticalHeaderGroupingMode
+0xfffffe0007a19f27 __TEXT.__cstring        IOSurfacePlaneHorizontalPixelOffsetWithinCompressedTileArray
+0xfffffe0007a19f64 __TEXT.__cstring        IOSurfacePlaneVerticalPixelOffsetWithinCompressedTileArray
+0xfffffe0007a19f9f __TEXT.__cstring        IOSurfaceAddressFormat
+0xfffffe0007a19fb6 __TEXT.__cstring        IOSurfacePlaneBytesPerTileData
+0xfffffe0007a19fd5 __TEXT.__cstring        IOSurfacePlaneBytesPerRowOfTileData
+0xfffffe0007a19ff9 __TEXT.__cstring        IOSurfaceSliceCount
+0xfffffe0007a1a00d __TEXT.__cstring        IOSurfacePlaneDataRegionBytesPerSlice
+0xfffffe0007a1a033 __TEXT.__cstring        IOSurfacePlaneHeaderRegionBytesPerSlice
+0xfffffe0007a1a05b __TEXT.__cstring        IOSurfacePlaneExtendedPixelsOnLeft
+0xfffffe0007a1a07e __TEXT.__cstring        IOSurfacePlaneExtendedPixelsOnRight
+0xfffffe0007a1a0a2 __TEXT.__cstring        IOSurfacePlaneExtendedPixelsOnTop
+0xfffffe0007a1a0c4 __TEXT.__cstring        IOSurfacePlaneExtendedPixelsOnBottom
+0xfffffe0007a1a0e9 __TEXT.__cstring        IOSurfaceProhibitUseCount
+0xfffffe0007a1a103 __TEXT.__cstring        IOSurfaceMemoryPoolInfo
+0xfffffe0007a1a11b __TEXT.__cstring        DolbyVisionRPUData
+0xfffffe0007a1a12e __TEXT.__cstring        SidebandVideoPropertiesLookupID
+0xfffffe0007a1a14e __TEXT.__cstring        AGXUseNearestChromaFiltering
+0xfffffe0007a1a16b __TEXT.__cstring        IOSurface
+0xfffffe0007a1a175 __TEXT.__cstring        iokit.IOSurface
+0xfffffe0007a1a185 __TEXT.__cstring        init
+0xfffffe0007a1a18a __TEXT.__cstring        site.IOSurfaceColorAndSpatialKeysStruct
+0xfffffe0007a1a1b3 __TEXT.__cstring        "IOSurface does not support release with when != 1" @%s:%d
+0xfffffe0007a1a1ee __TEXT.__cstring        IOSurface.cpp
+0xfffffe0007a1a1fc __TEXT.__cstring        "IOSurface does not support taggedRelease with when != 1" @%s:%d
+0xfffffe0007a1a23d __TEXT.__cstring        "IOSurface released with non-zero client retain count: %p" @%s:%d
+0xfffffe0007a1a27f __TEXT.__cstring        "IOFence current queue is not empty for surface: %p" @%s:%d
+0xfffffe0007a1a2bb __TEXT.__cstring        "IOFence wait queue is not empty for surface: %p" @%s:%d
+0xfffffe0007a1a2f4 __TEXT.__cstring        "fDeviceCacheList is not empty for surface: %p" @%s:%d
+0xfffffe0007a1a32b __TEXT.__cstring        site.IOSurfaceFenceTraceData
+0xfffffe0007a1a348 __TEXT.__cstring        2212211111111112212211111111112212211111111112212211111111112212211111111112212211111111112212211111111112212211111111112
+0xfffffe0007a1a3c2 __TEXT.__cstring        site.IOSurfacePlaneInfo
+0xfffffe0007a1a3da __TEXT.__cstring        IOSurfaceDisableMapperFlush
+0xfffffe0007a1a3f6 __TEXT.__cstring        IOSurfacePreallocPages
+0xfffffe0007a1a40d __TEXT.__cstring        IOSurfacePrefetchPages
+0xfffffe0007a1a424 __TEXT.__cstring        IOSurfaceHostOnly
+0xfffffe0007a1a436 __TEXT.__cstring        MetalSharedTexture
+0xfffffe0007a1a449 __TEXT.__cstring        IOSurfaceGPUGlobalRO
+0xfffffe0007a1a45e __TEXT.__cstring        IOSurfacePlaneSize
+0xfffffe0007a1a471 __TEXT.__cstring        IOSurfacePlaneBase
+0xfffffe0007a1a484 __TEXT.__cstring        IOSurfaceEnableStatistics
+0xfffffe0007a1a49e __TEXT.__cstring        IOSurfaceIsPrivate
+0xfffffe0007a1a4b1 __TEXT.__cstring        QuartzCore
+0xfffffe0007a1a4bc __TEXT.__cstring        CA Framebuffer
+0xfffffe0007a1a4cb __TEXT.__cstring        site.OSSharedPtr<IOSurfaceDeviceCache>
+0xfffffe0007a1a4f2 __TEXT.__cstring        allocate
+0xfffffe0007a1a4fb __TEXT.__cstring        IOSurface warning: buffer allocation failed.  %llu x %llu fmt: %08x size: %llu bytes
+0xfffffe0007a1a551 __TEXT.__cstring        increment
+0xfffffe0007a1a55b __TEXT.__cstring        decrement
+0xfffffe0007a1a565 __TEXT.__cstring        wired
+0xfffffe0007a1a56b __TEXT.__cstring        rewired
+0xfffffe0007a1a573 __TEXT.__cstring        BasicInfo
+0xfffffe0007a1a57d __TEXT.__cstring        Layout
+0xfffffe0007a1a584 __TEXT.__cstring        UseCount
+0xfffffe0007a1a58d __TEXT.__cstring        UseCount1
+0xfffffe0007a1a597 __TEXT.__cstring        ColorAndSpatialKeys
+0xfffffe0007a1a5ab __TEXT.__cstring        B24@?0r^{OSSymbol=^^?ib14b18*{smrq_slink={?=^{smrq_slink}}}}8^{OSObject=^^?i}16
+0xfffffe0007a1a5fb __TEXT.__cstring        CEA-861:Type1
+0xfffffe0007a1a609 __TEXT.__cstring        Type
+0xfffffe0007a1a60e __TEXT.__cstring        Data
+0xfffffe0007a1a613 __TEXT.__cstring        Breaking IOFence deadlock
+0xfffffe0007a1a62f __TEXT.__cstring        current: %p t: %p
+0xfffffe0007a1a643 __TEXT.__cstring        waitQ:   %p t: %p
+0xfffffe0007a1a656 __TEXT.__cstring        read
+0xfffffe0007a1a65b __TEXT.__cstring        write
+0xfffffe0007a1a661 __TEXT.__cstring        iosurface_id
+0xfffffe0007a1a66e __TEXT.__cstring        iofence_acceleratorid
+0xfffffe0007a1a684 __TEXT.__cstring        iofence_direction
+0xfffffe0007a1a696 __TEXT.__cstring        iofence_backtrace
+0xfffffe0007a1a6a8 __TEXT.__cstring        iofence_current_queue
+0xfffffe0007a1a6be __TEXT.__cstring        iofence_waiting_queue
+0xfffffe0007a1a6d4 __TEXT.__cstring        "%s called with invalid index: %lld" @%s:%d
+0xfffffe0007a1a700 __TEXT.__cstring        uint64_t IOSurface::getIndexedTimestamp(uint64_t) const
+0xfffffe0007a1a738 __TEXT.__cstring        site.IOSurfaceTransactionSerialized
+0xfffffe0007a1a75c __TEXT.__cstring        "IOSurface::prune_transaction_list unexpeted transaction list length" @%s:%d
+0xfffffe0007a1a7a9 __TEXT.__cstring        IOSurfaceClient
+0xfffffe0007a1a7b9 __TEXT.__cstring        site.IOSurfaceClient
+0xfffffe0007a1a7ce __TEXT.__cstring        1211111281111121112
+0xfffffe0007a1a7e2 __TEXT.__cstring        site.IOSurfaceClientPlaneInfo
+0xfffffe0007a1a800 __TEXT.__cstring        mapInTask
+0xfffffe0007a1a80a __TEXT.__cstring        IOSurfaceMemoryTag
+0xfffffe0007a1a81d __TEXT.__cstring        site.IOSurfaceMemoryTag
+0xfffffe0007a1a835 __TEXT.__cstring        1211112
+0xfffffe0007a1a83d __TEXT.__cstring        IOSurfaceDeviceCache
+0xfffffe0007a1a852 __TEXT.__cstring        site.IOSurfaceDeviceCache
+0xfffffe0007a1a86c __TEXT.__cstring        1211111112222
+0xfffffe0007a1a87a __TEXT.__cstring        IOSurfaceDescriptor
+0xfffffe0007a1a88e __TEXT.__cstring        site.IOSurfaceDescriptor
+0xfffffe0007a1a8a7 __TEXT.__cstring        site.IOSurfaceDescriptorPrivate
+0xfffffe0007a1a8c7 __TEXT.__cstring        IOSurfaceMemoryCallback
+0xfffffe0007a1a8df __TEXT.__cstring        site.IOSurfaceMemoryCallback
+0xfffffe0007a1a8fc __TEXT.__cstring        122111
+0xfffffe0007a1a903 __TEXT.__cstring        IOSurfaceDeviceMemoryRegion
+0xfffffe0007a1a91f __TEXT.__cstring        site.IOSurfaceDeviceMemoryRegion
+0xfffffe0007a1a940 __TEXT.__cstring        121111111212
+0xfffffe0007a1a94d __TEXT.__cstring        virtual bool IOSurfaceDeviceMemoryRegion::init(IOSurfaceRoot *, OSDictionary *, const char *, uint32_t, uint32_t)
+0xfffffe0007a1a9bf __TEXT.__cstring        Size
+0xfffffe0007a1a9c4 __TEXT.__cstring        Allocated
+0xfffffe0007a1a9ce __TEXT.__cstring        Free
+0xfffffe0007a1a9d3 __TEXT.__cstring        LargestFree
+0xfffffe0007a1a9df __TEXT.__cstring        site.IOSurfaceMemoryRegion
+0xfffffe0007a1a9fa __TEXT.__cstring        12111
+0xfffffe0007a1aa00 __TEXT.__cstring        Name
+0xfffffe0007a1aa05 __TEXT.__cstring        iosurface
+0xfffffe0007a1aa11 __TEXT.__cstring        IOSurface Parameters
+0xfffffe0007a1aa26 __TEXT.__cstring        iofence_ddd
+0xfffffe0007a1aa35 __TEXT.__cstring        IOFence Deadlock Detection Depth
+0xfffffe0007a1aa56 __TEXT.__cstring        IOSurfaceRootParavirtMapperInterface
+0xfffffe0007a1aa7b __TEXT.__cstring        site.IOSurfaceRootParavirtMapperInterface
+0xfffffe0007a1aaa8 __TEXT.__cstring        IOSurfaceRoot
+0xfffffe0007a1aab6 __TEXT.__cstring        site.IOSurfaceRoot
+0xfffffe0007a1aac9 __TEXT.__cstring        1211111212221212121122222212212111212211111112211112221111112111122111121222212222122221222212222122221222212222112111112221112211112112222222222112
+0xfffffe0007a1ab5e __TEXT.__cstring        site.IOSurfaceTaskToClientMap
+0xfffffe0007a1ab7f __TEXT.__cstring        site.IOSurfaceMemoryRegionNode
+0xfffffe0007a1aba2 __TEXT.__cstring        hw.cachelinesize
+0xfffffe0007a1abb3 __TEXT.__cstring        hw.memsize
+0xfffffe0007a1abc0 __TEXT.__cstring        non-coherent
+0xfffffe0007a1abcd __TEXT.__cstring        iosurface-non-coherent
+0xfffffe0007a1abe4 __TEXT.__cstring        display-carveout-inhibitcache
+0xfffffe0007a1ac02 __TEXT.__cstring        display-carveout-restricted
+0xfffffe0007a1ac1e __TEXT.__cstring        /vram
+0xfffffe0007a1ac24 __TEXT.__cstring        vram
+0xfffffe0007a1ac29 __TEXT.__cstring        /sma
+0xfffffe0007a1ac32 __TEXT.__cstring        iosurface_timestamp_enable
+0xfffffe0007a1ac4d __TEXT.__cstring        iosurface_debug
+0xfffffe0007a1ac5d __TEXT.__cstring        IOSurface disallowing pixel size casting by default
+0xfffffe0007a1ac92 __TEXT.__cstring        IOSurface allowing global lookups (with warnings)
+0xfffffe0007a1acc5 __TEXT.__cstring        IOSurface disallowing global lookups
+0xfffffe0007a1aceb __TEXT.__cstring        IOSurface using pageable shmems
+0xfffffe0007a1ad0c __TEXT.__cstring        IOSurface count of %d approaching limit of %d
+0xfffffe0007a1ad3b __TEXT.__cstring        "IOSurface in slot %08x has a mismatched surface ID of %08x\n" @%s:%d
+0xfffffe0007a1ad81 __TEXT.__cstring        IOSurfaceRoot.cpp
+0xfffffe0007a1ad93 __TEXT.__cstring        create_surface_internal
+0xfffffe0007a1adab __TEXT.__cstring        "IOSurfaceRoot::terminateDeviceCachesWithAccelerator() timeout." @%s:%d
+0xfffffe0007a1adf3 __TEXT.__cstring        Debug Bits Value
+0xfffffe0007a1ae04 __TEXT.__cstring        Active Debug Flags
+0xfffffe0007a1ae17 __TEXT.__cstring        IOSurface Debug Configuration
+0xfffffe0007a1ae35 __TEXT.__cstring        Kernel Surfaces
+0xfffffe0007a1ae45 __TEXT.__cstring        Memory Regions
+0xfffffe0007a1ae54 __TEXT.__cstring        Memory Pools
+0xfffffe0007a1ae61 __TEXT.__cstring        User Clients
+0xfffffe0007a1ae6e __TEXT.__cstring        site.IOSurfaceNotifyRequest
+0xfffffe0007a1ae8a __TEXT.__cstring        111111111121
+0xfffffe0007a1ae97 __TEXT.__cstring        site.IOSurface *
+0xfffffe0007a1aea8 __TEXT.__cstring        IOMalloc failed to alloc handles
+0xfffffe0007a1aec9 __TEXT.__cstring        IOSurfaceRoot::alloc_surface_id: Map said entry free but something was there
+0xfffffe0007a1af17 __TEXT.__cstring        trying to use apparently bogus surface handle %d
+0xfffffe0007a1af48 __TEXT.__cstring        Entry for handle %d is not NULL (%p)
+0xfffffe0007a1af6d __TEXT.__cstring        trying to free apparently bogus surface handle %d
+0xfffffe0007a1af9f __TEXT.__cstring        Entry for surface handle %d %p is not equal to %p
+0xfffffe0007a1afd1 __TEXT.__cstring        site.IOSurfaceSharedEvent *
+0xfffffe0007a1afed __TEXT.__cstring        trying to use apparently bogus event handle %d
+0xfffffe0007a1b01c __TEXT.__cstring        Entry for shared event handle %d is not NULL (%p)
+0xfffffe0007a1b04e __TEXT.__cstring        trying to free apparently bogus event handle %d
+0xfffffe0007a1b07e __TEXT.__cstring        Entry for shared event handle %d %p is not equal to %p
+0xfffffe0007a1b0b5 __TEXT.__cstring        IOSurfaceSharedRO alloc failed
+0xfffffe0007a1b0d4 __TEXT.__cstring        IOSurfaceSharedRW alloc failed
+0xfffffe0007a1b0f3 __TEXT.__cstring        IOSurfaceAgentMask alloc failed
+0xfffffe0007a1b113 __TEXT.__cstring        copyAgentMaskMemory
+0xfffffe0007a1b127 __TEXT.__cstring        assignSlotAndCopyAgentMaskMemoryForSignalValue
+0xfffffe0007a1b156 __TEXT.__cstring        site.IOSurfaceSharedListEntry
+0xfffffe0007a1b174 __TEXT.__cstring        11112
+0xfffffe0007a1b17a __TEXT.__cstring        IOFence: blocking wait timed out for surface: %d
+0xfffffe0007a1b1ac __TEXT.__cstring        setIomdCacheAttribute
+0xfffffe0007a1b1c2 __TEXT.__cstring        iomdEarlyPurge
+0xfffffe0007a1b1d1 __TEXT.__cstring        site.IOSurfaceEventNotifierClient
+0xfffffe0007a1b1f3 __TEXT.__cstring        1111
+0xfffffe0007a1b1f8 __TEXT.__cstring        "IOSurfaceRoot::removeEventNotifierClient() invoked with bad client notifier %p" @%s:%d
+0xfffffe0007a1b250 __TEXT.__cstring        "user client not found in map" @%s:%d
+0xfffffe0007a1b276 __TEXT.__cstring        "unexpected client map mismatch" @%s:%d
+0xfffffe0007a1b29e __TEXT.__cstring        IOSurfaceRoot using IOSurfaceRootParavirtMapperInterface %p
+0xfffffe0007a1b2e1 __TEXT.__cstring        %s%u
+0xfffffe0007a1b2e6 __TEXT.__cstring        AllGlobal
+0xfffffe0007a1b2f0 __TEXT.__cstring        DefaultNoSizeCasting
+0xfffffe0007a1b305 __TEXT.__cstring        AllowGlobal
+0xfffffe0007a1b311 __TEXT.__cstring        PageableShmems
+0xfffffe0007a1b320 __TEXT.__cstring        DisablePrepareWiring
+0xfffffe0007a1b335 __TEXT.__cstring        LogPrepareWiring
+0xfffffe0007a1b346 __TEXT.__cstring        LogCompleteNoAssertion
+0xfffffe0007a1b35d __TEXT.__cstring        EnablePrepareWiring
+0xfffffe0007a1b371 __TEXT.__cstring        KillDeadlockProcesses
+0xfffffe0007a1b387 __TEXT.__cstring        BreakIOFenceDeadlocks
+0xfffffe0007a1b39d __TEXT.__cstring        DeadlockLog
+0xfffffe0007a1b3a9 __TEXT.__cstring        AllowProtectedChildren
+0xfffffe0007a1b3c0 __TEXT.__cstring        EnableStatisticsProtection
+0xfffffe0007a1b3db __TEXT.__cstring        DisableStatisticsProtection
+0xfffffe0007a1b3f7 __TEXT.__cstring        DisableSupportLowLatencySignal
+0xfffffe0007a1b416 __TEXT.__cstring        PanicOnAgentMaskSlotExhaustion
+0xfffffe0007a1b435 __TEXT.__cstring        IONewZero failed to alloc IOSurfaceSharedListEntry
+0xfffffe0007a1b468 __TEXT.__cstring        IOBufferMemoryDescriptor::inTaskWithOptions failed to allocate a surface shared block.
+0xfffffe0007a1b4bf __TEXT.__cstring        Unable to set shared memory region ownership to kernel: %08x
+0xfffffe0007a1b4fd __TEXT.__cstring        Unable to prepare shared entry: %08x
+0xfffffe0007a1b522 __TEXT.__cstring        CSBufferPitch
+0xfffffe0007a1b530 __TEXT.__cstring        CSBufferHeight
+0xfffffe0007a1b53f __TEXT.__cstring        IOSurfaceRootUserClient
+0xfffffe0007a1b557 __TEXT.__cstring        site.IOSurfaceRootUserClient
+0xfffffe0007a1b574 __TEXT.__cstring        12111112122212121111111111111128112122111
+0xfffffe0007a1b59e __TEXT.__cstring        com.apple.private.iosurfaceinfo
+0xfffffe0007a1b5be __TEXT.__cstring        com.apple.private.gpu-restricted
+0xfffffe0007a1b5df __TEXT.__cstring        com.apple.developer.gpu-restricted
+0xfffffe0007a1b602 __TEXT.__cstring        com.apple.private.IOSurface.protected-access
+0xfffffe0007a1b62f __TEXT.__cstring        IOUserClientEntitlements
+0xfffffe0007a1b648 __TEXT.__cstring        IOUserClientDefaultLocking
+0xfffffe0007a1b663 __TEXT.__cstring        IOUserClientDefaultLockingSetProperties
+0xfffffe0007a1b68b __TEXT.__cstring        IOUserClientDefaultLockingSingleThreadExternalMethod
+0xfffffe0007a1b6c0 __TEXT.__cstring        s_create_surface
+0xfffffe0007a1b6d1 __TEXT.__cstring        Security: Process %s (%d) creating global IOSurfaces accessible to any other process
+0xfffffe0007a1b727 __TEXT.__cstring        Security: Process %s (%d) relying on global (insecure) IOSurface lookups
+0xfffffe0007a1b771 __TEXT.__cstring        "Bad IOSurfaceClient" @%s:%d
+0xfffffe0007a1b78e __TEXT.__cstring        IOSurfaceRootUserClient.cpp
+0xfffffe0007a1b7aa __TEXT.__cstring        create_surface
+0xfffffe0007a1b7b9 __TEXT.__cstring        create_surface_fast_path
+0xfffffe0007a1b7d2 __TEXT.__cstring        Perf: Process %s (%d) has created %d IOSurfaces out of a limit of %d
+0xfffffe0007a1b818 __TEXT.__cstring        Perf: Process %s (%d) has created %d IOSurfaces out of a limit of %d, possible leak?
+0xfffffe0007a1b86e __TEXT.__cstring        create_surface_client_mem
+0xfffffe0007a1b888 __TEXT.__cstring        Perf: Process %s (%d) IOSurface creation count: %d total count: %d
+0xfffffe0007a1b8cc __TEXT.__cstring        name
+0xfffffe0007a1b8d5 __TEXT.__cstring        Client Surfaces
+0xfffffe0007a1b8e5 __TEXT.__cstring        site.IOSurfaceClient *
+0xfffffe0007a1b8fc __TEXT.__cstring        set_surface_handle
+0xfffffe0007a1b90f __TEXT.__cstring        "IOSurfaceRootUserClient::set_surface_handle asked to set handle %08x that was not free: %p" @%s:%d
+0xfffffe0007a1b973 __TEXT.__cstring        %.512s
+0xfffffe0007a1b97a __TEXT.__cstring        ensure_memory_pool_memory
+0xfffffe0007a1b994 __TEXT.__cstring        flush_memory_pool
+0xfffffe0007a1b9a6 __TEXT.__cstring        gather_memory_pool_data
+0xfffffe0007a1b9be __TEXT.__cstring        append_transaction
+0xfffffe0007a1b9d1 __TEXT.__cstring        IOFence
+0xfffffe0007a1b9d9 __TEXT.__cstring        site.IOFence
+0xfffffe0007a1b9e6 __TEXT.__cstring        121121111221111111211111111
+0xfffffe0007a1ba02 __TEXT.__cstring        "fence freed before completion: %p" @%s:%d
+0xfffffe0007a1ba2d __TEXT.__cstring        IOSurfaceFence.cpp
+0xfffffe0007a1ba40 __TEXT.__cstring        "IOFence does not support release with when != 1" @%s:%d
+0xfffffe0007a1ba79 __TEXT.__cstring        "IOFence does not support taggedRelease with when != 1" @%s:%d
+0xfffffe0007a1bab8 __TEXT.__cstring        IOSurfaceShared
+0xfffffe0007a1bac8 __TEXT.__cstring        site.IOSurfaceShared
+0xfffffe0007a1badd __TEXT.__cstring        128111112
+0xfffffe0007a1bae7 __TEXT.__cstring        site.IOSurfaceClientSharedListEntry
+0xfffffe0007a1bb0f __TEXT.__cstring        map_client_shared failed for client_shared_ro
+0xfffffe0007a1bb3d __TEXT.__cstring        map_client_shared failed for client_shared_rw
+0xfffffe0007a1bb6b __TEXT.__cstring        map_client_shared failed for event_shared_ro
+0xfffffe0007a1bb98 __TEXT.__cstring        "IOSurfaceRootUserClient: asked to allocate client shared id %08x not known by IOSurfaceRoot" @%s:%d
+0xfffffe0007a1bbfd __TEXT.__cstring        IOSurfaceShared.cpp
+0xfffffe0007a1bc11 __TEXT.__cstring        IONewZero failed to alloc IOSurfaceClientSharedListEntry
+0xfffffe0007a1bc4a __TEXT.__cstring        IOSurfaceRootUserClient: couldn't map shared memory region into client
+0xfffffe0007a1bc91 __TEXT.__cstring        IOSurfaceDescriptorContext
+0xfffffe0007a1bcac __TEXT.__cstring        site.IOSurfaceDescriptorContext
+0xfffffe0007a1bccc __TEXT.__cstring        12211111
+0xfffffe0007a1bcd5 __TEXT.__cstring        Descriptor address
+0xfffffe0007a1bce8 __TEXT.__cstring        Pool Id
+0xfffffe0007a1bcf0 __TEXT.__cstring        Components
+0xfffffe0007a1bcfb __TEXT.__cstring        IOSurfaceDescriptorComponent
+0xfffffe0007a1bd18 __TEXT.__cstring        site.IOSurfaceDescriptorComponent
+0xfffffe0007a1bd3a __TEXT.__cstring        1221
+0xfffffe0007a1bd3f __TEXT.__cstring        Length
+0xfffffe0007a1bd46 __TEXT.__cstring        Options
+0xfffffe0007a1bd4e __TEXT.__cstring        IOSurfaceMemoryPoolBunch
+0xfffffe0007a1bd67 __TEXT.__cstring        site.IOSurfaceMemoryPoolBunch
+0xfffffe0007a1bd85 __TEXT.__cstring        121111112
+0xfffffe0007a1bd8f __TEXT.__cstring        ====> %s:%d Memory pool ids exhausted
+0xfffffe0007a1bdb6 __TEXT.__cstring        newMemoryPool
+0xfffffe0007a1bdc4 __TEXT.__cstring        newWiredMemoryDescriptorWithLength
+0xfffffe0007a1bde7 __TEXT.__cstring        Contexts
+0xfffffe0007a1bdf0 __TEXT.__cstring        InUse
+0xfffffe0007a1bdf6 __TEXT.__cstring        OutOfUse
+0xfffffe0007a1bdff __TEXT.__cstring        IOSurfaceMemoryPool
+0xfffffe0007a1be13 __TEXT.__cstring        site.IOSurfaceMemoryPool
+0xfffffe0007a1be2c __TEXT.__cstring        1211228111111111111121
+0xfffffe0007a1be43 __TEXT.__cstring        ====> %s:%d Unable to pre-allocate IOSurfaceMemoryPool memory for pool id %llu
+0xfffffe0007a1be93 __TEXT.__cstring        "IOSurfaceMemoryPool does not support taggedRelease with when != 1" @%s:%d
+0xfffffe0007a1bede __TEXT.__cstring        IOSurfaceMemoryPool.cpp
+0xfffffe0007a1bef6 __TEXT.__cstring        ====> %s:%d Unable to assemble descriptor of the correct length
+0xfffffe0007a1bf37 __TEXT.__cstring        ====> %s:%d Descriptor length isn't rounded to bucket size
+0xfffffe0007a1bf73 __TEXT.__cstring        site.IOMemoryDescriptor *
+0xfffffe0007a1bf8d __TEXT.__cstring        Bucket buffer size
+0xfffffe0007a1bfa0 __TEXT.__cstring        Descriptors
+0xfffffe0007a1bfac __TEXT.__cstring        Buckets
+0xfffffe0007a1bfb4 __TEXT.__cstring        ====> %s:%d IOSurfaceMemoryPool: %s (%d) can't access pool id %llu (wrong entitlements)
+0xfffffe0007a1c00d __TEXT.__cstring        taskCanUsePool
+0xfffffe0007a1c01c __TEXT.__cstring        ====> %s:%d IOSurfaceMemoryPool: %s (%d) invalid task (%p) can't access pool id %llu (wrong entitlements)
+0xfffffe0007a1c087 __TEXT.__cstring        "os_refcnt: underflow (rc=%p)\n" @%s:%d
+0xfffffe0007a1c0af __TEXT.__cstring        iosfcrefcnt.c
+0xfffffe0007a1c0bd __TEXT.__cstring        "os_refcnt: attempted resurrection (rc=%p)\n" @%s:%d
+0xfffffe0007a1c0f2 __TEXT.__cstring        "os_refcnt: overflow (rc=%p)\n" @%s:%d
+0xfffffe0007a1c119 __TEXT.__cstring        IOSurfaceSendRight
+0xfffffe0007a1c12c __TEXT.__cstring        site.IOSurfaceSendRight
+0xfffffe0007a1c144 __TEXT.__cstring        12112
+0xfffffe0007a1c14a __TEXT.__cstring        IOSurfaceWiredSendRight
+0xfffffe0007a1c162 __TEXT.__cstring        site.IOSurfaceWiredSendRight
+0xfffffe0007a1c17f __TEXT.__cstring        IOSurfaceSmaMemoryRegion
+0xfffffe0007a1c198 __TEXT.__cstring        site.IOSurfaceSmaMemoryRegion
+0xfffffe0007a1c1b6 __TEXT.__cstring        IOSurfaceTransaction
+0xfffffe0007a1c1cb __TEXT.__cstring        site.IOSurfaceTransaction
+0xfffffe0007a1c1e5 __TEXT.__cstring        121122
+0xfffffe0007a1c1ec __TEXT.__cstring        "IOSurfaceTransaction::serialize panic because of attempting to write to nullptr." @%s:%d
+0xfffffe0007a1c246 __TEXT.__cstring        IOSurfaceTransaction.cpp
+0xfffffe0007a1c25f __TEXT.__os_log         %s: failed to assign agent mask slot for value %llu: 0x%x
+0xfffffe0007a1c29a __TEXT.__os_log         %s: failed to add agent mask for value %llu: 0x%x
+0xfffffe0007a1c2cd __TEXT.__os_log         %s: No free agent mask slots available for event ID %08x (signal value 0x%016llx)
+0xfffffe0007a1c320 __TEXT.__os_log           Currently allocated slots:
+0xfffffe0007a1c33e __TEXT.__os_log             Slot[%u]: SignalValue=0x%016llx Timestamp=%llu
+0xfffffe0007a1c372 __TEXT.__os_log         %s: slot index %u out of range or no agent mask info for event %08x (signal value 0x%016llx)
+0xfffffe0007a1c3d0 __TEXT.__os_log         %s: slot index %u validation failed: allocated=%s, signal value 0x%016llx (expected 0x%016llx) for event %08x
+0xfffffe0007a1c43f __TEXT.__os_log         process %s (%d) caught causing IOFence deadlock!
+0xfffffe0007a1c471 __TEXT.__os_log         Killed process %s (%d) for causing IOFence deadlock!
+0xfffffe0007a1c4a7 __TEXT.__os_log         IOSurfaceRoot: deadlock detection depth limit %d reached
+0xfffffe0007a1c4e1 __TEXT.__os_log         %s error - invalid parent (can't be child)
+0xfffffe0007a1c50d __TEXT.__os_log         %s error - failed to alloc surface id
+0xfffffe0007a1c534 __TEXT.__os_log         %s error - failed to alloc shmem
+0xfffffe0007a1c556 __TEXT.__os_log         %s error - failed to parse properties
+0xfffffe0007a1c57d __TEXT.__os_log         IOSurface::parse_properties() problem with kIOSurfaceSubsampling
+0xfffffe0007a1c5bf __TEXT.__os_log         IOSurface::::parse_properties() kIOSurfacePlaneInfo array must not be empty.
+0xfffffe0007a1c60d __TEXT.__os_log         IOSurface: maximum plane count of %d exceeded.
+0xfffffe0007a1c63d __TEXT.__os_log         IOSurface: kIOSurfacePlaneBytesPerElement out of range
+0xfffffe0007a1c675 __TEXT.__os_log         IOSurface: kIOSurfacePlaneBitsPerElement out of range
+0xfffffe0007a1c6ac __TEXT.__os_log         IOSurface: kIOSurfacePlaneBitsPerBlock out of range
+0xfffffe0007a1c6e1 __TEXT.__os_log         IOSurface: plane[%d] bytes per element is zero.
+0xfffffe0007a1c712 __TEXT.__os_log         IOSurface: plane[%d] element width is zero.
+0xfffffe0007a1c73f __TEXT.__os_log         IOSurface: plane[%d] element height is zero.
+0xfffffe0007a1c76d __TEXT.__os_log         IOSurface: plane[%d] extended width exceeds 64bit limit
+0xfffffe0007a1c7a6 __TEXT.__os_log         IOSurface: plane[%d] extended left exceeds 64bit limit
+0xfffffe0007a1c7de __TEXT.__os_log         IOSurface: plane[%d] calculated width in pixels exceeds 64bit limit
+0xfffffe0007a1c823 __TEXT.__os_log         IOSurface: plane[%d] total width in elements exceeds 64bit limit
+0xfffffe0007a1c865 __TEXT.__os_log         IOSurface: plane[%d] bytesPerRow exceeds 64bit limit
+0xfffffe0007a1c89b __TEXT.__os_log         IOSurface: plane[%d] calculated bytesPerRow exceeds 64bit limit
+0xfffffe0007a1c8dc __TEXT.__os_log         IOSurface: plane[%d] plane width in bytes exceeds 64bit limit
+0xfffffe0007a1c91b __TEXT.__os_log         IOSurface: plane[%d] minimum extended left bytes per row value exceeds 64bit limit
+0xfffffe0007a1c96f __TEXT.__os_log         IOSurface: plane[%d] minimum bytes per row value exceeds 64bit limit
+0xfffffe0007a1c9b5 __TEXT.__os_log         IOSurface: plane[%d] bytes per row value of %llu is too small
+0xfffffe0007a1c9f4 __TEXT.__os_log         IOSurface: plane[%d] extended height exceeds 64bit limit
+0xfffffe0007a1ca2e __TEXT.__os_log         IOSurface: plane[%d] calculated size value exceeds 64bit limit
+0xfffffe0007a1ca6e __TEXT.__os_log         IOSurface: plane[%d] size is zero
+0xfffffe0007a1ca91 __TEXT.__os_log         IOSurface: plane[%d] calculated offset value exceeds 64bit limit
+0xfffffe0007a1cad3 __TEXT.__os_log         IOSurface: plane[%d] base %016llx overlaps with previous plane %d
+0xfffffe0007a1cb16 __TEXT.__os_log         IOSurface: plane[%d] offset %016llx is less than plane[%d] base %016llx
+0xfffffe0007a1cb5f __TEXT.__os_log         IOSurface: plane[%d] base %016llx plus plane size %016llx exceeds 64bit limit
+0xfffffe0007a1cbae __TEXT.__os_log         IOSurface: plane[%d] required size exceeds 64bit limit
+0xfffffe0007a1cbe6 __TEXT.__os_log         IOSurface: plane[%d] required size for one line exceeds 64bit limit
+0xfffffe0007a1cc2b __TEXT.__os_log         IOSurface: plane[%d] total required size exceeds 64bit limit
+0xfffffe0007a1cc69 __TEXT.__os_log         IOSurface: plane[%d] parseAdditionalPlaneInfo failed.
+0xfffffe0007a1cca0 __TEXT.__os_log         IOSurface: plane[%d] illegal compression type: %lld
+0xfffffe0007a1ccd5 __TEXT.__os_log         IOSurface: sliceCount provided %d is out of bound for maximum / minimum number of required slices.
+0xfffffe0007a1cd39 __TEXT.__os_log         IOSurface: compressed plane[%d] HTPCPredictionSelector must be in range
+0xfffffe0007a1cd82 __TEXT.__os_log         IOSurface: HTPC compressed plane[%d] Tile header must be 32-bit or 64-bit
+0xfffffe0007a1cdcd __TEXT.__os_log         IOSurface: AGX BytesPerCompressedTileHeader of plane[%d] must be 2 or 8 or 32
+0xfffffe0007a1ce1c __TEXT.__os_log         IOSurface: plane[%d] illegal compression footprint for type kIOSurfaceCompressionTypeInterchangeLossy %lld 
+0xfffffe0007a1ce89 __TEXT.__os_log         IOSurface: compressed plane[%d] CompressedTileWidth must be at least 1
+0xfffffe0007a1ced1 __TEXT.__os_log         IOSurface: compressed plane[%d] CompressedTileWidth must be power of 2
+0xfffffe0007a1cf19 __TEXT.__os_log         IOSurface: compressed plane[%d] CompressedTileWidth must be less than 1024
+0xfffffe0007a1cf65 __TEXT.__os_log         IOSurface: compressed plane[%d] Width + CompressedTileWidth doesn't fit in 32 bits
+0xfffffe0007a1cfb9 __TEXT.__os_log         IOSurface: compressed plane[%d] CompressedTileHeight must be at least 1
+0xfffffe0007a1d002 __TEXT.__os_log         IOSurface: compressed plane[%d] CompressedTileHeight must be less than 1024
+0xfffffe0007a1d04f __TEXT.__os_log         IOSurface: compressed plane[%d] CompressedTileHeight must be power of 2
+0xfffffe0007a1d098 __TEXT.__os_log         IOSurface: compressed plane[%d] Height + CompressedTileHeight doesn't fit in 32 bits
+0xfffffe0007a1d0ee __TEXT.__os_log         IOSurface: compressed plane[%d] kIOSurfacePlaneHorizontalPixelOffsetWithinCompressedTileArray is more than a kIOSurfacePlaneCompressedTileWidth.
+0xfffffe0007a1d180 __TEXT.__os_log         IOSurface: compressed plane[%d] kIOSurfacePlaneVerticalPixelOffsetWithinCompressedTileArray is more than a kIOSurfacePlaneCompressedTileHeight.
+0xfffffe0007a1d211 __TEXT.__os_log         IOSurface: compressed plane[%d] HTPCVerticalHeaderGroupingMode must be in range
+0xfffffe0007a1d262 __TEXT.__os_log         IOSurface: compressed plane[%d] extended left is not supported for compressed iosurfaces
+0xfffffe0007a1d2bc __TEXT.__os_log         IOSurface: compressed plane[%d] extended top is not supported for compressed iosurfaces
+0xfffffe0007a1d315 __TEXT.__os_log         IOSurface: compressed plane[%d] extra width calculation overflow
+0xfffffe0007a1d357 __TEXT.__os_log         IOSurface: compressed plane[%d] full width calculation overflow
+0xfffffe0007a1d398 __TEXT.__os_log         IOSurface: compressed plane[%d] CompressedTileHeaderRegionWidth must exactly cover the width in tiles
+0xfffffe0007a1d3ff __TEXT.__os_log         IOSurface: compressed plane[%d] extended width calculation overflow
+0xfffffe0007a1d444 __TEXT.__os_log         IOSurface: compressed plane[%d] planeHorizontalPixelOffsetWithinCompressedTile exceeds compressedPlaneBytesPerTileRow
+0xfffffe0007a1d4bb __TEXT.__os_log         IOSurface: compressed plane[%d] Plane width must fit into tiles
+0xfffffe0007a1d4fc __TEXT.__os_log         IOSurface: compressed plane[%d] kIOSurfacePlaneBytesPerRowOfTileData is %d less than WidthInCompressedTiles %d x BytesPerTileData %d Bytes.
+0xfffffe0007a1d589 __TEXT.__os_log         IOSurface: compressed plane[%d] extendedHeight overflow
+0xfffffe0007a1d5c2 __TEXT.__os_log         IOSurface: compressed plane[%d] roundedExtendedHeight overflow
+0xfffffe0007a1d602 __TEXT.__os_log         IOSurface: compressed plane[%d] tilesToCoverHeight + headersInGroup doesn't fit in 32 bits
+0xfffffe0007a1d65e __TEXT.__os_log         IOSurface: compressed plane[%d] CompressedTileHeaderRegionHeight must exactly cover the height in tiles
+0xfffffe0007a1d6c7 __TEXT.__os_log         IOSurface: compressed plane[%d] Header region height must fit header group
+0xfffffe0007a1d713 __TEXT.__os_log         IOSurface: compressed plane[%d] Plane height must fit into tiles
+0xfffffe0007a1d755 __TEXT.__os_log         IOSurface: compressed plane[%d] bytesPerCompressedTileHeaderGroup * planeWidthInCompressedTiles doesn't fit in 32 bits
+0xfffffe0007a1d7cd __TEXT.__os_log         IOSurface: compressed plane[%d] BytesPerRowOfCompressedTileHeaderGroups needs to be enough for a row of groups of tiles at this width
+0xfffffe0007a1d854 __TEXT.__os_log         IOSurface: compressed plane[%d] Header region doesn't fit into plane size
+0xfffffe0007a1d89f __TEXT.__os_log         IOSurface: compressed plane[%d] uncompressedTileSize doesn't fit in 32 bits
+0xfffffe0007a1d8ec __TEXT.__os_log         IOSurface: compressed plane[%d] rowOfUncompressedTiles doesn't fit in 32 bits
+0xfffffe0007a1d93b __TEXT.__os_log         IOSurface: compressed plane[%d] dataRegionTotalSize doesn't fit in 32 bits
+0xfffffe0007a1d987 __TEXT.__os_log         IOSurface: compressed plane[%d] Data region doesn't fit into plane size
+0xfffffe0007a1d9d0 __TEXT.__os_log         IOSurface: kIOSurfacePlaneDataRegionBytesPerSlice %d exceeds maximum value.
+0xfffffe0007a1da1d __TEXT.__os_log         IOSurface: kIOSurfacePlaneDataRegionBytesPerSlice %d is smaller than expected value %d .
+0xfffffe0007a1da77 __TEXT.__os_log         IOSurface: kIOSurfacePlaneDataRegionBytesPerSlice must be present for multi-slice plane %d with sliceCount %d .
+0xfffffe0007a1dae8 __TEXT.__os_log         IOSurface: HTPC compressed plane[%d] Header region overlaps data region
+0xfffffe0007a1db31 __TEXT.__os_log         IOSurface: compressed plane[%d] Data region overlaps header region
+0xfffffe0007a1db75 __TEXT.__os_log         IOSurface: kIOSurfacePlaneHeaderRegionBytesPerSlice %d exeeds maximum value.
+0xfffffe0007a1dbc3 __TEXT.__os_log         IOSurface: kIOSurfacePlaneHeaderRegionBytesPerSlice %d is smaller than expected value %d .
+0xfffffe0007a1dc1f __TEXT.__os_log         IOSurface: kIOSurfacePlaneHeaderRegionBytesPerSlice must be present for multi-slice plane %d with sliceCount %d .
+0xfffffe0007a1dc92 __TEXT.__os_log         IOSurface: multi-slice interchange compressed plane[%d] (DataRegionBytesPerSlice %d + HeaderRegionBytesPerSlice %d) * sliceCount %d size is greater than total planeSize %lld
+0xfffffe0007a1dd41 __TEXT.__os_log         IOSurface: child surface plane[%d] Image data doesn't fit within allocated parent plane size
+0xfffffe0007a1dd9f __TEXT.__os_log         IOSurface: plane[%d] Image data doesn't fit within allocated plane size
+0xfffffe0007a1dde8 __TEXT.__os_log         IOSurface::parse_properties() parseAdditionalPlaneInfo failed.
+0xfffffe0007a1de28 __TEXT.__os_log         Cannot create children of protected surfaces
+0xfffffe0007a1de56 __TEXT.__os_log         Unsupported protection bits set: %016llx
+0xfffffe0007a1de80 __TEXT.__os_log         IOSurface: Planar surfaces must specify a valid buffer width and height.
+0xfffffe0007a1deca __TEXT.__os_log         IOSurface: Planar surfaces must specify a valid buffer width and height.
+0xfffffe0007a1df14 __TEXT.__os_log         IOSurface: buffer bytes per element is zero.
+0xfffffe0007a1df42 __TEXT.__os_log         IOSurface: buffer element width is zero.
+0xfffffe0007a1df6c __TEXT.__os_log         IOSurface: buffer element height is zero.
+0xfffffe0007a1df97 __TEXT.__os_log         IOSurface: buffer width overflow
+0xfffffe0007a1dfb9 __TEXT.__os_log         IOSurface: bytesPerRow calculation overflow
+0xfffffe0007a1dfe6 __TEXT.__os_log         IOSurface: buffer required width in bytes overflow
+0xfffffe0007a1e01a __TEXT.__os_log         IOSurface: buffer bytes per row value is too small
+0xfffffe0007a1e04e __TEXT.__os_log         IOSurface: required planar allocation size overflow
+0xfffffe0007a1e083 __TEXT.__os_log         IOSurface: required allocation size overflow
+0xfffffe0007a1e0b1 __TEXT.__os_log         IOSurface: aligned allocation size overflow
+0xfffffe0007a1e0de __TEXT.__os_log         IOSurface: allocation size overflow
+0xfffffe0007a1e103 __TEXT.__os_log         IOSurface: child surfaces must specify an allocation size less than or equal to the parent surface size
+0xfffffe0007a1e16c __TEXT.__os_log         IOSurface: allocation size of %llu exceeds limit of %llu bytes
+0xfffffe0007a1e1ac __TEXT.__os_log         IOSurface: plane limit calculation overflow
+0xfffffe0007a1e1d9 __TEXT.__os_log         IOSurface: buffer allocation size is too small to cover valid image area of plane %d: fAllocSize=%llu, planeLimit=%llu
+0xfffffe0007a1e251 __TEXT.__os_log         IOSurface: aligned height calculation overflow
+0xfffffe0007a1e281 __TEXT.__os_log         IOSurface: required bytes per line overflow
+0xfffffe0007a1e2ae __TEXT.__os_log         IOSurface: required image bytes overflow
+0xfffffe0007a1e2d8 __TEXT.__os_log         IOSurface: required allocation size overflow
+0xfffffe0007a1e307 __TEXT.__os_log         IOSurface: buffer allocation size is too small to cover valid image area: fAllocSize=%llu, requiredSizeInBytes=%llu
+0xfffffe0007a1e37c __TEXT.__os_log         IOSurface: client direction not InOut or Out
+0xfffffe0007a1e3aa __TEXT.__os_log         IOSurface: fClientAlignedOffset >= page_size
+0xfffffe0007a1e3d8 __TEXT.__os_log         IOSurface: address ranges size not multiple of IOAddressRange
+0xfffffe0007a1e417 __TEXT.__os_log         IOSurface: Cannot use kIOSurfaceClientAddress with compressed iosurfaces.
+0xfffffe0007a1e462 __TEXT.__os_log         Unknown cache mode: %08x
+0xfffffe0007a1e47c __TEXT.__os_log         IOSurface: Cannot set both global and private properties
+0xfffffe0007a1e4b6 __TEXT.__os_log         IOSurface::flushProcessorCaches memory prepare failed
+0xfffffe0007a1e4ed __TEXT.__os_log         IOSurface::cleanProcessorCaches memory prepare failed
+0xfffffe0007a1e524 __TEXT.__os_log         IOSurface %08x: Current device cache changed while purgeability status was changing.
+0xfffffe0007a1e57a __TEXT.__os_log         %s error - can't prepare mapping
+0xfffffe0007a1e59c __TEXT.__os_log         %s error - invalid address range (0x%llx - 0x%llx) : (0x%llx - 0x%llx)
+0xfffffe0007a1e5e4 __TEXT.__os_log         %s error - unaligned addr (0x%llx)
+0xfffffe0007a1e608 __TEXT.__os_log         %s error - unaligned length (0x%llx)
+0xfffffe0007a1e62e __TEXT.__os_log         %s error - invalid range (0x%llx - 0x%llx)
+0xfffffe0007a1e65a __TEXT.__os_log         %s error - invalid direction (0x%x vs 0x%x)
+0xfffffe0007a1e687 __TEXT.__os_log         %s error - Address ranges do not cover requested allocation size
+0xfffffe0007a1e6c9 __TEXT.__os_log         IOSurface::allocate() - requested cache mode %08x incompatible with memory region cache mode %08x
+0xfffffe0007a1e72c __TEXT.__os_log         %s error - incompatible cache mode (0x%x in 0x%x)
+0xfffffe0007a1e75f __TEXT.__os_log         %s error - buffer allocation failed (%llu x %llu fmt: %08x size: %llu bytes)
+0xfffffe0007a1e7ad __TEXT.__os_log         sid %08x prepare(): %s. format: %s
+0xfffffe0007a1e7d1 __TEXT.__os_log         sid %08x complete() without assertion. dims: %llux%llu, fmt: %s, name: %s
+0xfffffe0007a1e81c __TEXT.__os_log         IOSurface::copyTimingInfo() - dictionary copy failed
+0xfffffe0007a1e852 __TEXT.__os_log         IOSurface::setTimestamp() - timestamp create failed
+0xfffffe0007a1e887 __TEXT.__os_log         IOSurface::setTimestamp() - dictionary create failure
+0xfffffe0007a1e8be __TEXT.__os_log         IOSurface::setTimestamp() - setValue for timing info failed
+0xfffffe0007a1e8fb __TEXT.__os_log         IOSurface::setTimestamp() - timing dictionary create failed
+0xfffffe0007a1e938 __TEXT.__os_log         IOSurface::setTimestamp() - setValue for timing dictionary failed
+0xfffffe0007a1e97b __TEXT.__os_log         IOSurface::createWriteFence: WARNING: IOFence new failure!
+0xfffffe0007a1e9b7 __TEXT.__os_log         Breaking IOFence deadlock
+0xfffffe0007a1e9d3 __TEXT.__os_log         %p: surf: %p dir: %s accelerator: %d callback: %p target: %p ref: %p notified: %d completed: %d
+0xfffffe0007a1ea34 __TEXT.__os_log         IOSurface fence debug: surface: %p id: %d
+0xfffffe0007a1ea5f __TEXT.__os_log         Current Fences:
+0xfffffe0007a1ea70 __TEXT.__os_log         Waiting Fences:
+0xfffffe0007a1ea81 __TEXT.__os_log         IOSurface: %s exceeds maximum value
+0xfffffe0007a1eaa6 __TEXT.__os_log         IOSurface: %s exceeds maximum value
+0xfffffe0007a1eacb __TEXT.__os_log         IOSurface: %s component count is too large.
+0xfffffe0007a1eaf8 __TEXT.__os_log         IOSurface: %s component count is too small.
+0xfffffe0007a1eb25 __TEXT.__os_log         IOSurface: %s component count mismatch.
+0xfffffe0007a1eb4e __TEXT.__os_log         IOSurface: %s exceeds maximum value
+0xfffffe0007a1eb73 __TEXT.__os_log         IOSurface: Required property %s missing
+0xfffffe0007a1eb9c __TEXT.__os_log         Attempt to %s IOSurface useCount while kIOSurfaceProhibitUseCount is set, ignored (creatorPID=%u currentPID=%u category=%u).
+0xfffffe0007a1ec1a __TEXT.__os_log         %s: map_surface_client_shared() failed
+0xfffffe0007a1ec42 __TEXT.__os_log         %s: mapInTask() failed
+0xfffffe0007a1ec5a __TEXT.__os_log         %s: createMappingInTask() failed
+0xfffffe0007a1ec7c __TEXT.__os_log         IOSurfaceDeviceMemoryRegion: Couldn't get device memory with index %u for service %s
+0xfffffe0007a1ecd2 __TEXT.__os_log         IOSurfaceDeviceMemoryRegion: zero-length device memory with index %u for service %s
+0xfffffe0007a1ed27 __TEXT.__os_log         IOSurfaceDeviceMemoryRegion: Couldn't map device memory
+0xfffffe0007a1ed60 __TEXT.__os_log         %s: Couldn't allocate range allocator for graphics memory
+0xfffffe0007a1ed9b __TEXT.__os_log         IOSurfaceRoot: Initial shared event memory alloc failed
+0xfffffe0007a1edd4 __TEXT.__os_log         IOSurface: couldn't count /vram's reg tuples; assuming a single carveout
+0xfffffe0007a1ee1e __TEXT.__os_log         IOSurface: discovered %u display carveout(s) in /vram
+0xfffffe0007a1ee55 __TEXT.__os_log         IOSurface count of %d approaching limit of %d
+0xfffffe0007a1ee84 __TEXT.__os_log         _   /|
+0xfffffe0007a1ee8c __TEXT.__os_log         'o.O'
+0xfffffe0007a1ee93 __TEXT.__os_log         =(___)=
+0xfffffe0007a1ee9c __TEXT.__os_log            U     ack!
+0xfffffe0007a1eeab __TEXT.__os_log         Security: Process %s (%d) relying on global (insecure) IOSurface lookups
+0xfffffe0007a1eef5 __TEXT.__os_log         Security: Process %s (%d) failed global (insecure) IOSurface lookup for surface id %08x
+0xfffffe0007a1ef4e __TEXT.__os_log         SID: 0x%X task: %p buffer: %p  buffer->fClientTask = %p not found
+0xfffffe0007a1ef91 __TEXT.__os_log         %s error - no properties
+0xfffffe0007a1efab __TEXT.__os_log         %s error - failed to alloc surface buffer
+0xfffffe0007a1efd6 __TEXT.__os_log         Failed to install %s memory region; checking in anyway
+0xfffffe0007a1f00e __TEXT.__os_log         IOSurface: /vram declares %u carveout(s) but %u resolved; positions are ambiguous, installing none
+0xfffffe0007a1f072 __TEXT.__os_log         IOSurface: /vram declares %u carveout(s) but none resolved
+0xfffffe0007a1f0ae __TEXT.__os_log         %s: slot index %u is out of range for event %08x
+0xfffffe0007a1f0e0 __TEXT.__os_log         %s: slot index %u is not allocated for signal value 0x%016llx on event %08x
+0xfffffe0007a1f12d __TEXT.__os_log         %s: failed to assign slot for event %08x, signal value 0x%016llx: ret 0x%x
+0xfffffe0007a1f179 __TEXT.__os_log         Unable to grow task client map
+0xfffffe0007a1f199 __TEXT.__os_log         IOSurfaceRoot using IOSurfaceRootParavirtMapperInterface
+0xfffffe0007a1f1d3 __TEXT.__os_log         provider not IOSurfaceRoot
+0xfffffe0007a1f1ef __TEXT.__os_log         Cannot allocate IOSurfaceShared
+0xfffffe0007a1f210 __TEXT.__os_log         Cannot map graphics comm page
+0xfffffe0007a1f22f __TEXT.__os_log         Cannot allocate notification array
+0xfffffe0007a1f253 __TEXT.__os_log         Cannot allocate invalidated surface array
+0xfffffe0007a1f27e __TEXT.__os_log         Cannot allocate IOLock
+0xfffffe0007a1f296 __TEXT.__os_log         Cannot allocate IORWLock
+0xfffffe0007a1f2b0 __TEXT.__os_log         %s error - invalid parentID (0x%llx)
+0xfffffe0007a1f2d6 __TEXT.__os_log         %s error - failed to map shmem
+0xfffffe0007a1f2f6 __TEXT.__os_log         %s error - no args
+0xfffffe0007a1f30a __TEXT.__os_log         %s error - exceeded client limit (0x%x)
+0xfffffe0007a1f333 __TEXT.__os_log         %s error - invalid parent id (0x%x)
+0xfffffe0007a1f358 __TEXT.__os_log         %s error - pool off limits (%llu)
+0xfffffe0007a1f37b __TEXT.__os_log         %s error - set surface handle
+0xfffffe0007a1f39a __TEXT.__os_log         %s error - set surface id
+0xfffffe0007a1f3b5 __TEXT.__os_log         %s error - failed to alloc client buffer
+0xfffffe0007a1f3df __TEXT.__os_log         %s error - failed to alloc surface buffer
+0xfffffe0007a1f40a __TEXT.__os_log         %s error - exceeded client limit (%d)
+0xfffffe0007a1f431 __TEXT.__os_log         %s error - set surface handle
+0xfffffe0007a1f450 __TEXT.__os_log         %s error - set surface id
+0xfffffe0007a1f46b __TEXT.__os_log         %s error - failed to alloc client buffer
+0xfffffe0007a1f495 __TEXT.__os_log         %s error - failed to alloc surface buffer
+0xfffffe0007a1f4c0 __TEXT.__os_log         Perf: Process %s (%d) has created %d IOSurfaces out of a limit of %d
+0xfffffe0007a1f506 __TEXT.__os_log         Perf: Process %s (%d) has created %d IOSurfaces out of a limit of %d, possible leak?
+0xfffffe0007a1f55c __TEXT.__os_log         %s error - invalid memory range (addr=0x%llx size=0x%llx)
+0xfffffe0007a1f597 __TEXT.__os_log         %s error - exceeded client limit (%d)
+0xfffffe0007a1f5be __TEXT.__os_log         %s error - no properties
+0xfffffe0007a1f5d8 __TEXT.__os_log         %s error - set surface handle
+0xfffffe0007a1f5f7 __TEXT.__os_log         %s error - set surface id
+0xfffffe0007a1f612 __TEXT.__os_log         %s error - failed to alloc client buffer
+0xfffffe0007a1f63c __TEXT.__os_log         %s error - failed to alloc surface buffer
+0xfffffe0007a1f667 __TEXT.__os_log         Perf: Process %s (%d) IOSurface creation count: %d total count: %d
+0xfffffe0007a1f6ab __TEXT.__os_log         IONewZero failed to alloc handles
+0xfffffe0007a1f6ce __TEXT.__os_log         %s: alloc_handles() failed
+0xfffffe0007a1f6ea __TEXT.__os_log         IOSurfaceRootUserClient: duplicate listener refcon %08llx
+0xfffffe0007a1f725 __TEXT.__os_log         %s error - invalid args
+0xfffffe0007a1f73e __TEXT.__os_log         %s error - copyObjectForPortNameInTask failed
+0xfffffe0007a1f76d __TEXT.__os_log         %s error - invalid memory pool port
+0xfffffe0007a1f792 __TEXT.__os_log         %s error - task does not own memory pool
+0xfffffe0007a1f7bc __TEXT.__os_log         %s error - ensureMemory failed
+0xfffffe0007a1f7dc __TEXT.__os_log         %s error - invalid args
+0xfffffe0007a1f7f5 __TEXT.__os_log         %s error - copyObjectForPortNameInTask failed
+0xfffffe0007a1f824 __TEXT.__os_log         %s error - invalid memory pool port
+0xfffffe0007a1f849 __TEXT.__os_log         %s error - task does not own memory pool
+0xfffffe0007a1f873 __TEXT.__os_log         %s error - flush failed
+0xfffffe0007a1f88c __TEXT.__os_log         %s error - copyObjectForPortNameInTask failed
+0xfffffe0007a1f8bb __TEXT.__os_log         %s error - invalid memory pool port
+0xfffffe0007a1f8e0 __TEXT.__os_log         %s error - invalid shared event port
+0xfffffe0007a1f906 __TEXT.__os_log         %s pool off limits for poolId 0x%llX
+0xfffffe0007a1f92c __TEXT.__os_log         IOSurfaceMemoryPool: %s (%d) can't access pool id %llu (wrong entitlements)
+0xfffffe0007a1f979 __TEXT.__os_log         IOSurfaceMemoryPool: %s (%d) invalid task (%p) can't access pool id %llu (wrong entitlements)
+0xfffffe0007a1fa08 __TEXT.__const          ScalableMemory
+0xfffffe0007a1fa17 __TEXT.__const          PurpleGfxMem
+0xfffffe0007a1fa30 __TEXT.__const          (unknown)
+0xfffffe000a3279bb __TEXT_EXEC.__text           T`2@
+0xfffffe000a327e35 __TEXT_EXEC.__text           @A9h
+0xfffffe000a328377 __TEXT_EXEC.__text           R 7@
+0xfffffe000a329d40 __TEXT_EXEC.__text           ?C@q*
+0xfffffe000a329d47 __TEXT_EXEC.__text           Tw.@
+0xfffffe000a329ec7 __TEXT_EXEC.__text           Z)}}
+0xfffffe000a329ee7 __TEXT_EXEC.__text           T(m}
+0xfffffe000a32a64d __TEXT_EXEC.__text           a@9H
+0xfffffe000a32c003 __TEXT_EXEC.__text           Qh}@
+0xfffffe000a32c0a0 __TEXT_EXEC.__text           Hc@y\
+0xfffffe000a32c0d8 __TEXT_EXEC.__text           Hc@y*}
+0xfffffe000a32c153 __TEXT_EXEC.__text           QK}@
+0xfffffe000a32c227 __TEXT_EXEC.__text           QK}z
+0xfffffe000a32c237 __TEXT_EXEC.__text           TKeZ
+0xfffffe000a32c3bc __TEXT_EXEC.__text           ja@yk
+0xfffffe000a32c898 __TEXT_EXEC.__text           HK@yI
+0xfffffe000a32c8d4 __TEXT_EXEC.__text           HO@yI
+0xfffffe000a32c997 __TEXT_EXEC.__text           5HK@y*
+0xfffffe000a32ca18 __TEXT_EXEC.__text           HK@yw}
+0xfffffe000a32ca50 __TEXT_EXEC.__text           HK@y
+0xfffffe000a32cae0 __TEXT_EXEC.__text           JO@yW
+0xfffffe000a32cb9c __TEXT_EXEC.__text           IO@y
+0xfffffe000a32cbde __TEXT_EXEC.__text           @9I+B)(!
+0xfffffe000a32cc33 __TEXT_EXEC.__text           4HsC)I
+0xfffffe000a32cc63 __TEXT_EXEC.__text           TJ/@
+0xfffffe000a32cc6b __TEXT_EXEC.__text           5J/@)
+0xfffffe000a32ccfa __TEXT_EXEC.__text           B)I}
+0xfffffe000a32cd23 __TEXT_EXEC.__text           4H'A)(
+0xfffffe000a32cd40 __TEXT_EXEC.__text           J'A)
+0xfffffe000a32ce73 __TEXT_EXEC.__text           4J)@
+0xfffffe000a32cea7 __TEXT_EXEC.__text           *h*@
+0xfffffe000a32d247 __TEXT_EXEC.__text           4i.@
+0xfffffe000a32e083 __TEXT_EXEC.__text           QK}z
+0xfffffe000a32e093 __TEXT_EXEC.__text           TKeZ
+0xfffffe000a32e587 __TEXT_EXEC.__text           Ql}@
+0xfffffe000a32e6ff __TEXT_EXEC.__text           5j>@
+0xfffffe000a32e98d __TEXT_EXEC.__text           sX8i
+0xfffffe000a32e9bd __TEXT_EXEC.__text           sX8(
+0xfffffe000a32ea1d __TEXT_EXEC.__text           sX8i
+0xfffffe000a32ea49 __TEXT_EXEC.__text           sX8i
+0xfffffe000a32f05c __TEXT_EXEC.__text           hNO9
+0xfffffe000a32f347 __TEXT_EXEC.__text           4hNO9
+0xfffffe000a32fab8 __TEXT_EXEC.__text           hFO9(
+0xfffffe000a3300f3 __TEXT_EXEC.__text           5h"A
+0xfffffe000a330430 __TEXT_EXEC.__text           hJO9
+0xfffffe000a330641 __TEXT_EXEC.__text           fA9h
+0xfffffe000a330e48 __TEXT_EXEC.__text           hBO9H
+0xfffffe000a3312bb __TEXT_EXEC.__text           7h>B
+0xfffffe000a331318 __TEXT_EXEC.__text           hBO9(
+0xfffffe000a331483 __TEXT_EXEC.__text           Th"B
+0xfffffe000a33148b __TEXT_EXEC.__text           4h&B
+0xfffffe000a3314df __TEXT_EXEC.__text           4u"@
+0xfffffe000a3315c7 __TEXT_EXEC.__text           4`*@
+0xfffffe000a3317e7 __TEXT_EXEC.__text           7h>B
+0xfffffe000a33192b __TEXT_EXEC.__text           r`*@
+0xfffffe000a331e47 __TEXT_EXEC.__text           r`*@
+0xfffffe000a33213b __TEXT_EXEC.__text           Tu"@
+0xfffffe000a33256f __TEXT_EXEC.__text           T`*@
+0xfffffe000a3325e3 __TEXT_EXEC.__text           Tt"@
+0xfffffe000a332637 __TEXT_EXEC.__text           y)3@
+0xfffffe000a332723 __TEXT_EXEC.__text           R`*@
+0xfffffe000a332b67 __TEXT_EXEC.__text           *KeZ
+0xfffffe000a332d23 __TEXT_EXEC.__text           *KeZ
+0xfffffe000a332def __TEXT_EXEC.__text           *KeZ
+0xfffffe000a332ebb __TEXT_EXEC.__text           *KeZ
+0xfffffe000a332f87 __TEXT_EXEC.__text           *KeZ
+0xfffffe000a333053 __TEXT_EXEC.__text           *KeZ
+0xfffffe000a33311f __TEXT_EXEC.__text           *KeZ
+0xfffffe000a3331eb __TEXT_EXEC.__text           *KeZ
+0xfffffe000a3332b7 __TEXT_EXEC.__text           *KeZ
+0xfffffe000a333383 __TEXT_EXEC.__text           *KeZ
+0xfffffe000a33344f __TEXT_EXEC.__text           *KeZ
+0xfffffe000a333503 __TEXT_EXEC.__text           *Ki[
+0xfffffe000a3335b3 __TEXT_EXEC.__text           *Ki[
+0xfffffe000a333663 __TEXT_EXEC.__text           *Ki[
+0xfffffe000a333713 __TEXT_EXEC.__text           *Ki[
+0xfffffe000a3337b5 __TEXT_EXEC.__text           JO9K
+0xfffffe000a333b2b __TEXT_EXEC.__text           6h2A
+0xfffffe000a333bb7 __TEXT_EXEC.__text           <`*@
+0xfffffe000a333ff7 __TEXT_EXEC.__text           R`*@
+0xfffffe000a3340d3 __TEXT_EXEC.__text           5hFO9h
+0xfffffe000a334210 __TEXT_EXEC.__text           hBO9
+0xfffffe000a3344d9 __TEXT_EXEC.__text           ae9(
+0xfffffe000a335755 __TEXT_EXEC.__text           a@9)
+0xfffffe000a336008 __TEXT_EXEC.__text           hBO9(
+0xfffffe000a336787 __TEXT_EXEC.__text           y`*@
+0xfffffe000a336bf7 __TEXT_EXEC.__text           T`*@
+0xfffffe000a336c4b __TEXT_EXEC.__text           <`*@
+0xfffffe000a336d8b __TEXT_EXEC.__text           = AH
+0xfffffe000a336dbc __TEXT_EXEC.__text           +aB9
+0xfffffe000a336dcc __TEXT_EXEC.__text           +AAy
+0xfffffe000a336dd3 __TEXT_EXEC.__text           y+EAy
+0xfffffe000a336de4 __TEXT_EXEC.__text           +eB9
+0xfffffe000a336deb __TEXT_EXEC.__text           9+iB9
+0xfffffe000a336e14 __TEXT_EXEC.__text           (iAy
+0xfffffe000a336e1b __TEXT_EXEC.__text           y(mAy
+0xfffffe000a3371b8 __TEXT_EXEC.__text           v^D)
+0xfffffe000a33727f __TEXT_EXEC.__text           R`j(
+0xfffffe000a3372cf __TEXT_EXEC.__text           4h&@
+0xfffffe000a3373ac __TEXT_EXEC.__text           (HA9
+0xfffffe000a3373b3 __TEXT_EXEC.__text           6( @
+0xfffffe000a3373bb __TEXT_EXEC.__text           4I @
+0xfffffe000a3373cb __TEXT_EXEC.__text           4( @
+0xfffffe000a3373d3 __TEXT_EXEC.__text           4I @
+0xfffffe000a3373e7 __TEXT_EXEC.__text           7($@
+0xfffffe000a3373f3 __TEXT_EXEC.__text           TH$@
+0xfffffe000a33766f __TEXT_EXEC.__text           4+!@
+0xfffffe000a337687 __TEXT_EXEC.__text           T*%@
+0xfffffe000a337693 __TEXT_EXEC.__text           T)-@
+0xfffffe000a337795 __TEXT_EXEC.__text           ^D)`
+0xfffffe000a3382dd __TEXT_EXEC.__text           NA9h
+0xfffffe000a3384b0 __TEXT_EXEC.__text           ,,D)
+0xfffffe000a3384c4 __TEXT_EXEC.__text           +@A9k
+0xfffffe000a3393f7 __TEXT_EXEC.__text           *KeZ
+0xfffffe000a3394af __TEXT_EXEC.__text           *KeZ
+0xfffffe000a33956f __TEXT_EXEC.__text           *KeZ
+0xfffffe000a33962f __TEXT_EXEC.__text           *KeZ
+0xfffffe000a3396ef __TEXT_EXEC.__text           *KeZ
+0xfffffe000a3397af __TEXT_EXEC.__text           *KeZ
+0xfffffe000a33986f __TEXT_EXEC.__text           *KeZ
+0xfffffe000a33992f __TEXT_EXEC.__text           *KeZ
+0xfffffe000a3399ef __TEXT_EXEC.__text           *KeZ
+0xfffffe000a339aaf __TEXT_EXEC.__text           *KeZ
+0xfffffe000a339b6f __TEXT_EXEC.__text           *KeZ
+0xfffffe000a339c2f __TEXT_EXEC.__text           *KeZ
+0xfffffe000a339cef __TEXT_EXEC.__text           *KeZ
+0xfffffe000a339daf __TEXT_EXEC.__text           *KeZ
+0xfffffe000a339e6f __TEXT_EXEC.__text           *KeZ
+0xfffffe000a339f2f __TEXT_EXEC.__text           *KeZ
+0xfffffe000a339fef __TEXT_EXEC.__text           *KeZ
+0xfffffe000a33a0c3 __TEXT_EXEC.__text           *KeZ
+0xfffffe000a33a183 __TEXT_EXEC.__text           *KeZ
+0xfffffe000a33b217 __TEXT_EXEC.__text           R`*@
+0xfffffe000a33bb67 __TEXT_EXEC.__text           T`j68
+0xfffffe000a33bc1c __TEXT_EXEC.__text           (a%9
+0xfffffe000a33c58b __TEXT_EXEC.__text           Th&@
+0xfffffe000a33c7d7 __TEXT_EXEC.__text           4a6@
+0xfffffe000a33cc5d __TEXT_EXEC.__text           a@yIc
+0xfffffe000a33cc65 __TEXT_EXEC.__text           i@yIg
+0xfffffe000a33ce43 __TEXT_EXEC.__text           TIi{
+0xfffffe000a33cfd0 __TEXT_EXEC.__text           Eii8ei)8
+0xfffffe000a33cfe9 __TEXT_EXEC.__text           ji8%j)8%hi8eh)8)
+0xfffffe000a33e069 __TEXT_EXEC.__text           fA9H
+0xfffffe000a33e19c __TEXT_EXEC.__text           hfA9
+0xfffffe000a33e603 __TEXT_EXEC.__text           KiR@
+0xfffffe000a342413 __TEXT_EXEC.__text           )hjA
+0xfffffe000a342f3d __TEXT_EXEC.__text           #@)(
+0xfffffe000a34339f __TEXT_EXEC.__text           ThB@
+0xfffffe000a343e6b __TEXT_EXEC.__text           TKq]
+0xfffffe000a3442d2 __TEXT_EXEC.__text           +*@y
+0xfffffe000a34455d __TEXT_EXEC.__text           FO9h
+0xfffffe000a3446a3 __TEXT_EXEC.__text           Thj@
+0xfffffe000a3446db __TEXT_EXEC.__text           TKq]
+0xfffffe000a3464b7 __TEXT_EXEC.__text           Tmv@
+0xfffffe000a3464eb __TEXT_EXEC.__text           K0s]
+0xfffffe000a346693 __TEXT_EXEC.__text           Tij@
+0xfffffe000a346b5b __TEXT_EXEC.__text           K.s]
+0xfffffe000a346caf __TEXT_EXEC.__text           TKq]
+0xfffffe000a346f57 __TEXT_EXEC.__text           TKq]
+0xfffffe000a347904 __TEXT_EXEC.__text           (@A9(
+0xfffffe000a347af4 __TEXT_EXEC.__text           h"H9
+0xfffffe000a3480d7 __TEXT_EXEC.__text           Tkm}
+0xfffffe000a34813b __TEXT_EXEC.__text           TIm}
+0xfffffe000a34846b __TEXT_EXEC.__text           6hBO9(
+0xfffffe000a3493df __TEXT_EXEC.__text           rT,@
+0xfffffe000a349707 __TEXT_EXEC.__text           rT,@
+0xfffffe000a349827 __TEXT_EXEC.__text           <)e@
+0xfffffe000a34993f __TEXT_EXEC.__text           rI8@
+0xfffffe000a349b73 __TEXT_EXEC.__text           r@ @
+0xfffffe000a34a48f __TEXT_EXEC.__text           r@ @
+0xfffffe000a34a5a7 __TEXT_EXEC.__text           r@ @
+0xfffffe000a34a6b3 __TEXT_EXEC.__text           rH<@
+0xfffffe000a34a80f __TEXT_EXEC.__text           r@ @
+0xfffffe000a34b6b8 __TEXT_EXEC.__text           (CO9h
+0xfffffe000a34ba3f __TEXT_EXEC.__text           6h*A
+0xfffffe000a34bba3 __TEXT_EXEC.__text           *Kq]
+0xfffffe000a34bbe7 __TEXT_EXEC.__text           r`n@
+0xfffffe000a34bc90 __TEXT_EXEC.__text           (T@)
+0xfffffe000a34be4c __TEXT_EXEC.__text           (T@)
+0xfffffe000a34c5a1 __TEXT_EXEC.__text           @O9h
+0xfffffe000a34d0a7 __TEXT_EXEC.__text           r(@"
+0xfffffe000a34ea93 __TEXT_EXEC.__text           R`n@
+0xfffffe000a34f923 __TEXT_EXEC.__text           TKq]
+0xfffffe000a34fba7 __TEXT_EXEC.__text           **q]
+0xfffffe000a34fe03 __TEXT_EXEC.__text           9h*A
+0xfffffe000a350071 __TEXT_EXEC.__text           jh8(
+0xfffffe000a354a8b __TEXT_EXEC.__text           T`V@
+0xfffffe000a35690f __TEXT_EXEC.__text           T`"@
+0xfffffe000b99d388 __DATA.__data           com.apple.iokit.IOSurface
+0xfffffe000b99d3c8 __DATA.__data           1.0.0d1
+0xfffffe000b99d678 __DATA.__common         __TEXT
+0xfffffe000b99d6c0 __DATA.__common         __PRELINK_TEXT
+0xfffffe000b99d700 __DATA.__common         __text
+0xfffffe000b99d710 __DATA.__common         __PRELINK_TEXT
+0xfffffe000b99d758 __DATA.__common         __DATA_CONST
+0xfffffe000b99d7a0 __DATA.__common         __DATA_SPTM
+0xfffffe000b99d7e8 __DATA.__common         __TEXT_EXEC
+0xfffffe000b99d830 __DATA.__common         __TEXT_BOOT_EXEC
+0xfffffe000b99d878 __DATA.__common         __PRELINK_INFO
+0xfffffe000b99d8b8 __DATA.__common         __info
+0xfffffe000b99d8c8 __DATA.__common         __PRELINK_INFO
+0xfffffe000b99d910 __DATA.__common         __DATA

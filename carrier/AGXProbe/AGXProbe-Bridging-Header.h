@@ -3,6 +3,7 @@
 #import <IOKit/IOKitLib.h>
 
 int trigger_ane_direct(void);
+int ane_probe(int trigger);
 void run_decmpfs_leak(const char *base_dir);
 void log_from_c(const char* msg);
 void run_iosurface_notify_probe(void);

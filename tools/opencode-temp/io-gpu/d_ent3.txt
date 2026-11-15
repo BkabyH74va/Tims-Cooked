@@ -1,0 +1,31 @@
+﻿======= TARGET =======
+0xfffffe000a34d3a0:  40 58 80 52   mov	w0, #0x2c2
+0xfffffe000a34d3a4:  00 00 bc 72   movk	w0, #0xe000, lsl #0x10
+0xfffffe000a34d3a8:  fd 7b 42 a9   ldp	fp, lr, [sp, #0x20]
+0xfffffe000a34d3ac:  f4 4f 41 a9   ldp	x20, x19, [sp, #0x10]
+0xfffffe000a34d3b0:  f6 57 c3 a8   ldp	x22, x21, [sp], #0x30
+0xfffffe000a34d3b4:  ff 0f 5f d6   retab
+0xfffffe000a34d3b8:  5f 24 03 d5   bti	c
+0xfffffe000a34d3bc:  08 74 40 f9   ldr	x8, [x0, #0xe8]
+0xfffffe000a34d3c0:  00 c1 4a fc   ldur	d0, [x8, #0xac]
+0xfffffe000a34d3c4:  20 00 00 fd   str	d0, [x1]
+0xfffffe000a34d3c8:  00 81 cb 3c   ldur	q0, [x8, #0xb8]
+0xfffffe000a34d3cc:  20 80 80 3c   stur	q0, [x1, #0x8]
+0xfffffe000a34d3d0:  08 65 40 f9   ldr	x8, [x8, #0xc8]
+0xfffffe000a34d3d4:  28 0c 00 f9   str	x8, [x1, #0x18]
+0xfffffe000a34d3d8:  08 98 44 39   ldrb	w8, [x0, #0x126]
+0xfffffe000a34d3dc:  08 01 00 12   and	w8, w8, #0x1
+0xfffffe000a34d3e0:  28 80 00 39   strb	w8, [x1, #0x20]
+0xfffffe000a34d3e4:  28 00 80 52   mov	w8, #0x1
+0xfffffe000a34d3e8:  28 44 00 79   strh	w8, [x1, #0x22]
+0xfffffe000a34d3ec:  08 05 80 52   mov	w8, #0x28
+0xfffffe000a34d3f0:  48 00 00 b9   str	w8, [x2]
+0xfffffe000a34d3f4:  00 00 80 52   mov	w0, #0
+0xfffffe000a34d3f8:  c0 03 5f d6   ret
+0xfffffe000a34d3fc:  5f 24 03 d5   bti	c
+0xfffffe000a34d400:  7f 23 03 d5   pacibsp
+0xfffffe000a34d404:  f6 57 bd a9   stp	x22, x21, [sp, #-0x30]!
+0xfffffe000a34d408:  f4 4f 01 a9   stp	x20, x19, [sp, #0x10]
+0xfffffe000a34d40c:  fd 7b 02 a9   stp	fp, lr, [sp, #0x20]
+0xfffffe000a34d410:  fd 83 00 91   add	fp, sp, #0x20
+0xfffffe000a34d414:  55 58 80 52   mov	w21, #0x2c2

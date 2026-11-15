@@ -1,0 +1,23 @@
+﻿======= TARGET =======
+0xfffffe000a32bb48:  a8 03 5a f8   ldur	x8, [fp, #-0x60]
+0xfffffe000a32bb4c:  c9 02 ff 90   adrp	x9, 0xfffffe0008383000
+0xfffffe000a32bb50:  29 61 44 f9   ldr	x9, [x9, #0x8c0]
+0xfffffe000a32bb54:  29 01 40 f9   ldr	x9, [x9]
+0xfffffe000a32bb58:  3f 01 08 eb   cmp	x9, x8
+0xfffffe000a32bb5c:  41 61 01 54   b.ne	0xfffffe000a32e784
+0xfffffe000a32bb60:  fd 7b 50 a9   ldp	fp, lr, [sp, #0x100]
+0xfffffe000a32bb64:  f4 4f 4f a9   ldp	x20, x19, [sp, #0xf0]
+0xfffffe000a32bb68:  f6 57 4e a9   ldp	x22, x21, [sp, #0xe0]
+0xfffffe000a32bb6c:  f8 5f 4d a9   ldp	x24, x23, [sp, #0xd0]
+0xfffffe000a32bb70:  fa 67 4c a9   ldp	x26, x25, [sp, #0xc0]
+0xfffffe000a32bb74:  fc 6f 4b a9   ldp	x28, x27, [sp, #0xb0]
+0xfffffe000a32bb78:  ff 43 04 91   add	sp, sp, #0x110
+0xfffffe000a32bb7c:  ff 0f 5f d6   retab
+0xfffffe000a32bb80:  7f c2 00 f9   str	xzr, [x19, #0x180]
+0xfffffe000a32bb84:  7f 8a 01 b9   str	wzr, [x19, #0x188]
+0xfffffe000a32bb88:  37 00 80 52   mov	w23, #0x1
+0xfffffe000a32bb8c:  77 96 01 f9   str	x23, [x19, #0x328]
+0xfffffe000a32bb90:  00 03 80 52   mov	w0, #0x18
+0xfffffe000a32bb94:  ca b8 00 94   bl	0xfffffe000a359ebc
+0xfffffe000a32bb98:  60 8e 01 f9   str	x0, [x19, #0x318]
+0xfffffe000a32bb9c:  77 22 03 b9   str	w23, [x19, #0x320]

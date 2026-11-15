@@ -1,0 +1,16 @@
+﻿0xfffffe0007995b6b __TEXT.__cstring        static OSPtr<IOGPUResource> IOGPUResource::newResourceWithIOSurfaceDeviceCache(IOGPU *, IOSurfaceDeviceCache *)
+0xfffffe0007995bdb __TEXT.__cstring        static OSPtr<IOGPUResource> IOGPUResource::newResourceWithIOSurface(IOGPU *, IOGPUDevice *, IOSurface *, uint32_t, uint32_t)
+0xfffffe0007995e32 __TEXT.__cstring        SysMemShared(IOSurface)
+0xfffffe0007995e57 __TEXT.__cstring        IOSurface
+0xfffffe0007998404 __TEXT.__cstring        OSPtr<IOSurfaceDeviceCache> IOGPU::deviceCacheForIOSurface(IOSurface *, uint32_t)
+0xfffffe0007998d40 __TEXT.__cstring        virtual void IOGPUCommandQueue::signalSharedEvent(IOSurfaceSharedEvent *, uint64_t)
+0xfffffe0007998d94 __TEXT.__cstring        virtual void IOGPUCommandQueue::waitSharedEvent(IOSurfaceSharedEvent *, uint64_t, uint32_t)
+0xfffffe0007998e3f __TEXT.__cstring        virtual IOReturn IOGPUCommandQueue::schedulePostMappingWaitEvent(IOSurfaceSharedEvent *, uint64_t, uint32_t)
+0xfffffe0007998f85 __TEXT.__cstring        IOSurfaceID
+0xfffffe0007999016 __TEXT.__cstring        void IOGPUAllocationInfo::declareIOSurfaceBackingStoreWithName(IOMemoryDescriptor *, OSString *, uint32_t, int *, int)
+0xfffffe000799908d __TEXT.__cstring        IOSurface Backing Store
+0xfffffe000799c3e2 __TEXT.__os_log         %s invalid IOSurface ID 0x%x
+0xfffffe000799c400 __TEXT.__os_log         %s invalid plane %d in IOSurface with %d planes
+0xfffffe000799ca8a __TEXT.__os_log         %s: fail to get IOSurface root
+0xfffffe000799ea3b __TEXT.__os_log         %s: failed to create memory descriptor from IOSurfaceMemoryPool
+0xfffffe000799ecaf __TEXT.__os_log         %s: Unsupported for memory from IOSurfaceMemoryPool

@@ -1,0 +1,27 @@
+ 0 off=0x000020 cmd=LC_SEGMENT_64                size=312
+     seg __TEXT         vmaddr=fffffe0007a18790 vmsize=8000 fileoff=0 filesize=8000
+ 1 off=0x000158 cmd=LC_SEGMENT_64                size=232
+     seg __TEXT_EXEC    vmaddr=fffffe000a3257c0 vmsize=38000 fileoff=8000 filesize=38000
+ 2 off=0x000240 cmd=LC_SEGMENT_64                size=312
+     seg __DATA         vmaddr=fffffe000b99d378 vmsize=4000 fileoff=40000 filesize=4000
+ 3 off=0x000378 cmd=LC_SEGMENT_64                size=632
+     seg __DATA_CONST   vmaddr=fffffe000837d3d8 vmsize=8000 fileoff=44000 filesize=8000
+ 4 off=0x0005f0 cmd=LC_SEGMENT_64                size=72
+     seg __LINKEDIT     vmaddr=fffffe000ba10000 vmsize=4000 fileoff=4c000 filesize=c08
+ 5 off=0x000638 cmd=LC_SYMTAB                    size=24
+     symoff=4c6f8 nsyms=0 stroff=4cc00 strsize=8
+ 6 off=0x000650 cmd=LC_DYSYMTAB                  size=80
+     dysymtab: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 313080, 322, 0, 0, 0, 0)
+ 7 off=0x0006a0 cmd=0x1b                         size=24
+ 8 off=0x0006b8 cmd=LC_SOURCE_VERSION            size=16
+ 9 off=0x0006c8 cmd=LC_FUNCTION_STARTS           size=16
+
+--- GOT slots ---
+fffffe0008383490: fileoff=4a0b8 raw=80110000042bb9e4
+fffffe0008383498: fileoff=4a0c0 raw=80110000042a59e4
+fffffe00083834a0: fileoff=4a0c8 raw=80110000042d63dc
+fffffe0008383548: fileoff=4a170 raw=80110000042d8040
+fffffe0008383550: fileoff=4a178 raw=80110000042616c0
+fffffe0008383558: fileoff=4a180 raw=801100000434e05c
+
+--- symbols (0) ---

@@ -1,0 +1,126 @@
+total symbols: 14216
+
+VA 0xfffffe000b2a99e4
+  nearest <=: 0xfffffe000b2a3dd8  OSSymbol::OSSymbol  (+0x5c0c)
+  nearest >=: 0xfffffe000b2ab978  OSValueObject<int>::OSValueObject<int>  (-0x1f94)
+
+VA 0xfffffe000b2616c0
+  nearest <=: 0xfffffe000b1f6424  __nexus_set_opt  (+0x6b29c)
+  nearest >=: 0xfffffe000b262478  objc_bp_assist_cfg_np  (-0xdb8)
+
+VA 0xfffffe000b2a99e0
+  nearest <=: 0xfffffe000b2a3dd8  OSSymbol::OSSymbol  (+0x5c08)
+  nearest >=: 0xfffffe000b2ab978  OSValueObject<int>::OSValueObject<int>  (-0x1f98)
+
+VA 0xfffffe000b2a9a00
+  nearest <=: 0xfffffe000b2a3dd8  OSSymbol::OSSymbol  (+0x5c28)
+  nearest >=: 0xfffffe000b2ab978  OSValueObject<int>::OSValueObject<int>  (-0x1f78)
+
+--- names matching parser/cast/dict ---
+  0xfffffe0007eb2a80  vtable for OSObject::MetaClass
+  0xfffffe0007eb2c60  vtable for OSArray::MetaClass
+  0xfffffe0007eb2e30  vtable for OSCollection::MetaClass
+  0xfffffe0007eb3138  vtable for OSData::MetaClass
+  0xfffffe0007eb31c8  vtable for OSDictionary
+  0xfffffe0007eb3338  vtable for OSDictionary::MetaClass
+  0xfffffe0007eb4370  vtable for OSSerialize
+  0xfffffe0007eb4468  vtable for OSSerialize::MetaClass
+  0xfffffe0007eb4500  vtable for OSSerializer
+  0xfffffe0007eb4590  vtable for OSSerializer::MetaClass
+  0xfffffe0007eb48f0  vtable for OSString::MetaClass
+  0xfffffe000823a200  vtable for AppleUSBAudioDictionary
+  0xfffffe000823a368  vtable for AppleUSBAudioDictionary::MetaClass
+  0xfffffe000823a480  vtable for AUAConfigurationDictionary
+  0xfffffe000823a5e8  vtable for AUAConfigurationDictionary::MetaClass
+  0xfffffe000823a678  vtable for AUAControlDictionary
+  0xfffffe000823a7e0  vtable for AUAControlDictionary::MetaClass
+  0xfffffe000823a870  vtable for AUAStreamDictionary
+  0xfffffe000823a9d8  vtable for AUAStreamDictionary::MetaClass
+  0xfffffe000823aa68  vtable for AUAEndpointDictionary
+  0xfffffe000823abd0  vtable for AUAEndpointDictionary::MetaClass
+  0xfffffe000823ac60  vtable for AUAASEndpointDictionary
+  0xfffffe000823adc8  vtable for AUAASEndpointDictionary::MetaClass
+  0xfffffe000823ae58  vtable for AUAInputTerminalDictionary
+  0xfffffe000823afc8  vtable for AUAInputTerminalDictionary::MetaClass
+  0xfffffe000823b058  vtable for AUAOutputTerminalDictionary
+  0xfffffe000823b1c8  vtable for AUAOutputTerminalDictionary::MetaClass
+  0xfffffe000823b258  vtable for AUAMixerUnitDictionary
+  0xfffffe000823b3c8  vtable for AUAMixerUnitDictionary::MetaClass
+  0xfffffe000823b458  vtable for AUASelectorUnitDictionary
+  0xfffffe000823b5c8  vtable for AUASelectorUnitDictionary::MetaClass
+  0xfffffe000823b658  vtable for AUAEffectUnitDictionary
+  0xfffffe000823b7c8  vtable for AUAEffectUnitDictionary::MetaClass
+  0xfffffe000823b858  vtable for AUAProcessingUnitDictionary
+  0xfffffe000823b9c8  vtable for AUAProcessingUnitDictionary::MetaClass
+  0xfffffe000823ba58  vtable for AUAFeatureUnitDictionary
+  0xfffffe000823bbc8  vtable for AUAFeatureUnitDictionary::MetaClass
+  0xfffffe000823bc58  vtable for AUAExtensionUnitDictionary
+  0xfffffe000823bdc8  vtable for AUAExtensionUnitDictionary::MetaClass
+  0xfffffe000823be58  vtable for AUAClockSourceDictionary
+  0xfffffe000823bfc8  vtable for AUAClockSourceDictionary::MetaClass
+  0xfffffe000823c058  vtable for AUAClockSelectorDictionary
+  0xfffffe000823c1c8  vtable for AUAClockSelectorDictionary::MetaClass
+  0xfffffe000823c258  vtable for AUAClockMultiplierDictionary
+  0xfffffe000823c3c8  vtable for AUAClockMultiplierDictionary::MetaClass
+  0xfffffe000823c458  vtable for AUAUnitDictionary
+  0xfffffe000823c5c8  vtable for AUAUnitDictionary::MetaClass
+  0xfffffe0008290bb8  vtable for IOAVSerializer
+  0xfffffe0008290c48  vtable for IOAVSerializer::MetaClass
+  0xfffffe000838b978  vtable for IOThunderboltDictionary
+  0xfffffe000838bb00  vtable for IOThunderboltDictionary::MetaClass
+  0xfffffe0009a9b0d0  AppleUSBAudioDictionary::AppleUSBAudioDictionary
+  0xfffffe0009a9b108  AUAConfigurationDictionary::AUAConfigurationDictionary
+  0xfffffe0009a9b140  AUAControlDictionary::AUAControlDictionary
+  0xfffffe0009a9b178  AUAStreamDictionary::AUAStreamDictionary
+  0xfffffe0009a9b1b4  AUAEndpointDictionary::AUAEndpointDictionary
+  0xfffffe0009a9b1ec  AUAASEndpointDictionary::AUAASEndpointDictionary
+  0xfffffe0009a9b22c  AUAInputTerminalDictionary::AUAInputTerminalDictionary
+  0xfffffe0009a9b264  AUAOutputTerminalDictionary::AUAOutputTerminalDictionary
+  0xfffffe0009a9b29c  AUAMixerUnitDictionary::AUAMixerUnitDictionary
+  0xfffffe0009a9b2d4  AUASelectorUnitDictionary::AUASelectorUnitDictionary
+  0xfffffe0009a9b30c  AUAEffectUnitDictionary::AUAEffectUnitDictionary
+  0xfffffe0009a9b344  AUAProcessingUnitDictionary::AUAProcessingUnitDictionary
+  0xfffffe0009a9b37c  AUAFeatureUnitDictionary::AUAFeatureUnitDictionary
+  0xfffffe0009a9b3b4  AUAExtensionUnitDictionary::AUAExtensionUnitDictionary
+  0xfffffe0009a9b3ec  AUAClockSourceDictionary::AUAClockSourceDictionary
+  0xfffffe0009a9b424  AUAClockSelectorDictionary::AUAClockSelectorDictionary
+  0xfffffe0009a9b45c  AUAClockMultiplierDictionary::AUAClockMultiplierDictionary
+  0xfffffe0009a9b490  AUAUnitDictionary::AUAUnitDictionary
+  0xfffffe0009e18e54  IOAVSerializer::IOAVSerializer
+  0xfffffe000a37ddc8  IOThunderboltDictionary::IOThunderboltDictionary
+  0xfffffe000b268a64  OSObject::OSObject
+  0xfffffe000b26a81c  OSArray::OSArray
+  0xfffffe000b26bfac  OSCollection::OSCollection
+  0xfffffe000b26e7fc  OSData::OSData
+  0xfffffe000b2718f0  OSDictionary::OSDictionary
+  0xfffffe000b29fac4  OSSerialize::OSSerialize
+  0xfffffe000b29fafc  OSSerializer::OSSerializer
+  0xfffffe000b2a2c98  OSString::OSString
+  0xfffffe000b7b0170  OSArray::gMetaClass
+  0xfffffe000b7b01e8  OSData::gMetaClass
+  0xfffffe000b7b0210  OSDictionary::gMetaClass
+  0xfffffe000b7b03b8  OSSerialize::gMetaClass
+  0xfffffe000b7b03e0  OSSerializer::gMetaClass
+  0xfffffe000b7b0430  OSCollection::gMetaClass
+  0xfffffe000b7b0480  OSString::gMetaClass
+  0xfffffe000b7b2d78  OSObject::gMetaClass
+  0xfffffe000b95f918  AppleUSBAudioDictionary::gMetaClass
+  0xfffffe000b95f940  AUAConfigurationDictionary::gMetaClass
+  0xfffffe000b95f968  AUAControlDictionary::gMetaClass
+  0xfffffe000b95f990  AUAStreamDictionary::gMetaClass
+  0xfffffe000b95f9b8  AUAEndpointDictionary::gMetaClass
+  0xfffffe000b95f9e0  AUAASEndpointDictionary::gMetaClass
+  0xfffffe000b95fa08  AUAInputTerminalDictionary::gMetaClass
+  0xfffffe000b95fa30  AUAUnitDictionary::gMetaClass
+  0xfffffe000b95fa58  AUAOutputTerminalDictionary::gMetaClass
+  0xfffffe000b95fa80  AUAMixerUnitDictionary::gMetaClass
+  0xfffffe000b95faa8  AUASelectorUnitDictionary::gMetaClass
+  0xfffffe000b95fad0  AUAEffectUnitDictionary::gMetaClass
+  0xfffffe000b95faf8  AUAProcessingUnitDictionary::gMetaClass
+  0xfffffe000b95fb20  AUAFeatureUnitDictionary::gMetaClass
+  0xfffffe000b95fb48  AUAExtensionUnitDictionary::gMetaClass
+  0xfffffe000b95fb70  AUAClockSourceDictionary::gMetaClass
+  0xfffffe000b95fb98  AUAClockSelectorDictionary::gMetaClass
+  0xfffffe000b95fbc0  AUAClockMultiplierDictionary::gMetaClass
+  0xfffffe000b972258  IOAVSerializer::gMetaClass
+  0xfffffe000b99e9e0  IOThunderboltDictionary::gMetaClass

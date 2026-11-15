@@ -1,0 +1,7 @@
+AGXG18P IOExternalMethodDispatch tables
+Kext: G:/REPO\analysis\agx\2701\com.apple.AGXG18P
+__TEXT_EXEC.__text: 0xfffffe00084b1960 - 0xfffffe0008587c6c
+__DATA_CONST.__const: 0xfffffe0007f1eaa0 - 0xfffffe0007f2fdd8
+
+ Idx                 VA             FuncVA  ScalarIn  StructIn  ScalarOut  StructOut
+-------------------------------------------------------------------------------------

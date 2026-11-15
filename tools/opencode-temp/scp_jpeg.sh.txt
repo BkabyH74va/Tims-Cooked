@@ -1,0 +1,1 @@
+scp -i "$env:USERPROFILE\.ssh\mac_ios16_ed25519" "G:/REPO\tools\opencode-temp\mac_build_jpeg.sh" builduser@198.51.100.1:~/build_jpeg.sh

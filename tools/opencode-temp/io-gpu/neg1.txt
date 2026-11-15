@@ -1,0 +1,28 @@
+﻿
+########## text needle 'ASGR' (4 bytes)
+  -> 0 hit(s)
+
+########## text needle 'headerPerSlice' (14 bytes)
+  -> 0 hit(s)
+
+########## text needle 'tileRow' (7 bytes)
+  -> 0 hit(s)
+
+########## text needle 'dataPerSlice' (12 bytes)
+  -> 0 hit(s)
+
+########## text needle 'CFXML' (5 bytes)
+  -> 0 hit(s)
+
+########## text needle 'IOSurfaceCreateFromXML' (22 bytes)
+  -> 0 hit(s)
+
+########## text needle '<?xml' (5 bytes)
+  kc_off=0x003a8014 owner=com.apple.driver.AppleBasebandPCI __TEXT.__cstring va=0xfffffe00073ac014
+  kc_off=0x00428890 owner=com.apple.driver.AppleGenericMultitouch __TEXT.__cstring va=0xfffffe000742c890
+  kc_off=0x00523aeb owner=com.apple.security.AppleImage4 __TEXT.__info_plist va=0xfffffe0007527aeb
+  kc_off=0x00660f8e owner=com.apple.driver.AppleMobileFileIntegrity __TEXT.__cstring va=0xfffffe0007664f8e
+  kc_off=0x00b4080a owner=com.apple.plugin.IOgPTPPlugin __TEXT.__const va=0xfffffe0007b4480a
+  kc_off=0x00d51b28 owner=com.apple.security.sandbox __TEXT.__cstring va=0xfffffe0007d55b28
+  kc_off=0x0444c000 owner=None None.None va=?
+  -> 7 hit(s)
