@@ -1176,3 +1176,91 @@ int cow_probe_run(int rounds, int size_kb, int *stages)
                 stages[5], stages[6], stages[7]);
         return 0;
     }
+
+/* ------------------------------------------------------------------ */
+/* External-object / physical-primitive gate.                          */
+/*                                                                     */
+/* A standing note in this project says mach_make_memory_entry_64      */
+/* returns KERN_FAILURE for an unsigned app on every call, which would */
+/* close the IOSurface-backed external-object route before any         */
+/* harness exists. Parallel work on this device reports success over   */
+/* an IOSurface mapping. This measures it directly, in stages:        */
+/*   1 vm_allocate a writable page-aligned region                      */
+/*   2 mach_make_memory_entry_64 over that region                      */
+/*   3 vm_map the returned object at a fresh address                  */
+/*   4 write through the base mapping, read through the alias          */
+/* Nothing leaves the app's own address space; no device writes.       */
+
+#include <stdarg.h>
+
+static void mep_log(const char *fmt, ...)
+{
+    char buf[384];
+    va_list ap;
+    va_start(ap, fmt);
+    vsnprintf(buf, sizeof(buf), fmt, ap);
+    va_end(ap);
+    log_from_c(buf);
+    fputs(buf, stdout);
+    fputc('\n', stdout);
+    fflush(stdout);
+}
+
+int mem_entry_probe(int *stages)
+{
+    if (!stages) return -1;
+    for (int i = 0; i < 8; i++) stages[i] = 0;
+
+    const vm_size_t sz = 0x10000;
+
+    /* stage 1 - our own anonymous allocation */
+    vm_address_t addr = 0;
+    kern_return_t kr = vm_allocate(mach_task_self(), &addr, sz, VM_FLAGS_ANYWHERE);
+    mep_log("[*] mementry vm_allocate -> %d (0x%x) at 0x%llx",
+            (int)kr, (unsigned)kr, (unsigned long long)addr);
+    stages[1] = (int)kr;
+    if (kr != KERN_SUCCESS || !addr) return 0;
+
+    *(volatile uint32_t *)(uintptr_t)addr = 0xc0ffee27u;
+
+    /* stage 2 - memory entry over that exact region */
+    memory_object_size_t entry_size = (memory_object_size_t)sz;
+    mach_port_t obj = MACH_PORT_NULL;
+    kr = mach_make_memory_entry_64(mach_task_self(), &entry_size,
+                                   (memory_object_offset_t)addr,
+                                   VM_PROT_DEFAULT,
+                                   &obj, MACH_PORT_NULL);
+    mep_log("[*] mementry make_memory_entry_64 -> %d (0x%x) handle=0x%x size=%llu",
+            (int)kr, (unsigned)kr, (unsigned)obj, (unsigned long long)entry_size);
+    stages[2] = (int)kr;
+    if (kr != KERN_SUCCESS || obj == MACH_PORT_NULL) {
+        vm_deallocate(mach_task_self(), addr, sz);
+        return 0;
+    }
+
+    /* stage 3 - second mapping of the same memory object */
+    vm_address_t alias = 0;
+    kr = vm_map(mach_task_self(), &alias, sz, 0, VM_FLAGS_ANYWHERE,
+                obj, 0, FALSE, VM_PROT_DEFAULT, VM_PROT_ALL, VM_INHERIT_NONE);
+    mep_log("[*] mementry vm_map(alias) -> %d (0x%x) at 0x%llx",
+            (int)kr, (unsigned)kr, (unsigned long long)alias);
+    stages[3] = (int)kr;
+    if (kr != KERN_SUCCESS || !alias) {
+        mach_port_deallocate(mach_task_self(), obj);
+        vm_deallocate(mach_task_self(), addr, sz);
+        return 0;
+    }
+
+    /* stage 4 - do both addresses name the same physical page? */
+    uint32_t base_marker = *(volatile uint32_t *)(uintptr_t)addr;
+    uint32_t alias_marker = *(volatile uint32_t *)(uintptr_t)alias;
+    int match = (base_marker == 0xc0ffee27u && alias_marker == 0xc0ffee27u);
+    mep_log("[*] mementry marker base=0x%08x alias=0x%08x alias_is_same_page=%s",
+            base_marker, alias_marker, match ? "YES" : "no");
+    stages[4] = match ? 1 : 0;
+
+    vm_deallocate(mach_task_self(), alias, sz);
+    mach_port_deallocate(mach_task_self(), obj);
+    vm_deallocate(mach_task_self(), addr, sz);
+    return 0;
+}

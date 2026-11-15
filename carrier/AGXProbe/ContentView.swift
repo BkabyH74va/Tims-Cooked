@@ -34,6 +34,30 @@ private var gAveStatus: OSStatus = -9999
 private var gAveSample: CMSampleBuffer?
 private var gAveSem: DispatchSemaphore? = nil
 
+// External-object helpers declared directly: the iOS SDK marks <mach/mach_vm.h>
+// unsupported for C clients, but both symbols are exported and were verified
+// callable on this device. Declaring them here avoids the header's #error.
+@_silgen_name("mach_make_memory_entry_64")
+func cv_make_memory_entry_64(_ target: vm_map_t,
+                             _ size: UnsafeMutablePointer<mach_vm_size_t>,
+                             _ offset: mach_vm_offset_t,
+                             _ permission: vm_prot_t,
+                             _ object: UnsafeMutablePointer<mach_port_t>,
+                             _ parent: mach_port_t) -> kern_return_t
+
+@_silgen_name("mach_vm_map")
+func cv_mach_vm_map(_ target: vm_map_t,
+                    _ address: UnsafeMutablePointer<mach_vm_address_t>,
+                    _ size: mach_vm_size_t,
+                    _ mask: mach_vm_offset_t,
+                    _ flags: Int32,
+                    _ object: mach_port_t,
+                    _ offset: memory_object_offset_t,
+                    _ copy: boolean_t,
+                    _ cur: vm_prot_t,
+                    _ max: vm_prot_t,
+                    _ inherit: vm_inherit_t) -> kern_return_t
+
 @main
 struct AGXProbeApp: App {
     var body: some Scene { WindowGroup { ContentView() } }
@@ -150,6 +174,7 @@ final class ReachViewModel: ObservableObject {
         if args.contains("--decmpfs") { Task.detached { await self.runDecmpfsMode() }; return }
         if args.contains("--ane") { Task.detached { await self.runANEMode() }; return }
         if args.contains("--ave") { Task.detached { await self.runAVEMode() }; return }
+        if args.contains("--mementry") { Task.detached { await self.runMemEntryMode() }; return }
         if args.contains("--sockuaf") { Task.detached { await self.runSocketUafMode() }; return }
         if args.contains("--sockool") || args.contains("--sockxz") || args.contains("--sockgc")
             || args.contains("--sockudp") || args.contains("--sockprec")
@@ -746,6 +771,66 @@ func runFuzzMode() async {
         emitBg("[*] ane start (ANE user-client reachability; trigger=\(trigger))")
         let opened = ane_probe(trigger ? 1 : 0)
         emitBg("=== ane done: opened=\(opened) trigger=\(trigger) ===")
+    }
+
+    // ---- external-object / physical-primitive gate -------------------------
+    nonisolated func runMemEntryMode() {
+        emitBg("[*] mementry start (mach_make_memory_entry_64 over our own mapping)")
+        var st = [Int32](repeating: 0, count: 8)
+        let rc = mem_entry_probe(&st)
+        emitBg(String(format: "[*] mementry rc=%d alloc=%d entry=%d alias=%d samePage=%d",
+                      rc, st[1], st[2], st[3], st[4]))
+        memAliasProbe()
+        emitBg("=== mementry done ===")
+    }
+
+    /// Second, independent path: `mach_vm_map` (declared via @_silgen_name).
+    /// The classic `vm_map` used above is what the SDK documents for C clients;
+    /// if it is refused while this one succeeds, the difference is in the API,
+    /// not in the sandbox policy.
+    nonisolated func memAliasProbe() {
+        let sz = mach_vm_size_t(0x10000)
+        let buf = UnsafeMutableRawPointer.allocate(byteCount: Int(sz), alignment: 0x4000)
+        defer { buf.deallocate() }
+        buf.storeBytes(of: 0xC0FFEE27, as: UInt32.self)
+
+        let baseAddr = mach_vm_address_t(UInt(bitPattern: buf))
+        var esz = sz
+        var entry: mach_port_t = 0
+        var kr = cv_make_memory_entry_64(mach_task_self_, &esz, baseAddr,
+                                         vm_prot_t(VM_PROT_READ | VM_PROT_WRITE),
+                                         &entry, 0)
+        emitBg("[*] memalias make_memory_entry_64 -> \(kr) handle=0x\(String(entry, radix: 16)) size=0x\(String(esz, radix: 16))")
+        guard kr == KERN_SUCCESS, entry != 0 else { return }
+        defer { mach_port_deallocate(mach_task_self_, entry) }
+
+        // First mapping: wherever the kernel chooses.
+        var alias: mach_vm_address_t = 0
+        kr = cv_mach_vm_map(mach_task_self_, &alias, sz, 0, Int32(VM_FLAGS_ANYWHERE),
+                            entry, 0, boolean_t(0),
+                            vm_prot_t(VM_PROT_READ | VM_PROT_WRITE),
+                            vm_prot_t(VM_PROT_READ | VM_PROT_WRITE),
+                            VM_INHERIT_NONE)
+        emitBg("[*] memalias mach_vm_map(ANYWHERE) -> \(kr) at 0x\(String(alias, radix: 16))")
+
+        // Second mapping: forced far away, so a distinct-VA round trip proves the
+        // two mappings name the same physical pages rather than the same mapping.
+        let want = baseAddr + 0x40000000
+        var hint = want
+        let krFixed = cv_mach_vm_map(mach_task_self_, &hint, sz, 0, Int32(VM_FLAGS_FIXED),
+                                     entry, 0, boolean_t(0),
+                                     vm_prot_t(VM_PROT_READ | VM_PROT_WRITE),
+                                     vm_prot_t(VM_PROT_READ | VM_PROT_WRITE),
+                                     VM_INHERIT_NONE)
+        emitBg("[*] memalias mach_vm_map(FIXED 0x\(String(want, radix: 16))) -> \(krFixed) at 0x\(String(hint, radix: 16))")
+        guard krFixed == KERN_SUCCESS, hint != 0,
+              let aptr = UnsafeMutableRawPointer(bitPattern: UInt(hint)) else { return }
+        defer { vm_deallocate(mach_task_self_, vm_address_t(hint), vm_size_t(sz)) }
+
+        let bm = buf.load(as: UInt32.self)
+        let am = aptr.load(as: UInt32.self)
+        emitBg(String(format: "[*] memalias marker base=0x%08x aliasAnywhere=0x%08x aliasFixed=0x%08x samePage=%@",
+                      bm, alias, am, am == 0xC0FFEE27 ? "YES" : "no"))
     }
 
     // ---- AVE / AppleAVE2 HEVC parameter-set encoder probe ------------------

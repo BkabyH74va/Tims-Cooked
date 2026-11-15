@@ -38,3 +38,6 @@ int route_socket_probe(int *stages);
 
 // VM deferred-reclamation MIG surface probe (SockUafSpray.c).
 int vm_reclaim_probe(int *stages);
+
+// External-object / physical-primitive gate (SockUafSpray.c).
+int mem_entry_probe(int *stages);
