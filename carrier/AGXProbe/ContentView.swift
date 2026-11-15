@@ -182,6 +182,7 @@ final class ReachViewModel: ObservableObject {
         if args.contains("--mementry") { Task.detached { await self.runMemEntryMode() }; return }
         if args.contains("--iosurfphys") { Task.detached { await self.runIOSurfPhysMode() }; return }
         if args.contains("--iosurfrace") { Task.detached { await self.runIOSurfRaceMode() }; return }
+        if args.contains("--iosurfreclaim") { Task.detached { await self.runIOSurfReclaimMode() }; return }
         if args.contains("--sockuaf") { Task.detached { await self.runSocketUafMode() }; return }
         if args.contains("--sockool") || args.contains("--sockxz") || args.contains("--sockgc")
             || args.contains("--sockudp") || args.contains("--sockprec")
@@ -1008,6 +1009,27 @@ func runFuzzMode() async {
         emitBg(String(format: "[*] iosurfrace rc=%d recycleCtl=%d markerWrote=%d entryKR=%d alias1=%d baseReused=%d verdict=%d",
                       rc, st[0], st[1], st[2], st[3], st[4], st[5]))
         emitBg("=== iosurfrace done ===")
+    }
+
+    // ---- IOSurface freed-page reclaim-type expansion -----------------------
+    //
+    // `--iosurfrace` showed a surviving memory entry follows a destroyed
+    // surface's physical pages into a NEW IOSurface. This mode asks whether
+    // an allocation that is NOT an IOSurface can take those pages instead:
+    // for each (surface kind, reclaimer kind) pair it releases a wrapped
+    // surface and then sprays vm_allocate / mmap / malloc / file-mmap /
+    // IOSurface blocks carrying unique tags, re-maps the stale entry and
+    // scans the whole object for a tag.
+
+    nonisolated func runIOSurfReclaimMode() {
+        emitBg("[*] iosurfreclaim start (cross-type page reclaim sweep)")
+        var st = [Int32](repeating: 0, count: 32)
+        let dir = NSTemporaryDirectory()
+        let rc = iosurf_reclaim_probe(dir, &st)
+        var hits = 0
+        for i in 0..<32 { if st[i] != 0 { hits += 1 } }
+        emitBg(String(format: "[*] iosurfreclaim rc=%d hits=%d", rc, hits))
+        emitBg("=== iosurfreclaim done ===")
     }
 
     // ---- AVE / AppleAVE2 HEVC parameter-set encoder probe ------------------

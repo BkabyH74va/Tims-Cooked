@@ -1,0 +1,135 @@
+[*] iosurfreclaim start (cross-type page reclaim sweep)
+[*] iosurfreclaim syms create=0x1cd01d980 id=0x1cd01d360 base=0x1cd021b20 alloc=0x1cd01f14c mach_vm_map=0x24285c814
+[*] iosurfreclaim r0 region=0 alloc=0x8000 id=0x16 base=0x10338c000 marker=0xc0de0000 rb=0xc0de0000
+[*] iosurfreclaim r0 entry(size=0x8000) -> kr=0 (0x0) handle=0xa603
+[*] iosurfreclaim r0 alias1 kr=0 marker=0xc0de0000 same=YES
+[*] iosurfreclaim r0 surface released; only the entry remains
+[*] iosurfreclaim r0 sweep kind=1 made=48
+[*] iosurfreclaim r0 map entry -> kr=0 (0x0) at 0x1087a8000
+[*] iosurfreclaim r0 no tag visible; word0=0xc0de0000
+[*] iosurfreclaim r0 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0000 marker_intact=YES
+[*] iosurfreclaim round 0 region=0 sweeper=vm stage=0
+[*] iosurfreclaim r1 region=0 alloc=0x8000 id=0x96 base=0x10338c000 marker=0xc0de0000 rb=0xc0de0000
+[*] iosurfreclaim r1 entry(size=0x8000) -> kr=0 (0x0) handle=0xa613
+[*] iosurfreclaim r1 alias1 kr=0 marker=0xc0de0000 same=YES
+[*] iosurfreclaim r1 surface released; only the entry remains
+[*] iosurfreclaim r1 sweep kind=2 made=48
+[*] iosurfreclaim r1 map entry -> kr=0 (0x0) at 0x1087a8000
+[*] iosurfreclaim r1 no tag visible; word0=0xc0de0000
+[*] iosurfreclaim r1 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0000 marker_intact=YES
+[*] iosurfreclaim round 1 region=0 sweeper=mmap stage=0
+[*] iosurfreclaim r2 region=0 alloc=0x8000 id=0x9e base=0x103390000 marker=0xc0de0000 rb=0xc0de0000
+[*] iosurfreclaim r2 entry(size=0x8000) -> kr=0 (0x0) handle=0xa623
+[*] iosurfreclaim r2 alias1 kr=0 marker=0xc0de0000 same=YES
+[*] iosurfreclaim r2 surface released; only the entry remains
+[*] iosurfreclaim r2 sweep kind=3 made=48
+[*] iosurfreclaim r2 map entry -> kr=0 (0x0) at 0x103390000
+[*] iosurfreclaim r2 no tag visible; word0=0xc0de0000
+[*] iosurfreclaim r2 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0000 marker_intact=YES
+[*] iosurfreclaim round 2 region=0 sweeper=malloc stage=0
+[*] iosurfreclaim r3 region=0 alloc=0x8000 id=0x9e base=0x103390000 marker=0xc0de0000 rb=0xc0de0000
+[*] iosurfreclaim r3 entry(size=0x8000) -> kr=0 (0x0) handle=0xa633
+[*] iosurfreclaim r3 alias1 kr=0 marker=0xc0de0000 same=YES
+[*] iosurfreclaim r3 surface released; only the entry remains
+[*] iosurfreclaim r3 sweep kind=4 made=48
+[*] iosurfreclaim r3 map entry -> kr=0 (0x0) at 0x1087b0000
+[*] iosurfreclaim r3 no tag visible; word0=0xc0de0000
+[*] iosurfreclaim r3 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0000 marker_intact=YES
+[*] iosurfreclaim round 3 region=0 sweeper=file stage=0
+[*] iosurfreclaim r4 region=0 alloc=0x8000 id=0x9e base=0x103390000 marker=0xc0de0000 rb=0xc0de0000
+[*] iosurfreclaim r4 entry(size=0x8000) -> kr=0 (0x0) handle=0xa643
+[*] iosurfreclaim r4 alias1 kr=0 marker=0xc0de0000 same=YES
+[*] iosurfreclaim r4 surface released; only the entry remains
+[*] iosurfreclaim r4 sweep kind=5 made=48
+[*] iosurfreclaim r4 old base handed to sprayed surface idx=0
+[*] iosurfreclaim r4 map entry -> kr=0 (0x0) at 0x1087b8000
+[*] iosurfreclaim r4 no tag visible; word0=0xc0de0000
+[*] iosurfreclaim r4 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0000 marker_intact=YES
+[*] iosurfreclaim round 4 region=0 sweeper=iosrf stage=0
+[*] iosurfreclaim r5 region=1 alloc=0x8000 id=0x9e base=0x103390000 marker=0xc0de0001 rb=0xc0de0001
+[*] iosurfreclaim r5 entry(size=0x8000) -> kr=0 (0x0) handle=0xa653
+[*] iosurfreclaim r5 alias1 kr=0 marker=0xc0de0001 same=YES
+[*] iosurfreclaim r5 surface released; only the entry remains
+[*] iosurfreclaim r5 sweep kind=1 made=48
+[*] iosurfreclaim r5 map entry -> kr=0 (0x0) at 0x1087b8000
+[*] iosurfreclaim r5 no tag visible; word0=0xc0de0001
+[*] iosurfreclaim r5 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0001 marker_intact=YES
+[*] iosurfreclaim round 5 region=1 sweeper=vm stage=0
+[*] iosurfreclaim r6 region=1 alloc=0x8000 id=0x9e base=0x103390000 marker=0xc0de0001 rb=0xc0de0001
+[*] iosurfreclaim r6 entry(size=0x8000) -> kr=0 (0x0) handle=0xa663
+[*] iosurfreclaim r6 alias1 kr=0 marker=0xc0de0001 same=YES
+[*] iosurfreclaim r6 surface released; only the entry remains
+[*] iosurfreclaim r6 sweep kind=2 made=48
+[*] iosurfreclaim r6 map entry -> kr=0 (0x0) at 0x1087b8000
+[*] iosurfreclaim r6 no tag visible; word0=0xc0de0001
+[*] iosurfreclaim r6 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0001 marker_intact=YES
+[*] iosurfreclaim round 6 region=1 sweeper=mmap stage=0
+[*] iosurfreclaim r7 region=1 alloc=0x8000 id=0x9e base=0x103390000 marker=0xc0de0001 rb=0xc0de0001
+[*] iosurfreclaim r7 entry(size=0x8000) -> kr=0 (0x0) handle=0x770b
+[*] iosurfreclaim r7 alias1 kr=0 marker=0xc0de0001 same=YES
+[*] iosurfreclaim r7 surface released; only the entry remains
+[*] iosurfreclaim r7 sweep kind=3 made=48
+[*] iosurfreclaim r7 map entry -> kr=0 (0x0) at 0x103390000
+[*] iosurfreclaim r7 no tag visible; word0=0xc0de0001
+[*] iosurfreclaim r7 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0001 marker_intact=YES
+[*] iosurfreclaim round 7 region=1 sweeper=malloc stage=0
+[*] iosurfreclaim r8 region=1 alloc=0x8000 id=0x9e base=0x103390000 marker=0xc0de0001 rb=0xc0de0001
+[*] iosurfreclaim r8 entry(size=0x8000) -> kr=0 (0x0) handle=0x770f
+[*] iosurfreclaim r8 alias1 kr=0 marker=0xc0de0001 same=YES
+[*] iosurfreclaim r8 surface released; only the entry remains
+[*] iosurfreclaim r8 sweep kind=4 made=48
+[*] iosurfreclaim r8 map entry -> kr=0 (0x0) at 0x1087b8000
+[*] iosurfreclaim r8 no tag visible; word0=0xc0de0001
+[*] iosurfreclaim r8 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0001 marker_intact=YES
+[*] iosurfreclaim round 8 region=1 sweeper=file stage=0
+[*] iosurfreclaim r9 region=1 alloc=0x8000 id=0x9e base=0x103390000 marker=0xc0de0001 rb=0xc0de0001
+[*] iosurfreclaim r9 entry(size=0x8000) -> kr=0 (0x0) handle=0x7713
+[*] iosurfreclaim r9 alias1 kr=0 marker=0xc0de0001 same=YES
+[*] iosurfreclaim r9 surface released; only the entry remains
+[*] iosurfreclaim r9 sweep kind=5 made=48
+[*] iosurfreclaim r9 old base handed to sprayed surface idx=0
+[*] iosurfreclaim r9 map entry -> kr=0 (0x0) at 0x1087b8000
+[*] iosurfreclaim r9 MATCH kind=5 idx=0 off=0x0 val=0x5a5a5000
+[*] iosurfreclaim WRITE-DIR: wrote 0x88880009 through stale alias, reclaimed surface reads 0x88880009 -> CONFIRMED
+[*] iosurfreclaim r9 VERDICT hit=1 kind=5 idx=0 off=0x0 word0=0x5a5a5000 marker_intact=no
+[*] iosurfreclaim round 9 region=1 sweeper=iosrf stage=1
+[*] iosurfreclaim r10 region=1 alloc=0x4000 id=0x9e base=0x103390000 marker=0xc0de0001 rb=0xc0de0001
+[*] iosurfreclaim r10 entry(size=0x4000) -> kr=0 (0x0) handle=0x7717
+[*] iosurfreclaim r10 alias1 kr=0 marker=0xc0de0001 same=YES
+[*] iosurfreclaim r10 surface released; only the entry remains
+[*] iosurfreclaim r10 sweep kind=5 made=48
+[*] iosurfreclaim r10 old base handed to sprayed surface idx=0
+[*] iosurfreclaim r10 map entry -> kr=0 (0x0) at 0x107fe4000
+[*] iosurfreclaim r10 MATCH kind=5 idx=0 off=0x0 val=0x5a5a5000
+[*] iosurfreclaim WRITE-DIR: wrote 0x8888000a through stale alias, reclaimed surface reads 0x8888000a -> CONFIRMED
+[*] iosurfreclaim r10 VERDICT hit=1 kind=5 idx=0 off=0x0 word0=0x5a5a5000 marker_intact=no
+[*] iosurfreclaim round 10 region=1 sweeper=iosrf class=0x4000 stage=1
+[*] iosurfreclaim r11 region=1 alloc=0x8000 id=0x9e base=0x103390000 marker=0xc0de0001 rb=0xc0de0001
+[*] iosurfreclaim r11 entry(size=0x8000) -> kr=0 (0x0) handle=0x771b
+[*] iosurfreclaim r11 alias1 kr=0 marker=0xc0de0001 same=YES
+[*] iosurfreclaim r11 surface released; only the entry remains
+[*] iosurfreclaim r11 sweep kind=5 made=48
+[*] iosurfreclaim r11 old base handed to sprayed surface idx=0
+[*] iosurfreclaim r11 map entry -> kr=0 (0x0) at 0x1087b8000
+[*] iosurfreclaim r11 MATCH kind=5 idx=0 off=0x0 val=0x5a5a5000
+[*] iosurfreclaim WRITE-DIR: wrote 0x8888000b through stale alias, reclaimed surface reads 0x8888000b -> CONFIRMED
+[*] iosurfreclaim r11 VERDICT hit=1 kind=5 idx=0 off=0x0 word0=0x5a5a5000 marker_intact=no
+[*] iosurfreclaim round 11 region=1 sweeper=iosrf class=0x8000 stage=1
+[*] iosurfreclaim r12 region=1 alloc=0x10000 id=0x9e base=0x103390000 marker=0xc0de0001 rb=0xc0de0001
+[*] iosurfreclaim r12 entry(size=0x10000) -> kr=0 (0x0) handle=0x771f
+[*] iosurfreclaim r12 alias1 kr=0 marker=0xc0de0001 same=YES
+[*] iosurfreclaim r12 surface released; only the entry remains
+[*] iosurfreclaim r12 sweep kind=5 made=48
+[*] iosurfreclaim r12 old base handed to sprayed surface idx=0
+[*] iosurfreclaim r12 map entry -> kr=0 (0x0) at 0x10b728000
+[*] iosurfreclaim r12 MATCH kind=5 idx=0 off=0x0 val=0x5a5a5000
+[*] iosurfreclaim WRITE-DIR: wrote 0x8888000c through stale alias, reclaimed surface reads 0x8888000c -> CONFIRMED
+[*] iosurfreclaim r12 VERDICT hit=1 kind=5 idx=0 off=0x0 word0=0x5a5a5000 marker_intact=no
+[*] iosurfreclaim round 12 region=1 sweeper=iosrf class=0x10000 stage=1
+[*] iosurfreclaim done rounds=13 hits=0
+[*] iosurfreclaim rc=0 hits=4
+=== iosurfreclaim done ===
+Launched application with com.bench27.agxprobe bundle identifier.
+Waiting for the application to terminate...
+App terminated due to signal 15.
+WARNING: Failed to forward Continued: 19 to remote process: Failed to send signal 19 to process 8,967.
