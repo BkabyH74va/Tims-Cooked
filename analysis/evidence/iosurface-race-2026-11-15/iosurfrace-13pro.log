@@ -1,0 +1,16 @@
+[*] iosurfrace start (entry over a surface; alias dropped before release)
+[*] iosurfrace syms create=0x1cd01d980 id=0x1cd01d360 base=0x1cd021b20 alloc=0x1cd01f14c mach_vm_map=0x24285c814
+[*] iosurfrace phase0 control base=0x104b68000 alloc=0x8000
+[*] iosurfrace phase0 after release + spray(64): base_reused=YES idx=0
+[*] iosurfrace surface id=0xad base=0x104b68000 alloc=0x8000 marker=0xaaaa0001 rb=0xaaaa0001
+[*] iosurfrace entry(size=0x8000) -> kr=0 (0x0) handle=0x6e53
+[*] iosurfrace alias1 -> kr=0 (0x0) at 0x104b70000 marker=0xaaaa0001 same=YES
+[*] iosurfrace alias1 deallocated; no user mapping of the object remains
+[*] iosurfrace surface CFReleased; only the memory entry remains
+[*] iosurfrace spray(64): old base reclaimed=YES idx=0
+[*] iosurfrace alias2(after release) -> kr=0 (0x0) at 0x10a258000 read=0xaaaa0001
+[*] iosurfrace spray_base_content=0xaaaa0001
+[*] iosurfrace discriminator: wrote 0x77770002 into reclaimed surface, alias now reads 0x77770002 (after control write: 0x77770002)
+[*] iosurfrace VERDICT alias_follows_new_owner=YES marker_intact=no
+[*] iosurfrace rc=0 recycleCtl=1 markerWrote=1 entryKR=0 alias1=1 baseReused=1 verdict=2
+=== iosurfrace done ===

