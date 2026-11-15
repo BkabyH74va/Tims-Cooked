@@ -183,6 +183,7 @@ final class ReachViewModel: ObservableObject {
         if args.contains("--iosurfphys") { Task.detached { await self.runIOSurfPhysMode() }; return }
         if args.contains("--iosurfrace") { Task.detached { await self.runIOSurfRaceMode() }; return }
         if args.contains("--iosurfreclaim") { Task.detached { await self.runIOSurfReclaimMode() }; return }
+        if args.contains("--iosurfwatch") { Task.detached { await self.runIOSurfWatchMode() }; return }
         if args.contains("--sockuaf") { Task.detached { await self.runSocketUafMode() }; return }
         if args.contains("--sockool") || args.contains("--sockxz") || args.contains("--sockgc")
             || args.contains("--sockudp") || args.contains("--sockprec")
@@ -1030,6 +1031,31 @@ func runFuzzMode() async {
         for i in 0..<32 { if st[i] != 0 { hits += 1 } }
         emitBg(String(format: "[*] iosurfreclaim rc=%d hits=%d", rc, hits))
         emitBg("=== iosurfreclaim done ===")
+    }
+
+    // ---- IOSurface freed-page watch ------------------------------------------
+    //
+    // `--iosurfreclaim` sprayed app-reachable reclaimers *after* the release and
+    // found none that took the pages. The untested case is a kernel-internal
+    // reclaimer acting during the window. This mode keeps the carveout window
+    // open, drives heavy kernel churn (sockets / pipes / VM / files / mach ports /
+    // plain IOSurfaces) and watches the stale memory entry word-by-word for ANY
+    // content change - no tag or reclaimer type has to be assumed.
+    // Round 0 is an in-run positive control: fresh PurpleGfxMem surfaces are
+    // created right after the release and are expected to overwrite the markers.
+
+    nonisolated func runIOSurfWatchMode() {
+        emitBg("[*] iosurfwatch start (watch a released region surface's pages under kernel churn)")
+        var st = [Int32](repeating: 0, count: 64)
+        let dir = NSTemporaryDirectory()
+        let rc = iosurf_hold_probe(dir, 4, &st)
+        var worst = 0
+        var ctrl = 0
+        for i in 0..<64 {
+            if i == 0 { ctrl = Int(st[i]) } else if st[i] > Int32(worst) { worst = Int(st[i]) }
+        }
+        emitBg(String(format: "[*] iosurfwatch rc=%d controlWorst=%d testWorst=%d", rc, ctrl, worst))
+        emitBg("=== iosurfwatch done ===")
     }
 
     // ---- AVE / AppleAVE2 HEVC parameter-set encoder probe ------------------

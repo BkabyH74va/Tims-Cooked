@@ -47,3 +47,7 @@ int iosurf_race_probe(int *stages);
 
 // IOSurface freed-page reclaim-type expansion probe (SockUafSpray.c).
 int iosurf_reclaim_probe(const char *dir, int *stages);
+
+// IOSurface freed-page watch probe: does any non-IOSurface allocator take the
+// pages while no user mapping pins them? (SockUafSpray.c)
+int iosurf_hold_probe(const char *dir, int rounds, int *stages);

