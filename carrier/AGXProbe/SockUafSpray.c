@@ -2055,6 +2055,10 @@ static int hold_churn(const char *dir, int kind, int n)
     return made;
 }
 
+typedef int (*hold_churn_fn)(int round_idx, int iteration);
+static hold_churn_fn g_hold_cb;
+void hold_set_callback(hold_churn_fn cb) { g_hold_cb = cb; }
+
 int iosurf_hold_probe(const char *dir, int rounds, int *stages)
 {
     if (!stages) return -1;
@@ -2163,6 +2167,11 @@ int iosurf_hold_probe(const char *dir, int rounds, int *stages)
                 map_fail++;
             }
             int made = hold_churn(dir, churn_kinds[it % 6], HOLD_CHURN_N);
+            if (g_hold_cb) {
+                int cm = (int)g_hold_cb(r, it);
+                if (it % 12 == 0)
+                    mep_log("[*] iosurfhold r%d watch it=%d extChurn=%d", r, it, cm);
+            }
             if (it == 0 || it % 12 == 11)
                 mep_log("[*] iosurfhold r%d watch it=%d worstMismatch=%llu "
                         "changedIters=%d mapFail=%d churnMade=%d",

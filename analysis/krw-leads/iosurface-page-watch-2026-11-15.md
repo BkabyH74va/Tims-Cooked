@@ -133,3 +133,57 @@ the static string sweep finds such a client beyond the display pipeline.
 One benign run on the secondary. The app stayed alive and finished its probe;
 no panic, respring or reboot, and no new crash report. Primary untouched
 (locked).
+
+## Extension: GPU (Metal) allocation churn
+
+The first run above used only generic kernel churn. Since GPU allocations are the
+only remaining plausible allocator from the same physical range, the probe was
+extended with an external churn callback (`hold_set_callback()` in C, implemented
+in Swift) that runs every watch iteration and creates and releases, for each of
+`{0x1000, 0x2000, 0x4000, 0x8000, 0x10000}`, both a `.storageModePrivate` and a
+`.storageModeShared` Metal buffer (`extChurn=10` per iteration), writing into the
+shared ones' contents so their pages are really touched.
+
+Re-measured on the same secondary device (raw log
+`analysis/evidence/iosurface-watch-2026-11-15/iosurfwatch-metal-13pro.log`):
+
+| round | role | worst mismatch | changed iters |
+|---|---|---|---|
+| 0 | control | **1** (`0x5a5a0000` at offset 0) | 48/48 |
+| 1 | test (+ Metal churn) | **0** | 0/48 |
+| 2 | test | **0** | 0/48 |
+| 3 | test | **0** | 0/48 |
+
+GPU buffer allocation/release of the exact carveout size classes during the window
+did not take the freed pages either. The control again proves the pages were
+reclaimable during the whole window.
+
+### Harness crash during development (attributed)
+
+The first Metal-enabled build crashed with `SIGSEGV`/`EXC_BAD_ACCESS`
+(`KERN_INVALID_ADDRESS at 0x0`) in the callback:
+
+```
+libsystem_platform.dylib  _platform_memmove
+AGXProbe.debug.dylib      UnsafeMutableRawPointer.storeBytes<A>
+AGXProbe.debug.dylib      closure #1 in gMetalChurnCallback
+AGXProbe.debug.dylib      iosurf_hold_probe
+```
+
+Cause: calling `contents()` on a `.storageModePrivate` MTLBuffer and storing to
+it — private storage is not CPU-mappable, the pointer is NULL, and the store
+faults. This is a harness bug, not a device or kernel defect: the crash report is
+an app-level fault in our own process, no panic/respring/reboot occurred, and the
+device stayed enumerated. Fix: allocate private buffers without touching
+`contents()`, write only through shared-mode buffers, and guard the pointer
+against NULL. Re-run after the fix was clean (the table above).
+
+Evidence: `analysis/evidence/iosurface-watch-2026-11-15/AGXProbe-crash-metal-churn-13pro.ips`.
+
+## Bottom line
+
+Both the generic-kernel and the GPU-allocation churn measurements agree: while a
+PurpleGfxMem surface's pages are unowned, no allocator reachable from this app —
+including the GPU allocator at matching size classes — takes them except the
+IOSurface region allocator itself. The external-object primitive's ceiling stays
+the IOSurface/GPU shared backing object; it does not reach kernel CPU memory.

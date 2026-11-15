@@ -35,6 +35,37 @@ private var gAveStatus: OSStatus = -9999
 private var gAveSample: CMSampleBuffer?
 private var gAveSem: DispatchSemaphore? = nil
 
+// Metal allocation churn for --iosurfwatch: the C probe calls this every watch
+// iteration. Creating and releasing buffers at the sizes the carveout hands out
+// (and touching their contents) exercises the GPU allocator - the one plausible
+// non-IOSurface client that could name the same physical range.
+private var gMetalChurnDevice: MTLDevice? = nil
+
+private let gMetalChurnCallback: @convention(c) (Int32, Int32) -> Int32 = { (_, _) in
+    guard let dev = gMetalChurnDevice else { return 0 }
+    var made = 0
+    for len in [0x1000, 0x2000, 0x4000, 0x8000, 0x10000] {
+        // Private storage is not CPU-mappable: contents() would be NULL and the
+        // store below would fault (measured: EXC_BAD_ACCESS at 0x0 inside
+        // _platform_memmove from this closure). Allocation alone still exercises
+        // the GPU allocator.
+        if let b = dev.makeBuffer(length: len, options: .storageModePrivate) {
+            if UInt(bitPattern: b.contents()) != 0 {
+                b.contents().storeBytes(of: UInt32(len & 0xffff), as: UInt32.self)
+            }
+            made += 1
+        }
+        if let b = dev.makeBuffer(length: len, options: .storageModeShared) {
+            let p = b.contents()
+            if UInt(bitPattern: p) != 0 {
+                p.storeBytes(of: UInt32(len & 0xffff), as: UInt32.self)
+                made += 1
+            }
+        }
+    }
+    return Int32(made)
+}
+
 // External-object helpers declared directly: the iOS SDK marks <mach/mach_vm.h>
 // unsupported for C clients, but both symbols are exported and were verified
 // callable on this device. Declaring them here avoids the header's #error.
@@ -1048,6 +1079,14 @@ func runFuzzMode() async {
         emitBg("[*] iosurfwatch start (watch a released region surface's pages under kernel churn)")
         var st = [Int32](repeating: 0, count: 64)
         let dir = NSTemporaryDirectory()
+
+        if let dev = MTLCreateSystemDefaultDevice() {
+            gMetalChurnDevice = dev
+            hold_set_callback(gMetalChurnCallback)
+            emitBg("[*] iosurfwatch metal churn enabled: \(dev.name)")
+        } else {
+            emitBg("[-] iosurfwatch no Metal device; kernel churn only")
+        }
         let rc = iosurf_hold_probe(dir, 4, &st)
         var worst = 0
         var ctrl = 0

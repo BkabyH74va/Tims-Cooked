@@ -51,3 +51,6 @@ int iosurf_reclaim_probe(const char *dir, int *stages);
 // IOSurface freed-page watch probe: does any non-IOSurface allocator take the
 // pages while no user mapping pins them? (SockUafSpray.c)
 int iosurf_hold_probe(const char *dir, int rounds, int *stages);
+
+// External churn callback for iosurf_hold_probe (Metal buffers).
+void hold_set_callback(int (*cb)(int, int));
