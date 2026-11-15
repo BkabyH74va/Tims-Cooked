@@ -47,6 +47,33 @@ The repeated reference pattern (one string referenced from 4–5 nearby sites ar
 parameter-set parsers. This is the strongest "kernel write/read" candidate found so far
 because the AVE encoder is driven through public AVFoundation/VideoToolbox APIs.
 
+### Exact boundaries for the VPS extension checker
+
+`LC_FUNCTION_STARTS` gives the helper itself as **`0xfffffe00087c5bb8`, size `0x4d8`** in
+24B119 (the function whose `__func__` is `AVE_HEVC_CheckVPSExtBounds`). It has **five**
+direct `BL` call sites:
+
+| call site | containing function (start, size) |
+|---|---|
+| `0xfffffe00087c520c` | `0xfffffe00087c4dc4`, `0xdf4` |
+| `0xfffffe00087c6fc0` | `0xfffffe00087c6f00`, `0xac8` |
+| `0xfffffe00087c7a8c` | `0xfffffe00087c79c8`, `0xbb4` |
+| `0xfffffe00087c863c` | `0xfffffe00087c857c`, `0xb84` |
+| `0xfffffe00087c91c4` | `0xfffffe00087c9100`, `0x8ec` |
+
+What it validates (`arg1` is a multi-kilobyte descriptor): a count at `[arg1+4]` capped at
+`0x40`; byte arrays at `arg1+0xf78`, `arg1+0x17fb`, `arg1+0x1a40`, `arg1+0x1a41`; per-entry
+sub-layer arrays at `arg1+0x1a41 + n*0x40` summed and capped at `0x41`. All of these are
+HEVC VPS/SPS sub-layer and layer-set counts — exactly the fields an out-of-range
+`num_layer_sets_minus1` / `sps_max_sub_layers_minus1` would drive out of bounds in 27.0.1,
+where these checks do not exist.
+
+Next session: take the 24A446 counterpart of `0xfffffe00087c4dc4` (find it by the caller's
+other anchors, not by address proximity) and diff, then identify which buffer the parser
+reads those counts from. The reachability question is whether that buffer is filled from a
+caller-supplied `CMVideoFormatDescription` (HEVC VPS/SPS/PPS) or from the driver's own
+generated bitstream.
+
 ## 2. Apple Neural Engine (`com.apple.driver.AppleH16ANEInterface`) — 255 changed functions
 
 See `analysis/krw-leads/ane-userclient-reachability-2026-11-14.md` for reachability.
