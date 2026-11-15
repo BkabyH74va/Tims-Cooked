@@ -36,12 +36,12 @@ The same 27.2 image's `_IOSurfaceClientSetSurfaceNotify` (`0x1c284a6e8`) constru
 
 The v116 `0..15` loop reuses the same `connC` for all candidates, and the source later reuses `connC` for a notification test. Because a successful `0x04` call inserts a table entry, this is stateful, not a set of independent/read-only shape probes; per-index success and any mutation were not preserved in a run log. Validate one candidate on a fresh connection with a confirmed root index before interpreting subsequent calls.
 
-The Mac build-host `IOSurfaceNotifyProbe.c` is a separate, more dangerous path from the `--iosurfrace` control just run. Its comments describe prior v12/v13 stale-ID observations, but comments are not preserved runtime evidence; the source also contains a 400-iteration concurrent set/remove/release phase followed by spray-and-touch of a released surface. That path was not launched here because its trigger and stale-state oracle remain unvalidated. The 13 Pro and 17 Pro run in `iosurface-safe-run-2026-11-15/RESULT.md` exercised only the bounded alias control.
+The Mac build-host `IOSurfaceNotifyProbe.c` v14 has now been run on both phones using a temporary CLI dispatch in an isolated project copy; the C probe source was unchanged. Both complete 400 release/recreate iterations and phase-A/B runs finished without a crash or new crash report. On each device, the first of 48 sprayed surfaces received the just-released surface's public ID; a subsequent set returned `0xe00002c9`, remove returned 0, and the next set returned 0. This establishes registration state remained findable across surface release and public-ID reuse, not that a dangling client pointer was dereferenced. The target request's `+0x58` is the notifier `IOSurfaceRootUserClient` pointer; v14 releases `IOSurface` objects and does not close a private root user-client connection. Therefore, despite its name, v14 does not exercise the candidate user-client teardown race. Full limitations and device-specific evidence are in `analysis/iosurface-notify-run-2026-11-15/RESULT.md`; raw logs remain local.
 
  Its 13-argument `SetWrapFn` shape matches `IOConnectCallAsyncMethod`[1]; under that mapping, `outS` is `structureInput`. The target thunk at `0xfffffe000a3498f4` forwards `arguments+0x30` (the `structureInput` field in public XNU `IOUserClient.h`[2]) to register `0xfffffe000a3460f0`, which stores `structureInput+0x10` in `node+0x50`. In v116's `connC` test, `outS` is `{1, id, 0}`, so the index is 0 under this mapping and the target lookup rejects it. The 27.2 reference framework's `_IOSurfaceClientSetSurfaceNotify` also constructs a 24-byte input from two arguments plus a zero third word before calling selector `0x11`; this supports the decoded structure layout, but does not prove the 24A446 framework wrapper is identical. The separate v116 5a path tries third-word candidates 1, 2, 3, and the first `ocp` value, but no result establishes one as a valid root slot; it is also gated on `workingProbeIdx`. No saved run output confirms the heuristic stub address or runtime behavior. Thus there is no validated benign notification oracle yet.
 
 
-`ContentView-v116.swift` calls selector 0x04 with `inputStruct = nil` and a 0xc68 output buffer, which is directionally consistent with this ABI. I found no saved `.log` containing its `0x04(idx=...)` output, so this is source-only—not evidence it completed or hung. The older note that a zeroed 0xc68 buffer hung did not preserve the exact call arguments; do not use it to conclude that the correct output call requires a reconstructed input producer. Do not rerun the panic-capable race; first reconcile the old call record and validate the benign method path.
+`ContentView-v116.swift` remains source-only: its selector `0x04` call has `inputStruct = nil` and a `0xc68` output buffer, but no saved run log confirms the result. The earlier zeroed-buffer watchdog report still lacks exact arguments and direction. The v14 run above exercised the separate private-framework `SetSurfaceNotify`/`RemoveSurfaceNotify` harness; it did not test v116's `0x04` call or validate a delivered notification.
 
 `ContentView-v20.swift` also uses `OUT_SIZE = 0xC68` for selector 0's output buffer, but matching size does not prove the two output structures have the same schema.
 
@@ -49,13 +49,13 @@ A static read of the iOS 27.2 `IOSurface` image shows notifier initialization pr
 
 References:
 
-- Target thunk and handler: `G:/iOS 27.0.1/iOS/tools/opencode-temp/iosurface.disasm.txt` (24A446)
+- Target thunk and handler: `tools/opencode-temp/iosurface.disasm.txt` (24A446)
 - XNU `IOExternalMethodArguments`: https://raw.githubusercontent.com/apple-oss-distributions/xnu/main/iokit/IOKit/IOUserClient.h
-- v116 probe source: `G:/iOS 27.0.1/iOS/tools/opencode-temp/ContentView-v116.swift`
-- v20 output buffer: `G:/iOS 27.0.1/iOS/tools/opencode-temp/ContentView-v20.swift`
-- 27.2 shared-cache image: `G:/iOS 27.0.1/iOS/tools/opencode-temp/f1-iosurface/dsc/IOSurface`
-- v115 harness: `G:/iOS 27.0.1/iOS/tools/opencode-temp/ContentView-v115.swift`
-- Existing analysis: `G:/iOS 27.0.1/iOS/analysis/iosurface-notify-uaf-CVE-2026-112477.md`
+- v116 probe source: `tools/opencode-temp/ContentView-v116.swift`
+- v20 output buffer: `tools/opencode-temp/ContentView-v20.swift`
+- 27.2 shared-cache image: `tools/opencode-temp/f1-iosurface/dsc/IOSurface`
+- v115 harness: `tools/opencode-temp/ContentView-v115.swift`
+- Existing analysis: `analysis/iosurface-notify-uaf-CVE-2026-112477.md`
 - SDK `IOKitLib.h`: iPhoneOS 27.2 SDK, `System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h`
 - Public IOKitUser: https://github.com/apple-oss-distributions/IOKitUser/blob/main/IOKitLib.c
 - Public XNU user-client reference: https://github.com/apple-oss-distributions/xnu/blob/main/iokit/Kernel/IOUserClient.cpp
