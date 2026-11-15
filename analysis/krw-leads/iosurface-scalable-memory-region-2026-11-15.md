@@ -115,6 +115,11 @@ round  victim spray  sweeper   stage
 * The primary (24A446) produced the same table, including
   `round 14 region=2 sweeper=iosrf stage=0` and the four PurpleGfxMem control
   hits.
+* `--iosurfphys` was also re-run on the primary and reproduced the secondary
+  behaviour exactly (`entry -> kr=0`, `mach_vm_map -> kr=0` at the reserved VA,
+  `samePhysicalPage=YES`, oversize entry clamped from `0x40000` to `0x8000`,
+  `IOSurfacePrefetchPages -> kr=0`); raw log
+  `analysis/evidence/iosurface-scalable-2026-11-15/iosurfphys-17pro.log`.
 * No app crash, no respring and no reboot on either device; the probe printed
   its completion marker on both. The primary had been SpringBoard-locked during
   every previous attempt at these modes; it was unlocked for this run.

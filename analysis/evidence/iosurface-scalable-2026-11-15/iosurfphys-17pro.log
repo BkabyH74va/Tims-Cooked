@@ -1,0 +1,17 @@
+[*] iosurfphys start: memory entry over an IOSurface base + distinct-VA alias
+[*] iosurfphys A(PurpleGfxMem) id=104 base=0x104bb4000 alloc=0x8000
+[*] iosurfphys C(control)      id=118 base=0x104bbc000 alloc=0x8000
+[*] iosurfphys |delta(A-C)| = 0x8000 (C is above A)
+[*] iosurfphys stage1 marker A=0xaaaa0001 (read back 0xaaaa0001) C=0xbbbb0002 (read back 0xbbbb0002)
+[*] iosurfphys stage2 make_memory_entry_64(size=0x8000) -> kr=0 (0x0) handle=0x7223
+[*] iosurfphys stage3 reserve -> kr=0 (0x0) slot=0x104bc4000
+[*] iosurfphys stage3 mach_vm_map -> kr=0 (0x0) at 0x104bc4000
+[*] iosurfphys stage3 marker source=0xaaaa0001 aliasFixed=0xaaaa0001 samePhysicalPage=YES
+[*] iosurfphys stage4 make_memory_entry_64(requested=0x40000) -> kr=0 (0x0) handle=0x6903 returned=0x8000 clamped=YES
+[*] iosurfphys stage4 mach_vm_map -> kr=0 (0x0) at 0x104bc4000
+[*] iosurfphys stage4 oversize alias: off0=0xaaaa0001 off1alloc=n/a (beyond mapping) n/a (|delta| beyond mapping)
+[*] iosurfphys stage5 IOSurfacePrefetchPages(A) -> kr=0 (0x0)
+=== iosurfphys done ===
+Waiting for the application to terminate...
+WARNING: Failed to forward Continued: 19 to remote process: Failed to send signal 19 to process 45,232.
+App terminated due to signal 15.
