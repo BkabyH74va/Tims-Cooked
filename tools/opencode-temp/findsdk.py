@@ -2,7 +2,7 @@ import os, re
 
 roots = [
     "/Users/USER",
-    "/Users/USER____/Applications",
+    "/Users/USER/Applications",
     "/Library/Developer",
 ]
 paths = []

@@ -59,14 +59,14 @@ def _basic_auth_str(username: bytes | str, password: <redacted>
             "problems.",
             category=DeprecationWarning,
         )
-PASSWORD = os.environ[\"PASSWORD\"]
+PASSWORD = os.environ["PASSWORD"]
     # -- End Removal --
 
     if isinstance(username, str):
         username = username.encode("latin1")
 
     if isinstance(password, str):
-PASSWORD = os.environ[\"PASSWORD\"]
+PASSWORD = os.environ["PASSWORD"]
 
     authstr = "Basic " + to_native_string(
         b64encode(b":".join((username, password))).strip()

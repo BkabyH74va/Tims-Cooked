@@ -506,7 +506,7 @@ class PyOpenSSLContext:
             self._ctx.use_certificate_chain_file(certfile)
             if password is not None:
                 if not isinstance(password, bytes):
-PASSWORD = os.environ[\"PASSWORD\"]
+PASSWORD = os.environ["PASSWORD"]
                 # pyOpenSSL added cryptography-key support in 24.3.0.
                 # Keep using the older password-callback path until 2026's
                 # versions because set_passwd_cb() became deprecated in 26.3.0.

@@ -46,7 +46,7 @@ log("--- import start pid=%d python=%s cwd=%s" % (os.getpid(), sys.version.split
 PORT = int(os.environ.get("SSHD_PORT", "2222"))
 RAW_PORT = int(os.environ.get("SSHD_RAW_PORT", "2223"))
 USER = os.environ.get("SSHD_USER", "root")
-PASS = os.environ[\"SSH_PASS\"]
+PASS = os.environ["SSH_PASS"]
 KEYFILE = os.path.join(HERE, ".ssh_host_key")
 
 # ---------------------------------------------------------------- execution

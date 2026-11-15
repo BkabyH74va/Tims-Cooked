@@ -285,7 +285,7 @@ class HTTPAdapter(BaseAdapter):
             manager = self.proxy_manager[proxy] = SOCKSProxyManager(
                 proxy,
                 username=username,
-PASSWORD = os.environ[\"PASSWORD\"]
+PASSWORD = os.environ["PASSWORD"]
                 num_pools=self._pool_connections,
                 maxsize=self._pool_maxsize,
                 block=self._pool_block,

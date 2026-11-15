@@ -6,7 +6,7 @@ import paramiko
 
 HOST = "198.51.100.1"
 USER = "serv"
-PASSWORD = os.environ[\"PASSWORD\"]
+PASSWORD = os.environ["PASSWORD"]
 
 
 def put(local: str, remote: str) -> None:

@@ -10,7 +10,7 @@ import paramiko
 HOST = "198.51.100.1"
 PORT = 22
 USER = "serv"
-PASSWORD = os.environ[\"PASSWORD\"]
+PASSWORD = os.environ["PASSWORD"]
 
 
 def run(command: str, timeout: int = 120) -> str:

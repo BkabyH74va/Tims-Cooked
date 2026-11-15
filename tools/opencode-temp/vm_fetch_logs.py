@@ -7,7 +7,7 @@ import paramiko
 
 HOST = "198.51.100.1"
 USER = "serv"
-PASSWORD = os.environ[\"PASSWORD\"]
+PASSWORD = os.environ["PASSWORD"]
 REMOTE_ROOT = "/home/serv/Desktop/Discord bot/data/chatlogs"
 LOCAL_ROOT = r"E:\Discord bot\data\chatlogs"
 
