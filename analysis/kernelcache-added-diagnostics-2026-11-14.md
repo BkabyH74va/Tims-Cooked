@@ -68,11 +68,14 @@ HEVC VPS/SPS sub-layer and layer-set counts — exactly the fields an out-of-ran
 `num_layer_sets_minus1` / `sps_max_sub_layers_minus1` would drive out of bounds in 27.0.1,
 where these checks do not exist.
 
-Next session: take the 24A446 counterpart of `0xfffffe00087c4dc4` (find it by the caller's
-other anchors, not by address proximity) and diff, then identify which buffer the parser
-reads those counts from. The reachability question is whether that buffer is filled from a
-caller-supplied `CMVideoFormatDescription` (HEVC VPS/SPS/PPS) or from the driver's own
-generated bitstream.
+### Counterparts localised (2026-11-15)
+
+The five callers and the new helper have been paired against their 24A446 counterparts by
+string anchors, and the helper's validated fields are read off (`AVE_HEVC_CheckInfo`
+`0x878e220` sz `0x5a4` -> `0x87c4dc4` sz `0xdf4`; two Check* helpers are new in 27.2). The
+HEVC VPS parser itself is unchanged between builds, so the defect is in consumption of the
+parsed layer-set/sub-layer counts, not in parsing. Full table and field offsets:
+`analysis/krw-leads/ave-vps-validation-cluster-2026-11-15.md`.
 
 ## 2. Apple Neural Engine (`com.apple.driver.AppleH16ANEInterface`) — 255 changed functions
 
