@@ -140,3 +140,36 @@ One clean run on the secondary; the app completed normally and stayed alive
 (devicectl reported `App terminated due to signal 15` when the console session was
 closed, which is the wrapper's own SIGTERM, not a crash). No kernel panic, respring
 or reboot observed. Primary untouched.
+
+## Static follow-up: where `PurpleGfxMem` comes from
+
+A raw search of the 24A446 kernelcache for `PurpleGfxMem` finds four occurrences,
+each resolved to its fileset member:
+
+| file off | VA | member | context |
+|---|---|---|---|
+| `0x651a35` | `0xfffffe0007655a35` | `com.apple.driver.AppleMobileDispH18P-DCP` | carveout name table `PurpleGfxMem` / `PurpleGfxMem%u`; adjacent `IOMFB %s: failed (no carveout)` and `read_carveout` |
+| `0x9c97ff` | `0xfffffe00079cd7ff` | `com.apple.iokit.IOMobileGraphicsFamily` | `PurpleGfxMem` beside `IOMFB: %s : getMemoryRegion Failed for Surface = 0x%p, sid ...` |
+| `0xa1ba17` | `0xfffffe0007a1fa17` | `com.apple.iokit.IOSurface` | region-name table `ScalableMemory` / `PurpleGfxMem` / `(unknown)` |
+
+Code sites referencing those strings (numpy-free ADRP+ADD/LDR scan over each
+member's own `__TEXT*`, capstone `skipdata=True`, immediates masked):
+
+* DCP `0xfffffe000920e818` (sz `0x88`) references both carveout strings at
+  `+0x4c`/`+0x64`: it falls back to the literal `PurpleGfxMem` when the indexed
+  carveout lookup fails, otherwise formats `PurpleGfxMem%u` with an index.
+* IOMobileGraphicsFamily `0xfffffe000a18ec14` (sz `0x44`) lazily creates the
+  symbol used by its `getMemoryRegion` failure log.
+* IOSurface `0xfffffe000a340d50` (sz `0x4c`) builds the `IOSurfaceMemoryRegion`
+  property symbol; the surface-create path `0xfffffe000a32b7b4` (sz `0x3710`)
+  consumes it at `+0x33f4`/`+0x349c`.
+
+Interpretation: `PurpleGfxMem` is a **display-controller carveout** name
+registered by `AppleMobileDispH18P-DCP`; IOSurface carries it in its region-name
+table and the IOMobileGraphicsFamily/IOMFB client allocates surfaces out of that
+carveout. This matches the device result exactly: those pages are
+sub-allocations of one shared carveout vm_object, so IOSurface-to-IOSurface
+recycling aliases physically, while plain surfaces and ordinary app allocations
+never enter that object. The carveout's other consumer is the display pipeline
+(framebuffer pages), not CPU kernel objects — which is consistent with the
+cross-type sweep finding no non-IOSurface reclaimer.
