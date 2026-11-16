@@ -1,0 +1,57 @@
+HID __DATA_CONST 0xfffffe0008311020 0x12728 slot va 0xfffffe00083190d0
+  [ -24] 0xfffffe0008319010 raw=0x00100000009ade75 -> 0xfffffe00079b1e75 (not a HID start)
+  [ -23] 0xfffffe0008319018 raw=0x00100000009adebe -> 0xfffffe00079b1ebe (not a HID start)
+  [ -22] 0xfffffe0008319020 raw=0x00100000009ade63 -> 0xfffffe00079b1e63 (not a HID start)
+  [ -21] 0xfffffe0008319028 raw=0x00100000009ade68 -> 0xfffffe00079b1e68 (not a HID start)
+  [ -20] 0xfffffe0008319030 raw=0x00100000009adecd -> 0xfffffe00079b1ecd (not a HID start)
+  [ -19] 0xfffffe0008319038 raw=0x00100000009aded2 -> 0xfffffe00079b1ed2 (not a HID start)
+  [ -18] 0xfffffe0008319040 raw=0x00100000009adee0 -> 0xfffffe00079b1ee0 (not a HID start)
+  [ -17] 0xfffffe0008319048 raw=0x00100000009abe5e -> 0xfffffe00079afe5e (not a HID start)
+  [ -16] 0xfffffe0008319050 raw=0x0010000004974d78 -> 0xfffffe000b978d78 (not a HID start)
+  [ -15] 0xfffffe0008319058 raw=0x00300000047aee18 -> 0xfffffe000b7b2e18 (not a HID start)
+  [ -14] 0xfffffe0008319060 raw=0x0000000000000000 
+  [ -13] 0xfffffe0008319068 raw=0x0000000000000000 
+  [ -12] 0xfffffe0008319070 raw=0x80113771030d2144 FUNC sz=0x8
+  [ -11] 0xfffffe0008319078 raw=0x801156b7030d214c FUNC sz=0x48
+  [ -10] 0xfffffe0008319080 raw=0x8011baa204264584 -> 0xfffffe000b268584 (not a HID start)
+  [  -9] 0xfffffe0008319088 raw=0x8011360704264578 -> 0xfffffe000b268578 (not a HID start)
+  [  -8] 0xfffffe0008319090 raw=0x80112e4a04264548 -> 0xfffffe000b268548 (not a HID start)
+  [  -7] 0xfffffe0008319098 raw=0x80113a8704264518 -> 0xfffffe000b268518 (not a HID start)
+  [  -6] 0xfffffe00083190a0 raw=0x801189a904264390 -> 0xfffffe000b268390 (not a HID start)
+  [  -5] 0xfffffe00083190a8 raw=0x8011fffc030d21ac FUNC sz=0x10
+  [  -4] 0xfffffe00083190b0 raw=0x8011fc740426122c -> 0xfffffe000b26522c (not a HID start)
+  [  -3] 0xfffffe00083190b8 raw=0x8011563504264300 -> 0xfffffe000b268300 (not a HID start)
+  [  -2] 0xfffffe00083190c0 raw=0x8011be60042642d0 -> 0xfffffe000b2682d0 (not a HID start)
+  [  -1] 0xfffffe00083190c8 raw=0x801132e504264178 -> 0xfffffe000b268178 (not a HID start)
+  [   0] 0xfffffe00083190d0 raw=0x80119209030f8344 FUNC sz=0x30 <== stub
+  [   1] 0xfffffe00083190d8 raw=0x80114a6a0426416c -> 0xfffffe000b26816c (not a HID start)
+  [   2] 0xfffffe00083190e0 raw=0x8011edc5030d2340 FUNC sz=0x264
+  [   3] 0xfffffe00083190e8 raw=0x80115c68042de268 -> 0xfffffe000b2e2268 (not a HID start)
+  [   4] 0xfffffe00083190f0 raw=0x80116a10042de088 -> 0xfffffe000b2e2088 (not a HID start)
+  [   5] 0xfffffe00083190f8 raw=0x80117a2a042ddea8 -> 0xfffffe000b2e1ea8 (not a HID start)
+  [   6] 0xfffffe0008319100 raw=0x8011af75042ddde4 -> 0xfffffe000b2e1de4 (not a HID start)
+  [   7] 0xfffffe0008319108 raw=0x8011137e042ddd20 -> 0xfffffe000b2e1d20 (not a HID start)
+  [   8] 0xfffffe0008319110 raw=0x80110655042ddc04 -> 0xfffffe000b2e1c04 (not a HID start)
+  [   9] 0xfffffe0008319118 raw=0x801143aa030d25a4 FUNC sz=0x60
+  [  10] 0xfffffe0008319120 raw=0x801112e9042dd7a4 -> 0xfffffe000b2e17a4 (not a HID start)
+  [  11] 0xfffffe0008319128 raw=0x801145780310c180 FUNC sz=0x114
+  [  12] 0xfffffe0008319130 raw=0x80114275042dd4f0 -> 0xfffffe000b2e14f0 (not a HID start)
+  [  13] 0xfffffe0008319138 raw=0x8011ff53042dd468 -> 0xfffffe000b2e1468 (not a HID start)
+  [  14] 0xfffffe0008319140 raw=0x80111814042dd3b0 -> 0xfffffe000b2e13b0 (not a HID start)
+  [  15] 0xfffffe0008319148 raw=0x8011122e042dd2f0 -> 0xfffffe000b2e12f0 (not a HID start)
+  [  16] 0xfffffe0008319150 raw=0x801113f6042dd1d4 -> 0xfffffe000b2e11d4 (not a HID start)
+  [  17] 0xfffffe0008319158 raw=0x80111d35042dd0b8 -> 0xfffffe000b2e10b8 (not a HID start)
+  [  18] 0xfffffe0008319160 raw=0x8011acb1042dcfb8 -> 0xfffffe000b2e0fb8 (not a HID start)
+  [  19] 0xfffffe0008319168 raw=0x80117eb0042dcf3c -> 0xfffffe000b2e0f3c (not a HID start)
+  [  20] 0xfffffe0008319170 raw=0x80111262042dcec0 -> 0xfffffe000b2e0ec0 (not a HID start)
+  [  21] 0xfffffe0008319178 raw=0x801182eb042dcdc0 -> 0xfffffe000b2e0dc0 (not a HID start)
+  [  22] 0xfffffe0008319180 raw=0x8011164e042dcd40 -> 0xfffffe000b2e0d40 (not a HID start)
+  [  23] 0xfffffe0008319188 raw=0x801137a5042dccc0 -> 0xfffffe000b2e0cc0 (not a HID start)
+  [  24] 0xfffffe0008319190 raw=0x8011b659042dcae0 -> 0xfffffe000b2e0ae0 (not a HID start)
+  [  25] 0xfffffe0008319198 raw=0x80116c51042dc900 -> 0xfffffe000b2e0900 (not a HID start)
+  [  26] 0xfffffe00083191a0 raw=0x8011a20f042dc720 -> 0xfffffe000b2e0720 (not a HID start)
+  [  27] 0xfffffe00083191a8 raw=0x8011b3b6042dc5f8 -> 0xfffffe000b2e05f8 (not a HID start)
+  [  28] 0xfffffe00083191b0 raw=0x80116bcb042dc4d0 -> 0xfffffe000b2e04d0 (not a HID start)
+  [  29] 0xfffffe00083191b8 raw=0x80115a20042dc3a8 -> 0xfffffe000b2e03a8 (not a HID start)
+  [  30] 0xfffffe00083191c0 raw=0x80115062042dc228 -> 0xfffffe000b2e0228 (not a HID start)
+  [  31] 0xfffffe00083191c8 raw=0x801100d7042f4224 -> 0xfffffe000b2f8224 (not a HID start)

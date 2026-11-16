@@ -168,7 +168,37 @@ corrupt the next cross-build comparison.
    positive detector for the stale-bit effect. Do not spend another device cycle
    on the current open type-2 client without that identification.
 
-## 8. Pitfall recorded
+## 8. Follow-up: the owning vtable is located (class name still open)
+
+Bounded static continuation, **within 24A446 only**.
+
+* The dispatcher `0xfffffe000a0fc374` (`0x2ec`) has exactly one direct caller:
+  a **0x30-byte stub** at `0xfffffe000a0fc344`.
+* That stub is referenced by exactly **one** arm64e auth-pointer slot, file
+  offset `0x13150d0` = VA `0xfffffe00083190d0`, inside IOHIDFamily
+  `__DATA_CONST`. Walking the surrounding qwords gives a genuine C++ vtable:
+  `offset-to-top = 0` and `RTTI = NULL` at `0xfffffe0008319060`/`...068`, then
+  function pointers. Entries mix **IOHIDFamily-local methods**
+  (`0xfffffe000a0d6144`, `...d614c`, `...d61ac`, `...d6340`, `...d65a4`,
+  `...10180`) with kernel-core base-class implementations
+  (`0xfffffe000b26xxxx`, `0xb2exxxx`), i.e. shared base methods plus per-derived
+  overrides — the standard shape. So the dispatcher is a **virtual method of an
+  IOUserClient-derived class**, not free-floating glue.
+* **No string is referenced by any of the seven local vtable methods** (ADRP+ADD
+  scan against IOHIDFamily `__TEXT`), so the class name is still unresolved.
+  The vtable address itself has no literal/auth/chained reference in the image,
+  so naming needs the `__OSMetaClass` path rather than a pointer scan.
+* **The 22 thunks are not all fed by one dispatcher.** Direct BL/B callers land
+  in at least three distinct functions: `0xfffffe000a0fc374` (thunks
+  `a0fc660`/`a0fc744`/`a0fc82c`/`a0fcaac`), `0xfffffe000a0fd994`
+  (`a0fd9c8`), and `0xfffffe000a0fea30` (`a0ffc1c`, `a0ff590`). One thunk
+  (`a0fdd94`) has two callers. The thunk family therefore spans several client
+  classes, consistent with `--opencand` measuring several distinct openable HID
+  services.
+
+Raw: `analysis/evidence/bit8-byte-census-2026-11-16/vt-hid-24A446.txt`.
+
+## 9. Pitfall recorded
 
 `kz_blw_scan.py` and `kz_vtable.py find` take a VA plus a build; giving them a
 VA resolved in a *different* build returns a confident-looking wrong answer
