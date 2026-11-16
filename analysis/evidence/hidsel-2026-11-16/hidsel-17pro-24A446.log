@@ -1,0 +1,846 @@
+
+[2:18:03.909 PM] ========== Bench27 session ==========
+[2:18:03.909 PM] started   2026-11-14 2:18:03.905 PM +0000
+[2:18:03.909 PM] device    iPhone 17 Pro (iPhone18,1)
+[2:18:03.909 PM] chip      A19 Pro
+[2:18:03.909 PM] system    Version 27.0.1 (Build 24A446)
+[2:18:03.909 PM] app       1.0 (1)
+[2:18:03.909 PM] bundle    com.bench27.agxprobe
+[2:18:03.909 PM] log       session-20261114-21803-901 PM-F920214D.log
+[2:18:03.909 PM] =====================================
+[2:18:03.909 PM] tests     01 IOSurface ?? 02 Metal ?? 03 FigXPC ?? 04 AVE ?? 05 ANE ?? 06 scan ?? 07 crash ?? 08 panic ?? 09 PDF ?? 10 AGX fields ?? 11 DPB
+[2:18:03.909 PM] [*] reclaim dlsym _mach_vm_deferred_reclamation_buffer_allocate -> 0x0
+[2:18:03.910 PM] [*] reclaim dlsym _mach_vm_deferred_reclamation_buffer_flush -> 0x0
+[2:18:03.910 PM] [*] reclaim dlsym _mach_vm_deferred_reclamation_buffer_resize -> 0x0
+[2:18:03.910 PM] [*] reclaim dlsym _mach_vm_deferred_reclamation_buffer_query -> 0x0
+[2:18:03.911 PM] [*] reclaim ctl dlsym _mach_vm_allocate -> 0x0
+[2:18:03.911 PM] [*] reclaim ctl dlsym _mach_vm_deallocate -> 0x1d154dbac
+[2:18:03.911 PM] [*] reclaim ctl dlsym _mach_vm_purgable_control -> 0x0
+[2:18:03.911 PM] [*] reclaim ctl dlsym _mach_vm_range_create -> 0x0
+[2:18:03.911 PM] [*] reclaim ctl dlsym _mach_vm_reallocate -> 0x0
+[2:18:03.911 PM] [*] reclaim ctl dlsym _mach_vm_reclaim_ring_allocate -> 0x0
+[2:18:03.912 PM] [*] reclaim: _mach_vm_reallocate not exported either; the whole mach_vm extension family is absent from iOS libSystem
+[2:18:03.912 PM] [*] reclaim: no deferred-reclamation symbols in libSystem (family may have been renamed to mach_vm_reclaim_ring_*)
+
+[2:44:11.395 PM] ========== Bench27 session ==========
+[2:44:11.395 PM] started   2026-11-14 2:44:11.390 PM +0000
+[2:44:11.395 PM] device    iPhone 17 Pro (iPhone18,1)
+[2:44:11.395 PM] chip      A19 Pro
+[2:44:11.395 PM] system    Version 27.0.1 (Build 24A446)
+[2:44:11.395 PM] app       1.0 (1)
+[2:44:11.395 PM] bundle    com.bench27.agxprobe
+[2:44:11.395 PM] log       session-20261114-24411-387 PM-802F43B3.log
+[2:44:11.395 PM] =====================================
+[2:44:11.395 PM] tests     01 IOSurface ?? 02 Metal ?? 03 FigXPC ?? 04 AVE ?? 05 ANE ?? 06 scan ?? 07 crash ?? 08 panic ?? 09 PDF ?? 10 AGX fields ?? 11 DPB
+[2:44:11.395 PM] [*] reclaim dlsym _mach_vm_deferred_reclamation_buffer_allocate -> 0x0
+[2:44:11.395 PM] [*] reclaim dlsym _mach_vm_deferred_reclamation_buffer_flush -> 0x0
+[2:44:11.395 PM] [*] reclaim dlsym _mach_vm_deferred_reclamation_buffer_resize -> 0x0
+[2:44:11.396 PM] [*] reclaim dlsym _mach_vm_deferred_reclamation_buffer_query -> 0x0
+[2:44:11.396 PM] [*] reclaim ctl dlsym _mach_vm_allocate -> 0x0
+[2:44:11.396 PM] [*] reclaim ctl dlsym _mach_vm_deallocate -> 0x1d154dbac
+[2:44:11.396 PM] [*] reclaim ctl dlsym _mach_vm_purgable_control -> 0x0
+[2:44:11.396 PM] [*] reclaim ctl dlsym _mach_vm_range_create -> 0x0
+[2:44:11.396 PM] [*] reclaim ctl dlsym _mach_vm_reallocate -> 0x0
+[2:44:11.396 PM] [*] reclaim ctl dlsym _mach_vm_reclaim_ring_allocate -> 0x0
+[2:44:11.396 PM] [*] reclaim: _mach_vm_reallocate not exported either; the whole mach_vm extension family is absent from iOS libSystem
+[2:44:11.396 PM] [*] reclaim: no deferred-reclamation symbols in libSystem (family may have been renamed to mach_vm_reclaim_ring_*)
+
+[8:07:31.518 PM] ========== Bench27 session ==========
+[8:07:31.519 PM] started   2026-11-14 8:07:31.513 PM +0000
+[8:07:31.519 PM] device    iPhone 17 Pro (iPhone18,1)
+[8:07:31.519 PM] chip      A19 Pro
+[8:07:31.519 PM] system    Version 27.0.1 (Build 24A446)
+[8:07:31.519 PM] app       1.0 (1)
+[8:07:31.519 PM] bundle    com.bench27.agxprobe
+[8:07:31.519 PM] log       session-20261114-80731-511 PM-DD574353.log
+[8:07:31.519 PM] =====================================
+[8:07:31.519 PM] tests     01 IOSurface ?? 02 Metal ?? 03 FigXPC ?? 04 AVE ?? 05 ANE ?? 06 scan ?? 07 crash ?? 08 panic ?? 09 PDF ?? 10 AGX fields ?? 11 DPB
+[8:07:31.519 PM] [*] routesock start (PF_ROUTE bidirectionality + malformed-sockaddr probe)
+[8:07:31.519 PM] [*] routesock layout: sizeof(hdr)=92 version_off=2 addrs_off=12
+[8:07:31.519 PM] [+] PF_ROUTE/SOCK_RAW/AF_INET -> fd=135 errno=0 (Undefined error: 0)
+[8:07:31.847 PM] [*] routesock S0 unsolicited read -> 0 bytes
+[8:07:31.847 PM] [*] routesock S1 GET @0x54 dst=192.0.2.1 msglen=100 -> 100 errno=0
+[8:07:33.118 PM] [*] routesock S1 reply -> 128 bytes
+[8:07:33.118 PM] S1 0000: 80 00 05 04 16 00 00 00 43 08 01 40 07 00 00 00
+[8:07:33.118 PM] S1 0010: 33 a8 00 00 01 00 00 00 00 00 00 00 00 00 00 00
+[8:07:33.118 PM] S1 0020: 00 00 00 00 00 00 00 00 dc 05 00 00 00 00 00 00
+[8:07:33.118 PM] S1 0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+[8:07:33.118 PM] S1 0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+[8:07:33.118 PM] S1 0050: 00 00 00 00 00 00 00 00 00 00 00 00 10 02 00 00
+[8:07:33.118 PM] S1 0060: 00 00 00 00 00 00 00 00 00 00 00 00 10 02 00 00
+[8:07:33.118 PM] S1 0070: c0 a8 01 01 16 00 00 00 00 00 00 00 00 00 00 00
+[8:07:33.118 PM] S1 hdr: msglen=128 version=5 type=4 index=22 flags=0x40010843 addrs=0x7 pid=43059 seq=1 errno=0
+[8:07:33.118 PM] S1 sa0 @0x5c len=16 family=2
+[8:07:33.118 PM] S1 sa1 @0x6c len=16 family=2
+[8:07:33.118 PM] S1 sa2 @0x7c len=0 family=0
+[8:07:33.118 PM] [*] routesock S2 GET @0x5c dst=192.0.2.1 msglen=108 -> 108 errno=0
+[8:07:34.394 PM] [*] routesock S2 reply -> 128 bytes
+[8:07:34.394 PM] S2 0000: 80 00 05 04 16 00 00 00 43 08 01 40 07 00 00 00
+[8:07:34.394 PM] S2 0010: 33 a8 00 00 02 00 00 00 00 00 00 00 00 00 00 00
+[8:07:34.394 PM] S2 0020: 00 00 00 00 00 00 00 00 dc 05 00 00 00 00 00 00
+[8:07:34.394 PM] S2 0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+[8:07:34.394 PM] S2 0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+[8:07:34.394 PM] S2 0050: 00 00 00 00 00 00 00 00 00 00 00 00 10 02 00 00
+[8:07:34.394 PM] S2 0060: 00 00 00 00 00 00 00 00 00 00 00 00 10 02 00 00
+[8:07:34.394 PM] S2 0070: c0 a8 01 01 16 00 00 00 00 00 00 00 00 00 00 00
+[8:07:34.394 PM] S2 hdr: msglen=128 version=5 type=4 index=22 flags=0x40010843 addrs=0x7 pid=43059 seq=2 errno=0
+[8:07:34.394 PM] S2 sa0 @0x5c len=16 family=2
+[8:07:34.394 PM] S2 sa1 @0x6c len=16 family=2
+[8:07:34.394 PM] S2 sa2 @0x7c len=0 family=0
+[8:07:34.394 PM] [*] routesock S3 GET dst=127.0.0.1 msglen=108 -> 108 errno=0
+[8:07:35.664 PM] [*] routesock S3 reply -> 124 bytes
+[8:07:35.664 PM] S3 0000: 7c 00 05 04 01 00 00 00 45 00 20 00 03 00 00 00
+[8:07:35.664 PM] S3 0010: 33 a8 00 00 03 00 00 00 00 00 00 00 00 00 00 00
+[8:07:35.664 PM] S3 0020: 00 00 00 00 00 00 00 00 00 40 00 00 00 00 00 00
+[8:07:35.664 PM] S3 0030: 00 00 00 00 00 c0 00 00 00 c0 00 00 00 00 00 00
+[8:07:35.664 PM] S3 0040: ef 03 00 00 ba 00 00 00 8e d9 7a 05 d8 3f 00 00
+[8:07:35.664 PM] S3 0050: 00 00 00 00 00 00 00 00 00 00 00 00 10 02 00 00
+[8:07:35.664 PM] S3 0060: 7f 00 00 01 00 00 00 00 00 00 00 00 10 02 00 00
+[8:07:35.664 PM] S3 0070: 7f 00 00 01 00 00 00 00 00 00 00 00            
+[8:07:35.664 PM] S3 hdr: msglen=124 version=5 type=4 index=1 flags=0x200045 addrs=0x3 pid=43059 seq=3 errno=0
+[8:07:35.664 PM] S3 sa0 @0x5c len=16 family=2
+[8:07:35.664 PM] S3 sa1 @0x6c len=16 family=2
+[8:07:35.664 PM] [*] routesock S4 GET sa_len=0xff msglen=108 -> -1 errno=22
+[8:07:36.498 PM] [*] routesock S4 reply -> 0 bytes
+[8:07:36.498 PM] [*] routesock S5 en0 IPv4 = 192.168.1.98
+[8:07:36.498 PM] [*] routesock S5 RTM_ADD 198.51.100.0/24 msglen=140 -> -1 errno=1
+[8:07:37.765 PM] [*] routesock S5 reply -> 0 bytes
+[8:07:37.765 PM] [*] routesock S6 GET 198.51.100.0 -> 108 errno=0
+[8:07:39.009 PM] [*] routesock S6 reply -> 128 bytes
+[8:07:39.009 PM] S6 0000: 80 00 05 04 16 00 00 00 43 08 01 40 07 00 00 00
+[8:07:39.009 PM] S6 0010: 33 a8 00 00 06 00 00 00 00 00 00 00 00 00 00 00
+[8:07:39.009 PM] S6 0020: 00 00 00 00 00 00 00 00 dc 05 00 00 00 00 00 00
+[8:07:39.009 PM] S6 0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+[8:07:39.009 PM] S6 0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+[8:07:39.009 PM] S6 0050: 00 00 00 00 00 00 00 00 00 00 00 00 10 02 00 00
+[8:07:39.009 PM] S6 0060: 00 00 00 00 00 00 00 00 00 00 00 00 10 02 00 00
+[8:07:39.009 PM] S6 0070: c0 a8 01 01 16 00 00 00 00 00 00 00 00 00 00 00
+[8:07:39.009 PM] S6 hdr: msglen=128 version=5 type=4 index=22 flags=0x40010843 addrs=0x7 pid=43059 seq=6 errno=0
+[8:07:39.009 PM] S6 sa0 @0x5c len=16 family=2
+[8:07:39.009 PM] S6 sa1 @0x6c len=16 family=2
+[8:07:39.009 PM] S6 sa2 @0x7c len=0 family=0
+[8:07:39.009 PM] [*] routesock S7 RTM_DELETE 198.51.100.0/24 msglen=124 -> -1 errno=1
+[8:07:40.263 PM] [*] routesock S7 reply -> 0 bytes
+[8:07:40.263 PM] [*] routesock S8 GET 198.51.100.0 after delete -> 108 errno=0
+[8:07:41.527 PM] [*] routesock S8 reply -> 128 bytes
+[8:07:41.528 PM] S8 0000: 80 00 05 04 16 00 00 00 43 08 01 40 07 00 00 00
+[8:07:41.528 PM] S8 0010: 33 a8 00 00 08 00 00 00 00 00 00 00 00 00 00 00
+[8:07:41.528 PM] S8 0020: 00 00 00 00 00 00 00 00 dc 05 00 00 00 00 00 00
+[8:07:41.528 PM] S8 0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+[8:07:41.528 PM] S8 0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+[8:07:41.528 PM] S8 0050: 00 00 00 00 00 00 00 00 00 00 00 00 10 02 00 00
+[8:07:41.528 PM] S8 0060: 00 00 00 00 00 00 00 00 00 00 00 00 10 02 00 00
+[8:07:41.528 PM] S8 0070: c0 a8 01 01 16 00 00 00 00 00 00 00 00 00 00 00
+[8:07:41.528 PM] S8 hdr: msglen=128 version=5 type=4 index=22 flags=0x40010843 addrs=0x7 pid=43059 seq=8 errno=0
+[8:07:41.528 PM] S8 sa0 @0x5c len=16 family=2
+[8:07:41.528 PM] S8 sa1 @0x6c len=16 family=2
+[8:07:41.528 PM] S8 sa2 @0x7c len=0 family=0
+[8:07:41.528 PM] [*] routesock done: stages(failures) = 0 0 0 0 1 1 0 1 0, first_err=0
+
+[9:23:00.923 AM] ========== Bench27 session ==========
+[9:23:00.923 AM] started   2026-11-14 9:23:00.917 AM +0000
+[9:23:00.923 AM] device    iPhone 17 Pro (iPhone18,1)
+[9:23:00.923 AM] chip      A19 Pro
+[9:23:00.923 AM] system    Version 27.0.1 (Build 24A446)
+[9:23:00.923 AM] app       1.0 (1)
+[9:23:00.923 AM] bundle    com.bench27.agxprobe
+[9:23:00.923 AM] log       session-20261114-92300-914 AM-8B23AC6F.log
+[9:23:00.923 AM] =====================================
+[9:23:00.923 AM] tests     01 IOSurface ?? 02 Metal ?? 03 FigXPC ?? 04 AVE ?? 05 ANE ?? 06 scan ?? 07 crash ?? 08 panic ?? 09 PDF ?? 10 AGX fields ?? 11 DPB
+[9:23:00.923 AM] [*] rawsock: probing 12 socket families (network-surface reachability)
+[9:23:00.924 AM] [-] AF_INET/SOCK_RAW/ICMP        ERR errno=1 (Operation not permitted)
+[9:23:00.924 AM] [-] AF_INET/SOCK_RAW/UDP         ERR errno=1 (Operation not permitted)
+[9:23:00.924 AM] [-] AF_INET/SOCK_RAW/TCP         ERR errno=1 (Operation not permitted)
+[9:23:00.924 AM] [-] AF_INET/SOCK_RAW/RAW         ERR errno=1 (Operation not permitted)
+[9:23:00.924 AM] [-] AF_INET/SOCK_DGRAM/IGMP      ERR errno=41 (Protocol wrong type for socket)
+[9:23:00.924 AM] [-] AF_INET6/SOCK_RAW/ICMPV6     ERR errno=1 (Operation not permitted)
+[9:23:00.924 AM] [-] AF_INET6/SOCK_RAW/RAW        ERR errno=1 (Operation not permitted)
+[9:23:00.924 AM] [-] PF_NDRV/SOCK_RAW/0           ERR errno=1 (Operation not permitted)
+[9:23:00.924 AM] [+] PF_ROUTE/SOCK_RAW/INET       OK fd=135
+[9:23:00.924 AM] [+] AF_SYSTEM/SOCK_DGRAM/CTRL    OK fd=135
+[9:23:00.924 AM] [+] AF_INET/SOCK_STREAM/TCP      OK fd=135
+[9:23:00.924 AM] [+] AF_UNIX/SOCK_DGRAM/0         OK fd=135
+[9:23:00.924 AM] [-] /dev/bpf0 open errno=1 (Operation not permitted)
+[9:23:00.924 AM] [-] rawsock: no raw IPv4 socket available for injection test
+[9:23:00.924 AM] [*] rawsock: 4/12 socket families opened
+
+[10:41:38.482 PM] ========== Bench27 session ==========
+[10:41:38.482 PM] started   2026-11-15 10:41:38.473 PM +0000
+[10:41:38.482 PM] device    iPhone 17 Pro (iPhone18,1)
+[10:41:38.482 PM] chip      A19 Pro
+[10:41:38.482 PM] system    Version 27.0.1 (Build 24A446)
+[10:41:38.482 PM] app       1.0 (1)
+[10:41:38.482 PM] bundle    com.bench27.agxprobe
+[10:41:38.482 PM] log       session-20261115-104138-469 PM-0C49050B.log
+[10:41:38.482 PM] =====================================
+[10:41:38.482 PM] tests     01 IOSurface ?? 02 Metal ?? 03 FigXPC ?? 04 AVE ?? 05 ANE ?? 06 scan ?? 07 crash ?? 08 panic ?? 09 PDF ?? 10 AGX fields ?? 11 DPB
+[10:41:38.482 PM] [*] iosurfrace syms create=0x1dc0d5980 id=0x1dc0d5360 base=0x1dc0d9b20 alloc=0x1dc0d714c mach_vm_map=0x25178b814
+[10:41:38.482 PM] [*] iosurfrace phase0 control base=0x10bec4000 alloc=0x8000
+[10:41:38.483 PM] [*] iosurfrace phase0 after release + spray(64): base_reused=YES idx=0
+[10:41:38.484 PM] [*] iosurfrace surface id=0x87 base=0x10bec4000 alloc=0x8000 marker=0xaaaa0001 rb=0xaaaa0001
+[10:41:38.484 PM] [*] iosurfrace entry(size=0x8000) -> kr=0 (0x0) handle=0x8203
+[10:41:38.484 PM] [*] iosurfrace alias1 -> kr=0 (0x0) at 0x10becc000 marker=0xaaaa0001 same=YES
+[10:41:38.484 PM] [*] iosurfrace alias1 deallocated; no user mapping of the object remains
+[10:41:38.484 PM] [*] iosurfrace surface CFReleased; only the memory entry remains
+[10:41:38.485 PM] [*] iosurfrace spray(64): old base reclaimed=YES idx=0
+[10:41:38.485 PM] [*] iosurfrace alias2(after release) -> kr=0 (0x0) at 0x10c0d8000 read=0xaaaa0001
+[10:41:38.485 PM] [*] iosurfrace spray_base_content=0xaaaa0001
+[10:41:38.485 PM] [*] iosurfrace discriminator: wrote 0x77770002 into reclaimed surface, alias now reads 0x77770002 (after control write: 0x77770002)
+[10:41:38.485 PM] [*] iosurfrace VERDICT alias_follows_new_owner=YES marker_intact=no
+
+[10:56:15.141 PM] ========== Bench27 session ==========
+[10:56:15.141 PM] started   2026-11-15 10:56:15.135 PM +0000
+[10:56:15.141 PM] device    iPhone 17 Pro (iPhone18,1)
+[10:56:15.141 PM] chip      A19 Pro
+[10:56:15.141 PM] system    Version 27.0.1 (Build 24A446)
+[10:56:15.141 PM] app       1.0 (1)
+[10:56:15.141 PM] bundle    com.bench27.agxprobe
+[10:56:15.141 PM] log       session-20261115-105615-130 PM-9BCD20FB.log
+[10:56:15.141 PM] =====================================
+[10:56:15.141 PM] tests     01 IOSurface ?? 02 Metal ?? 03 FigXPC ?? 04 AVE ?? 05 ANE ?? 06 scan ?? 07 crash ?? 08 panic ?? 09 PDF ?? 10 AGX fields ?? 11 DPB
+[10:56:15.141 PM] [*] IOSurface notify probe v14 build14 spray-then-touch
+[10:56:15.141 PM] [*] Set=0x1dc0da6e8 Remove=0x1dc0e1390 Create=0x1dc0d5980 GetID=0x1dc0d5360
+[10:56:15.141 PM] [*] notify port 0x6a0f (kr=0x0)
+[10:56:15.141 PM] [+] surface id 0x9c
+[10:56:15.141 PM] [*] order=0  set=0x0  remove=0xe00002c2
+[10:56:15.141 PM] [*] order=1  set=0x0  remove=0x0
+[10:56:15.141 PM] [*] sequential pairs on a stable surface
+[10:56:15.141 PM] [seq 0] set=0x0 remove=0x0
+[10:56:15.141 PM] [seq 1] set=0x0 remove=0x0
+[10:56:15.141 PM] [seq 2] set=0x0 remove=0x0
+[10:56:15.141 PM] [seq 3] set=0x0 remove=0x0
+[10:56:15.141 PM] [seq 4] set=0x0 remove=0x0
+[10:56:15.141 PM] [*] race: settle, then set during release, order=1
+[10:56:15.141 PM] [set] order=1 kr=0xe00002c9
+[10:56:15.141 PM] [rem] kr=0xe00002c2
+[10:56:15.141 PM] [rem] kr=0xe00002c2
+[10:56:15.141 PM] [rem] kr=0xe00002c2
+[10:56:15.141 PM] [rem] kr=0xe00002c2
+[10:56:15.141 PM] [rem] kr=0xe00002c2
+[10:56:15.141 PM] [rem] kr=0xe00002c2
+[10:56:15.141 PM] [rem] kr=0xe00002c2
+[10:56:15.141 PM] [rem] kr=0xe00002c2
+[10:56:15.141 PM] [rem] kr=0xe00002c2
+[10:56:15.141 PM] [rem] kr=0xe00002c2
+[10:56:15.141 PM] [set] order=1 kr=0xe00002c9
+[10:56:15.144 PM] [*] iteration 0, surface 0x9c
+[10:56:15.273 PM] [*] iteration 50, surface 0x87
+[10:56:15.400 PM] [*] iteration 100, surface 0x87
+[10:56:15.529 PM] [*] iteration 150, surface 0x87
+[10:56:15.658 PM] [*] iteration 200, surface 0x87
+[10:56:15.788 PM] [*] iteration 250, surface 0x87
+[10:56:15.920 PM] [*] iteration 300, surface 0x87
+[10:56:16.049 PM] [*] iteration 350, surface 0x87
+[10:56:16.182 PM] [*] phase A: register, drop the surface, then spray to reclaim its memory
+[10:56:16.182 PM] [A] surface 0x8b set=0x0
+[10:56:16.182 PM] [A] released without remove
+[10:56:16.184 PM] [*] sprayed 48 surfaces
+[10:56:16.184 PM] [*] sprayed surface 0 landed on id 0x8b
+[10:56:16.184 PM] [B] touching the stale id 0x8b after the spray
+[10:56:16.184 PM] [B] set    = 0xe00002c9
+[10:56:16.184 PM] [B] remove = 0x0
+[10:56:16.184 PM] [B] set again = 0x0
+[10:56:16.184 PM] [*] probe finished, no crash
+
+[5:37:49.866 PM] ========== Bench27 session ==========
+[5:37:49.867 PM] started   2026-11-15 5:37:49.852 PM +0000
+[5:37:49.867 PM] device    iPhone 17 Pro (iPhone18,1)
+[5:37:49.867 PM] chip      A19 Pro
+[5:37:49.867 PM] system    Version 27.0.1 (Build 24A446)
+[5:37:49.867 PM] app       1.1 (9)
+[5:37:49.867 PM] bundle    com.bench27.agxprobe
+[5:37:49.867 PM] log       session-20261115-53749-850 PM-8136230D.log
+[5:37:49.867 PM] =====================================
+[5:37:49.867 PM] tests     01 IOSurface ?? 02 Metal ?? 03 FigXPC ?? 04 AVE ?? 05 ANE ?? 06 scan ?? 07 crash ?? 08 panic ?? 09 PDF ?? 10 AGX fields ?? 11 DPB
+[5:37:49.867 PM] [*] mementry vm_allocate -> 0 (0x0) at 0x100cdc000
+[5:37:49.867 PM] [*] mementry make_memory_entry_64 -> 0 (0x0) handle=0x8403 size=65536
+[5:37:49.867 PM] [*] mementry vm_map(alias) -> 17 (0x11) at 0x0
+
+[6:19:54.382 AM] ========== Bench27 session ==========
+[6:19:54.382 AM] started   2026-11-15 6:19:54.372 AM +0000
+[6:19:54.382 AM] device    iPhone 17 Pro (iPhone18,1)
+[6:19:54.382 AM] chip      A19 Pro
+[6:19:54.382 AM] system    Version 27.0.1 (Build 24A446)
+[6:19:54.382 AM] app       1.0 (1)
+[6:19:54.382 AM] bundle    com.bench27.agxprobe
+[6:19:54.382 AM] log       session-20261115-61954-370 AM-81D17C59.log
+[6:19:54.382 AM] =====================================
+[6:19:54.382 AM] tests     01 IOSurface ?? 02 Metal ?? 03 FigXPC ?? 04 AVE ?? 05 ANE ?? 06 scan ?? 07 crash ?? 08 panic ?? 09 PDF ?? 10 AGX fields ?? 11 DPB
+[6:19:54.382 AM] [*] mementry vm_allocate -> 0 (0x0) at 0x100694000
+[6:19:54.382 AM] [*] mementry make_memory_entry_64 -> 0 (0x0) handle=0x6b03 size=65536
+[6:19:54.383 AM] [*] mementry vm_map(alias) -> 17 (0x11) at 0x0
+
+[7:23:48.707 PM] ========== Bench27 session ==========
+[7:23:48.707 PM] started   2026-11-15 7:23:48.701 PM +0000
+[7:23:48.707 PM] device    iPhone 17 Pro (iPhone18,1)
+[7:23:48.707 PM] chip      A19 Pro
+[7:23:48.707 PM] system    Version 27.0.1 (Build 24A446)
+[7:23:48.707 PM] app       1.0 (1)
+[7:23:48.707 PM] bundle    com.bench27.agxprobe
+[7:23:48.707 PM] log       session-20261115-72348-696 PM-FC6FC65E.log
+[7:23:48.707 PM] =====================================
+[7:23:48.707 PM] tests     01 IOSurface ?? 02 Metal ?? 03 FigXPC ?? 04 AVE ?? 05 ANE ?? 06 scan ?? 07 crash ?? 08 panic ?? 09 PDF ?? 10 AGX fields ?? 11 DPB
+[7:23:48.707 PM] [*] iosurfreclaim syms create=0x1dc0d5980 id=0x1dc0d5360 base=0x1dc0d9b20 alloc=0x1dc0d714c mach_vm_map=0x25178b814
+[7:23:48.707 PM] [*] iosurfreclaim r0 region=0 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0000 rb=0xc0de0000
+[7:23:48.707 PM] [*] iosurfreclaim r0 entry(size=0x8000) -> kr=0 (0x0) handle=0x681b
+[7:23:48.707 PM] [*] iosurfreclaim r0 alias1 kr=0 marker=0xc0de0000 same=YES
+[7:23:48.707 PM] [*] iosurfreclaim r0 surface released; only the entry remains
+[7:23:48.707 PM] [*] iosurfreclaim r0 sweep kind=1 made=48
+[7:23:48.707 PM] [*] iosurfreclaim r0 map entry -> kr=0 (0x0) at 0x101200000
+[7:23:48.708 PM] [*] iosurfreclaim r0 no tag visible; word0=0xc0de0000
+[7:23:48.708 PM] [*] iosurfreclaim r0 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0000 marker_intact=YES
+[7:23:48.708 PM] [*] iosurfreclaim round 0 region=0 sweeper=vm stage=0
+[7:23:48.708 PM] [*] iosurfreclaim r1 region=0 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0000 rb=0xc0de0000
+[7:23:48.708 PM] [*] iosurfreclaim r1 entry(size=0x8000) -> kr=0 (0x0) handle=0x6827
+[7:23:48.708 PM] [*] iosurfreclaim r1 alias1 kr=0 marker=0xc0de0000 same=YES
+[7:23:48.708 PM] [*] iosurfreclaim r1 surface released; only the entry remains
+[7:23:48.708 PM] [*] iosurfreclaim r1 sweep kind=2 made=48
+[7:23:48.708 PM] [*] iosurfreclaim r1 map entry -> kr=0 (0x0) at 0x101200000
+[7:23:48.708 PM] [*] iosurfreclaim r1 no tag visible; word0=0xc0de0000
+[7:23:48.708 PM] [*] iosurfreclaim r1 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0000 marker_intact=YES
+[7:23:48.708 PM] [*] iosurfreclaim round 1 region=0 sweeper=mmap stage=0
+[7:23:48.708 PM] [*] iosurfreclaim r2 region=0 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0000 rb=0xc0de0000
+[7:23:48.708 PM] [*] iosurfreclaim r2 entry(size=0x8000) -> kr=0 (0x0) handle=0x6833
+[7:23:48.708 PM] [*] iosurfreclaim r2 alias1 kr=0 marker=0xc0de0000 same=YES
+[7:23:48.708 PM] [*] iosurfreclaim r2 surface released; only the entry remains
+[7:23:48.708 PM] [*] iosurfreclaim r2 sweep kind=3 made=48
+[7:23:48.708 PM] [*] iosurfreclaim r2 map entry -> kr=0 (0x0) at 0x100b48000
+[7:23:48.708 PM] [*] iosurfreclaim r2 no tag visible; word0=0xc0de0000
+[7:23:48.708 PM] [*] iosurfreclaim r2 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0000 marker_intact=YES
+[7:23:48.708 PM] [*] iosurfreclaim round 2 region=0 sweeper=malloc stage=0
+[7:23:48.708 PM] [*] iosurfreclaim r3 region=0 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0000 rb=0xc0de0000
+[7:23:48.708 PM] [*] iosurfreclaim r3 entry(size=0x8000) -> kr=0 (0x0) handle=0x683f
+[7:23:48.708 PM] [*] iosurfreclaim r3 alias1 kr=0 marker=0xc0de0000 same=YES
+[7:23:48.709 PM] [*] iosurfreclaim r3 surface released; only the entry remains
+[7:23:48.709 PM] [*] iosurfreclaim r3 sweep kind=4 made=48
+[7:23:48.709 PM] [*] iosurfreclaim r3 map entry -> kr=0 (0x0) at 0x101200000
+[7:23:48.710 PM] [*] iosurfreclaim r3 no tag visible; word0=0xc0de0000
+[7:23:48.710 PM] [*] iosurfreclaim r3 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0000 marker_intact=YES
+[7:23:48.710 PM] [*] iosurfreclaim round 3 region=0 sweeper=file stage=0
+[7:23:48.710 PM] [*] iosurfreclaim r4 region=0 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0000 rb=0xc0de0000
+[7:23:48.710 PM] [*] iosurfreclaim r4 entry(size=0x8000) -> kr=0 (0x0) handle=0x684b
+[7:23:48.710 PM] [*] iosurfreclaim r4 alias1 kr=0 marker=0xc0de0000 same=YES
+[7:23:48.710 PM] [*] iosurfreclaim r4 surface released; only the entry remains
+[7:23:48.710 PM] [*] iosurfreclaim r4 sweep kind=5 made=48
+[7:23:48.710 PM] [*] iosurfreclaim r4 old base handed to sprayed surface idx=0
+[7:23:48.710 PM] [*] iosurfreclaim r4 map entry -> kr=0 (0x0) at 0x101210000
+[7:23:48.711 PM] [*] iosurfreclaim r4 no tag visible; word0=0xc0de0000
+[7:23:48.711 PM] [*] iosurfreclaim r4 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0000 marker_intact=YES
+[7:23:48.711 PM] [*] iosurfreclaim round 4 region=0 sweeper=iosrf stage=0
+[7:23:48.711 PM] [*] iosurfreclaim r5 region=1 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0001 rb=0xc0de0001
+[7:23:48.711 PM] [*] iosurfreclaim r5 entry(size=0x8000) -> kr=0 (0x0) handle=0x6857
+[7:23:48.711 PM] [*] iosurfreclaim r5 alias1 kr=0 marker=0xc0de0001 same=YES
+[7:23:48.711 PM] [*] iosurfreclaim r5 surface released; only the entry remains
+[7:23:48.711 PM] [*] iosurfreclaim r5 sweep kind=1 made=48
+[7:23:48.711 PM] [*] iosurfreclaim r5 map entry -> kr=0 (0x0) at 0x101210000
+[7:23:48.712 PM] [*] iosurfreclaim r5 no tag visible; word0=0xc0de0001
+[7:23:48.712 PM] [*] iosurfreclaim r5 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0001 marker_intact=YES
+[7:23:48.712 PM] [*] iosurfreclaim round 5 region=1 sweeper=vm stage=0
+[7:23:48.712 PM] [*] iosurfreclaim r6 region=1 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0001 rb=0xc0de0001
+[7:23:48.712 PM] [*] iosurfreclaim r6 entry(size=0x8000) -> kr=0 (0x0) handle=0x6863
+[7:23:48.712 PM] [*] iosurfreclaim r6 alias1 kr=0 marker=0xc0de0001 same=YES
+[7:23:48.712 PM] [*] iosurfreclaim r6 surface released; only the entry remains
+[7:23:48.712 PM] [*] iosurfreclaim r6 sweep kind=2 made=48
+[7:23:48.712 PM] [*] iosurfreclaim r6 map entry -> kr=0 (0x0) at 0x101210000
+[7:23:48.712 PM] [*] iosurfreclaim r6 no tag visible; word0=0xc0de0001
+[7:23:48.712 PM] [*] iosurfreclaim r6 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0001 marker_intact=YES
+[7:23:48.712 PM] [*] iosurfreclaim round 6 region=1 sweeper=mmap stage=0
+[7:23:48.712 PM] [*] iosurfreclaim r7 region=1 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0001 rb=0xc0de0001
+[7:23:48.712 PM] [*] iosurfreclaim r7 entry(size=0x8000) -> kr=0 (0x0) handle=0x686f
+[7:23:48.712 PM] [*] iosurfreclaim r7 alias1 kr=0 marker=0xc0de0001 same=YES
+[7:23:48.712 PM] [*] iosurfreclaim r7 surface released; only the entry remains
+[7:23:48.712 PM] [*] iosurfreclaim r7 sweep kind=3 made=48
+[7:23:48.712 PM] [*] iosurfreclaim r7 map entry -> kr=0 (0x0) at 0x100b48000
+[7:23:48.713 PM] [*] iosurfreclaim r7 no tag visible; word0=0xc0de0001
+[7:23:48.713 PM] [*] iosurfreclaim r7 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0001 marker_intact=YES
+[7:23:48.713 PM] [*] iosurfreclaim round 7 region=1 sweeper=malloc stage=0
+[7:23:48.713 PM] [*] iosurfreclaim r8 region=1 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0001 rb=0xc0de0001
+[7:23:48.713 PM] [*] iosurfreclaim r8 entry(size=0x8000) -> kr=0 (0x0) handle=0x687b
+[7:23:48.713 PM] [*] iosurfreclaim r8 alias1 kr=0 marker=0xc0de0001 same=YES
+[7:23:48.713 PM] [*] iosurfreclaim r8 surface released; only the entry remains
+[7:23:48.714 PM] [*] iosurfreclaim r8 sweep kind=4 made=48
+[7:23:48.714 PM] [*] iosurfreclaim r8 map entry -> kr=0 (0x0) at 0x101210000
+[7:23:48.715 PM] [*] iosurfreclaim r8 no tag visible; word0=0xc0de0001
+[7:23:48.715 PM] [*] iosurfreclaim r8 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0001 marker_intact=YES
+[7:23:48.715 PM] [*] iosurfreclaim round 8 region=1 sweeper=file stage=0
+[7:23:48.715 PM] [*] iosurfreclaim r9 region=1 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0001 rb=0xc0de0001
+[7:23:48.715 PM] [*] iosurfreclaim r9 entry(size=0x8000) -> kr=0 (0x0) handle=0x6887
+[7:23:48.715 PM] [*] iosurfreclaim r9 alias1 kr=0 marker=0xc0de0001 same=YES
+[7:23:48.715 PM] [*] iosurfreclaim r9 surface released; only the entry remains
+[7:23:48.716 PM] [*] iosurfreclaim r9 sweep kind=5 made=48
+[7:23:48.716 PM] [*] iosurfreclaim r9 old base handed to sprayed surface idx=0
+[7:23:48.716 PM] [*] iosurfreclaim r9 map entry -> kr=0 (0x0) at 0x101210000
+[7:23:48.716 PM] [*] iosurfreclaim r9 MATCH kind=5 idx=0 off=0x0 val=0x5a5a5000
+[7:23:48.716 PM] [*] iosurfreclaim WRITE-DIR: wrote 0x88880009 through stale alias, reclaimed surface reads 0x88880009 -> CONFIRMED
+[7:23:48.716 PM] [*] iosurfreclaim r9 VERDICT hit=1 kind=5 idx=0 off=0x0 word0=0x5a5a5000 marker_intact=no
+[7:23:48.716 PM] [*] iosurfreclaim round 9 region=1 sweeper=iosrf stage=1
+[7:23:48.716 PM] [*] iosurfreclaim r10 region=2 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0002 rb=0xc0de0002
+[7:23:48.716 PM] [*] iosurfreclaim r10 entry(size=0x8000) -> kr=0 (0x0) handle=0x6893
+[7:23:48.716 PM] [*] iosurfreclaim r10 alias1 kr=0 marker=0xc0de0002 same=YES
+[7:23:48.716 PM] [*] iosurfreclaim r10 surface released; only the entry remains
+[7:23:48.716 PM] [*] iosurfreclaim r10 sweep kind=1 made=48
+[7:23:48.716 PM] [*] iosurfreclaim r10 map entry -> kr=0 (0x0) at 0x101210000
+[7:23:48.716 PM] [*] iosurfreclaim r10 no tag visible; word0=0xc0de0002
+[7:23:48.716 PM] [*] iosurfreclaim r10 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0002 marker_intact=YES
+[7:23:48.716 PM] [*] iosurfreclaim round 10 region=2 sweeper=vm stage=0
+[7:23:48.716 PM] [*] iosurfreclaim r11 region=2 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0002 rb=0xc0de0002
+[7:23:48.717 PM] [*] iosurfreclaim r11 entry(size=0x8000) -> kr=0 (0x0) handle=0x689f
+[7:23:48.717 PM] [*] iosurfreclaim r11 alias1 kr=0 marker=0xc0de0002 same=YES
+[7:23:48.717 PM] [*] iosurfreclaim r11 surface released; only the entry remains
+[7:23:48.717 PM] [*] iosurfreclaim r11 sweep kind=2 made=48
+[7:23:48.717 PM] [*] iosurfreclaim r11 map entry -> kr=0 (0x0) at 0x101210000
+[7:23:48.717 PM] [*] iosurfreclaim r11 no tag visible; word0=0xc0de0002
+[7:23:48.717 PM] [*] iosurfreclaim r11 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0002 marker_intact=YES
+[7:23:48.717 PM] [*] iosurfreclaim round 11 region=2 sweeper=mmap stage=0
+[7:23:48.717 PM] [*] iosurfreclaim r12 region=2 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0002 rb=0xc0de0002
+[7:23:48.717 PM] [*] iosurfreclaim r12 entry(size=0x8000) -> kr=0 (0x0) handle=0x68ab
+[7:23:48.717 PM] [*] iosurfreclaim r12 alias1 kr=0 marker=0xc0de0002 same=YES
+[7:23:48.717 PM] [*] iosurfreclaim r12 surface released; only the entry remains
+[7:23:48.717 PM] [*] iosurfreclaim r12 sweep kind=3 made=48
+[7:23:48.717 PM] [*] iosurfreclaim r12 map entry -> kr=0 (0x0) at 0x100b48000
+[7:23:48.717 PM] [*] iosurfreclaim r12 no tag visible; word0=0xc0de0002
+[7:23:48.717 PM] [*] iosurfreclaim r12 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0002 marker_intact=YES
+[7:23:48.717 PM] [*] iosurfreclaim round 12 region=2 sweeper=malloc stage=0
+[7:23:48.717 PM] [*] iosurfreclaim r13 region=2 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0002 rb=0xc0de0002
+[7:23:48.717 PM] [*] iosurfreclaim r13 entry(size=0x8000) -> kr=0 (0x0) handle=0x68b7
+[7:23:48.717 PM] [*] iosurfreclaim r13 alias1 kr=0 marker=0xc0de0002 same=YES
+[7:23:48.717 PM] [*] iosurfreclaim r13 surface released; only the entry remains
+[7:23:48.718 PM] [*] iosurfreclaim r13 sweep kind=4 made=48
+[7:23:48.718 PM] [*] iosurfreclaim r13 map entry -> kr=0 (0x0) at 0x101210000
+[7:23:48.718 PM] [*] iosurfreclaim r13 no tag visible; word0=0xc0de0002
+[7:23:48.718 PM] [*] iosurfreclaim r13 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0002 marker_intact=YES
+[7:23:48.718 PM] [*] iosurfreclaim round 13 region=2 sweeper=file stage=0
+[7:23:48.718 PM] [*] iosurfreclaim r14 region=2 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0002 rb=0xc0de0002
+[7:23:48.718 PM] [*] iosurfreclaim r14 entry(size=0x8000) -> kr=0 (0x0) handle=0x68c3
+[7:23:48.718 PM] [*] iosurfreclaim r14 alias1 kr=0 marker=0xc0de0002 same=YES
+[7:23:48.718 PM] [*] iosurfreclaim r14 surface released; only the entry remains
+[7:23:48.719 PM] [*] iosurfreclaim r14 sweep kind=5 made=48
+[7:23:48.719 PM] [*] iosurfreclaim r14 old base handed to sprayed surface idx=0
+[7:23:48.719 PM] [*] iosurfreclaim r14 map entry -> kr=0 (0x0) at 0x101210000
+[7:23:48.719 PM] [*] iosurfreclaim r14 no tag visible; word0=0xc0de0002
+[7:23:48.719 PM] [*] iosurfreclaim r14 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0002 marker_intact=YES
+[7:23:48.719 PM] [*] iosurfreclaim round 14 region=2 sweeper=iosrf stage=0
+[7:23:48.719 PM] [*] iosurfreclaim r15 region=2 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0002 rb=0xc0de0002
+[7:23:48.719 PM] [*] iosurfreclaim r15 entry(size=0x8000) -> kr=0 (0x0) handle=0x68cf
+[7:23:48.719 PM] [*] iosurfreclaim r15 alias1 kr=0 marker=0xc0de0002 same=YES
+[7:23:48.719 PM] [*] iosurfreclaim r15 surface released; only the entry remains
+[7:23:48.720 PM] [*] iosurfreclaim r15 sweep kind=5 made=48
+[7:23:48.720 PM] [*] iosurfreclaim r15 old base handed to sprayed surface idx=0
+[7:23:48.720 PM] [*] iosurfreclaim r15 map entry -> kr=0 (0x0) at 0x101210000
+[7:23:48.720 PM] [*] iosurfreclaim r15 no tag visible; word0=0xc0de0002
+[7:23:48.720 PM] [*] iosurfreclaim r15 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0002 marker_intact=YES
+[7:23:48.720 PM] [*] iosurfreclaim round 15 victim=2 spray=0 stage=0
+[7:23:48.720 PM] [*] iosurfreclaim r16 region=2 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0002 rb=0xc0de0002
+[7:23:48.720 PM] [*] iosurfreclaim r16 entry(size=0x8000) -> kr=0 (0x0) handle=0x68db
+[7:23:48.720 PM] [*] iosurfreclaim r16 alias1 kr=0 marker=0xc0de0002 same=YES
+[7:23:48.720 PM] [*] iosurfreclaim r16 surface released; only the entry remains
+[7:23:48.721 PM] [*] iosurfreclaim r16 sweep kind=5 made=48
+[7:23:48.721 PM] [*] iosurfreclaim r16 old base handed to sprayed surface idx=0
+[7:23:48.721 PM] [*] iosurfreclaim r16 map entry -> kr=0 (0x0) at 0x101210000
+[7:23:48.721 PM] [*] iosurfreclaim r16 no tag visible; word0=0xc0de0002
+[7:23:48.721 PM] [*] iosurfreclaim r16 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0002 marker_intact=YES
+[7:23:48.722 PM] [*] iosurfreclaim round 16 victim=2 spray=1 stage=0
+[7:23:48.722 PM] [*] iosurfreclaim r17 region=2 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0002 rb=0xc0de0002
+[7:23:48.722 PM] [*] iosurfreclaim r17 entry(size=0x8000) -> kr=0 (0x0) handle=0x68e7
+[7:23:48.722 PM] [*] iosurfreclaim r17 alias1 kr=0 marker=0xc0de0002 same=YES
+[7:23:48.722 PM] [*] iosurfreclaim r17 surface released; only the entry remains
+[7:23:48.722 PM] [*] iosurfreclaim r17 sweep kind=5 made=48
+[7:23:48.722 PM] [*] iosurfreclaim r17 old base handed to sprayed surface idx=0
+[7:23:48.722 PM] [*] iosurfreclaim r17 map entry -> kr=0 (0x0) at 0x101210000
+[7:23:48.723 PM] [*] iosurfreclaim r17 no tag visible; word0=0xc0de0002
+[7:23:48.723 PM] [*] iosurfreclaim r17 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0002 marker_intact=YES
+[7:23:48.723 PM] [*] iosurfreclaim round 17 victim=2 spray=2 stage=0
+[7:23:48.723 PM] [*] iosurfreclaim r18 region=1 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0001 rb=0xc0de0001
+[7:23:48.723 PM] [*] iosurfreclaim r18 entry(size=0x8000) -> kr=0 (0x0) handle=0x68f3
+[7:23:48.723 PM] [*] iosurfreclaim r18 alias1 kr=0 marker=0xc0de0001 same=YES
+[7:23:48.723 PM] [*] iosurfreclaim r18 surface released; only the entry remains
+[7:23:48.723 PM] [*] iosurfreclaim r18 sweep kind=5 made=48
+[7:23:48.723 PM] [*] iosurfreclaim r18 old base handed to sprayed surface idx=0
+[7:23:48.723 PM] [*] iosurfreclaim r18 map entry -> kr=0 (0x0) at 0x101210000
+[7:23:48.724 PM] [*] iosurfreclaim r18 no tag visible; word0=0xc0de0001
+[7:23:48.724 PM] [*] iosurfreclaim r18 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0001 marker_intact=YES
+[7:23:48.724 PM] [*] iosurfreclaim round 18 victim=1 spray=2 stage=0
+[7:23:48.724 PM] [*] iosurfreclaim r19 region=0 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0000 rb=0xc0de0000
+[7:23:48.724 PM] [*] iosurfreclaim r19 entry(size=0x8000) -> kr=0 (0x0) handle=0x68ff
+[7:23:48.724 PM] [*] iosurfreclaim r19 alias1 kr=0 marker=0xc0de0000 same=YES
+[7:23:48.724 PM] [*] iosurfreclaim r19 surface released; only the entry remains
+[7:23:48.725 PM] [*] iosurfreclaim r19 sweep kind=5 made=48
+[7:23:48.725 PM] [*] iosurfreclaim r19 old base handed to sprayed surface idx=0
+[7:23:48.725 PM] [*] iosurfreclaim r19 map entry -> kr=0 (0x0) at 0x101210000
+[7:23:48.725 PM] [*] iosurfreclaim r19 no tag visible; word0=0xc0de0000
+[7:23:48.725 PM] [*] iosurfreclaim r19 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0000 marker_intact=YES
+[7:23:48.725 PM] [*] iosurfreclaim round 19 victim=0 spray=2 stage=0
+[7:23:48.725 PM] [*] iosurfreclaim r20 region=1 alloc=0x4000 id=0x7f base=0x100b48000 marker=0xc0de0001 rb=0xc0de0001
+[7:23:48.725 PM] [*] iosurfreclaim r20 entry(size=0x4000) -> kr=0 (0x0) handle=0x6803
+[7:23:48.725 PM] [*] iosurfreclaim r20 alias1 kr=0 marker=0xc0de0001 same=YES
+[7:23:48.725 PM] [*] iosurfreclaim r20 surface released; only the entry remains
+[7:23:48.726 PM] [*] iosurfreclaim r20 sweep kind=5 made=48
+[7:23:48.726 PM] [*] iosurfreclaim r20 old base handed to sprayed surface idx=0
+[7:23:48.726 PM] [*] iosurfreclaim r20 map entry -> kr=0 (0x0) at 0x100c0c000
+[7:23:48.726 PM] [*] iosurfreclaim r20 MATCH kind=5 idx=0 off=0x0 val=0x5a5a5000
+[7:23:48.726 PM] [*] iosurfreclaim WRITE-DIR: wrote 0x88880014 through stale alias, reclaimed surface reads 0x88880014 -> CONFIRMED
+[7:23:48.726 PM] [*] iosurfreclaim r20 VERDICT hit=1 kind=5 idx=0 off=0x0 word0=0x5a5a5000 marker_intact=no
+[7:23:48.726 PM] [*] iosurfreclaim round 20 region=1 sweeper=iosrf class=0x4000 stage=1
+[7:23:48.726 PM] [*] iosurfreclaim r21 region=1 alloc=0x8000 id=0x7f base=0x100b48000 marker=0xc0de0001 rb=0xc0de0001
+[7:23:48.726 PM] [*] iosurfreclaim r21 entry(size=0x8000) -> kr=0 (0x0) handle=0x680f
+[7:23:48.726 PM] [*] iosurfreclaim r21 alias1 kr=0 marker=0xc0de0001 same=YES
+[7:23:48.726 PM] [*] iosurfreclaim r21 surface released; only the entry remains
+[7:23:48.727 PM] [*] iosurfreclaim r21 sweep kind=5 made=48
+[7:23:48.727 PM] [*] iosurfreclaim r21 old base handed to sprayed surface idx=0
+[7:23:48.727 PM] [*] iosurfreclaim r21 map entry -> kr=0 (0x0) at 0x101210000
+[7:23:48.727 PM] [*] iosurfreclaim r21 MATCH kind=5 idx=0 off=0x0 val=0x5a5a5000
+[7:23:48.727 PM] [*] iosurfreclaim WRITE-DIR: wrote 0x88880015 through stale alias, reclaimed surface reads 0x88880015 -> CONFIRMED
+[7:23:48.727 PM] [*] iosurfreclaim r21 VERDICT hit=1 kind=5 idx=0 off=0x0 word0=0x5a5a5000 marker_intact=no
+[7:23:48.727 PM] [*] iosurfreclaim round 21 region=1 sweeper=iosrf class=0x8000 stage=1
+[7:23:48.727 PM] [*] iosurfreclaim r22 region=1 alloc=0x10000 id=0x7f base=0x100b48000 marker=0xc0de0001 rb=0xc0de0001
+[7:23:48.727 PM] [*] iosurfreclaim r22 entry(size=0x10000) -> kr=0 (0x0) handle=0x681b
+[7:23:48.727 PM] [*] iosurfreclaim r22 alias1 kr=0 marker=0xc0de0001 same=YES
+[7:23:48.727 PM] [*] iosurfreclaim r22 surface released; only the entry remains
+[7:23:48.728 PM] [*] iosurfreclaim r22 sweep kind=5 made=48
+[7:23:48.728 PM] [*] iosurfreclaim r22 old base handed to sprayed surface idx=0
+[7:23:48.728 PM] [*] iosurfreclaim r22 map entry -> kr=0 (0x0) at 0x105dd0000
+[7:23:48.728 PM] [*] iosurfreclaim r22 MATCH kind=5 idx=0 off=0x0 val=0x5a5a5000
+[7:23:48.728 PM] [*] iosurfreclaim WRITE-DIR: wrote 0x88880016 through stale alias, reclaimed surface reads 0x88880016 -> CONFIRMED
+[7:23:48.728 PM] [*] iosurfreclaim r22 VERDICT hit=1 kind=5 idx=0 off=0x0 word0=0x5a5a5000 marker_intact=no
+[7:23:48.728 PM] [*] iosurfreclaim round 22 region=1 sweeper=iosrf class=0x10000 stage=1
+[7:23:48.728 PM] [*] iosurfreclaim done rounds=23 hits=4
+
+[7:32:13.621 PM] ========== Bench27 session ==========
+[7:32:13.621 PM] started   2026-11-15 7:32:13.615 PM +0000
+[7:32:13.621 PM] device    iPhone 17 Pro (iPhone18,1)
+[7:32:13.621 PM] chip      A19 Pro
+[7:32:13.621 PM] system    Version 27.0.1 (Build 24A446)
+[7:32:13.621 PM] app       1.0 (1)
+[7:32:13.621 PM] bundle    com.bench27.agxprobe
+[7:32:13.621 PM] log       session-20261115-73213-611 PM-53F0D3F1.log
+[7:32:13.621 PM] =====================================
+[7:32:13.621 PM] tests     01 IOSurface ?? 02 Metal ?? 03 FigXPC ?? 04 AVE ?? 05 ANE ?? 06 scan ?? 07 crash ?? 08 panic ?? 09 PDF ?? 10 AGX fields ?? 11 DPB
+[7:32:13.621 PM] [*] iosurfrace syms create=0x1dc0d5980 id=0x1dc0d5360 base=0x1dc0d9b20 alloc=0x1dc0d714c mach_vm_map=0x25178b814
+[7:32:13.622 PM] [*] iosurfrace phase0 control base=0x1009f8000 alloc=0x8000
+[7:32:13.623 PM] [*] iosurfrace phase0 after release + spray(64): base_reused=YES idx=0
+[7:32:13.623 PM] [*] iosurfrace surface id=0x76 base=0x1009f8000 alloc=0x8000 marker=0xaaaa0001 rb=0xaaaa0001
+[7:32:13.623 PM] [*] iosurfrace entry(size=0x8000) -> kr=0 (0x0) handle=0x680b
+[7:32:13.623 PM] [*] iosurfrace alias1 -> kr=0 (0x0) at 0x100a00000 marker=0xaaaa0001 same=YES
+[7:32:13.623 PM] [*] iosurfrace alias1 deallocated; no user mapping of the object remains
+[7:32:13.623 PM] [*] iosurfrace surface CFReleased; only the memory entry remains
+[7:32:13.624 PM] [*] iosurfrace spray(64): old base reclaimed=YES idx=0
+[7:32:13.624 PM] [*] iosurfrace alias2(after release) -> kr=0 (0x0) at 0x105a8c000 read=0xaaaa0001
+[7:32:13.624 PM] [*] iosurfrace spray_base_content=0xaaaa0001
+[7:32:13.624 PM] [*] iosurfrace discriminator: wrote 0x77770002 into reclaimed surface, alias now reads 0x77770002 (after control write: 0x77770002)
+[7:32:13.624 PM] [*] iosurfrace VERDICT alias_follows_new_owner=YES marker_intact=no
+
+[8:39:07.353 PM] ========== Bench27 session ==========
+[8:39:07.353 PM] started   2026-11-15 8:39:07.347 PM +0000
+[8:39:07.353 PM] device    iPhone 17 Pro (iPhone18,1)
+[8:39:07.353 PM] chip      A19 Pro
+[8:39:07.353 PM] system    Version 27.0.1 (Build 24A446)
+[8:39:07.353 PM] app       1.0 (1)
+[8:39:07.353 PM] bundle    com.bench27.agxprobe
+[8:39:07.353 PM] log       session-20261115-83907-342 PM-1C70E6B7.log
+[8:39:07.353 PM] =====================================
+[8:39:07.353 PM] tests     01 IOSurface ?? 02 Metal ?? 03 FigXPC ?? 04 AVE ?? 05 ANE ?? 06 scan ?? 07 crash ?? 08 panic ?? 09 PDF ?? 10 AGX fields ?? 11 DPB
+[8:39:07.354 PM] [*] iosurfreclaim syms create=0x1dc0d5980 id=0x1dc0d5360 base=0x1dc0d9b20 alloc=0x1dc0d714c mach_vm_map=0x25178b814
+[8:39:07.354 PM] [*] iosurfreclaim r0 region=0 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0000 rb=0xc0de0000
+[8:39:07.354 PM] [*] iosurfreclaim r0 entry(size=0x8000) -> kr=0 (0x0) handle=0xa803
+[8:39:07.354 PM] [*] iosurfreclaim r0 alias1 kr=0 marker=0xc0de0000 same=YES
+[8:39:07.354 PM] [*] iosurfreclaim r0 surface released; only the entry remains
+[8:39:07.354 PM] [*] iosurfreclaim r0 sweep kind=1 made=48
+[8:39:07.354 PM] [*] iosurfreclaim r0 map entry -> kr=0 (0x0) at 0x10baec000
+[8:39:07.354 PM] [*] iosurfreclaim r0 no tag visible; word0=0xc0de0000
+[8:39:07.354 PM] [*] iosurfreclaim r0 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0000 marker_intact=YES
+[8:39:07.354 PM] [*] iosurfreclaim round 0 region=0 sweeper=vm stage=0
+[8:39:07.354 PM] [*] iosurfreclaim r1 region=0 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0000 rb=0xc0de0000
+[8:39:07.354 PM] [*] iosurfreclaim r1 entry(size=0x8000) -> kr=0 (0x0) handle=0xa80f
+[8:39:07.354 PM] [*] iosurfreclaim r1 alias1 kr=0 marker=0xc0de0000 same=YES
+[8:39:07.354 PM] [*] iosurfreclaim r1 surface released; only the entry remains
+[8:39:07.354 PM] [*] iosurfreclaim r1 sweep kind=2 made=48
+[8:39:07.354 PM] [*] iosurfreclaim r1 map entry -> kr=0 (0x0) at 0x10baec000
+[8:39:07.354 PM] [*] iosurfreclaim r1 no tag visible; word0=0xc0de0000
+[8:39:07.354 PM] [*] iosurfreclaim r1 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0000 marker_intact=YES
+[8:39:07.354 PM] [*] iosurfreclaim round 1 region=0 sweeper=mmap stage=0
+[8:39:07.355 PM] [*] iosurfreclaim r2 region=0 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0000 rb=0xc0de0000
+[8:39:07.355 PM] [*] iosurfreclaim r2 entry(size=0x8000) -> kr=0 (0x0) handle=0xa81b
+[8:39:07.355 PM] [*] iosurfreclaim r2 alias1 kr=0 marker=0xc0de0000 same=YES
+[8:39:07.355 PM] [*] iosurfreclaim r2 surface released; only the entry remains
+[8:39:07.355 PM] [*] iosurfreclaim r2 sweep kind=3 made=48
+[8:39:07.355 PM] [*] iosurfreclaim r2 map entry -> kr=0 (0x0) at 0x10254c000
+[8:39:07.355 PM] [*] iosurfreclaim r2 no tag visible; word0=0xc0de0000
+[8:39:07.355 PM] [*] iosurfreclaim r2 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0000 marker_intact=YES
+[8:39:07.355 PM] [*] iosurfreclaim round 2 region=0 sweeper=malloc stage=0
+[8:39:07.355 PM] [*] iosurfreclaim r3 region=0 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0000 rb=0xc0de0000
+[8:39:07.355 PM] [*] iosurfreclaim r3 entry(size=0x8000) -> kr=0 (0x0) handle=0xa827
+[8:39:07.355 PM] [*] iosurfreclaim r3 alias1 kr=0 marker=0xc0de0000 same=YES
+[8:39:07.355 PM] [*] iosurfreclaim r3 surface released; only the entry remains
+[8:39:07.356 PM] [*] iosurfreclaim r3 sweep kind=4 made=48
+[8:39:07.356 PM] [*] iosurfreclaim r3 map entry -> kr=0 (0x0) at 0x10baec000
+[8:39:07.356 PM] [*] iosurfreclaim r3 no tag visible; word0=0xc0de0000
+[8:39:07.356 PM] [*] iosurfreclaim r3 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0000 marker_intact=YES
+[8:39:07.356 PM] [*] iosurfreclaim round 3 region=0 sweeper=file stage=0
+[8:39:07.356 PM] [*] iosurfreclaim r4 region=0 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0000 rb=0xc0de0000
+[8:39:07.356 PM] [*] iosurfreclaim r4 entry(size=0x8000) -> kr=0 (0x0) handle=0xa833
+[8:39:07.356 PM] [*] iosurfreclaim r4 alias1 kr=0 marker=0xc0de0000 same=YES
+[8:39:07.356 PM] [*] iosurfreclaim r4 surface released; only the entry remains
+[8:39:07.357 PM] [*] iosurfreclaim r4 sweep kind=5 made=48
+[8:39:07.357 PM] [*] iosurfreclaim r4 old base handed to sprayed surface idx=0
+[8:39:07.357 PM] [*] iosurfreclaim r4 map entry -> kr=0 (0x0) at 0x10bafc000
+[8:39:07.357 PM] [*] iosurfreclaim r4 no tag visible; word0=0xc0de0000
+[8:39:07.357 PM] [*] iosurfreclaim r4 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0000 marker_intact=YES
+[8:39:07.357 PM] [*] iosurfreclaim round 4 region=0 sweeper=iosrf stage=0
+[8:39:07.358 PM] [*] iosurfreclaim r5 region=1 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0001 rb=0xc0de0001
+[8:39:07.358 PM] [*] iosurfreclaim r5 entry(size=0x8000) -> kr=0 (0x0) handle=0xa83f
+[8:39:07.358 PM] [*] iosurfreclaim r5 alias1 kr=0 marker=0xc0de0001 same=YES
+[8:39:07.358 PM] [*] iosurfreclaim r5 surface released; only the entry remains
+[8:39:07.358 PM] [*] iosurfreclaim r5 sweep kind=1 made=48
+[8:39:07.358 PM] [*] iosurfreclaim r5 map entry -> kr=0 (0x0) at 0x10bafc000
+[8:39:07.358 PM] [*] iosurfreclaim r5 no tag visible; word0=0xc0de0001
+[8:39:07.358 PM] [*] iosurfreclaim r5 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0001 marker_intact=YES
+[8:39:07.358 PM] [*] iosurfreclaim round 5 region=1 sweeper=vm stage=0
+[8:39:07.358 PM] [*] iosurfreclaim r6 region=1 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0001 rb=0xc0de0001
+[8:39:07.358 PM] [*] iosurfreclaim r6 entry(size=0x8000) -> kr=0 (0x0) handle=0xa84b
+[8:39:07.358 PM] [*] iosurfreclaim r6 alias1 kr=0 marker=0xc0de0001 same=YES
+[8:39:07.359 PM] [*] iosurfreclaim r6 surface released; only the entry remains
+[8:39:07.359 PM] [*] iosurfreclaim r6 sweep kind=2 made=48
+[8:39:07.359 PM] [*] iosurfreclaim r6 map entry -> kr=0 (0x0) at 0x10bafc000
+[8:39:07.359 PM] [*] iosurfreclaim r6 no tag visible; word0=0xc0de0001
+[8:39:07.359 PM] [*] iosurfreclaim r6 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0001 marker_intact=YES
+[8:39:07.359 PM] [*] iosurfreclaim round 6 region=1 sweeper=mmap stage=0
+[8:39:07.359 PM] [*] iosurfreclaim r7 region=1 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0001 rb=0xc0de0001
+[8:39:07.359 PM] [*] iosurfreclaim r7 entry(size=0x8000) -> kr=0 (0x0) handle=0xa857
+[8:39:07.359 PM] [*] iosurfreclaim r7 alias1 kr=0 marker=0xc0de0001 same=YES
+[8:39:07.359 PM] [*] iosurfreclaim r7 surface released; only the entry remains
+[8:39:07.359 PM] [*] iosurfreclaim r7 sweep kind=3 made=48
+[8:39:07.359 PM] [*] iosurfreclaim r7 map entry -> kr=0 (0x0) at 0x10254c000
+[8:39:07.360 PM] [*] iosurfreclaim r7 no tag visible; word0=0xc0de0001
+[8:39:07.360 PM] [*] iosurfreclaim r7 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0001 marker_intact=YES
+[8:39:07.360 PM] [*] iosurfreclaim round 7 region=1 sweeper=malloc stage=0
+[8:39:07.360 PM] [*] iosurfreclaim r8 region=1 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0001 rb=0xc0de0001
+[8:39:07.360 PM] [*] iosurfreclaim r8 entry(size=0x8000) -> kr=0 (0x0) handle=0xa863
+[8:39:07.360 PM] [*] iosurfreclaim r8 alias1 kr=0 marker=0xc0de0001 same=YES
+[8:39:07.360 PM] [*] iosurfreclaim r8 surface released; only the entry remains
+[8:39:07.361 PM] [*] iosurfreclaim r8 sweep kind=4 made=48
+[8:39:07.361 PM] [*] iosurfreclaim r8 map entry -> kr=0 (0x0) at 0x10bafc000
+[8:39:07.361 PM] [*] iosurfreclaim r8 no tag visible; word0=0xc0de0001
+[8:39:07.361 PM] [*] iosurfreclaim r8 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0001 marker_intact=YES
+[8:39:07.361 PM] [*] iosurfreclaim round 8 region=1 sweeper=file stage=0
+[8:39:07.361 PM] [*] iosurfreclaim r9 region=1 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0001 rb=0xc0de0001
+[8:39:07.361 PM] [*] iosurfreclaim r9 entry(size=0x8000) -> kr=0 (0x0) handle=0xa86f
+[8:39:07.361 PM] [*] iosurfreclaim r9 alias1 kr=0 marker=0xc0de0001 same=YES
+[8:39:07.361 PM] [*] iosurfreclaim r9 surface released; only the entry remains
+[8:39:07.362 PM] [*] iosurfreclaim r9 sweep kind=5 made=48
+[8:39:07.362 PM] [*] iosurfreclaim r9 old base handed to sprayed surface idx=0
+[8:39:07.362 PM] [*] iosurfreclaim r9 map entry -> kr=0 (0x0) at 0x10bafc000
+[8:39:07.362 PM] [*] iosurfreclaim r9 MATCH kind=5 idx=0 off=0x0 val=0x5a5a5000
+[8:39:07.362 PM] [*] iosurfreclaim WRITE-DIR: wrote 0x88880009 through stale alias, reclaimed surface reads 0x88880009 -> CONFIRMED
+[8:39:07.362 PM] [*] iosurfreclaim r9 VERDICT hit=1 kind=5 idx=0 off=0x0 word0=0x5a5a5000 marker_intact=no
+[8:39:07.362 PM] [*] iosurfreclaim round 9 region=1 sweeper=iosrf stage=1
+[8:39:07.362 PM] [*] iosurfreclaim r10 region=2 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0002 rb=0xc0de0002
+[8:39:07.362 PM] [*] iosurfreclaim r10 entry(size=0x8000) -> kr=0 (0x0) handle=0xa87b
+[8:39:07.362 PM] [*] iosurfreclaim r10 alias1 kr=0 marker=0xc0de0002 same=YES
+[8:39:07.362 PM] [*] iosurfreclaim r10 surface released; only the entry remains
+[8:39:07.362 PM] [*] iosurfreclaim r10 sweep kind=1 made=48
+[8:39:07.362 PM] [*] iosurfreclaim r10 map entry -> kr=0 (0x0) at 0x10bafc000
+[8:39:07.363 PM] [*] iosurfreclaim r10 no tag visible; word0=0xc0de0002
+[8:39:07.363 PM] [*] iosurfreclaim r10 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0002 marker_intact=YES
+[8:39:07.363 PM] [*] iosurfreclaim round 10 region=2 sweeper=vm stage=0
+[8:39:07.363 PM] [*] iosurfreclaim r11 region=2 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0002 rb=0xc0de0002
+[8:39:07.363 PM] [*] iosurfreclaim r11 entry(size=0x8000) -> kr=0 (0x0) handle=0xa887
+[8:39:07.363 PM] [*] iosurfreclaim r11 alias1 kr=0 marker=0xc0de0002 same=YES
+[8:39:07.363 PM] [*] iosurfreclaim r11 surface released; only the entry remains
+[8:39:07.363 PM] [*] iosurfreclaim r11 sweep kind=2 made=48
+[8:39:07.363 PM] [*] iosurfreclaim r11 map entry -> kr=0 (0x0) at 0x10bafc000
+[8:39:07.363 PM] [*] iosurfreclaim r11 no tag visible; word0=0xc0de0002
+[8:39:07.363 PM] [*] iosurfreclaim r11 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0002 marker_intact=YES
+[8:39:07.363 PM] [*] iosurfreclaim round 11 region=2 sweeper=mmap stage=0
+[8:39:07.363 PM] [*] iosurfreclaim r12 region=2 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0002 rb=0xc0de0002
+[8:39:07.363 PM] [*] iosurfreclaim r12 entry(size=0x8000) -> kr=0 (0x0) handle=0xa893
+[8:39:07.363 PM] [*] iosurfreclaim r12 alias1 kr=0 marker=0xc0de0002 same=YES
+[8:39:07.363 PM] [*] iosurfreclaim r12 surface released; only the entry remains
+[8:39:07.363 PM] [*] iosurfreclaim r12 sweep kind=3 made=48
+[8:39:07.363 PM] [*] iosurfreclaim r12 map entry -> kr=0 (0x0) at 0x10254c000
+[8:39:07.364 PM] [*] iosurfreclaim r12 no tag visible; word0=0xc0de0002
+[8:39:07.364 PM] [*] iosurfreclaim r12 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0002 marker_intact=YES
+[8:39:07.364 PM] [*] iosurfreclaim round 12 region=2 sweeper=malloc stage=0
+[8:39:07.364 PM] [*] iosurfreclaim r13 region=2 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0002 rb=0xc0de0002
+[8:39:07.364 PM] [*] iosurfreclaim r13 entry(size=0x8000) -> kr=0 (0x0) handle=0xa89f
+[8:39:07.364 PM] [*] iosurfreclaim r13 alias1 kr=0 marker=0xc0de0002 same=YES
+[8:39:07.364 PM] [*] iosurfreclaim r13 surface released; only the entry remains
+[8:39:07.364 PM] [*] iosurfreclaim r13 sweep kind=4 made=48
+[8:39:07.364 PM] [*] iosurfreclaim r13 map entry -> kr=0 (0x0) at 0x10bafc000
+[8:39:07.365 PM] [*] iosurfreclaim r13 no tag visible; word0=0xc0de0002
+[8:39:07.365 PM] [*] iosurfreclaim r13 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0002 marker_intact=YES
+[8:39:07.365 PM] [*] iosurfreclaim round 13 region=2 sweeper=file stage=0
+[8:39:07.365 PM] [*] iosurfreclaim r14 region=2 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0002 rb=0xc0de0002
+[8:39:07.365 PM] [*] iosurfreclaim r14 entry(size=0x8000) -> kr=0 (0x0) handle=0xa8ab
+[8:39:07.365 PM] [*] iosurfreclaim r14 alias1 kr=0 marker=0xc0de0002 same=YES
+[8:39:07.365 PM] [*] iosurfreclaim r14 surface released; only the entry remains
+[8:39:07.365 PM] [*] iosurfreclaim r14 sweep kind=5 made=48
+[8:39:07.365 PM] [*] iosurfreclaim r14 old base handed to sprayed surface idx=0
+[8:39:07.365 PM] [*] iosurfreclaim r14 map entry -> kr=0 (0x0) at 0x10bafc000
+[8:39:07.366 PM] [*] iosurfreclaim r14 no tag visible; word0=0xc0de0002
+[8:39:07.366 PM] [*] iosurfreclaim r14 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0002 marker_intact=YES
+[8:39:07.366 PM] [*] iosurfreclaim round 14 region=2 sweeper=iosrf stage=0
+[8:39:07.366 PM] [*] iosurfreclaim r15 region=2 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0002 rb=0xc0de0002
+[8:39:07.366 PM] [*] iosurfreclaim r15 entry(size=0x8000) -> kr=0 (0x0) handle=0xa8b7
+[8:39:07.366 PM] [*] iosurfreclaim r15 alias1 kr=0 marker=0xc0de0002 same=YES
+[8:39:07.366 PM] [*] iosurfreclaim r15 surface released; only the entry remains
+[8:39:07.366 PM] [*] iosurfreclaim r15 sweep kind=5 made=48
+[8:39:07.366 PM] [*] iosurfreclaim r15 old base handed to sprayed surface idx=0
+[8:39:07.366 PM] [*] iosurfreclaim r15 map entry -> kr=0 (0x0) at 0x10bafc000
+[8:39:07.367 PM] [*] iosurfreclaim r15 no tag visible; word0=0xc0de0002
+[8:39:07.367 PM] [*] iosurfreclaim r15 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0002 marker_intact=YES
+[8:39:07.367 PM] [*] iosurfreclaim round 15 victim=2 spray=0 stage=0
+[8:39:07.367 PM] [*] iosurfreclaim r16 region=2 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0002 rb=0xc0de0002
+[8:39:07.367 PM] [*] iosurfreclaim r16 entry(size=0x8000) -> kr=0 (0x0) handle=0xa8c3
+[8:39:07.367 PM] [*] iosurfreclaim r16 alias1 kr=0 marker=0xc0de0002 same=YES
+[8:39:07.367 PM] [*] iosurfreclaim r16 surface released; only the entry remains
+[8:39:07.368 PM] [*] iosurfreclaim r16 sweep kind=5 made=48
+[8:39:07.368 PM] [*] iosurfreclaim r16 old base handed to sprayed surface idx=0
+[8:39:07.368 PM] [*] iosurfreclaim r16 map entry -> kr=0 (0x0) at 0x10bafc000
+[8:39:07.368 PM] [*] iosurfreclaim r16 no tag visible; word0=0xc0de0002
+[8:39:07.368 PM] [*] iosurfreclaim r16 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0002 marker_intact=YES
+[8:39:07.368 PM] [*] iosurfreclaim round 16 victim=2 spray=1 stage=0
+[8:39:07.368 PM] [*] iosurfreclaim r17 region=2 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0002 rb=0xc0de0002
+[8:39:07.368 PM] [*] iosurfreclaim r17 entry(size=0x8000) -> kr=0 (0x0) handle=0xa8cf
+[8:39:07.368 PM] [*] iosurfreclaim r17 alias1 kr=0 marker=0xc0de0002 same=YES
+[8:39:07.368 PM] [*] iosurfreclaim r17 surface released; only the entry remains
+[8:39:07.369 PM] [*] iosurfreclaim r17 sweep kind=5 made=48
+[8:39:07.369 PM] [*] iosurfreclaim r17 old base handed to sprayed surface idx=0
+[8:39:07.369 PM] [*] iosurfreclaim r17 map entry -> kr=0 (0x0) at 0x10bafc000
+[8:39:07.369 PM] [*] iosurfreclaim r17 no tag visible; word0=0xc0de0002
+[8:39:07.369 PM] [*] iosurfreclaim r17 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0002 marker_intact=YES
+[8:39:07.369 PM] [*] iosurfreclaim round 17 victim=2 spray=2 stage=0
+[8:39:07.369 PM] [*] iosurfreclaim r18 region=1 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0001 rb=0xc0de0001
+[8:39:07.369 PM] [*] iosurfreclaim r18 entry(size=0x8000) -> kr=0 (0x0) handle=0xa8db
+[8:39:07.369 PM] [*] iosurfreclaim r18 alias1 kr=0 marker=0xc0de0001 same=YES
+[8:39:07.369 PM] [*] iosurfreclaim r18 surface released; only the entry remains
+[8:39:07.370 PM] [*] iosurfreclaim r18 sweep kind=5 made=48
+[8:39:07.370 PM] [*] iosurfreclaim r18 old base handed to sprayed surface idx=0
+[8:39:07.370 PM] [*] iosurfreclaim r18 map entry -> kr=0 (0x0) at 0x10bafc000
+[8:39:07.370 PM] [*] iosurfreclaim r18 MATCH kind=5 idx=1 off=0x4000 val=0x5a5a5001
+[8:39:07.370 PM] [*] iosurfreclaim WRITE-DIR: wrote 0x88880012 through stale alias, reclaimed surface reads 0x5a5a5001 -> no
+[8:39:07.370 PM] [*] iosurfreclaim r18 VERDICT hit=1 kind=5 idx=1 off=0x4000 word0=0xc0de0001 marker_intact=YES
+[8:39:07.370 PM] [*] iosurfreclaim round 18 victim=1 spray=2 stage=1
+[8:39:07.370 PM] [*] iosurfreclaim r19 region=0 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0000 rb=0xc0de0000
+[8:39:07.370 PM] [*] iosurfreclaim r19 entry(size=0x8000) -> kr=0 (0x0) handle=0xa8e7
+[8:39:07.370 PM] [*] iosurfreclaim r19 alias1 kr=0 marker=0xc0de0000 same=YES
+[8:39:07.370 PM] [*] iosurfreclaim r19 surface released; only the entry remains
+[8:39:07.371 PM] [*] iosurfreclaim r19 sweep kind=5 made=48
+[8:39:07.371 PM] [*] iosurfreclaim r19 old base handed to sprayed surface idx=0
+[8:39:07.371 PM] [*] iosurfreclaim r19 map entry -> kr=0 (0x0) at 0x10bafc000
+[8:39:07.371 PM] [*] iosurfreclaim r19 no tag visible; word0=0xc0de0000
+[8:39:07.371 PM] [*] iosurfreclaim r19 VERDICT hit=0 kind=0 idx=-1 off=0x0 word0=0xc0de0000 marker_intact=YES
+[8:39:07.371 PM] [*] iosurfreclaim round 19 victim=0 spray=2 stage=0
+[8:39:07.371 PM] [*] iosurfreclaim r20 region=1 alloc=0x4000 id=0x68 base=0x10254c000 marker=0xc0de0001 rb=0xc0de0001
+[8:39:07.371 PM] [*] iosurfreclaim r20 entry(size=0x4000) -> kr=0 (0x0) handle=0xa8f3
+[8:39:07.371 PM] [*] iosurfreclaim r20 alias1 kr=0 marker=0xc0de0001 same=YES
+[8:39:07.371 PM] [*] iosurfreclaim r20 surface released; only the entry remains
+[8:39:07.372 PM] [*] iosurfreclaim r20 sweep kind=5 made=48
+[8:39:07.372 PM] [*] iosurfreclaim r20 old base handed to sprayed surface idx=0
+[8:39:07.372 PM] [*] iosurfreclaim r20 map entry -> kr=0 (0x0) at 0x10ba2c000
+[8:39:07.372 PM] [*] iosurfreclaim r20 MATCH kind=5 idx=0 off=0x0 val=0x5a5a5000
+[8:39:07.372 PM] [*] iosurfreclaim WRITE-DIR: wrote 0x88880014 through stale alias, reclaimed surface reads 0x88880014 -> CONFIRMED
+[8:39:07.372 PM] [*] iosurfreclaim r20 VERDICT hit=1 kind=5 idx=0 off=0x0 word0=0x5a5a5000 marker_intact=no
+[8:39:07.372 PM] [*] iosurfreclaim round 20 region=1 sweeper=iosrf class=0x4000 stage=1
+[8:39:07.372 PM] [*] iosurfreclaim r21 region=1 alloc=0x8000 id=0x68 base=0x10254c000 marker=0xc0de0001 rb=0xc0de0001
+[8:39:07.372 PM] [*] iosurfreclaim r21 entry(size=0x8000) -> kr=0 (0x0) handle=0xa8ff
+[8:39:07.372 PM] [*] iosurfreclaim r21 alias1 kr=0 marker=0xc0de0001 same=YES
+[8:39:07.372 PM] [*] iosurfreclaim r21 surface released; only the entry remains
+[8:39:07.373 PM] [*] iosurfreclaim r21 sweep kind=5 made=48
+[8:39:07.373 PM] [*] iosurfreclaim r21 old base handed to sprayed surface idx=0
+[8:39:07.373 PM] [*] iosurfreclaim r21 map entry -> kr=0 (0x0) at 0x10bafc000
+[8:39:07.373 PM] [*] iosurfreclaim r21 MATCH kind=5 idx=0 off=0x0 val=0x5a5a5000
+[8:39:07.373 PM] [*] iosurfreclaim WRITE-DIR: wrote 0x88880015 through stale alias, reclaimed surface reads 0x88880015 -> CONFIRMED
+[8:39:07.373 PM] [*] iosurfreclaim r21 VERDICT hit=1 kind=5 idx=0 off=0x0 word0=0x5a5a5000 marker_intact=no
+[8:39:07.373 PM] [*] iosurfreclaim round 21 region=1 sweeper=iosrf class=0x8000 stage=1
+[8:39:07.373 PM] [*] iosurfreclaim r22 region=1 alloc=0x10000 id=0x68 base=0x10254c000 marker=0xc0de0001 rb=0xc0de0001
+[8:39:07.373 PM] [*] iosurfreclaim r22 entry(size=0x10000) -> kr=0 (0x0) handle=0xa803
+[8:39:07.373 PM] [*] iosurfreclaim r22 alias1 kr=0 marker=0xc0de0001 same=YES
+[8:39:07.373 PM] [*] iosurfreclaim r22 surface released; only the entry remains
+[8:39:07.374 PM] [*] iosurfreclaim r22 sweep kind=5 made=48
+[8:39:07.374 PM] [*] iosurfreclaim r22 old base handed to sprayed surface idx=0
+[8:39:07.374 PM] [*] iosurfreclaim r22 map entry -> kr=0 (0x0) at 0x10bc84000
+[8:39:07.374 PM] [*] iosurfreclaim r22 MATCH kind=5 idx=0 off=0x0 val=0x5a5a5000
+[8:39:07.374 PM] [*] iosurfreclaim WRITE-DIR: wrote 0x88880016 through stale alias, reclaimed surface reads 0x88880016 -> CONFIRMED
+[8:39:07.374 PM] [*] iosurfreclaim r22 VERDICT hit=1 kind=5 idx=0 off=0x0 word0=0x5a5a5000 marker_intact=no
+[8:39:07.374 PM] [*] iosurfreclaim round 22 region=1 sweeper=iosrf class=0x10000 stage=1
+[8:39:07.374 PM] [*] iosurfreclaim done rounds=23 hits=5
+
+[12:58:56.095 PM] ========== Bench27 session ==========
+[12:58:56.095 PM] started   2026-11-16 12:58:56.089 PM +0000
+[12:58:56.095 PM] device    iPhone 17 Pro (iPhone18,1)
+[12:58:56.095 PM] chip      A19 Pro
+[12:58:56.095 PM] system    Version 27.0.1 (Build 24A446)
+[12:58:56.095 PM] app       1.0 (1)
+[12:58:56.095 PM] bundle    com.bench27.agxprobe
+[12:58:56.095 PM] log       session-20261116-125856-085 PM-544D4945.log
+[12:58:56.095 PM] =====================================
+[12:58:56.095 PM] tests     01 IOSurface ?? 02 Metal ?? 03 FigXPC ?? 04 AVE ?? 05 ANE ?? 06 scan ?? 07 crash ?? 08 panic ?? 09 PDF ?? 10 AGX fields ?? 11 DPB
+[12:58:56.095 PM] === bit8 candidates: open-only reachability ===
+[12:58:56.103 PM]   AppleSPUTimesyncV2 :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.104 PM]   AppleSPUHIDDriver :: t0=BadArgument t1=BadArgument t2=ok t3=BadArgument t4=BadArgument
+[12:58:56.104 PM]   IOHIDEventDriver :: t0=BadArgument t1=BadArgument t2=ok t3=BadArgument t4=BadArgument
+[12:58:56.104 PM]   AppleSphinxProxHIDEventDriver :: t0=BadArgument t1=BadArgument t2=ok t3=BadArgument t4=BadArgument
+[12:58:56.104 PM]   AppleUSBHostResourcesTypeC :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.104 PM]   IOPCIDevice :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.104 PM]   IOHIDResource :: t0=BadArgument t1=BadArgument t2=BadArgument t3=BadArgument t4=BadArgument
+[12:58:56.106 PM]   AppleSPUHIDDevice :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.106 PM]   AppleHIDTransportHIDDevice :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.106 PM]   IOHIDInterface :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.106 PM]   AppleBasebandPCIPDPSkywalkInterface :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.106 PM]   AppleBasebandPCIQCTunSkywalkInterface :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.106 PM]   IOSkywalkNetworkBSDClient :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.107 PM]   AppleCentauriManager :: t0=NotPrivileged t1=NotPrivileged t2=NotPrivileged t3=NotPrivileged t4=NotPrivileged
+[12:58:56.107 PM]   IOTimeSyncRootService :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.107 PM]   IOTimeSyncDaemonService :: t0=NotPrivileged t1=NotPrivileged t2=NotPrivileged t3=NotPrivileged t4=NotPrivileged
+[12:58:56.107 PM]   IOTimeSyncTranslationMach :: t0=BadArgument t1=BadArgument t2=BadArgument t3=BadArgument t4=BadArgument
+[12:58:56.107 PM]   IOTimeSyncDomain :: t0=BadArgument t1=BadArgument t2=BadArgument t3=BadArgument t4=BadArgument
+[12:58:56.107 PM]   AppleSPUHIDInterface :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.109 PM]   AppleHIDTransportBootloaderRTBuddy :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.109 PM]   AppleHIDTransportBootloaderCBOR :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.109 PM]   AppleHIDTransportDeviceMailbox :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.109 PM]   AppleHIDTransportProtocolSCMMailbox :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.109 PM]   AppleHIDTransportManagement :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.110 PM]   AppleHIDTransportInterface :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.110 PM]   IOSkywalkLegacyEthernetInterface :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.110 PM]   IOTimeSyncClockManager :: t0=BadArgument t1=BadArgument t2=BadArgument t3=BadArgument t4=BadArgument
+[12:58:56.110 PM]   IOTimeSyncTimeSyncTimePort :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.110 PM]   IOTimeSyncgPTPManager :: t0=BadArgument t1=BadArgument t2=BadArgument t3=BadArgument t4=BadArgument
+[12:58:56.111 PM]   IOUSBDeviceInterface :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.111 PM]   AppleBasebandPCIMHIDevice :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.111 PM]   AppleBasebandPCIPDPQMAPSkywalk :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.111 PM]   matched classes=32
+[12:58:56.111 PM] === bit8 candidates done
+
+[5:06:19.954 PM] ========== Bench27 session ==========
+[5:06:19.954 PM] started   2026-11-16 5:06:19.945 PM +0000
+[5:06:19.954 PM] device    iPhone 17 Pro (iPhone18,1)
+[5:06:19.954 PM] chip      A19 Pro
+[5:06:19.954 PM] system    Version 27.0.1 (Build 24A446)
+[5:06:19.954 PM] app       1.0 (1)
+[5:06:19.954 PM] bundle    com.bench27.agxprobe
+[5:06:19.954 PM] log       session-20261116-50619-941 PM-55B444AB.log
+[5:06:19.954 PM] =====================================
+[5:06:19.954 PM] tests     01 IOSurface ?? 02 Metal ?? 03 FigXPC ?? 04 AVE ?? 05 ANE ?? 06 scan ?? 07 crash ?? 08 panic ?? 09 PDF ?? 10 AGX fields ?? 11 DPB
+[5:06:19.954 PM] ??? 100 ?? HID user-client selector map
+[5:06:19.954 PM]   control class AppleJPEGDriver
+[5:06:19.954 PM]   control opened type 0
+[5:06:19.954 PM]      jpeg sel 0 in 0x0/out 0x0 -> ok
+[5:06:19.955 PM]      jpeg sel 1 in 0x58/out 0x58 -> kr=-536870196
+[5:06:19.955 PM]      jpeg sel 3 in 0x58/out 0x58 -> kr=-536870196
+[5:06:19.955 PM]      jpeg sel 4 in 0x1000/out 0x1000 -> Error
+[5:06:19.955 PM]      jpeg sel 5 in 0x1000/out 0x1000 -> kr=-536870196
+[5:06:19.961 PM]   AppleSPUHIDDriver t2 odd=0 
+[5:06:19.962 PM]   IOHIDEventDriver t2 odd=0 
+[5:06:19.962 PM]   AppleSphinxProxHIDEventDriver t2 odd=0 
+[5:06:19.969 PM]   hid services opened: 3
+[5:06:19.970 PM]   IOHIDEventDriver t2 non-uniform=0 
+[5:06:19.970 PM]      sweep sel 0: none up to 0x200
+[5:06:19.970 PM]      sweep sel 1: none up to 0x200
+[5:06:19.971 PM]      sweep sel 2: none up to 0x200
+[5:06:19.971 PM]      sweep sel 12: none up to 0x200
+[5:06:19.971 PM]   AppleSPUHIDDriver t2 non-uniform=0 
+[5:06:19.972 PM]      sweep sel 0: none up to 0x200
+[5:06:19.972 PM]      sweep sel 1: none up to 0x200
+[5:06:19.972 PM]      sweep sel 2: none up to 0x200
+[5:06:19.972 PM]      sweep sel 12: none up to 0x200
+[5:06:19.972 PM] ??? done

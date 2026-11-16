@@ -861,5 +861,190 @@ extension XPCProbe {
         xq_IOServiceClose(conn)
         benchLine("??? done")
     }
+// MARK: - 100 ?? HID user-client selector map
+
+    /// `--opencand` measured the HID event-driver services opening at client type
+    /// 2 on both builds, the first openable surface among the families whose 27.2
+    /// thunks clear bit 8 of a qword at object+8.
+    ///
+    /// The first version of this probe swept selectors 0..0x3f against four fixed
+    /// shapes and every call came back `kIOReturnBadArgument` (0xe00002c2),
+    /// including a far-selector control. That is consistent with two different
+    /// causes - the client rejects the shape, or the call never reaches a real
+    /// dispatch entry - and a negative from it would be uninterpretable on its own.
+    /// So this version adds the three things that separate those causes:
+    ///
+    ///  * a **positive control** on `AppleJPEGDriver`, whose dispatch table was
+    ///    recovered statically (selectors 1/3 take 0x58-byte structs, 4/5 take
+    ///    0x1000), proving the harness can observe an answer other than BadArgument;
+    ///  * an **input-size sweep** on the four openable drivers, so an exact-shape
+    ///    requirement cannot hide behind four guessed sizes;
+    ///  * a **compact per-selector signature**, so uniformity is visible rather
+    ///    than inferred from an absence of logged lines.
+    private func sigChar(_ kr: kern_return_t) -> String {
+        switch kr {
+        case 0: return "O"
+        case -536870206: return "B"
+        case -536870201: return "U"
+        case -536870199: return "P"
+        case -536870207: return "N"
+        case -536870160: return "R"
+        case -536870174: return "A"
+        case -536870212: return "E"
+        default: return "?"
+        }
+    }
+
+    private func callPatched(_ conn: io_connect_t, selector: UInt32,
+                             inSize: Int, outSize: Int, patchVal: UInt32) -> (kern_return_t, Int) {
+        var input = [UInt8](repeating: 0, count: max(inSize, 1))
+        if inSize >= 0x24 {
+            let patch = withUnsafeBytes(of: patchVal) { Array($0) }
+            for (i, b) in patch.enumerated() { input[0x20 + i] = b }
+        }
+        var output = [UInt8](repeating: 0, count: max(outSize, 1))
+        var outCnt = outSize
+        var scalarCount: UInt32 = 0
+        var scalars = [UInt64](repeating: 0, count: 4)
+        var kr: kern_return_t = -1
+        input.withUnsafeBytes { ib in
+            output.withUnsafeMutableBytes { ob in
+                scalars.withUnsafeMutableBufferPointer { sb in
+                    kr = xq_IOConnectCallMethod(conn, selector, nil, 0,
+                                                inSize > 0 ? ib.baseAddress : nil, inSize,
+                                                sb.baseAddress, &scalarCount,
+                                                outSize > 0 ? ob.baseAddress : nil, &outCnt)
+                }
+            }
+        }
+        return (kr, Int(outCnt))
+    }
+
+    func bench100HIDSel() {
+        benchLine("??? 100 ?? HID user-client selector map")
+
+        // ---- 0. positive control: AppleJPEGDriver, dispatch table recovered ----
+        if let jpegMatch = "AppleJPEGDriver".withCString({ xq_IOServiceMatching($0) }) {
+            var it: io_iterator_t = 0
+            if xq_IOServiceGetMatchingServices(0, jpegMatch, &it) == KERN_SUCCESS {
+                defer { xq_IOObjectRelease(it) }
+                let svc = xq_IOIteratorNext(it)
+                if svc != 0 {
+                    defer { xq_IOObjectRelease(svc) }
+                    benchLine("  control class \(className(svc))")
+                    if let (t, conn) = openClient(svc, types: 0...2) {
+                        benchLine("  control opened type \(t)")
+                        let cases: [(UInt32, Int, Int)] = [(0, 0, 0), (1, 0x58, 0x58),
+                                                          (3, 0x58, 0x58), (4, 0x1000, 0x1000),
+                                                          (5, 0x1000, 0x1000)]
+                        for (sel, i, o) in cases {
+                            let kr = call(conn, selector: sel, inSize: i, outSize: o)
+                            benchLine("     jpeg sel \(sel) in 0x\(String(i, radix: 16))/out 0x\(String(o, radix: 16)) -> \(krName(kr))")
+                        }
+                        xq_IOServiceClose(conn)
+                    } else {
+                        benchLine("  control no client type accepted")
+                    }
+                } else {
+                    benchLine("[NO] no AppleJPEGDriver service")
+                }
+            } else {
+                benchLine("[NO] AppleJPEGDriver enumeration failed")
+            }
+        }
+
+        // ---- 1. every published HID service, compact signature ----
+        guard let hidMatch = "IOService".withCString({ xq_IOServiceMatching($0) }) else { return }
+        var iterator: io_iterator_t = 0
+        guard xq_IOServiceGetMatchingServices(0, hidMatch, &iterator) == KERN_SUCCESS else {
+            benchLine("[NO] registry enumeration failed"); return
+        }
+        defer { xq_IOObjectRelease(iterator) }
+        let shapes: [(String, Int, Int, UInt32)] = [
+            ("z", 0, 0, 0), ("s", 0x6c, 0x3c, 0), ("L", 0x100, 0x3c, 0), ("V", 0x100, 0x3c, 2),
+        ]
+        var seen = Set<String>()
+        var serviced = 0
+        while true {
+            let service = xq_IOIteratorNext(iterator)
+            if service == 0 { break }
+            defer { xq_IOObjectRelease(service) }
+            let name = className(service)
+            guard name.lowercased().contains("hid") else { continue }
+            guard seen.insert(name).inserted else { continue }
+            var conn: io_connect_t = 0
+            var usedType: UInt32 = 99
+            for type in UInt32(0)...UInt32(4) {
+                if xq_IOServiceOpen(service, mach_task_self_, type, &conn) == KERN_SUCCESS {
+                    usedType = type
+                    break
+                }
+            }
+            guard usedType != 99 else { continue }
+            serviced += 1
+            var odd: [String] = []
+            for selector in UInt32(0)...0xf {
+                var sig = ""
+                for (_, i, o, p) in shapes {
+                    let (kr, _) = callPatched(conn, selector: selector, inSize: i, outSize: o, patchVal: p)
+                    sig += sigChar(kr)
+                }
+                if sig != "BBBB" { odd.append("sel \(selector)=\(sig)") }
+            }
+            benchLine("  \(name) t\(usedType) odd=\(odd.count) \(odd.prefix(6).joined(separator: " "))")
+            xq_IOServiceClose(conn)
+        }
+        benchLine("  hid services opened: \(serviced)")
+
+        // ---- 2. the four known-openable drivers, full signature + size sweep ----
+        let drivers = ["IOHIDEventDriver", "AppleSPUHIDDriver",
+                       "AppleProxHIDEventDriver", "AOPTouchHIDDriver"]
+        for driver in drivers {
+            guard let m = driver.withCString({ xq_IOServiceMatching($0) }) else { continue }
+            var it: io_iterator_t = 0
+            guard xq_IOServiceGetMatchingServices(0, m, &it) == KERN_SUCCESS else { continue }
+            defer { xq_IOObjectRelease(it) }
+            let service = xq_IOIteratorNext(it)
+            guard service != 0 else { continue }
+            defer { xq_IOObjectRelease(service) }
+            var conn: io_connect_t = 0
+            var usedType: UInt32 = 99
+            for type in UInt32(0)...UInt32(4) {
+                if xq_IOServiceOpen(service, mach_task_self_, type, &conn) == KERN_SUCCESS {
+                    usedType = type
+                    break
+                }
+            }
+            guard usedType != 99 else { continue }
+            var rows: [String] = []
+            for selector in UInt32(0)...0x3f {
+                var sig = ""
+                for (_, i, o, p) in shapes {
+                    let (kr, _) = callPatched(conn, selector: selector, inSize: i, outSize: o, patchVal: p)
+                    sig += sigChar(kr)
+                }
+                if sig != "BBBB" { rows.append("\(selector):\(sig)") }
+            }
+            benchLine("  \(driver) t\(usedType) non-uniform=\(rows.count) \(rows.prefix(8).joined(separator: " "))")
+            for selector in [UInt32(0), UInt32(1), UInt32(2), UInt32(12)] {
+                var hits: [String] = []
+                var inSz = 0
+                while inSz <= 0x200 && hits.count < 3 {
+                    for outSz in [0, 0x3c] {
+                        let (kr, _) = callPatched(conn, selector: selector,
+                                                  inSize: inSz, outSize: outSz, patchVal: 2)
+                        if kr != -536870206 {
+                            hits.append("in 0x\(String(inSz, radix: 16))/out 0x\(String(outSz, radix: 16))=\(krName(kr))")
+                        }
+                    }
+                    inSz += 8
+                }
+                benchLine("     sweep sel \(selector): \(hits.isEmpty ? "none up to 0x200" : hits.joined(separator: " "))")
+            }
+            xq_IOServiceClose(conn)
+        }
+        benchLine("??? done")
+    }
+
 }
 
