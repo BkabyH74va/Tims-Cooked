@@ -21,6 +21,27 @@ sys.path.insert(0, str(ROOT / "tools" / "pylibs"))
 from kc_member import load_member  # noqa: E402
 
 
+def image_text_vm(path):
+    """vmaddr of the whole-kernelcache `__TEXT` (the auth-table rebase base).
+
+    A member's own `__TEXT` is NOT the right base: kext code lives in the
+    kernelcache-wide `__TEXT_EXEC`, so entries must be decoded against the
+    image base.
+    """
+    d = path.read_bytes()
+    ncmds = struct.unpack_from("<I", d, 16)[0]
+    off = 32
+    for _ in range(ncmds):
+        cmd, cmdsize = struct.unpack_from("<II", d, off)
+        if cmd == 0x19:
+            nm = d[off + 8:off + 24].rstrip(b"\0").decode(errors="replace")
+            vm, vsz, fo, fsz = struct.unpack_from("<QQQQ", d, off + 24)
+            if nm == "__TEXT":
+                return vm
+        off += cmdsize
+    raise SystemExit("no __TEXT segment")
+
+
 def decode(text_vm, entry):
     return text_vm + (entry & 0xFFFFFFFF)
 
@@ -30,7 +51,7 @@ def main(argv):
         raise SystemExit(__doc__)
     mode, bld, member = argv[1], argv[2], argv[3]
     b = load_member(bld, member)
-    text_vm = b["segs"]["__TEXT"][0]
+    text_vm = image_text_vm(ROOT / "firmware" / bld / "kernelcache.release.macho")
     data = b["data"]
 
     def entries():
