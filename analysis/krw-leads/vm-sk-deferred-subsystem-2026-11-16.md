@@ -57,11 +57,13 @@ Boundaries from `LC_FUNCTION_STARTS`; callers from `kz_chainfind.py callers`
 
 ### 2.2 Deferral-gate argument at all 19 call sites (task (b), mechanically)
 
-`ad53d8c`'s enqueue branch needs **both** page-flag bit 12 (`[x28+0x18]`,
-tested at `0xfffffe000ad53f7c`) **and** bit 12 of its own 32-bit flag argument
-(`w3`, spilled to `[x29-0x74]`, tested at `0xfffffe000ad53fbc`). A backward
-scan of 0xb0 bytes before every direct call site, taking the nearest preceding
-instruction that writes `w3`/`x3`:
+`ad53d8c` reaches its enqueue call (`0xfffffe000ad54020`) only through the block
+entered when a page-flag bit routes execution to `0xfffffe000ad53f9c`
+(`[x28+0x18]` bit 12, tested at `0xfffffe000ad53f7c`, or bit 0x18 at
+`0xfffffe000ad53f84`), and then only if **bit 12 of its own 32-bit flag
+argument** is set (`w3`, spilled to `[x29-0x74]`, tested at
+`0xfffffe000ad53fbc`). A backward scan of 0xb0 bytes before every direct call
+site, taking the nearest preceding instruction that writes `w3`/`x3`:
 
 | call site | w3 source |
 |---|---|
