@@ -55,6 +55,32 @@ Boundaries from `LC_FUNCTION_STARTS`; callers from `kz_chainfind.py callers`
 | `0xfffffe000ad53d8c` | `0x1678` | **integrating UPL/pageout helper**; enqueues or processes per page | 19 |
 | `0xfffffe000ac01a08` | `0x2b8` | withdraw-result helper (`TB_FATAL: invalid result returned from withdraw`) | 1: `ad4cce0` @ `0xad4cd88` |
 
+### 2.2 Deferral-gate argument at all 19 call sites (task (b), mechanically)
+
+`ad53d8c`'s enqueue branch needs **both** page-flag bit 12 (`[x28+0x18]`,
+tested at `0xfffffe000ad53f7c`) **and** bit 12 of its own 32-bit flag argument
+(`w3`, spilled to `[x29-0x74]`, tested at `0xfffffe000ad53fbc`). A backward
+scan of 0xb0 bytes before every direct call site, taking the nearest preceding
+instruction that writes `w3`/`x3`:
+
+| call site | w3 source |
+|---|---|
+| `0xaccfd2c`, `0xb1ab528`, `0xb399b74`, `0xb39a20c`, `0xb39bee4` | `mov w3, #0` |
+| `0xad52db4` | `mov w3, #0x40` |
+| `0xad53500` | `mov w3, #0x200` |
+| `0xad4ef54`, `0xad51130`, `0xad80f54` | `mov w3, #0x440` |
+| `0xadee7a0` | `mov w3, #3` |
+| `0xadef1dc`, `0xadf070c`, `0xb1fd8a0`, `0xb1fda0c`, `0xb20b7b0` | `mov w3, #1` |
+| `0xadf19b8` | `mov w3, #0xd` |
+| `0xb1ab59c` | `tst w3, w8` (read, not a write; real writer is older) |
+| `0xb39e0f4` | `mov x3, x19` (register, origin unresolved) |
+
+**No call site supplies bit 12 (`0x1000`) as a constant.** Only the register-fed
+site at `0xfffffe000b39e0f4` is unresolved. Combined with the page-flag gate,
+the `ad53d8c` enqueue path looks effectively unreachable from its direct callers
+in this build — a bounded negative for task (b), not proof of an unreachable
+kernel path (indirect callers and the register case remain open).
+
 ### 2.1 Enqueue argument decode (`0xfffffe000ad4d12c`)
 
 ```
@@ -166,8 +192,10 @@ Two bounded static tasks, in order:
    auth-jump-table slots (32-bit file offsets in `__DATA_CONST`), not another
    caller scan; a user-client method, memory-descriptor public entry or syscall
    above them would be the first app-facing handle on the deposit route.
-2. Enumerate the 19 callers of `0xfffffe000ad53d8c`, determine which can supply
-   bit 12 of the flag argument, and walk that caller up likewise.
+2. ~~Enumerate the 19 callers of `0xfffffe000ad53d8c`~~ — **done**, see §2.2:
+   no direct caller supplies the deferral flag bit, so the `ad53d8c` enqueue path
+   is effectively unreachable from its direct callers in this build. Only the
+   register-fed site at `0xfffffe000b39e0f4` and indirect callers remain open.
 
 If neither yields an app-reachable handle, close the lead as bounded
 reconnaissance and return the effort to the IOSurface notify-race line or a

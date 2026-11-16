@@ -1,0 +1,123 @@
+# Raw evidence — vm_sk_deferred static follow-up (2026-11-16)
+
+Builds: firmware/24A446/kernelcache.release.macho (iOS 27.0.1) and
+firmware/24B119/kernelcache.release.macho (iOS 27.2).
+No device run; no crash reports; nothing here is a vulnerability claim.
+
+## 1. Deferral-gate argument at every direct call site of 0xfffffe000ad53d8c
+
+Method: for each BL site reported by `tools/kz-static-diff/kz_chainfind.py
+callers 24B119 0xfffffe000ad53d8c`, disassemble the 0xb0 bytes preceding the
+site (capstone, `skipdata=True`) and report the nearest preceding instruction
+whose first operand is `w3`/`x3`.
+
+```
+0xfffffe000accfd2c  w3<- mov w3, #0
+0xfffffe000ad4ef54  w3<- mov w3, #0x440
+0xfffffe000ad51130  w3<- mov w3, #0x440
+0xfffffe000ad52db4  w3<- mov w3, #0x40
+0xfffffe000ad53500  w3<- mov w3, #0x200
+0xfffffe000ad80f54  w3<- mov w3, #0x440
+0xfffffe000adee7a0  w3<- mov w3, #3
+0xfffffe000adef1dc  w3<- mov w3, #1
+0xfffffe000adf070c  w3<- mov w3, #1
+0xfffffe000adf19b8  w3<- mov w3, #0xd
+0xfffffe000b1ab528  w3<- mov w3, #0
+0xfffffe000b1ab59c  w3<- tst w3, w8        (read, not a write)
+0xfffffe000b1fd8a0  w3<- mov w3, #1
+0xfffffe000b1fda0c  w3<- mov w3, #1
+0xfffffe000b20b7b0  w3<- mov w3, #1
+0xfffffe000b399b74  w3<- mov w3, #0
+0xfffffe000b39a20c  w3<- mov w3, #0
+0xfffffe000b39bee4  w3<- mov w3, #0
+0xfffffe000b39e0f4  w3<- mov x3, x19      (register, origin unresolved)
+```
+
+Bit 12 (0x1000) of the flag argument is not present in any constant source.
+
+## 2. String-set neighbours of the new subsystem (raw printable windows)
+
+24B119 file offsets 0x5c500-0x5c900 (vm_map / shared-region pager cluster):
+
+```
+0x5c500 'map_xnu.h'
+0x5c50a 'vm_map_is_sealed_or_will_be_sealed(map)'
+0x5c532 'shared_region: sr_cache_header.imagesTextCount >= UINT32_MAX @%s:%d'
+0x5c576 'vm_shared_region.c'
+0x5c589 'unexpected shared region location %d @%s:%d'
+0x5c5b5 'shared region namespace id overflowed @%s:%d'
+0x5c5e2 'shared_region: vm_shared_region_lastid wrapped @%s:%d'
+0x5c618 'site.struct vm_sk_deferred_entry'
+0x5c641 'vm_sk_deferred.c'
+0x5c652 '!os_add_overflow(*__counter, 1, __counter)'
+0x5c67d '!os_add_overflow(*__counter, page_count, __counter)'
+0x5c6b1 '!os_sub_overflow(*__counter, 1, __counter)'
+0x5c6dc '!os_sub_overflow(*__counter, e->vmsk_page_count, __counter)'
+0x5c718 'vm_sk_deferred: failed to start drain thread (%d) @%s:%d'
+0x5c751 'vm_sk_deferred_drain'
+0x5c766 'kr == KERN_SUCCESS'
+0x5c779 'Page modified after framebank withdraw %p\n @%s:%d'
+0x5c7ab 'shared_region'
+0x5c7b9 "shared_region_find_key() no key for region '%s' @%s:%d"
+0x5c7f0 'vm_shared_region_pager.c'
+```
+
+Sysctl-name table window (24B119 file offsets 0x475e600-0x475ea00, segment
+__KLDDATA; VAs 0xfffffe000b762600-0xfffffe000b762a00):
+
+```
+'mte_cluster_kt' 'mte_kt_policy' 'mte_kt_init'
+'shared_region_trace_level'
+'vm_shared_region_destroy_delay'
+'panic_on_dyld_issue'
+'vm_sk_deferred_high_watermark_mib'
+'vm_sk_deferred_max_age_secs'
+'telemetry_buffer_size' ...
+```
+
+`vm_sk_deferred` also appears in __BOOTDATA (VA 0xfffffe000b8f5648).
+
+Raw byte search, whole kernelcache:
+
+| string | 24A446 hits | 24B119 hits |
+|---|---:|---:|
+| `vm_sk_deferred` | 0 | 7 |
+| `Page modified after framebank withdraw` | 0 | 1 |
+| `vmsk_page_count` | 0 | 1 |
+| `exclaves_frame_bank_deposit` | 1 | 1 |
+| `TB_FATAL: invalid result returned from withdraw` | 1 | 1 |
+
+## 3. Exact call graph (direct BL/B sites only)
+
+```
+0xfffffe000ad4d5f8  <- 0xad1c6f4 in 0xfffffe000ad1c1b8
+0xfffffe000ad4d12c  <- 0xad54020 in 0xfffffe000ad53d8c
+0xfffffe000ad4d458  <- 0xad26f60 in 0xfffffe000ad26ee0
+0xfffffe000ad4cce0  <- 0xad4d32c(0xad4d12c), 0xad4d8cc(0xad4d784),
+                       0xad4dac4(0xad4d9bc), 0xad4df00(0xad4dc58),
+                       0xad54004(0xad53d8c)
+0xfffffe000ad4db90  <- 0xad1fb8c in 0xfffffe000ad1f7a4
+0xfffffe000ad4d784  <- 0xad0e5f4 in 0xfffffe000ad0e5c8
+0xfffffe000ac01a08  <- 0xad4cd88 in 0xfffffe000ad4cce0
+0xfffffe000acd5224 (24A446) <- 0xac80668 in 0xfffffe000ac80474
+0xfffffe000ad26ee0 (24B119) <- 0xacd1db8 in 0xfffffe000acd1bc4
+0xfffffe000ac80474 also calls 0xfffffe000acd1e18 (vm_object_iopl_request)
+                       at 0xac80644
+0xfffffe000acd1bc4 also calls 0xfffffe000ad23b5c (vm_object_iopl_request)
+                       (and is the sole caller of 0xfffffe000ad26ee0)
+```
+
+Chained-fixup scan (`kz_chainfind.py chainrefs`): 0 indirect slots resolve to
+`0xad4d12c` or `0xad4db90`; the queue lock/head globals have no references
+outside the cluster.
+
+## 4. Commands used
+
+```
+python kz_fnreport.py 24B119 0xfffffe000ad2744c 0xfffffe000ac01cb8 ...
+python kz_chainfind.py callers 24B119 0xfffffe000ad4d5f8 ...
+python kz_adrp_ref_np.py 24A446 0xfffffe000705e5ff
+python annot.py 24B119 0xfffffe000ad53d8c 0x1678 out.s
+python annot.py 24A446 0xfffffe000acd5224 0x460 out.s
+python annot.py 24B119 0xfffffe000ac1fc90 0x48 out.s
+```
