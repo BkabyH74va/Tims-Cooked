@@ -1,0 +1,41 @@
+### slot27 A vs B heads (annot + side)
+--- A head ---
+0xfffffe000b348450  7f2303d5 pacibsp  
+0xfffffe000b348454  ff0301d1 sub      sp, sp, #0x40
+0xfffffe000b348458  f65701a9 stp      x22, x21, [sp, #0x10]
+0xfffffe000b34845c  f44f02a9 stp      x20, x19, [sp, #0x20]
+0xfffffe000b348460  fd7b03a9 stp      x29, x30, [sp, #0x30]
+0xfffffe000b348464  fdc30091 add      x29, sp, #0x30
+0xfffffe000b348468  142040b9 ldr      w20, [x0, #0x20]
+0xfffffe000b34846c  930e1c12 and      w19, w20, #0xf0
+0xfffffe000b348470  7f820071 cmp      w19, #0x20
+0xfffffe000b348474  61000054 b.ne     #0xfffffe000b348480; -> 0xfffffe000b348480 FUNC 0xfffffe000b348450
+0xfffffe000b348478  08008052 mov      w8, #0
+0xfffffe000b34847c  80000014 b        #0xfffffe000b34867c; -> 0xfffffe000b34867c FUNC 0xfffffe000b348450
+0xfffffe000b348480  085b8052 mov      w8, #0x2d8
+0xfffffe000b348484  0800bc72 movk     w8, #0xe000, lsl #16
+0xfffffe000b348488  54029037 tbnz     w20, #0x12, #0xfffffe000b3484d0
+0xfffffe000b34848c  085440f9 ldr      x8, [x0, #0xa8]
+--- B head ---
+0xfffffe000b39e868  5f2403d5 bti      c
+0xfffffe000b39e86c  085b8052 mov      w8, #0x2d8
+0xfffffe000b39e870  0800bc72 movk     w8, #0xe000, lsl #16
+0xfffffe000b39e874  09188052 mov      w9, #0xc0
+0xfffffe000b39e878  2901210a bic      w9, w9, w1
+0xfffffe000b39e87c  69000035 cbnz     w9, #0xfffffe000b39e888
+0xfffffe000b39e880  00590051 sub      w0, w8, #0x16
+0xfffffe000b39e884  c0035fd6 ret      
+0xfffffe000b39e888  7f2303d5 pacibsp  
+0xfffffe000b39e88c  ff0301d1 sub      sp, sp, #0x40
+0xfffffe000b39e890  f65701a9 stp      x22, x21, [sp, #0x10]
+0xfffffe000b39e894  f44f02a9 stp      x20, x19, [sp, #0x20]
+0xfffffe000b39e898  fd7b03a9 stp      x29, x30, [sp, #0x30]
+0xfffffe000b39e89c  fdc30091 add      x29, sp, #0x30
+0xfffffe000b39e8a0  142040b9 ldr      w20, [x0, #0x20]
+0xfffffe000b39e8a4  930e1c12 and      w19, w20, #0xf0
+0xfffffe000b39e8a8  7f820071 cmp      w19, #0x20
+0xfffffe000b39e8ac  61000054 b.ne     #0xfffffe000b39e8b8; -> 0xfffffe000b39e8b8 FUNC 0xfffffe000b39e868
+0xfffffe000b39e8b0  08008052 mov      w8, #0
+0xfffffe000b39e8b4  7e000014 b        #0xfffffe000b39eaac; -> 0xfffffe000b39eaac FUNC 0xfffffe000b39e868
+0xfffffe000b39e8b8  54029037 tbnz     w20, #0x12, #0xfffffe000b39e900
+0xfffffe000b39e8bc  085440f9 ldr      x8, [x0, #0xa8]

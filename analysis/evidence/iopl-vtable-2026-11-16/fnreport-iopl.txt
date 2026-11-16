@@ -1,0 +1,31 @@
+### fnreport iopl_valid_data 24A446
+=== 24A446 0xfffffe000acd4d34 iopl_valid_data_A
+    start 0xfffffe000acd4d34 size 0x4f0 next 0xfffffe000acd5224
+      STR 'C](hw_lck_ticket_s={?=Cb1b1b6(?={?=CC}S)}I)IIIII{zone_packed_virtual_address=I}{zone_packed_virtual_address=I}{zone_pack'
+      STR 'iopl_valid_data: missing expected page at offset %lx @%s:%d'
+      STR 'iopl_valid_data: object == kernel or compressor @%s:%d'
+      STR 'iopl_valid_data: busy+absent page on page queue @%s:%d'
+      STR 'iopl_valid_data: unsupported upl, flags = %x @%s:%d'
+      STR 'iopl_valid_data: busy page w/o absent @%s:%d'
+      STR 'iopl_valid_data: %p already wired @%s:%d'
+      STR 'iopl_valid_data: %p is reusable @%s:%d'
+      STR 'iopl_valid_data: NULL upl @%s:%d'
+      STR 'vm_pageout.c'
+    direct callers: 1
+      BL <- 0xfffffe000b347c20 in func 0xfffffe000b347a08
+
+### fnreport iopl_valid_data 24B119
+=== 24B119 0xfffffe000ad269f8 iopl_valid_data_B
+    start 0xfffffe000ad269f8 size 0x4e8 next 0xfffffe000ad26ee0
+      STR 'cket_s={?=Cb1b1b6(?={?=CC}S)}I)IIIII{zone_packed_virtual_address=I}{zone_packed_virtual_address=I}{zone_packed_virtual_a'
+      STR '_MEMORY_COMPRESSED_DATA'
+      STR 'M_KERN_MEMORY_IOKIT'
+      STR 'VM_KERN_MEMORY_LOG'
+      STR '_KERN_MEMORY_WAITQ'
+      STR 'KERN_MEMORY_STACK'
+      STR 'EMORY_OSKEXT'
+      STR 'MORY_KALLOC'
+      STR 'EMORY_PMAP'
+      STR '@%s:%d'
+    direct callers: 1
+      BL <- 0xfffffe000b39e02c in func 0xfffffe000b39de14
