@@ -118,14 +118,18 @@ deposit builder, `0xfffffe000ac80474`, **also calls**
 `0xfffffe000ac80668`. The 24B119 counterpart `0xfffffe000acd1bc4` shows the
 same pair (calls `0xfffffe000ad23b5c` = `vm_object_iopl_request`, and is the
 sole caller of `0xfffffe000ad26ee0`). So the deposit is performed on the
-**IOPL / UPL construction route**, i.e. the page-list path used by
-`IOMemoryDescriptor` preparation and file-backed mappings, not by a private
-MIG service. Its three direct callers are IOMemoryDescriptor-shaped
-(`IOMemoryDescriptor 0x%zx prepared read only`): `0xfffffe000b343530` (no direct
-callers), `0xfffffe000b34568c` ← `0xfffffe000b3530cc`, and
-`0xfffffe000b3486a4` ← `0xfffffe000b348450`. This is the nearest
-app-influenced neighbour found anywhere in this subsystem and materially raises
-its value.
+**IOPL / UPL construction route**, i.e. the page-list path used by memory
+descriptors and file-backed mappings, not by a private MIG service. Its three
+direct callers are IOMemoryDescriptor-shaped
+(`IOMemoryDescriptor 0x%zx prepared read only`): `0xfffffe000b343530`,
+`0xfffffe000b34568c` ← `0xfffffe000b3530cc`, and
+`0xfffffe000b3486a4` ← `0xfffffe000b348450`.
+
+Caveat recorded immediately: `0xfffffe000b3530cc` and `0xfffffe000b348450`
+have **zero direct BL/B sites**, so they are virtual/indirect callees and the
+upward walk needs the vtable / auth-jump-table path (32-bit file offsets in
+`__DATA_CONST`), not another caller scan. Treat "app-reachable" here as
+*structurally adjacent*, not established.
 
 Also in 24B119: the new unnamed helper `0xfffffe000ad2586c` (`0x3b8`) is called
 from `0xfffffe000ad23b5c` = `vm_object_iopl_request` (size `0x1cb8`, matches the
@@ -145,10 +149,11 @@ unnamed 27.2 helpers are VM page helpers with wide caller sets
   caller lives in `com.apple.kernel`, and no user-client method, MIG routine or
   syscall was found above the UPL integration point. But the **frame-bank
   deposit** half of the subsystem is structurally on the `vm_object_iopl_request`
-  / `IOMemoryDescriptor` preparation route (see §3), which is app-influenced
-  through file-backed mappings. The deferral gate itself remains an internal
-  argument flag (`[sp-0x74]` bit 12 in `ad53d8c`) whose producing caller is not
-  yet identified.
+  / memory-descriptor preparation route (see §3). That adjacency is not yet an
+  established app path — its immediate callers are virtual methods with no
+  direct branch sites. The deferral gate itself remains an internal argument
+  flag (`[sp-0x74]` bit 12 in `ad53d8c`) whose producing caller is not yet
+  identified.
 * **No device cycle spent**: there is still no concrete API predicate to probe.
 
 ## 5. Next step (only if this line is resumed)
@@ -156,9 +161,11 @@ unnamed 27.2 helpers are VM page helpers with wide caller sets
 Two bounded static tasks, in order:
 
 1. Walk the three callers of `0xfffffe000ac80474` (`0xb343530`,
-   `0xb34568c` ← `0xb3530cc`, `0xb3486a4` ← `0xb348450`) upward until a
-   user-client method, `IOMemoryDescriptor` public entry, or syscall appears;
-   that would give the first app-facing handle on the frame-bank deposit path.
+   `0xb34568c` ← `0xb3530cc`, `0xb3486a4` ← `0xb348450`) upward. Both inner
+   functions have zero direct BL/B sites, so this requires resolving vtable /
+   auth-jump-table slots (32-bit file offsets in `__DATA_CONST`), not another
+   caller scan; a user-client method, memory-descriptor public entry or syscall
+   above them would be the first app-facing handle on the deposit route.
 2. Enumerate the 19 callers of `0xfffffe000ad53d8c`, determine which can supply
    bit 12 of the flag argument, and walk that caller up likewise.
 
