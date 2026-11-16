@@ -12,6 +12,10 @@ python kz_side.py a.s b.s          # semantic side-by-side diff
 python kz_blocks.py a.s b.s        # change blocks sorted by size
 python kz_sum.py a.s b.s           # change blocks with sample text
 python kz_adrp_ref.py 24A446 0xfffffe000705dfcd   # code sites referencing a VA
+python kz_fn_adrp.py 24A446 com.apple.iokit.IOHIDFamily 0xfffffe000a0d65a4 0x60 \
+        0xfffffe00079b0000 0xfffffe00079c3000          # all ADRP+ADD/LDR targets of one function
+python kz_member_authscan.py 24A446 com.apple.iokit.IOHIDFamily 0xfffffe000a0fc660 \
+        0x200                                           # member-scoped arm64e auth-pointer slots
 python kz_ptrrefs.py 24A446 0xfffffe000b347a08    # data slots holding a pointer (numpy)
 python kz_calls.py out.s 0xfffffe000acd1e18 0x20f0 24A446 --offsets   # numpy-free call fingerprint
 ```
@@ -40,3 +44,9 @@ Builds are `24A446` (iOS 27.0.1, target) and `24B119` (iOS 27.2). Requires
    both.
 5. Pass native Windows paths (or `$LOCALAPPDATA/...`) to these scripts: a bare `/tmp/x.s`
    is interpreted differently by git-bash and by native CPython.
+6. `kc_fstarts.load_build()` covers only the `com.apple.kernel` entry, so every
+   tool built on it (`kz_fn_strings.py`, `kz_vtable.py find/dump/diff`) reports
+   "no start" / `KeyError` for kext-member VAs. Use the `kc_member`-based tools
+   for a member. Separately, string-VA lists are build-specific: an address
+   copied from a 24B119 scan names different bytes in 24A446, and a scan run on
+   it returns a clean-looking zero.

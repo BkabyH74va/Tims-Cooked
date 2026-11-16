@@ -1,0 +1,46 @@
+### 24A446 IOHIDFamily class-name -> code refs
+== 0xfffffe00079b0435 ==
+24A446: 3 ADRP+ADD/LDR refs to 0xfffffe00079b0435
+   add at 0xfffffe000a0aae78
+   add at 0xfffffe000a0aafbc
+   add at 0xfffffe000a0ac0e0
+== 0xfffffe00079b06d2 ==
+24A446: 3 ADRP+ADD/LDR refs to 0xfffffe00079b06d2
+   add at 0xfffffe000a0ac768
+   add at 0xfffffe000a0ac8ac
+   add at 0xfffffe000a0b2f24
+== 0xfffffe00079b2bff ==
+24A446: 3 ADRP+ADD/LDR refs to 0xfffffe00079b2bff
+   add at 0xfffffe000a0f835c
+   add at 0xfffffe000a0f84a0
+   add at 0xfffffe000a0fb628
+== 0xfffffe00079b2a46 ==
+24A446: 3 ADRP+ADD/LDR refs to 0xfffffe00079b2a46
+   add at 0xfffffe000a0f5bc0
+   add at 0xfffffe000a0f5d04
+   add at 0xfffffe000a0f68e4
+== 0xfffffe00079b1aa4 ==
+24A446: 3 ADRP+ADD/LDR refs to 0xfffffe00079b1aa4
+   add at 0xfffffe000a0cc808
+   add at 0xfffffe000a0cca8c
+   add at 0xfffffe000a0cd3d0
+== 0xfffffe00079b1f4b ==
+24A446: 3 ADRP+ADD/LDR refs to 0xfffffe00079b1f4b
+   add at 0xfffffe000a0d608c
+   add at 0xfffffe000a0d61d0
+   add at 0xfffffe000a0d87e0
+== 0xfffffe00079b24ea ==
+24A446: 7 ADRP+ADD/LDR refs to 0xfffffe00079b24ea
+   ldr at 0xfffffe000a0dc890
+   ldr at 0xfffffe000a0dc8f8
+   add at 0xfffffe000a0e0364
+   add at 0xfffffe000a0e04a8
+   add at 0xfffffe000a0e41cc
+   ldr at 0xfffffe000a0e4264
+   ldr at 0xfffffe000a0e4334
+== 0xfffffe00079b0cfa ==
+24A446: 4 ADRP+ADD/LDR refs to 0xfffffe00079b0cfa
+   add at 0xfffffe000a0b37f4
+   add at 0xfffffe000a0b3898
+   ldr at 0xfffffe000a0b3ae4
+   add at 0xfffffe000a0bb29c

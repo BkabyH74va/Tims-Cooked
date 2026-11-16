@@ -1,0 +1,25 @@
+### slot-12 thunk bodies
+-- 24A446 0xb2c8024
+0xfffffe000b2c8024  pacibsp    
+0xfffffe000b2c8028  sub        sp, sp, #0x30
+0xfffffe000b2c802c  stp        x29, x30, [sp, #0x20]
+0xfffffe000b2c8030  add        x29, sp, #0x20
+0xfffffe000b2c8034  ldp        q0, q1, [x1]
+0xfffffe000b2c8038  stp        q0, q1, [sp]
+0xfffffe000b2c803c  mov        x1, sp
+0xfffffe000b2c8040  bl         #0xfffffe000b2c8050
+0xfffffe000b2c8044  ldp        x29, x30, [sp, #0x20]
+0xfffffe000b2c8048  add        sp, sp, #0x30
+0xfffffe000b2c804c  retab      
+-- 24B119 0xb31e208
+0xfffffe000b31e208  pacibsp    
+0xfffffe000b31e20c  sub        sp, sp, #0x30
+0xfffffe000b31e210  stp        x29, x30, [sp, #0x20]
+0xfffffe000b31e214  add        x29, sp, #0x20
+0xfffffe000b31e218  ldp        q0, q1, [x1]
+0xfffffe000b31e21c  stp        q0, q1, [sp]
+0xfffffe000b31e220  mov        x1, sp
+0xfffffe000b31e224  bl         #0xfffffe000b31e234
+0xfffffe000b31e228  ldp        x29, x30, [sp, #0x20]
+0xfffffe000b31e22c  add        sp, sp, #0x30
+0xfffffe000b31e230  retab      
