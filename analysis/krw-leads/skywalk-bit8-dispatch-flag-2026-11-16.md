@@ -271,3 +271,52 @@ Resolve the outer entry of one kernel-core dispatcher: find who references the
 a chained fixup — decode the chain at the thunk's page rather than matching a
 literal). If it lands on an `is_io_connect_method`/MIG boundary, the +153
 kernel-core sites become reachable-surface candidates; otherwise leave closed.
+
+## 10. Follow-up: the kernel-core dispatchers sit in user-client vtables
+
+§9.4 is answered — the reference is not a chained fixup but an **arm64e auth
+pointer table entry**.
+
+`kz_vtable.py find 24B119 0xfffffe000b31e208` resolves the 0x2c thunk to
+**vtable slot 12** of several `__DATA_CONST` tables, e.g. table at
+`0xfffffe0007ed5b28`:
+
+```
+[ 0] 0xb3dac04   [ 1] 0xb3daba0   [ 2] 0xb2be688   [ 3] 0xb2be67c
+[ 4] 0xb2be64c   [ 5] 0xb2be61c   [ 6] 0xb2be494   [ 7] 0xb3dab90
+[ 8] 0xb2bb330   [ 9] 0xb2be404   [10] 0xb2be3d4   [11] 0xb2be27c
+[12] 0xb31e208  <== target thunk
+[13] 0xb3cd49c   [14] 0xb3cd3b8   [15] 0xb338674 ...
+```
+
+Slots 2–11 are byte-identical targets across every table that contains this
+thunk; slots 0, 1, 7 and 12+ differ per table. That is a standard C++ vtable
+shape: shared base-class method implementations with per-derived overrides.
+So the +153 kernel-core sites are not free-floating thunks — they are
+**virtual methods of user-client classes**, reached through ordinary vtable
+dispatch when the client object is used.
+
+`kz_chainfind.py chainrefs` reports zero chained-fixup slots for the same
+address, and raw pointer scans find none either, which is why the table route
+had to be used.
+
+**Still unresolved:** the class names. None of the table's 32+ entry functions
+reference any string (`kz_fn_strings.py`), and the vtable address itself has no
+`adrp+add` code reference. Consequently:
+
+* it is not established that any of these classes is app-openable;
+* it is not established that the bit-8 flag is attacker-influenceable;
+* no advisory mapping exists yet.
+
+This upgrades the *structural* claim (virtual method of a user-client class,
+i.e. shared IOKit glue, not a Skywalk-only quirk) but leaves §5's verdict
+unchanged: **bounded reconnaissance, not a vulnerability.**
+
+### 10.1 Remaining next step
+
+Name one owning class by resolving the `__OSMetaClass`/matching entry for table
+`0xfffffe0007ed5b28` (or any sibling) — i.e. find the data slot that holds the
+vtable address as a chained-fixup target, then walk the metaclass to its class
+name string. Until that lands, treat the kernel-core half of the bit-8 change
+as open-but-unreachable-on-evidence and prefer leads with a measured
+reachability result.

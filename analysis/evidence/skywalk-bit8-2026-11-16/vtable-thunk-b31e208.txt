@@ -1,0 +1,94 @@
+24B119: target 0xfffffe000b31e208 fileoff 0x431a208; 201 low32==0x431a208 slots
+
+--- slot file 0xed1b88 va=0xfffffe0007ed5b88 seg=__DATA_CONST
+   [  0] 0xfffffe0007ed5b28 -> 0xfffffe000b3dac04 FUNC
+   [  1] 0xfffffe0007ed5b30 -> 0xfffffe000b3daba0 FUNC
+   [  2] 0xfffffe0007ed5b38 -> 0xfffffe000b2be688 FUNC
+   [  3] 0xfffffe0007ed5b40 -> 0xfffffe000b2be67c FUNC
+   [  4] 0xfffffe0007ed5b48 -> 0xfffffe000b2be64c FUNC
+   [  5] 0xfffffe0007ed5b50 -> 0xfffffe000b2be61c FUNC
+   [  6] 0xfffffe0007ed5b58 -> 0xfffffe000b2be494 FUNC
+   [  7] 0xfffffe0007ed5b60 -> 0xfffffe000b3dab90 FUNC
+   [  8] 0xfffffe0007ed5b68 -> 0xfffffe000b2bb330 FUNC
+   [  9] 0xfffffe0007ed5b70 -> 0xfffffe000b2be404 FUNC
+   [ 10] 0xfffffe0007ed5b78 -> 0xfffffe000b2be3d4 FUNC
+   [ 11] 0xfffffe0007ed5b80 -> 0xfffffe000b2be27c FUNC
+   [ 12] 0xfffffe0007ed5b88 -> 0xfffffe000b31e208 FUNC   <=== TARGET
+   table start 0xfffffe0007ed5b28  target index 12
+
+--- slot file 0xed40d0 va=0xfffffe0007ed80d0 seg=__DATA_CONST
+   [  0] 0xfffffe0007ed8070 -> 0xfffffe000b3cd62c FUNC
+   [  1] 0xfffffe0007ed8078 -> 0xfffffe000b3cd5c8 FUNC
+   [  2] 0xfffffe0007ed8080 -> 0xfffffe000b2be688 FUNC
+   [  3] 0xfffffe0007ed8088 -> 0xfffffe000b2be67c FUNC
+   [  4] 0xfffffe0007ed8090 -> 0xfffffe000b2be64c FUNC
+   [  5] 0xfffffe0007ed8098 -> 0xfffffe000b2be61c FUNC
+   [  6] 0xfffffe0007ed80a0 -> 0xfffffe000b2be494 FUNC
+   [  7] 0xfffffe0007ed80a8 -> 0xfffffe000b3cd5b8 FUNC
+   [  8] 0xfffffe0007ed80b0 -> 0xfffffe000b2bb330 FUNC
+   [  9] 0xfffffe0007ed80b8 -> 0xfffffe000b2be404 FUNC
+   [ 10] 0xfffffe0007ed80c0 -> 0xfffffe000b2be3d4 FUNC
+   [ 11] 0xfffffe0007ed80c8 -> 0xfffffe000b2be27c FUNC
+   [ 12] 0xfffffe0007ed80d0 -> 0xfffffe000b31e208 FUNC   <=== TARGET
+   table start 0xfffffe0007ed8070  target index 12
+
+--- slot file 0xefd0c8 va=0xfffffe0007f010c8 seg=__DATA_CONST
+   [  0] 0xfffffe0007f01068 -> 0xfffffe000b3ee684 FUNC
+   [  1] 0xfffffe0007f01070 -> 0xfffffe000b3ee620 FUNC
+   [  2] 0xfffffe0007f01078 -> 0xfffffe000b2be688 FUNC
+   [  3] 0xfffffe0007f01080 -> 0xfffffe000b2be67c FUNC
+   [  4] 0xfffffe0007f01088 -> 0xfffffe000b2be64c FUNC
+   [  5] 0xfffffe0007f01090 -> 0xfffffe000b2be61c FUNC
+   [  6] 0xfffffe0007f01098 -> 0xfffffe000b2be494 FUNC
+   [  7] 0xfffffe0007f010a0 -> 0xfffffe000b3ee610 FUNC
+   [  8] 0xfffffe0007f010a8 -> 0xfffffe000b2bb330 FUNC
+   [  9] 0xfffffe0007f010b0 -> 0xfffffe000b2be404 FUNC
+   [ 10] 0xfffffe0007f010b8 -> 0xfffffe000b2be3d4 FUNC
+   [ 11] 0xfffffe0007f010c0 -> 0xfffffe000b2be27c FUNC
+   [ 12] 0xfffffe0007f010c8 -> 0xfffffe000b31e208 FUNC   <=== TARGET
+   table start 0xfffffe0007f01068  target index 12
+
+--- slot file 0xefea18 va=0xfffffe0007f02a18 seg=__DATA_CONST
+   [  0] 0xfffffe0007f029b8 -> 0xfffffe000b40a710 FUNC
+   [  1] 0xfffffe0007f029c0 -> 0xfffffe000b40a6ac FUNC
+   [  2] 0xfffffe0007f029c8 -> 0xfffffe000b2be688 FUNC
+   [  3] 0xfffffe0007f029d0 -> 0xfffffe000b2be67c FUNC
+   [  4] 0xfffffe0007f029d8 -> 0xfffffe000b2be64c FUNC
+   [  5] 0xfffffe0007f029e0 -> 0xfffffe000b2be61c FUNC
+   [  6] 0xfffffe0007f029e8 -> 0xfffffe000b2be494 FUNC
+   [  7] 0xfffffe0007f029f0 -> 0xfffffe000b40a69c FUNC
+   [  8] 0xfffffe0007f029f8 -> 0xfffffe000b2bb330 FUNC
+   [  9] 0xfffffe0007f02a00 -> 0xfffffe000b2be404 FUNC
+   [ 10] 0xfffffe0007f02a08 -> 0xfffffe000b2be3d4 FUNC
+   [ 11] 0xfffffe0007f02a10 -> 0xfffffe000b2be27c FUNC
+   [ 12] 0xfffffe0007f02a18 -> 0xfffffe000b31e208 FUNC   <=== TARGET
+   table start 0xfffffe0007f029b8  target index 12
+
+--- slot file 0xeff090 va=0xfffffe0007f03090 seg=__DATA_CONST
+   [  0] 0xfffffe0007f03030 -> 0xfffffe000b4928c4 FUNC
+   [  1] 0xfffffe0007f03038 -> 0xfffffe000b4928bc FUNC
+   [  2] 0xfffffe0007f03040 -> 0xfffffe000b2be688 FUNC
+   [  3] 0xfffffe0007f03048 -> 0xfffffe000b2be67c FUNC
+   [  4] 0xfffffe0007f03050 -> 0xfffffe000b2be64c FUNC
+   [  5] 0xfffffe0007f03058 -> 0xfffffe000b2be61c FUNC
+   [  6] 0xfffffe0007f03060 -> 0xfffffe000b2be494 FUNC
+   [  7] 0xfffffe0007f03068 -> 0xfffffe000b3cda74 FUNC
+   [  8] 0xfffffe0007f03070 -> 0xfffffe000b2bb330 FUNC
+   [  9] 0xfffffe0007f03078 -> 0xfffffe000b2be404 FUNC
+   [ 10] 0xfffffe0007f03080 -> 0xfffffe000b2be3d4 FUNC
+   [ 11] 0xfffffe0007f03088 -> 0xfffffe000b2be27c FUNC
+   [ 12] 0xfffffe0007f03090 -> 0xfffffe000b31e208 FUNC   <=== TARGET
+   table start 0xfffffe0007f03030  target index 12
+
+--- slot file 0xf30300 va=None seg=None
+Traceback (most recent call last):
+  File "G:\iOS 27.0.1\iOS\tools\kz-static-diff\kz_vtable.py", line 161, in <module>
+    main()
+    ~~~~^^
+  File "G:\iOS 27.0.1\iOS\tools\kz-static-diff\kz_vtable.py", line 150, in main
+    cmd_find(sys.argv[2], int(sys.argv[3], 16))
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "G:\iOS 27.0.1\iOS\tools\kz-static-diff\kz_vtable.py", line 96, in cmd_find
+    print(f"   [{idx:3d}] {va_of(segs, q):#x} -> {cand:#x} {ok}{mark}")
+                          ^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported format string passed to NoneType.__format__
