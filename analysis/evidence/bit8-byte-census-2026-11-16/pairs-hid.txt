@@ -1,0 +1,25 @@
+com.apple.iokit.IOHIDFamily: A thunks=22 B thunks=22
+  #               A fn    A sz    B fn    B sz     dsz  A->B clear
+  0 0xfffffe000a0fc660    0xe4 0xfffffe000a14b74c    0xe8      +4  False->True
+  1 0xfffffe000a0fc744    0xe8 0xfffffe000a14b834    0xec      +4  False->True
+  2 0xfffffe000a0fc82c    0xe8 0xfffffe000a14b920    0xec      +4  False->True
+  3 0xfffffe000a0fc9c8    0xe4 0xfffffe000a14bac4    0xe8      +4  False->True
+  4 0xfffffe000a0fcaac   0x114 0xfffffe000a14bbac   0x118      +4  False->True
+  5 0xfffffe000a0fcbc0    0xe8 0xfffffe000a14bcc4    0xec      +4  False->True
+  6 0xfffffe000a0fcca8    0xec 0xfffffe000a14bdb0    0xf0      +4  False->True
+  7 0xfffffe000a0fcd94    0xec 0xfffffe000a14bea0    0xf0      +4  False->True
+  8 0xfffffe000a0fd9c8   0x104 0xfffffe000a14cad8   0x108      +4  False->True
+  9 0xfffffe000a0fdcb0    0xe4 0xfffffe000a14cdc4    0xe8      +4  False->True
+ 10 0xfffffe000a0fdd94    0xc4 0xfffffe000a14ceac    0xc8      +4  False->True
+ 11 0xfffffe000a0fde58    0xf4 0xfffffe000a14cf74    0xf8      +4  False->True
+ 12 0xfffffe000a0fdf4c    0xf0 0xfffffe000a14d06c    0xf4      +4  False->True
+ 13 0xfffffe000a0fe03c    0xb8 0xfffffe000a14d160    0xbc      +4  False->True
+ 14 0xfffffe000a0ff070    0xc0 0xfffffe000a14e164    0xc4      +4  False->True
+ 15 0xfffffe000a0ff200    0xc0 0xfffffe000a14e2fc    0xc4      +4  False->True
+ 16 0xfffffe000a0ff2c0    0xf0 0xfffffe000a14e3c0    0xf4      +4  False->True
+ 17 0xfffffe000a0ff3b0    0xf0 0xfffffe000a14e4b4    0xf4      +4  False->True
+ 18 0xfffffe000a0ff4a0    0xf0 0xfffffe000a14e5a8    0xf4      +4  False->True
+ 19 0xfffffe000a0ff590    0xe4 0xfffffe000a14e69c    0xe8      +4  False->True
+ 20 0xfffffe000a0ff718    0xe4 0xfffffe000a14e82c    0xe8      +4  False->True
+ 21 0xfffffe000a0ffc1c    0xfc 0xfffffe000a14ed4c   0x100      +4  False->True
+pairs where B clears and A does not: 22/22
