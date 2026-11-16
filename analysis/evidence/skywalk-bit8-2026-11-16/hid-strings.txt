@@ -1,0 +1,28 @@
+0xfffffe00079bd675 [__TEXT] IOHIDEventServiceFastPathUserClient
+0xfffffe00079bd699 [__TEXT] site.IOHIDEventServiceFastPathUserClient
+0xfffffe00079bd75d [__TEXT] IOUserClientMessageAppSuspended
+0xfffffe00079bd77d [__TEXT] IOUserClientDefaultLocking
+0xfffffe00079bd798 [__TEXT] IOUserClientDefaultLockingSetProperties
+0xfffffe00079bd7c0 [__TEXT] IOUserClientDefaultLockingSingleThreadExternalMethod
+0xfffffe00079bd7f5 [__TEXT] IOUserClientEntitlements
+0xfffffe00079bd912 [__TEXT] IOHIDLibUserClient
+0xfffffe00079bd925 [__TEXT] site.IOHIDLibUserClient
+0xfffffe00079bdc45 [__TEXT] IOHIDLibUserClient.cpp
+0xfffffe00079be1bf [__TEXT] IOUserClientCrossEndianCompatible
+0xfffffe00079bec46 [__TEXT] IOUserClientClass
+0xfffffe00079bece4 [__TEXT] IOFastPathUserClient
+0xfffffe00079becf9 [__TEXT] site.IOFastPathUserClient
+0xfffffe00079bed31 [__TEXT] IOFastPathUserClient.cpp
+0xfffffe00079bfc91 [__TEXT] IOHIDEventServiceUserClient
+0xfffffe00079bfcad [__TEXT] site.IOHIDEventServiceUserClient
+0xfffffe00079bfe4a [__TEXT] IOHIDResourceDeviceUserClient
+0xfffffe00079bfe68 [__TEXT] site.IOHIDResourceDeviceUserClient
+0xfffffe00079bff42 [__TEXT] site.IOHIDResourceDeviceUserClientAsyncParamBlock
+0xfffffe00079c1918 [__TEXT] IOHIDEventServiceFastPathUserClient::open not ready
+0xfffffe00079c194d [__TEXT] IOHIDEventServiceFastPathUserClient::open already opened
+0xfffffe00079c1987 [__TEXT] IOHIDEventServiceFastPathUserClient::open missing properties
+0xfffffe00079c19c5 [__TEXT] IOHIDEventServiceFastPathUserClient::open _owner->openForClient failed
+0xfffffe00079c1a0d [__TEXT] IOHIDEventServiceFastPathUserClient::_copyEvent: %x
+0xfffffe00079c1a42 [__TEXT] IOHIDEventServiceFastPathUserClient suspended:%d
+0xfffffe00079c1a74 [__TEXT] IOHIDEventServiceFastPathUserClient::open:%x (task resume)
+0xfffffe00079c1c69 [__TEXT] %s:0x%llx %s is not entitled for IOHIDLibUserClient keyboard access

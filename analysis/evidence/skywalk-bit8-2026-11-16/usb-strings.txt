@@ -1,0 +1,33 @@
+0xfffffe0007ae01f9 [__TEXT] AppleUSBHostDeviceUserClient
+0xfffffe0007ae0216 [__TEXT] site.AppleUSBHostDeviceUserClient
+0xfffffe0007ae025f [__TEXT] %s@%s: %s::%s: AppleUSBHostDeviceUserClient[%p]::message - received kIOMessageServiceIsTerminated
+0xfffffe0007ae02c9 [__TEXT] %s@%s: %s::%s: AppleUSBHostDeviceUserClient[%p]::message -  received 0x%x
+0xfffffe0007ae0313 [__TEXT] %s@%s: %s::%s: AppleUSBHostDeviceUserClient[%p]::SetConfiguration - returning err %x
+0xfffffe0007ae0379 [__TEXT] %s@%s: %s::%s: AppleUSBHostDeviceUserClient[%p]::GetConfiguration - returning err %x
+0xfffffe0007ae0412 [__TEXT] UsbUserClientEnableReset
+0xfffffe0007ae0448 [__TEXT] %s@%s: %s::%s: AppleUSBHostDeviceUserClient[%p]::AbortPipeZero - returning err %x
+0xfffffe0007ae0526 [__TEXT] AppleUSBHostInterfaceUserClient
+0xfffffe0007ae0546 [__TEXT] site.AppleUSBHostInterfaceUserClient
+0xfffffe0007ae05fc [__TEXT] UsbUserClientBufferAllocations
+0xfffffe0007ae065d [__TEXT] UsbUserClientBufferStatistics
+0xfffffe0007ae067b [__TEXT] %s@%s: %s::%s: AppleUSBHostInterfaceUserClient[%p]::message - received kIOMessageServiceIsTerminated
+0xfffffe0007ae06e8 [__TEXT] AppleUSBHostInterfaceUserClient.cpp
+0xfffffe0007ae070c [__TEXT] UsbUserClientEnableDataToggleReset
+0xfffffe0007ae072f [__TEXT] site.AppleUSBHostUserClientAsyncParamBlock
+0xfffffe0007ae07a7 [__TEXT] site.IOUSBHostInterfaceUserClientISOAsyncParamBlock
+0xfffffe0007ae0fe1 [__TEXT] UsbUserClientEntitlementRequired
+0xfffffe0007ae56df [__TEXT] IOUserClientCreator
+0xfffffe0007ae992b [__TEXT] IOUSBDeviceUserClient
+0xfffffe0007ae9941 [__TEXT] site.IOUSBDeviceUserClient
+0xfffffe0007ae9978 [__TEXT] IOUSBDeviceUserClientV2
+0xfffffe0007ae9990 [__TEXT] site.IOUSBDeviceUserClientV2
+0xfffffe0007ae99ad [__TEXT] IOUSBInterfaceUserClient
+0xfffffe0007ae99c6 [__TEXT] site.IOUSBInterfaceUserClient
+0xfffffe0007ae99e4 [__TEXT] IOUSBInterfaceUserClientV2
+0xfffffe0007ae99ff [__TEXT] site.IOUSBInterfaceUserClientV2
+0xfffffe0007ae9a1f [__TEXT] IOUSBInterfaceUserClientV3
+0xfffffe0007ae9a3a [__TEXT] site.IOUSBInterfaceUserClientV3
+0xfffffe0007aea07b [__TEXT] AppleUSBHostUserClient
+0xfffffe0007aea092 [__TEXT] site.AppleUSBHostUserClient
+0xfffffe0007aea0f6 [__TEXT] UsbUserClientEntitlementExceptionAllowUnlocked
+0xfffffe0007aea13c [__TEXT] UsbUserClientEntitlement

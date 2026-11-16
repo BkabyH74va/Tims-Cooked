@@ -204,7 +204,6 @@ Do not spend a device cycle on it until §7 step 1 completes.
    detector with a positive control), rather than assuming the clear is a fix.
 
 ## 8. Tooling pitfalls found this pass
-
 * `"__PRELINK_TEXT".find("__TEXT")` is **false** — the substring is `_TEXT`, not
   `__TEXT`. An image-wide scan filtered on `"__TEXT" in segname` silently
   skipped all 14.5 MB of `__PRELINK_TEXT` and undercounted the idiom.
@@ -213,3 +212,62 @@ Do not spend a device cycle on it until §7 step 1 completes.
   the bitmask immediate signed/oddly, so a literal compare fails.
 * Capstone raises `CsError(CS_ERR_SKIPDATA)` when `.operands` is read on a
   skipdata pseudo-instruction — wrap it.
+
+## 9. Follow-up: the thunks are IOUserClient external-method implementations, and candidate classes are named
+
+After §7 step 1, one thunk was traced to its dispatcher statically.
+
+### 9.1 Thunk → externalMethod
+
+`kz_blscan_all.py` shows `IOHIDFamily 0xfffffe000a14b74c` has exactly one direct
+caller, function `0xfffffe000a14b460` (sz `0x2ec`), which is an
+**external-method dispatcher**:
+
+```asm
+ldr  x9,[x1,#0x18] ; ldr x9,[x9]        ; client object / vtable cookie
+; binary search over ~dozen baked cookies with cmp/b.le/b.gt ...
+; on match:
+ldp  q0,q1,[x1] ; stp q0,q1,[sp]        ; copy input struct to stack
+adrp x16,<fn> ; add x16,x16,#off
+mov  x17,#<discriminator> ; pacia x16,x17   ; sign a function pointer
+mov  x2,x16 ; mov x0,sp ; mov x1,x8
+bl   <per-class thunk>
+; default (no cookie match): bl 0xa17202c
+```
+
+So each per-selector thunk is `(x0 = input struct on stack, x1 = target, x2 =
+signed function pointer)` and calls through `blraa` with that signed pointer.
+The `pacia`/`blraa` pair with a per-thunk discriminator is the DriverKit /
+param-block invoke pattern (`site.<Class>AsyncParamBlock` strings exist for the
+same classes), i.e. these thunks marshal an async callback, not plain IPC.
+
+### 9.2 Candidate class names (from the members' own strings)
+
+| member | strings naming user clients |
+|---|---|
+| IOHIDFamily | `IOHIDEventServiceFastPathUserClient`, `IOHIDLibUserClient`, `IOHIDEventServiceUserClient`, `IOHIDResourceDeviceUserClient`, `IOFastPathUserClient`; also `%s:0x%llx %s is not entitled for IOHIDLibUserClient keyboard access` and `IOUserClientEntitlements` |
+| IOUSBHostFamily | `AppleUSBHostDeviceUserClient`, `AppleUSBHostInterfaceUserClient`, `IOUSBDeviceUserClient`, plus **`UsbUserClientEntitlementRequired`** |
+| IOSkywalkFamily | `IOSkywalkBSDClient`, `IOSkywalkKernelPipeBSDClient`, `IOSkywalkNetworkBSDClient` |
+
+The HID string `... is not entitled for IOHIDLibUserClient keyboard access` and
+the USB `UsbUserClientEntitlementRequired` string show these families carry
+explicit entitlement gates. **That is a reachability negative signal, not a
+measurement** — no open sweep was run.
+
+### 9.3 Consequence
+
+The owning classes are named well enough to design an open-only reachability
+sweep (service names, not selectors), but nothing here changes the §5 verdict:
+the bit-8 clear is still unproven as a fix, and the most affected surfaces
+(HID/USB) look entitlement-gated. The kernel-core half (+153 sites) is the more
+interesting remaining piece because it sits in shared IOKit glue, but its
+dispatchers (`0xfffffe000b31e234`, `0xfffffe000b328164`) are reached only
+through 0x2c-byte thunks whose outer entry was not resolved.
+
+### 9.4 Next step (still bounded, static)
+
+Resolve the outer entry of one kernel-core dispatcher: find who references the
+0x2c thunk at `0xfffffe000b31e208` (raw scans find nothing, so the reference is
+a chained fixup — decode the chain at the thunk's page rather than matching a
+literal). If it lands on an `is_io_connect_method`/MIG boundary, the +153
+kernel-core sites become reachable-surface candidates; otherwise leave closed.
