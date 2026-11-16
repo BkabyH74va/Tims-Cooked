@@ -1,0 +1,6 @@
+24A446 slot 27: pattern 0xf9406c00 -> 482 candidate sites
+  confirmed dispatch (ldr slot -> blr same reg): 4
+  __TEXT_EXEC 0xfffffe000b175908  base=x8  in func 0xfffffe000b1757ec sz=0x440
+  __TEXT_EXEC 0xfffffe000b1f2738  base=x8  in func 0xfffffe000b1f26fc sz=0xb4
+  __TEXT_EXEC 0xfffffe000b40f588  base=x10  in func 0xfffffe000b40f524 sz=0x1f4
+  __TEXT_EXEC 0xfffffe000b40f688  base=x10  in func 0xfffffe000b40f524 sz=0x1f4

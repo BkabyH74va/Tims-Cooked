@@ -1,0 +1,2192 @@
+### SLOT 0 ###
+24A446 slot 0: raw=424665 confirmed=40828
+  com.apple.AGXFirmwareKextG18PRTBuddy: 8
+      0xfffffe00084af678 base=x16 in 0xfffffe00084af4b0 sz=0x2f8
+      0xfffffe00084af6a4 base=x16 in 0xfffffe00084af4b0 sz=0x2f8
+      0xfffffe00084af6d0 base=x16 in 0xfffffe00084af4b0 sz=0x2f8
+      0xfffffe00084afc60 base=x16 in 0xfffffe00084afc04 sz=0x158
+      0xfffffe00084afc88 base=x16 in 0xfffffe00084afc04 sz=0x158
+      0xfffffe00084b0024 base=x16 in 0xfffffe00084afecc sz=0x218
+      0xfffffe00084b0480 base=x16 in 0xfffffe00084b041c sz=0x624
+      0xfffffe00084b10e4 base=x16 in 0xfffffe00084b1068 sz=0x258
+  com.apple.AGXG18P: 561
+      0xfffffe00084b1c0c base=x16 in 0xfffffe00084b1b9c sz=0x1738
+      0xfffffe00084b2744 base=x16 in 0xfffffe00084b1b9c sz=0x1738
+      0xfffffe00084b3040 base=x16 in 0xfffffe00084b1b9c sz=0x1738
+      0xfffffe00084b4428 base=x16 in 0xfffffe00084b41f8 sz=0x7b0
+      0xfffffe00084b44d4 base=x16 in 0xfffffe00084b41f8 sz=0x7b0
+      0xfffffe00084b4534 base=x16 in 0xfffffe00084b41f8 sz=0x7b0
+      0xfffffe00084b457c base=x16 in 0xfffffe00084b41f8 sz=0x7b0
+      0xfffffe00084b47d4 base=x16 in 0xfffffe00084b41f8 sz=0x7b0
+  com.apple.AUC: 5
+      0xfffffe00085c8fcc base=x16 in 0xfffffe00085c8f24 sz=0x180
+      0xfffffe00085c914c base=x16 in 0xfffffe00085c90a4 sz=0x138
+      0xfffffe00085c92f0 base=x16 in 0xfffffe00085c91dc sz=0x24c
+      0xfffffe00085cd150 base=x16 in 0xfffffe00085cd0f8 sz=0xcc
+      0xfffffe00085cd180 base=x16 in 0xfffffe00085cd0f8 sz=0xcc
+  com.apple.EXBrightCalibrationConsumer: 1
+      0xfffffe0009b9ead8 base=x16 in 0xfffffe0009b9e9a0 sz=0x3a0
+  com.apple.EXBrightKext: 28
+      0xfffffe0009b9fe04 base=x16 in 0xfffffe0009b9fcd0 sz=0xb00
+      0xfffffe0009b9fe6c base=x16 in 0xfffffe0009b9fcd0 sz=0xb00
+      0xfffffe0009b9fed4 base=x16 in 0xfffffe0009b9fcd0 sz=0xb00
+      0xfffffe0009b9ff3c base=x16 in 0xfffffe0009b9fcd0 sz=0xb00
+      0xfffffe0009ba0018 base=x16 in 0xfffffe0009b9fcd0 sz=0xb00
+      0xfffffe0009ba0080 base=x16 in 0xfffffe0009b9fcd0 sz=0xb00
+      0xfffffe0009ba00e8 base=x16 in 0xfffffe0009b9fcd0 sz=0xb00
+      0xfffffe0009ba0150 base=x16 in 0xfffffe0009b9fcd0 sz=0xb00
+  com.apple.IOTextEncryptionFamily: 4
+      0xfffffe000a35b364 base=x16 in 0xfffffe000a35b30c sz=0x1a8
+      0xfffffe000a35b404 base=x16 in 0xfffffe000a35b30c sz=0x1a8
+      0xfffffe000a35b74c base=x16 in 0xfffffe000a35b6c8 sz=0xf0
+      0xfffffe000a35b784 base=x16 in 0xfffffe000a35b6c8 sz=0xf0
+  com.apple.driver.AFKHIDTBDevice: 11
+      0xfffffe00084a286c base=x16 in 0xfffffe00084a2764 sz=0x9b0
+      0xfffffe00084a36c0 base=x16 in 0xfffffe00084a3658 sz=0x148
+      0xfffffe00084a3c7c base=x16 in 0xfffffe00084a385c sz=0x508
+      0xfffffe00084a3cc0 base=x16 in 0xfffffe00084a385c sz=0x508
+      0xfffffe00084a55b4 base=x16 in 0xfffffe00084a555c sz=0x59c
+      0xfffffe00084a5d74 base=x16 in 0xfffffe00084a5d00 sz=0x3a8
+      0xfffffe00084a5ecc base=x16 in 0xfffffe00084a5d00 sz=0x3a8
+      0xfffffe00084a5f58 base=x16 in 0xfffffe00084a5d00 sz=0x3a8
+  com.apple.driver.AOPAudio2: 4
+      0xfffffe000858eb38 base=x16 in 0xfffffe000858ea60 sz=0x16c
+      0xfffffe000858ec24 base=x16 in 0xfffffe000858ebcc sz=0xec
+      0xfffffe000858fc98 base=x16 in 0xfffffe000858fc38 sz=0x164
+      0xfffffe0008590878 base=x16 in 0xfffffe0008590774 sz=0x230
+  com.apple.driver.AOPTouchKext: 15
+      0xfffffe0008591f90 base=x16 in 0xfffffe0008591f18 sz=0x228
+      0xfffffe0008592010 base=x16 in 0xfffffe0008591f18 sz=0x228
+      0xfffffe0008592058 base=x16 in 0xfffffe0008591f18 sz=0x228
+      0xfffffe00085920a0 base=x16 in 0xfffffe0008591f18 sz=0x228
+      0xfffffe000859219c base=x16 in 0xfffffe0008592140 sz=0x108
+      0xfffffe0008593124 base=x16 in 0xfffffe00085930bc sz=0xe0
+      0xfffffe0008593158 base=x16 in 0xfffffe00085930bc sz=0xe0
+      0xfffffe0008593270 base=x16 in 0xfffffe0008593220 sz=0x168
+  com.apple.driver.ASIOKit: 16
+      0xfffffe000859448c base=x16 in 0xfffffe00085943d8 sz=0x2cc
+      0xfffffe0008594874 base=x16 in 0xfffffe00085947bc sz=0x29c
+      0xfffffe0008594b78 base=x16 in 0xfffffe0008594b0c sz=0xbc
+      0xfffffe0008594db8 base=x16 in 0xfffffe0008594cdc sz=0x214
+      0xfffffe0008595820 base=x16 in 0xfffffe0008595768 sz=0x154
+      0xfffffe0008595890 base=x16 in 0xfffffe0008595768 sz=0x154
+      0xfffffe00085958f8 base=x16 in 0xfffffe00085958bc sz=0xd0
+      0xfffffe00085965d4 base=x16 in 0xfffffe0008595c5c sz=0xbf4
+  com.apple.driver.AppleA7IOP: 42
+      0xfffffe00085d2e4c base=x16 in 0xfffffe00085d2dcc sz=0x994
+      0xfffffe00085d2f90 base=x16 in 0xfffffe00085d2dcc sz=0x994
+      0xfffffe00085d3104 base=x16 in 0xfffffe00085d2dcc sz=0x994
+      0xfffffe00085d3358 base=x16 in 0xfffffe00085d2dcc sz=0x994
+      0xfffffe00085d33fc base=x16 in 0xfffffe00085d2dcc sz=0x994
+      0xfffffe00085d35ac base=x16 in 0xfffffe00085d2dcc sz=0x994
+      0xfffffe00085d3628 base=x16 in 0xfffffe00085d2dcc sz=0x994
+      0xfffffe00085d3928 base=x16 in 0xfffffe00085d388c sz=0x180
+  com.apple.driver.AppleA7IOP-ASCWrap-v6: 4
+      0xfffffe00085d19c4 base=x16 in 0xfffffe00085d1950 sz=0xa4
+      0xfffffe00085d1a74 base=x16 in 0xfffffe00085d19f4 sz=0xb0
+      0xfffffe00085d1c94 base=x16 in 0xfffffe00085d1c00 sz=0x178
+      0xfffffe00085d1f88 base=x16 in 0xfffffe00085d1f0c sz=0x140
+  com.apple.driver.AppleALSColorSensor: 132
+      0xfffffe00085db40c base=x16 in 0xfffffe00085db0d8 sz=0x3c8
+      0xfffffe00085dbd00 base=x16 in 0xfffffe00085db9f4 sz=0x2198
+      0xfffffe00085dbdd8 base=x16 in 0xfffffe00085db9f4 sz=0x2198
+      0xfffffe00085dbe14 base=x16 in 0xfffffe00085db9f4 sz=0x2198
+      0xfffffe00085dbe34 base=x16 in 0xfffffe00085db9f4 sz=0x2198
+      0xfffffe00085dbf14 base=x16 in 0xfffffe00085db9f4 sz=0x2198
+      0xfffffe00085dc08c base=x16 in 0xfffffe00085db9f4 sz=0x2198
+      0xfffffe00085dc28c base=x16 in 0xfffffe00085db9f4 sz=0x2198
+  com.apple.driver.AppleAOP2: 9
+      0xfffffe00085f7d80 base=x16 in 0xfffffe00085f7d48 sz=0xc4
+      0xfffffe00085f88ec base=x16 in 0xfffffe00085f87d4 sz=0x2ac
+      0xfffffe00085f895c base=x16 in 0xfffffe00085f87d4 sz=0x2ac
+      0xfffffe00085f897c base=x16 in 0xfffffe00085f87d4 sz=0x2ac
+      0xfffffe00085f89b8 base=x16 in 0xfffffe00085f87d4 sz=0x2ac
+      0xfffffe00085fa894 base=x16 in 0xfffffe00085fa828 sz=0x19c
+      0xfffffe00085fa8fc base=x16 in 0xfffffe00085fa828 sz=0x19c
+      0xfffffe00085fa91c base=x16 in 0xfffffe00085fa828 sz=0x19c
+  com.apple.driver.AppleAOPAudio: 211
+      0xfffffe00085fba4c base=x16 in 0xfffffe00085fb9dc sz=0xd4
+      0xfffffe00085fc3b8 base=x16 in 0xfffffe00085fc314 sz=0x14c
+      0xfffffe00085fc3f4 base=x16 in 0xfffffe00085fc314 sz=0x14c
+      0xfffffe00085fd270 base=x16 in 0xfffffe00085fd1c8 sz=0x10c
+      0xfffffe00085fdc04 base=x16 in 0xfffffe00085fdb50 sz=0x108
+      0xfffffe00085fed28 base=x16 in 0xfffffe00085fe534 sz=0xa50
+      0xfffffe00085feda8 base=x16 in 0xfffffe00085fe534 sz=0xa50
+      0xfffffe00085fede8 base=x16 in 0xfffffe00085fe534 sz=0xa50
+  com.apple.driver.AppleAOPHaptics: 3
+      0xfffffe0008ac9214 base=x16 in 0xfffffe0008ac9140 sz=0x108
+      0xfffffe0008acacfc base=x16 in 0xfffffe0008acaca8 sz=0xf4
+      0xfffffe0008acae00 base=x16 in 0xfffffe0008acad9c sz=0x0
+  com.apple.driver.AppleARMPMU: 280
+      0xfffffe0008642a54 base=x16 in 0xfffffe000864281c sz=0x1ab8
+      0xfffffe00086430fc base=x16 in 0xfffffe000864281c sz=0x1ab8
+      0xfffffe0008643168 base=x16 in 0xfffffe000864281c sz=0x1ab8
+      0xfffffe00086431d8 base=x16 in 0xfffffe000864281c sz=0x1ab8
+      0xfffffe0008643790 base=x16 in 0xfffffe000864281c sz=0x1ab8
+      0xfffffe0008643974 base=x16 in 0xfffffe000864281c sz=0x1ab8
+      0xfffffe0008643cc4 base=x16 in 0xfffffe000864281c sz=0x1ab8
+      0xfffffe0008643d2c base=x16 in 0xfffffe000864281c sz=0x1ab8
+  com.apple.driver.AppleARMPlatform: 374
+      0xfffffe0008657e4c base=x16 in 0xfffffe0008657cd0 sz=0x5d0
+      0xfffffe0008657ea4 base=x16 in 0xfffffe0008657cd0 sz=0x5d0
+      0xfffffe0008657efc base=x16 in 0xfffffe0008657cd0 sz=0x5d0
+      0xfffffe0008659180 base=x16 in 0xfffffe0008659128 sz=0x21c
+      0xfffffe0008659254 base=x16 in 0xfffffe0008659128 sz=0x21c
+      0xfffffe00086592c4 base=x16 in 0xfffffe0008659128 sz=0x21c
+      0xfffffe00086592f0 base=x16 in 0xfffffe0008659128 sz=0x21c
+      0xfffffe000865931c base=x16 in 0xfffffe0008659128 sz=0x21c
+  com.apple.driver.AppleARMWatchdogTimer: 11
+      0xfffffe00086aee08 base=x16 in 0xfffffe00086aed9c sz=0x10a8
+      0xfffffe00086aee84 base=x16 in 0xfffffe00086aed9c sz=0x10a8
+      0xfffffe00086af42c base=x16 in 0xfffffe00086aed9c sz=0x10a8
+      0xfffffe00086af484 base=x16 in 0xfffffe00086aed9c sz=0x10a8
+      0xfffffe00086b09b8 base=x16 in 0xfffffe00086b0850 sz=0x368
+      0xfffffe00086b0a38 base=x16 in 0xfffffe00086b0850 sz=0x368
+      0xfffffe00086b1470 base=x16 in 0xfffffe00086b13d8 sz=0xc8
+      0xfffffe00086b1500 base=x16 in 0xfffffe00086b14a0 sz=0x84
+  com.apple.driver.AppleAVD: 23
+      0xfffffe00086cea34 base=x16 in 0xfffffe00086ce964 sz=0x3b4c
+      0xfffffe00086ced60 base=x16 in 0xfffffe00086ce964 sz=0x3b4c
+      0xfffffe00086cee04 base=x16 in 0xfffffe00086ce964 sz=0x3b4c
+      0xfffffe00086cee68 base=x16 in 0xfffffe00086ce964 sz=0x3b4c
+      0xfffffe00086cf574 base=x16 in 0xfffffe00086ce964 sz=0x3b4c
+      0xfffffe00086cf61c base=x16 in 0xfffffe00086ce964 sz=0x3b4c
+      0xfffffe00086cf900 base=x16 in 0xfffffe00086ce964 sz=0x3b4c
+      0xfffffe00086d0760 base=x16 in 0xfffffe00086ce964 sz=0x3b4c
+  com.apple.driver.AppleAVE2: 18
+      0xfffffe000878ae58 base=x16 in 0xfffffe000878ad8c sz=0x158
+      0xfffffe0008849a7c base=x16 in 0xfffffe00088499b0 sz=0x4f8
+      0xfffffe000884fbf4 base=x16 in 0xfffffe000884fb10 sz=0x598
+      0xfffffe000885c2cc base=x16 in 0xfffffe000885bdac sz=0x88c
+      0xfffffe00088610a4 base=x16 in 0xfffffe0008860d30 sz=0x498
+      0xfffffe00088610e4 base=x16 in 0xfffffe0008860d30 sz=0x498
+      0xfffffe0008861120 base=x16 in 0xfffffe0008860d30 sz=0x498
+      0xfffffe0008861160 base=x16 in 0xfffffe0008860d30 sz=0x498
+  com.apple.driver.AppleActuatorDriver: 44
+      0xfffffe00088ef334 base=x16 in 0xfffffe00088ef164 sz=0x7dc
+      0xfffffe00088ef374 base=x16 in 0xfffffe00088ef164 sz=0x7dc
+      0xfffffe00088ef4f4 base=x16 in 0xfffffe00088ef164 sz=0x7dc
+      0xfffffe00088ef5b4 base=x16 in 0xfffffe00088ef164 sz=0x7dc
+      0xfffffe00088ef724 base=x16 in 0xfffffe00088ef164 sz=0x7dc
+      0xfffffe00088ef9ac base=x16 in 0xfffffe00088ef940 sz=0x158
+      0xfffffe00088efda0 base=x16 in 0xfffffe00088efc70 sz=0x1e8
+      0xfffffe00088efdd4 base=x16 in 0xfffffe00088efc70 sz=0x1e8
+  com.apple.driver.AppleAstrisGpioProbe: 2
+      0xfffffe00088f8834 base=x16 in 0xfffffe00088f8590 sz=0x2fc
+      0xfffffe00088f9350 base=x16 in 0xfffffe00088f92d4 sz=0xf8
+  com.apple.driver.AppleAuthCP: 180
+      0xfffffe00088fe1d0 base=x16 in 0xfffffe00088fe13c sz=0xa14
+      0xfffffe00088fe1f8 base=x16 in 0xfffffe00088fe13c sz=0xa14
+      0xfffffe00088fe368 base=x16 in 0xfffffe00088fe13c sz=0xa14
+      0xfffffe00088fe48c base=x16 in 0xfffffe00088fe13c sz=0xa14
+      0xfffffe00088fe51c base=x16 in 0xfffffe00088fe13c sz=0xa14
+      0xfffffe00088fe548 base=x16 in 0xfffffe00088fe13c sz=0xa14
+      0xfffffe00088fe78c base=x16 in 0xfffffe00088fe13c sz=0xa14
+      0xfffffe00088fe7b4 base=x16 in 0xfffffe00088fe13c sz=0xa14
+  com.apple.driver.AppleBSDKextStarter: 1
+      0xfffffe0008918bd0 base=x16 in 0xfffffe0008918a70 sz=0x1d4
+  com.apple.driver.AppleBasebandM20: 128
+      0xfffffe000891bd44 base=x16 in 0xfffffe000891b898 sz=0x1538
+      0xfffffe000891c5cc base=x16 in 0xfffffe000891b898 sz=0x1538
+      0xfffffe000891c690 base=x16 in 0xfffffe000891b898 sz=0x1538
+      0xfffffe000891c760 base=x16 in 0xfffffe000891b898 sz=0x1538
+      0xfffffe000891c830 base=x16 in 0xfffffe000891b898 sz=0x1538
+      0xfffffe000891c900 base=x16 in 0xfffffe000891b898 sz=0x1538
+      0xfffffe000891c9d0 base=x16 in 0xfffffe000891b898 sz=0x1538
+      0xfffffe000891caa0 base=x16 in 0xfffffe000891b898 sz=0x1538
+  com.apple.driver.AppleBasebandPCI: 218
+      0xfffffe0008964960 base=x16 in 0xfffffe000896482c sz=0x70c
+      0xfffffe00089649f8 base=x16 in 0xfffffe000896482c sz=0x70c
+      0xfffffe0008964cf8 base=x16 in 0xfffffe000896482c sz=0x70c
+      0xfffffe0008964d1c base=x16 in 0xfffffe000896482c sz=0x70c
+      0xfffffe000896525c base=x16 in 0xfffffe0008964f38 sz=0x390
+      0xfffffe00089661bc base=x16 in 0xfffffe00089660ec sz=0x75c
+      0xfffffe00089661ec base=x16 in 0xfffffe00089660ec sz=0x75c
+      0xfffffe0008966224 base=x16 in 0xfffffe00089660ec sz=0x75c
+  com.apple.driver.AppleBasebandPCIMAVControl: 177
+      0xfffffe00089abb44 base=x16 in 0xfffffe00089ab848 sz=0x4b8
+      0xfffffe00089abc44 base=x16 in 0xfffffe00089ab848 sz=0x4b8
+      0xfffffe00089abc84 base=x16 in 0xfffffe00089ab848 sz=0x4b8
+      0xfffffe00089abcbc base=x16 in 0xfffffe00089ab848 sz=0x4b8
+      0xfffffe00089abea4 base=x16 in 0xfffffe00089abd00 sz=0x220
+      0xfffffe00089abed4 base=x16 in 0xfffffe00089abd00 sz=0x220
+      0xfffffe00089ac160 base=x16 in 0xfffffe00089ac0b0 sz=0x150
+      0xfffffe00089ac520 base=x16 in 0xfffffe00089ac47c sz=0xe8
+  com.apple.driver.AppleBasebandPCIMAVPDP: 37
+      0xfffffe00089d2bb4 base=x16 in 0xfffffe00089d2aa0 sz=0x1e0
+      0xfffffe00089d33b0 base=x16 in 0xfffffe00089d316c sz=0x648
+      0xfffffe00089d366c base=x16 in 0xfffffe00089d316c sz=0x648
+      0xfffffe00089d4000 base=x16 in 0xfffffe00089d3e30 sz=0x340
+      0xfffffe00089d4024 base=x16 in 0xfffffe00089d3e30 sz=0x340
+      0xfffffe00089d4144 base=x16 in 0xfffffe00089d3e30 sz=0x340
+      0xfffffe00089d4478 base=x16 in 0xfffffe00089d433c sz=0x1b0
+      0xfffffe00089d44bc base=x16 in 0xfffffe00089d433c sz=0x1b0
+  com.apple.driver.AppleC26Charger: 84
+      0xfffffe00089dffc8 base=x16 in 0xfffffe00089dfef0 sz=0x150
+      0xfffffe00089e061c base=x16 in 0xfffffe00089e05b4 sz=0x3d0
+      0xfffffe00089e0a1c base=x16 in 0xfffffe00089e0984 sz=0x360
+      0xfffffe00089e0bcc base=x16 in 0xfffffe00089e0984 sz=0x360
+      0xfffffe00089e1ac0 base=x16 in 0xfffffe00089e19cc sz=0x5c4
+      0xfffffe00089e1af4 base=x16 in 0xfffffe00089e19cc sz=0x5c4
+      0xfffffe00089e1c00 base=x16 in 0xfffffe00089e19cc sz=0x5c4
+      0xfffffe00089e1d8c base=x16 in 0xfffffe00089e19cc sz=0x5c4
+  com.apple.driver.AppleCS42L79Audio: 17
+      0xfffffe0008ad1978 base=x16 in 0xfffffe0008ad1824 sz=0x5fc
+      0xfffffe0008ad2c04 base=x16 in 0xfffffe0008ad2bb8 sz=0xc0
+      0xfffffe0008ad2cc4 base=x16 in 0xfffffe0008ad2c78 sz=0xc0
+      0xfffffe0008ad36b4 base=x16 in 0xfffffe0008ad363c sz=0x170
+      0xfffffe0008ad3824 base=x16 in 0xfffffe0008ad37ac sz=0x320
+      0xfffffe0008ad39fc base=x16 in 0xfffffe0008ad37ac sz=0x320
+      0xfffffe0008ad3c34 base=x16 in 0xfffffe0008ad3bc8 sz=0x5f8
+      0xfffffe0008ad48dc base=x16 in 0xfffffe0008ad4878 sz=0x9c
+  com.apple.driver.AppleCSEmbeddedAudio: 84
+      0xfffffe00089f437c base=x16 in 0xfffffe00089f42dc sz=0x198
+      0xfffffe00089f4a18 base=x16 in 0xfffffe00089f49b8 sz=0x140
+      0xfffffe00089f4a84 base=x16 in 0xfffffe00089f49b8 sz=0x140
+      0xfffffe00089f4e00 base=x16 in 0xfffffe00089f4d7c sz=0x194
+      0xfffffe00089f5280 base=x16 in 0xfffffe00089f51d8 sz=0x320
+      0xfffffe00089f537c base=x16 in 0xfffffe00089f51d8 sz=0x320
+      0xfffffe00089f53ac base=x16 in 0xfffffe00089f51d8 sz=0x320
+      0xfffffe00089f5450 base=x16 in 0xfffffe00089f51d8 sz=0x320
+  com.apple.driver.AppleCallbackPowerSource: 11
+      0xfffffe00089fe124 base=x16 in 0xfffffe00089fdf70 sz=0x368
+      0xfffffe00089fe24c base=x16 in 0xfffffe00089fdf70 sz=0x368
+      0xfffffe00089feab8 base=x16 in 0xfffffe00089fe6dc sz=0x8ec
+      0xfffffe00089febd4 base=x16 in 0xfffffe00089fe6dc sz=0x8ec
+      0xfffffe00089fed2c base=x16 in 0xfffffe00089fe6dc sz=0x8ec
+      0xfffffe00089ff1fc base=x16 in 0xfffffe00089ff184 sz=0x148
+      0xfffffe00089ff264 base=x16 in 0xfffffe00089ff184 sz=0x148
+      0xfffffe00089ff454 base=x16 in 0xfffffe00089ff394 sz=0x314
+  com.apple.driver.AppleCentauriManager: 76
+      0xfffffe0008a02ef4 base=x16 in 0xfffffe0008a02d1c sz=0x300
+      0xfffffe0008a031a4 base=x16 in 0xfffffe0008a0312c sz=0x85c
+      0xfffffe0008a03218 base=x16 in 0xfffffe0008a0312c sz=0x85c
+      0xfffffe0008a03278 base=x16 in 0xfffffe0008a0312c sz=0x85c
+      0xfffffe0008a032ec base=x16 in 0xfffffe0008a0312c sz=0x85c
+      0xfffffe0008a0336c base=x16 in 0xfffffe0008a0312c sz=0x85c
+      0xfffffe0008a03620 base=x16 in 0xfffffe0008a0312c sz=0x85c
+      0xfffffe0008a03aac base=x16 in 0xfffffe0008a03988 sz=0x1a4
+  com.apple.driver.AppleDAPF: 1
+      0xfffffe0008a1e63c base=x16 in 0xfffffe0008a1e5c8 sz=0x510
+  com.apple.driver.AppleDCP: 36
+      0xfffffe0008a1f510 base=x16 in 0xfffffe0008a1f488 sz=0xd8
+      0xfffffe0008a20908 base=x16 in 0xfffffe0008a20868 sz=0x1570
+      0xfffffe0008a20ab4 base=x16 in 0xfffffe0008a20868 sz=0x1570
+      0xfffffe0008a20b1c base=x16 in 0xfffffe0008a20868 sz=0x1570
+      0xfffffe0008a20b84 base=x16 in 0xfffffe0008a20868 sz=0x1570
+      0xfffffe0008a20bf0 base=x16 in 0xfffffe0008a20868 sz=0x1570
+      0xfffffe0008a20cdc base=x16 in 0xfffffe0008a20868 sz=0x1570
+      0xfffffe0008a20df4 base=x16 in 0xfffffe0008a20868 sz=0x1570
+  com.apple.driver.AppleDCPDPTXProxy: 20
+      0xfffffe0008a27f58 base=x16 in 0xfffffe0008a27f18 sz=0x5c
+      0xfffffe0008a28170 base=x16 in 0xfffffe0008a2810c sz=0xa8
+      0xfffffe0008a282d4 base=x16 in 0xfffffe0008a28298 sz=0x58
+      0xfffffe0008a289a8 base=x16 in 0xfffffe0008a28948 sz=0xc4
+      0xfffffe0008a28b78 base=x16 in 0xfffffe0008a28af0 sz=0x154
+      0xfffffe0008a2995c base=x16 in 0xfffffe0008a29864 sz=0x4b4
+      0xfffffe0008a299c4 base=x16 in 0xfffffe0008a29864 sz=0x4b4
+      0xfffffe0008a29aec base=x16 in 0xfffffe0008a29864 sz=0x4b4
+  com.apple.driver.AppleDiagnosticDataAccessReadOnly: 2
+      0xfffffe0008a3089c base=x16 in 0xfffffe0008a307b8 sz=0x3a4
+      0xfffffe0008a30a30 base=x16 in 0xfffffe0008a307b8 sz=0x3a4
+  com.apple.driver.AppleDialogPMU: 8
+      0xfffffe0008a3177c base=x16 in 0xfffffe0008a31724 sz=0xd4
+      0xfffffe0008a31d40 base=x16 in 0xfffffe0008a31be0 sz=0x3e8
+      0xfffffe0008a31d9c base=x16 in 0xfffffe0008a31be0 sz=0x3e8
+      0xfffffe0008a31de4 base=x16 in 0xfffffe0008a31be0 sz=0x3e8
+      0xfffffe0008a32080 base=x16 in 0xfffffe0008a31fc8 sz=0x108
+      0xfffffe0008a321e4 base=x16 in 0xfffffe0008a3218c sz=0xd0
+      0xfffffe0008a3352c base=x16 in 0xfffffe0008a33494 sz=0x40c
+      0xfffffe0008a33bc8 base=x16 in 0xfffffe0008a33b70 sz=0xd4
+  com.apple.driver.AppleDiskImages2: 13
+      0xfffffe0008a35b88 base=x16 in 0xfffffe0008a35aac sz=0x13c
+      0xfffffe0008a35f90 base=x16 in 0xfffffe0008a35ef0 sz=0xe8
+      0xfffffe0008a36c80 base=x16 in 0xfffffe0008a36b38 sz=0x520
+      0xfffffe0008a37204 base=x16 in 0xfffffe0008a37058 sz=0x498
+      0xfffffe0008a3722c base=x16 in 0xfffffe0008a37058 sz=0x498
+      0xfffffe0008a37e88 base=x16 in 0xfffffe0008a37e0c sz=0x334
+      0xfffffe0008a3cd70 base=x16 in 0xfffffe0008a3ccc0 sz=0x188
+      0xfffffe0008a3cd9c base=x16 in 0xfffffe0008a3ccc0 sz=0x188
+  com.apple.driver.AppleDisplayCrossbar: 199
+      0xfffffe0008a49978 base=x16 in 0xfffffe0008a49920 sz=0x1c4
+      0xfffffe0008a49b3c base=x16 in 0xfffffe0008a49ae4 sz=0xbc
+      0xfffffe0008a4afc0 base=x16 in 0xfffffe0008a4aefc sz=0x340
+      0xfffffe0008a4b014 base=x16 in 0xfffffe0008a4aefc sz=0x340
+      0xfffffe0008a4b078 base=x16 in 0xfffffe0008a4aefc sz=0x340
+      0xfffffe0008a4b118 base=x16 in 0xfffffe0008a4aefc sz=0x340
+      0xfffffe0008a4b958 base=x16 in 0xfffffe0008a4b6b8 sz=0x1190
+      0xfffffe0008a4bef0 base=x16 in 0xfffffe0008a4b6b8 sz=0x1190
+  com.apple.driver.AppleDockChannel: 4
+      0xfffffe0008a88f0c base=x16 in 0xfffffe0008a88e78 sz=0xa18
+      0xfffffe0008a89510 base=x16 in 0xfffffe0008a88e78 sz=0xa18
+      0xfffffe0008a8a2d8 base=x16 in 0xfffffe0008a8a25c sz=0x178
+      0xfffffe0008a8a30c base=x16 in 0xfffffe0008a8a25c sz=0x178
+  com.apple.driver.AppleEffaceableBlockDevice: 10
+      0xfffffe0008a8bb34 base=x0 in 0xfffffe0008a8bb18 sz=0xd8
+      0xfffffe0008a8bb54 base=x19 in 0xfffffe0008a8bb18 sz=0xd8
+      0xfffffe0008a8bb6c base=x19 in 0xfffffe0008a8bb18 sz=0xd8
+      0xfffffe0008a8bb88 base=x19 in 0xfffffe0008a8bb18 sz=0xd8
+      0xfffffe0008a8bba0 base=x19 in 0xfffffe0008a8bb18 sz=0xd8
+      0xfffffe0008a8bbbc base=x19 in 0xfffffe0008a8bb18 sz=0xd8
+      0xfffffe0008a8bc88 base=x20 in 0xfffffe0008a8bc54 sz=0x58
+      0xfffffe0008a8c24c base=x16 in 0xfffffe0008a8c210 sz=0x60
+  com.apple.driver.AppleEffaceableStorage: 118
+      0xfffffe0008a8cbf0 base=x0 in 0xfffffe0008a8cbd8 sz=0x58
+      0xfffffe0008a8cc0c base=x19 in 0xfffffe0008a8cbd8 sz=0x58
+      0xfffffe0008a8cc70 base=x0 in 0xfffffe0008a8cc54 sz=0x64
+      0xfffffe0008a8ccf8 base=x22 in 0xfffffe0008a8ccb8 sz=0x94
+      0xfffffe0008a8cd8c base=x22 in 0xfffffe0008a8cd4c sz=0x88
+      0xfffffe0008a8cda4 base=x22 in 0xfffffe0008a8cd4c sz=0x88
+      0xfffffe0008a8cf90 base=x19 in 0xfffffe0008a8cdd4 sz=0x708
+      0xfffffe0008a8cfb0 base=x19 in 0xfffffe0008a8cdd4 sz=0x708
+  com.apple.driver.AppleEmbeddedAudio: 304
+      0xfffffe0008a92960 base=x16 in 0xfffffe0008a9286c sz=0x18c
+      0xfffffe0008a92de8 base=x16 in 0xfffffe0008a92cf4 sz=0x1e8
+      0xfffffe0008a93010 base=x16 in 0xfffffe0008a92edc sz=0x260
+      0xfffffe0008a93274 base=x16 in 0xfffffe0008a9313c sz=0x268
+      0xfffffe0008a934f4 base=x16 in 0xfffffe0008a933a4 sz=0x248
+      0xfffffe0008a936f0 base=x16 in 0xfffffe0008a935ec sz=0x204
+      0xfffffe0008a93e80 base=x16 in 0xfffffe0008a93d40 sz=0x318
+      0xfffffe0008a94468 base=x16 in 0xfffffe0008a943fc sz=0x304
+  com.apple.driver.AppleEmbeddedAudioLibs: 45
+      0xfffffe0008ae5380 base=x19 in 0xfffffe0008ae531c sz=0xd8
+      0xfffffe0008ae5598 base=x16 in 0xfffffe0008ae546c sz=0x210
+      0xfffffe0008ae55c0 base=x16 in 0xfffffe0008ae546c sz=0x210
+      0xfffffe0008ae57d4 base=x16 in 0xfffffe0008ae576c sz=0x1d4
+      0xfffffe0008ae58c4 base=x16 in 0xfffffe0008ae576c sz=0x1d4
+      0xfffffe0008ae5cd0 base=x16 in 0xfffffe0008ae5b30 sz=0x4c0
+      0xfffffe0008ae5d0c base=x16 in 0xfffffe0008ae5b30 sz=0x4c0
+      0xfffffe0008ae73bc base=x16 in 0xfffffe0008ae7328 sz=0x154
+  com.apple.driver.AppleEmbeddedAudioResourceManager: 12
+      0xfffffe0008af2650 base=x16 in 0xfffffe0008af25e4 sz=0x3f0
+      0xfffffe0008af2864 base=x16 in 0xfffffe0008af25e4 sz=0x3f0
+      0xfffffe0008af2888 base=x16 in 0xfffffe0008af25e4 sz=0x3f0
+      0xfffffe0008af2c88 base=x16 in 0xfffffe0008af2c2c sz=0x30c
+      0xfffffe0008af2e60 base=x16 in 0xfffffe0008af2c2c sz=0x30c
+      0xfffffe0008af3154 base=x16 in 0xfffffe0008af30f8 sz=0x268
+      0xfffffe0008af3d44 base=x16 in 0xfffffe0008af3bbc sz=0x544
+      0xfffffe0008af3ff8 base=x16 in 0xfffffe0008af3bbc sz=0x544
+  com.apple.driver.AppleEmbeddedGPS: 2
+      0xfffffe0008af69b8 base=x16 in 0xfffffe0008af6964 sz=0x10c
+      0xfffffe0008af6a34 base=x16 in 0xfffffe0008af6964 sz=0x10c
+  com.apple.driver.AppleEmbeddedLightSensor: 106
+      0xfffffe0008af8d10 base=x16 in 0xfffffe0008af8bf8 sz=0x834
+      0xfffffe0008af8dbc base=x16 in 0xfffffe0008af8bf8 sz=0x834
+      0xfffffe0008af8ebc base=x16 in 0xfffffe0008af8bf8 sz=0x834
+      0xfffffe0008af8f64 base=x16 in 0xfffffe0008af8bf8 sz=0x834
+      0xfffffe0008af9000 base=x16 in 0xfffffe0008af8bf8 sz=0x834
+      0xfffffe0008af909c base=x16 in 0xfffffe0008af8bf8 sz=0x834
+      0xfffffe0008af9190 base=x16 in 0xfffffe0008af8bf8 sz=0x834
+      0xfffffe0008af91e0 base=x16 in 0xfffffe0008af8bf8 sz=0x834
+  com.apple.driver.AppleEmbeddedMikeyBus: 265
+      0xfffffe0008b0e3c4 base=x16 in 0xfffffe0008b0e19c sz=0x2fc
+      0xfffffe0008b0e42c base=x16 in 0xfffffe0008b0e19c sz=0x2fc
+      0xfffffe0008b0e5f0 base=x16 in 0xfffffe0008b0e5b4 sz=0x114
+      0xfffffe0008b0e65c base=x16 in 0xfffffe0008b0e5b4 sz=0x114
+      0xfffffe0008b0e89c base=x16 in 0xfffffe0008b0e73c sz=0x230
+      0xfffffe0008b0ea54 base=x16 in 0xfffffe0008b0e978 sz=0x1a0
+      0xfffffe0008b0eab0 base=x16 in 0xfffffe0008b0e978 sz=0x1a0
+      0xfffffe0008b0f298 base=x16 in 0xfffffe0008b0f1d0 sz=0x998
+  com.apple.driver.AppleEmbeddedPCIE: 213
+      0xfffffe0008b263dc base=x16 in 0xfffffe0008b26080 sz=0x804
+      0xfffffe0008b26474 base=x16 in 0xfffffe0008b26080 sz=0x804
+      0xfffffe0008b264a4 base=x16 in 0xfffffe0008b26080 sz=0x804
+      0xfffffe0008b26518 base=x16 in 0xfffffe0008b26080 sz=0x804
+      0xfffffe0008b2656c base=x16 in 0xfffffe0008b26080 sz=0x804
+      0xfffffe0008b266a0 base=x16 in 0xfffffe0008b26080 sz=0x804
+      0xfffffe0008b28020 base=x16 in 0xfffffe0008b27d9c sz=0x460
+      0xfffffe0008b28408 base=x16 in 0xfffffe0008b281fc sz=0x23c
+  com.apple.driver.AppleEmbeddedTempSensor: 214
+      0xfffffe0008b5a9d8 base=x16 in 0xfffffe0008b5a98c sz=0x70
+      0xfffffe0008b5b2f0 base=x16 in 0xfffffe0008b5afa4 sz=0x4a4
+      0xfffffe0008b5d0c4 base=x16 in 0xfffffe0008b5cff0 sz=0x2f4
+      0xfffffe0008b5d10c base=x16 in 0xfffffe0008b5cff0 sz=0x2f4
+      0xfffffe0008b5d1cc base=x16 in 0xfffffe0008b5cff0 sz=0x2f4
+      0xfffffe0008b5d798 base=x16 in 0xfffffe0008b5d73c sz=0x104
+      0xfffffe0008b5d800 base=x16 in 0xfffffe0008b5d73c sz=0x104
+      0xfffffe0008b5dcb4 base=x16 in 0xfffffe0008b5db80 sz=0x1b0
+  com.apple.driver.AppleEmbeddedTouchEEPROM: 3
+      0xfffffe0008b720ec base=x16 in 0xfffffe0008b71fa0 sz=0x344
+      0xfffffe0008b724d8 base=x16 in 0xfffffe0008b722e4 sz=0x808
+      0xfffffe0008b72500 base=x16 in 0xfffffe0008b722e4 sz=0x808
+  com.apple.driver.AppleEmbeddedUSB: 36
+      0xfffffe0008b74474 base=x16 in 0xfffffe0008b74228 sz=0x4a4
+      0xfffffe0008b744a8 base=x16 in 0xfffffe0008b74228 sz=0x4a4
+      0xfffffe0008b74634 base=x16 in 0xfffffe0008b74228 sz=0x4a4
+      0xfffffe0008b74660 base=x16 in 0xfffffe0008b74228 sz=0x4a4
+      0xfffffe0008b7469c base=x16 in 0xfffffe0008b74228 sz=0x4a4
+      0xfffffe0008b7484c base=x16 in 0xfffffe0008b747d4 sz=0x208
+      0xfffffe0008b748c8 base=x16 in 0xfffffe0008b747d4 sz=0x208
+      0xfffffe0008b74b8c base=x16 in 0xfffffe0008b74b2c sz=0x2f0
+  com.apple.driver.AppleEmbeddedUSBHost: 34
+      0xfffffe0008b7ec20 base=x16 in 0xfffffe0008b7eaac sz=0x1d0
+      0xfffffe0008b7f250 base=x16 in 0xfffffe0008b7f1ec sz=0x324
+      0xfffffe0008b7facc base=x16 in 0xfffffe0008b7fa74 sz=0x1d8
+      0xfffffe0008b801a0 base=x16 in 0xfffffe0008b800ec sz=0x4a0
+      0xfffffe0008b802b8 base=x16 in 0xfffffe0008b800ec sz=0x4a0
+      0xfffffe0008b80a3c base=x16 in 0xfffffe0008b808cc sz=0x220
+      0xfffffe0008b80f68 base=x16 in 0xfffffe0008b80e20 sz=0x178
+      0xfffffe0008b81130 base=x16 in 0xfffffe0008b810c0 sz=0x360
+  com.apple.driver.AppleEpochManager: 1
+      0xfffffe0008b845d4 base=x16 in 0xfffffe0008b8426c sz=0x3d0
+  com.apple.driver.AppleEventLogHandler: 5
+      0xfffffe0008b858a4 base=x16 in 0xfffffe0008b857d8 sz=0x608
+      0xfffffe0008b85ad4 base=x16 in 0xfffffe0008b857d8 sz=0x608
+      0xfffffe0008b85c78 base=x16 in 0xfffffe0008b857d8 sz=0x608
+      0xfffffe0008b85d68 base=x16 in 0xfffffe0008b857d8 sz=0x608
+      0xfffffe0008b86000 base=x16 in 0xfffffe0008b85fb0 sz=0x84
+  com.apple.driver.AppleFAN53740: 6
+      0xfffffe0008b889c4 base=x16 in 0xfffffe0008b888a0 sz=0x1b4
+      0xfffffe0008b889ec base=x16 in 0xfffffe0008b888a0 sz=0x1b4
+      0xfffffe0008b88bdc base=x16 in 0xfffffe0008b88a54 sz=0x21c
+      0xfffffe0008b88c04 base=x16 in 0xfffffe0008b88a54 sz=0x21c
+      0xfffffe0008b88d0c base=x16 in 0xfffffe0008b88c70 sz=0x13c
+      0xfffffe0008b88d34 base=x16 in 0xfffffe0008b88c70 sz=0x13c
+  com.apple.driver.AppleFirmwareKit: 191
+      0xfffffe0008b92814 base=x16 in 0xfffffe0008b92738 sz=0x188
+      0xfffffe0008b92848 base=x16 in 0xfffffe0008b92738 sz=0x188
+      0xfffffe0008b93354 base=x16 in 0xfffffe0008b93288 sz=0x148
+      0xfffffe0008b93700 base=x16 in 0xfffffe0008b93680 sz=0x1f0
+      0xfffffe0008b937c4 base=x16 in 0xfffffe0008b93680 sz=0x1f0
+      0xfffffe0008b942e0 base=x16 in 0xfffffe0008b94008 sz=0x510
+      0xfffffe0008b9448c base=x16 in 0xfffffe0008b94008 sz=0x510
+      0xfffffe0008b9460c base=x16 in 0xfffffe0008b94570 sz=0xc4
+  com.apple.driver.AppleFirmwareUpdateKext: 5
+      0xfffffe0008be4164 base=x16 in 0xfffffe0008be410c sz=0x1b0
+      0xfffffe0008be454c base=x16 in 0xfffffe0008be44f0 sz=0x12c
+      0xfffffe0008be4e28 base=x16 in 0xfffffe0008be4b38 sz=0x438
+      0xfffffe0008be4f04 base=x16 in 0xfffffe0008be4b38 sz=0x438
+      0xfffffe0008be4f44 base=x16 in 0xfffffe0008be4b38 sz=0x438
+  com.apple.driver.AppleGPIOICController: 9
+      0xfffffe0008be61ac base=x16 in 0xfffffe0008be6154 sz=0xd0
+      0xfffffe0008beb784 base=x16 in 0xfffffe0008beb71c sz=0x1018
+      0xfffffe0008beb910 base=x16 in 0xfffffe0008beb71c sz=0x1018
+      0xfffffe0008bebd64 base=x16 in 0xfffffe0008beb71c sz=0x1018
+      0xfffffe0008bebdc8 base=x16 in 0xfffffe0008beb71c sz=0x1018
+      0xfffffe0008bebe28 base=x16 in 0xfffffe0008beb71c sz=0x1018
+      0xfffffe0008bec0d4 base=x16 in 0xfffffe0008beb71c sz=0x1018
+      0xfffffe0008bed30c base=x16 in 0xfffffe0008bed274 sz=0x1e8
+  com.apple.driver.AppleGameControllerPersonality: 11
+      0xfffffe0008bf29e4 base=x16 in 0xfffffe0008bf2950 sz=0x2a8
+      0xfffffe0008bf2b10 base=x16 in 0xfffffe0008bf2950 sz=0x2a8
+      0xfffffe0008bf2dbc base=x16 in 0xfffffe0008bf2bf8 sz=0x35c
+      0xfffffe0008bf2e1c base=x16 in 0xfffffe0008bf2bf8 sz=0x35c
+      0xfffffe0008bf301c base=x16 in 0xfffffe0008bf2f54 sz=0x24c
+      0xfffffe0008bf30a8 base=x16 in 0xfffffe0008bf2f54 sz=0x24c
+      0xfffffe0008bf30e8 base=x16 in 0xfffffe0008bf2f54 sz=0x24c
+      0xfffffe0008bf3c3c base=x16 in 0xfffffe0008bf3bd4 sz=0x0
+  com.apple.driver.AppleGenericMultitouch: 22
+      0xfffffe0008bf4714 base=x16 in 0xfffffe0008bf4654 sz=0x1d8
+      0xfffffe0008bf4770 base=x16 in 0xfffffe0008bf4654 sz=0x1d8
+      0xfffffe0008bf5658 base=x16 in 0xfffffe0008bf55dc sz=0xac
+      0xfffffe0008bf7518 base=x16 in 0xfffffe0008bf74c0 sz=0xcc
+      0xfffffe0008bf754c base=x16 in 0xfffffe0008bf74c0 sz=0xcc
+      0xfffffe0008bf79e8 base=x16 in 0xfffffe0008bf7848 sz=0x220
+      0xfffffe0008bf7b08 base=x16 in 0xfffffe0008bf7a78 sz=0x1c8
+      0xfffffe0008bf9dc4 base=x16 in 0xfffffe0008bf9cc4 sz=0x6ec
+  com.apple.driver.AppleH16ANEInterface: 111
+      0xfffffe0008c098ac base=x16 in 0xfffffe0008c096ec sz=0x3bc
+      0xfffffe0008c099bc base=x16 in 0xfffffe0008c096ec sz=0x3bc
+      0xfffffe0008c09a5c base=x16 in 0xfffffe0008c096ec sz=0x3bc
+      0xfffffe0008c09dcc base=x16 in 0xfffffe0008c09aa8 sz=0x44c
+      0xfffffe0008c09fdc base=x16 in 0xfffffe0008c09f20 sz=0x218
+      0xfffffe0008c1d3cc base=x16 in 0xfffffe0008c1d168 sz=0x534
+      0xfffffe0008c41a70 base=x16 in 0xfffffe0008c419f4 sz=0x444
+      0xfffffe0008c41aec base=x16 in 0xfffffe0008c419f4 sz=0x444
+  com.apple.driver.AppleH16CameraInterface: 211
+      0xfffffe0008d5b008 base=x16 in 0xfffffe0008d5ac80 sz=0x614
+      0xfffffe0008d5ec5c base=x16 in 0xfffffe0008d5ebc4 sz=0x22c
+      0xfffffe0008d5ece4 base=x16 in 0xfffffe0008d5ebc4 sz=0x22c
+      0xfffffe0008d5ef08 base=x16 in 0xfffffe0008d5ee70 sz=0x22c
+      0xfffffe0008d5ef90 base=x16 in 0xfffffe0008d5ee70 sz=0x22c
+      0xfffffe0008d5f5a0 base=x16 in 0xfffffe0008d5f310 sz=0x3d0
+      0xfffffe0008d602e8 base=x16 in 0xfffffe0008d5fb60 sz=0xde0
+      0xfffffe0008d68370 base=x16 in 0xfffffe0008d67c50 sz=0x4b44
+  com.apple.driver.AppleH16PhotonDetector: 7
+      0xfffffe0008df9210 base=x16 in 0xfffffe0008df9148 sz=0x930
+      0xfffffe0008dfa540 base=x16 in 0xfffffe0008dfa4bc sz=0x150
+      0xfffffe0008dfa568 base=x16 in 0xfffffe0008dfa4bc sz=0x150
+      0xfffffe0008dfa590 base=x16 in 0xfffffe0008dfa4bc sz=0x150
+      0xfffffe0008dfa5c4 base=x16 in 0xfffffe0008dfa4bc sz=0x150
+      0xfffffe0008dfa87c base=x16 in 0xfffffe0008dfa814 sz=0x11c
+      0xfffffe0008dfa8d8 base=x16 in 0xfffffe0008dfa814 sz=0x11c
+  com.apple.driver.AppleHIDALSService: 2
+      0xfffffe0008dfbf08 base=x16 in 0xfffffe0008dfbdf8 sz=0x37c
+      0xfffffe0008dfbf60 base=x16 in 0xfffffe0008dfbdf8 sz=0x37c
+  com.apple.driver.AppleHIDKeyboard: 32
+      0xfffffe0008dfc8e4 base=x16 in 0xfffffe0008dfc814 sz=0x318
+      0xfffffe0008dfca9c base=x16 in 0xfffffe0008dfc814 sz=0x318
+      0xfffffe0008dfcba0 base=x16 in 0xfffffe0008dfcb2c sz=0x1c8
+      0xfffffe0008dfd39c base=x16 in 0xfffffe0008dfd308 sz=0x2d8
+      0xfffffe0008dfdc6c base=x16 in 0xfffffe0008dfdaf8 sz=0x23c
+      0xfffffe0008dfded0 base=x16 in 0xfffffe0008dfdde8 sz=0x214
+      0xfffffe0008dfe8c0 base=x16 in 0xfffffe0008dfe6c4 sz=0x4e0
+      0xfffffe0008dfe958 base=x16 in 0xfffffe0008dfe6c4 sz=0x4e0
+  com.apple.driver.AppleHIDTransport: 494
+      0xfffffe0008e03308 base=x16 in 0xfffffe0008e032ac sz=0x1c8
+      0xfffffe0008e0379c base=x16 in 0xfffffe0008e034a8 sz=0xaec
+      0xfffffe0008e037d0 base=x16 in 0xfffffe0008e034a8 sz=0xaec
+      0xfffffe0008e038c0 base=x16 in 0xfffffe0008e034a8 sz=0xaec
+      0xfffffe0008e03a30 base=x16 in 0xfffffe0008e034a8 sz=0xaec
+      0xfffffe0008e03a60 base=x16 in 0xfffffe0008e034a8 sz=0xaec
+      0xfffffe0008e03a88 base=x16 in 0xfffffe0008e034a8 sz=0xaec
+      0xfffffe0008e03aac base=x16 in 0xfffffe0008e034a8 sz=0xaec
+  com.apple.driver.AppleHIDTransportFIFO: 63
+      0xfffffe0008e81a70 base=x16 in 0xfffffe0008e81a30 sz=0x80
+      0xfffffe0008e81c88 base=x16 in 0xfffffe0008e81be8 sz=0x2f4
+      0xfffffe0008e81d18 base=x16 in 0xfffffe0008e81be8 sz=0x2f4
+      0xfffffe0008e8231c base=x16 in 0xfffffe0008e8221c sz=0x270
+      0xfffffe0008e82340 base=x16 in 0xfffffe0008e8221c sz=0x270
+      0xfffffe0008e82364 base=x16 in 0xfffffe0008e8221c sz=0x270
+      0xfffffe0008e82388 base=x16 in 0xfffffe0008e8221c sz=0x270
+      0xfffffe0008e823a8 base=x16 in 0xfffffe0008e8221c sz=0x270
+  com.apple.driver.AppleHIDTransportMailbox: 78
+      0xfffffe0008e95b18 base=x16 in 0xfffffe0008e95a78 sz=0x79c
+      0xfffffe0008e95d00 base=x16 in 0xfffffe0008e95a78 sz=0x79c
+      0xfffffe0008e95e1c base=x16 in 0xfffffe0008e95a78 sz=0x79c
+      0xfffffe0008e95eb4 base=x16 in 0xfffffe0008e95a78 sz=0x79c
+      0xfffffe0008e9642c base=x16 in 0xfffffe0008e963c8 sz=0xb4
+      0xfffffe0008e96518 base=x16 in 0xfffffe0008e9647c sz=0x25c
+      0xfffffe0008e96d00 base=x16 in 0xfffffe0008e96bcc sz=0x2b0
+      0xfffffe0008e96d7c base=x16 in 0xfffffe0008e96bcc sz=0x2b0
+  com.apple.driver.AppleHIDTransportSCMCommon: 10
+      0xfffffe0008eadae0 base=x16 in 0xfffffe0008ead9c4 sz=0x94c
+      0xfffffe0008eadd60 base=x16 in 0xfffffe0008ead9c4 sz=0x94c
+      0xfffffe0008eaddbc base=x16 in 0xfffffe0008ead9c4 sz=0x94c
+      0xfffffe0008eade0c base=x16 in 0xfffffe0008ead9c4 sz=0x94c
+      0xfffffe0008eae05c base=x16 in 0xfffffe0008ead9c4 sz=0x94c
+      0xfffffe0008eae7a8 base=x16 in 0xfffffe0008eae75c sz=0x244
+      0xfffffe0008eae820 base=x16 in 0xfffffe0008eae75c sz=0x244
+      0xfffffe0008eaf3dc base=x16 in 0xfffffe0008eaf314 sz=0x1dc
+  com.apple.driver.AppleHIDTransportSPI: 167
+      0xfffffe0008eb2560 base=x16 in 0xfffffe0008eb23e0 sz=0x790
+      0xfffffe0008eb2688 base=x16 in 0xfffffe0008eb23e0 sz=0x790
+      0xfffffe0008eb273c base=x16 in 0xfffffe0008eb23e0 sz=0x790
+      0xfffffe0008eb2864 base=x16 in 0xfffffe0008eb23e0 sz=0x790
+      0xfffffe0008eb298c base=x16 in 0xfffffe0008eb23e0 sz=0x790
+      0xfffffe0008eb2b40 base=x16 in 0xfffffe0008eb23e0 sz=0x790
+      0xfffffe0008eb2cd0 base=x16 in 0xfffffe0008eb2c24 sz=0xc8
+      0xfffffe0008eb2de4 base=x16 in 0xfffffe0008eb2d60 sz=0x150
+  com.apple.driver.AppleHPM: 543
+      0xfffffe0008ef03b0 base=x16 in 0xfffffe0008ef01a8 sz=0x658
+      0xfffffe0008ef19a0 base=x16 in 0xfffffe0008ef1908 sz=0x1b0
+      0xfffffe0008ef1ba0 base=x16 in 0xfffffe0008ef1ac4 sz=0xb6c
+      0xfffffe0008ef1bdc base=x16 in 0xfffffe0008ef1ac4 sz=0xb6c
+      0xfffffe0008ef1c08 base=x16 in 0xfffffe0008ef1ac4 sz=0xb6c
+      0xfffffe0008ef1c44 base=x16 in 0xfffffe0008ef1ac4 sz=0xb6c
+      0xfffffe0008ef1c68 base=x16 in 0xfffffe0008ef1ac4 sz=0xb6c
+      0xfffffe0008ef1ca4 base=x16 in 0xfffffe0008ef1ac4 sz=0xb6c
+  com.apple.driver.AppleHapticsSupportLEAP: 171
+      0xfffffe0008f56710 base=x16 in 0xfffffe0008f565c4 sz=0x184
+      0xfffffe0008f5a568 base=x16 in 0xfffffe0008f5a540 sz=0x44
+      0xfffffe0008f61164 base=x16 in 0xfffffe0008f61114 sz=0x160
+      0xfffffe0008f611dc base=x16 in 0xfffffe0008f61114 sz=0x160
+      0xfffffe0008f62050 base=x16 in 0xfffffe0008f61f5c sz=0x6c4
+      0xfffffe0008f62090 base=x16 in 0xfffffe0008f61f5c sz=0x6c4
+      0xfffffe0008f6213c base=x16 in 0xfffffe0008f61f5c sz=0x6c4
+      0xfffffe0008f6219c base=x16 in 0xfffffe0008f61f5c sz=0x6c4
+  com.apple.driver.AppleHapticsSupportNVM: 1
+      0xfffffe0008f908e8 base=x16 in 0xfffffe0008f9069c sz=0x2cc
+  com.apple.driver.AppleIDV: 50
+      0xfffffe0008f91ff8 base=x16 in 0xfffffe0008f91eac sz=0x340
+      0xfffffe0008f92078 base=x16 in 0xfffffe0008f91eac sz=0x340
+      0xfffffe0008f9215c base=x16 in 0xfffffe0008f91eac sz=0x340
+      0xfffffe0008f92198 base=x16 in 0xfffffe0008f91eac sz=0x340
+      0xfffffe0008f92618 base=x16 in 0xfffffe0008f92494 sz=0x3d4
+      0xfffffe0008f926bc base=x16 in 0xfffffe0008f92494 sz=0x3d4
+      0xfffffe0008f927a4 base=x16 in 0xfffffe0008f92494 sz=0x3d4
+      0xfffffe0008f928f4 base=x16 in 0xfffffe0008f92868 sz=0x12c
+  com.apple.driver.AppleIISController: 39
+      0xfffffe0008f99c24 base=x16 in 0xfffffe0008f99a90 sz=0x8c8
+      0xfffffe0008f99dd0 base=x16 in 0xfffffe0008f99a90 sz=0x8c8
+      0xfffffe0008f99e0c base=x16 in 0xfffffe0008f99a90 sz=0x8c8
+      0xfffffe0008f99e3c base=x16 in 0xfffffe0008f99a90 sz=0x8c8
+      0xfffffe0008f99e6c base=x16 in 0xfffffe0008f99a90 sz=0x8c8
+      0xfffffe0008f99ea4 base=x16 in 0xfffffe0008f99a90 sz=0x8c8
+      0xfffffe0008f99f0c base=x16 in 0xfffffe0008f99a90 sz=0x8c8
+      0xfffffe0008f9a4f0 base=x16 in 0xfffffe0008f9a498 sz=0xd0
+  com.apple.driver.AppleIOPADMAStream: 41
+      0xfffffe0008fa1ff4 base=x16 in 0xfffffe0008fa1f80 sz=0x284
+      0xfffffe0008fa2154 base=x16 in 0xfffffe0008fa1f80 sz=0x284
+      0xfffffe0008fa2700 base=x16 in 0xfffffe0008fa2614 sz=0x318
+      0xfffffe0008fa27c4 base=x16 in 0xfffffe0008fa2614 sz=0x318
+      0xfffffe0008fa2b18 base=x16 in 0xfffffe0008fa2a90 sz=0x2bc
+      0xfffffe0008fa2ba0 base=x16 in 0xfffffe0008fa2a90 sz=0x2bc
+      0xfffffe0008fa3ae4 base=x16 in 0xfffffe0008fa39f8 sz=0x308
+      0xfffffe0008fa44d8 base=x16 in 0xfffffe0008fa4430 sz=0x3e8
+  com.apple.driver.AppleIPAppender: 17
+      0xfffffe0008fb749c base=x16 in 0xfffffe0008fb7378 sz=0x148
+      0xfffffe0008fb75bc base=x16 in 0xfffffe0008fb7580 sz=0xb4
+      0xfffffe0008fb766c base=x16 in 0xfffffe0008fb7634 sz=0xac
+      0xfffffe0008fb7720 base=x16 in 0xfffffe0008fb76e0 sz=0xb8
+      0xfffffe0008fb77d8 base=x16 in 0xfffffe0008fb7798 sz=0xb8
+      0xfffffe0008fb7c18 base=x16 in 0xfffffe0008fb7bd8 sz=0xb4
+      0xfffffe0008fb7ccc base=x16 in 0xfffffe0008fb7c8c sz=0xb4
+      0xfffffe0008fb7e30 base=x16 in 0xfffffe0008fb7de8 sz=0xc0
+  com.apple.driver.AppleInputDeviceSupport: 49
+      0xfffffe0008fe1598 base=x16 in 0xfffffe0008fe14f4 sz=0x134
+      0xfffffe0008fe1eac base=x16 in 0xfffffe0008fe1ddc sz=0x148
+      0xfffffe0008fe210c base=x16 in 0xfffffe0008fe2018 sz=0x16c
+      0xfffffe0008fe3a18 base=x16 in 0xfffffe0008fe3884 sz=0x43c
+      0xfffffe0008fe5b78 base=x16 in 0xfffffe0008fe5b14 sz=0xb8
+      0xfffffe0008fe5ce4 base=x16 in 0xfffffe0008fe5bcc sz=0x67c
+      0xfffffe0008fe5e44 base=x16 in 0xfffffe0008fe5bcc sz=0x67c
+      0xfffffe0008fe5fe8 base=x16 in 0xfffffe0008fe5bcc sz=0x67c
+  com.apple.driver.AppleInterruptControllerV3: 8
+      0xfffffe0008ffe274 base=x16 in 0xfffffe0008ffe220 sz=0xc4
+      0xfffffe0008fff008 base=x16 in 0xfffffe0008ffefa0 sz=0xb54
+      0xfffffe0008fff14c base=x16 in 0xfffffe0008ffefa0 sz=0xb54
+      0xfffffe0008fff178 base=x16 in 0xfffffe0008ffefa0 sz=0xb54
+      0xfffffe0008fff384 base=x16 in 0xfffffe0008ffefa0 sz=0xb54
+      0xfffffe0008fff634 base=x16 in 0xfffffe0008ffefa0 sz=0xb54
+      0xfffffe0008ffff08 base=x16 in 0xfffffe0008fffd34 sz=0x330
+      0xfffffe00090002c8 base=x16 in 0xfffffe0009000064 sz=0x2e8
+  com.apple.driver.AppleJPEGDriver: 39
+      0xfffffe0009004840 base=x16 in 0xfffffe0009004704 sz=0x37c
+      0xfffffe00090048c8 base=x16 in 0xfffffe0009004704 sz=0x37c
+      0xfffffe00090059e4 base=x16 in 0xfffffe0009005878 sz=0x248
+      0xfffffe0009005bb8 base=x16 in 0xfffffe0009005acc sz=0x20c
+      0xfffffe00090081e8 base=x16 in 0xfffffe000900817c sz=0x1b8
+      0xfffffe00090095b8 base=x16 in 0xfffffe000900948c sz=0x270
+      0xfffffe000900a364 base=x16 in 0xfffffe000900a0ac sz=0x690
+      0xfffffe000900ecb0 base=x16 in 0xfffffe000900ec14 sz=0x144
+  com.apple.driver.AppleLockdownMode: 1
+      0xfffffe0009045244 base=x16 in 0xfffffe00090451c8 sz=0x1c8
+  com.apple.driver.AppleM2ScalerCSCDriver: 266
+      0xfffffe000904f5cc base=x16 in 0xfffffe000904f54c sz=0xac
+      0xfffffe000904f66c base=x16 in 0xfffffe000904f5f8 sz=0xbc
+      0xfffffe000904f81c base=x16 in 0xfffffe000904f73c sz=0x124
+      0xfffffe000905eb6c base=x16 in 0xfffffe000905ead0 sz=0x244
+      0xfffffe000905fa4c base=x16 in 0xfffffe000905f9d0 sz=0x274
+      0xfffffe000905fa84 base=x16 in 0xfffffe000905f9d0 sz=0x274
+      0xfffffe000905faac base=x16 in 0xfffffe000905f9d0 sz=0x274
+      0xfffffe0009060558 base=x16 in 0xfffffe0009060404 sz=0x284
+  com.apple.driver.AppleM68Buttons: 43
+      0xfffffe000918748c base=x16 in 0xfffffe0009187388 sz=0x13c
+      0xfffffe0009187b3c base=x16 in 0xfffffe0009187904 sz=0x17b0
+      0xfffffe0009187ca4 base=x16 in 0xfffffe0009187904 sz=0x17b0
+      0xfffffe0009187d64 base=x16 in 0xfffffe0009187904 sz=0x17b0
+      0xfffffe0009187e24 base=x16 in 0xfffffe0009187904 sz=0x17b0
+      0xfffffe0009187ee4 base=x16 in 0xfffffe0009187904 sz=0x17b0
+      0xfffffe0009188004 base=x16 in 0xfffffe0009187904 sz=0x17b0
+      0xfffffe0009188170 base=x16 in 0xfffffe0009187904 sz=0x17b0
+  com.apple.driver.AppleMSG: 39
+      0xfffffe00091a46e0 base=x16 in 0xfffffe00091a4620 sz=0x1a4
+      0xfffffe00091a4a08 base=x16 in 0xfffffe00091a48ac sz=0x2a0
+      0xfffffe00091a5cb8 base=x16 in 0xfffffe00091a5c50 sz=0x4c4
+      0xfffffe00091aab50 base=x16 in 0xfffffe00091aa4f4 sz=0xa90
+      0xfffffe00091aac10 base=x16 in 0xfffffe00091aa4f4 sz=0xa90
+      0xfffffe00091abde8 base=x16 in 0xfffffe00091abcf4 sz=0x22c
+      0xfffffe00091abea4 base=x16 in 0xfffffe00091abcf4 sz=0x22c
+      0xfffffe00091abed8 base=x16 in 0xfffffe00091abcf4 sz=0x22c
+  com.apple.driver.AppleMikeyBusAudio: 91
+      0xfffffe00091e289c base=x16 in 0xfffffe00091e2820 sz=0x19d4
+      0xfffffe00091e2af0 base=x16 in 0xfffffe00091e2820 sz=0x19d4
+      0xfffffe00091e2e50 base=x16 in 0xfffffe00091e2820 sz=0x19d4
+      0xfffffe00091e2e78 base=x16 in 0xfffffe00091e2820 sz=0x19d4
+      0xfffffe00091e3380 base=x16 in 0xfffffe00091e2820 sz=0x19d4
+      0xfffffe00091e3578 base=x16 in 0xfffffe00091e2820 sz=0x19d4
+      0xfffffe00091e3604 base=x16 in 0xfffffe00091e2820 sz=0x19d4
+      0xfffffe00091e36d8 base=x16 in 0xfffffe00091e2820 sz=0x19d4
+  com.apple.driver.AppleMobileApNonce: 11
+      0xfffffe00091fb924 base=x16 in 0xfffffe00091fb5c4 sz=0x3f4
+      0xfffffe00091fbb00 base=x16 in 0xfffffe00091fbaa8 sz=0x154
+      0xfffffe00091fbb54 base=x16 in 0xfffffe00091fbaa8 sz=0x154
+      0xfffffe00091fbe7c base=x16 in 0xfffffe00091fbdec sz=0x240
+      0xfffffe00091fc31c base=x16 in 0xfffffe00091fc168 sz=0x3e8
+      0xfffffe00091fc95c base=x16 in 0xfffffe00091fc82c sz=0x4c0
+      0xfffffe00091fcb90 base=x16 in 0xfffffe00091fc82c sz=0x4c0
+      0xfffffe00091fcd4c base=x16 in 0xfffffe00091fccec sz=0x164
+  com.apple.driver.AppleMobileDispH18P-DCP: 66
+      0xfffffe00091ffb7c base=x16 in 0xfffffe00091ffa48 sz=0x31c
+      0xfffffe00091ffba8 base=x16 in 0xfffffe00091ffa48 sz=0x31c
+      0xfffffe00091ffbdc base=x16 in 0xfffffe00091ffa48 sz=0x31c
+      0xfffffe00092005fc base=x16 in 0xfffffe0009200498 sz=0x47c
+      0xfffffe00092006a0 base=x16 in 0xfffffe0009200498 sz=0x47c
+      0xfffffe0009200804 base=x16 in 0xfffffe0009200498 sz=0x47c
+      0xfffffe0009200d00 base=x16 in 0xfffffe0009200cbc sz=0x150
+      0xfffffe0009202270 base=x16 in 0xfffffe00092021e8 sz=0xd0
+  com.apple.driver.AppleMobileFileIntegrity: 6
+      0xfffffe0009226818 base=x16 in 0xfffffe00092267b4 sz=0x128
+      0xfffffe00092271a4 base=x16 in 0xfffffe00092270d8 sz=0x110
+      0xfffffe000922bd3c base=x16 in 0xfffffe000922bc5c sz=0x2f0
+      0xfffffe0009230804 base=x16 in 0xfffffe000923053c sz=0x460
+      0xfffffe0009241254 base=x20 in 0xfffffe00092410f8 sz=0x1b8
+      0xfffffe0009241340 base=x19 in 0xfffffe00092412b0 sz=0xbc
+  com.apple.driver.AppleMultitouchDriver: 154
+      0xfffffe00092513e0 base=x16 in 0xfffffe00092512fc sz=0x1120
+      0xfffffe000925142c base=x16 in 0xfffffe00092512fc sz=0x1120
+      0xfffffe0009251788 base=x16 in 0xfffffe00092512fc sz=0x1120
+      0xfffffe0009251970 base=x16 in 0xfffffe00092512fc sz=0x1120
+      0xfffffe0009251b6c base=x16 in 0xfffffe00092512fc sz=0x1120
+      0xfffffe0009251ba8 base=x16 in 0xfffffe00092512fc sz=0x1120
+      0xfffffe0009251db4 base=x16 in 0xfffffe00092512fc sz=0x1120
+      0xfffffe0009251dd4 base=x16 in 0xfffffe00092512fc sz=0x1120
+  com.apple.driver.AppleOnboardSerial: 74
+      0xfffffe000926e1f0 base=x16 in 0xfffffe000926e0f8 sz=0x418
+      0xfffffe000926e294 base=x16 in 0xfffffe000926e0f8 sz=0x418
+      0xfffffe000926e340 base=x16 in 0xfffffe000926e0f8 sz=0x418
+      0xfffffe000926e3cc base=x16 in 0xfffffe000926e0f8 sz=0x418
+      0xfffffe000926e9bc base=x16 in 0xfffffe000926e964 sz=0x114
+      0xfffffe000926eb38 base=x16 in 0xfffffe000926ea78 sz=0x354
+      0xfffffe000926ec88 base=x16 in 0xfffffe000926ea78 sz=0x354
+      0xfffffe000926f088 base=x16 in 0xfffffe000926f02c sz=0x230
+  com.apple.driver.ApplePIODMA: 11
+      0xfffffe0009280954 base=x16 in 0xfffffe00092808e8 sz=0x1098
+      0xfffffe0009280f54 base=x16 in 0xfffffe00092808e8 sz=0x1098
+      0xfffffe000928134c base=x16 in 0xfffffe00092808e8 sz=0x1098
+      0xfffffe00092813b0 base=x16 in 0xfffffe00092808e8 sz=0x1098
+      0xfffffe0009281414 base=x16 in 0xfffffe00092808e8 sz=0x1098
+      0xfffffe0009283458 base=x16 in 0xfffffe000928322c sz=0x484
+      0xfffffe000928419c base=x16 in 0xfffffe0009284000 sz=0x224
+      0xfffffe00092841e0 base=x16 in 0xfffffe0009284000 sz=0x224
+  com.apple.driver.ApplePMGR: 326
+      0xfffffe000928572c base=x16 in 0xfffffe00092853cc sz=0xed4
+      0xfffffe0009285c2c base=x16 in 0xfffffe00092853cc sz=0xed4
+      0xfffffe0009285d28 base=x16 in 0xfffffe00092853cc sz=0xed4
+      0xfffffe0009285fb4 base=x16 in 0xfffffe00092853cc sz=0xed4
+      0xfffffe0009286afc base=x16 in 0xfffffe000928698c sz=0x2e0
+      0xfffffe0009286fc0 base=x16 in 0xfffffe0009286f64 sz=0x140
+      0xfffffe00092870f8 base=x16 in 0xfffffe00092870a4 sz=0xa5c
+      0xfffffe0009287324 base=x16 in 0xfffffe00092870a4 sz=0xa5c
+  com.apple.driver.ApplePMP: 29
+      0xfffffe00092ea250 base=x16 in 0xfffffe00092ea16c sz=0x2dc
+      0xfffffe00092ead7c base=x16 in 0xfffffe00092eacac sz=0x148
+      0xfffffe00092eae68 base=x16 in 0xfffffe00092eadf4 sz=0x5d8
+      0xfffffe00092eb06c base=x16 in 0xfffffe00092eadf4 sz=0x5d8
+      0xfffffe00092eb4b4 base=x16 in 0xfffffe00092eb3cc sz=0x158
+      0xfffffe00092eb80c base=x16 in 0xfffffe00092eb76c sz=0x188
+      0xfffffe00092ec57c base=x16 in 0xfffffe00092ec554 sz=0x50
+      0xfffffe00092eca5c base=x16 in 0xfffffe00092ec93c sz=0x614
+  com.apple.driver.ApplePMPFirmware: 9
+      0xfffffe00092f72dc base=x16 in 0xfffffe00092f7248 sz=0x680
+      0xfffffe00092f7328 base=x16 in 0xfffffe00092f7248 sz=0x680
+      0xfffffe00092f7370 base=x16 in 0xfffffe00092f7248 sz=0x680
+      0xfffffe00092f74c8 base=x16 in 0xfffffe00092f7248 sz=0x680
+      0xfffffe00092f7570 base=x16 in 0xfffffe00092f7248 sz=0x680
+      0xfffffe00092f75d0 base=x16 in 0xfffffe00092f7248 sz=0x680
+      0xfffffe00092f76d8 base=x16 in 0xfffffe00092f7248 sz=0x680
+      0xfffffe00092f7788 base=x16 in 0xfffffe00092f7248 sz=0x680
+  com.apple.driver.ApplePMUFirmwareDriver: 2
+      0xfffffe00092f8dac base=x16 in 0xfffffe00092f8cc8 sz=0x81c
+      0xfffffe00092f90c8 base=x16 in 0xfffffe00092f8cc8 sz=0x81c
+  com.apple.driver.ApplePPMCPMS: 171
+      0xfffffe0009302074 base=x16 in 0xfffffe0009301ffc sz=0x118
+      0xfffffe0009302850 base=x16 in 0xfffffe00093027d0 sz=0x23c
+      0xfffffe00093030f4 base=x16 in 0xfffffe0009302a0c sz=0xb50
+      0xfffffe00093031c4 base=x16 in 0xfffffe0009302a0c sz=0xb50
+      0xfffffe0009303cbc base=x16 in 0xfffffe0009303b90 sz=0x480
+      0xfffffe0009304608 base=x16 in 0xfffffe0009304588 sz=0x124
+      0xfffffe0009304700 base=x16 in 0xfffffe00093046ac sz=0x378
+      0xfffffe0009304b84 base=x16 in 0xfffffe0009304af4 sz=0xe8
+  com.apple.driver.ApplePTD: 39
+      0xfffffe0009350298 base=x16 in 0xfffffe00093501f8 sz=0xe4
+      0xfffffe0009350658 base=x16 in 0xfffffe00093502dc sz=0x794
+      0xfffffe0009350838 base=x16 in 0xfffffe00093502dc sz=0x794
+      0xfffffe0009350970 base=x16 in 0xfffffe00093502dc sz=0x794
+      0xfffffe00093509f4 base=x16 in 0xfffffe00093502dc sz=0x794
+      0xfffffe0009351798 base=x16 in 0xfffffe000935133c sz=0x5e4
+      0xfffffe00093517fc base=x16 in 0xfffffe000935133c sz=0x5e4
+      0xfffffe00093520a0 base=x16 in 0xfffffe0009351f90 sz=0x1e4
+  com.apple.driver.AppleParrot: 1
+      0xfffffe00093597c0 base=x16 in 0xfffffe000935972c sz=0x228
+  com.apple.driver.ApplePearlSEPDriver: 87
+      0xfffffe000935ea80 base=x16 in 0xfffffe000935bd1c sz=0x4f04
+      0xfffffe000936103c base=x16 in 0xfffffe0009360fd0 sz=0x5f0
+      0xfffffe0009361114 base=x16 in 0xfffffe0009360fd0 sz=0x5f0
+      0xfffffe0009361420 base=x16 in 0xfffffe0009360fd0 sz=0x5f0
+      0xfffffe00093621cc base=x16 in 0xfffffe000936216c sz=0x320
+      0xfffffe00093650b4 base=x16 in 0xfffffe0009364f88 sz=0x58c
+      0xfffffe00093650e4 base=x16 in 0xfffffe0009364f88 sz=0x58c
+      0xfffffe00093658b0 base=x16 in 0xfffffe000936580c sz=0x6fc
+  com.apple.driver.ApplePhoneBTM: 66
+      0xfffffe000939c648 base=x16 in 0xfffffe000939c2ac sz=0x6bc
+      0xfffffe000939c754 base=x16 in 0xfffffe000939c2ac sz=0x6bc
+      0xfffffe000939cf38 base=x16 in 0xfffffe000939cefc sz=0x9ac
+      0xfffffe000939cfb0 base=x16 in 0xfffffe000939cefc sz=0x9ac
+      0xfffffe000939d028 base=x16 in 0xfffffe000939cefc sz=0x9ac
+      0xfffffe000939d0a0 base=x16 in 0xfffffe000939cefc sz=0x9ac
+      0xfffffe000939d118 base=x16 in 0xfffffe000939cefc sz=0x9ac
+      0xfffffe000939d190 base=x16 in 0xfffffe000939cefc sz=0x9ac
+  com.apple.driver.ApplePhotonDetector: 7
+      0xfffffe00093b6dc4 base=x16 in 0xfffffe00093b6d2c sz=0x6c4
+      0xfffffe00093b7da0 base=x16 in 0xfffffe00093b7d1c sz=0x150
+      0xfffffe00093b7dc8 base=x16 in 0xfffffe00093b7d1c sz=0x150
+      0xfffffe00093b7df0 base=x16 in 0xfffffe00093b7d1c sz=0x150
+      0xfffffe00093b7e24 base=x16 in 0xfffffe00093b7d1c sz=0x150
+      0xfffffe00093b80dc base=x16 in 0xfffffe00093b8074 sz=0xf0
+      0xfffffe00093b8138 base=x16 in 0xfffffe00093b8074 sz=0xf0
+  com.apple.driver.AppleProResHW: 8
+      0xfffffe00093c192c base=x16 in 0xfffffe00093c1890 sz=0x1f8
+      0xfffffe00093c195c base=x16 in 0xfffffe00093c1890 sz=0x1f8
+      0xfffffe00093c1984 base=x16 in 0xfffffe00093c1890 sz=0x1f8
+      0xfffffe00093c265c base=x16 in 0xfffffe00093c1d18 sz=0x1554
+      0xfffffe00093c2fdc base=x16 in 0xfffffe00093c1d18 sz=0x1554
+      0xfffffe00093c2ffc base=x16 in 0xfffffe00093c1d18 sz=0x1554
+      0xfffffe00093c3e1c base=x16 in 0xfffffe00093c3410 sz=0xc84
+      0xfffffe00093c3e80 base=x16 in 0xfffffe00093c3410 sz=0xc84
+  com.apple.driver.AppleProcessorTrace: 39
+      0xfffffe0009411334 base=x16 in 0xfffffe000941129c sz=0x1d0
+      0xfffffe000941152c base=x16 in 0xfffffe000941146c sz=0x210
+      0xfffffe0009411568 base=x16 in 0xfffffe000941146c sz=0x210
+      0xfffffe0009413bc4 base=x16 in 0xfffffe0009413b2c sz=0x158
+      0xfffffe00094162e8 base=x16 in 0xfffffe0009416250 sz=0x158
+      0xfffffe0009419bc8 base=x16 in 0xfffffe0009419b30 sz=0x1d0
+      0xfffffe0009419dc0 base=x16 in 0xfffffe0009419d00 sz=0x210
+      0xfffffe0009419dfc base=x16 in 0xfffffe0009419d00 sz=0x210
+  com.apple.driver.AppleProxDriver: 31
+      0xfffffe000944bc28 base=x16 in 0xfffffe000944ba24 sz=0x300
+      0xfffffe000944be38 base=x16 in 0xfffffe000944bda0 sz=0x354
+      0xfffffe000944ca30 base=x16 in 0xfffffe000944c9c0 sz=0x924
+      0xfffffe000944cc68 base=x16 in 0xfffffe000944c9c0 sz=0x924
+      0xfffffe000944cd38 base=x16 in 0xfffffe000944c9c0 sz=0x924
+      0xfffffe000944ce38 base=x16 in 0xfffffe000944c9c0 sz=0x924
+      0xfffffe000944ce94 base=x16 in 0xfffffe000944c9c0 sz=0x924
+      0xfffffe000944d204 base=x16 in 0xfffffe000944c9c0 sz=0x924
+  com.apple.driver.AppleS5L8920XPWM: 9
+      0xfffffe0009456c24 base=x16 in 0xfffffe0009456b04 sz=0x174
+      0xfffffe00094570f4 base=x16 in 0xfffffe0009457048 sz=0x1e4
+      0xfffffe00094573c4 base=x16 in 0xfffffe000945722c sz=0x300
+      0xfffffe0009457600 base=x16 in 0xfffffe000945752c sz=0x164
+      0xfffffe0009457e00 base=x16 in 0xfffffe0009457d28 sz=0x1e0
+      0xfffffe0009457e98 base=x16 in 0xfffffe0009457d28 sz=0x1e0
+      0xfffffe00094588c4 base=x16 in 0xfffffe0009458700 sz=0x3e4
+      0xfffffe0009458e18 base=x16 in 0xfffffe0009458dac sz=0x230
+  com.apple.driver.AppleS5L8940XI2C: 14
+      0xfffffe0009459da8 base=x16 in 0xfffffe0009459d4c sz=0x148
+      0xfffffe000945a154 base=x16 in 0xfffffe000945a0e4 sz=0x100
+      0xfffffe000945a2b4 base=x16 in 0xfffffe000945a1e4 sz=0x1cc
+      0xfffffe000945a2e4 base=x16 in 0xfffffe000945a1e4 sz=0x1cc
+      0xfffffe000945a358 base=x16 in 0xfffffe000945a1e4 sz=0x1cc
+      0xfffffe000945a554 base=x16 in 0xfffffe000945a4cc sz=0x3f0
+      0xfffffe000945a7a0 base=x16 in 0xfffffe000945a4cc sz=0x3f0
+      0xfffffe000945a914 base=x16 in 0xfffffe000945a8bc sz=0x268
+  com.apple.driver.AppleS5L8960XNCO: 2
+      0xfffffe000945cd48 base=x16 in 0xfffffe000945ccd8 sz=0x1f0
+      0xfffffe000945cd80 base=x16 in 0xfffffe000945ccd8 sz=0x1f0
+  com.apple.driver.AppleS8000AES: 14
+      0xfffffe000945e1ac base=x16 in 0xfffffe000945e130 sz=0x9c0
+      0xfffffe000945e20c base=x16 in 0xfffffe000945e130 sz=0x9c0
+      0xfffffe000945e270 base=x16 in 0xfffffe000945e130 sz=0x9c0
+      0xfffffe000945e65c base=x16 in 0xfffffe000945e130 sz=0x9c0
+      0xfffffe000945e998 base=x16 in 0xfffffe000945e130 sz=0x9c0
+      0xfffffe000945f554 base=x16 in 0xfffffe000945f26c sz=0xa28
+      0xfffffe000945f7d8 base=x16 in 0xfffffe000945f26c sz=0xa28
+      0xfffffe000945f864 base=x16 in 0xfffffe000945f26c sz=0xa28
+  com.apple.driver.AppleS8000DWI: 6
+      0xfffffe0009462378 base=x16 in 0xfffffe00094622d8 sz=0x6bc
+      0xfffffe0009462518 base=x16 in 0xfffffe00094622d8 sz=0x6bc
+      0xfffffe000946257c base=x16 in 0xfffffe00094622d8 sz=0x6bc
+      0xfffffe00094625dc base=x16 in 0xfffffe00094622d8 sz=0x6bc
+      0xfffffe000946264c base=x16 in 0xfffffe00094622d8 sz=0x6bc
+      0xfffffe00094626ac base=x16 in 0xfffffe00094622d8 sz=0x6bc
+  com.apple.driver.AppleSARService: 318
+      0xfffffe0009464074 base=x16 in 0xfffffe0009464008 sz=0x334
+      0xfffffe00094640e0 base=x16 in 0xfffffe0009464008 sz=0x334
+      0xfffffe0009468088 base=x16 in 0xfffffe0009467fbc sz=0x130
+      0xfffffe0009468140 base=x16 in 0xfffffe00094680ec sz=0xb8
+      0xfffffe00094683ac base=x16 in 0xfffffe00094682ac sz=0x20c
+      0xfffffe000946a7d0 base=x16 in 0xfffffe000946a75c sz=0xf4
+      0xfffffe000946b4a4 base=x16 in 0xfffffe000946b09c sz=0xc64
+      0xfffffe000946b874 base=x16 in 0xfffffe000946b09c sz=0xc64
+  com.apple.driver.AppleSART: 7
+      0xfffffe000955fc40 base=x16 in 0xfffffe000955fbc8 sz=0x370
+      0xfffffe000955fd64 base=x16 in 0xfffffe000955fbc8 sz=0x370
+      0xfffffe000955fda4 base=x16 in 0xfffffe000955fbc8 sz=0x370
+      0xfffffe0009560824 base=x16 in 0xfffffe00095607b8 sz=0x3e4
+      0xfffffe00095609ac base=x16 in 0xfffffe00095607b8 sz=0x3e4
+      0xfffffe0009561058 base=x16 in 0xfffffe0009560fe0 sz=0x138
+      0xfffffe00095616f4 base=x16 in 0xfffffe00095615c4 sz=0x188
+  com.apple.driver.AppleSEPCredentialManager: 56
+      0xfffffe00095702b4 base=x16 in 0xfffffe0009570178 sz=0x514
+      0xfffffe00095702f0 base=x16 in 0xfffffe0009570178 sz=0x514
+      0xfffffe0009571014 base=x16 in 0xfffffe0009570d68 sz=0x554
+      0xfffffe00095780f8 base=x25 in 0xfffffe0009577d38 sz=0xa08
+      0xfffffe0009578100 base=x8 in 0xfffffe0009577d38 sz=0xa08
+      0xfffffe000957aa30 base=x8 in 0xfffffe000957a9b8 sz=0x50c
+      0xfffffe000958ae34 base=x16 in 0xfffffe000958ada8 sz=0x280
+      0xfffffe000958d63c base=x16 in 0xfffffe000958d5fc sz=0xa4
+  com.apple.driver.AppleSEPHDCPManager: 14
+      0xfffffe00095b7074 base=x16 in 0xfffffe00095b6fb0 sz=0x22c
+      0xfffffe00095b70dc base=x16 in 0xfffffe00095b6fb0 sz=0x22c
+      0xfffffe00095b79d8 base=x16 in 0xfffffe00095b78e0 sz=0x168
+      0xfffffe00095b86f4 base=x16 in 0xfffffe00095b8634 sz=0x180
+      0xfffffe00095b8dc8 base=x16 in 0xfffffe00095b8c78 sz=0x23c
+      0xfffffe00095b8f04 base=x16 in 0xfffffe00095b8eb4 sz=0xf4
+      0xfffffe00095b926c base=x16 in 0xfffffe00095b90f0 sz=0x24c
+      0xfffffe00095b9d24 base=x16 in 0xfffffe00095b9c8c sz=0x1d8
+  com.apple.driver.AppleSEPKeyStore: 13
+      0xfffffe00095be8c4 base=x16 in 0xfffffe00095be854 sz=0x64c
+      0xfffffe00095bf1a4 base=x16 in 0xfffffe00095bef80 sz=0x788
+      0xfffffe00095bf9c4 base=x16 in 0xfffffe00095bf93c sz=0x104
+      0xfffffe00095c0d7c base=x16 in 0xfffffe00095c0d18 sz=0xcc
+      0xfffffe00095c6d38 base=x16 in 0xfffffe00095c6528 sz=0x918
+      0xfffffe00095cac4c base=x16 in 0xfffffe00095cab5c sz=0x150
+      0xfffffe00095cb6e8 base=x16 in 0xfffffe00095cb678 sz=0xa0
+      0xfffffe00095f2d1c base=x16 in 0xfffffe00095f28f0 sz=0x740
+  com.apple.driver.AppleSEPManager: 175
+      0xfffffe00095fe050 base=x16 in 0xfffffe00095fdf54 sz=0x1f4
+      0xfffffe00095fe838 base=x16 in 0xfffffe00095fe7f8 sz=0x88
+      0xfffffe0009601264 base=x16 in 0xfffffe0009601160 sz=0x154
+      0xfffffe0009601448 base=x16 in 0xfffffe00096013c4 sz=0x154
+      0xfffffe0009601470 base=x16 in 0xfffffe00096013c4 sz=0x154
+      0xfffffe00096014b0 base=x16 in 0xfffffe00096013c4 sz=0x154
+      0xfffffe00096014d8 base=x16 in 0xfffffe00096013c4 sz=0x154
+      0xfffffe0009602e7c base=x16 in 0xfffffe0009602dfc sz=0x10c
+  com.apple.driver.AppleSMC: 100
+      0xfffffe00096434c4 base=x16 in 0xfffffe000964349c sz=0x50
+      0xfffffe0009643a90 base=x16 in 0xfffffe000964383c sz=0xe68
+      0xfffffe0009643df8 base=x16 in 0xfffffe000964383c sz=0xe68
+      0xfffffe0009643eb8 base=x16 in 0xfffffe000964383c sz=0xe68
+      0xfffffe0009643ed8 base=x16 in 0xfffffe000964383c sz=0xe68
+      0xfffffe0009643f1c base=x16 in 0xfffffe000964383c sz=0xe68
+      0xfffffe0009644f8c base=x16 in 0xfffffe0009644f10 sz=0x2d4
+      0xfffffe00096473c0 base=x16 in 0xfffffe0009646d8c sz=0x8ac
+  com.apple.driver.AppleSMCWirelessCharger: 57
+      0xfffffe000966f6e4 base=x16 in 0xfffffe000966ef98 sz=0x1624
+      0xfffffe000966f8b4 base=x16 in 0xfffffe000966ef98 sz=0x1624
+      0xfffffe000966f918 base=x16 in 0xfffffe000966ef98 sz=0x1624
+      0xfffffe000966f9d0 base=x16 in 0xfffffe000966ef98 sz=0x1624
+      0xfffffe000966fa80 base=x16 in 0xfffffe000966ef98 sz=0x1624
+      0xfffffe000966fb08 base=x16 in 0xfffffe000966ef98 sz=0x1624
+      0xfffffe000966fb40 base=x16 in 0xfffffe000966ef98 sz=0x1624
+      0xfffffe000966fc00 base=x16 in 0xfffffe000966ef98 sz=0x1624
+  com.apple.driver.AppleSPIMC: 34
+      0xfffffe0009680c38 base=x16 in 0xfffffe0009680b98 sz=0xa6c
+      0xfffffe0009680d88 base=x16 in 0xfffffe0009680b98 sz=0xa6c
+      0xfffffe0009680e14 base=x16 in 0xfffffe0009680b98 sz=0xa6c
+      0xfffffe0009680e6c base=x16 in 0xfffffe0009680b98 sz=0xa6c
+      0xfffffe0009680ff8 base=x16 in 0xfffffe0009680b98 sz=0xa6c
+      0xfffffe00096811bc base=x16 in 0xfffffe0009680b98 sz=0xa6c
+      0xfffffe000968120c base=x16 in 0xfffffe0009680b98 sz=0xa6c
+      0xfffffe0009681448 base=x16 in 0xfffffe0009680b98 sz=0xa6c
+  com.apple.driver.AppleSPMI: 18
+      0xfffffe0009687eb8 base=x16 in 0xfffffe0009687db8 sz=0x268
+      0xfffffe0009687f98 base=x16 in 0xfffffe0009687db8 sz=0x268
+      0xfffffe0009688540 base=x16 in 0xfffffe000968840c sz=0x19c
+      0xfffffe000968b704 base=x16 in 0xfffffe000968b68c sz=0x108c
+      0xfffffe000968b810 base=x16 in 0xfffffe000968b68c sz=0x108c
+      0xfffffe000968b840 base=x16 in 0xfffffe000968b68c sz=0x108c
+      0xfffffe000968b868 base=x16 in 0xfffffe000968b68c sz=0x108c
+      0xfffffe000968b8fc base=x16 in 0xfffffe000968b68c sz=0x108c
+  com.apple.driver.AppleSPMIPMU: 106
+      0xfffffe000969389c base=x16 in 0xfffffe0009693830 sz=0xdbc
+      0xfffffe00096938c8 base=x16 in 0xfffffe0009693830 sz=0xdbc
+      0xfffffe0009693900 base=x16 in 0xfffffe0009693830 sz=0xdbc
+      0xfffffe0009693af0 base=x16 in 0xfffffe0009693830 sz=0xdbc
+      0xfffffe0009693b30 base=x16 in 0xfffffe0009693830 sz=0xdbc
+      0xfffffe0009693be4 base=x16 in 0xfffffe0009693830 sz=0xdbc
+      0xfffffe0009693c44 base=x16 in 0xfffffe0009693830 sz=0xdbc
+      0xfffffe0009693d00 base=x16 in 0xfffffe0009693830 sz=0xdbc
+  com.apple.driver.AppleSPU: 314
+      0xfffffe00096a0c44 base=x16 in 0xfffffe00096a0bb0 sz=0x300
+      0xfffffe00096a0db8 base=x16 in 0xfffffe00096a0bb0 sz=0x300
+      0xfffffe00096a0eec base=x16 in 0xfffffe00096a0eb0 sz=0xa8
+      0xfffffe00096a18b0 base=x16 in 0xfffffe00096a1814 sz=0x1f0
+      0xfffffe00096a18e4 base=x16 in 0xfffffe00096a1814 sz=0x1f0
+      0xfffffe00096a190c base=x16 in 0xfffffe00096a1814 sz=0x1f0
+      0xfffffe00096a1f38 base=x16 in 0xfffffe00096a1ec4 sz=0x108
+      0xfffffe00096a2718 base=x16 in 0xfffffe00096a26d0 sz=0x68
+  com.apple.driver.AppleSPURose: 50
+      0xfffffe00096eba18 base=x16 in 0xfffffe00096eb99c sz=0x71c
+      0xfffffe00096eba3c base=x16 in 0xfffffe00096eb99c sz=0x71c
+      0xfffffe00096ebca4 base=x16 in 0xfffffe00096eb99c sz=0x71c
+      0xfffffe00096ebccc base=x16 in 0xfffffe00096eb99c sz=0x71c
+      0xfffffe00096ebe30 base=x16 in 0xfffffe00096eb99c sz=0x71c
+      0xfffffe00096ec6f4 base=x16 in 0xfffffe00096ec688 sz=0xb8
+      0xfffffe00096ece74 base=x16 in 0xfffffe00096ecdf8 sz=0x180
+      0xfffffe00096edc80 base=x16 in 0xfffffe00096edbac sz=0x3f0
+  com.apple.driver.AppleSPUSphere: 1
+      0xfffffe00097040ac base=x16 in 0xfffffe0009703e18 sz=0x3e4
+  com.apple.driver.AppleSSE: 26
+      0xfffffe000970676c base=x16 in 0xfffffe0009706638 sz=0x4b0
+      0xfffffe0009706880 base=x16 in 0xfffffe0009706638 sz=0x4b0
+      0xfffffe000970690c base=x16 in 0xfffffe0009706638 sz=0x4b0
+      0xfffffe0009706d7c base=x16 in 0xfffffe0009706d3c sz=0x364
+      0xfffffe0009706e74 base=x16 in 0xfffffe0009706d3c sz=0x364
+      0xfffffe0009706e98 base=x16 in 0xfffffe0009706d3c sz=0x364
+      0xfffffe0009706f10 base=x16 in 0xfffffe0009706d3c sz=0x364
+      0xfffffe0009706f34 base=x16 in 0xfffffe0009706d3c sz=0x364
+  com.apple.driver.AppleSamsungSerial: 6
+      0xfffffe000970e168 base=x16 in 0xfffffe000970e0f8 sz=0x658
+      0xfffffe000970e310 base=x16 in 0xfffffe000970e0f8 sz=0x658
+      0xfffffe000970e54c base=x16 in 0xfffffe000970e0f8 sz=0x658
+      0xfffffe000970ea04 base=x16 in 0xfffffe000970e7d8 sz=0x250
+      0xfffffe000970f1c4 base=x16 in 0xfffffe000970efa8 sz=0x2b4
+      0xfffffe000970f3dc base=x16 in 0xfffffe000970f398 sz=0x1ec
+  com.apple.driver.AppleSerialShim: 1
+      0xfffffe0009710628 base=x16 in 0xfffffe00097100f4 sz=0x5c0
+  com.apple.driver.AppleSmartBatteryManagerEmbedded: 100
+      0xfffffe00097118ac base=x16 in 0xfffffe0009711844 sz=0x2b0
+      0xfffffe0009711934 base=x16 in 0xfffffe0009711844 sz=0x2b0
+      0xfffffe00097119d8 base=x16 in 0xfffffe0009711844 sz=0x2b0
+      0xfffffe0009711aa0 base=x16 in 0xfffffe0009711844 sz=0x2b0
+      0xfffffe0009711bcc base=x16 in 0xfffffe0009711b48 sz=0x140
+      0xfffffe0009714028 base=x16 in 0xfffffe0009713f64 sz=0x14c
+      0xfffffe0009714744 base=x16 in 0xfffffe00097146e8 sz=0x298
+      0xfffffe00097147b0 base=x16 in 0xfffffe00097146e8 sz=0x298
+  com.apple.driver.AppleSmartIO2: 23
+      0xfffffe00097434d0 base=x16 in 0xfffffe00097433bc sz=0x614
+      0xfffffe000974362c base=x16 in 0xfffffe00097433bc sz=0x614
+      0xfffffe0009743c44 base=x16 in 0xfffffe0009743b78 sz=0x190
+      0xfffffe0009743c7c base=x16 in 0xfffffe0009743b78 sz=0x190
+      0xfffffe0009744540 base=x16 in 0xfffffe000974448c sz=0x1d4
+      0xfffffe0009744564 base=x16 in 0xfffffe000974448c sz=0x1d4
+      0xfffffe00097446a8 base=x16 in 0xfffffe0009744660 sz=0x78
+      0xfffffe0009746ad4 base=x16 in 0xfffffe0009746a98 sz=0x108
+  com.apple.driver.AppleStockholmControl: 27
+      0xfffffe000974f1e4 base=x16 in 0xfffffe000974f190 sz=0x78
+      0xfffffe0009751834 base=x16 in 0xfffffe00097517c8 sz=0x4ac
+      0xfffffe0009751d40 base=x16 in 0xfffffe0009751cd0 sz=0x4b4
+      0xfffffe0009752e64 base=x16 in 0xfffffe0009752b00 sz=0x804
+      0xfffffe00097536b8 base=x16 in 0xfffffe0009753304 sz=0x18c4
+      0xfffffe0009753bd0 base=x16 in 0xfffffe0009753304 sz=0x18c4
+      0xfffffe0009754040 base=x16 in 0xfffffe0009753304 sz=0x18c4
+      0xfffffe00097544dc base=x16 in 0xfffffe0009753304 sz=0x18c4
+  com.apple.driver.AppleSynopsysMIPIDSI: 24
+      0xfffffe0009770a64 base=x16 in 0xfffffe00097709a8 sz=0x19e8
+      0xfffffe0009770bb4 base=x16 in 0xfffffe00097709a8 sz=0x19e8
+      0xfffffe0009770cf0 base=x16 in 0xfffffe00097709a8 sz=0x19e8
+      0xfffffe0009770ddc base=x16 in 0xfffffe00097709a8 sz=0x19e8
+      0xfffffe0009770e44 base=x16 in 0xfffffe00097709a8 sz=0x19e8
+      0xfffffe0009770ea8 base=x16 in 0xfffffe00097709a8 sz=0x19e8
+      0xfffffe0009771024 base=x16 in 0xfffffe00097709a8 sz=0x19e8
+      0xfffffe000977165c base=x16 in 0xfffffe00097709a8 sz=0x19e8
+  com.apple.driver.AppleT6020PCIePIODMA: 29
+      0xfffffe0009779a9c base=x16 in 0xfffffe0009779a4c sz=0x74
+      0xfffffe0009779b10 base=x16 in 0xfffffe0009779ac0 sz=0x74
+      0xfffffe000977a06c base=x16 in 0xfffffe0009779fc0 sz=0x848
+      0xfffffe000977a114 base=x16 in 0xfffffe0009779fc0 sz=0x848
+      0xfffffe000977a25c base=x16 in 0xfffffe0009779fc0 sz=0x848
+      0xfffffe000977a744 base=x16 in 0xfffffe0009779fc0 sz=0x848
+      0xfffffe000977acc0 base=x16 in 0xfffffe000977ab64 sz=0x800
+      0xfffffe000977ad88 base=x16 in 0xfffffe000977ab64 sz=0x800
+  com.apple.driver.AppleT8030SOCTuner: 5
+      0xfffffe0009781518 base=x16 in 0xfffffe00097812e8 sz=0x594
+      0xfffffe000978182c base=x16 in 0xfffffe00097812e8 sz=0x594
+      0xfffffe0009781aa4 base=x16 in 0xfffffe00097819d4 sz=0x138
+      0xfffffe0009781acc base=x16 in 0xfffffe00097819d4 sz=0x138
+      0xfffffe0009781af4 base=x16 in 0xfffffe00097819d4 sz=0x138
+  com.apple.driver.AppleT8103TypeCPhy: 2067
+      0xfffffe00099c4e9c base=x16 in 0xfffffe00099c4e38 sz=0x38c
+      0xfffffe00099c4ec0 base=x16 in 0xfffffe00099c4e38 sz=0x38c
+      0xfffffe00099c4ef4 base=x16 in 0xfffffe00099c4e38 sz=0x38c
+      0xfffffe00099c4f6c base=x16 in 0xfffffe00099c4e38 sz=0x38c
+      0xfffffe00099c4fc4 base=x16 in 0xfffffe00099c4e38 sz=0x38c
+      0xfffffe00099c50a4 base=x16 in 0xfffffe00099c4e38 sz=0x38c
+      0xfffffe00099c50cc base=x16 in 0xfffffe00099c4e38 sz=0x38c
+      0xfffffe00099c5124 base=x16 in 0xfffffe00099c4e38 sz=0x38c
+  com.apple.driver.AppleT8110DART: 35
+      0xfffffe00097831cc base=x16 in 0xfffffe0009782d08 sz=0xa58
+      0xfffffe00097837d8 base=x16 in 0xfffffe0009783760 sz=0x1118
+      0xfffffe000978380c base=x16 in 0xfffffe0009783760 sz=0x1118
+      0xfffffe0009783848 base=x16 in 0xfffffe0009783760 sz=0x1118
+      0xfffffe000978387c base=x16 in 0xfffffe0009783760 sz=0x1118
+      0xfffffe00097838b0 base=x16 in 0xfffffe0009783760 sz=0x1118
+      0xfffffe0009783dcc base=x16 in 0xfffffe0009783760 sz=0x1118
+      0xfffffe0009783e58 base=x16 in 0xfffffe0009783760 sz=0x1118
+  com.apple.driver.AppleT8130TypeCPhy: 1739
+      0xfffffe0009a0bb60 base=x16 in 0xfffffe0009a0bad8 sz=0x1f80
+      0xfffffe0009a0bc1c base=x16 in 0xfffffe0009a0bad8 sz=0x1f80
+      0xfffffe0009a0bcbc base=x16 in 0xfffffe0009a0bad8 sz=0x1f80
+      0xfffffe0009a0be58 base=x16 in 0xfffffe0009a0bad8 sz=0x1f80
+      0xfffffe0009a0be80 base=x16 in 0xfffffe0009a0bad8 sz=0x1f80
+      0xfffffe0009a0bf10 base=x16 in 0xfffffe0009a0bad8 sz=0x1f80
+      0xfffffe0009a0bf68 base=x16 in 0xfffffe0009a0bad8 sz=0x1f80
+      0xfffffe0009a0c048 base=x16 in 0xfffffe0009a0bad8 sz=0x1f80
+  com.apple.driver.AppleT8150: 32
+      0xfffffe00097933e4 base=x16 in 0xfffffe0009793388 sz=0x390
+      0xfffffe000979351c base=x16 in 0xfffffe0009793388 sz=0x390
+      0xfffffe00097939e0 base=x16 in 0xfffffe000979395c sz=0x2c8
+      0xfffffe0009793ebc base=x16 in 0xfffffe0009793e04 sz=0x220
+      0xfffffe0009793ee4 base=x16 in 0xfffffe0009793e04 sz=0x220
+      0xfffffe0009794388 base=x16 in 0xfffffe000979432c sz=0x234
+      0xfffffe000979475c base=x16 in 0xfffffe00097945ac sz=0x320
+      0xfffffe000979482c base=x16 in 0xfffffe00097945ac sz=0x320
+  com.apple.driver.AppleT8150CLPC: 115
+      0xfffffe00097b3158 base=x16 in 0xfffffe00097b2d14 sz=0x704
+      0xfffffe00097b321c base=x16 in 0xfffffe00097b2d14 sz=0x704
+      0xfffffe00097b327c base=x16 in 0xfffffe00097b2d14 sz=0x704
+      0xfffffe00097b32cc base=x16 in 0xfffffe00097b2d14 sz=0x704
+      0xfffffe00097b470c base=x16 in 0xfffffe00097b4410 sz=0x3f0
+      0xfffffe00097b4dd0 base=x16 in 0xfffffe00097b4ad4 sz=0x3f0
+      0xfffffe00097b5e38 base=x16 in 0xfffffe00097b55f8 sz=0x1674
+      0xfffffe00097b5fc0 base=x16 in 0xfffffe00097b55f8 sz=0x1674
+  com.apple.driver.AppleT8150MCC: 44
+      0xfffffe0009817494 base=x16 in 0xfffffe00098171e4 sz=0x740
+      0xfffffe0009817638 base=x16 in 0xfffffe00098171e4 sz=0x740
+      0xfffffe000981804c base=x16 in 0xfffffe0009817fa8 sz=0xf4
+      0xfffffe0009818a3c base=x16 in 0xfffffe00098189c8 sz=0xc8
+      0xfffffe0009818a68 base=x16 in 0xfffffe00098189c8 sz=0xc8
+      0xfffffe0009819014 base=x16 in 0xfffffe0009818ec8 sz=0x1ec
+      0xfffffe000981903c base=x16 in 0xfffffe0009818ec8 sz=0x1ec
+      0xfffffe000981906c base=x16 in 0xfffffe0009818ec8 sz=0x1ec
+  com.apple.driver.AppleT8150PCIe: 84
+      0xfffffe000982ea28 base=x16 in 0xfffffe000982e6a8 sz=0x51c
+      0xfffffe000982eaac base=x16 in 0xfffffe000982e6a8 sz=0x51c
+      0xfffffe000982eb30 base=x16 in 0xfffffe000982e6a8 sz=0x51c
+      0xfffffe000982ec1c base=x16 in 0xfffffe000982ebc4 sz=0xe5c
+      0xfffffe000982f4c0 base=x16 in 0xfffffe000982ebc4 sz=0xe5c
+      0xfffffe000982f788 base=x16 in 0xfffffe000982ebc4 sz=0xe5c
+      0xfffffe0009831074 base=x16 in 0xfffffe000983100c sz=0x98
+      0xfffffe0009831120 base=x16 in 0xfffffe00098310a4 sz=0xac
+  com.apple.driver.AppleT8150PMGR: 7
+      0xfffffe0009842a00 base=x16 in 0xfffffe0009842904 sz=0x404
+      0xfffffe0009842da4 base=x16 in 0xfffffe0009842d44 sz=0x21c
+      0xfffffe00098432f4 base=x16 in 0xfffffe000984329c sz=0x10c
+      0xfffffe0009843534 base=x16 in 0xfffffe00098433dc sz=0x1e8
+      0xfffffe0009844870 base=x16 in 0xfffffe0009844800 sz=0x100
+      0xfffffe00098453dc base=x16 in 0xfffffe0009845370 sz=0xa4
+      0xfffffe0009845480 base=x16 in 0xfffffe0009845414 sz=0xa4
+  com.apple.driver.AppleTemperatureSensor: 48
+      0xfffffe0009849efc base=x16 in 0xfffffe0009849e78 sz=0x700
+      0xfffffe000984a064 base=x16 in 0xfffffe0009849e78 sz=0x700
+      0xfffffe000984a0e8 base=x16 in 0xfffffe0009849e78 sz=0x700
+      0xfffffe000984a16c base=x16 in 0xfffffe0009849e78 sz=0x700
+      0xfffffe000984a3d4 base=x16 in 0xfffffe0009849e78 sz=0x700
+      0xfffffe000984a894 base=x16 in 0xfffffe000984a834 sz=0xcc
+      0xfffffe000984aec8 base=x16 in 0xfffffe000984ae2c sz=0x5b0
+      0xfffffe000984aeec base=x16 in 0xfffffe000984ae2c sz=0x5b0
+  com.apple.driver.AppleThunderboltDPAdapterFamily: 406
+      0xfffffe0009852b3c base=x16 in 0xfffffe00098529e8 sz=0x548
+      0xfffffe0009852b6c base=x16 in 0xfffffe00098529e8 sz=0x548
+      0xfffffe0009852ba4 base=x16 in 0xfffffe00098529e8 sz=0x548
+      0xfffffe0009852bd0 base=x16 in 0xfffffe00098529e8 sz=0x548
+      0xfffffe0009852bf8 base=x16 in 0xfffffe00098529e8 sz=0x548
+      0xfffffe0009852c30 base=x16 in 0xfffffe00098529e8 sz=0x548
+      0xfffffe0009852d80 base=x16 in 0xfffffe00098529e8 sz=0x548
+      0xfffffe0009852e6c base=x16 in 0xfffffe00098529e8 sz=0x548
+  com.apple.driver.AppleThunderboltDPInAdapter: 38
+      0xfffffe000988cbbc base=x16 in 0xfffffe000988ca84 sz=0x730
+      0xfffffe000988cbe8 base=x16 in 0xfffffe000988ca84 sz=0x730
+      0xfffffe000988cc18 base=x16 in 0xfffffe000988ca84 sz=0x730
+      0xfffffe000988d198 base=x16 in 0xfffffe000988ca84 sz=0x730
+      0xfffffe000988d2cc base=x16 in 0xfffffe000988d1b4 sz=0x370
+      0xfffffe000988d4d4 base=x16 in 0xfffffe000988d1b4 sz=0x370
+      0xfffffe000988de20 base=x16 in 0xfffffe000988dcf8 sz=0x350
+      0xfffffe000988de4c base=x16 in 0xfffffe000988dcf8 sz=0x350
+  com.apple.driver.AppleThunderboltDPOutAdapter: 379
+      0xfffffe0009894e80 base=x16 in 0xfffffe0009894b14 sz=0xa50
+      0xfffffe0009894fa0 base=x16 in 0xfffffe0009894b14 sz=0xa50
+      0xfffffe0009894fd4 base=x16 in 0xfffffe0009894b14 sz=0xa50
+      0xfffffe0009895258 base=x16 in 0xfffffe0009894b14 sz=0xa50
+      0xfffffe0009895460 base=x16 in 0xfffffe0009894b14 sz=0xa50
+      0xfffffe000989554c base=x16 in 0xfffffe0009894b14 sz=0xa50
+      0xfffffe00098956a8 base=x16 in 0xfffffe0009895564 sz=0x56c
+      0xfffffe0009895714 base=x16 in 0xfffffe0009895564 sz=0x56c
+  com.apple.driver.AppleThunderboltEDMSource: 69
+      0xfffffe00098db048 base=x16 in 0xfffffe00098daf98 sz=0x160
+      0xfffffe00098db4f8 base=x16 in 0xfffffe00098db42c sz=0x1000
+      0xfffffe00098db534 base=x16 in 0xfffffe00098db42c sz=0x1000
+      0xfffffe00098db5b0 base=x16 in 0xfffffe00098db42c sz=0x1000
+      0xfffffe00098db5ec base=x16 in 0xfffffe00098db42c sz=0x1000
+      0xfffffe00098db618 base=x16 in 0xfffffe00098db42c sz=0x1000
+      0xfffffe00098db64c base=x16 in 0xfffffe00098db42c sz=0x1000
+      0xfffffe00098db688 base=x16 in 0xfffffe00098db42c sz=0x1000
+  com.apple.driver.AppleThunderboltIP: 49
+      0xfffffe00098e4200 base=x16 in 0xfffffe00098e3c08 sz=0xc54
+      0xfffffe00098e4978 base=x16 in 0xfffffe00098e485c sz=0x964
+      0xfffffe00098e49ac base=x16 in 0xfffffe00098e485c sz=0x964
+      0xfffffe00098e49d4 base=x16 in 0xfffffe00098e485c sz=0x964
+      0xfffffe00098e4c68 base=x16 in 0xfffffe00098e485c sz=0x964
+      0xfffffe00098e4c90 base=x16 in 0xfffffe00098e485c sz=0x964
+      0xfffffe00098e6c00 base=x16 in 0xfffffe00098e6688 sz=0x814
+      0xfffffe00098e76c0 base=x16 in 0xfffffe00098e6f18 sz=0xe38
+  com.apple.driver.AppleThunderboltNHI: 162
+      0xfffffe000991b36c base=x16 in 0xfffffe000991b308 sz=0xb8
+      0xfffffe000991b758 base=x16 in 0xfffffe000991b6f4 sz=0xb8
+      0xfffffe000991bb44 base=x16 in 0xfffffe000991bae0 sz=0xb8
+      0xfffffe000991c5c8 base=x16 in 0xfffffe000991c2dc sz=0x8b4
+      0xfffffe000991c9ec base=x16 in 0xfffffe000991c2dc sz=0x8b4
+      0xfffffe000991ca34 base=x16 in 0xfffffe000991c2dc sz=0x8b4
+      0xfffffe000991cf8c base=x16 in 0xfffffe000991cf2c sz=0xac
+      0xfffffe000991d0b8 base=x16 in 0xfffffe000991cfd8 sz=0x1f4
+  com.apple.driver.AppleThunderboltPCIDownAdapter: 53
+      0xfffffe00099578d8 base=x16 in 0xfffffe0009957688 sz=0x558
+      0xfffffe0009957b5c base=x16 in 0xfffffe0009957688 sz=0x558
+      0xfffffe0009957b88 base=x16 in 0xfffffe0009957688 sz=0x558
+      0xfffffe0009957bbc base=x16 in 0xfffffe0009957688 sz=0x558
+      0xfffffe0009957d20 base=x16 in 0xfffffe0009957c14 sz=0x290
+      0xfffffe0009957d50 base=x16 in 0xfffffe0009957c14 sz=0x290
+      0xfffffe0009957e10 base=x16 in 0xfffffe0009957c14 sz=0x290
+      0xfffffe0009958348 base=x16 in 0xfffffe0009958190 sz=0x944
+  com.apple.driver.AppleThunderboltPCIUpAdapter: 309
+      0xfffffe000995ca7c base=x16 in 0xfffffe000995ca28 sz=0x9c
+      0xfffffe000995caa4 base=x16 in 0xfffffe000995ca28 sz=0x9c
+      0xfffffe000995ccc4 base=x16 in 0xfffffe000995cac4 sz=0x1024
+      0xfffffe000995ccec base=x16 in 0xfffffe000995cac4 sz=0x1024
+      0xfffffe000995d028 base=x16 in 0xfffffe000995cac4 sz=0x1024
+      0xfffffe000995d4d0 base=x16 in 0xfffffe000995cac4 sz=0x1024
+      0xfffffe000995d504 base=x16 in 0xfffffe000995cac4 sz=0x1024
+      0xfffffe000995d5ac base=x16 in 0xfffffe000995cac4 sz=0x1024
+  com.apple.driver.AppleThunderboltUSBDownAdapter: 6
+      0xfffffe0009974fe4 base=x16 in 0xfffffe0009974f48 sz=0x47c
+      0xfffffe0009975068 base=x16 in 0xfffffe0009974f48 sz=0x47c
+      0xfffffe0009975180 base=x16 in 0xfffffe0009974f48 sz=0x47c
+      0xfffffe00099751a4 base=x16 in 0xfffffe0009974f48 sz=0x47c
+      0xfffffe00099751cc base=x16 in 0xfffffe0009974f48 sz=0x47c
+      0xfffffe0009975864 base=x16 in 0xfffffe00099757e8 sz=0x1cc
+  com.apple.driver.AppleThunderboltUSBType2DownAdapter: 5
+      0xfffffe0009976420 base=x16 in 0xfffffe0009976388 sz=0x49c
+      0xfffffe00099764a4 base=x16 in 0xfffffe0009976388 sz=0x49c
+      0xfffffe0009976634 base=x16 in 0xfffffe0009976388 sz=0x49c
+      0xfffffe000997665c base=x16 in 0xfffffe0009976388 sz=0x49c
+      0xfffffe0009976d20 base=x16 in 0xfffffe0009976ca4 sz=0x1dc
+  com.apple.driver.AppleThunderboltUSBType2UpAdapter: 35
+      0xfffffe00099784ac base=x16 in 0xfffffe0009978458 sz=0x74
+      0xfffffe0009978568 base=x16 in 0xfffffe00099784cc sz=0x12d8
+      0xfffffe00099785ec base=x16 in 0xfffffe00099784cc sz=0x12d8
+      0xfffffe000997861c base=x16 in 0xfffffe00099784cc sz=0x12d8
+      0xfffffe00099788a0 base=x16 in 0xfffffe00099784cc sz=0x12d8
+      0xfffffe0009978da8 base=x16 in 0xfffffe00099784cc sz=0x12d8
+      0xfffffe0009978de0 base=x16 in 0xfffffe00099784cc sz=0x12d8
+      0xfffffe0009978e04 base=x16 in 0xfffffe00099784cc sz=0x12d8
+  com.apple.driver.AppleThunderboltUSBUpAdapter: 46
+      0xfffffe00099832cc base=x16 in 0xfffffe0009983278 sz=0x74
+      0xfffffe0009983388 base=x16 in 0xfffffe00099832ec sz=0x1dc8
+      0xfffffe000998340c base=x16 in 0xfffffe00099832ec sz=0x1dc8
+      0xfffffe000998343c base=x16 in 0xfffffe00099832ec sz=0x1dc8
+      0xfffffe0009983648 base=x16 in 0xfffffe00099832ec sz=0x1dc8
+      0xfffffe0009983b94 base=x16 in 0xfffffe00099832ec sz=0x1dc8
+      0xfffffe0009983efc base=x16 in 0xfffffe00099832ec sz=0x1dc8
+      0xfffffe00099841e4 base=x16 in 0xfffffe00099832ec sz=0x1dc8
+  com.apple.driver.AppleTopCaseHIDEventDriver: 42
+      0xfffffe000998d744 base=x16 in 0xfffffe000998d66c sz=0x200
+      0xfffffe000998d798 base=x16 in 0xfffffe000998d66c sz=0x200
+      0xfffffe000998d9e0 base=x16 in 0xfffffe000998d978 sz=0xed0
+      0xfffffe000998ddb8 base=x16 in 0xfffffe000998d978 sz=0xed0
+      0xfffffe000998de88 base=x16 in 0xfffffe000998d978 sz=0xed0
+      0xfffffe000998df10 base=x16 in 0xfffffe000998d978 sz=0xed0
+      0xfffffe000998e534 base=x16 in 0xfffffe000998d978 sz=0xed0
+      0xfffffe000998e554 base=x16 in 0xfffffe000998d978 sz=0xed0
+  com.apple.driver.AppleTriStar: 505
+      0xfffffe0009995bac base=x16 in 0xfffffe0009995a98 sz=0x450
+      0xfffffe0009995bdc base=x16 in 0xfffffe0009995a98 sz=0x450
+      0xfffffe0009995c04 base=x16 in 0xfffffe0009995a98 sz=0x450
+      0xfffffe0009995e1c base=x16 in 0xfffffe0009995a98 sz=0x450
+      0xfffffe0009995fa4 base=x16 in 0xfffffe0009995ee8 sz=0x204
+      0xfffffe0009995fc8 base=x16 in 0xfffffe0009995ee8 sz=0x204
+      0xfffffe0009995ff0 base=x16 in 0xfffffe0009995ee8 sz=0x204
+      0xfffffe000999615c base=x16 in 0xfffffe00099960f8 sz=0x2d0
+  com.apple.driver.AppleTypeCPhy: 302
+      0xfffffe00099b2140 base=x16 in 0xfffffe00099b1c9c sz=0x10c4
+      0xfffffe00099b2220 base=x16 in 0xfffffe00099b1c9c sz=0x10c4
+      0xfffffe00099b2278 base=x16 in 0xfffffe00099b1c9c sz=0x10c4
+      0xfffffe00099b2378 base=x16 in 0xfffffe00099b1c9c sz=0x10c4
+      0xfffffe00099b2498 base=x16 in 0xfffffe00099b1c9c sz=0x10c4
+      0xfffffe00099b24c0 base=x16 in 0xfffffe00099b1c9c sz=0x10c4
+      0xfffffe00099b25a4 base=x16 in 0xfffffe00099b1c9c sz=0x10c4
+      0xfffffe00099b2710 base=x16 in 0xfffffe00099b1c9c sz=0x10c4
+  com.apple.driver.AppleTypeCPhyAUSBC: 96
+      0xfffffe0009a583e0 base=x16 in 0xfffffe0009a58328 sz=0x750
+      0xfffffe0009a58480 base=x16 in 0xfffffe0009a58328 sz=0x750
+      0xfffffe0009a584b0 base=x16 in 0xfffffe0009a58328 sz=0x750
+      0xfffffe0009a5866c base=x16 in 0xfffffe0009a58328 sz=0x750
+      0xfffffe0009a58708 base=x16 in 0xfffffe0009a58328 sz=0x750
+      0xfffffe0009a58840 base=x16 in 0xfffffe0009a58328 sz=0x750
+      0xfffffe0009a58944 base=x16 in 0xfffffe0009a58328 sz=0x750
+      0xfffffe0009a58bb4 base=x16 in 0xfffffe0009a58b24 sz=0x968
+  com.apple.driver.AppleUSBAudio: 921
+      0xfffffe0009a5d9dc base=x16 in 0xfffffe0009a5d918 sz=0x144
+      0xfffffe0009a5da10 base=x16 in 0xfffffe0009a5d918 sz=0x144
+      0xfffffe0009a5dc74 base=x16 in 0xfffffe0009a5db54 sz=0x7a0
+      0xfffffe0009a5dc98 base=x16 in 0xfffffe0009a5db54 sz=0x7a0
+      0xfffffe0009a5dfb0 base=x16 in 0xfffffe0009a5db54 sz=0x7a0
+      0xfffffe0009a5e034 base=x16 in 0xfffffe0009a5db54 sz=0x7a0
+      0xfffffe0009a5e05c base=x16 in 0xfffffe0009a5db54 sz=0x7a0
+      0xfffffe0009a5e0b8 base=x16 in 0xfffffe0009a5db54 sz=0x7a0
+  com.apple.driver.AppleUSBCardReader: 94
+      0xfffffe0009764804 base=x16 in 0xfffffe0009764754 sz=0x27c
+      0xfffffe0009764c9c base=x16 in 0xfffffe00097649d0 sz=0x720
+      0xfffffe0009764ebc base=x16 in 0xfffffe00097649d0 sz=0x720
+      0xfffffe00097651a4 base=x16 in 0xfffffe00097650f0 sz=0x178
+      0xfffffe00097651dc base=x16 in 0xfffffe00097650f0 sz=0x178
+      0xfffffe00097655a8 base=x16 in 0xfffffe0009765554 sz=0xac
+      0xfffffe0009765d70 base=x16 in 0xfffffe0009765d24 sz=0x114
+      0xfffffe0009766634 base=x16 in 0xfffffe00097665c0 sz=0x17a8
+  com.apple.driver.AppleUSBDeviceAudioController: 8
+      0xfffffe0009ad9234 base=x16 in 0xfffffe0009ad90fc sz=0x194
+      0xfffffe0009ad9594 base=x16 in 0xfffffe0009ad9518 sz=0x178
+      0xfffffe0009ad9758 base=x16 in 0xfffffe0009ad9690 sz=0x174
+      0xfffffe0009ada0e0 base=x16 in 0xfffffe0009ad9fe0 sz=0x494
+      0xfffffe0009ada254 base=x16 in 0xfffffe0009ad9fe0 sz=0x494
+      0xfffffe0009ada648 base=x16 in 0xfffffe0009ada5b0 sz=0x3f4
+      0xfffffe0009adb11c base=x16 in 0xfffffe0009adb014 sz=0x3bc
+      0xfffffe0009adbfcc base=x16 in 0xfffffe0009adbee8 sz=0x19c
+  com.apple.driver.AppleUSBDeviceMux: 5
+      0xfffffe0009addaf4 base=x16 in 0xfffffe0009addaac sz=0x1cc
+      0xfffffe0009addbdc base=x16 in 0xfffffe0009addaac sz=0x1cc
+      0xfffffe0009ade350 base=x16 in 0xfffffe0009ade2c4 sz=0x124
+      0xfffffe0009ade500 base=x16 in 0xfffffe0009ade480 sz=0xf0
+      0xfffffe0009ae0708 base=x16 in 0xfffffe0009ae0310 sz=0x778
+  com.apple.driver.AppleUSBDeviceNCM: 19
+      0xfffffe0009ae2ee8 base=x16 in 0xfffffe0009ae2850 sz=0xad4
+      0xfffffe0009ae2f20 base=x16 in 0xfffffe0009ae2850 sz=0xad4
+      0xfffffe0009ae34cc base=x16 in 0xfffffe0009ae348c sz=0x8c
+      0xfffffe0009ae3854 base=x16 in 0xfffffe0009ae3518 sz=0x510
+      0xfffffe0009ae38a4 base=x16 in 0xfffffe0009ae3518 sz=0x510
+      0xfffffe0009ae38d4 base=x16 in 0xfffffe0009ae3518 sz=0x510
+      0xfffffe0009ae426c base=x16 in 0xfffffe0009ae4078 sz=0x27c
+      0xfffffe0009ae429c base=x16 in 0xfffffe0009ae4078 sz=0x27c
+  com.apple.driver.AppleUSBEthernetDevice: 4
+      0xfffffe0009b016d0 base=x16 in 0xfffffe0009b01634 sz=0x108
+      0xfffffe0009b01e94 base=x16 in 0xfffffe0009b01b74 sz=0x40c
+      0xfffffe0009b032f4 base=x16 in 0xfffffe0009b03284 sz=0xa0
+      0xfffffe0009b03a58 base=x16 in 0xfffffe0009b03a04 sz=0x108
+  com.apple.driver.AppleUSBEthernetHost: 25
+      0xfffffe0009b048b8 base=x16 in 0xfffffe0009b04768 sz=0x1a0
+      0xfffffe0009b04bc4 base=x16 in 0xfffffe0009b04ad0 sz=0x1b0
+      0xfffffe0009b04bec base=x16 in 0xfffffe0009b04ad0 sz=0x1b0
+      0xfffffe0009b04df8 base=x16 in 0xfffffe0009b04d94 sz=0xc8
+      0xfffffe0009b05190 base=x16 in 0xfffffe0009b05124 sz=0x5f8
+      0xfffffe0009b05390 base=x16 in 0xfffffe0009b05124 sz=0x5f8
+      0xfffffe0009b054b4 base=x16 in 0xfffffe0009b05124 sz=0x5f8
+      0xfffffe0009b05810 base=x16 in 0xfffffe0009b0571c sz=0x1d8
+  com.apple.driver.AppleUSBHostMergeProperties: 9
+      0xfffffe000a75f5f0 base=x16 in 0xfffffe000a75f5a8 sz=0x164
+      0xfffffe000a75f630 base=x16 in 0xfffffe000a75f5a8 sz=0x164
+      0xfffffe000a75f674 base=x16 in 0xfffffe000a75f5a8 sz=0x164
+      0xfffffe000a75f6a8 base=x16 in 0xfffffe000a75f5a8 sz=0x164
+      0xfffffe000a75f6e0 base=x16 in 0xfffffe000a75f5a8 sz=0x164
+      0xfffffe000a75f7f8 base=x16 in 0xfffffe000a75f70c sz=0x2b8
+      0xfffffe000a75f8e8 base=x16 in 0xfffffe000a75f70c sz=0x2b8
+      0xfffffe000a75fa88 base=x16 in 0xfffffe000a75f9c4 sz=0x264
+  com.apple.driver.AppleUSBLightningAdapter: 34
+      0xfffffe0009b0a3bc base=x16 in 0xfffffe0009b0a22c sz=0x1f8
+      0xfffffe0009b0a4fc base=x16 in 0xfffffe0009b0a424 sz=0x3ac
+      0xfffffe0009b0aa0c base=x16 in 0xfffffe0009b0a978 sz=0xc0
+      0xfffffe0009b0b2cc base=x16 in 0xfffffe0009b0b20c sz=0x50c
+      0xfffffe0009b0b308 base=x16 in 0xfffffe0009b0b20c sz=0x50c
+      0xfffffe0009b0bda0 base=x16 in 0xfffffe0009b0bce4 sz=0xa14
+      0xfffffe0009b0be00 base=x16 in 0xfffffe0009b0bce4 sz=0xa14
+      0xfffffe0009b0be60 base=x16 in 0xfffffe0009b0bce4 sz=0xa14
+  com.apple.driver.AppleUSBMassStorageInterfaceNub: 20
+      0xfffffe000976edf0 base=x16 in 0xfffffe000976ec98 sz=0xd78
+      0xfffffe000976eec0 base=x16 in 0xfffffe000976ec98 sz=0xd78
+      0xfffffe000976ef90 base=x16 in 0xfffffe000976ec98 sz=0xd78
+      0xfffffe000976f060 base=x16 in 0xfffffe000976ec98 sz=0xd78
+      0xfffffe000976f130 base=x16 in 0xfffffe000976ec98 sz=0xd78
+      0xfffffe000976f200 base=x16 in 0xfffffe000976ec98 sz=0xd78
+      0xfffffe000976f2d0 base=x16 in 0xfffffe000976ec98 sz=0xd78
+      0xfffffe000976f3c0 base=x16 in 0xfffffe000976ec98 sz=0xd78
+  com.apple.driver.AppleUSBMike: 14
+      0xfffffe0009b0f228 base=x16 in 0xfffffe0009b0eb2c sz=0x12dc
+      0xfffffe0009b106b0 base=x16 in 0xfffffe0009b105ec sz=0x62c
+      0xfffffe0009b10784 base=x16 in 0xfffffe0009b105ec sz=0x62c
+      0xfffffe0009b107e8 base=x16 in 0xfffffe0009b105ec sz=0x62c
+      0xfffffe0009b10844 base=x16 in 0xfffffe0009b105ec sz=0x62c
+      0xfffffe0009b108ac base=x16 in 0xfffffe0009b105ec sz=0x62c
+      0xfffffe0009b10b0c base=x16 in 0xfffffe0009b105ec sz=0x62c
+      0xfffffe0009b10db4 base=x16 in 0xfffffe0009b10d60 sz=0x188
+  com.apple.driver.AppleUSBTopCaseDriver: 2
+      0xfffffe0009995600 base=x16 in 0xfffffe0009995588 sz=0x268
+      0xfffffe000999563c base=x16 in 0xfffffe0009995588 sz=0x268
+  com.apple.driver.AppleUSBXDCI: 403
+      0xfffffe000a58b128 base=x16 in 0xfffffe000a58ac9c sz=0x4d4
+      0xfffffe000a58d464 base=x16 in 0xfffffe000a58d390 sz=0x888
+      0xfffffe000a58d4cc base=x16 in 0xfffffe000a58d390 sz=0x888
+      0xfffffe000a58d6fc base=x16 in 0xfffffe000a58d390 sz=0x888
+      0xfffffe000a58d7d4 base=x16 in 0xfffffe000a58d390 sz=0x888
+      0xfffffe000a58d868 base=x16 in 0xfffffe000a58d390 sz=0x888
+      0xfffffe000a58d8c4 base=x16 in 0xfffffe000a58d390 sz=0x888
+      0xfffffe000a58d9b4 base=x16 in 0xfffffe000a58d390 sz=0x888
+  com.apple.driver.AppleUSBXDCIARM: 1494
+      0xfffffe000a5aa6bc base=x16 in 0xfffffe000a5aa2b4 sz=0xe40
+      0xfffffe000a5aa71c base=x16 in 0xfffffe000a5aa2b4 sz=0xe40
+      0xfffffe000a5aa81c base=x16 in 0xfffffe000a5aa2b4 sz=0xe40
+      0xfffffe000a5aa87c base=x16 in 0xfffffe000a5aa2b4 sz=0xe40
+      0xfffffe000a5aa974 base=x16 in 0xfffffe000a5aa2b4 sz=0xe40
+      0xfffffe000a5aaa0c base=x16 in 0xfffffe000a5aa2b4 sz=0xe40
+      0xfffffe000a5aaaa4 base=x16 in 0xfffffe000a5aa2b4 sz=0xe40
+      0xfffffe000a5aab00 base=x16 in 0xfffffe000a5aa2b4 sz=0xe40
+  com.apple.driver.AppleUVDM: 5
+      0xfffffe0009b27174 base=x16 in 0xfffffe0009b27090 sz=0x1b8
+      0xfffffe0009b2734c base=x16 in 0xfffffe0009b272b4 sz=0x104
+      0xfffffe0009b2746c base=x16 in 0xfffffe0009b2741c sz=0x78
+      0xfffffe0009b284e4 base=x16 in 0xfffffe0009b2843c sz=0xfc
+      0xfffffe0009b285e4 base=x16 in 0xfffffe0009b28538 sz=0xfc
+  com.apple.driver.AppleUVDMDriver: 22
+      0xfffffe0009b29268 base=x16 in 0xfffffe0009b29210 sz=0x104
+      0xfffffe0009b29294 base=x16 in 0xfffffe0009b29210 sz=0x104
+      0xfffffe0009b29ac0 base=x16 in 0xfffffe0009b294e4 sz=0x6a0
+      0xfffffe0009b2a70c base=x16 in 0xfffffe0009b2a65c sz=0x164
+      0xfffffe0009b2b674 base=x16 in 0xfffffe0009b2b4c4 sz=0x528
+      0xfffffe0009b2bcf0 base=x16 in 0xfffffe0009b2bb20 sz=0x304
+      0xfffffe0009b2c268 base=x16 in 0xfffffe0009b2bfd0 sz=0x8bc
+      0xfffffe0009b2c4dc base=x16 in 0xfffffe0009b2bfd0 sz=0x8bc
+  com.apple.driver.AudioDMACLLTEscalationDetector-T8150: 12
+      0xfffffe0009b301e0 base=x16 in 0xfffffe0009b30150 sz=0x458
+      0xfffffe0009b30214 base=x16 in 0xfffffe0009b30150 sz=0x458
+      0xfffffe0009b302c0 base=x16 in 0xfffffe0009b30150 sz=0x458
+      0xfffffe0009b30e0c base=x16 in 0xfffffe0009b30c9c sz=0x254
+      0xfffffe0009b31060 base=x16 in 0xfffffe0009b30ef0 sz=0x254
+      0xfffffe0009b31484 base=x16 in 0xfffffe0009b31304 sz=0x2c4
+      0xfffffe0009b31ce0 base=x16 in 0xfffffe0009b31c3c sz=0x2e0
+      0xfffffe0009b31d10 base=x16 in 0xfffffe0009b31c3c sz=0x2e0
+  com.apple.driver.AudioDMAController-T8150: 185
+      0xfffffe0009b342ec base=x16 in 0xfffffe0009b34278 sz=0xd0
+      0xfffffe0009b34480 base=x16 in 0xfffffe0009b34400 sz=0x12c
+      0xfffffe0009b349c8 base=x16 in 0xfffffe0009b3457c sz=0x474
+      0xfffffe0009b34d98 base=x16 in 0xfffffe0009b34d0c sz=0xab8
+      0xfffffe0009b34f28 base=x16 in 0xfffffe0009b34d0c sz=0xab8
+      0xfffffe0009b34f98 base=x16 in 0xfffffe0009b34d0c sz=0xab8
+      0xfffffe0009b350dc base=x16 in 0xfffffe0009b34d0c sz=0xab8
+      0xfffffe0009b352d0 base=x16 in 0xfffffe0009b34d0c sz=0xab8
+  com.apple.driver.AudioDMAFamily: 33
+      0xfffffe0009b60d8c base=x16 in 0xfffffe0009b60c38 sz=0x6a8
+      0xfffffe0009b60e18 base=x16 in 0xfffffe0009b60c38 sz=0x6a8
+      0xfffffe0009b60e74 base=x16 in 0xfffffe0009b60c38 sz=0x6a8
+      0xfffffe0009b60eec base=x16 in 0xfffffe0009b60c38 sz=0x6a8
+      0xfffffe0009b61340 base=x16 in 0xfffffe0009b612e0 sz=0x184
+      0xfffffe0009b61a24 base=x16 in 0xfffffe0009b61464 sz=0xdc0
+      0xfffffe0009b61aec base=x16 in 0xfffffe0009b61464 sz=0xdc0
+      0xfffffe0009b61b4c base=x16 in 0xfffffe0009b61464 sz=0xdc0
+  com.apple.driver.AudioSharedDARTMapperProxy: 1
+      0xfffffe000a9103e0 base=x16 in 0xfffffe000a910354 sz=0x2ac
+  com.apple.driver.DCPAVFamilyProxy: 40
+      0xfffffe0009b7dac4 base=x16 in 0xfffffe0009b7da64 sz=0x158
+      0xfffffe0009b7daf8 base=x16 in 0xfffffe0009b7da64 sz=0x158
+      0xfffffe0009b7db28 base=x16 in 0xfffffe0009b7da64 sz=0x158
+      0xfffffe0009b7e20c base=x16 in 0xfffffe0009b7e054 sz=0x230
+      0xfffffe0009b7e47c base=x16 in 0xfffffe0009b7e408 sz=0x98
+      0xfffffe0009b7eec0 base=x10 in 0xfffffe0009b7ee70 sz=0x22c
+      0xfffffe0009b7f014 base=x16 in 0xfffffe0009b7ee70 sz=0x22c
+      0xfffffe0009b7f7bc base=x16 in 0xfffffe0009b7f780 sz=0xb0
+  com.apple.driver.DCPDPFamilyProxy: 4
+      0xfffffe0009b9735c base=x16 in 0xfffffe0009b9727c sz=0x104
+      0xfffffe0009b97480 base=x16 in 0xfffffe0009b97380 sz=0x3a8
+      0xfffffe0009b97acc base=x16 in 0xfffffe0009b97a58 sz=0x14c
+      0xfffffe0009b97c18 base=x16 in 0xfffffe0009b97ba4 sz=0x104
+  com.apple.driver.DMAChannelProxy: 4
+      0xfffffe0009b9da4c base=x16 in 0xfffffe0009b9d9e0 sz=0x48c
+      0xfffffe0009b9da84 base=x16 in 0xfffffe0009b9d9e0 sz=0x48c
+      0xfffffe0009b9dca4 base=x16 in 0xfffffe0009b9d9e0 sz=0x48c
+      0xfffffe0009b9dcd0 base=x16 in 0xfffffe0009b9d9e0 sz=0x48c
+  com.apple.driver.DiskImages: 51
+      0xfffffe000a08ab04 base=x31 in 0xfffffe000a08a940 sz=0x228
+      0xfffffe000a08bc68 base=x16 in 0xfffffe000a08bc24 sz=0xb0
+      0xfffffe000a08beec base=x16 in 0xfffffe000a08be38 sz=0x410
+      0xfffffe000a08c00c base=x16 in 0xfffffe000a08be38 sz=0x410
+      0xfffffe000a08c07c base=x16 in 0xfffffe000a08be38 sz=0x410
+      0xfffffe000a08c0a4 base=x16 in 0xfffffe000a08be38 sz=0x410
+      0xfffffe000a08c210 base=x16 in 0xfffffe000a08be38 sz=0x410
+      0xfffffe000a08c410 base=x16 in 0xfffffe000a08c248 sz=0x2bc
+  com.apple.driver.DiskImages.FileBackingStore: 2
+      0xfffffe000a093d44 base=x16 in 0xfffffe000a093cec sz=0x590
+      0xfffffe000a093f00 base=x16 in 0xfffffe000a093cec sz=0x590
+  com.apple.driver.DiskImages.KernelBacked: 29
+      0xfffffe000a09555c base=x16 in 0xfffffe000a09550c sz=0xa8
+      0xfffffe000a095588 base=x16 in 0xfffffe000a09550c sz=0xa8
+      0xfffffe000a0962bc base=x16 in 0xfffffe000a096220 sz=0x554
+      0xfffffe000a0962f4 base=x16 in 0xfffffe000a096220 sz=0x554
+      0xfffffe000a09632c base=x16 in 0xfffffe000a096220 sz=0x554
+      0xfffffe000a096354 base=x16 in 0xfffffe000a096220 sz=0x554
+      0xfffffe000a09650c base=x16 in 0xfffffe000a096220 sz=0x554
+      0xfffffe000a096534 base=x16 in 0xfffffe000a096220 sz=0x554
+  com.apple.driver.DiskImages.RAMBackingStore: 4
+      0xfffffe000a099a00 base=x16 in 0xfffffe000a09983c sz=0x2b8
+      0xfffffe000a099c04 base=x16 in 0xfffffe000a099b80 sz=0x270
+      0xfffffe000a099cb8 base=x16 in 0xfffffe000a099b80 sz=0x270
+      0xfffffe000a099d68 base=x16 in 0xfffffe000a099b80 sz=0x270
+  com.apple.driver.DiskImages.UDIFDiskImage: 14
+      0xfffffe000a09afc0 base=x16 in 0xfffffe000a09ac18 sz=0x638
+      0xfffffe000a09d444 base=x16 in 0xfffffe000a09d3b0 sz=0x160
+      0xfffffe000a09d494 base=x16 in 0xfffffe000a09d3b0 sz=0x160
+      0xfffffe000a09d880 base=x16 in 0xfffffe000a09d7a0 sz=0x2a0
+      0xfffffe000a09db40 base=x16 in 0xfffffe000a09da90 sz=0xfc
+      0xfffffe000a09dc4c base=x16 in 0xfffffe000a09db98 sz=0x3bc
+      0xfffffe000a09dce8 base=x16 in 0xfffffe000a09db98 sz=0x3bc
+      0xfffffe000a09dd24 base=x16 in 0xfffffe000a09db98 sz=0x3bc
+  com.apple.driver.EXDisplayPipeH18P: 11
+      0xfffffe0009bba55c base=x16 in 0xfffffe0009bba504 sz=0x7c4
+      0xfffffe0009bba840 base=x16 in 0xfffffe0009bba504 sz=0x7c4
+      0xfffffe0009bba9d0 base=x16 in 0xfffffe0009bba504 sz=0x7c4
+      0xfffffe0009bbaae8 base=x16 in 0xfffffe0009bba504 sz=0x7c4
+      0xfffffe0009bbbb28 base=x16 in 0xfffffe0009bbb9a4 sz=0x540
+      0xfffffe0009bbbbc0 base=x16 in 0xfffffe0009bbb9a4 sz=0x540
+      0xfffffe0009bbbc58 base=x16 in 0xfffffe0009bbb9a4 sz=0x540
+      0xfffffe0009bbd78c base=x16 in 0xfffffe0009bbd6e8 sz=0x1c8
+  com.apple.driver.ExclaveSEPManagerProxy: 1
+      0xfffffe0009bc3744 base=x16 in 0xfffffe0009bc36e4 sz=0x1ac
+  com.apple.driver.ExclavesAudioKext: 2
+      0xfffffe0009bc5e18 base=x16 in 0xfffffe0009bc5d8c sz=0x150
+      0xfffffe0009bd7a60 base=x16 in 0xfffffe0009bd79d4 sz=0x150
+  com.apple.driver.FairPlayIOKit: 2
+      0xfffffe0009bde0d4 base=x16 in 0xfffffe0009bddfcc sz=0x1fc
+      0xfffffe0009be38c0 base=x16 in 0xfffffe0009be37b4 sz=0x22c
+  com.apple.driver.IISAudioIsolatedStreamECProxy: 6
+      0xfffffe0009e15818 base=x16 in 0xfffffe0009e15798 sz=0x108
+      0xfffffe0009e15840 base=x16 in 0xfffffe0009e15798 sz=0x108
+      0xfffffe0009e15a70 base=x16 in 0xfffffe0009e15970 sz=0x2ac
+      0xfffffe0009e16404 base=x16 in 0xfffffe0009e16384 sz=0x108
+      0xfffffe0009e1642c base=x16 in 0xfffffe0009e16384 sz=0x108
+      0xfffffe0009e1665c base=x16 in 0xfffffe0009e1655c sz=0x2ac
+  com.apple.driver.IOAudioCodecs: 9
+      0xfffffe0009f877a8 base=x16 in 0xfffffe0009f87714 sz=0x16c
+      0xfffffe0009f87820 base=x16 in 0xfffffe0009f87714 sz=0x16c
+      0xfffffe0009f87cf0 base=x16 in 0xfffffe0009f87c70 sz=0xa4
+      0xfffffe0009f881f0 base=x16 in 0xfffffe0009f880cc sz=0x198
+      0xfffffe0009f88a50 base=x16 in 0xfffffe0009f889fc sz=0x190
+      0xfffffe0009f88d10 base=x16 in 0xfffffe0009f88cbc sz=0x88
+      0xfffffe0009f88d90 base=x16 in 0xfffffe0009f88d44 sz=0x78
+      0xfffffe0009f88e88 base=x16 in 0xfffffe0009f88e24 sz=0xa8
+  com.apple.driver.IODARTFamily: 42
+      0xfffffe0009fa9e18 base=x16 in 0xfffffe0009fa9d74 sz=0x5e4
+      0xfffffe0009fa9f20 base=x16 in 0xfffffe0009fa9d74 sz=0x5e4
+      0xfffffe0009fa9fb4 base=x16 in 0xfffffe0009fa9d74 sz=0x5e4
+      0xfffffe0009faa0cc base=x16 in 0xfffffe0009fa9d74 sz=0x5e4
+      0xfffffe0009faa480 base=x16 in 0xfffffe0009faa3d4 sz=0x184
+      0xfffffe0009faa784 base=x16 in 0xfffffe0009faa70c sz=0xf0
+      0xfffffe0009faaa74 base=x16 in 0xfffffe0009faa8c8 sz=0x358
+      0xfffffe0009fab99c base=x16 in 0xfffffe0009fab11c sz=0xa70
+  com.apple.driver.IOHIDPowerSource: 50
+      0xfffffe000a123508 base=x16 in 0xfffffe000a123478 sz=0x140
+      0xfffffe000a12353c base=x16 in 0xfffffe000a123478 sz=0x140
+      0xfffffe000a124150 base=x16 in 0xfffffe000a1240a0 sz=0x12c
+      0xfffffe000a124188 base=x16 in 0xfffffe000a1240a0 sz=0x12c
+      0xfffffe000a1242c8 base=x16 in 0xfffffe000a1241cc sz=0x1ac
+      0xfffffe000a124300 base=x16 in 0xfffffe000a1241cc sz=0x1ac
+      0xfffffe000a1248b4 base=x16 in 0xfffffe000a124848 sz=0x118
+      0xfffffe000a124cc8 base=x16 in 0xfffffe000a124c54 sz=0x200
+  com.apple.driver.IOPAudioAssetManagerDevice: 1
+      0xfffffe000a2145b0 base=x16 in 0xfffffe000a2144ac sz=0x190
+  com.apple.driver.IOPAudioClientManagerDevice: 20
+      0xfffffe000a214e68 base=x16 in 0xfffffe000a214e10 sz=0x108
+      0xfffffe000a214ff8 base=x16 in 0xfffffe000a214f18 sz=0x1ac
+      0xfffffe000a215058 base=x16 in 0xfffffe000a214f18 sz=0x1ac
+      0xfffffe000a21508c base=x16 in 0xfffffe000a214f18 sz=0x1ac
+      0xfffffe000a215a90 base=x16 in 0xfffffe000a215a14 sz=0xbc
+      0xfffffe000a215c04 base=x16 in 0xfffffe000a215b88 sz=0xec
+      0xfffffe000a215da8 base=x16 in 0xfffffe000a215d2c sz=0xec
+      0xfffffe000a216070 base=x16 in 0xfffffe000a215f60 sz=0x318
+  com.apple.driver.IOPAudioHapticsLEAPControlDevice: 2
+      0xfffffe000a22ddac base=x16 in 0xfffffe000a22dd48 sz=0x19c
+      0xfffffe000a22e05c base=x16 in 0xfffffe000a22dee4 sz=0x2c0
+  com.apple.driver.IOPAudioIOBufferDevice: 5
+      0xfffffe000a22eaec base=x16 in 0xfffffe000a22ea9c sz=0x4e8
+      0xfffffe000a22edfc base=x16 in 0xfffffe000a22ea9c sz=0x4e8
+      0xfffffe000a22f1bc base=x16 in 0xfffffe000a22f11c sz=0x110
+      0xfffffe000a22f86c base=x16 in 0xfffffe000a22f7ac sz=0x138
+      0xfffffe000a22f950 base=x16 in 0xfffffe000a22f8e4 sz=0xbc
+  com.apple.driver.IOPAudioIsolatedIOBufferDevice: 5
+      0xfffffe000a230bc0 base=x16 in 0xfffffe000a230b00 sz=0x1f8
+      0xfffffe000a230d64 base=x16 in 0xfffffe000a230cf8 sz=0xbc
+      0xfffffe000a230f70 base=x16 in 0xfffffe000a230f1c sz=0xa4
+      0xfffffe000a2311d8 base=x16 in 0xfffffe000a231184 sz=0xa4
+      0xfffffe000a231278 base=x16 in 0xfffffe000a231228 sz=0xa0
+  com.apple.driver.IOPAudioLEAPControlDevice: 2
+      0xfffffe000a233a10 base=x16 in 0xfffffe000a2338e0 sz=0x28c
+      0xfffffe000a233af0 base=x16 in 0xfffffe000a2338e0 sz=0x28c
+  com.apple.driver.IOPAudioLPMicDevice: 11
+      0xfffffe000a234d1c base=x16 in 0xfffffe000a234cc4 sz=0xa4
+      0xfffffe000a23542c base=x16 in 0xfffffe000a235398 sz=0x108
+      0xfffffe000a235798 base=x16 in 0xfffffe000a2356f0 sz=0x11c
+      0xfffffe000a235e88 base=x16 in 0xfffffe000a235d88 sz=0x1ac
+      0xfffffe000a236e30 base=x16 in 0xfffffe000a236d68 sz=0x204
+      0xfffffe000a236fd8 base=x16 in 0xfffffe000a236f6c sz=0xbc
+      0xfffffe000a2373e0 base=x16 in 0xfffffe000a237380 sz=0xe0
+      0xfffffe000a2374b8 base=x16 in 0xfffffe000a237460 sz=0xc8
+  com.apple.driver.IOPAudioPCMAssetManagerDevice: 5
+      0xfffffe000a2399e4 base=x16 in 0xfffffe000a239924 sz=0x2f8
+      0xfffffe000a239a5c base=x16 in 0xfffffe000a239924 sz=0x2f8
+      0xfffffe000a239c80 base=x16 in 0xfffffe000a239c1c sz=0xb4
+      0xfffffe000a239fec base=x16 in 0xfffffe000a239f98 sz=0x140
+      0xfffffe000a23aa4c base=x16 in 0xfffffe000a23a75c sz=0x3e0
+  com.apple.driver.IOPAudioSpeaker: 9
+      0xfffffe0008adce54 base=x16 in 0xfffffe0008adcd18 sz=0x260
+      0xfffffe0008add148 base=x16 in 0xfffffe0008adcf78 sz=0x3dc
+      0xfffffe0008add938 base=x16 in 0xfffffe0008add354 sz=0x838
+      0xfffffe0008addbec base=x16 in 0xfffffe0008addb98 sz=0x100
+      0xfffffe0008addff8 base=x16 in 0xfffffe0008addf18 sz=0x140
+      0xfffffe0008ade028 base=x16 in 0xfffffe0008addf18 sz=0x140
+      0xfffffe0008ade4a4 base=x16 in 0xfffffe0008ade434 sz=0x294
+      0xfffffe0008ade8a0 base=x16 in 0xfffffe0008ade6fc sz=0x260
+  com.apple.driver.IOPAudioVoiceTriggerDevice: 6
+      0xfffffe000a23c83c base=x16 in 0xfffffe000a23c790 sz=0x220
+      0xfffffe000a23ca0c base=x16 in 0xfffffe000a23c9b0 sz=0x104
+      0xfffffe000a23d8ec base=x16 in 0xfffffe000a23d7e0 sz=0x558
+      0xfffffe000a23db14 base=x16 in 0xfffffe000a23d7e0 sz=0x558
+      0xfffffe000a2449d0 base=x16 in 0xfffffe000a244974 sz=0x234
+      0xfffffe000a244e30 base=x16 in 0xfffffe000a244d60 sz=0x15c
+  com.apple.driver.IOPEmbeddedAudio: 6
+      0xfffffe0008adf58c base=x16 in 0xfffffe0008adf500 sz=0xe8
+      0xfffffe0008ae04a4 base=x16 in 0xfffffe0008ae0278 sz=0x544
+      0xfffffe0008ae0530 base=x16 in 0xfffffe0008ae0278 sz=0x544
+      0xfffffe0008ae05fc base=x16 in 0xfffffe0008ae0278 sz=0x544
+      0xfffffe0008ae06c8 base=x16 in 0xfffffe0008ae0278 sz=0x544
+      0xfffffe0008ae071c base=x16 in 0xfffffe0008ae0278 sz=0x544
+  com.apple.driver.IOPHaptics: 6
+      0xfffffe0008ae2238 base=x16 in 0xfffffe0008ae21fc sz=0xa8
+      0xfffffe0008ae23a8 base=x16 in 0xfffffe0008ae22dc sz=0xfc
+      0xfffffe0008ae2470 base=x16 in 0xfffffe0008ae23d8 sz=0x138
+      0xfffffe0008ae32bc base=x16 in 0xfffffe0008ae3240 sz=0xfc
+      0xfffffe0008ae3b94 base=x16 in 0xfffffe0008ae3b48 sz=0x164
+      0xfffffe0008ae3cf8 base=x16 in 0xfffffe0008ae3cac sz=0x164
+  com.apple.driver.IOSlaveProcessor: 1
+      0xfffffe000a3014d8 base=x16 in 0xfffffe000a30146c sz=0x244
+  com.apple.driver.RTBuddy: 110
+      0xfffffe000a8846fc base=x16 in 0xfffffe000a8845f8 sz=0x234
+      0xfffffe000a884e58 base=x16 in 0xfffffe000a884d70 sz=0x2ec
+      0xfffffe000a8862cc base=x16 in 0xfffffe000a88626c sz=0x130
+      0xfffffe000a88f6a4 base=x16 in 0xfffffe000a88f634 sz=0xdc
+      0xfffffe000a88f8d0 base=x16 in 0xfffffe000a88f818 sz=0x12c
+      0xfffffe000a88fe54 base=x16 in 0xfffffe000a88fdb8 sz=0x100
+      0xfffffe000a88ff60 base=x16 in 0xfffffe000a88feb8 sz=0x19c
+      0xfffffe000a8922c4 base=x16 in 0xfffffe000a89223c sz=0xbc
+  com.apple.driver.SecureRTBuddyProxy: 7
+      0xfffffe000a9072c4 base=x16 in 0xfffffe000a907268 sz=0x648
+      0xfffffe000a90788c base=x16 in 0xfffffe000a907268 sz=0x648
+      0xfffffe000a907ad0 base=x16 in 0xfffffe000a907a58 sz=0xdc
+      0xfffffe000a9093a0 base=x16 in 0xfffffe000a90934c sz=0x5e4
+      0xfffffe000a9095f4 base=x16 in 0xfffffe000a90934c sz=0x5e4
+      0xfffffe000a909748 base=x16 in 0xfffffe000a90934c sz=0x5e4
+      0xfffffe000a90ec78 base=x16 in 0xfffffe000a90ec54 sz=0x4c
+  com.apple.driver.corecapture: 242
+      0xfffffe000aa7b41c base=x16 in 0xfffffe000aa7b38c sz=0x1a4
+      0xfffffe000aa7b8c0 base=x16 in 0xfffffe000aa7b864 sz=0xa8
+      0xfffffe000aa7bc9c base=x16 in 0xfffffe000aa7bc50 sz=0xa0
+      0xfffffe000aa7bd84 base=x16 in 0xfffffe000aa7bd08 sz=0xbc
+      0xfffffe000aa7c0e0 base=x16 in 0xfffffe000aa7bdc4 sz=0x4f4
+      0xfffffe000aa7c194 base=x16 in 0xfffffe000aa7bdc4 sz=0x4f4
+      0xfffffe000aa7c38c base=x16 in 0xfffffe000aa7c340 sz=0x120
+      0xfffffe000aa7c530 base=x16 in 0xfffffe000aa7c4cc sz=0x118
+  com.apple.driver.mDNSOffloadUserClient-Embedded: 4
+      0xfffffe000ab352c4 base=x16 in 0xfffffe000ab35270 sz=0x11c
+      0xfffffe000ab353f8 base=x16 in 0xfffffe000ab3538c sz=0x164
+      0xfffffe000ab35428 base=x16 in 0xfffffe000ab3538c sz=0x164
+      0xfffffe000ab3545c base=x16 in 0xfffffe000ab3538c sz=0x164
+  com.apple.driver.usb.AppleSynopsysUSB40XHCI: 1830
+      0xfffffe000a68e5f0 base=x16 in 0xfffffe000a68e574 sz=0x1fb4
+      0xfffffe000a68e620 base=x16 in 0xfffffe000a68e574 sz=0x1fb4
+      0xfffffe000a68e6f4 base=x16 in 0xfffffe000a68e574 sz=0x1fb4
+      0xfffffe000a68e78c base=x16 in 0xfffffe000a68e574 sz=0x1fb4
+      0xfffffe000a68e824 base=x16 in 0xfffffe000a68e574 sz=0x1fb4
+      0xfffffe000a68e880 base=x16 in 0xfffffe000a68e574 sz=0x1fb4
+      0xfffffe000a68e938 base=x16 in 0xfffffe000a68e574 sz=0x1fb4
+      0xfffffe000a68e9f0 base=x16 in 0xfffffe000a68e574 sz=0x1fb4
+  com.apple.driver.usb.AppleSynopsysUSBXHCI: 1115
+      0xfffffe000a707720 base=x16 in 0xfffffe000a70764c sz=0x1eb4
+      0xfffffe000a707758 base=x16 in 0xfffffe000a70764c sz=0x1eb4
+      0xfffffe000a7077f0 base=x16 in 0xfffffe000a70764c sz=0x1eb4
+      0xfffffe000a70788c base=x16 in 0xfffffe000a70764c sz=0x1eb4
+      0xfffffe000a707924 base=x16 in 0xfffffe000a70764c sz=0x1eb4
+      0xfffffe000a7079bc base=x16 in 0xfffffe000a70764c sz=0x1eb4
+      0xfffffe000a707a18 base=x16 in 0xfffffe000a70764c sz=0x1eb4
+      0xfffffe000a707ad0 base=x16 in 0xfffffe000a70764c sz=0x1eb4
+  com.apple.driver.usb.AppleUSBCommon: 6
+      0xfffffe0009ad5dfc base=x16 in 0xfffffe0009ad5d98 sz=0xe4
+      0xfffffe0009ad62bc base=x16 in 0xfffffe0009ad61f4 sz=0x138
+      0xfffffe0009ad6564 base=x16 in 0xfffffe0009ad632c sz=0x48c
+      0xfffffe0009ad65c8 base=x16 in 0xfffffe0009ad632c sz=0x48c
+      0xfffffe0009ad6d68 base=x16 in 0xfffffe0009ad6c0c sz=0x810
+      0xfffffe0009ad6da8 base=x16 in 0xfffffe0009ad6c0c sz=0x810
+  com.apple.driver.usb.AppleUSBHostBillboardDevice: 4
+      0xfffffe000a75a1cc base=x16 in 0xfffffe000a75a0f8 sz=0xae4
+      0xfffffe000a75a844 base=x16 in 0xfffffe000a75a0f8 sz=0xae4
+      0xfffffe000a75a870 base=x16 in 0xfffffe000a75a0f8 sz=0xae4
+      0xfffffe000a75a89c base=x16 in 0xfffffe000a75a0f8 sz=0xae4
+  com.apple.driver.usb.AppleUSBHostCompositeDevice: 22
+      0xfffffe000a75bb78 base=x16 in 0xfffffe000a75bb1c sz=0x1fc
+      0xfffffe000a75bc04 base=x16 in 0xfffffe000a75bb1c sz=0x1fc
+      0xfffffe000a75bc2c base=x16 in 0xfffffe000a75bb1c sz=0x1fc
+      0xfffffe000a75bc58 base=x16 in 0xfffffe000a75bb1c sz=0x1fc
+      0xfffffe000a75bc80 base=x16 in 0xfffffe000a75bb1c sz=0x1fc
+      0xfffffe000a75bd84 base=x16 in 0xfffffe000a75bd18 sz=0x10b4
+      0xfffffe000a75c0b8 base=x16 in 0xfffffe000a75bd18 sz=0x10b4
+      0xfffffe000a75c110 base=x16 in 0xfffffe000a75bd18 sz=0x10b4
+  com.apple.driver.usb.AppleUSBHostDeviceSupport: 4
+      0xfffffe000a75ed5c base=x16 in 0xfffffe000a75ecf8 sz=0x424
+      0xfffffe000a75ee84 base=x16 in 0xfffffe000a75ecf8 sz=0x424
+      0xfffffe000a75f0b0 base=x16 in 0xfffffe000a75ecf8 sz=0x424
+      0xfffffe000a75f0d0 base=x16 in 0xfffffe000a75ecf8 sz=0x424
+  com.apple.driver.usb.AppleUSBHostPacketFilter: 6
+      0xfffffe000a7610d8 base=x16 in 0xfffffe000a761054 sz=0x958
+      0xfffffe000a761100 base=x16 in 0xfffffe000a761054 sz=0x958
+      0xfffffe000a761180 base=x16 in 0xfffffe000a761054 sz=0x958
+      0xfffffe000a7612a4 base=x16 in 0xfffffe000a761054 sz=0x958
+      0xfffffe000a761370 base=x16 in 0xfffffe000a761054 sz=0x958
+      0xfffffe000a761458 base=x16 in 0xfffffe000a761054 sz=0x958
+  com.apple.driver.usb.AppleUSBHostiOSDevice: 1
+      0xfffffe000a7620e8 base=x16 in 0xfffffe000a761fe8 sz=0x410
+  com.apple.driver.usb.AppleUSBHub: 499
+      0xfffffe000a763d64 base=x16 in 0xfffffe000a763cd0 sz=0xb8
+      0xfffffe000a763f30 base=x16 in 0xfffffe000a763eb0 sz=0x3bc
+      0xfffffe000a763fdc base=x16 in 0xfffffe000a763eb0 sz=0x3bc
+      0xfffffe000a764044 base=x16 in 0xfffffe000a763eb0 sz=0x3bc
+      0xfffffe000a764138 base=x16 in 0xfffffe000a763eb0 sz=0x3bc
+      0xfffffe000a7641a0 base=x16 in 0xfffffe000a763eb0 sz=0x3bc
+      0xfffffe000a7642f0 base=x16 in 0xfffffe000a76426c sz=0x338
+      0xfffffe000a764350 base=x16 in 0xfffffe000a76426c sz=0x338
+  com.apple.driver.usb.AppleUSBXHCI: 818
+      0xfffffe000a77f398 base=x16 in 0xfffffe000a77f278 sz=0x278
+      0xfffffe000a77f3fc base=x16 in 0xfffffe000a77f278 sz=0x278
+      0xfffffe000a77f614 base=x16 in 0xfffffe000a77f55c sz=0x428
+      0xfffffe000a77f6c0 base=x16 in 0xfffffe000a77f55c sz=0x428
+      0xfffffe000a77f728 base=x16 in 0xfffffe000a77f55c sz=0x428
+      0xfffffe000a77f814 base=x16 in 0xfffffe000a77f55c sz=0x428
+      0xfffffe000a77f874 base=x16 in 0xfffffe000a77f55c sz=0x428
+      0xfffffe000a77fa70 base=x16 in 0xfffffe000a77f984 sz=0x6e8
+  com.apple.driver.usb.IOUSBHostHIDDevice: 29
+      0xfffffe000a7c85dc base=x16 in 0xfffffe000a7c8578 sz=0x524
+      0xfffffe000a7c872c base=x16 in 0xfffffe000a7c8578 sz=0x524
+      0xfffffe000a7c8760 base=x16 in 0xfffffe000a7c8578 sz=0x524
+      0xfffffe000a7c8f24 base=x16 in 0xfffffe000a7c8e70 sz=0x118c
+      0xfffffe000a7c8fd8 base=x16 in 0xfffffe000a7c8e70 sz=0x118c
+      0xfffffe000a7c90b0 base=x16 in 0xfffffe000a7c8e70 sz=0x118c
+      0xfffffe000a7c90f0 base=x16 in 0xfffffe000a7c8e70 sz=0x118c
+      0xfffffe000a7c9338 base=x16 in 0xfffffe000a7c8e70 sz=0x118c
+  com.apple.driver.usb.cdc: 21
+      0xfffffe0009ad0c98 base=x16 in 0xfffffe0009ad0c38 sz=0x3a8
+      0xfffffe0009ad0cd4 base=x16 in 0xfffffe0009ad0c38 sz=0x3a8
+      0xfffffe0009ad0d0c base=x16 in 0xfffffe0009ad0c38 sz=0x3a8
+      0xfffffe0009ad0d44 base=x16 in 0xfffffe0009ad0c38 sz=0x3a8
+      0xfffffe0009ad0da4 base=x16 in 0xfffffe0009ad0c38 sz=0x3a8
+      0xfffffe0009ad0ef4 base=x16 in 0xfffffe0009ad0c38 sz=0x3a8
+      0xfffffe0009ad14b4 base=x16 in 0xfffffe0009ad138c sz=0x188
+      0xfffffe0009ad14e8 base=x16 in 0xfffffe0009ad138c sz=0x188
+  com.apple.driver.usb.cdc.ecm: 26
+      0xfffffe0009aec174 base=x16 in 0xfffffe0009aec028 sz=0x2f8
+      0xfffffe0009aec2a8 base=x16 in 0xfffffe0009aec028 sz=0x2f8
+      0xfffffe0009aec3fc base=x16 in 0xfffffe0009aec390 sz=0x248
+      0xfffffe0009aec430 base=x16 in 0xfffffe0009aec390 sz=0x248
+      0xfffffe0009aec490 base=x16 in 0xfffffe0009aec390 sz=0x248
+      0xfffffe0009aec4c0 base=x16 in 0xfffffe0009aec390 sz=0x248
+      0xfffffe0009aecbc4 base=x16 in 0xfffffe0009aecaa0 sz=0x174
+      0xfffffe0009aed5b0 base=x16 in 0xfffffe0009aed478 sz=0x164
+  com.apple.driver.usb.cdc.ncm: 54
+      0xfffffe0009b15b50 base=x16 in 0xfffffe0009b15a80 sz=0xb90
+      0xfffffe0009b15b80 base=x16 in 0xfffffe0009b15a80 sz=0xb90
+      0xfffffe0009b15bc4 base=x16 in 0xfffffe0009b15a80 sz=0xb90
+      0xfffffe0009b15e9c base=x16 in 0xfffffe0009b15a80 sz=0xb90
+      0xfffffe0009b15f80 base=x16 in 0xfffffe0009b15a80 sz=0xb90
+      0xfffffe0009b1636c base=x16 in 0xfffffe0009b15a80 sz=0xb90
+      0xfffffe0009b16bb0 base=x16 in 0xfffffe0009b16a78 sz=0x22c
+      0xfffffe0009b16be0 base=x16 in 0xfffffe0009b16a78 sz=0x22c
+  com.apple.driver.usb.ethernet.asix: 147
+      0xfffffe0009af02d4 base=x16 in 0xfffffe0009af0164 sz=0x18c
+      0xfffffe0009af07d4 base=x16 in 0xfffffe0009af06b4 sz=0x26c
+      0xfffffe0009af084c base=x16 in 0xfffffe0009af06b4 sz=0x26c
+      0xfffffe0009af087c base=x16 in 0xfffffe0009af06b4 sz=0x26c
+      0xfffffe0009af0d08 base=x16 in 0xfffffe0009af0c04 sz=0x178
+      0xfffffe0009af0e50 base=x16 in 0xfffffe0009af0d7c sz=0x120
+      0xfffffe0009af1474 base=x16 in 0xfffffe0009af1358 sz=0x4c4
+      0xfffffe0009af16a4 base=x16 in 0xfffffe0009af1358 sz=0x4c4
+  com.apple.driver.usb.networking: 8
+      0xfffffe0009b22de8 base=x16 in 0xfffffe0009b22d80 sz=0xb0
+      0xfffffe0009b22f50 base=x16 in 0xfffffe0009b22ec8 sz=0xcc
+      0xfffffe0009b2347c base=x16 in 0xfffffe0009b23328 sz=0x190
+      0xfffffe0009b25b9c base=x16 in 0xfffffe0009b25ad8 sz=0x2b8
+      0xfffffe0009b25bdc base=x16 in 0xfffffe0009b25ad8 sz=0x2b8
+      0xfffffe0009b25d14 base=x16 in 0xfffffe0009b25ad8 sz=0x2b8
+      0xfffffe0009b25e04 base=x16 in 0xfffffe0009b25d90 sz=0xc4
+      0xfffffe0009b2681c base=x16 in 0xfffffe0009b267ac sz=0x0
+  com.apple.filesystems.apfs: 94
+      0xfffffe000a94ae10 base=x6 in 0xfffffe000a94adc0 sz=0x464
+      0xfffffe000a967c00 base=x16 in 0xfffffe000a967b78 sz=0x13c
+      0xfffffe000a96847c base=x16 in 0xfffffe000a968418 sz=0xd8
+      0xfffffe000a969050 base=x16 in 0xfffffe000a968dc4 sz=0x360
+      0xfffffe000a9690c4 base=x16 in 0xfffffe000a968dc4 sz=0x360
+      0xfffffe000a96973c base=x16 in 0xfffffe000a9694f4 sz=0x538
+      0xfffffe000a9697a8 base=x16 in 0xfffffe000a9694f4 sz=0x538
+      0xfffffe000a969814 base=x16 in 0xfffffe000a9694f4 sz=0x538
+  com.apple.filesystems.lifs: 4
+      0xfffffe000ab255d0 base=x16 in 0xfffffe000ab25558 sz=0xc0
+      0xfffffe000ab25680 base=x16 in 0xfffffe000ab25618 sz=0xdc
+      0xfffffe000ab25780 base=x16 in 0xfffffe000ab256f4 sz=0x158
+      0xfffffe000ab25b7c base=x16 in 0xfffffe000ab25b00 sz=0xd8
+  com.apple.iokit.AppleARMIISAudio: 170
+      0xfffffe000862c1a0 base=x16 in 0xfffffe000862c12c sz=0x920
+      0xfffffe000862c2a8 base=x16 in 0xfffffe000862c12c sz=0x920
+      0xfffffe000862c41c base=x16 in 0xfffffe000862c12c sz=0x920
+      0xfffffe000862c508 base=x16 in 0xfffffe000862c12c sz=0x920
+      0xfffffe000862c904 base=x16 in 0xfffffe000862c12c sz=0x920
+      0xfffffe000862cbec base=x16 in 0xfffffe000862ca4c sz=0x364
+      0xfffffe000862ce0c base=x16 in 0xfffffe000862cdb0 sz=0x148
+      0xfffffe000862cec0 base=x16 in 0xfffffe000862cdb0 sz=0x148
+  com.apple.iokit.AppleSEPGenericTransfer: 6
+      0xfffffe00095b369c base=x16 in 0xfffffe00095b3620 sz=0x3a0
+      0xfffffe00095b405c base=x16 in 0xfffffe00095b3ca4 sz=0x948
+      0xfffffe00095b40b4 base=x16 in 0xfffffe00095b3ca4 sz=0x948
+      0xfffffe00095b4108 base=x16 in 0xfffffe00095b3ca4 sz=0x948
+      0xfffffe00095b41b8 base=x16 in 0xfffffe00095b3ca4 sz=0x948
+      0xfffffe00095b4210 base=x16 in 0xfffffe00095b3ca4 sz=0x948
+  com.apple.iokit.CoreAnalyticsFamily: 9
+      0xfffffe0009b697d4 base=x16 in 0xfffffe0009b69718 sz=0x200
+      0xfffffe0009b69974 base=x16 in 0xfffffe0009b69918 sz=0x1c0
+      0xfffffe0009b699a4 base=x16 in 0xfffffe0009b69918 sz=0x1c0
+      0xfffffe0009b69e08 base=x16 in 0xfffffe0009b69d48 sz=0x470
+      0xfffffe0009b6a92c base=x16 in 0xfffffe0009b6a548 sz=0x59c
+      0xfffffe0009b6ad04 base=x16 in 0xfffffe0009b6aae4 sz=0x408
+      0xfffffe0009b6be04 base=x16 in 0xfffffe0009b6bd94 sz=0x100
+      0xfffffe0009b6be2c base=x16 in 0xfffffe0009b6bd94 sz=0x100
+  com.apple.iokit.IOAVFamily: 472
+      0xfffffe0009e1916c base=x16 in 0xfffffe0009e190c0 sz=0x1bc
+      0xfffffe0009e191d8 base=x16 in 0xfffffe0009e190c0 sz=0x1bc
+      0xfffffe0009e19230 base=x16 in 0xfffffe0009e190c0 sz=0x1bc
+      0xfffffe0009e193f0 base=x16 in 0xfffffe0009e19350 sz=0x234
+      0xfffffe0009e1942c base=x16 in 0xfffffe0009e19350 sz=0x234
+      0xfffffe0009e19624 base=x16 in 0xfffffe0009e19584 sz=0x294
+      0xfffffe0009e19ca0 base=x16 in 0xfffffe0009e19a6c sz=0x3d8
+      0xfffffe0009e19d7c base=x16 in 0xfffffe0009e19a6c sz=0x3d8
+  com.apple.iokit.IOAccessoryManager: 2085
+      0xfffffe0009e97424 base=x16 in 0xfffffe0009e973a0 sz=0x36c
+      0xfffffe0009e97454 base=x16 in 0xfffffe0009e973a0 sz=0x36c
+      0xfffffe0009e97a90 base=x16 in 0xfffffe0009e977f0 sz=0x310
+      0xfffffe0009e97e2c base=x16 in 0xfffffe0009e97ddc sz=0x490
+      0xfffffe0009e98048 base=x16 in 0xfffffe0009e97ddc sz=0x490
+      0xfffffe0009e980b0 base=x16 in 0xfffffe0009e97ddc sz=0x490
+      0xfffffe0009e98370 base=x16 in 0xfffffe0009e982ac sz=0x1bc
+      0xfffffe0009e9839c base=x16 in 0xfffffe0009e982ac sz=0x1bc
+  com.apple.iokit.IOAccessoryPortUSB: 18
+      0xfffffe0009f7e9c8 base=x16 in 0xfffffe0009f7e8a8 sz=0x67c
+      0xfffffe0009f7e9fc base=x16 in 0xfffffe0009f7e8a8 sz=0x67c
+      0xfffffe0009f7eb50 base=x16 in 0xfffffe0009f7e8a8 sz=0x67c
+      0xfffffe0009f7ee44 base=x16 in 0xfffffe0009f7e8a8 sz=0x67c
+      0xfffffe0009f7ee7c base=x16 in 0xfffffe0009f7e8a8 sz=0x67c
+      0xfffffe0009f7f168 base=x16 in 0xfffffe0009f7f0b4 sz=0x76c
+      0xfffffe0009f7f190 base=x16 in 0xfffffe0009f7f0b4 sz=0x76c
+      0xfffffe0009f7f684 base=x16 in 0xfffffe0009f7f0b4 sz=0x76c
+  com.apple.iokit.IOAudio2Family: 10
+      0xfffffe0009f819e8 base=x16 in 0xfffffe0009f81958 sz=0xd4
+      0xfffffe0009f82018 base=x16 in 0xfffffe0009f81f1c sz=0x170
+      0xfffffe0009f826b0 base=x16 in 0xfffffe0009f8243c sz=0x2f8
+      0xfffffe0009f827f8 base=x16 in 0xfffffe0009f82758 sz=0x114
+      0xfffffe0009f82b8c base=x16 in 0xfffffe0009f82a30 sz=0x1d8
+      0xfffffe0009f82f0c base=x16 in 0xfffffe0009f82e10 sz=0x170
+      0xfffffe0009f83168 base=x16 in 0xfffffe0009f8306c sz=0x170
+      0xfffffe0009f836b4 base=x16 in 0xfffffe0009f835dc sz=0xfc
+  com.apple.iokit.IOBiometricFamily: 25
+      0xfffffe0009f94cd8 base=x16 in 0xfffffe0009f94c04 sz=0x32c
+      0xfffffe0009f94d74 base=x16 in 0xfffffe0009f94c04 sz=0x32c
+      0xfffffe0009f94e08 base=x16 in 0xfffffe0009f94c04 sz=0x32c
+      0xfffffe0009f94fa4 base=x16 in 0xfffffe0009f94f30 sz=0x104
+      0xfffffe0009f95210 base=x16 in 0xfffffe0009f95034 sz=0x2e8
+      0xfffffe0009f954f0 base=x16 in 0xfffffe0009f9531c sz=0x2dc
+      0xfffffe0009f957cc base=x16 in 0xfffffe0009f955f8 sz=0x2dc
+      0xfffffe0009f966b0 base=x16 in 0xfffffe0009f964a0 sz=0x624
+  com.apple.iokit.IOCECFamily: 8
+      0xfffffe0009fa4060 base=x16 in 0xfffffe0009fa3fc4 sz=0x198
+      0xfffffe0009fa4d90 base=x16 in 0xfffffe0009fa4ca8 sz=0x2c4
+      0xfffffe0009fa4e8c base=x16 in 0xfffffe0009fa4ca8 sz=0x2c4
+      0xfffffe0009fa5028 base=x16 in 0xfffffe0009fa4f6c sz=0x218
+      0xfffffe0009fa50ac base=x16 in 0xfffffe0009fa4f6c sz=0x218
+      0xfffffe0009fa50dc base=x16 in 0xfffffe0009fa4f6c sz=0x218
+      0xfffffe0009fa5378 base=x16 in 0xfffffe0009fa5318 sz=0x124
+      0xfffffe0009fa549c base=x16 in 0xfffffe0009fa543c sz=0xe4
+  com.apple.iokit.IOCryptoAcceleratorFamily: 6
+      0xfffffe0009fa7474 base=x16 in 0xfffffe0009fa741c sz=0x1b8
+      0xfffffe0009fa7528 base=x16 in 0xfffffe0009fa741c sz=0x1b8
+      0xfffffe0009fa8714 base=x16 in 0xfffffe0009fa85c8 sz=0x600
+      0xfffffe0009fa8784 base=x16 in 0xfffffe0009fa85c8 sz=0x600
+      0xfffffe0009fa95cc base=x16 in 0xfffffe0009fa9344 sz=0x54c
+      0xfffffe0009fa96bc base=x16 in 0xfffffe0009fa9344 sz=0x54c
+  com.apple.iokit.IODisplayPortFamily: 361
+      0xfffffe0009fbe430 base=x16 in 0xfffffe0009fbe3f4 sz=0x7c
+      0xfffffe0009fbe4a4 base=x16 in 0xfffffe0009fbe470 sz=0x4c
+      0xfffffe0009fbe5cc base=x16 in 0xfffffe0009fbe4bc sz=0x264
+      0xfffffe0009fbea70 base=x16 in 0xfffffe0009fbe9d8 sz=0x840
+      0xfffffe0009fbfcd8 base=x16 in 0xfffffe0009fbfc70 sz=0x90
+      0xfffffe0009fbfd78 base=x16 in 0xfffffe0009fbfd00 sz=0x9c
+      0xfffffe0009fc068c base=x16 in 0xfffffe0009fc0644 sz=0x2fc
+      0xfffffe0009fc06f0 base=x16 in 0xfffffe0009fc0644 sz=0x2fc
+  com.apple.iokit.IOGPUFamily: 58
+      0xfffffe000a01c0a0 base=x16 in 0xfffffe000a01bfcc sz=0x498
+      0xfffffe000a01c0fc base=x16 in 0xfffffe000a01bfcc sz=0x498
+      0xfffffe000a01c310 base=x16 in 0xfffffe000a01bfcc sz=0x498
+      0xfffffe000a01c3ec base=x16 in 0xfffffe000a01bfcc sz=0x498
+      0xfffffe000a01caa4 base=x16 in 0xfffffe000a01c99c sz=0x158
+      0xfffffe000a01cba8 base=x16 in 0xfffffe000a01caf4 sz=0x4b8
+      0xfffffe000a01d170 base=x16 in 0xfffffe000a01d0c0 sz=0x26c
+      0xfffffe000a01e7b4 base=x16 in 0xfffffe000a01e668 sz=0x3c0
+  com.apple.iokit.IOGameControllerFamily: 149
+      0xfffffe000a05fdc8 base=x16 in 0xfffffe000a05fcfc sz=0x1e4
+      0xfffffe000a05fdf0 base=x16 in 0xfffffe000a05fcfc sz=0x1e4
+      0xfffffe000a05fec8 base=x16 in 0xfffffe000a05fcfc sz=0x1e4
+      0xfffffe000a05ffd0 base=x16 in 0xfffffe000a05fee0 sz=0x220
+      0xfffffe000a05fff8 base=x16 in 0xfffffe000a05fee0 sz=0x220
+      0xfffffe000a0600d4 base=x16 in 0xfffffe000a05fee0 sz=0x220
+      0xfffffe000a06061c base=x16 in 0xfffffe000a060580 sz=0x1a4
+      0xfffffe000a0606ec base=x16 in 0xfffffe000a060580 sz=0x1a4
+  com.apple.iokit.IOHDCPFamily: 89
+      0xfffffe000a07b908 base=x16 in 0xfffffe000a07b830 sz=0x2e0
+      0xfffffe000a07bf88 base=x16 in 0xfffffe000a07bf18 sz=0x2f0
+      0xfffffe000a07c2f4 base=x16 in 0xfffffe000a07c208 sz=0x22c
+      0xfffffe000a07c380 base=x16 in 0xfffffe000a07c208 sz=0x22c
+      0xfffffe000a07d930 base=x16 in 0xfffffe000a07d860 sz=0x1280
+      0xfffffe000a07d9bc base=x16 in 0xfffffe000a07d860 sz=0x1280
+      0xfffffe000a07d9dc base=x16 in 0xfffffe000a07d860 sz=0x1280
+      0xfffffe000a07da00 base=x16 in 0xfffffe000a07d860 sz=0x1280
+  com.apple.iokit.IOHIDFamily: 908
+      0xfffffe000a0a6a50 base=x16 in 0xfffffe000a0a668c sz=0x3e0
+      0xfffffe000a0a6c94 base=x16 in 0xfffffe000a0a6c34 sz=0x188
+      0xfffffe000a0a6d0c base=x16 in 0xfffffe000a0a6c34 sz=0x188
+      0xfffffe000a0a6d84 base=x16 in 0xfffffe000a0a6c34 sz=0x188
+      0xfffffe000a0a7300 base=x16 in 0xfffffe000a0a71a4 sz=0x188
+      0xfffffe000a0a7444 base=x16 in 0xfffffe000a0a73e8 sz=0xd0
+      0xfffffe000a0a7674 base=x16 in 0xfffffe000a0a754c sz=0x14c
+      0xfffffe000a0a77b0 base=x16 in 0xfffffe000a0a7754 sz=0xd0
+  com.apple.iokit.IOMikeyBusFamily: 217
+      0xfffffe000a12c7e4 base=x16 in 0xfffffe000a12c304 sz=0xd14
+      0xfffffe000a12c814 base=x16 in 0xfffffe000a12c304 sz=0xd14
+      0xfffffe000a12cd54 base=x16 in 0xfffffe000a12c304 sz=0xd14
+      0xfffffe000a12cd78 base=x16 in 0xfffffe000a12c304 sz=0xd14
+      0xfffffe000a12cee8 base=x16 in 0xfffffe000a12c304 sz=0xd14
+      0xfffffe000a12cf4c base=x16 in 0xfffffe000a12c304 sz=0xd14
+      0xfffffe000a12cfb0 base=x16 in 0xfffffe000a12c304 sz=0xd14
+      0xfffffe000a12d214 base=x16 in 0xfffffe000a12d1b8 sz=0x1d8
+  com.apple.iokit.IOMobileGraphicsFamily: 101
+      0xfffffe000a1755c0 base=x16 in 0xfffffe000a175548 sz=0x15c
+      0xfffffe000a1755f0 base=x16 in 0xfffffe000a175548 sz=0x15c
+      0xfffffe000a175a24 base=x16 in 0xfffffe000a1759d8 sz=0x9c
+      0xfffffe000a1768b8 base=x16 in 0xfffffe000a176860 sz=0xdc
+      0xfffffe000a176ca8 base=x16 in 0xfffffe000a17693c sz=0x67c
+      0xfffffe000a17702c base=x16 in 0xfffffe000a176fb8 sz=0x100
+      0xfffffe000a177310 base=x16 in 0xfffffe000a1772bc sz=0x78
+      0xfffffe000a177a60 base=x16 in 0xfffffe000a1779bc sz=0x104
+  com.apple.iokit.IOMobileGraphicsFamily-DCP: 84
+      0xfffffe000a14992c base=x16 in 0xfffffe000a1498a0 sz=0xd8
+      0xfffffe000a149a40 base=x16 in 0xfffffe000a1499e0 sz=0x8c
+      0xfffffe000a149c08 base=x16 in 0xfffffe000a149b7c sz=0xd8
+      0xfffffe000a149cb4 base=x16 in 0xfffffe000a149c54 sz=0x8c
+      0xfffffe000a14b1b8 base=x16 in 0xfffffe000a14b090 sz=0x498
+      0xfffffe000a14b1f0 base=x16 in 0xfffffe000a14b090 sz=0x498
+      0xfffffe000a14cb64 base=x16 in 0xfffffe000a14c9c4 sz=0xb60
+      0xfffffe000a14ccf0 base=x16 in 0xfffffe000a14c9c4 sz=0xb60
+  com.apple.iokit.IONVMeFamily: 434
+      0xfffffe000a1988f8 base=x16 in 0xfffffe000a19876c sz=0x234
+      0xfffffe000a19a3b4 base=x16 in 0xfffffe000a19a358 sz=0x98
+      0xfffffe000a19a768 base=x16 in 0xfffffe000a19a650 sz=0x9e8
+      0xfffffe000a19ae34 base=x16 in 0xfffffe000a19a650 sz=0x9e8
+      0xfffffe000a19ae58 base=x16 in 0xfffffe000a19a650 sz=0x9e8
+      0xfffffe000a19ae7c base=x16 in 0xfffffe000a19a650 sz=0x9e8
+      0xfffffe000a19b0a8 base=x16 in 0xfffffe000a19b038 sz=0x150
+      0xfffffe000a19b0cc base=x16 in 0xfffffe000a19b038 sz=0x150
+  com.apple.iokit.IONetworkingFamily: 157
+      0xfffffe000a1f7858 base=x16 in 0xfffffe000a1f77ec sz=0x300
+      0xfffffe000a1f78b4 base=x16 in 0xfffffe000a1f77ec sz=0x300
+      0xfffffe000a1f7908 base=x16 in 0xfffffe000a1f77ec sz=0x300
+      0xfffffe000a1f7940 base=x16 in 0xfffffe000a1f77ec sz=0x300
+      0xfffffe000a1f8138 base=x16 in 0xfffffe000a1f80b0 sz=0x394
+      0xfffffe000a1f81d8 base=x16 in 0xfffffe000a1f80b0 sz=0x394
+      0xfffffe000a1f83f0 base=x16 in 0xfffffe000a1f80b0 sz=0x394
+      0xfffffe000a1f8428 base=x16 in 0xfffffe000a1f80b0 sz=0x394
+  com.apple.iokit.IOPAudioDriverFamily: 43
+      0xfffffe000a219a54 base=x16 in 0xfffffe000a2199ac sz=0x144
+      0xfffffe000a219aa0 base=x16 in 0xfffffe000a2199ac sz=0x144
+      0xfffffe000a219e34 base=x16 in 0xfffffe000a219d78 sz=0x130
+      0xfffffe000a219f94 base=x16 in 0xfffffe000a219f38 sz=0x1d4
+      0xfffffe000a21a1f8 base=x16 in 0xfffffe000a21a19c sz=0x234
+      0xfffffe000a21a63c base=x16 in 0xfffffe000a21a5c8 sz=0x12c
+      0xfffffe000a21a9e0 base=x16 in 0xfffffe000a21a8e4 sz=0x188
+      0xfffffe000a21aa14 base=x16 in 0xfffffe000a21a8e4 sz=0x188
+  com.apple.iokit.IOPCIFamily: 266
+      0xfffffe000a249a24 base=x16 in 0xfffffe000a2498e4 sz=0x1a8
+      0xfffffe000a249adc base=x16 in 0xfffffe000a249a8c sz=0x27c
+      0xfffffe000a24a328 base=x16 in 0xfffffe000a24a250 sz=0x578
+      0xfffffe000a24a600 base=x16 in 0xfffffe000a24a250 sz=0x578
+      0xfffffe000a24a6e8 base=x16 in 0xfffffe000a24a250 sz=0x578
+      0xfffffe000a24a818 base=x16 in 0xfffffe000a24a7c8 sz=0x35c
+      0xfffffe000a24b700 base=x16 in 0xfffffe000a24b698 sz=0x460
+      0xfffffe000a24cc78 base=x16 in 0xfffffe000a24bdfc sz=0xf00
+  com.apple.iokit.IOReportFamily: 17
+      0xfffffe000a28bf6c base=x16 in 0xfffffe000a28bf18 sz=0x78
+      0xfffffe000a28c160 base=x16 in 0xfffffe000a28c004 sz=0x2a8
+      0xfffffe000a28c194 base=x16 in 0xfffffe000a28c004 sz=0x2a8
+      0xfffffe000a28c8f8 base=x16 in 0xfffffe000a28c794 sz=0x3b4
+      0xfffffe000a28c92c base=x16 in 0xfffffe000a28c794 sz=0x3b4
+      0xfffffe000a28ca00 base=x16 in 0xfffffe000a28c794 sz=0x3b4
+      0xfffffe000a28cac8 base=x16 in 0xfffffe000a28c794 sz=0x3b4
+      0xfffffe000a28ccb0 base=x16 in 0xfffffe000a28cb48 sz=0x534
+  com.apple.iokit.IOSCSIArchitectureModelFamily: 139
+      0xfffffe000a2909e0 base=x16 in 0xfffffe000a290800 sz=0x320
+      0xfffffe000a290ac8 base=x16 in 0xfffffe000a290800 sz=0x320
+      0xfffffe000a291194 base=x16 in 0xfffffe000a290ed4 sz=0x3fc
+      0xfffffe000a291a7c base=x16 in 0xfffffe000a2916a0 sz=0x468
+      0xfffffe000a291d38 base=x16 in 0xfffffe000a291c64 sz=0x120
+      0xfffffe000a291d60 base=x16 in 0xfffffe000a291c64 sz=0x120
+      0xfffffe000a295908 base=x16 in 0xfffffe000a295888 sz=0x16c
+      0xfffffe000a295978 base=x16 in 0xfffffe000a295888 sz=0x16c
+  com.apple.iokit.IOSCSIBlockCommandsDevice: 118
+      0xfffffe000a2a7c10 base=x16 in 0xfffffe000a2a7b40 sz=0xfc
+      0xfffffe000a2a84ac base=x16 in 0xfffffe000a2a8468 sz=0x60
+      0xfffffe000a2a8814 base=x16 in 0xfffffe000a2a87a0 sz=0x164
+      0xfffffe000a2a8854 base=x16 in 0xfffffe000a2a87a0 sz=0x164
+      0xfffffe000a2a9110 base=x16 in 0xfffffe000a2a903c sz=0x150
+      0xfffffe000a2a9260 base=x16 in 0xfffffe000a2a918c sz=0x150
+      0xfffffe000a2a944c base=x16 in 0xfffffe000a2a93f4 sz=0x134
+      0xfffffe000a2aa0e0 base=x16 in 0xfffffe000a2aa09c sz=0xd0
+  com.apple.iokit.IOSerialFamily: 46
+      0xfffffe000a2b67cc base=x16 in 0xfffffe000a2b61a8 sz=0x6a8
+      0xfffffe000a2b67f8 base=x16 in 0xfffffe000a2b61a8 sz=0x6a8
+      0xfffffe000a2b68f4 base=x16 in 0xfffffe000a2b6850 sz=0x14c
+      0xfffffe000a2b6930 base=x16 in 0xfffffe000a2b6850 sz=0x14c
+      0xfffffe000a2b6f6c base=x16 in 0xfffffe000a2b6ea8 sz=0x284
+      0xfffffe000a2b71c8 base=x16 in 0xfffffe000a2b712c sz=0xe0
+      0xfffffe000a2b7344 base=x16 in 0xfffffe000a2b720c sz=0x7f8
+      0xfffffe000a2b806c base=x16 in 0xfffffe000a2b8014 sz=0x3dc
+  com.apple.iokit.IOSkywalkFamily: 117
+      0xfffffe000a2bda6c base=x16 in 0xfffffe000a2bd9f8 sz=0xd0
+      0xfffffe000a2bda94 base=x16 in 0xfffffe000a2bd9f8 sz=0xd0
+      0xfffffe000a2bdf98 base=x16 in 0xfffffe000a2bdf50 sz=0x7c
+      0xfffffe000a2be8cc base=x16 in 0xfffffe000a2be83c sz=0x1ec
+      0xfffffe000a2bec14 base=x16 in 0xfffffe000a2beb9c sz=0xf0
+      0xfffffe000a2bed00 base=x16 in 0xfffffe000a2bec8c sz=0xcc
+      0xfffffe000a2bf43c base=x16 in 0xfffffe000a2bf384 sz=0x2b4
+      0xfffffe000a2bf548 base=x16 in 0xfffffe000a2bf384 sz=0x2b4
+  com.apple.iokit.IOSlowAdaptiveClockingFamily: 2
+      0xfffffe000a304eac base=x16 in 0xfffffe000a304d48 sz=0x22c
+      0xfffffe000a3051b8 base=x16 in 0xfffffe000a305170 sz=0x158
+  com.apple.iokit.IOStorageFamily: 260
+      0xfffffe000a308010 base=x16 in 0xfffffe000a307fbc sz=0x80
+      0xfffffe000a3080d0 base=x16 in 0xfffffe000a30803c sz=0x178
+      0xfffffe000a308108 base=x16 in 0xfffffe000a30803c sz=0x178
+      0xfffffe000a30822c base=x16 in 0xfffffe000a3081b4 sz=0x104
+      0xfffffe000a30833c base=x16 in 0xfffffe000a3082b8 sz=0x370
+      0xfffffe000a3083d4 base=x16 in 0xfffffe000a3082b8 sz=0x370
+      0xfffffe000a308448 base=x16 in 0xfffffe000a3082b8 sz=0x370
+      0xfffffe000a3084c0 base=x16 in 0xfffffe000a3082b8 sz=0x370
+  com.apple.iokit.IOStreamFamily: 16
+      0xfffffe000a322b28 base=x16 in 0xfffffe000a322a64 sz=0x114
+      0xfffffe000a322be8 base=x16 in 0xfffffe000a322b78 sz=0xf8
+      0xfffffe000a322d08 base=x16 in 0xfffffe000a322c70 sz=0xc8
+      0xfffffe000a323260 base=x16 in 0xfffffe000a323200 sz=0x230
+      0xfffffe000a3232d8 base=x16 in 0xfffffe000a323200 sz=0x230
+      0xfffffe000a3233e4 base=x16 in 0xfffffe000a323200 sz=0x230
+      0xfffffe000a324214 base=x16 in 0xfffffe000a32416c sz=0x19c
+      0xfffffe000a324260 base=x16 in 0xfffffe000a32416c sz=0x19c
+  com.apple.iokit.IOSurface: 50
+      0xfffffe000a32a4d8 base=x16 in 0xfffffe000a32a3e0 sz=0x3cc
+      0xfffffe000a32ecdc base=x16 in 0xfffffe000a32b7b4 sz=0x3710
+      0xfffffe000a334580 base=x16 in 0xfffffe000a334534 sz=0xf0
+      0xfffffe000a334a90 base=x16 in 0xfffffe000a334634 sz=0x8d0
+      0xfffffe000a334ad0 base=x16 in 0xfffffe000a334634 sz=0x8d0
+      0xfffffe000a334cb4 base=x16 in 0xfffffe000a334634 sz=0x8d0
+      0xfffffe000a3351f8 base=x16 in 0xfffffe000a3350d0 sz=0x26c
+      0xfffffe000a335280 base=x16 in 0xfffffe000a3350d0 sz=0x26c
+  com.apple.iokit.IOThunderboltFamily: 4315
+      0xfffffe000a35c4a4 base=x16 in 0xfffffe000a35c448 sz=0xa8
+      0xfffffe000a35d684 base=x16 in 0xfffffe000a35d620 sz=0x90
+      0xfffffe000a35ebd0 base=x16 in 0xfffffe000a35eb74 sz=0xd8
+      0xfffffe000a35ee90 base=x16 in 0xfffffe000a35ec4c sz=0x1584
+      0xfffffe000a35ef30 base=x16 in 0xfffffe000a35ec4c sz=0x1584
+      0xfffffe000a35ef78 base=x16 in 0xfffffe000a35ec4c sz=0x1584
+      0xfffffe000a35f004 base=x16 in 0xfffffe000a35ec4c sz=0x1584
+      0xfffffe000a35f04c base=x16 in 0xfffffe000a35ec4c sz=0x1584
+  com.apple.iokit.IOTimeSyncFamily: 99
+      0xfffffe000a52c4b0 base=x16 in 0xfffffe000a52c458 sz=0xb8
+      0xfffffe000a52cd00 base=x16 in 0xfffffe000a52cbf8 sz=0x2a4
+      0xfffffe000a52d914 base=x16 in 0xfffffe000a52d8a8 sz=0x90
+      0xfffffe000a52e468 base=x16 in 0xfffffe000a52e41c sz=0x88
+      0xfffffe000a52e5e4 base=x16 in 0xfffffe000a52e59c sz=0xf8
+      0xfffffe000a52eb1c base=x16 in 0xfffffe000a52eac0 sz=0x114
+      0xfffffe000a52eb48 base=x16 in 0xfffffe000a52eac0 sz=0x114
+      0xfffffe000a53122c base=x16 in 0xfffffe000a53118c sz=0xd8
+  com.apple.iokit.IOUSBDeviceFamily: 360
+      0xfffffe000a560a5c base=x16 in 0xfffffe000a560820 sz=0x30c
+      0xfffffe000a561608 base=x16 in 0xfffffe000a561584 sz=0x124
+      0xfffffe000a561af8 base=x16 in 0xfffffe000a561a54 sz=0x200
+      0xfffffe000a5622d8 base=x16 in 0xfffffe000a562278 sz=0x100
+      0xfffffe000a562404 base=x16 in 0xfffffe000a5623ac sz=0xd8
+      0xfffffe000a562904 base=x19 in 0xfffffe000a562808 sz=0x148
+      0xfffffe000a562b80 base=x16 in 0xfffffe000a562a9c sz=0x144
+      0xfffffe000a563008 base=x16 in 0xfffffe000a562f0c sz=0x240
+  com.apple.iokit.IOUSBHostFamily: 1679
+      0xfffffe000a5f7b48 base=x16 in 0xfffffe000a5f7a88 sz=0x350
+      0xfffffe000a5f7bb4 base=x16 in 0xfffffe000a5f7a88 sz=0x350
+      0xfffffe000a5f7ccc base=x16 in 0xfffffe000a5f7a88 sz=0x350
+      0xfffffe000a5f7d30 base=x16 in 0xfffffe000a5f7a88 sz=0x350
+      0xfffffe000a5f7f08 base=x16 in 0xfffffe000a5f7e78 sz=0x284
+      0xfffffe000a5f7f38 base=x16 in 0xfffffe000a5f7e78 sz=0x284
+      0xfffffe000a5f7fe0 base=x16 in 0xfffffe000a5f7e78 sz=0x284
+      0xfffffe000a5f8048 base=x16 in 0xfffffe000a5f7e78 sz=0x284
+  com.apple.iokit.IOUSBMassStorageDriver: 239
+      0xfffffe000a7cfac0 base=x16 in 0xfffffe000a7cfa98 sz=0x44
+      0xfffffe000a7cfbec base=x16 in 0xfffffe000a7cfb80 sz=0x10c
+      0xfffffe000a7cfc1c base=x16 in 0xfffffe000a7cfb80 sz=0x10c
+      0xfffffe000a7d0624 base=x16 in 0xfffffe000a7d0558 sz=0x1b8
+      0xfffffe000a7d0798 base=x16 in 0xfffffe000a7d0710 sz=0x1ac
+      0xfffffe000a7d07c8 base=x16 in 0xfffffe000a7d0710 sz=0x1ac
+      0xfffffe000a7d07f0 base=x16 in 0xfffffe000a7d0710 sz=0x1ac
+      0xfffffe000a7d0910 base=x16 in 0xfffffe000a7d08bc sz=0xe4
+  com.apple.iokit.IOUserEthernet: 24
+      0xfffffe000a7efd44 base=x16 in 0xfffffe000a7efae0 sz=0x370
+      0xfffffe000a7f0d90 base=x16 in 0xfffffe000a7f0c64 sz=0x6cc
+      0xfffffe000a7f0e00 base=x16 in 0xfffffe000a7f0c64 sz=0x6cc
+      0xfffffe000a7f0e64 base=x16 in 0xfffffe000a7f0c64 sz=0x6cc
+      0xfffffe000a7f0ec4 base=x16 in 0xfffffe000a7f0c64 sz=0x6cc
+      0xfffffe000a7f0f3c base=x16 in 0xfffffe000a7f0c64 sz=0x6cc
+      0xfffffe000a7f0fa0 base=x16 in 0xfffffe000a7f0c64 sz=0x6cc
+      0xfffffe000a7f1004 base=x16 in 0xfffffe000a7f0c64 sz=0x6cc
+  com.apple.kec.corecrypto: 140
+      0xfffffe000aaa96b8 base=x16 in 0xfffffe000aaa9668 sz=0xa8
+      0xfffffe000aaab2a0 base=x24 in 0xfffffe000aaab23c sz=0x310
+      0xfffffe000aaab2bc base=x24 in 0xfffffe000aaab23c sz=0x310
+      0xfffffe000aaaf688 base=x17 in 0xfffffe000aaaf5c8 sz=0x1b0
+      0xfffffe000aab13fc base=x27 in 0xfffffe000aab1338 sz=0x1e4
+      0xfffffe000aab1828 base=x27 in 0xfffffe000aab1770 sz=0x158
+      0xfffffe000aab1f20 base=x25 in 0xfffffe000aab1ed0 sz=0x200
+      0xfffffe000aab1f3c base=x25 in 0xfffffe000aab1ed0 sz=0x200
+  com.apple.kernel: 1689
+      0xfffffe000ab847d8 base=x8 in 0xfffffe000ab846e4 sz=0x128
+      0xfffffe000aba35c0 base=x9 in 0xfffffe000aba3570 sz=0x60
+      0xfffffe000ac05fb8 base=x19 in 0xfffffe000ac05ed8 sz=0x298
+      0xfffffe000ac47bc8 base=x20 in 0xfffffe000ac47b70 sz=0x170
+      0xfffffe000ac4fb84 base=x16 in 0xfffffe000ac4fae4 sz=0xe0
+      0xfffffe000ac913d0 base=x8 in 0xfffffe000ac91308 sz=0x1c0
+      0xfffffe000acadb6c base=x24 in 0xfffffe000acad8a8 sz=0x3b8
+      0xfffffe000acc0fb4 base=x8 in 0xfffffe000acc0d7c sz=0x3bc
+  com.apple.plugin.IOgPTPPlugin: 447
+      0xfffffe000a7f54c4 base=x16 in 0xfffffe000a7f5468 sz=0x100
+      0xfffffe000a7f576c base=x16 in 0xfffffe000a7f5608 sz=0x338
+      0xfffffe000a7f58bc base=x16 in 0xfffffe000a7f5608 sz=0x338
+      0xfffffe000a7f599c base=x16 in 0xfffffe000a7f5940 sz=0x9c
+      0xfffffe000a7f5a3c base=x16 in 0xfffffe000a7f59dc sz=0xa0
+      0xfffffe000a7f63b4 base=x16 in 0xfffffe000a7f636c sz=0xa8
+      0xfffffe000a7f7900 base=x16 in 0xfffffe000a7f7840 sz=0x244
+      0xfffffe000a7f80c4 base=x16 in 0xfffffe000a7f8014 sz=0x3c8
+  com.apple.security.AKSAnalytics: 2
+      0xfffffe00085899d4 base=x16 in 0xfffffe00085897e8 sz=0x258
+      0xfffffe000858b878 base=x16 in 0xfffffe000858b7c8 sz=0xd8
+  com.apple.security.AppleImage4: 7
+      0xfffffe0008fbdc38 base=x4 in 0xfffffe0008fbdc20 sz=0x6c
+      0xfffffe0008fc86e4 base=x8 in 0xfffffe0008fc86a0 sz=0x47c
+      0xfffffe0008fc9d18 base=x16 in 0xfffffe0008fc9c94 sz=0x1b4
+      0xfffffe0008fcb3ec base=x16 in 0xfffffe0008fcb0b0 sz=0x408
+      0xfffffe0008fdaf04 base=x19 in 0xfffffe0008fdae00 sz=0x1ac
+      0xfffffe0008fe0290 base=x23 in 0xfffffe0008fe0164 sz=0x2a0
+      0xfffffe0008fe0374 base=x23 in 0xfffffe0008fe0164 sz=0x2a0
+  com.apple.security.Image4: 10
+      0xfffffe000a8670c4 base=x16 in 0xfffffe000a866f3c sz=0x1e8
+      0xfffffe000a86ba08 base=x8 in 0xfffffe000a86b9dc sz=0xe0
+      0xfffffe000a86c320 base=x8 in 0xfffffe000a86c2f4 sz=0xe0
+      0xfffffe000a86e9c4 base=x7 in 0xfffffe000a86e9a4 sz=0x68
+      0xfffffe000a872be0 base=x19 in 0xfffffe000a872adc sz=0x1ac
+      0xfffffe000a8752bc base=x16 in 0xfffffe000a875254 sz=0x1a0
+      0xfffffe000a8754bc base=x16 in 0xfffffe000a8753f4 sz=0x374
+      0xfffffe000a875608 base=x16 in 0xfffffe000a8753f4 sz=0x374
+  com.apple.security.sandbox: 19
+      0xfffffe000a8db23c base=x16 in 0xfffffe000a8db1e4 sz=0x110
+      0xfffffe000a8def7c base=x16 in 0xfffffe000a8de990 sz=0x15d4
+      0xfffffe000a8df070 base=x16 in 0xfffffe000a8de990 sz=0x15d4
+      0xfffffe000a8df130 base=x16 in 0xfffffe000a8de990 sz=0x15d4
+      0xfffffe000a8df278 base=x16 in 0xfffffe000a8de990 sz=0x15d4
+      0xfffffe000a8df2ec base=x16 in 0xfffffe000a8de990 sz=0x15d4
+      0xfffffe000a8df49c base=x16 in 0xfffffe000a8de990 sz=0x15d4
+      0xfffffe000a8ecee8 base=x16 in 0xfffffe000a8ecc74 sz=0x2b8
+### SLOT 28 ###
+24A446 slot 28: raw=3253 confirmed=10
+  com.apple.driver.AppleThunderboltNHI: 3
+      0xfffffe000992ed64 base=x19 in 0xfffffe000992eaa0 sz=0x384
+      0xfffffe000992f0b8 base=x19 in 0xfffffe000992efa8 sz=0x204
+      0xfffffe000992fdc0 base=x20 in 0xfffffe000992fba0 sz=0x4ac
+  com.apple.filesystems.apfs: 1
+      0xfffffe000aa3ac94 base=x21 in 0xfffffe000aa3ac18 sz=0xe0
+  com.apple.kernel: 4
+      0xfffffe000b09dc58 base=x8 in 0xfffffe000b09dc04 sz=0xa8
+      0xfffffe000b1cac6c base=x20 in 0xfffffe000b1cac00 sz=0x170
+      0xfffffe000b40f788 base=x10 in 0xfffffe000b40f718 sz=0x21c
+      0xfffffe000b40f898 base=x10 in 0xfffffe000b40f718 sz=0x21c
+  com.apple.security.AppleImage4: 1
+      0xfffffe0008fcf0d4 base=x0 in 0xfffffe0008fcf068 sz=0x194
+  com.apple.security.Image4: 1
+      0xfffffe000a86e4e4 base=x0 in 0xfffffe000a86e4bc sz=0x54

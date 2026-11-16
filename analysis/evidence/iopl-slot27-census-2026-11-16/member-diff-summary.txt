@@ -1,0 +1,28 @@
+=== per-member function-size inventory candidates (equal counts), 24A446 vs 24B119 ===
+--- AppleARMPlatform.txt ---
+com.apple.driver.AppleARMPlatform: 5 segments / 2238 starts (A), 2238 starts (B)
+pairs=2238 changed=36
+--- AppleUSBEthernetHost.txt ---
+com.apple.driver.AppleUSBEthernetHost: 5 segments / 109 starts (A), 109 starts (B)
+pairs=109 changed=34
+--- IOBiometricFamily.txt ---
+com.apple.iokit.IOBiometricFamily: 5 segments / 509 starts (A), 509 starts (B)
+pairs=509 changed=65
+--- IOPCIFamily.txt ---
+com.apple.iokit.IOPCIFamily: 5 segments / 723 starts (A), 723 starts (B)
+pairs=723 changed=23
+--- IOSCSIArchitectureModelFamily.txt ---
+com.apple.iokit.IOSCSIArchitectureModelFamily: 5 segments / 734 starts (A), 734 starts (B)
+pairs=734 changed=253
+--- IOSkywalkFamily.txt ---
+com.apple.iokit.IOSkywalkFamily: 5 segments / 2166 starts (A), 2166 starts (B)
+pairs=2166 changed=108
+--- IOStorageFamily.txt ---
+com.apple.iokit.IOStorageFamily: 5 segments / 563 starts (A), 563 starts (B)
+pairs=563 changed=19
+--- IOUSBHostFamily.txt ---
+com.apple.iokit.IOUSBHostFamily: 5 segments / 1977 starts (A), 1977 starts (B)
+pairs=1977 changed=98
+--- UDIFDiskImage.txt ---
+com.apple.driver.DiskImages.UDIFDiskImage: 5 segments / 191 starts (A), 191 starts (B)
+pairs=191 changed=11

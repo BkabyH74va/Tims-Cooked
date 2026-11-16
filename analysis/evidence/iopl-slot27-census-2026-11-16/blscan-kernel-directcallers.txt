@@ -1,0 +1,15 @@
+24A446: 0 direct ['b', 'bl'] -> 0xfffffe000b348450
+== f2 callers ==
+24A446: 2 direct ['b', 'bl'] -> 0xfffffe000b1f26fc
+  __TEXT_EXEC 0xfffffe000ae940d0 (bl)  in func 0xfffffe000ae94090 sz=0x3d4
+  __TEXT_EXEC 0xfffffe000ae9bfa8 (bl)  in func 0xfffffe000ae9bf70 sz=0x3d8
+== f1 callers ==
+24A446: 8 direct ['b', 'bl'] -> 0xfffffe000b1757ec
+  __TEXT_EXEC 0xfffffe000af3e9f4 (bl)  in func 0xfffffe000af3e904 sz=0x3b0
+  __TEXT_EXEC 0xfffffe000af7ef3c (bl)  in func 0xfffffe000af7ee54 sz=0x29c
+  __TEXT_EXEC 0xfffffe000aff227c (bl)  in func 0xfffffe000aff2138 sz=0x2ac
+  __TEXT_EXEC 0xfffffe000b15e558 (bl)  in func 0xfffffe000b15e334 sz=0x2e0
+  __TEXT_EXEC 0xfffffe000b175cb0 (b)  in func 0xfffffe000b175c2c sz=0xb8
+  __TEXT_EXEC 0xfffffe000b17c588 (bl)  in func 0xfffffe000b17bf5c sz=0x88c
+  __TEXT_EXEC 0xfffffe000b1914a4 (bl)  in func 0xfffffe000b1910f8 sz=0x3ec
+  __TEXT_EXEC 0xfffffe000b1931e8 (bl)  in func 0xfffffe000b193170 sz=0xb0
