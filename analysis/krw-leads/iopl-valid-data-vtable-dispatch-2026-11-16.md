@@ -106,6 +106,14 @@ body. Everything else in the two bodies is semantically identical (verified with
 `annot.py` + `kz_side.py`; the only other differences are three global-variable
 addresses in the page-accounting block and re-indexing caused by the insertion).
 
+The guard lives in the **shared method implementation**, not one class: all four
+sibling vtables found by `kz_vtable.py find` (bases `0xfffffe0007ebd5e0`,
+`0xfffffe0007ebd7b8`, `0xfffffe0007ef4fc8`, `0xfffffe0007ef51d0`; 24B119
+counterparts `0x7ecd688`, `0x7ecd860`, `0x7f050c0`, `0x7f052c8`) map slot 27 to
+the same pair `0xb348450` / `0xb39e868` and slot 28 to `0xb347a08` /
+`0xb39de14`. So every class that dispatches these slots inherits the new check.
+Raw output: `vtdiff-siblings.txt`.
+
 `0xc0` matches `kIODirectionCompleteWithError (0x40) |
 kIODirectionCompleteWithDataValid (0x80)` from the IOKit `IODirection` enum
 (`MacKernelSDK/Headers/IOKit/IOMemoryDescriptor.h`, `IOTypes.h` on iOS). Those
@@ -116,13 +124,13 @@ immediately before the `complete()`-family slot 28 in the same vtable.
 `kIOReturnBadArgument` in this method; 27.0.1 accepts it and runs the normal
 prepare/deposit path.
 
-**What is inferred, not proven:**
+**Method mapping (strong inference; target-matched headers are unavailable):** The public LP64 `IOMemoryDescriptor` declaration has 12 new virtual methods before `prepare`, and `prepare` is immediately followed by `complete`. Counting the inherited `OSMetaClassBase`/`OSObject` virtual entries (including the two ABI destructor entries, conditional `Dispatch`, and `OSObject::init/free`) places them at indices 27 and 28 if the target uses this ABI layout. Target behavior independently fits: slot 18 maps to `dmaCommandOperation` and contains the `_dmaReferences` overflow assertion; slot 27's callee reports an `IOMemoryDescriptor ... prepared read only` condition; slot 28 contains the `complete() while dma active` diagnostic and calls `iopl_valid_data`. This makes slot 27 = `prepare(IODirection)` highly likely, but the public header is a 2019 MacKernelSDK reference, not the exact iOS 27 header, and no symbol/RTTI confirms the target class.
 
-* that slot 27 is `prepare(IODirection)` (adjacency to the `complete()`-family
-  slot and the one-scalar signature fit, but no symbol or RTTI confirms it);
-* that an app can call this method with those bits set;
-* that accepting them in 27.0.1 produces anything worse than different
-  bookkeeping. No exploit primitive, no DoS and no reachability is established.
+**What remains inferred, not proven:**
+
+* the exact dynamic class owning this vtable;
+* that an app can cause a user-client method to call this method with the completion-only bits set;
+* that accepting them in 27.0.1 produces anything worse than different bookkeeping. No exploit primitive, no DoS and no reachability is established.
 
 ## 6. Verdict and next steps
 
