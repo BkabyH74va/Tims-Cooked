@@ -1,0 +1,13 @@
+24A446 com.apple.kernel: 16 sites
+  fn 0xfffffe000ab4a5d4  sites=2  refs=[]
+  fn 0xfffffe000ab4a964  sites=2  refs=[]
+  fn 0xfffffe000ab4acdc  sites=2  refs=[]
+  fn 0xfffffe000ab4b054  sites=2  refs=[]
+  fn 0xfffffe000ad7d354  sites=1  refs=[]
+  fn 0xfffffe000adba93c  sites=1  refs=[' @%s:%d', ' compound VNOPs? @%s:%d', '222222222', 'EKEEPLOOKING, but not a filesystem that supports compound VNOPs? @%s:%d']
+  fn 0xfffffe000adbada8  sites=1  refs=[]
+  fn 0xfffffe000adbb428  sites=1  refs=[]
+  fn 0xfffffe000af3cee8  sites=1  refs=['CFIL: VERDICT RECEIVED: BLESS']
+  fn 0xfffffe000af3d6f4  sites=1  refs=[]
+  fn 0xfffffe000b0b79fc  sites=1  refs=[]
+  fn 0xfffffe000b14da20  sites=1  refs=['+OQv']

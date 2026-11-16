@@ -47,6 +47,16 @@ not be used as "changed function" counts.
 
 ### 3.1 Real edit sets (reconnaissance only)
 
+> **Correction (later same day).** The `A@… sz …` values in this section are
+> *replace-block* coordinates from `kz_newfunc_align.py`, not function extents:
+> the size is the sum over every function inside the block. Mapping the blocks
+> onto `LC_FUNCTION_STARTS` shows the Skywalk blocks span 3–46 functions each
+> (e.g. `0xfffffe000a2ea33c` is 8 functions; the first alone is only `0x134`
+> bytes, not `0x618`). The "large core routines" reading below is therefore
+> wrong about granularity. See
+> `analysis/krw-leads/skywalk-bit8-dispatch-flag-2026-11-16.md` for the corrected
+> attribution and for what the dominant delta actually is.
+
 * **IOSkywalkFamily, 16 blocks**: large core routines (`0x618`–`0x3450` bytes),
   growing by `+0 .. +60` bytes, with **no diagnostic strings** anywhere in the
   set. Representative starts: `0xfffffe000a2ea33c`, `0xfffffe000a2ec578`

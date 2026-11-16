@@ -1,0 +1,5 @@
+24A446: 34 sites of and #~0x100
+   __TEXT               0
+   __PRELINK_TEXT       0
+   __TEXT_EXEC          34
+   __TEXT_BOOT_EXEC     0

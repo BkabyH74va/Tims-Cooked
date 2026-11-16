@@ -1,0 +1,121 @@
+distinct code deltas: 106 (total instances 531)
+
+=== #1 x36   A@0xfffffe000a2ea50c (3) -> B@0xfffffe000a3387b4 (8)
+  A: ldr x10, [x9] | ldr w10, [x10, #0x20] | cmp w10, #N
+  B: ldp x12, x19, [x9] | ldp w11, w10, [x9, #0x10] | ldr x9, [x9, #0x18] | ldr x13, [x9, #8] | and x13, x13, #N | str x13, [x9, #8] | ldr w12, [x12, #0x20] | cmp w12, #N
+
+=== #2 x26   A@0xfffffe000a2ed30c (1) -> B@- (0)
+  A: ldr x19, [x9, #8]
+  B: (none)
+
+=== #3 x19   A@0xfffffe000a2ea51c (3) -> B@0xfffffe000a3387d8 (2)
+  A: ldr x10, [x9, #0x18] | ldr x11, [x10, #0x10] | cmp x11, #N
+  B: ldr x12, [x9, #0x10] | cmp x12, #N
+
+=== #4 x19   A@0xfffffe000a2ea52c (1) -> B@- (0)
+  A: ldr w11, [x9, #0x10]
+  B: (none)
+
+=== #5 x19   A@0xfffffe000a2ea538 (2) -> B@0xfffffe000a3387ec (1)
+  A: ldr w11, [x9, #0x14] | cmp w11, #N
+  B: cmp w10, #N
+
+=== #6 x18   A@0xfffffe000a2eaf74 (3) -> B@0xfffffe000a339228 (8)
+  A: ldr x9, [x8] | ldr w9, [x9, #0x20] | cmp w9, #N
+  B: ldp x11, x19, [x8] | ldp w10, w9, [x8, #0x10] | ldr x8, [x8, #0x18] | ldr x12, [x8, #8] | and x12, x12, #N | str x12, [x8, #8] | ldr w11, [x11, #0x20] | cmp w11, #N
+
+=== #7 x17   A@0xfffffe000a2ed2e0 (3) -> B@0xfffffe000a33b570 (2)
+  A: ldr x10, [x9, #0x18] | ldr x10, [x10, #0x10] | cmp x10, #N
+  B: ldr x9, [x9, #0x10] | cmp x9, #N
+
+=== #8 x17   A@0xfffffe000a2ed2f0 (2) -> B@0xfffffe000a33b57c (1)
+  A: ldr w10, [x9, #0x10] | cmp w10, #N
+  B: cmp w11, #N
+
+=== #9 x17   A@0xfffffe000a2ed2fc (1) -> B@- (0)
+  A: ldr w10, [x9, #0x14]
+  B: (none)
+
+=== #10 x15   A@0xfffffe000a2ea548 (2) -> B@0xfffffe000a3387f8 (1)
+  A: ldr x19, [x9, #8] | ldrb w9, [x10, #0x20]
+  B: ldrb w9, [x9, #0x20]
+
+=== #11 x14   A@0xfffffe000a2ec5b0 (5) -> B@0xfffffe000a33a87c (5)
+  A: mov x11, #N | movk x11, #N, lsl #16 | movk x11, #N, lsl #32 | movk x11, #N, lsl #48 | cmp x9, x11
+  B: mov x10, #N | movk x10, #N, lsl #16 | movk x10, #N, lsl #32 | movk x10, #N, lsl #48 | cmp x9, x10
+
+=== #12 x13   A@0xfffffe000a2eaeb4 (2) -> B@0xfffffe000a339174 (1)
+  A: ldr w8, [x0, #0x10] | cmp w8, #N
+  B: cmp w9, #N
+
+=== #13 x13   A@0xfffffe000a2eaec0 (1) -> B@- (0)
+  A: ldr w8, [x0, #0x14]
+  B: (none)
+
+=== #14 x12   A@0xfffffe000a2eae94 (3) -> B@0xfffffe000a339144 (8)
+  A: ldr x8, [x0] | ldr w8, [x8, #0x20] | cmp w8, #N
+  B: ldp x10, x22, [x0] | ldp w9, w8, [x0, #0x10] | ldr x23, [x0, #0x18] | ldr x11, [x23, #8] | and x11, x11, #N | str x11, [x23, #8] | ldr w10, [x10, #0x20] | cmp w10, #N
+
+=== #15 x12   A@0xfffffe000a2eaea4 (3) -> B@0xfffffe000a339168 (2)
+  A: ldr x23, [x0, #0x18] | ldr x8, [x23, #0x10] | cmp x8, #N
+  B: ldr x10, [x23, #0x10] | cmp x10, #N
+
+=== #16 x12   A@0xfffffe000a2eaed4 (1) -> B@- (0)
+  A: ldr x22, [x0, #8]
+  B: (none)
+
+=== #17 x12   A@0xfffffe000a2ebce4 (3) -> B@0xfffffe000a339fbc (2)
+  A: ldr x9, [x8, #0x18] | ldr x10, [x9, #0x10] | cmp x10, #N
+  B: ldr x11, [x8, #0x10] | cmp x11, #N
+
+=== #18 x12   A@0xfffffe000a2ebcf4 (1) -> B@- (0)
+  A: ldr w10, [x8, #0x10]
+  B: (none)
+
+=== #19 x12   A@0xfffffe000a2ebd00 (2) -> B@0xfffffe000a339fd0 (1)
+  A: ldr w10, [x8, #0x14] | cmp w10, #N
+  B: cmp w9, #N
+
+=== #20 x11   A@0xfffffe000a2ed738 (3) -> B@0xfffffe000a33b9e0 (2)
+  A: ldr x10, [x9, #0x18] | ldr x11, [x10, #0x10] | cmp x11, #N
+  B: ldr x9, [x10, #0x10] | cmp x9, #N
+
+=== #21 x10   A@0xfffffe000a2ebd0c (2) -> B@0xfffffe000a339fd8 (1)
+  A: ldr x19, [x8, #8] | ldr w8, [x9, #0x20]
+  B: ldr w8, [x8, #0x20]
+
+=== #22 x10   A@0xfffffe000a2ed748 (2) -> B@0xfffffe000a33b9ec (1)
+  A: ldr w11, [x9, #0x10] | cmp w11, #N
+  B: cmp w12, #N
+
+=== #23 x9   A@0xfffffe000a2eaa8c (1) -> B@- (0)
+  A: ldr w9, [x8, #0x10]
+  B: (none)
+
+=== #24 x9   A@0xfffffe000a2eaa98 (2) -> B@0xfffffe000a338d50 (1)
+  A: ldr w9, [x8, #0x14] | cmp w9, #N
+  B: cmp w8, #N
+
+=== #25 x9   A@0xfffffe000a2ed728 (3) -> B@0xfffffe000a33b9bc (8)
+  A: ldr x10, [x9] | ldr w10, [x10, #0x20] | cmp w10, #N
+  B: ldp x13, x19, [x9] | ldp w12, w11, [x9, #0x10] | ldr x10, [x9, #0x18] | ldr x9, [x10, #8] | and x9, x9, #N | str x9, [x10, #8] | ldr w9, [x13, #0x20] | cmp w9, #N
+
+=== #26 x9   A@0xfffffe000a2ed754 (1) -> B@- (0)
+  A: ldr w11, [x9, #0x14]
+  B: (none)
+
+=== #27 x8   A@0xfffffe000a2eaa5c (7) -> B@0xfffffe000a338d0c (11)
+  A: mov x8, x0 | mov w9, #N | movk w9, #N, lsl #16 | ldr x10, [x0] | ldr w10, [x10, #0x20] | sub w0, w9, #N | cmp w10, #N
+  B: mov w10, #N | movk w10, #N, lsl #16 | ldp x11, x23, [x0] | ldp w9, w8, [x0, #0x10] | ldr x24, [x0, #0x18] | ldr x12, [x24, #8] | and x12, x12, #N | str x12, [x24, #8] | ldr w11, [x11, #0x20] | sub w0, w10, #N | cmp w11, #N
+
+=== #28 x8   A@0xfffffe000a2eaa7c (3) -> B@0xfffffe000a338d3c (2)
+  A: ldr x24, [x8, #0x18] | ldr x9, [x24, #0x10] | cmp x9, #N
+  B: ldr x10, [x24, #0x10] | cmp x10, #N
+
+=== #29 x8   A@0xfffffe000a2eaaa8 (1) -> B@- (0)
+  A: ldr x23, [x8, #8]
+  B: (none)
+
+=== #30 x6   A@0xfffffe000a2eaf84 (3) -> B@0xfffffe000a33924c (2)
+  A: ldr x9, [x8, #0x18] | ldr x9, [x9, #0x10] | cmp x9, #N
+  B: ldr x8, [x8, #0x10] | cmp x8, #N
