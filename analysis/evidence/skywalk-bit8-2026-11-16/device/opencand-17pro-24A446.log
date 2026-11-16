@@ -1,0 +1,35 @@
+[12:58:56.095 PM] === bit8 candidates: open-only reachability ===
+[12:58:56.103 PM]   AppleSPUTimesyncV2 :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.104 PM]   AppleSPUHIDDriver :: t0=BadArgument t1=BadArgument t2=ok t3=BadArgument t4=BadArgument
+[12:58:56.104 PM]   IOHIDEventDriver :: t0=BadArgument t1=BadArgument t2=ok t3=BadArgument t4=BadArgument
+[12:58:56.104 PM]   AppleSphinxProxHIDEventDriver :: t0=BadArgument t1=BadArgument t2=ok t3=BadArgument t4=BadArgument
+[12:58:56.104 PM]   AppleUSBHostResourcesTypeC :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.104 PM]   IOPCIDevice :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.104 PM]   IOHIDResource :: t0=BadArgument t1=BadArgument t2=BadArgument t3=BadArgument t4=BadArgument
+[12:58:56.106 PM]   AppleSPUHIDDevice :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.106 PM]   AppleHIDTransportHIDDevice :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.106 PM]   IOHIDInterface :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.106 PM]   AppleBasebandPCIPDPSkywalkInterface :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.106 PM]   AppleBasebandPCIQCTunSkywalkInterface :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.106 PM]   IOSkywalkNetworkBSDClient :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.107 PM]   AppleCentauriManager :: t0=NotPrivileged t1=NotPrivileged t2=NotPrivileged t3=NotPrivileged t4=NotPrivileged
+[12:58:56.107 PM]   IOTimeSyncRootService :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.107 PM]   IOTimeSyncDaemonService :: t0=NotPrivileged t1=NotPrivileged t2=NotPrivileged t3=NotPrivileged t4=NotPrivileged
+[12:58:56.107 PM]   IOTimeSyncTranslationMach :: t0=BadArgument t1=BadArgument t2=BadArgument t3=BadArgument t4=BadArgument
+[12:58:56.107 PM]   IOTimeSyncDomain :: t0=BadArgument t1=BadArgument t2=BadArgument t3=BadArgument t4=BadArgument
+[12:58:56.107 PM]   AppleSPUHIDInterface :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.109 PM]   AppleHIDTransportBootloaderRTBuddy :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.109 PM]   AppleHIDTransportBootloaderCBOR :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.109 PM]   AppleHIDTransportDeviceMailbox :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.109 PM]   AppleHIDTransportProtocolSCMMailbox :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.109 PM]   AppleHIDTransportManagement :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.110 PM]   AppleHIDTransportInterface :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.110 PM]   IOSkywalkLegacyEthernetInterface :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.110 PM]   IOTimeSyncClockManager :: t0=BadArgument t1=BadArgument t2=BadArgument t3=BadArgument t4=BadArgument
+[12:58:56.110 PM]   IOTimeSyncTimeSyncTimePort :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.110 PM]   IOTimeSyncgPTPManager :: t0=BadArgument t1=BadArgument t2=BadArgument t3=BadArgument t4=BadArgument
+[12:58:56.111 PM]   IOUSBDeviceInterface :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:56.111 PM]   AppleBasebandPCIMHIDevice :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.111 PM]   AppleBasebandPCIPDPQMAPSkywalk :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:56.111 PM]   matched classes=32
+[12:58:56.111 PM] === bit8 candidates done

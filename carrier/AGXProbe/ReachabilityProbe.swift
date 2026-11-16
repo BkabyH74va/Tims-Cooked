@@ -126,6 +126,55 @@ extension XPCProbe {
         benchLine("??? done")
     }
 
+    // MARK: - 99 ?? candidate user clients for the 27.2 bit-8 dispatch change
+
+    /// Open-only sweep of service classes whose external-method thunks changed in
+    /// 27.2 (the bit-8 clear measured statically, see
+    /// analysis/krw-leads/skywalk-bit8-dispatch-flag-2026-11-16.md).
+    /// Calls IOServiceOpen/IOServiceClose only; never IOConnectCallMethod.
+    func bench99Bit8Clients() {
+        benchLine("=== bit8 candidates: open-only reachability ===")
+        let needles = ["Skywalk", "USBHost", "IOUSBDevice", "HID", "Centauri",
+                       "TimeSync", "corecapture", "AppleARMPlatform", "FirmwareKit",
+                       "IOStorage", "IOPCI"]
+        guard let matching = "IOService".withCString({ xq_IOServiceMatching($0) }) else {
+            benchLine("[NO] matching dictionary"); return
+        }
+        var iterator: io_iterator_t = 0
+        guard xq_IOServiceGetMatchingServices(0, matching, &iterator) == KERN_SUCCESS else {
+            benchLine("[NO] registry enumeration failed"); return
+        }
+        defer { xq_IOObjectRelease(iterator) }
+        var seen = Set<String>()
+        var matched = 0
+        let deadline = Date().addingTimeInterval(8.0)
+        while true {
+            let service = xq_IOIteratorNext(iterator)
+            if service == 0 { break }
+            defer { xq_IOObjectRelease(service) }
+            if Date() > deadline { break }
+            let name = className(service)
+            let lower = name.lowercased()
+            guard needles.contains(where: { lower.contains($0.lowercased()) }) else { continue }
+            if !seen.insert(name).inserted { continue }
+            matched += 1
+            var parts: [String] = []
+            for type in UInt32(0)...UInt32(4) {
+                var conn: io_connect_t = 0
+                let kr = xq_IOServiceOpen(service, mach_task_self_, type, &conn)
+                if kr == KERN_SUCCESS {
+                    parts.append("t\(type)=ok")
+                    xq_IOServiceClose(conn)
+                } else {
+                    parts.append("t\(type)=\(krName(kr))")
+                }
+            }
+            benchLine("  \(name) :: \(parts.joined(separator: " "))")
+        }
+        benchLine("  matched classes=\(matched)")
+        benchLine("=== bit8 candidates done")
+    }
+
     // MARK: - 96 ?? the surface user client, selector by selector
 
     /// The notification API is not exported by the framework, but the user client

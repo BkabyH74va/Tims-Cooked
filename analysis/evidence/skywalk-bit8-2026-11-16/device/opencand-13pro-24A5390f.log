@@ -1,0 +1,37 @@
+[12:58:57.654 PM] === bit8 candidates: open-only reachability ===
+[12:58:57.659 PM]   AppleUSBHostResources :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:57.662 PM]   AppleSPUHIDDevice :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:57.663 PM]   AppleHIDTransportHIDDevice :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:57.663 PM]   IOHIDInterface :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:57.664 PM]   AppleSPUHIDDriver :: t0=BadArgument t1=BadArgument t2=ok t3=BadArgument t4=BadArgument
+[12:58:57.664 PM]   AOPTouchHIDDriver :: t0=BadArgument t1=BadArgument t2=ok t3=BadArgument t4=BadArgument
+[12:58:57.664 PM]   IOHIDEventDriver :: t0=BadArgument t1=BadArgument t2=ok t3=BadArgument t4=BadArgument
+[12:58:57.665 PM]   AppleProxHIDEventDriver :: t0=BadArgument t1=BadArgument t2=ok t3=BadArgument t4=BadArgument
+[12:58:57.665 PM]   IOPCIDevice :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:57.665 PM]   AppleSPUTimesyncV2 :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:57.665 PM]   IOHIDResource :: t0=BadArgument t1=BadArgument t2=BadArgument t3=BadArgument t4=BadArgument
+[12:58:57.667 PM]   AppleBasebandPCIPDPSkywalkInterface :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:57.668 PM]   AppleBasebandPCIQCTunSkywalkInterface :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:57.668 PM]   AppleConvergedIPCSkywalkInterface :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:57.668 PM]   IOSkywalkNetworkBSDClient :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:57.668 PM]   IOSkywalkKernelPipeBSDClient :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:57.668 PM]   AppleSPUHIDInterface :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:57.670 PM]   IOTimeSyncRootService :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:57.670 PM]   IOTimeSyncTranslationMach :: t0=BadArgument t1=BadArgument t2=BadArgument t3=BadArgument t4=BadArgument
+[12:58:57.670 PM]   IOTimeSyncDomain :: t0=BadArgument t1=BadArgument t2=BadArgument t3=BadArgument t4=BadArgument
+[12:58:57.670 PM]   IOTimeSyncDaemonService :: t0=NotPrivileged t1=NotPrivileged t2=NotPrivileged t3=NotPrivileged t4=NotPrivileged
+[12:58:57.672 PM]   AppleHIDTransportBootloaderRTBuddy :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:57.672 PM]   AppleHIDTransportBootloaderCBOR :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:57.672 PM]   AppleHIDTransportDeviceFIFO :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:57.673 PM]   AppleHIDTransportProtocolSCMFIFO :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:57.673 PM]   AppleHIDTransportManagement :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:57.673 PM]   AppleHIDTransportInterface :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:57.673 PM]   IOSkywalkLegacyEthernetInterface :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:57.673 PM]   AppleBasebandPCIMHIDevice :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:57.673 PM]   IOTimeSyncClockManager :: t0=BadArgument t1=BadArgument t2=BadArgument t3=BadArgument t4=BadArgument
+[12:58:57.673 PM]   AppleBasebandPCIPDPQMAPSkywalk :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:57.674 PM]   IOTimeSyncTimeSyncTimePort :: t0=Unsupported t1=Unsupported t2=Unsupported t3=Unsupported t4=Unsupported
+[12:58:57.674 PM]   IOTimeSyncgPTPManager :: t0=BadArgument t1=BadArgument t2=BadArgument t3=BadArgument t4=BadArgument
+[12:58:57.674 PM]   IOUSBDeviceInterface :: t0=NotAttached t1=NotAttached t2=NotAttached t3=NotAttached t4=NotAttached
+[12:58:57.674 PM]   matched classes=34
+[12:58:57.674 PM] === bit8 candidates done

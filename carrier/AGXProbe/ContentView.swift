@@ -216,6 +216,7 @@ final class ReachViewModel: ObservableObject {
         if args.contains("--iosurfreclaim") { Task.detached { await self.runIOSurfReclaimMode() }; return }
         if args.contains("--iosurfwatch") { Task.detached { await self.runIOSurfWatchMode() }; return }
         if args.contains("--sockfield") { Task.detached { await self.runSockFieldMode() }; return }
+        if args.contains("--opencand") { Task.detached { XPCProbe.shared.bench99Bit8Clients() }; return }
         if args.contains("--sockuaf") { Task.detached { await self.runSocketUafMode() }; return }
         if args.contains("--sockool") || args.contains("--sockxz") || args.contains("--sockgc")
             || args.contains("--sockudp") || args.contains("--sockprec")

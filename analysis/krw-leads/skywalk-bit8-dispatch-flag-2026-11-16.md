@@ -320,3 +320,66 @@ vtable address as a chained-fixup target, then walk the metaclass to its class
 name string. Until that lands, treat the kernel-core half of the bit-8 change
 as open-but-unreachable-on-evidence and prefer leads with a measured
 reachability result.
+
+## 11. Device measurement: candidate services are open-only swept on both phones
+
+Added a bounded open-only mode `--opencand` (`bench99Bit8Clients()` in
+`carrier/AGXProbe/ReachabilityProbe.swift`, dispatched from
+`ReachViewModel.autoRunIfRequested()`). It enumerates the IORegistry once,
+filters service classes by name against the changed families, and calls only
+`IOServiceOpen`/`IOServiceClose` for types 0–4. **No `IOConnectCallMethod`, no
+buffers, no trigger.** Built with `build_race.sh` (BUILD SUCCEEDED), installed
+and launched on both devices, containers pulled afterwards.
+
+Raw logs: `analysis/evidence/skywalk-bit8-2026-11-16/device/`.
+
+### 11.1 Result — identical family behaviour on both devices
+
+| service class | 17 Pro (24A446) | 13 Pro (24A5390f) |
+|---|---|---|
+| `AppleSPUHIDDriver` | **t2=ok** | **t2=ok** |
+| `IOHIDEventDriver` | **t2=ok** | **t2=ok** |
+| `AppleSphinxProxHIDEventDriver` / `AppleProxHIDEventDriver` | **t2=ok** | **t2=ok** |
+| `AOPTouchHIDDriver` | — | **t2=ok** |
+| `AppleCentauriManager` | NotPrivileged ×5 | NotPrivileged ×5 |
+| `IOTimeSyncDaemonService` | NotPrivileged ×5 | NotPrivileged ×5 |
+| `IOSkywalkNetworkBSDClient` / `IOSkywalkKernelPipeBSDClient` | Unsupported ×5 | Unsupported ×5 |
+| `AppleUSBHostResources` / `AppleUSBHostResourcesTypeC` | Unsupported ×5 | Unsupported ×5 |
+| `IOPCIDevice` | Unsupported ×5 | Unsupported ×5 |
+| `IOTimeSyncRootService`, `IOTimeSyncTimeSyncTimePort` | Unsupported ×5 | Unsupported ×5 |
+| `IOTimeSyncTranslationMach`, `IOTimeSyncDomain`, `IOTimeSyncClockManager`, `IOTimeSyncgPTPManager` | BadArgument ×5 | BadArgument ×5 |
+| `IOHIDResource` | BadArgument ×5 | BadArgument ×5 |
+
+`matched classes=32` (17 Pro) / `34` (13 Pro).
+
+### 11.2 Interpretation
+
+* **Measured positive:** HID event-driver user clients (`IOHIDEventDriver`
+  family) are **openable at client type 2** by the unsigned sandboxed app on
+  both builds. This is the first openable surface among the families whose
+  thunks carry the 27.2 bit-8 clear. Note the sweep opens *services*; it does
+  not prove that any particular changed virtual method is reachable through
+  them.
+* **Measured negatives:** the Skywalk BSD/network clients, USB-host resources,
+  PCI, Centauri and TimeSync daemon are not openable (Unsupported /
+  NotPrivileged), so those families' changed thunks have no app path.
+* **Health:** no AGXProbe crash report exists after the run, the only newer
+  report on the 17 Pro is unrelated system telemetry
+  (`xp_amp_app_usage_dnu-2026-11-16-130929.ips`), no panic was reported, and
+  both devices remained connected. Crash-report sets contained nothing new
+  attributable to the probe.
+
+### 11.3 What this does and does not buy
+
+This converts the HID half of the bit-8 surface from "unresolved reachability"
+to "openable at type 2", which is enough to justify a follow-up that maps the
+class's external-method selectors and tests whether any selector reaches one of
+the changed virtual methods. It still does **not** show that the cleared bit is
+attacker-influenceable or that the 27.0.1 behaviour is memory-unsafe — that
+requires a purpose-built trigger with a positive detector, and none exists yet.
+
+Next concrete step: resolve the HID user-client class that owns the open type-2
+client (`IOHIDEventDriver`'s `IOUserClient` subclass), enumerate its
+external-method dispatch (the same binary-search shape as §9.1), and check
+which selectors land in vtable slots containing the bit-8 clear. Only then is a
+trigger probe warranted.
