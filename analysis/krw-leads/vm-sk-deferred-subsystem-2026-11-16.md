@@ -109,11 +109,23 @@ walking DART regions (`d_region_find_key()` @ `0xace059c`, message
 (`sptm.h`, `sptm_get_frame_type`, `sptm_get_paddr_type` strings), then calls
 `0xfffffe000ab96720(count, n, list)` = the frame-bank deposit. Return `0` =
 success, `0x35` = retry once, anything else logs
-`exclaves_frame_bank_deposit failed with ret=%u` and returns. Its three callers
-are `0xb343530` (no direct callers), `0xb34568c` ← `0xb3530cc`, and
-`0xb3486a4` ← `0xb348450`; their string sets are IOMemoryDescriptor-shaped
-(`IOMemoryDescriptor 0x%zx prepared read only`), i.e. the deposit sits behind
-memory-descriptor preparation, not directly behind an app syscall.
+`exclaves_frame_bank_deposit failed with ret=%u` and returns.
+
+**Structural link to an app-facing route (new).** The sole 24A446 caller of the
+deposit builder, `0xfffffe000ac80474`, **also calls**
+`vm_object_iopl_request` (`0xfffffe000acd1e18`) four branches earlier
+(`bl @ 0xfffffe000ac80644`) before calling the deposit builder at
+`0xfffffe000ac80668`. The 24B119 counterpart `0xfffffe000acd1bc4` shows the
+same pair (calls `0xfffffe000ad23b5c` = `vm_object_iopl_request`, and is the
+sole caller of `0xfffffe000ad26ee0`). So the deposit is performed on the
+**IOPL / UPL construction route**, i.e. the page-list path used by
+`IOMemoryDescriptor` preparation and file-backed mappings, not by a private
+MIG service. Its three direct callers are IOMemoryDescriptor-shaped
+(`IOMemoryDescriptor 0x%zx prepared read only`): `0xfffffe000b343530` (no direct
+callers), `0xfffffe000b34568c` ← `0xfffffe000b3530cc`, and
+`0xfffffe000b3486a4` ← `0xfffffe000b348450`. This is the nearest
+app-influenced neighbour found anywhere in this subsystem and materially raises
+its value.
 
 Also in 24B119: the new unnamed helper `0xfffffe000ad2586c` (`0x3b8`) is called
 from `0xfffffe000ad23b5c` = `vm_object_iopl_request` (size `0x1cb8`, matches the
@@ -129,20 +141,27 @@ unnamed 27.2 helpers are VM page helpers with wide caller sets
   fix-site signal, and the paired 27.0.1 function differs solely by *lacking*
   the deferred-cancel bookkeeping — no memory-safety delta was established here.
   Do not record this as "27.2 fixed a 27.0.1 bug".
-* **Reachability unresolved, and currently unfavourable.** Every identified
-  caller lives in `com.apple.kernel`; no user-client method, MIG routine or
-  syscall was found above the integration point. The integration function is in
-  `vm_upl.c`, so UPL construction (file-backed mmap/msync, sub-UPL handling) is
-  the nearest app-facing neighbour, but the deferral gate is an internal
-  argument flag (`[sp-0x74]` bit 12 in `ad53d8c`) and no app-controlled caller
-  was shown to set it.
-* **No device cycle spent**: without a concrete API predicate there is nothing
-  bounded to measure.
+* **Reachability: partial, and better than it looked.** Every *deferred-queue*
+  caller lives in `com.apple.kernel`, and no user-client method, MIG routine or
+  syscall was found above the UPL integration point. But the **frame-bank
+  deposit** half of the subsystem is structurally on the `vm_object_iopl_request`
+  / `IOMemoryDescriptor` preparation route (see §3), which is app-influenced
+  through file-backed mappings. The deferral gate itself remains an internal
+  argument flag (`[sp-0x74]` bit 12 in `ad53d8c`) whose producing caller is not
+  yet identified.
+* **No device cycle spent**: there is still no concrete API predicate to probe.
 
 ## 5. Next step (only if this line is resumed)
 
-Enumerate the 19 callers of `0xfffffe000ad53d8c`, determine which of them can
-supply bit 12 of the flag argument, and walk that caller up to a user-client
-method or syscall. If none can, close the lead as bounded reconnaissance and
-return the effort to the IOSurface notify-race line or a fresh kext-lifetime
-candidate.
+Two bounded static tasks, in order:
+
+1. Walk the three callers of `0xfffffe000ac80474` (`0xb343530`,
+   `0xb34568c` ← `0xb3530cc`, `0xb3486a4` ← `0xb348450`) upward until a
+   user-client method, `IOMemoryDescriptor` public entry, or syscall appears;
+   that would give the first app-facing handle on the frame-bank deposit path.
+2. Enumerate the 19 callers of `0xfffffe000ad53d8c`, determine which can supply
+   bit 12 of the flag argument, and walk that caller up likewise.
+
+If neither yields an app-reachable handle, close the lead as bounded
+reconnaissance and return the effort to the IOSurface notify-race line or a
+fresh kext-lifetime candidate.
