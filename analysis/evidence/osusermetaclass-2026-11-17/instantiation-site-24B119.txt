@@ -1,0 +1,59 @@
+# Who creates OSUserMetaClass instances (24B119)
+## 0xfffffe000b3ea86c: allocates an OSUserMetaClass via metaclass slot 13, stores into [this+0x148]
+0xfffffe000b3ea86c  pacibsp    
+0xfffffe000b3ea870  sub        sp, sp, #0x30
+0xfffffe000b3ea874  stp        x20, x19, [sp, #0x10]
+0xfffffe000b3ea878  stp        x29, x30, [sp, #0x20]
+0xfffffe000b3ea87c  add        x29, sp, #0x20
+0xfffffe000b3ea880  mov        x19, x2
+0xfffffe000b3ea884  ldr        w2, [x2, #0x38]
+0xfffffe000b3ea888  cbz        w2, #0xfffffe000b3ea8d8
+0xfffffe000b3ea88c  mov        x20, x0
+0xfffffe000b3ea890  str        xzr, [sp, #8]
+0xfffffe000b3ea894  ldr        x1, [x19, #0x30]
+0xfffffe000b3ea898  add        x3, sp, #8
+0xfffffe000b3ea89c  bl         #0xfffffe000b3ea8f0
+0xfffffe000b3ea8a0  cbnz       w0, #0xfffffe000b3ea8e0
+0xfffffe000b3ea8a4  ldr        x0, [x20, #0x148]
+0xfffffe000b3ea8a8  ldr        x1, [sp, #8]
+0xfffffe000b3ea8ac  mov        w2, #0x29
+0xfffffe000b3ea8b0  bl         #0xfffffe000ad5d950
+0xfffffe000b3ea8b4  mov        x8, x0
+0xfffffe000b3ea8b8  mov        w0, #0
+0xfffffe000b3ea8bc  mov        w8, w8
+0xfffffe000b3ea8c0  ldr        x9, [x19, #0x48]
+0xfffffe000b3ea8c4  str        x8, [x9]
+0xfffffe000b3ea8c8  ldr        x8, [x19, #0x48]
+0xfffffe000b3ea8cc  mov        w9, #1
+0xfffffe000b3ea8d0  str        x9, [x8, #8]
+0xfffffe000b3ea8d4  b          #0xfffffe000b3ea8e0
+0xfffffe000b3ea8d8  mov        w0, #0x2c2
+0xfffffe000b3ea8dc  movk       w0, #0xe000, lsl #16
+0xfffffe000b3ea8e0  ldp        x29, x30, [sp, #0x20]
+0xfffffe000b3ea8e4  ldp        x20, x19, [sp, #0x10]
+0xfffffe000b3ea8e8  add        sp, sp, #0x30
+0xfffffe000b3ea8ec  retab      
+
+## its only pointer-slot reference
+24B119 com.apple.kernel -> 0xfffffe000b3ea86c : 1 slot(s)
+   [__DATA_CONST] 0xfffffe0007f00d00  0x8050bcad043e686c
+
+## table neighbourhood at that slot (0xfffffe0007f00d00)
++00 0x8050bcad043e686c
++08 0xffffffff00000000
++10 0x0000000000000002
++18 0x0000000000000000
++20 0x0000000000000000
++28 0x8060bcad043e65f4
++30 0x0000000000000001
++38 0x0000000000000001
++40 0x0000000000000000
++48 0x0000000000000000
++50 0x0000000000000000
++58 0x8040705d043e6ef4
+
+## containing function 0xfffffe000b3eaa00 region / caller chain
+24B119: 0 direct ['bl'] -> 0xfffffe000b3ea86c
+0xfffffe000b3ea8f0 fn=0xfffffe000b3ea8f0 sz=0x3e0 refs=['NO-NAME']
+0xfffffe000b3eb740 fn=0xfffffe000b3eb740 sz=0x268 refs=[]
+0xfffffe000b3ec240 fn=0xfffffe000b3ec240 sz=0x25c refs=['NO-NAME']

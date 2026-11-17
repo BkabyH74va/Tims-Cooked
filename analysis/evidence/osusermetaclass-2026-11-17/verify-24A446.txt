@@ -1,0 +1,79 @@
+# Cross-build check: OSUserMetaClass on the target build 24A446 (iOS 27.0.1)
+## name literal + registration function
+0xfffffe00070c709c seg=__TEXT file=0xc309c
+    4f53557365724d657461436c61737300736974652e4f53557365724d657461436c61737300313231313131313131323100494f557365725365727669636500736974652e494f557365725365727669636500494f557365725365727665724368
+    OSUserMetaClass.site.OSUserMetaClass.12111111121.IOUserService.site.IOUserService.IOUserServerCh
+24A446: 1 ADRP+ADD/LDR refs to 0xfffffe00070c709c
+   add at 0xfffffe000b39a580
+0xfffffe000b39a564  pacibsp    
+0xfffffe000b39a568  stp        x20, x19, [sp, #-0x20]!
+0xfffffe000b39a56c  stp        x29, x30, [sp, #0x10]
+0xfffffe000b39a570  add        x29, sp, #0x10
+0xfffffe000b39a574  adrp       x0, #0xfffffe000b7b2000
+0xfffffe000b39a578  add        x0, x0, #0x650
+0xfffffe000b39a57c  adrp       x1, #0xfffffe00070c7000
+0xfffffe000b39a580  add        x1, x1, #0x9c
+0xfffffe000b39a584  adrp       x19, #0xfffffe000b7b2000
+0xfffffe000b39a588  add        x19, x19, #0xd78
+0xfffffe000b39a58c  mov        x2, x19
+0xfffffe000b39a590  mov        w3, #0x58
+0xfffffe000b39a594  bl         #0xfffffe000b265500
+0xfffffe000b39a598  adrp       x16, #0xfffffe0007ec7000
+0xfffffe000b39a59c  add        x16, x16, #0x438
+0xfffffe000b39a5a0  add        x16, x16, #0x10
+0xfffffe000b39a5a4  mov        x17, x0
+0xfffffe000b39a5a8  movk       x17, #0xcda1, lsl #48
+0xfffffe000b39a5ac  pacda      x16, x17
+0xfffffe000b39a5b0  str        x16, [x0]
+
+## getMetaClass 0xfffffe000b392a94 -> gMetaClass 0xfffffe000b7b2650
+0xfffffe000b392a94  bti        c
+0xfffffe000b392a98  adrp       x0, #0xfffffe000b7b2000
+0xfffffe000b392a9c  add        x0, x0, #0x650
+24A446: target 0xfffffe000b392a94 fileoff 0x438ea94; 1 low32==0x438ea94 slots
+
+--- slot file 0xec33f0 va=0xfffffe0007ec73f0 seg=__DATA_CONST
+   [  0] 0xfffffe0007ec73b8 -> 0xfffffe000b392b08 FUNC
+   [  1] 0xfffffe0007ec73c0 -> 0xfffffe000b392aa4 FUNC
+   [  2] 0xfffffe0007ec73c8 -> 0xfffffe000b268584 FUNC
+   [  3] 0xfffffe0007ec73d0 -> 0xfffffe000b268578 FUNC
+   [  4] 0xfffffe0007ec73d8 -> 0xfffffe000b268548 FUNC
+   [  5] 0xfffffe0007ec73e0 -> 0xfffffe000b268518 FUNC
+   [  6] 0xfffffe0007ec73e8 -> 0xfffffe000b268390 FUNC
+   [  7] 0xfffffe0007ec73f0 -> 0xfffffe000b392a94 FUNC   <=== TARGET
+   table start 0xfffffe0007ec73b8  target index 7
+
+## instance vtable slots incl. slot 12
+24A446 com.apple.kernel window 0xfffffe0007ec73e8 .. 0xfffffe0007ec7438 (target 0xfffffe0007ec7418)
+0xfffffe0007ec73e8  auth->0xfffffe000b268390
+0xfffffe0007ec73f0  auth->0xfffffe000b392a94
+0xfffffe0007ec73f8  auth->0xfffffe000b26522c
+0xfffffe0007ec7400  auth->0xfffffe000b268300
+0xfffffe0007ec7408  auth->0xfffffe000b2682d0
+0xfffffe0007ec7410  auth->0xfffffe000b268178
+0xfffffe0007ec7418  auth->0xfffffe000b392a34  <-- target
+0xfffffe0007ec7420  auth->0xfffffe000b26816c
+0xfffffe0007ec7428  auth->0xfffffe000b3928f0
+0xfffffe0007ec7430  int 0            ; 0x0
+
+## slot-12 Dispatch override 0xfffffe000b392a34
+0xfffffe000b392a34  bti        c
+0xfffffe000b392a38  ldr        x0, [x0, #0x18]
+0xfffffe000b392a3c  cbz        x0, #0xfffffe000b392a88
+0xfffffe000b392a40  pacibsp    
+0xfffffe000b392a44  sub        sp, sp, #0x30
+0xfffffe000b392a48  stp        x29, x30, [sp, #0x20]
+0xfffffe000b392a4c  add        x29, sp, #0x20
+0xfffffe000b392a50  ldp        q0, q1, [x1]
+0xfffffe000b392a54  stp        q0, q1, [sp]
+0xfffffe000b392a58  ldr        x16, [x0]
+0xfffffe000b392a5c  mov        x17, x0
+0xfffffe000b392a60  movk       x17, #0xcda1, lsl #48
+0xfffffe000b392a64  autda      x16, x17
+0xfffffe000b392a68  ldr        x8, [x16, #0x60]!
+0xfffffe000b392a6c  mov        x1, sp
+0xfffffe000b392a70  movk       x16, #0x9209, lsl #48
+0xfffffe000b392a74  blraa      x8, x16
+0xfffffe000b392a78  ldp        x29, x30, [sp, #0x20]
+
+## 24A446 class-name string refs (only the registration site)

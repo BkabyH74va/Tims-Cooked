@@ -26,6 +26,31 @@ the PC Python; use `kz_calls.py` / `kz_chainfind.py` / `annot.py` instead.
 Builds are `24A446` (iOS 27.0.1, target) and `24B119` (iOS 27.2). Requires
 `tools/pylibs/capstone` and `tools/opencode-temp/kc_fstarts.py` (both already in-repo).
 
+## Naming a stripped arm64e class from its vtable (recipe)
+
+Slot bodies are shared up the hierarchy, so matching a few entries only says
+"same base class". Name the owner from the generated metaclass constructor,
+which has one fixed shape:
+
+```
+adrp x0, #gMetaClass ; add x0,x0,#off          ; this
+adrp x1, #name literal ; add x1,x1,#off        ; "#ClassName"
+adrp x2, #super::gMetaClass ; add x2,x2,#off   ; superclass
+mov  w3, #sizeof(class)
+bl   OSMetaClass::OSMetaClass
+pacda(metaclass vptr); str [x0]
+```
+
+Then confirm with `getMetaClass` at the vtable's slot 7 returning that same
+`gMetaClass`, and with `__LINKINFO`'s `__ZN<size><Class>8DispatchE5IORPC` /
+`__ZTV<Class>` strings. Worked examples: `IOUserClient` (`0xb3cf544`, super
+`0xb80af58`, size `0xd8`), `OSObject` (`0xb2beb44`, no super, size `0x10`),
+`OSUserMetaClass` (`0xb3f09c8`, super = `OSObject`'s `0xb80aeb8`, size `0x58`).
+
+Corollary worth recording: an instance vtable whose slot 12 is a *forwarder*
+(`ldr x0,[x0,#0x18]; copy IORPC; blraa target slot 12`) means the changed code
+in the callee is **downstream** of that class, not inside it.
+
 ## Pitfalls these scripts exist because of
 
 1. **Capstone stores arm64 immediates as signed int64.** Branch and ADRP targets above
@@ -72,6 +97,21 @@ Builds are `24A446` (iOS 27.0.1, target) and `24B119` (iOS 27.2). Requires
    `externalMethod` sits at slot 168, and the AppleSmartIOUserClient string
    `externalMethod(uint32_t, IOExternalMethodArgumentsOpaque *)` does not make
    slot 12 that method. The base-class default at the same slot returns
-   `kIOReturnUnsupported`; the only subclass override in 24B119 is
-   `IOUserServer`. See `analysis/krw-leads/bit8-slot12-dispatch-identity-2026-11-17.md`.
+   `kIOReturnUnsupported`; the only `IOUserClient`-descendant override in 24B119
+   is `IOUserServer`. See `analysis/krw-leads/bit8-slot12-dispatch-identity-2026-11-17.md`.
+10. **Slot bodies shared with a base class do not prove descent from the class
+    you are studying.** `OSUserMetaClass` (`0x7ed7490`, 24B119) reuses the same
+    slot 2-6 / 8-11 bodies as `IOUserClient`, which reads as "IOUserClient
+    subclass"; its registered superclass is actually `OSObject`. Always finish
+    with the metaclass constructor's name/super/size triple (recipe above).
+11. **`kz_ptr_slots.py` can print nothing at all on success and look like a clean
+    zero.** For `0xfffffe000b3ea86c` it produced empty output while a raw
+    aligned-quadword scan (`kz_rawslot.py`) found exactly one `__DATA_CONST`
+    auth slot at `0xfffffe0007f00d00`. Prefer the raw scan, or always run a
+    control target known to have slots before believing an empty result.
+12. **Bit-N idiom censuses answer "how many sites", not "which field".**
+    `kz_flag_bits.py 24B119 com.apple.kernel 8` returns 304 sites, several of
+    them inside `kalloc_type` flag paths (`tst w2,#0x100` at `0xac1f334`). A
+    high count means the bit is *common*, so a "private flag" reading needs the
+    producer traced, not just the clears enumerated.
 
