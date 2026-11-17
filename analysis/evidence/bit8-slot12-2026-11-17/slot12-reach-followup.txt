@@ -1,0 +1,112 @@
+## 7. Addendum: both engine entries are invoked indirectly, each from exactly one data slot
+
+Reachability follow-up, same build (24B119). Two questions: are the two engine
+entry points dead code, and what references them?
+
+### 7.1 No direct callers, no chained-fixup slots
+
+```
+$ python tools/kz-static-diff/kz_blw_scan.py 24B119 0xfffffe000b3d9ac8 bl
+24B119: 0 direct ['bl'] -> 0xfffffe000b3d9ac8
+$ python tools/kz-static-diff/kz_blw_scan.py 24B119 0xfffffe000b3e8ea0 bl
+24B119: 0 direct ['bl'] -> 0xfffffe000b3e8ea0
+$ python tools/kz-static-diff/kz_chainfind.py chainrefs 24B119 \
+      0xfffffe000b3d9ac8 0xfffffe000b3e8ea0 0xfffffe000b3fad34
+24B119: chain entries=20670 resolving to function starts=7806
+  0xfffffe000b3d9ac8: 0 indirect slot(s)
+  0xfffffe000b3e8ea0: 0 indirect slot(s)
+  0xfffffe000b3fad34: 0 indirect slot(s)
+```
+
+So neither engine entry has a `BL`/`B` caller anywhere in the image, and none is
+referenced by the `LC_DYLD_CHAINED_FIXUPS` blob.
+
+### 7.2 One arm64e auth-pointer slot each
+
+A raw word scan for the kernel-cache rebase offset (`VA - 0xfffffe0007004000`)
+of each target finds exactly one 8-byte slot apiece, both in outer
+`__DATA_CONST`:
+
+| target | file offset | slot VA | stored qword |
+|---|---|---|---|
+| `0xfffffe000b3d9ac8` | `0xe88980` | `0xfffffe0007e8c980` | `0x8010307a043d5ac8` |
+| `0xfffffe000b3e8ea0` | `0xed34f0` | `0xfffffe0007ed74f0` | `0x80119209043e4ea0` |
+
+Controls behave as expected: the two *non*-entry engine functions
+(`0xb3fa908`, `0xb3fb294`) have zero pointer slots and only `BL` callers, which
+shows the detector is not returning noise.
+
+Neighbourhoods:
+
+```
+0xfffffe0007e8c900  int 1540          ; 0x604
+0xfffffe0007e8c908  auth->0xfffffe000ac3117c
+0xfffffe0007e8c910  auth->0xfffffe000add69a4
+0xfffffe0007e8c918  int 771           ; 0x303
+0xfffffe0007e8c920  auth->0xfffffe000b1522c0
+0xfffffe0007e8c928  auth->0xfffffe000add6664
+0xfffffe0007e8c930  int 0
+0xfffffe0007e8c938  auth->0xfffffe000ac5c3dc
+...
+0xfffffe0007e8c978  int 2056          ; 0x808
+0xfffffe0007e8c980  auth->0xfffffe000b3d9ac8   <-- engine entry
+0xfffffe0007e8c988  auth->0xfffffe000add6754
+0xfffffe0007e8c998  auth->0xfffffe000ac5c3dc
+...
+```
+
+The `int`-between-pointers pattern is not a C++ vtable (no destructor pair, no
+offset-to-top/typeinfo); it reads as a descriptor/array table.
+
+```
+0xfffffe0007ed7490  auth->0xfffffe000b3e8f74
+0xfffffe0007ed7498  auth->0xfffffe000b3e8f10
+0xfffffe0007ed74a0  auth->0xfffffe000b2be688
+0xfffffe0007ed74a8  auth->0xfffffe000b2be67c
+0xfffffe0007ed74b0  auth->0xfffffe000b2be64c
+0xfffffe0007ed74b8  auth->0xfffffe000b2be61c
+0xfffffe0007ed74c0  auth->0xfffffe000b2be494
+0xfffffe0007ed74c8  auth->0xfffffe000b3e8f00
+0xfffffe0007ed74d0  auth->0xfffffe000b2bb330
+0xfffffe0007ed74d8  auth->0xfffffe000b2be404
+0xfffffe0007ed74e0  auth->0xfffffe000b2be3d4
+0xfffffe0007ed74e8  auth->0xfffffe000b2ba27c
+0xfffffe0007ed74f0  auth->0xfffffe000b3e8ea0   <-- engine entry
+0xfffffe0007ed74f8  auth->0xfffffe000b2be270
+0xfffffe0007ed7500  auth->0xfffffe000b3e8d5c
+```
+
+This region is striking: the sequence `0xb2be688 / 67c / 64c / 61c / 494`,
+then `0xb2bb330`, then `0xb2be404 / 3d4 / 27c` is **the same body of shared
+base-class virtuals** that occupies slots +2..+11 of the IOUserClient base
+instance vtable (`iouc-base-vtable-24B119.txt`), with the differing entries
+being exactly the class-specific ones (slot 7 `0xb3e8f00` vs base `0xb3cd5b8`;
+slot 12 `0xb3e8ea0` vs base `0xb31e208`). So this table is a **vtable-like
+dispatch table of a sibling user-client class**, and its slot-12 implementation
+is `0xfffffe000b3e8ea0` — a *second* slot-12 override, besides `IOUserServer`'s.
+
+`0xfffffe000b3e8ea0` itself (sz `0x60`) is tiny:
+
+```
+0xfffffe000b3e8ea0 bti  c
+0xfffffe000b3e8ea4 ldr  x0, [x0, #0x18]      ; dispatch target = [this+0x18]
+0xfffffe000b3e8ea8 cbz  x0, -> ret kIOReturnUnsupported
+0xfffffe000b3ebc  ldp  q0, q1, [x1]; stp q0, q1, [sp]   ; copy IORPC
+0xfffffe000b3ec4  ldr  x16,[x0]; autda; ldr x8,[x16,#0x60]!
+0xfffffe000b3ed8  mov  x1, sp
+0xfffffe000b3ee0  blraa x8, x16                ; tail-dispatch slot 12 on [this+0x18]
+0xfffffe000b3ef4  mov  w0,#0x2c7; movk #0xe000  ; kIOReturnUnsupported
+```
+
+### 7.3 What this does and does not settle
+
+Settled: neither engine entry is dead code; each has exactly one arm64e
+pointer-slot reference in `__DATA_CONST`, so both are invoked through a data
+table rather than a direct call site. At least one of those tables carries a
+slot-12 override distinct from `IOUserServer`'s.
+
+Not settled: the owning class of the `0x7ed74f0` table, the semantics of the
+`0x7e8c980` table, and whether either table is reachable from an app-visible
+message path. The engine remains behind DriverKit-style machinery.
+
+**No vulnerability claim; no device cycle spent.**

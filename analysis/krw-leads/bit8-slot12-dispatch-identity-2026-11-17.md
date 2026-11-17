@@ -150,17 +150,39 @@ IOHIDFamily user clients inherit the base implementation, but inheritance of a
 virtual says nothing about whether any caller invokes it for them.
 
 **Verdict: bounded reconnaissance, no vulnerability claim.** A named fix site
-(`IOUserClient::Dispatch`, `IORPCMessage.flags` bit 8) whose app reachability
-is unproven and currently looks gated by DriverKit RPC ingress. Do not spend a
+(`IOUserClient::Dispatch`, `IORPCMessage.flags` bit 8) whose app reachability is
+unproven and currently looks gated by DriverKit RPC ingress. Do not spend a
 device cycle on this until an app-facing ingress exists.
+
+### 5.1 Follow-up: both engine entries are invoked indirectly
+
+Raw word scan for each engine entry's rebase offset finds **exactly one**
+arm64e pointer slot apiece, both in outer `__DATA_CONST`:
+
+| target | slot VA | stored qword |
+|---|---|---|
+| `0xfffffe000b3d9ac8` | `0xfffffe0007e8c980` | `0x8010307a043d5ac8` |
+| `0xfffffe000b3e8ea0` | `0xfffffe0007ed74f0` | `0x80119209043e4ea0` |
+
+Neither has any `BL`/`B` caller in the image and neither appears in the chained
+fixups; controls (`0xb3fa908`, `0xb3fb294`) have zero pointer slots and only
+`BL` callers, so the detector is not returning noise. The `0x7ed74f0` table
+carries the same shared base-class virtual bodies as slots +2..+11 of the
+`IOUserClient` base vtable, with the class-specific entries at slot 7
+(`0xb3e8f00`) and **slot 12 (`0xb3e8ea0`)** — i.e. a *second* slot-12 override
+besides `IOUserServer`'s, missed by the census. `0xb3e8ea0` (sz `0x60`) copies
+the incoming `IORPC` and tail-dispatches slot 12 on `[this+0x18]`. Full dumps:
+`analysis/evidence/bit8-slot12-2026-11-17/slot12-reach-followup.txt`.
 
 ## 6. Next step (bounded, static)
 
-Walk the two caller functions above upward (`0xb3fad34`, `0xb3d9ac8`) to a MIG
-routine or syscall entry, and settle whether any of the 11 dispatch sites can
-be reached with an app-supplied `kernelContent` (as opposed to
-kernel-decoded RPC content). If no ingress exists, close the bit-8 cluster as
-reconnaissance-only and return the effort to the VM/VFS and external-object
-leads. Secondary question, cheap: identify what private `flags` bit 8 means —
-search `iokit` sources for a `kIORPCMessage...` name in `0x100` range, and
-check whether any 24A446 function *sets* it.
+1. Name the owning class of the `0x7ed74f0` table (find the stored vptr /
+   adjacent `OSMetaClass` constructor) and characterise the `0x7e8c980` array;
+   that converts "invoked via data table" into a concrete ingress path or a
+   hard negative.
+2. Cheap secondary: find what private `flags` bit 8 means — search `iokit`
+   sources for a `kIORPCMessage...` name in the `0x100` range, and check whether
+   any 24A446 function *sets* it.
+3. If neither table resolves to an app-visible message path, close the bit-8
+   cluster as reconnaissance-only and return the effort to the VM/VFS and
+   external-object leads.
