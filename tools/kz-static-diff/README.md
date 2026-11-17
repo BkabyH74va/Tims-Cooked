@@ -50,3 +50,17 @@ Builds are `24A446` (iOS 27.0.1, target) and `24B119` (iOS 27.2). Requires
    for a member. Separately, string-VA lists are build-specific: an address
    copied from a 24B119 scan names different bytes in 24A446, and a scan run on
    it returns a clean-looking zero.
+7. **Slot indices must be measured from the stored vptr, not the table start.**
+   Arm64e tables frequently carry a two-entry header (offset-to-top, typeinfo)
+   before the first function, but the object stores a vptr *past* it. A flat
+   "slot N = table base + N*8" therefore lands on the wrong entry while looking
+   plausible. Recover the stored vptr from the instance constructor
+   (`str pacda(...),[x0]`) or from a neighbour whose index you already know,
+   then read `(entry - vptr)/8`. Sanity check with the destructors at slots 0/1
+   and with a size check against the `OSMetaClass(..., size)` argument.
+8. **A BL-site census for a vtable slot is only meaningful with the slot-load
+   base traced to a vptr load.** Matching bare `ldr xT,[xN,#imm]` plus `blraa`
+   counts object field loads as virtual dispatches (250 hits for offset 0x60,
+   most false); requiring `xN` to come from `ldr xN,[xObj]` drops it to the real
+   set. `kz_slot12_vtable.py` implements the strict form.
+

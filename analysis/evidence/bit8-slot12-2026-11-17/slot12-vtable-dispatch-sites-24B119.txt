@@ -1,0 +1,12 @@
+24B119 com.apple.kernel: 11 vtable slot-0x60 dispatches
+  blraa@0xfffffe000b3b8c04  slotldr@0xfffffe000b3b8bf8  obj=x19 op=blraa
+  blraa@0xfffffe000b3ba6e8  slotldr@0xfffffe000b3ba6dc  obj=x26 op=blraa
+  blraa@0xfffffe000b3bc5dc  slotldr@0xfffffe000b3bc5d0  obj=x19 op=blraa
+  blraa@0xfffffe000b3bf6e4  slotldr@0xfffffe000b3bf6d8  obj=x19 op=blraa
+  blraa@0xfffffe000b3e8ee0  slotldr@0xfffffe000b3e8ed4  obj=x0 op=blraa
+  blraa@0xfffffe000b3f7f74  slotldr@0xfffffe000b3f7f64  obj=x19 op=blraa
+  blraa@0xfffffe000b3fab20  slotldr@0xfffffe000b3fab10  obj=x19 op=blraa
+  blraa@0xfffffe000b3fb4fc  slotldr@0xfffffe000b3fb4ec  obj=x23 op=blraa
+  blraa@0xfffffe000b3fb6b0  slotldr@0xfffffe000b3fb6a4  obj=x0 op=blraa
+  blraa@0xfffffe000b44ba64  slotldr@0xfffffe000b44ba54  obj=x9 op=blraa
+  blraa@0xfffffe000b44baf0  slotldr@0xfffffe000b44bae0  obj=x9 op=blraa
