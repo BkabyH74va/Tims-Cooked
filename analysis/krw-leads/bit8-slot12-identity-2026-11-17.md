@@ -152,7 +152,32 @@ internal compact-dispatch virtual whose name is still unknown.
   IOUserClient, not the public header.
 * Whether the cleared bit is attacker-settable in 24A446 and what it gates.
 
-## 7. Next step (bounded, static first)
+## 7. Addendum: the branch-C callee carries a fourth clear, and its object is 0xd8-sized
+
+The branch-C cookie handler (`cookie == 0xcfe0c99e739d92f9`) calls
+`0xfffffe000b31e4e0` (24B119) / `0xfffffe000b2c82e8` (24A446), size `0x25c` vs
+`0x250`. Its diff is exactly one more clear:
+
+```
+ldr  x12, [x25, #8]
+and  x12, x12, #0xfffffffffffffeff
+str  x12, [x25, #8]      @ 0xfffffe000b31e514
+```
+
+where `x25 = [args+0x18]` — the same object the three dispatcher clears touch.
+So the 27.2 change is **four clears of `[user_client + 8]` bit 8**: three in
+the shared pre-dispatch wrapper and one in a downstream handler.
+
+The callee reads `[x25+0x10]` (must equal 5 on the accepted path), `[x25+0xd0]`,
+walks `[x25+0x20]`/`+0x28`/`+0x30` through vtable slot 7 and follows
+`[entry+0x10]` chains against the globals `0xfffffe000b808328` /
+`0xfffffe000b809890`, and enforces input sizes `>= 0x154` / `>= 0xe4`. Registry
+walks plus a field at `+0xd0` inside a `0xd8`-sized object are consistent with
+`x25` being the `IOUserClient` instance (size `0xd8`, from the `OSMetaClass`
+argument above) rather than a copied input buffer. That supports the object
+reading in §6; it still does not prove it, and it does not identify the method.
+
+## 8. Next step (bounded, static first)
 
 1. Resolve the slot-12 method identity from a subclass that overrides it with
    identifiable content (an IOExternalMethodDispatch table, or a string
@@ -168,6 +193,7 @@ internal compact-dispatch virtual whose name is still unknown.
    branch selection was exercised.
 
 Evidence: `analysis/evidence/bit8-slot12-2026-11-17/`
-(`dispatcher-*.s`, `shim-generic-mig-sem-diff.txt`,
+(`dispatcher-*.s`, `branchC-callee-24B119.s`,
+`branchC-callee-sem-diff.txt`, `shim-generic-mig-sem-diff.txt`,
 `iouc-base-vtable-24B119.txt`, `slot12-vtable-dispatch-sites-24B119.txt`,
 `hid-vtables-containing-thunk.txt`).

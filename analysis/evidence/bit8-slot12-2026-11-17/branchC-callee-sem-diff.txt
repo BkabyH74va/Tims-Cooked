@@ -1,0 +1,22 @@
+; region A 0xfffffe000b2c82e8 sz 0x250 (148 insns)  B 0xfffffe000b31e4e0 sz 0x25c (151 insns)
+
+[INSERT] A 13..13 (0) B 13..16 (3)
+  B 0xfffffe000b31e514  ldr      x12, [x25, #8]
+  B 0xfffffe000b31e518  and      x12, x12, #IMM
+  B 0xfffffe000b31e51c  str      x12, [x25, #8]
+
+[REPLACE] A 39..40 (1) B 42..43 (1)
+  A 0xfffffe000b2c8384  add      x8, x8, #0x1e8
+  B 0xfffffe000b31e588  add      x8, x8, #0x328
+
+[REPLACE] A 47..48 (1) B 50..51 (1)
+  A 0xfffffe000b2c83a4  add      x23, x23, #0x750
+  B 0xfffffe000b31e5a8  add      x23, x23, #0x890
+
+[REPLACE] A 95..96 (1) B 98..99 (1)
+  A 0xfffffe000b2c8464  add      x8, x8, #0xa70
+  B 0xfffffe000b31e668  add      x8, x8, #0xbb0
+
+[REPLACE] A 121..122 (1) B 124..125 (1)
+  A 0xfffffe000b2c84cc  ldr      q0, [x8, #0x30]
+  B 0xfffffe000b31e6d0  ldr      q0, [x8, #0x40]
