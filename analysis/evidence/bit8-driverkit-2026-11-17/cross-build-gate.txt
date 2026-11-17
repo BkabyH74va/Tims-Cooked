@@ -1,0 +1,58 @@
+# Cross-build check: the descriptor region's consumer block exists in 24A446 too
+# Generated 2026-11-17, read-only static pass.
+
+## Entitlement-name string, both builds (exact byte search over com.apple.kernel)
+24A446 ('__TEXT', '0xfffffe00070c7dd5')  "com.apple.developer.driverkit.administrator"
+24B119 ('__TEXT', '0xfffffe00070c8a09')  "com.apple.developer.driverkit.administrator"
+
+## Its single code reference in each build (ADRP+ADD/LDR scan of __TEXT*)
+24A446: 1 ref -> add at 0xfffffe000b3a6054
+24B119: 1 ref -> add at 0xfffffe000b3fc650
+
+## Containing function in each build (LC_FUNCTION_STARTS, exact extents)
+24A446  fn 0xfffffe000b3a5fd0 sz 0x928   (next start 0xfffffe000b3a68f8)
+24B119  fn 0xfffffe000b3fc5cc sz 0x928   (next start 0xfffffe000b3fcef4)
+
+The two functions are near-byte-identical (same size, same instruction stream,
+only VA operands differ). Key block, 24A446 / 24B119:
+
+  0xfffffe000b3a601c / 0xfffffe000b3fc618   STR "root"
+  0xfffffe000b3a6024 / 0xfffffe000b3fc620   call 0x...b3793b4 / 0x...b3cf820
+                                               ('consolesession'/'secureprocess'/'foreground')
+  0xfffffe000b3a6028 / 0xfffffe000b3fc624   cbnz w0 -> skip entitlement probe
+  0xfffffe000b3a6034 / 0xfffffe000b3fc630   ldr  x16,[x19]; autda; add #0x100; ldr x8,[x16]
+  0xfffffe000b3a6054 / 0xfffffe000b3fc650   STR "com.apple.developer.driverkit.administrator"
+  0xfffffe000b3a6058 / 0xfffffe000b3fc654   mov  x0,x19 ; blraa x8,x16      <- entitlement call
+  ...
+  0xfffffe000b3a609c / 0xfffffe000b3fc698   second autda/add #0x100/ldr x8,[x16]
+  0xfffffe000b3a60b0 / 0xfffffe000b3fc6ac   STR "IOUserClientCreator"
+  0xfffffe000b3a60b4 / 0xfffffe000b3fc6b0   mov  x0,x19 ; blraa x8,x16      <- fallback name
+
+Full annotated disassembly: gate-24A446-b3a5fd0.s, gate-24B119-b3fc5cc.s.
+
+## The same function consumes the descriptor region
+From adrp-refs-24B119.txt, the sites inside 0xb3fc5cc..0xb3fcef4 that resolve into
+0xfffffe0007f00d00..0xfffffe0007f01200:
+  add 0xfffffe000b3fca58 -> 0xfffffe0007f00d68
+  ldr 0xfffffe000b3fcab0 -> 0xfffffe0007f00d68
+  ldr 0xfffffe000b3fcb04 -> 0xfffffe0007f00d68
+  ldr 0xfffffe000b3fcb34 -> 0xfffffe0007f00d68
+  ldr 0xfffffe000b3fcc50 -> 0xfffffe0007f00d68
+  ldr 0xfffffe000b3fcc78 -> 0xfffffe0007f00d68
+  ldr 0xfffffe000b3fccb4 -> 0xfffffe0007f00d68
+  ldr 0xfffffe000b3fcd68 -> 0xfffffe0007f00d68
+  ldr 0xfffffe000b3fcdd0 -> 0xfffffe0007f00d68
+  add 0xfffffe000b3fce1c -> 0xfffffe0007f01058
+  ldr 0xfffffe000b3fce20 -> 0xfffffe0007f01058
+  ldr 0xfffffe000b3fceb4 -> 0xfffffe0007f01058
+
+## What the region holds (type encodings, not plain vtable slots)
+0xfffffe00070ce8f6  "B16@?0^{OSObject=^^?i}8"
+0xfffffe00070c8c82  "B16@?0^{OSArray=^^?iIIIII^^{OSMetaClassBase}}8"
+0xfffffe00070cdf75  "i8@?0"
+Block/method signature strings, i.e. a method-descriptor table rather than a
+plain C++ vtable.
+
+## Symbol-table negative
+Neither kernelcache member carries an LC_SYMTAB (0 members, 0 symbols in both
+builds), so no nlist lookup is available; `__LINKINFO` is a string blob only.

@@ -1,0 +1,121 @@
+24B119 com.apple.kernel 0xfffffe0007f00c80 .. 0xfffffe0007f01200 (176 qwords)
+0xfffffe0007f00d00  auth->0xfffffe000b3ea86c
+0xfffffe0007f00d08  auth->0xfffffe0007004000
+0xfffffe0007f00d10  int 2            ; 0x2
+0xfffffe0007f00d28  auth->0xfffffe000b3ea5f4
+0xfffffe0007f00d30  int 1            ; 0x1
+0xfffffe0007f00d38  int 1            ; 0x1
+0xfffffe0007f00d58  auth->0xfffffe000b3eaef4
+0xfffffe0007f00d70  int 48           ; 0x30
+0xfffffe0007f00d78  auth->0xfffffe000aba09ec
+0xfffffe0007f00d80  auth->0xfffffe000aba09dc
+0xfffffe0007f00d88  auth->0xfffffe00070ce8f6
+0xfffffe0007f00da0  int 40           ; 0x28
+0xfffffe0007f00da8  auth->0xfffffe000aba09ec
+0xfffffe0007f00db0  auth->0xfffffe000aba09dc
+0xfffffe0007f00db8  auth->0xfffffe00070ce8f6
+0xfffffe0007f00dc8  int 100000       ; 0x186a0
+0xfffffe0007f00dd8  int 40           ; 0x28
+0xfffffe0007f00de0  auth->0xfffffe000aba09ec
+0xfffffe0007f00de8  auth->0xfffffe000aba09dc
+0xfffffe0007f00df0  auth->0xfffffe00070ce8f6
+0xfffffe0007f00e08  int 40           ; 0x28
+0xfffffe0007f00e10  auth->0xfffffe000aba09ec
+0xfffffe0007f00e18  auth->0xfffffe000aba09dc
+0xfffffe0007f00e20  auth->0xfffffe00070ce8f6
+0xfffffe0007f00e38  int 40           ; 0x28
+0xfffffe0007f00e40  auth->0xfffffe00070c8c82
+0xfffffe0007f00e58  int 56           ; 0x38
+0xfffffe0007f00e60  auth->0xfffffe000aba09ec
+0xfffffe0007f00e68  auth->0xfffffe000aba09dc
+0xfffffe0007f00e70  auth->0xfffffe00070cdf75
+0xfffffe0007f00e88  int 56           ; 0x38
+0xfffffe0007f00e90  auth->0xfffffe000aba09ec
+0xfffffe0007f00e98  auth->0xfffffe000aba09dc
+0xfffffe0007f00ea0  auth->0xfffffe00070ce8f6
+0xfffffe0007f00eb8  int 41           ; 0x29
+0xfffffe0007f00ec0  auth->0xfffffe00070ce8f6
+0xfffffe0007f00ed8  int 40           ; 0x28
+0xfffffe0007f00ee0  auth->0xfffffe000aba09ec
+0xfffffe0007f00ee8  auth->0xfffffe000aba09dc
+0xfffffe0007f00ef0  auth->0xfffffe00070ce8f6
+0xfffffe0007f00f08  int 32           ; 0x20
+0xfffffe0007f00f10  auth->0xfffffe00070ce8f6
+0xfffffe0007f00f20  auth->0xfffffe000b80b5e8
+0xfffffe0007f00f28  int 1342177280   ; 0x50000000
+0xfffffe0007f00f30  auth->0xfffffe000b400048
+0xfffffe0007f00f38  auth->0xfffffe0007f00f00
+0xfffffe0007f00f48  int 32           ; 0x20
+0xfffffe0007f00f50  auth->0xfffffe00070ce8f6
+0xfffffe0007f00f60  auth->0xfffffe000b80b5e8
+0xfffffe0007f00f68  int 1342177280   ; 0x50000000
+0xfffffe0007f00f70  auth->0xfffffe000b3fff50
+0xfffffe0007f00f78  auth->0xfffffe0007f00f40
+0xfffffe0007f00f88  int 32           ; 0x20
+0xfffffe0007f00f90  auth->0xfffffe00070ce8f6
+0xfffffe0007f00fa0  auth->0xfffffe000b80b5e8
+0xfffffe0007f00fa8  int 1342177280   ; 0x50000000
+0xfffffe0007f00fb0  auth->0xfffffe000b400444
+0xfffffe0007f00fb8  auth->0xfffffe0007f00f80
+0xfffffe0007f00fc8  int 40           ; 0x28
+0xfffffe0007f00fd0  auth->0xfffffe000aba09ec
+0xfffffe0007f00fd8  auth->0xfffffe000aba09dc
+0xfffffe0007f00fe0  auth->0xfffffe00070ce8f6
+0xfffffe0007f00ff8  int 40           ; 0x28
+0xfffffe0007f01000  auth->0xfffffe00070ce8f6
+0xfffffe0007f01018  int 40           ; 0x28
+0xfffffe0007f01020  auth->0xfffffe00070ce8f6
+0xfffffe0007f01038  int 40           ; 0x28
+0xfffffe0007f01040  auth->0xfffffe00070ce8f6
+0xfffffe0007f01050  auth->0xfffffe000b80a920
+0xfffffe0007f01068  auth->0xfffffe000b3ee684
+0xfffffe0007f01070  auth->0xfffffe000b3ee620
+0xfffffe0007f01078  auth->0xfffffe000b2be688
+0xfffffe0007f01080  auth->0xfffffe000b2be67c
+0xfffffe0007f01088  auth->0xfffffe000b2be64c
+0xfffffe0007f01090  auth->0xfffffe000b2be61c
+0xfffffe0007f01098  auth->0xfffffe000b2be494
+0xfffffe0007f010a0  auth->0xfffffe000b3ee610
+0xfffffe0007f010a8  auth->0xfffffe000b2bb330
+0xfffffe0007f010b0  auth->0xfffffe000b2be404
+0xfffffe0007f010b8  auth->0xfffffe000b2be3d4
+0xfffffe0007f010c0  auth->0xfffffe000b2be27c
+0xfffffe0007f010c8  auth->0xfffffe000b31e208
+0xfffffe0007f010d0  auth->0xfffffe000b3cd49c
+0xfffffe0007f010d8  auth->0xfffffe000b3ee570
+0xfffffe0007f010e0  auth->0xfffffe000b338674
+0xfffffe0007f010e8  auth->0xfffffe000b338494
+0xfffffe0007f010f0  auth->0xfffffe000b3382b4
+0xfffffe0007f010f8  auth->0xfffffe000b3381f0
+0xfffffe0007f01100  auth->0xfffffe000b33812c
+0xfffffe0007f01108  auth->0xfffffe000b338010
+0xfffffe0007f01110  auth->0xfffffe000b3ee408
+0xfffffe0007f01118  auth->0xfffffe000b337bb0
+0xfffffe0007f01120  auth->0xfffffe000b337984
+0xfffffe0007f01128  auth->0xfffffe000b3378fc
+0xfffffe0007f01130  auth->0xfffffe000b337874
+0xfffffe0007f01138  auth->0xfffffe000b3377bc
+0xfffffe0007f01140  auth->0xfffffe000b3376fc
+0xfffffe0007f01148  auth->0xfffffe000b3375e0
+0xfffffe0007f01150  auth->0xfffffe000b3374c4
+0xfffffe0007f01158  auth->0xfffffe000b3373c4
+0xfffffe0007f01160  auth->0xfffffe000b337348
+0xfffffe0007f01168  auth->0xfffffe000b3372cc
+0xfffffe0007f01170  auth->0xfffffe000b3371cc
+0xfffffe0007f01178  auth->0xfffffe000b33714c
+0xfffffe0007f01180  auth->0xfffffe000b3370cc
+0xfffffe0007f01188  auth->0xfffffe000b336eec
+0xfffffe0007f01190  auth->0xfffffe000b336d0c
+0xfffffe0007f01198  auth->0xfffffe000b336b2c
+0xfffffe0007f011a0  auth->0xfffffe000b336a04
+0xfffffe0007f011a8  auth->0xfffffe000b3368dc
+0xfffffe0007f011b0  auth->0xfffffe000b3367b4
+0xfffffe0007f011b8  auth->0xfffffe000b336634
+0xfffffe0007f011c0  auth->0xfffffe000b34e630
+0xfffffe0007f011c8  auth->0xfffffe000b3ee3f8
+0xfffffe0007f011d0  auth->0xfffffe000b3362c0
+0xfffffe0007f011d8  auth->0xfffffe000b336108
+0xfffffe0007f011e0  auth->0xfffffe000b3360a8
+0xfffffe0007f011e8  auth->0xfffffe000b335e90
+0xfffffe0007f011f0  auth->0xfffffe000b335cd8
+0xfffffe0007f011f8  auth->0xfffffe000b335c78

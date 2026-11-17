@@ -23,6 +23,11 @@ python kz_calls.py out.s 0xfffffe000acd1e18 0x20f0 24A446 --offsets   # numpy-fr
 `kz_funcinfo.py` and `kz_ptrrefs.py` import `numpy`, which is **not** installed in
 the PC Python; use `kz_calls.py` / `kz_chainfind.py` / `annot.py` instead.
 
+```
+python kz_nzrange.py 24B119 com.apple.kernel 0xfffffe0007f00c80 0xfffffe0007f01200
+python kz_refs_func.py 24B119 0xfffffe0007f00d00 0xfffffe0007f01200
+```
+
 Builds are `24A446` (iOS 27.0.1, target) and `24B119` (iOS 27.2). Requires
 `tools/pylibs/capstone` and `tools/opencode-temp/kc_fstarts.py` (both already in-repo).
 
@@ -101,7 +106,7 @@ in the callee is **downstream** of that class, not inside it.
    is `IOUserServer`. See `analysis/krw-leads/bit8-slot12-dispatch-identity-2026-11-17.md`.
 10. **Slot bodies shared with a base class do not prove descent from the class
     you are studying.** `OSUserMetaClass` (`0x7ed7490`, 24B119) reuses the same
-    slot 2-6 / 8-11 bodies as `IOUserClient`, which reads as "IOUserClient
+    slot 2–6 / 8–11 bodies as `IOUserClient`, which reads as "IOUserClient
     subclass"; its registered superclass is actually `OSObject`. Always finish
     with the metaclass constructor's name/super/size triple (recipe above).
 11. **`kz_ptr_slots.py` can print nothing at all on success and look like a clean
@@ -114,4 +119,17 @@ in the callee is **downstream** of that class, not inside it.
     them inside `kalloc_type` flag paths (`tst w2,#0x100` at `0xac1f334`). A
     high count means the bit is *common*, so a "private flag" reading needs the
     producer traced, not just the clears enumerated.
+13. **Neither build has an `LC_SYMTAB`.** A per-member `nlist` lookup returns
+    nothing in both 24A446 and 24B119 (0 members / 0 symbols); `__LINKINFO` is a
+    string blob only. Use the OSMetaClass-constructor recipe above for names; do
+    not write a tool that assumes `kernelsyms.pkl`-style data exists.
+14. **A `__DATA_CONST` window can merge several different arrays.** The region
+    around `0xfffffe0007f00d00` (24B119) mixes method descriptors, block-signature
+    strings (`"B16@?0^{OSObject=^^?i}8"`), self-pointers and integer fields under
+    a nominal `0x28` stride. Grouping by stride alone labels it a vtable and hides
+    that no code site references the slot itself. Dump non-zero qwords
+    (`kz_nzrange.py`) before naming anything.
+15. **`func_of`/`kc_fstarts.load_build` VAs must be full 64-bit.** Passing a bare
+    `0xb3fc5cc` instead of `0xfffffe000b3fc5cc` silently reports "no start",
+    which reads as "this address is not a function" rather than "wrong argument".
 
