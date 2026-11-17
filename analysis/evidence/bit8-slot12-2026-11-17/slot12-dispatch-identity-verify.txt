@@ -1,0 +1,163 @@
+# Raw evidence — slot-12 identity verification (2026-11-17)
+
+Build: `firmware/24B119/kernelcache.release.macho` (iOS 27.2).
+All commands run with `tools/kz-static-diff/*` / `tools/opencode-temp/kc_fstarts.py`.
+
+## 1. Slot-12 thunk body = by-value copy of a 0x20-byte struct
+
+```
+python - <<'PY'   # capstone dump of 0xfffffe000b31e208, size 0x2c
+== thunk 0xfffffe000b31e208
+  0xfffffe000b31e208 pacibsp
+  0xfffffe000b31e20c sub      sp, sp, #0x30
+  0xfffffe000b31e210 stp      x29, x30, [sp, #0x20]
+  0xfffffe000b31e214 add      x29, sp, #0x20
+  0xfffffe000b31e218 ldp      q0, q1, [x1]
+  0xfffffe000b31e21c stp      q0, q1, [sp]
+  0xfffffe000b31e220 mov      x1, sp
+  0xfffffe000b31e224 bl       #0xfffffe000b31e234
+  0xfffffe000b31e228 ldp      x29, x30, [sp, #0x20]
+  0xfffffe000b31e22c add      sp, sp, #0x30
+  0xfffffe000b31e230 retab
+```
+
+`struct IORPC` (public `iokit/DriverKit/IORPC.h`) is exactly 0x20 bytes:
+
+```c
+struct IORPC {
+    IORPCMessageMach * message;    // +0x00
+    IORPCMessageMach * reply;      // +0x08
+    uint32_t           sendSize;   // +0x10
+    uint32_t           replySize;  // +0x14
+    IORPCMessage     * kernelContent; // +0x18  (KERNEL only)
+};
+```
+
+## 2. Dispatcher field usage matches IORPCMessage
+
+```
+struct IORPCMessage {          // #pragma pack(4), 8-byte fields -> no padding
+    uint64_t    msgid;         // +0x00
+    uint64_t    flags;         // +0x08
+    uint64_t    objectRefs;    // +0x10
+    OSObjectRef objects[0];
+};
+```
+
+Dispatcher `0xfffffe000b31e234` (from `dispatcher-24B119-b31e234.s`):
+
+```
+ldr  x21, [x1, #0x18]        ; x21 = rpc.kernelContent  (IORPCMessage *)
+ldr  x8,  [x21]              ; x8  = msgid
+cmp  x8,  #0xf2fa2faa5cc11190/91 ...
+ldr  w11, [x11, #0x20]       ; rpc.message->msgh.msgh_id-ish / object field
+ldr  x11, [x21, #0x10]       ; objectRefs, required == 1 or == 2
+ldr  w10, [x1, #0x10]        ; sendSize   thresholds 0x26c / 0x104
+ldr  w9,  [x1, #0x14]        ; replySize  thresholds 0x54  / 0x3c
+ldr  x12, [x21, #8]          ; flags
+and  x12, x12, #~0x100       ; <-- the 27.2 delta (bit 8)
+str  x12, [x21, #8]
+bl   _sendAsyncResult64(io_user_reference_t *, IOReturn, io_user_reference_t *, UInt32, IOOptionBits)
+                           @ 0xfffffe000b3d12bc
+```
+
+The reply path writes a static descriptor copied from `0xfffffe0007010030`
+into `rpc.reply` and sets `replySize = 0x54`; `_sendAsyncResult64` is
+`IOUserClient::_sendAsyncResult64` (its own `__func__`-style signature string
+is present in the image at file offset `0xc29ca`).
+
+## 3. Same slot in the base class returns kIOReturnUnsupported
+
+```
+== osobject slot12 stub 0xfffffe000b316068
+  0xfffffe000b316068 bti      c
+  0xfffffe000b31606c mov      w0, #0x2c7
+  0xfffffe000b316070 movk     w0, #0xe000, lsl #16
+  0xfffffe000b316074 ret
+```
+`0xe00002c7` = `kIOReturnUnsupported`. So slot 12 is a root-level virtual
+that `IOUserClient` overrides; `IOUserServer` overrides it with a sibling
+implementation (see §5).
+
+## 4. The single override: IOUserServer
+
+```
+== IOUserServer Dispatch wrapper 0xfffffe000b328138
+  0xfffffe000b328138 pacibsp
+  0xfffffe000b328148 ldp      q0, q1, [x1]
+  0xfffffe000b32814c stp      q0, q1, [sp]
+  0xfffffe000b328150 mov      x1, sp
+  0xfffffe000b328154 bl       #0xfffffe000b328164
+  ... same by-value-IORPC wrapper shape, own dispatcher with its own
+      msgid cookies and the same `and ...,#~0x100` clear at 0xfffffe000b3281dc
+```
+
+`IOUserServer` vtable `0xfffffe0007ed8660`, slot-12 entry
+`0xfffffe0007ed86c0 -> 0xfffffe000b328138`; destructor `0xfffffe000b3ed2ac`
+contains allocation size `0x160`.
+
+## 5. All 11 slot-12 dispatch sites, containing function, string refs
+
+```
+0xfffffe000b3b8c04 fn=0xfffffe000b3b88f0 sz=0x454 refs=['ntroller.cpp']
+0xfffffe000b3ba6e8 fn=0xfffffe000b3ba2e0 sz=0x6e4 refs=['N_QUERY || disp == TB_MESSAGE_DISPOSITION_ERROR', 'errupt shouldn\'t be invoked directly', 'ntroller.cpp']
+0xfffffe000b3bc5dc fn=0xfffffe000b3bc020 sz=0x738 refs=['ntroller.cpp']
+0xfffffe000b3bf6e4 fn=0xfffffe000b3bef28 sz=0x994 refs=['lems','ntroller.cpp','portChannelUnit']
+0xfffffe000b3e8ee0 fn=0xfffffe000b3e8ea0 sz=0x60  refs=[]
+0xfffffe000b3f7f74 fn=0xfffffe000b3f7cb8 sz=0x2e8 refs=[]
+0xfffffe000b3fab20 fn=0xfffffe000b3fa908 sz=0x2fc refs=['NO-NAME','OServiceStateChangeVars','t.pm.sleepdescription']
+0xfffffe000b3fb4fc fn=0xfffffe000b3fb294 sz=0x458 refs=['ion.continuous-time-offset','unmap']
+0xfffffe000b3fb6b0 fn=0xfffffe000b3fb294 sz=0x458 refs=['ion.continuous-time-offset','unmap']
+0xfffffe000b44ba64 fn=0xfffffe000b44ba00 sz=0x100 refs=[]
+0xfffffe000b44baf0 fn=0xfffffe000b44ba00 sz=0x100 refs=[]
+```
+
+Argument marshalling observed at three shapes:
+
+```
+; built inline (site 0xb3fb4fc, func 0xb3fb294)
+stp x25, x20, [sp, #0x40]     ; message, reply
+stp w28, w19, [sp, #0x50]     ; sendSize, replySize
+str x22, [sp, #0x58]          ; kernelContent
+ldr x16,[x23]; autda; ldr x8,[x16,#0x60]!   ; slot 12
+add x1, sp, #0x40; blraa
+
+; copied wholesale from a source buffer (site 0xb3fab20, func 0xb3fa908)
+ldp q0, q1, [x25]; stp q0, q1, [sp, #0x30]
+ldr x16,[x19]; autda; ldr x8,[x16,#0x60]!
+add x1, sp, #0x30; blraa
+
+; 32-byte copy of caller's x1 then dispatch on [x0+0x18] (site 0xb3e8ee0)
+ldp q0, q1, [x1]; stp q0, q1, [sp]
+ldr x0, [x0, #0x18]; ... ldr x8,[x16,#0x60]!; mov x1, sp; blraa
+```
+
+So the previous gate ("is `[args+0x18]` an object or copied input?") dissolves:
+`[args+0x18]` is the **`kernelContent` pointer of an `IORPC`**, i.e. a kernel
+pointer the *kernel* built when it decoded the incoming RPC. It is read as an
+object (`[R]` msgid, `[R+0x10]` objectRefs, `[R+8]` flags). The earlier glue path
+that "writes a status code at +0x00 and a stack buffer at +0x18" was building a
+different field of a different record, not this struct.
+
+## 6. Direct callers of the two dispatch-engine entry points
+
+```
+$ python tools/kz-static-diff/kz_blw_scan.py 24B119 0xfffffe000b3fa908 bl
+24B119: 1 direct ['bl'] -> 0xfffffe000b3fa908
+  com.apple.kernel: 1
+      0xfffffe000b3fb070 in 0xfffffe000b3fad34 sz=0x4e8
+$ python tools/kz-static-diff/kz_blw_scan.py 24B119 0xfffffe000b3fb294 bl
+24B119: 1 direct ['bl'] -> 0xfffffe000b3fb294
+  com.apple.kernel: 1
+      0xfffffe000b3d9bfc in 0xfffffe000b3d9ac8 sz=0x310
+```
+
+Caller string refs:
+
+```
+0xfffffe000b3fad34 sz=0x4e8 refs=['edescription']
+0xfffffe000b3d9ac8 sz=0x310 refs=[]
+```
+
+No MIG-glue caller (`is_io_connect_method` and friends) appears in the direct
+caller set of either engine entry point.

@@ -62,5 +62,16 @@ Builds are `24A446` (iOS 27.0.1, target) and `24B119` (iOS 27.2). Requires
    base traced to a vptr load.** Matching bare `ldr xT,[xN,#imm]` plus `blraa`
    counts object field loads as virtual dispatches (250 hits for offset 0x60,
    most false); requiring `xN` to come from `ldr xN,[xObj]` drops it to the real
-   set. `kz_slot12_vtable.py` implements the strict form.
+   set. `kz_slot12_vtable.py` implements the strict form. `kz_slotctx.py` then
+   prints the marshalling window before each real site.
+9. **Slot 12 of `IOUserClient`'s instance vtable is `Dispatch(const IORPC rpc)`,
+   not `externalMethod`.** The thunk copies a 0x20-byte `struct IORPC` by value
+   (`ldp q0,q1,[x1]; stp q0,q1,[sp]`) and the dispatcher reads `rpc.kernelContent`
+   (`+0x18`) as an `IORPCMessage *`: `[R]` = msgid compared against four baked
+   64-bit IDs, `[R+0x10]` = objectRefs (must be 1 or 2), `[R+8]` = flags.
+   `externalMethod` sits at slot 168, and the AppleSmartIOUserClient string
+   `externalMethod(uint32_t, IOExternalMethodArgumentsOpaque *)` does not make
+   slot 12 that method. The base-class default at the same slot returns
+   `kIOReturnUnsupported`; the only subclass override in 24B119 is
+   `IOUserServer`. See `analysis/krw-leads/bit8-slot12-dispatch-identity-2026-11-17.md`.
 
