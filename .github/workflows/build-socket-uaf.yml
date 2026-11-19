@@ -1,4 +1,4 @@
-name: Build Socket UAF Exploit
+name: Build Socket UAF
 
 on:
   push:
@@ -7,92 +7,22 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Changed from macos-latest
+    runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout code
+    - name: Checkout
       uses: actions/checkout@v4
     
-    - name: Install dependencies
+    - name: Install compiler
       run: |
         sudo apt-get update
-        sudo apt-get install -y clang llvm
-        
-    - name: Compile for iOS (cross-compile)
+        sudo apt-get install -y clang
+    
+    - name: Compile
       run: |
-        # Create a simple iOS binary using clang
-        # Note: This creates a Mach-O binary that won't run on Ubuntu
-        # but will be packaged correctly for iOS
-        
-        cat > socket_uaf.c << 'EOF'
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-
-int main() {
-    FILE *log = fopen("socket_uaf.log", "w");
-    if (!log) return -1;
-    
-    fprintf(log, "=== Socket UAF Exploit ===\n");
-    fprintf(log, "[*] Starting...\n");
-    
-    // Create socket
-    int sock = socket(AF_INET, SOCK_STREAM, 0);
-    if (sock < 0) {
-        fprintf(log, "[-] socket failed\n");
-        fclose(log);
-        return -1;
-    }
-    
-    fprintf(log, "[+] Socket created: %d\n", sock);
-    
-    // Setup address
-    struct sockaddr_in addr;
-    memset(&addr, 0, sizeof(addr));
-    addr.sin_family = AF_INET;
-    addr.sin_port = htons(8080);
-    addr.sin_addr.s_addr = inet_addr("127.0.0.1");
-    
-    // Bind
-    if (bind(sock, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
-        fprintf(log, "[-] bind failed\n");
-        close(sock);
-        fclose(log);
-        return -1;
-    }
-    
-    fprintf(log, "[+] Bound to 127.0.0.1:8080\n");
-    
-    // Listen
-    if (listen(sock, 1) < 0) {
-        fprintf(log, "[-] listen failed\n");
-        close(sock);
-        fclose(log);
-        return -1;
-    }
-    
-    fprintf(log, "[+] Listening...\n");
-    fprintf(log, "[*] UAF trigger would go here\n");
-    fprintf(log, "[+] Exploit complete\n");
-    
-    close(sock);
-    fclose(log);
-    return 0;
-}
-EOF
-        
-        # Compile as object file (will be linked on iOS)
-        clang -c -O2 -o socket_uaf.o socket_uaf.c
-        
-        # Create a placeholder binary
-        # In real build, this would be a proper iOS Mach-O
-        echo "Placeholder iOS binary" > socket_uaf
-        
-        ls -lh socket_uaf*
+        clang -O2 -o socket_uaf src/socket_uaf.c
+        file socket_uaf
+        ls -lh socket_uaf
     
     - name: Create IPA
       run: |
