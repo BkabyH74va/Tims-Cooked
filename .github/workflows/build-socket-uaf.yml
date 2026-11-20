@@ -33,47 +33,8 @@ jobs:
         cp socket_uaf Payload/SocketUAF.app/SocketUAF
         chmod +x Payload/SocketUAF.app/SocketUAF
         
-        # Create Info.plist with all required keys
-        cat > Payload/SocketUAF.app/Info.plist << 'EOF'
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>CFBundleDevelopmentRegion</key>
-    <string>en</string>
-    <key>CFBundleExecutable</key>
-    <string>SocketUAF</string>
-    <key>CFBundleIdentifier</key>
-    <string>com.jasonquiles.socketuaf</string>
-    <key>CFBundleInfoDictionaryVersion</key>
-    <string>6.0</string>
-    <key>CFBundleName</key>
-    <string>SocketUAF</string>
-    <key>CFBundlePackageType</key>
-    <string>APPL</string>
-    <key>CFBundleShortVersionString</key>
-    <string>1.0</string>
-    <key>CFBundleSupportedPlatforms</key>
-    <array>
-        <string>iPhoneOS</string>
-    </array>
-    <key>CFBundleVersion</key>
-    <string>1</string>
-    <key>LSRequiresIPhoneOS</key>
-    <true/>
-    <key>UIFileSharingEnabled</key>
-    <true/>
-    <key>UILaunchScreen</key>
-    <dict/>
-    <key>UISupportedInterfaceOrientations</key>
-    <array>
-        <string>UIInterfaceOrientationPortrait</string>
-        <string>UIInterfaceOrientationLandscapeLeft</string>
-        <string>UIInterfaceOrientationLandscapeRight</string>
-    </array>
-</dict>
-</plist>
-EOF
+        # Create Info.plist using printf (YAML-safe, no heredoc)
+        printf '%s\n' '<?xml version="1.0" encoding="UTF-8"?>' '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">' '<plist version="1.0">' '<dict>' '    <key>CFBundleDevelopmentRegion</key>' '    <string>en</string>' '    <key>CFBundleExecutable</key>' '    <string>SocketUAF</string>' '    <key>CFBundleIdentifier</key>' '    <string>com.jasonquiles.socketuaf</string>' '    <key>CFBundleInfoDictionaryVersion</key>' '    <string>6.0</string>' '    <key>CFBundleName</key>' '    <string>SocketUAF</string>' '    <key>CFBundlePackageType</key>' '    <string>APPL</string>' '    <key>CFBundleShortVersionString</key>' '    <string>1.0</string>' '    <key>CFBundleSupportedPlatforms</key>' '    <array>' '        <string>iPhoneOS</string>' '    </array>' '    <key>CFBundleVersion</key>' '    <string>1</string>' '    <key>LSRequiresIPhoneOS</key>' '    <true/>' '    <key>UIFileSharingEnabled</key>' '    <true/>' '    <key>UILaunchScreen</key>' '    <dict/>' '    <key>UISupportedInterfaceOrientations</key>' '    <array>' '        <string>UIInterfaceOrientationPortrait</string>' '        <string>UIInterfaceOrientationLandscapeLeft</string>' '        <string>UIInterfaceOrientationLandscapeRight</string>' '    </array>' '</dict>' '</plist>' > Payload/SocketUAF.app/Info.plist
         
         # Ad-hoc sign the binary (required for iOS)
         codesign --force --sign - --timestamp=none Payload/SocketUAF.app/SocketUAF
